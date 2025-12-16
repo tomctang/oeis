@@ -1,0 +1,624 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>FIBONACCI NUMBERS: F_0=0, F_1=1, F_n = F_{n-1} + F_{n-2} &#8212; Tom Workbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=8dedbda2" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '0FIBONACCI NUMBERS';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Tom Workbook</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">ISMath</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="How_IntegerSeq_build_math.html">1. How Integer Seq build Math</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/tomctang/wk" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/0FIBONACCI NUMBERS.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>FIBONACCI NUMBERS: F_0=0, F_1=1, F_n = F_{n-1} + F_{n-2}</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">FIBONACCI NUMBERS: F_0=0, F_1=1, F_n = F_{n-1} + F_{n-2}</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-computation">— 1. Direct Computation —</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ode-recurrence-relation">— 2. ODE / RECURRENCE RELATION —</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-it-matches">Verify it matches</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-powers">— 3. MATRIX POWERS —</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvalues-are-and">Eigenvalues are φ and ψ</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#diagonalization-f-pdp-1">Diagonalization: F = PDP^(-1)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-function">— 4. GENERATING FUNCTION —</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-partial-fractions-from-ode-eigenvalues">Verify partial fractions (from ODE eigenvalues)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#continued-fractions">— 5. CONTINUED FRACTIONS —</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#group-theory-word-structures">— 6. GROUP THEORY / WORD STRUCTURES —</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tilings">— 7. TILINGS —</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#modular-arithmetic-pisano-periods">— 8. MODULAR ARITHMETIC (Pisano Periods) —</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="fibonacci-numbers-f-0-0-f-1-1-f-n-f-n-1-f-n-2">
+<h1>FIBONACCI NUMBERS: F_0=0, F_1=1, F_n = F_{n-1} + F_{n-2}<a class="headerlink" href="#fibonacci-numbers-f-0-0-f-1-1-f-n-f-n-1-f-n-2" title="Link to this heading">#</a></h1>
+<p>print(“=”*70)
+print(“FIBONACCI NUMBERS”)
+print(“=”*70)</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="direct-computation">
+<h1>— 1. Direct Computation —<a class="headerlink" href="#direct-computation" title="Link to this heading">#</a></h1>
+<p>print(“\n1. First 20 Fibonacci numbers:”)
+fibs = [fibonacci(n) for n in range(20)]
+print(fibs)</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="ode-recurrence-relation">
+<h1>— 2. ODE / RECURRENCE RELATION —<a class="headerlink" href="#ode-recurrence-relation" title="Link to this heading">#</a></h1>
+<p>print(“\n2. ODE CONNECTION: y’’ = y’ + y”)
+print(”   Characteristic equation: λ² = λ + 1”)
+print(”   Solutions: λ = (1 ± √5)/2 (golden ratio φ and conjugate)”)</p>
+<p>phi = (1 + sqrt(5))/2
+psi = (1 - sqrt(5))/2</p>
+<p>print(f”\n   Golden ratio φ = {phi.n(digits=10)}”)
+print(f”   Conjugate ψ = {psi.n(digits=10)}”)</p>
+<p>def fibonacci_binet(n):
+“””Binet’s formula: F_n = (φ^n - ψ^n)/√5”””
+phi = (1 + sqrt(5))/2
+psi = (1 - sqrt(5))/2
+return ((phi^n - psi^n)/sqrt(5)).simplify_full()</p>
+<p>print(“\n   Via Binet’s formula (closed form from ODE):”)
+fibs_binet = [fibonacci_binet(n) for n in range(10)]
+print(f”   {fibs_binet}”)</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="verify-it-matches">
+<h1>Verify it matches<a class="headerlink" href="#verify-it-matches" title="Link to this heading">#</a></h1>
+<p>print(f”   Match? {all(fibonacci_binet(n) == fibonacci(n) for n in range(15))}”)</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="matrix-powers">
+<h1>— 3. MATRIX POWERS —<a class="headerlink" href="#matrix-powers" title="Link to this heading">#</a></h1>
+<p>print(“\n3. MATRIX: Powers of [[1,1],[1,0]]”)</p>
+<p>F = matrix([[1, 1], [1, 0]])
+print(f”   Fibonacci matrix F = “)
+print(F)</p>
+<p>print(“\n   Powers of F:”)
+for n in range(1, 8):
+Fn = F^n
+print(f”   F^{n} = {Fn.list()}, F_{n} = {Fn[0,1]}, F_{n+1} = {Fn[0,0]}”)</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="eigenvalues-are-and">
+<h1>Eigenvalues are φ and ψ<a class="headerlink" href="#eigenvalues-are-and" title="Link to this heading">#</a></h1>
+<p>print(“\n   Eigenvalues of F:”)
+eigenvals = F.eigenvalues()
+print(f”   {[e.n(digits=10) for e in eigenvals]}”)
+print(f”   These are φ and ψ!”)</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="diagonalization-f-pdp-1">
+<h1>Diagonalization: F = PDP^(-1)<a class="headerlink" href="#diagonalization-f-pdp-1" title="Link to this heading">#</a></h1>
+<p>print(“\n   Diagonalization F = PDP⁻¹:”)
+P, D = F.eigenmatrix_right()
+print(f”   P = {P}”)
+print(f”   D = {D}”)
+print(f”   Verify: F = PDP⁻¹? {F == P<em>D</em>P^(-1)}”)</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="generating-function">
+<h1>— 4. GENERATING FUNCTION —<a class="headerlink" href="#generating-function" title="Link to this heading">#</a></h1>
+<p>print(“\n4. GENERATING FUNCTION: F(x) = x/(1-x-x²)”)</p>
+<p>R.<x> = PowerSeriesRing(QQ, default_prec=20)
+F_gen = x/(1 - x - x^2)
+print(f”   F(x) = {F_gen}”)
+print(f”   Coefficients: {F_gen.list()}”)</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="verify-partial-fractions-from-ode-eigenvalues">
+<h1>Verify partial fractions (from ODE eigenvalues)<a class="headerlink" href="#verify-partial-fractions-from-ode-eigenvalues" title="Link to this heading">#</a></h1>
+<p>print(“\n   Partial fraction decomposition (using φ, ψ):”)
+print(f”   F(x) = 1/√5 * [1/(1-φx) - 1/(1-ψx)]”)
+x = var(‘x’)</p>
+<p>phi = (1 + sqrt(5))/2
+psi = (1 - sqrt(5))/2</p>
+<p>F_partial = (1/sqrt(5)) * ( 1/(1 - phi<em>x) - 1/(1 - psi</em>x) )
+print(F_partial.series(x, 15))  # expand as a power series about x=0 up to x^14</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="continued-fractions">
+<h1>— 5. CONTINUED FRACTIONS —<a class="headerlink" href="#continued-fractions" title="Link to this heading">#</a></h1>
+<p>print(“\n5. CONTINUED FRACTIONS: φ = [1; 1, 1, 1, 1, …]”)</p>
+<p>cf = continued_fraction(phi)
+print(f”   Golden ratio as continued fraction: {cf}”)
+print(f”   First 15 convergents:”)</p>
+<p>for i in range(15):
+conv = cf.convergent(i)
+print(f”   p_{i}/q_{i} = {conv} = {conv.numerator()}/{conv.denominator()}”, end=””)
+if i &gt; 0:
+print(f” → Ratio of F_{i+1}/F_{i}”)
+else:
+print()</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="group-theory-word-structures">
+<h1>— 6. GROUP THEORY / WORD STRUCTURES —<a class="headerlink" href="#group-theory-word-structures" title="Link to this heading">#</a></h1>
+<p>print(“\n6. GROUP THEORY: Fibonacci counts in free monoid”)
+print(”   Words of length n using {a, b} with no consecutive b’s”)</p>
+<p>def count_no_consecutive_b(n, memo={0: 1, 1: 2}):
+“””Count binary strings of length n with no consecutive 1’s (or b’s)”””
+if n in memo:
+return memo[n]
+# Either ends in ‘a’ (0) or ‘b’ (1)
+# If ends in ‘a’: previous n-1 can be anything
+# If ends in ‘b’: previous must end in ‘a’, so n-2 positions
+result = count_no_consecutive_b(n-1, memo) + count_no_consecutive_b(n-2, memo)
+memo[n] = result
+return result</p>
+<p>print(f”   Counts: {[count_no_consecutive_b(n) for n in range(12)]}”)
+print(f”   These are F_{n+2}!”)</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="tilings">
+<h1>— 7. TILINGS —<a class="headerlink" href="#tilings" title="Link to this heading">#</a></h1>
+<p>print(“\n7. TILINGS: Ways to tile 1×n board with 1×1 and 1×2 tiles”)</p>
+<p>def count_tilings(n, memo={0: 1, 1: 1}):
+“””Count ways to tile 1×n board”””
+if n in memo:
+return memo[n]
+# Either place 1×1 tile (leaving n-1) or 1×2 tile (leaving n-2)
+result = count_tilings(n-1, memo) + count_tilings(n-2, memo)
+memo[n] = result
+return result</p>
+<p>tilings = [count_tilings(n) for n in range(15)]
+print(f”   Tiling counts: {tilings}”)
+print(f”   These are Fibonacci numbers!”)</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="modular-arithmetic-pisano-periods">
+<h1>— 8. MODULAR ARITHMETIC (Pisano Periods) —<a class="headerlink" href="#modular-arithmetic-pisano-periods" title="Link to this heading">#</a></h1>
+<p>print(“\n8. MODULAR ARITHMETIC: Fibonacci mod m (Pisano periods)”)</p>
+<p>def pisano_period(m):
+“””Find period of Fibonacci sequence mod m”””
+prev, curr = 0, 1
+for i in range(m * m):
+prev, curr = curr, (prev + curr) % m
+if prev == 0 and curr == 1:
+return i + 1
+return -1</p>
+<p>print(”   Pisano periods π(m) for small m:”)
+for m in range(2, 13):
+period = pisano_period(m)
+fib_mod = [fibonacci(n) % m for n in range(period)]
+print(f”   π({m:2d}) = {period:3d}, sequence mod {m}: {fib_mod[:min(12, period)]}”)</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">FIBONACCI NUMBERS: F_0=0, F_1=1, F_n = F_{n-1} + F_{n-2}</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-computation">— 1. Direct Computation —</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ode-recurrence-relation">— 2. ODE / RECURRENCE RELATION —</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-it-matches">Verify it matches</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-powers">— 3. MATRIX POWERS —</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvalues-are-and">Eigenvalues are φ and ψ</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#diagonalization-f-pdp-1">Diagonalization: F = PDP^(-1)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-function">— 4. GENERATING FUNCTION —</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-partial-fractions-from-ode-eigenvalues">Verify partial fractions (from ODE eigenvalues)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#continued-fractions">— 5. CONTINUED FRACTIONS —</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#group-theory-word-structures">— 6. GROUP THEORY / WORD STRUCTURES —</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tilings">— 7. TILINGS —</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#modular-arithmetic-pisano-periods">— 8. MODULAR ARITHMETIC (Pisano Periods) —</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Tom Tang
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
