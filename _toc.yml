@@ -1,0 +1,24 @@
+format: jb-book  # For Jupyter Book; adjust if using another generator
+
+# below are the contents structure
+root: intro  # intro.ipynb, defines the root page ( Indentation not tabs)
+parts:
+- caption: Quant Research
+  numbered: true
+  chapters:
+  - file: qc
+  - file: qc_strategy
+  - file: qc_platforms
+  - file: qc_terms
+
+- caption: How OEIS Build Math
+  numbered: true
+  chapters:
+  - file: How_IntegerSeq_build_math
+
+- caption: Notebook
+  numbered: true
+  chapters:
+  - file: nb2024
+  - file: nb2022
+
