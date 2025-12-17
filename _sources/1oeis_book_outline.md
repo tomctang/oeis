@@ -1,28 +1,22 @@
 Title: OEIS as a Map of Mathematics: Mechanisms with SageMath 
 
+# Chapter 0. Introduction
+
 Motivation and purposes: 
 - Project Euler rewards recognizing mechanisms, not formulas. OEIS exposes those mechanisms.
 - To write a book for strong math / CS / physics undergraduates.
-- This book treats integer sequences as interfaces between different mathematical mechanisms. When white light (SageMath/pure computation) hits the prism (the sequence), it refracts into the spectral bands of mathematics (DE, MAT, GRP, etc.).
+- This book treats integer sequences as interfaces between different mathematical mechanisms. 
 - A mechanism tour of modern mathematics using OEIS sequences as anchors, implemented computationally in SageMath.
+- When white light (SageMath/pure computation) hits the prism (the sequence), it refracts into the spectral bands of mathematics (DE, MAT, GRP, etc.).
 - It is effectively a "concrete/conceptual, not technical, Langlands Program" for undergraduates. 
 
-Organizing principle of the book: 
-- For each chapter from 2 to appendix, to check integer sequence one-by-one, and tour every mathematical mechanism related to the integer sequence by following steps: 
-- Step 1, draw Poset and DAG for each integer sequence, explaining base, bridge, and emergence
-- Step 2, use SageMath to coding each executable realizations/proof of concepts and mechanisms. 
-- Strictly adhere to the “0FIBONACCI NUMBERS.md” style: clear headers, numbered sections, distinct mechanism checks.
-- Step 3, narrative that explains e.g. why the sequence exists in different mathematical mechanisms/topics simultaneously. 
-- Output ipynb file for each chapter, including both Markdown and sagemath coding cells 
+Introduction:
+- to introduce my idea about this book, including mathematical mechanisms/topics table (see below) and its explanation. 
+- OEIS is not a database — it is a compression of mathematical structures. Each sequence lives simultaneously in multiple mathematical worlds.
+- SageMath makes those worlds executable.
+- A pedagogical unification manifesto for students with SageMath-driven exploration lab, in which OEIS sequence works as a hub to reveal the unity of mathematical mechanisms/topics. 
 
-Outline of the book:
-# Chapter 0. Introduction
-- to introduce my idea and the plot, including mathematical mechanisms/topics table (see below) and its explanation. 
-- a pedagogical unification manifesto for students with SageMath-driven exploration lab, in which integer sequence works as a hub to reveal the unity of mathematical mechanisms/topics. Each nontrivial sequence lives simultaneously in multiple mathematical worlds
-- OEIS is not a database — it is a compression of mathematical structures
-- SageMath makes those worlds executable
-
-Mathematical mechanisms/topics table refer to: 
+Mathematical mechanisms/topics table: 
 | Code     | Mechanisms       | Key Points                       |
 | -------- | ---------- | ----------------------------- |
 | **DE**   | Differential/Difference Eq    | Recurrences, ODE/PDE, Generating Functions        |
@@ -38,6 +32,14 @@ Mathematical mechanisms/topics table refer to:
 ---
 
 # Chapter 1. Arithmetic Function / Multiplicatives 
+
+Organizing principle of the book: 
+- From chapter 1 to appendix, for each OEIS sequence in the table below, tour every mathematical mechanism related to the sequence by following steps: 
+- Step 1, draw Poset and DAG for each integer sequence, explaining base, bridge, and emergence
+- Step 2, use SageMath to coding each executable realizations/proof of concepts and mechanisms. 
+- Strictly adhere to the “2FIBONACCI NUMBERS.md” style: clear headers, numbered sections, distinct mechanism checks.
+- Step 3, narrative that explains e.g. why the sequence exists in different mathematical mechanisms/topics simultaneously. 
+- Output ipynb file for each chapter, including both Markdown and sagemath coding cells 
 
 | OEIS | Name | DE | MAT | GRP | ZETA | MOD | GRA | ALG | REP | HOM |
 |---|---|---|---|---|---|---|---|---|---|---|
