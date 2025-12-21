@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>FindStat &#8212; Tom Workbook</title>
+    <title>Chapter 1: Arithmetic Functions and Multiplicatives &#8212; Tom Workbook</title>
   
   
   
@@ -58,7 +58,9 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'How_FindStat';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter1_arithmetic_functions';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -174,11 +176,7 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">ISMath</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="How_IntegerSeq_build_math.html">1. How Integer Seq build Math</a></li>
-</ul>
-
+        
     </div>
 </nav></div>
     </div>
@@ -246,7 +244,7 @@
       
       
       
-      <li><a href="_sources/How_FindStat.ipynb" target="_blank"
+      <li><a href="_sources/chapter1_arithmetic_functions.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -330,7 +328,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>FindStat</h1>
+    <h1>Chapter 1: Arithmetic Functions and Multiplicatives</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -340,7 +338,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#findstat-to-oeis">FindStat to OEIS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence-analyst-mechanisms-dag-for-d-n">Sequence Analyst – Mechanisms &amp; DAG for <span class="math notranslate nohighlight">\(d(n)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-expositor-conceptual-explanations">Mathematical Expositor – Conceptual Explanations</a></li>
 </ul>
             </nav>
         </div>
@@ -352,59 +351,186 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="findstat">
-<h1>FindStat<a class="headerlink" href="#findstat" title="Link to this heading">#</a></h1>
-<section id="findstat-to-oeis">
-<h2>FindStat to OEIS<a class="headerlink" href="#findstat-to-oeis" title="Link to this heading">#</a></h2>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>FindStat对象</p></th>
-<th class="head"><p>→   主导OEIS生成机制</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Permutations</p></td>
-<td><p>→ 3,7,9,6</p></td>
-</tr>
-<tr class="row-odd"><td><p>ASMs</p></td>
-<td><p>→ 7,9,8</p></td>
-</tr>
-<tr class="row-even"><td><p>Integer partitions</p></td>
-<td><p>→ 6,1,8</p></td>
-</tr>
-<tr class="row-odd"><td><p>Dyck paths / Catalan类</p></td>
-<td><p>→ 1,2,3,7</p></td>
-</tr>
-<tr class="row-even"><td><p>Binary words</p></td>
-<td><p>→ 1,2</p></td>
-</tr>
-<tr class="row-odd"><td><p>Integer compositions</p></td>
-<td><p>→ 1,2,3</p></td>
-</tr>
-<tr class="row-even"><td><p>Ordered trees</p></td>
-<td><p>→ 1,7,3</p></td>
-</tr>
-<tr class="row-odd"><td><p>Parking functions</p></td>
-<td><p>→ 3,9,6</p></td>
-</tr>
-<tr class="row-even"><td><p>Cores / Finite Cartan</p></td>
-<td><p>→ 4,9,3,6</p></td>
-</tr>
-<tr class="row-odd"><td><p>Gelfand–Tsetlin patterns</p></td>
-<td><p>→ 2,9</p></td>
-</tr>
-<tr class="row-even"><td><p>Graphs / matchings</p></td>
-<td><p>→ 7,2,9</p></td>
-</tr>
-<tr class="row-odd"><td><p>Lattices</p></td>
-<td><p>→ 4,3</p></td>
-</tr>
-<tr class="row-even"><td><p>Ordered set partitions</p></td>
-<td><p>→ 6,3</p></td>
-</tr>
-</tbody>
-</table>
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-1-arithmetic-functions-and-multiplicatives">
+<h1>Chapter 1: Arithmetic Functions and Multiplicatives<a class="headerlink" href="#chapter-1-arithmetic-functions-and-multiplicatives" title="Link to this heading">#</a></h1>
+<p>Arithmetic functions such as the divisor function, Euler’s totient, and the Möbius function form the backbone of multiplicative number theory.  In this chapter we follow the recipe from the book outline【155477964815303†L35-L41】—identify active mechanisms, implement them in SageMath, and explain the conceptual picture—for the first entry in the chapter’s table: the divisor function <span class="math notranslate nohighlight">\(d(n)\)</span> (OEIS A000005)【155477964815303†L45-L53】.</p>
+<section id="sequence-analyst-mechanisms-dag-for-d-n">
+<h2>Sequence Analyst – Mechanisms &amp; DAG for <span class="math notranslate nohighlight">\(d(n)\)</span><a class="headerlink" href="#sequence-analyst-mechanisms-dag-for-d-n" title="Link to this heading">#</a></h2>
+<p><strong>Active mechanisms</strong></p>
+<ul class="simple">
+<li><p><strong>ZETA (Primary):</strong> The Dirichlet series of the divisor function is <span class="math notranslate nohighlight">\(\zeta(s)^2=\sum_{n\ge1}rac{d(n)}{n^s}\)</span>【975973847736663†L283-L289】.  Euler products show that <span class="math notranslate nohighlight">\(d(n)\)</span> is multiplicative and encode the prime factorization of <span class="math notranslate nohighlight">\(n\)</span>.</p></li>
+<li><p><strong>MOD (Emergent):</strong> Expanding the two‐variable generating function <span class="math notranslate nohighlight">\(\sum_{n\ge1}d(n)q^n\)</span> gives a <span class="math notranslate nohighlight">\(q\)</span>‐series <span class="math notranslate nohighlight">\(\sum_{k\ge1}rac{q^k}{1-q^k}\)</span> that hints at modular forms.</p></li>
+</ul>
+<p><strong>Base–Bridge–Emergence DAG</strong></p>
+<ul class="simple">
+<li><p><strong>Base:</strong> The combinatorial definition of <span class="math notranslate nohighlight">\(d(n)\)</span> counts the number of divisors of <span class="math notranslate nohighlight">\(n\)</span>.  For <span class="math notranslate nohighlight">\(n=p_1^{e_1}\cdots p_r^{e_r}\)</span> it equals <span class="math notranslate nohighlight">\((e_1+1)\cdots(e_r+1)\)</span>.</p></li>
+<li><p><strong>Bridge:</strong> Viewing <span class="math notranslate nohighlight">\(d(n)\)</span> as the Dirichlet convolution of the constant function <span class="math notranslate nohighlight">\(1\)</span> with itself (<span class="math notranslate nohighlight">\(1*1=d\)</span>) exposes its multiplicativity.  The corresponding Dirichlet series factorizes as <span class="math notranslate nohighlight">\(\zeta(s)^2\)</span>【975973847736663†L283-L289】.</p></li>
+<li><p><strong>Emergence:</strong> Summing <span class="math notranslate nohighlight">\(d(n)q^n\)</span> across all <span class="math notranslate nohighlight">\(n\)</span> yields <span class="math notranslate nohighlight">\(\sum_{k\ge1}rac{q^k}{1-q^k}\)</span>, a <span class="math notranslate nohighlight">\(q\)</span>‐series reminiscent of Eisenstein series and modular forms.  This emergent mechanism connects arithmetic functions to analysis on the upper half‐plane.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>
+print(&quot;=&quot;*70)
+print(&quot;DIVISOR FUNCTION d(n)&quot;)
+print(&quot;=&quot;*70)
+</pre></div>
 </div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>
+# --- 1. Direct Computation ---
+print(&quot;
+1. First 20 values of d(n):&quot;)
+# Use the divisor function sigma(n,0) which counts the number of divisors
+vals = [sigma(n,0) for n in range(1,21)]
+print(vals)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>
+# --- 2. Multiplicativity Check ---
+print(&quot;
+2. Multiplicativity: d(ab) = d(a)d(b) when gcd(a,b)=1&quot;)
+# Test random coprime pairs
+import random
+from math import gcd
+
+ok = True
+for _ in range(10):
+    a = random.randint(1,50)
+    b = random.randint(1,50)
+    if gcd(a,b) == 1:
+        lhs = sigma(a*b,0)
+        rhs = sigma(a,0) * sigma(b,0)
+        if lhs != rhs:
+            ok = False
+            print(f&quot;   Failure at a={a}, b={b}: d(ab)={lhs}, d(a)d(b)={rhs}&quot;)
+print(f&quot;   Multiplicativity holds? {ok}&quot;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>
+# --- 3. Dirichlet Series: ζ(s)^2 versus Σ d(n)/n^s ---
+print(&quot;
+3. Dirichlet series approximation for s=2:&quot;)
+
+# Choose s and partial sum cutoff N
+s = 2
+N = 200
+
+# Compute partial sum of d(n)/n^s
+partial_sum = sum(sigma(n,0) / n^s for n in range(1, N+1))
+
+# Compute zeta(s)^2 using zeta function
+zeta_val = zeta(s)
+product_val = zeta_val^2
+
+print(f&quot;   Partial sum Σ_{1≤n≤{N}} d(n)/n^{s} ≈ {partial_sum.n(digits=12)}&quot;)
+print(f&quot;   ζ({s})^2 = {product_val.n(digits=12)}&quot;)
+print(f&quot;   Approximation error: {(product_val - partial_sum).abs().n(digits=12)}&quot;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>
+# --- 4. Prime Power Property ---
+print(&quot;
+4. d(p^k) = k+1 for prime p and exponent k&quot;)
+
+primes_list = [2,3,5,7,11]
+exponents = [1,2,3,4]
+all_good = True
+for p in primes_list:
+    for k in exponents:
+        n = p^k
+        lhs = sigma(n,0)
+        rhs = k + 1
+        if lhs != rhs:
+            all_good = False
+            print(f&quot;   Mismatch at p={p}, k={k}: d(p^k)={lhs}, expected {rhs}&quot;)
+print(f&quot;   Property holds for tested primes/exponents? {all_good}&quot;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>
+# --- 5. Dirichlet Convolution: d = 1 * 1 ---
+print(&quot;
+5. Dirichlet convolution: verify d(n) = (1*1)(n)&quot;)
+
+# Define constant function 1 on positive integers
+def f_const_one(n):
+    return 1
+
+# Dirichlet convolution of f and g evaluated at n
+
+def dirichlet_convolution(f, g, n):
+    return sum(f(d) * g(n//d) for d in divisors(n))
+
+# Check for n up to 20
+valid = True
+for n in range(1, 21):
+    conv = dirichlet_convolution(f_const_one, f_const_one, n)
+    if conv != sigma(n,0):
+        valid = False
+        print(f&quot;   Failure at n={n}: convolution {conv}, d(n)={sigma(n,0)}&quot;)
+print(f&quot;   Dirichlet convolution identity holds for n≤20? {valid}&quot;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>
+# --- 6. q-Series Generating Function ---
+print(&quot;
+6. q-Series: Σ d(n) q^n = Σ_{k≥1} q^k/(1 - q^k)&quot;)
+
+# Power series ring to expand both sides
+R.&lt;q&gt; = PowerSeriesRing(QQ, default_prec=15)
+
+# Left-hand side: sum d(n) q^n up to q^14
+lhs_series = sum(sigma(n,0)*q^n for n in range(1,15))
+
+# Right-hand side: sum over k of q^k/(1 - q^k)
+rhs_series = sum(q^k/(1 - q^k) for k in range(1,8))  # finite sum approximation
+
+print(f&quot;   LHS coefficients: {lhs_series.list()}&quot;)
+print(f&quot;   RHS coefficients (approx): {rhs_series.list()}&quot;)
+
+# Check first few coefficients match
+def lists_match(a,b,cut):
+    return all(a[i] == b[i] for i in range(cut))
+
+print(f&quot;   Do the first 10 coefficients agree? {lists_match(lhs_series.list(), rhs_series.list(), 10)}&quot;)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="mathematical-expositor-conceptual-explanations">
+<h2>Mathematical Expositor – Conceptual Explanations<a class="headerlink" href="#mathematical-expositor-conceptual-explanations" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Direct computation:</strong> Evaluating <span class="math notranslate nohighlight">\(d(n)\)</span> for the first few <span class="math notranslate nohighlight">\(n\)</span> reveals how the function behaves on prime powers and products.  Composite numbers with many small prime factors have larger <span class="math notranslate nohighlight">\(d(n)\)</span>.</p></li>
+<li><p><strong>Multiplicativity:</strong> The test confirms that <span class="math notranslate nohighlight">\(d\)</span> is multiplicative: if <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are coprime then <span class="math notranslate nohighlight">\(d(ab)=d(a)d(b)\)</span>.  This comes from the factorization of divisors over coprime components, and it is the cornerstone of multiplicative number theory.</p></li>
+<li><p><strong>Dirichlet series:</strong> Numerically comparing <span class="math notranslate nohighlight">\(\sum d(n)n^{-s}\)</span> to <span class="math notranslate nohighlight">\(\zeta(s)^2\)</span> for <span class="math notranslate nohighlight">\(s=2\)</span> shows rapid convergence, confirming the identity <span class="math notranslate nohighlight">\(\zeta(s)^2=\sum_{n\ge1}d(n)n^{-s}\)</span>【975973847736663†L283-L289】.  The product expansion encodes the prime‐factor multiplicative structure.</p></li>
+<li><p><strong>Prime power property:</strong> For a prime <span class="math notranslate nohighlight">\(p\)</span> and exponent <span class="math notranslate nohighlight">\(k\)</span>, <span class="math notranslate nohighlight">\(d(p^k)=k+1\)</span>.  This follows because the divisors are exactly <span class="math notranslate nohighlight">\(p^0, p^1,\dots,p^k\)</span>, giving <span class="math notranslate nohighlight">\(k+1\)</span> distinct divisors.  When <span class="math notranslate nohighlight">\(n\)</span> factorizes into distinct primes with exponents <span class="math notranslate nohighlight">\(e_i\)</span>, <span class="math notranslate nohighlight">\(d(n)=(e_1+1)\cdots(e_r+1)\)</span>.</p></li>
+<li><p><strong>Dirichlet convolution:</strong> The identity <span class="math notranslate nohighlight">\(d=1st 1\)</span> expresses <span class="math notranslate nohighlight">\(d\)</span> as the convolution of two simple constant functions.  Convolutions correspond to products of Dirichlet series; thus <span class="math notranslate nohighlight">\(D_{1}(s)^2=\zeta(s)^2\)</span> matches the Dirichlet series of <span class="math notranslate nohighlight">\(d\)</span>.</p></li>
+<li><p><strong>q-Series generating function:</strong> The generating function <span class="math notranslate nohighlight">\(\sum_{n\ge1}d(n)q^n\)</span> can be written as <span class="math notranslate nohighlight">\(\sum_{k\ge1}rac{q^k}{1-q^k}\)</span> by grouping divisors according to their contribution.  Expanding both sides as formal power series shows that coefficients coincide for the first several terms, hinting at connections with modular forms.</p></li>
+</ol>
+<p>These demonstrations illustrate how a simple arithmetic function links zeta functions, Dirichlet convolutions and <span class="math notranslate nohighlight">\(q\)</span>‐series.  The mechanisms identified in the DAG come to life through explicit computation.</p>
 </section>
 </section>
 
@@ -417,16 +543,16 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "sagemath"
+            mode: "python"
         },
         kernelOptions: {
-            name: "sagemath",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'sagemath'</script>
+    <script>kernelName = 'python3'</script>
 
                 </article>
               
@@ -454,7 +580,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#findstat-to-oeis">FindStat to OEIS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence-analyst-mechanisms-dag-for-d-n">Sequence Analyst – Mechanisms &amp; DAG for <span class="math notranslate nohighlight">\(d(n)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-expositor-conceptual-explanations">Mathematical Expositor – Conceptual Explanations</a></li>
 </ul>
   </nav></div>
 
