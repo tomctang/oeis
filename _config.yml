@@ -3,8 +3,8 @@ author: "Tom Tang"
 # logo: logo.png  # Optional
 # Repository URL (for GitHub Pages)
 repository:
-  url: "https://github.com/tomctang/wk"
-  path_to_docs: "https://github.com/tomctang/wk"
+  url: "https://github.com/tomctang/oeis"
+  path_to_docs: "https://github.com/tomctang/oeis"
   branch: "gh-pages"  # Deployment branch for GitHub Pages
 
 # HTML and theme configuration
@@ -28,7 +28,7 @@ html:
 # Sitemap (optional)
 sitemap:
   filename: "sitemap.xml"
-  base_url: "https://tomctang.github.io/wk/"
+  base_url: "https://tomctang.github.io/oeis/"
 # Execution options
 execute:
   execute_notebooks: "off"  # Change to "auto" to execute notebooks during build
