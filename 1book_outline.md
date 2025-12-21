@@ -33,8 +33,8 @@ Mathematical mechanisms/topics table:
 
 # Chapter 1. Arithmetic Function / Multiplicatives 
 
-Organizing principle of the book: 
-- From chapter 1 to appendix, for each OEIS sequence in the table below, tour every mathematical mechanism related to the sequence by following steps: 
+Organizing principle for each chapter from 1 to appendix: 
+- For each OEIS sequence in the table below, tour every mathematical mechanism related to the sequence by following steps: 
 - Step 1, draw Poset and DAG for each integer sequence, explaining base, bridge, and emergence
 - Step 2, use SageMath to coding each executable realizations/proof of concepts and mechanisms. 
 - Strictly adhere to the “2FIBONACCI NUMBERS.md” style: clear headers, numbered sections, distinct mechanism checks.
