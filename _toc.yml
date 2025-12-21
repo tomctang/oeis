@@ -6,4 +6,4 @@ parts:
 - caption: ISMath
   numbered: true
   chapters:
-  - file: How_IntegerSeq_build_math
+  - file: chapter0_introduction
