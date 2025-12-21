@@ -43,10 +43,10 @@ Organizing principle of the book:
 
 | OEIS | Name | DE | MAT | GRP | ZETA | MOD | GRA | ALG | REP | HOM |
 |---|---|---|---|---|---|---|---|---|---|---|
-| A000005 | 因子个数 d(n) | — | — | — | P | E | — | — | — | — |
+| A000005 | d(n)/tau(n)/sigma_0(n), the number of divisors of n | — | — | — | P | E | — | — | — | — |
 | A000010 | Euler φ | — | — | — | P | — | — | — | — | — |
 | A000203 | σ(n) | — | — | — | P | E | — | — | — | — |
-| A001065 | 因子和 | — | — | — | P | E | — | — | — | — |
+| A001065 | Sum of proper divisors of n | — | — | — | P | E | — | — | — | — |
 | A001221 | ω(n) | — | — | — | P | — | — | — | — | — |
 | A001222 | Ω(n) | — | — | — | P | — | — | — | — | — |
 | A008683 | Möbius μ | — | — | — | P | E | — | — | — | E |
@@ -138,7 +138,7 @@ and each modifies the expression of the other.
 
 ---
 
-# Chapter 8. Group Theory / Polya / Necklace 典型anchor
+# Chapter 8. Group Theory / Polya / Necklace /Anchor
 
 | OEIS | Name | DE | MAT | GRP | ZETA | MOD | GRA | ALG | REP | HOM |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -166,7 +166,7 @@ producing new dominant structures.
 
 ---
 
-# Chapter 10. 组合代数基座（Pascal / Stirling / Eulerian）
+# Chapter 10. Algebraic Combinatorics（Pascal / Stirling / Eulerian）
 
 | OEIS | Name | DE | MAT | GRP | ZETA | MOD | GRA | ALG | REP | HOM |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -177,7 +177,7 @@ producing new dominant structures.
 
 ---
 
-# Chapter 11. 筛法 / 素性结构 / ZETA 
+# Chapter 11. Sieve / Primality Structure / ZETA 
 
 | OEIS | Name | DE | MAT | GRP | ZETA | MOD | GRA | ALG | REP | HOM |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -193,12 +193,12 @@ producing new dominant structures.
 
 | OEIS | Name | DE | MAT | GRP | ZETA | MOD | GRA | ALG | REP | HOM |
 |---|---|---|---|---|---|---|---|---|---|---|
-| A000004 | 全 0 | — | — | — | — | — | — | — | — | — |
+| A000004 | All 0 | — | — | — | — | — | — | — | — | — |
 | A000007 | 0^n | P | — | — | — | — | — | — | — | — |
-| A000012 | 全 1 | P | — | — | — | — | — | — | — | — |
-| A000027 | 自然数 | P | — | — | — | — | — | — | — | — |
-| A001057 | 所有整数 | P | — | — | — | — | — | — | — | — |
-| A000796 | π 的数字 | P | — | — | — | — | — | — | — | — |
+| A000012 | All 1 | P | — | — | — | — | — | — | — | — |
+| A000027 | Natural number | P | — | — | — | — | — | — | — | — |
+| A001057 | Integer | P | — | — | — | — | — | — | — | — |
+| A000796 | π Decimal expansion | P | — | — | — | — | — | — | — | — |
 | A001113 | e | P | — | — | — | — | — | — | — | — |
 | A001333 | √2 | — | — | — | — | — | — | P | — | — |
 | A002530 | √3 | — | — | — | — | — | — | P | — | — |
