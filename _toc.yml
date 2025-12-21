@@ -4,6 +4,6 @@ format: jb-book  # For Jupyter Book; adjust if using another generator
 root: intro  # intro.ipynb, defines the root page ( Indentation not tabs)
 parts:
 - caption: OEIS & SageMath
-  numbered: true
+  numbered: false
   chapters:
   - file: chapter0_introduction
