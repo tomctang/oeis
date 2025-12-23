@@ -1,0 +1,688 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Chapter 3: Partitions, q-series, and Modular Forms &#8212; Tom Workbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=8dedbda2" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter3_partitions';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Tom Workbook</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">OEIS &amp; SageMath</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapter0_introduction.html">Chapter 0: Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classical_quantum_unity.html">Mathematical Structure Unity: Classical vs Quantum Mechanics</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/tomctang/oeis" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/chapter3_partitions.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 3: Partitions, q-series, and Modular Forms</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partition-numbers-p-n-a000041">Partition Numbers (p(n)) — A000041</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distinct-partitions-q-n-a000009">Distinct Partitions (q(n)) — A000009</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plane-partitions-mathrm-pl-n-a000219">Plane Partitions (\mathrm{PL}(n)) — A000219</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-partitions-b-n-a000123">Binary Partitions (b(n)) — A000123</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perfect-partitions-a-n-a002033">Perfect Partitions (a(n)) — A002033</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-3-partitions-q-series-and-modular-forms">
+<h1>Chapter 3: Partitions, q-series, and Modular Forms<a class="headerlink" href="#chapter-3-partitions-q-series-and-modular-forms" title="Link to this heading">#</a></h1>
+<p>This chapter explores integer sequences arising from partitioning numbers and their deep connections to <strong>q-series</strong> and <strong>modular forms</strong>. We focus on five sequences:</p>
+<ul class="simple">
+<li><p><strong>Partition numbers</strong> (p(n)) — OEIS A000041: counts the number of ways to write (n) as a sum of positive integers, disregarding order【702707416688053†L136-L166】.</p></li>
+<li><p><strong>Distinct partitions</strong> (q(n)) — A000009: counts partitions of (n) with distinct parts. Its generating function is a product over ((1 + x^k))【702707416688053†L410-L418】.</p></li>
+<li><p><strong>Plane partitions</strong> (\mathrm{PL}(n)) — A000219: counts two-dimensional arrays of nonnegative integers that decrease weakly along rows and columns. Their generating function is (\prod_{k=1}^\infty (1 - x^k)^{-k})【216958383879701†L175-L186】.</p></li>
+<li><p><strong>Binary partitions</strong> (b(n)) — A000123: counts partitions of (n) into powers of two. It satisfies recurrences (b(2n{+}1)=b(2n)) and (b(2n)=b(2n{-}2)+b(n))【277086382791685†L109-L115】.</p></li>
+<li><p><strong>Perfect partitions</strong> (a(n)) — A002033: counts partitions whose parts generate every integer from (1) to (n). These numbers coincide with the ordered factorization counts of (n+1), providing a combinatorial bridge【710444494497743†L21-L39】.</p></li>
+</ul>
+<p>Throughout this chapter we adhere to the <strong>Base → Bridge → Emergence</strong> framework. Each sequence is introduced via its definition (<strong>Base</strong>), connected to algebraic and analytic structures through generating functions and recurrences (<strong>Bridge</strong>), and then situated within broader mathematical contexts such as asymptotics, q-series, modular forms, and combinatorics (<strong>Emergence</strong>).</p>
+<section id="partition-numbers-p-n-a000041">
+<h2>Partition Numbers (p(n)) — A000041<a class="headerlink" href="#partition-numbers-p-n-a000041" title="Link to this heading">#</a></h2>
+<p><strong>Base.</strong> A partition of a nonnegative integer (n) is a way of writing (n) as a sum of positive integers, where order is irrelevant. The partition numbers (p(n)) count these representations; by convention, (p(0)=1) and (p(n)=0) for negative (n). For example, (p(4)=5) with partitions (4=1+1+1+1=1+1+2=1+3=2+2=4)【702707416688053†L136-L166】.</p>
+<p><strong>Bridge.</strong> The generating function of (p(n)) is the infinite product
+[
+\sum_{n=0}^{\infty} p(n) x^n = \prod_{k=1}^{\infty} rac{1}{1 - x^k},
+]
+a product expansion introduced by Euler【702707416688053†L192-L216】. This can also be expressed as an alternating sum using the pentagonal number theorem:
+[
+\sum_{n=0}^{\infty} p(n) x^n = rac{1}{1 - x - x^2 + x^5 + x^7 - x^{12} - x^{15} + \cdots} = rac{1}{\sum_{k=-\infty}^{\infty} (-1)^k x^{k(3k-1)/2}}【702707416688053†L192-L223】.
+]
+The recurrence relation resulting from the pentagonal theorem expresses (p(n)) as a sum involving previous values of (p(n)) at pentagonal offsets【702707416688053†L241-L253】.</p>
+<p><strong>Emergence.</strong> The product (\prod_{k=1}^{\infty} (1 - x^k)^{-1}) is a <strong>q-series</strong> intimately linked to modular forms. Its reciprocal, ((x;x)_\infty), is the <strong>Euler function</strong>, a special case of the q-Pochhammer symbol. This generating function is also a power of the Dedekind (\eta)-function, making (p(n)) a key player in the theory of modular forms【702707416688053†L232-L235】. Analytically, (p(n)) grows roughly exponentially in (\sqrt{n}), as captured by the Hardy–Ramanujan and Rademacher formulas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>
+# Compute partition numbers p(n) for n up to 20 using the pentagonal recurrence
+
+def partition_numbers(n_max):
+    p = [0]*(n_max+1)
+    p[0] = 1
+    for n in range(1, n_max+1):
+        total = 0
+        k = 1
+        while True:
+            # generalized pentagonal numbers k(3k-1)/2 and k(3k+1)/2
+            pent1 = k*(3*k - 1)//2
+            pent2 = k*(3*k + 1)//2
+            if pent1 &gt; n and pent2 &gt; n:
+                break
+            sign = -1 if (k % 2 == 0) else 1
+            if pent1 &lt;= n:
+                total += sign * p[n - pent1]
+            if pent2 &lt;= n:
+                total += sign * p[n - pent2]
+            k += 1
+        p[n] = total
+    return p
+
+# Display p(n) for n=0..20
+p_values = partition_numbers(20)
+print(&quot;n&quot;, &quot;p(n)&quot;)
+for i in range(len(p_values)):
+    print(i, p_values[i])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="distinct-partitions-q-n-a000009">
+<h2>Distinct Partitions (q(n)) — A000009<a class="headerlink" href="#distinct-partitions-q-n-a000009" title="Link to this heading">#</a></h2>
+<p><strong>Base.</strong> The number (q(n)) counts partitions of (n) into <strong>distinct</strong> parts; no part may repeat. Equivalently, (q(n)) counts the number of subsets of ({1,2,\dots}) whose elements sum to (n). By convention, (q(0)=1).</p>
+<p><strong>Bridge.</strong> The generating function for (q(n)) is a product over ((1 + x^k)):
+[
+\sum_{n=0}^{\infty} q(n) x^n = \prod_{k=1}^{\infty} (1 + x^k) = (x; x^2)^{-1}<em>\infty【702707416688053†L410-L418】.
+]
+Expanding this product yields the sequence (1, 1, 1, 2, 2, 3, 4, \dots)【702707416688053†L410-L418】. More advanced expressions represent this generating function using Jacobi theta functions【702707416688053†L419-L428】. Identities relating (q(n)) and (p(n)) include:
+[
+p(2n) = \sum</em>{k=0}^{n} p(n - k),q(2k), \quad p(2n+1) = \sum_{k=0}^{n} p(n - k),q(2k+1)【702707416688053†L441-L450】.
+]</p>
+<p><strong>Emergence.</strong> Because only distinct parts are allowed, (q(n)) can also be interpreted combinatorially as counting partitions into odd parts (Euler–Glaisher theorem【702707416688053†L483-L486】). The generating function (\prod_{k\ge1}(1 + x^k)) is a q-series that transforms as a modular form under suitable congruence subgroups, leading to congruence properties and connections with theta functions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>
+# Compute the first few q(n) values via dynamic programming using (1+x^k) factors
+
+def distinct_partitions(n_max):
+    # initial generating function coefficients q[0] = 1
+    coeffs = [1] + [0]*n_max
+    for k in range(1, n_max+1):
+        # multiply by (1 + x^k)
+        for n in range(n_max, k-1, -1):
+            coeffs[n] += coeffs[n - k]
+    return coeffs
+
+q_values = distinct_partitions(20)
+print(&quot;n&quot;, &quot;q(n)&quot;)
+for i in range(len(q_values)):
+    print(i, q_values[i])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="plane-partitions-mathrm-pl-n-a000219">
+<h2>Plane Partitions (\mathrm{PL}(n)) — A000219<a class="headerlink" href="#plane-partitions-mathrm-pl-n-a000219" title="Link to this heading">#</a></h2>
+<p><strong>Base.</strong> A <strong>plane partition</strong> of (n) is a two-dimensional array of nonnegative integers ((\pi_{i,j})) that decreases weakly in both indices: (\pi_{i,j} \ge \pi_{i,j+1}) and (\pi_{i,j} \ge \pi_{i+1,j}), and only finitely many entries are nonzero. The sum of all entries in the array is (n)【216958383879701†L124-L168】. The number of plane partitions of (n) is denoted by (\mathrm{PL}(n)).</p>
+<p><strong>Bridge.</strong> MacMahon discovered that the generating function for plane partitions is
+[
+\sum_{n=0}^{\infty} \mathrm{PL}(n) x^n = \prod_{k=1}^{\infty} rac{1}{(1 - x^k)^k} = 1 + x + 3x^2 + 6x^3 + 13x^4 + 24x^5 + \cdots【216958383879701†L175-L186】.
+]
+This is often called the <strong>MacMahon function</strong>. It is the two-dimensional analogue of Euler’s product for ordinary partitions【216958383879701†L189-L190】. MacMahon also derived generating functions for plane partitions in a finite box【216958383879701†L209-L223】.</p>
+<p><strong>Emergence.</strong> Plane partitions connect combinatorics with representation theory, symmetric functions, and statistical mechanics. The product formula above is a q-series of the form (\prod_{k=1}^\infty (1 - x^k)^{-k}), resembling a modular form of higher weight. Plane partitions also correspond to rhombus tilings of hexagons【216958383879701†L241-L243】, providing a geometric perspective.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>
+# Compute the first few plane partition numbers using truncated product
+import math
+
+def plane_partitions(n_max):
+    # start with generating function 1
+    coeffs = [1] + [0]*n_max
+    # approximate product up to k where k contributes at least to n_max
+    for k in range(1, n_max+1):
+        # (1 - x^k)^{-k} = (1 + x^k + x^{2k} + ...)^k (k-fold convolution)
+        # We&#39;ll multiply by (1 - x^k)^{-1} k times
+        for _ in range(k):
+            # multiply coeffs by 1/(1 - x^k)
+            for n in range(n_max, k-1, -1):
+                # add the coefficient for x^{n-k}
+                coeffs[n] += coeffs[n - k]
+    return coeffs
+
+pl_values = plane_partitions(15)
+print(&quot;n&quot;, &quot;PL(n)&quot;)
+for i in range(len(pl_values)):
+    print(i, pl_values[i])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="binary-partitions-b-n-a000123">
+<h2>Binary Partitions (b(n)) — A000123<a class="headerlink" href="#binary-partitions-b-n-a000123" title="Link to this heading">#</a></h2>
+<p><strong>Base.</strong> A binary partition of (n) is a partition in which each part is a power of 2. Let (b(n)) denote the number of binary partitions of (n). Equivalently, (b(n)) counts the number of ways to write (n) as a sum of powers of two, where order does not matter. By convention, (b(0)=1).</p>
+<p><strong>Bridge.</strong> The ordinary generating function for binary partitions is
+[
+\sum_{n=0}^{\infty} b(n) x^n = \prod_{j=0}^{\infty} rac{1}{1 - x^{2^j}}.
+]
+From this product one derives a functional equation ((1 - x)F(x) = F(x^2)) and recurrences
+[
+b(2n{+}1) = b(2n),\quad b(2n) = b(2n{-}2) + b(n)【277086382791685†L109-L115】.
+]
+These recurrences enable efficient computation of (b(n)).</p>
+<p><strong>Emergence.</strong> Binary partitions appear in computer science and combinatorics, particularly in the study of binary representations and non-squashing partitions. Their generating function is a q-series over powers of 2, linking them to Cantor-like constructions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>
+# Compute binary partition numbers b(n) using the recurrence
+
+def binary_partitions(n_max):
+    b = [0]*(n_max+1)
+    b[0] = 1
+    for n in range(1, n_max+1):
+        if n % 2 == 1:
+            b[n] = b[n-1]
+        else:
+            b[n] = b[n-2] + b[n//2]
+    return b
+
+b_values = binary_partitions(20)
+print(&quot;n&quot;, &quot;b(n)&quot;)
+for i in range(len(b_values)):
+    print(i, b_values[i])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="perfect-partitions-a-n-a002033">
+<h2>Perfect Partitions (a(n)) — A002033<a class="headerlink" href="#perfect-partitions-a-n-a002033" title="Link to this heading">#</a></h2>
+<p><strong>Base.</strong> A <strong>perfect partition</strong> of (n) is a partition whose parts uniquely generate every integer from 1 up to (n). Each perfect partition must include 1; for example, the partitions of 3 that are perfect are ({1,1,1}) and ({1,2}), giving (a(3)=2)【710444494497743†L21-L39】.</p>
+<p><strong>Bridge.</strong> There is a remarkable connection between perfect partitions and <strong>ordered factorizations</strong>: the number of perfect partitions of (n) is equal to the number of ordered factorizations of (n{+}1). An ordered factorization is a factorization where the order of the factors matters ((a 	imes b) is distinct from (b 	imes a))【716246864335950†L37-L39】. Denoting this count by (H(m)) for integer (m), one has
+[a(n) = H(n{+}1).]
+The sequence (H(m)) can be computed by the recurrence
+[H(1) = 1,\quad H(m) = \sum_{d\mid m,,d&gt;1} Higl(	frac{m}{d}igr)\quad (m&gt;1).
+]</p>
+<p><strong>Emergence.</strong> Perfect partitions connect additive and multiplicative combinatorics, since they simultaneously count additive partitions and multiplicative factorizations. They also arise in the enumeration of “r-complete” partitions and factorization problems in number theory.【710444494497743†L37-L39】.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>
+# Compute ordered factorizations H(m) and perfect partitions a(n) = H(n+1)
+
+def ordered_factorizations(m_max):
+    H = [0]*(m_max+1)
+    H[1] = 1
+    for m in range(2, m_max+1):
+        total = 0
+        for d in range(2, m+1):
+            if m % d == 0:
+                total += H[m//d]
+        H[m] = total
+    return H
+
+# Compute a(n) = H(n+1) for n up to 20
+m_max = 21
+H = ordered_factorizations(m_max)
+a_values = [H[n+1] for n in range(m_max)]
+print(&quot;n&quot;, &quot;a(n)&quot;)
+for i in range(len(a_values)):
+    print(i, a_values[i])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>The sequences in this chapter illustrate how rich combinatorial objects—partitions—interface with analytical structures via their generating functions.</p>
+<ul class="simple">
+<li><p>The ordinary partition numbers (p(n)) arise from counting integer partitions; their generating function is the reciprocal of Euler’s function, intimately linked to the Dedekind eta-function and modular forms【702707416688053†L192-L235】.</p></li>
+<li><p>Distinct partitions (q(n)) have a product generating function (\prod_{k\ge1}(1 + x^k)), which can also be expressed using theta functions【702707416688053†L410-L428】.</p></li>
+<li><p>Plane partitions count two-dimensional arrays with weakly decreasing rows and columns; the MacMahon formula (\prod_{k\ge1}(1 - x^k)^{-k}) elegantly captures this enumeration【216958383879701†L175-L186】.</p></li>
+<li><p>Binary partitions, with parts restricted to powers of two, satisfy simple recurrences and connect to power-of-two structures in number theory and computer science【277086382791685†L109-L115】.</p></li>
+<li><p>Perfect partitions exhibit a duality between additive and multiplicative structures via ordered factorizations【716246864335950†L37-L39】.</p></li>
+</ul>
+<p>Together, these sequences underscore the central role of <strong>q-series</strong> and <strong>modular forms</strong> in partition theory, providing bridges between combinatorics, algebra, and analysis. Their study not only enriches number theory but also informs fields as diverse as statistical mechanics, representation theory, and computer science.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partition-numbers-p-n-a000041">Partition Numbers (p(n)) — A000041</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distinct-partitions-q-n-a000009">Distinct Partitions (q(n)) — A000009</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plane-partitions-mathrm-pl-n-a000219">Plane Partitions (\mathrm{PL}(n)) — A000219</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-partitions-b-n-a000123">Binary Partitions (b(n)) — A000123</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perfect-partitions-a-n-a002033">Perfect Partitions (a(n)) — A002033</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Tom Tang
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

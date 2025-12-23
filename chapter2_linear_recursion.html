@@ -1,0 +1,872 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Chapter 2 — Linear Recursion / Exponential Sequences &#8212; Tom Workbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=8dedbda2" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter2_linear_recursion';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Tom Workbook</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">OEIS &amp; SageMath</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapter0_introduction.html">Chapter 0: Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classical_quantum_unity.html">Mathematical Structure Unity: Classical vs Quantum Mechanics</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/tomctang/oeis" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/chapter2_linear_recursion.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 2 — Linear Recursion / Exponential Sequences</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fibonacci-numbers-oeis-a000045">2.1 Fibonacci Numbers – OEIS A000045</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#base">Base</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bridge">Bridge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#emergence">Emergence</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lucas-numbers-oeis-a000032">2.2 Lucas Numbers – OEIS A000032</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Base</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Bridge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Emergence</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pell-numbers-oeis-a000129">2.3 Pell Numbers – OEIS A000129</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Base</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Bridge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Emergence</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tribonacci-numbers-oeis-a000073-a001045">2.4 Tribonacci Numbers – OEIS A000073 / A001045</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Base</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Bridge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Emergence</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-progressions-powers-of-2-3-and-4-a000079-a000244-a000302">2.5 Geometric Progressions – Powers of 2, 3 and 4 (A000079, A000244, A000302)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Base</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Bridge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Emergence</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factorials-oeis-a000142">2.6 Factorials – OEIS A000142</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Base</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Bridge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Emergence</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-2-linear-recursion-exponential-sequences">
+<h1>Chapter 2 — Linear Recursion / Exponential Sequences<a class="headerlink" href="#chapter-2-linear-recursion-exponential-sequences" title="Link to this heading">#</a></h1>
+<p>Mathematics teems with sequences generated by simple linear rules.  When a number depends only on a fixed number of its predecessors via a <strong>linear recurrence</strong>, the resulting sequence often grows exponentially and reveals surprising structure.  This chapter explores several classic examples – the Fibonacci and Lucas families, Pell and tribonacci numbers, geometric progressions and factorials – following the project’s <strong>Base → Bridge → Emergence</strong> paradigm.  For each sequence we first state its defining recurrence (Base), then highlight algebraic and analytic structures that make the recurrence solvable (Bridge), and finally describe the broader phenomena that arise (Emergence).  Together these sequences illustrate how linear recursion provides a common mechanism linking combinatorics, algebra, number theory and analysis.</p>
+<section id="fibonacci-numbers-oeis-a000045">
+<h2>2.1 Fibonacci Numbers – OEIS A000045<a class="headerlink" href="#fibonacci-numbers-oeis-a000045" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Compute Fibonacci numbers
+import math
+from sympy import symbols, roots, sqrt
+
+# Define recurrence and compute first 12 terms
+def fibonacci(n):
+    if n == 0: return 0
+    if n == 1: return 1
+    a, b = 0, 1
+    for _ in range(2, n+1):
+        a, b = b, a + b
+    return b
+
+# Generate first 12 Fibonacci numbers
+fib_list = [fibonacci(i) for i in range(12)]
+print(&#39;First 12 Fibonacci numbers:&#39;, fib_list)
+
+# Characteristic polynomial roots
+r = symbols(&#39;r&#39;)
+char_poly = r**2 - r - 1
+roots_dict = roots(char_poly, r)
+phi = roots_dict.keys()[0]  # golden ratio
+psi = roots_dict.keys()[1]  # conjugate
+print(&#39;Characteristic roots:&#39;, roots_dict)
+
+# Binet formula and verification
+from math import sqrt
+def binet(n):
+    phi = (1 + sqrt(5)) / 2
+    psi = (1 - sqrt(5)) / 2
+    return int(round((phi**n - psi**n) / sqrt(5)))
+
+print(&#39;Binet formula values:&#39;, [binet(i) for i in range(12)])
+print(&#39;Matches recurrence:&#39;, fib_list == [binet(i) for i in range(12)])
+
+# Ratios approaching golden ratio
+ratios = [fib_list[i+1] / fib_list[i] for i in range(2, len(fib_list)-1)]
+print(&#39;Ratios F(n+1)/F(n):&#39;, ratios)
+print(&#39;Approximate golden ratio:&#39;, float((1 + sqrt(5)) / 2))
+</pre></div>
+</div>
+</div>
+</div>
+<section id="base">
+<h3>Base<a class="headerlink" href="#base" title="Link to this heading">#</a></h3>
+<p>The Fibonacci numbers are defined by the second‑order linear recurrence</p>
+<p>[F(n)=F(n-1)+F(n-2)\quad\text{for }n&gt;1]</p>
+<p>with initial values (F(0)=0) and (F(1)=1)【486079263432249†L295-L304】.  This simple rule generates the sequence</p>
+<p>[0,1,1,2,3,5,8,13,21,34,55,\dots]</p>
+<p>which has fascinated mathematicians since antiquity and famously appeared in Fibonacci’s <em>Liber Abaci</em> as a model for rabbit populations.</p>
+</section>
+<section id="bridge">
+<h3>Bridge<a class="headerlink" href="#bridge" title="Link to this heading">#</a></h3>
+<p>The recurrence admits a complete algebraic solution.  Its <em>characteristic polynomial</em> is (r^2-r-1=0); solving this quadratic gives roots
+[\phi=\tfrac{1+\sqrt5}{2}\quad\text{and}\quad\psi=\tfrac{1-\sqrt5}{2},]
+often called the <strong>golden ratio</strong> and its conjugate.  Substituting these into the general solution of a homogeneous recurrence yields the <strong>Binet formula</strong></p>
+<p>[F(n)=\frac{\phi^n-\psi^n}{\sqrt5},!\【486079263432249†L412-L433】.]</p>
+<p>From this expression one sees that as (n) grows large, the term involving (\psi^n) becomes negligible because (|\psi|&lt;1), implying</p>
+<p>[\frac{F(n+1)}{F(n)}\longrightarrow \phi\approx1.618\dots\【486079263432249†L517-L523】.
+]</p>
+<p>Matrix methods provide another bridge: defining the companion matrix (M=\begin{pmatrix}1&amp;1\1&amp;0\end{pmatrix}), one has
+[M^n = \begin{pmatrix}F(n+1) &amp; F(n)\ F(n) &amp; F(n-1)\end{pmatrix},]
+so the eigenvalues of (M) are (\phi) and (\psi).  The ordinary generating function (F(x)=\sum_{n\ge0}F(n)x^n) satisfies
+[F(x)=\frac{x}{1-x-x^2},]
+and encapsulates the recurrence in its denominator.</p>
+</section>
+<section id="emergence">
+<h3>Emergence<a class="headerlink" href="#emergence" title="Link to this heading">#</a></h3>
+<p>The Fibonacci sequence’s “base” rule leads to many emergent phenomena.  The appearance of the golden ratio (\phi) as the limiting ratio of successive terms means that discrete recursion links naturally to an irrational algebraic constant【486079263432249†L517-L523】.  Fibonacci numbers count myriad combinatorial objects: tilings of a 1×(n) board by squares and dominoes, certain lattice paths, and compositions of (n) with parts 1 or 2.  Geometric constructions such as the Fibonacci spiral and its approximate golden rectangles further illustrate the sequence’s cross‑disciplinary reach.  Because (\phi) satisfies (\phi^2=\phi+1), powers of (\phi) exhibit self‑similarity, a feature mirrored in the recursive structure of Fibonacci numbers.  The ubiquity of these numbers across mathematics and nature demonstrates how a simple linear recursion can serve as a <strong>universal interface</strong>, connecting combinatorics, algebra and geometry.</p>
+</section>
+</section>
+<section id="lucas-numbers-oeis-a000032">
+<h2>2.2 Lucas Numbers – OEIS A000032<a class="headerlink" href="#lucas-numbers-oeis-a000032" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Compute Lucas numbers
+from sympy import symbols, sqrt
+
+# Lucas sequence recurrence
+def lucas(n):
+    if n == 0: return 2
+    if n == 1: return 1
+    a, b = 2, 1
+    for _ in range(2, n+1):
+        a, b = b, a + b
+    return b
+
+# First 12 Lucas numbers
+lucas_list = [lucas(i) for i in range(12)]
+print(&#39;First 12 Lucas numbers:&#39;, lucas_list)
+
+# Closed form using golden ratio
+from math import sqrt
+def lucas_closed(n):
+    phi = (1 + sqrt(5)) / 2
+    psi = (1 - sqrt(5)) / 2
+    return int(round(phi**n + psi**n))
+
+print(&#39;Closed form values:&#39;, [lucas_closed(i) for i in range(12)])
+print(&#39;Matches recurrence:&#39;, lucas_list == [lucas_closed(i) for i in range(12)])
+
+# Ratio tends to golden ratio
+ratios = [lucas_list[i+1] / lucas_list[i] for i in range(1, len(lucas_list)-1)]
+print(&#39;Ratios L(n+1)/L(n):&#39;, ratios)
+print(&#39;Approximate golden ratio:&#39;, float((1 + sqrt(5)) / 2))
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id1">
+<h3>Base<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>The <strong>Lucas numbers</strong> obey the same recurrence as the Fibonacci sequence but with different initial conditions:</p>
+<p>[L(n)=L(n-1)+L(n-2),\quad L(0)=2,;L(1)=1【163327925946548†L190-L203】.]</p>
+<p>This yields the sequence (2,1,3,4,7,11,18,29,47,76,\dots).  Lucas numbers were studied by Édouard Lucas and form a complementary partner to the Fibonacci numbers.</p>
+</section>
+<section id="id2">
+<h3>Bridge<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Because the recurrence is identical, the characteristic polynomial (r^2-r-1=0) and its roots (\phi) and (\psi) are the same.  Plugging the initial values into the general solution gives
+[L(n)=\phi^n+\psi^n【163327925946548†L249-L256】.]
+Unlike the Fibonacci formula, there is no factor of (\sqrt5); the two exponential terms add rather than subtract.  Consequently the ratio (L(n+1)/L(n)) also tends to (\phi)【163327925946548†L168-L172】, but the Lucas numbers approximate powers of (\phi) even more closely.  The generating function is (\sum L(n)x^n = \frac{2-x}{1-x-x^2}), and Lucas numbers can also be obtained by evaluating the same companion matrix on a different initial vector.</p>
+</section>
+<section id="id3">
+<h3>Emergence<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Lucas numbers illustrate how changing the “base case” while keeping the recurrence fixed produces a new but structurally related sequence.  Their values satisfy identities linking them back to Fibonacci numbers, such as
+[L(n)^2-5F(n)^2 = 4(-1)^n,]
+highlighting the interplay between these families.  Lucas numbers appear in primality tests (e.g. the Lucas–Lehmer test for Mersenne primes) and in combinatorial problems such as counting certain independent sets on cycle graphs.  Just as Fibonacci numbers encode the golden ratio, Lucas numbers emphasize that the full space of solutions to a linear recurrence is two‑dimensional: any pair of independent solutions (like Fibonacci and Lucas) spans all others.  This duality reveals the deeper <em>vector space</em> structure underlying linear recurrences.</p>
+</section>
+</section>
+<section id="pell-numbers-oeis-a000129">
+<h2>2.3 Pell Numbers – OEIS A000129<a class="headerlink" href="#pell-numbers-oeis-a000129" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Compute Pell numbers
+from sympy import sqrt, symbols, roots
+
+# Pell recurrence
+def pell(n):
+    if n == 0: return 0
+    if n == 1: return 1
+    a, b = 0, 1
+    for _ in range(2, n+1):
+        a, b = b, 2*b + a
+    return b
+
+# First 12 Pell numbers
+pell_list = [pell(i) for i in range(12)]
+print(&#39;First 12 Pell numbers:&#39;, pell_list)
+
+# Closed form using silver ratio
+from math import sqrt
+def pell_closed(n):
+    delta_s = 1 + sqrt(2)
+    psi = 1 - sqrt(2)
+    return int(round((delta_s**n - psi**n) / (2*sqrt(2))))
+
+print(&#39;Closed form values:&#39;, [pell_closed(i) for i in range(12)])
+print(&#39;Matches recurrence:&#39;, pell_list == [pell_closed(i) for i in range(12)])
+
+# Ratios approaching silver ratio
+ratios = [pell_list[i+1] / pell_list[i] for i in range(1, len(pell_list)-1)]
+print(&#39;Ratios P(n+1)/P(n):&#39;, ratios)
+print(&#39;Approximate silver ratio:&#39;, float(1 + sqrt(2)))
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id4">
+<h3>Base<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>The <strong>Pell numbers</strong> satisfy a recurrence of similar form but with a larger coefficient:</p>
+<p>[P(n)=2,P(n-1)+P(n-2),\quad P(0)=0,;P(1)=1【748295963287616†L210-L218】.]</p>
+<p>The first few terms are (0,1,2,5,12,29,70,169,\dots).  Historically these numbers arise in solutions to Pell’s equation (x^2-2y^2=1), an equation central to the study of Diophantine approximation.</p>
+</section>
+<section id="id5">
+<h3>Bridge<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>The characteristic equation (r^2-2r-1=0) has roots (r = 1\pm\sqrt2).  These are sometimes called the <strong>silver ratio</strong> (\delta_S = 1+\sqrt2) and its conjugate.  A closed form analogous to Binet’s formula is</p>
+<p>[P(n)=\frac{(1+\sqrt{2})^{n}-(1-\sqrt{2})^{n}}{2\sqrt{2}}【748295963287616†L225-L231】.]</p>
+<p>Because (|1-\sqrt2|&lt;1), the second term decays rapidly, and the ratio (P(n+1)/P(n)) tends to (1+\sqrt2).  The generating function (\sum P(n)x^n = \frac{x}{1-2x-x^2}) encodes the recurrence, and matrix powers of (\begin{pmatrix}2&amp;1\1&amp;0\end{pmatrix}) provide another representation.</p>
+</section>
+<section id="id6">
+<h3>Emergence<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>Changing the coefficient in the recurrence from 1 to 2 replaces the golden ratio with the <strong>silver ratio</strong> (1+\sqrt2), illustrating a family of <strong>metallic means</strong>.  Pell numbers grow roughly like ((1+\sqrt2)^n) and can be used to construct convergents of the continued fraction expansion of (\sqrt2).  In number theory, they appear in minimal solutions to Pell’s equation and yield best rational approximations to (\sqrt{2}).  Geometrically, they give the side lengths of rectangles forming a “silver spiral,” analogous to the Fibonacci spiral.  Thus, the Pell sequence shows how a small change in the recurrence still leads to exponential growth but with a different algebraic constant, revealing the versatility of the linear recursion mechanism.</p>
+</section>
+</section>
+<section id="tribonacci-numbers-oeis-a000073-a001045">
+<h2>2.4 Tribonacci Numbers – OEIS A000073 / A001045<a class="headerlink" href="#tribonacci-numbers-oeis-a000073-a001045" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Compute Tribonacci numbers
+from sympy import roots
+
+# Tribonacci recurrence
+def tribonacci(n):
+    if n == 0: return 0
+    if n == 1: return 0
+    if n == 2: return 1
+    a, b, c = 0, 0, 1
+    for _ in range(3, n+1):
+        a, b, c = b, c, a + b + c
+    return c
+
+# First 12 tribonacci numbers
+trib_list = [tribonacci(i) for i in range(12)]
+print(&#39;First 12 tribonacci numbers:&#39;, trib_list)
+
+# Characteristic polynomial roots
+import sympy as sp
+r = sp.symbols(&#39;r&#39;)
+roots_dict = sp.nroots(r**3 - r**2 - r - 1)
+print(&#39;Approximate roots of r^3 - r^2 - r - 1:&#39;, roots_dict)
+trib_constant = max([complex(val) for val in roots_dict], key=lambda z: abs(z)).real
+print(&#39;Tribonacci constant (largest real root):&#39;, trib_constant)
+
+# Ratios approaching tribonacci constant
+ratios = [trib_list[i+1] / trib_list[i] for i in range(3, len(trib_list)-1)]
+print(&#39;Ratios T(n+1)/T(n):&#39;, ratios)
+print(&#39;Approximate tribonacci constant:&#39;, trib_constant)
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id7">
+<h3>Base<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<p>The <strong>tribonacci numbers</strong> generalize the Fibonacci recurrence to three terms.  With initial values (T_0=T_1=0,;T_2=1), each term is defined by</p>
+<p>[T_{n+3}=T_{n+2}+T_{n+1}+T_{n}\【675808594270515†L379-L389】.
+]</p>
+<p>The resulting sequence begins (0,0,1,1,2,4,7,13,24,44,\dots\【675808594270515†L390-L392】).</p>
+</section>
+<section id="id8">
+<h3>Bridge<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<p>The characteristic equation of the tribonacci recurrence is (r^3 - r^2 - r - 1=0).  It has one real root (\tau\approx1.839286), known as the <strong>tribonacci constant</strong>, and two complex conjugate roots.  The general solution is a linear combination of (\tau^n) and the other two roots.  The ratio of consecutive tribonacci numbers tends to (\tau)【675808594270515†L454-L462】.  The generating function is
+[\sum_{n\ge0}T_n x^n = \frac{x^2}{1 - x - x^2 - x^3},]
+and a 3×3 companion matrix can be used to realize the recurrence.</p>
+</section>
+<section id="id9">
+<h3>Emergence<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<p>The tribonacci constant plays a role analogous to the golden and silver ratios: it is an algebraic integer of degree 3 and represents the exponential growth factor of the sequence.  Tribonacci numbers appear in combinatorics (e.g., counting tilings with three tile sizes) and in analysis (the rate of convergence of certain numerical methods).  The presence of complex roots leads to oscillatory terms in the closed form, yet these cancel to yield integer values.  Extending the number of terms in the recurrence shows that the exponential‑growth mechanism is robust: higher‑order linear recurrences simply introduce higher‑degree algebraic constants while preserving the same fundamental structure.</p>
+</section>
+</section>
+<section id="geometric-progressions-powers-of-2-3-and-4-a000079-a000244-a000302">
+<h2>2.5 Geometric Progressions – Powers of 2, 3 and 4 (A000079, A000244, A000302)<a class="headerlink" href="#geometric-progressions-powers-of-2-3-and-4-a000079-a000244-a000302" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Geometric sequences (powers of 2, 3, 4)
+from math import pow
+
+powers2 = [int(pow(2, n)) for n in range(10)]
+powers3 = [int(pow(3, n)) for n in range(10)]
+powers4 = [int(pow(4, n)) for n in range(10)]
+print(&#39;Powers of 2:&#39;, powers2)
+print(&#39;Powers of 3:&#39;, powers3)
+print(&#39;Powers of 4:&#39;, powers4)
+
+# Ratios
+ratios2 = [powers2[i+1] / powers2[i] for i in range(len(powers2)-1)]
+ratios3 = [powers3[i+1] / powers3[i] for i in range(len(powers3)-1)]
+ratios4 = [powers4[i+1] / powers4[i] for i in range(len(powers4)-1)]
+print(&#39;Ratios 2^(n+1)/2^n:&#39;, ratios2)
+print(&#39;Ratios 3^(n+1)/3^n:&#39;, ratios3)
+print(&#39;Ratios 4^(n+1)/4^n:&#39;, ratios4)
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id10">
+<h3>Base<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<p>The simplest linear recurrences are first‑order.  If we set
+[a(n)=c,a(n-1),\quad a(0)=1,]
+then the solution is the <em>geometric progression</em> (a(n)=c^n).  For example, the sequence of <strong>powers of two</strong> has terms (2^n) for integers (n)【581936701887121†L195-L197】; its first few values are (1,2,4,8,16,\dots).  Similarly, powers of 3 (A000244) and powers of 4 (A000302) are defined by (3^n) and (4^n) respectively.  These sequences model constant‑rate growth such as doubling or tripling populations and appear wherever base‑(c) counting is used.</p>
+</section>
+<section id="id11">
+<h3>Bridge<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<p>The characteristic equation for a first‑order recurrence is simply (r-c=0), whose unique root is (r=c).  Thus the closed form (a(n)=c^n) is immediate.  The generating function for the sequence starting with 1 is (\sum a(n)x^n = \frac{1}{1-cx}), a simple rational function.  The sequence can also be generated by the 1×1 “matrix” ([c]), whose (n)th power is ([c^n]).  Geometric progressions provide the building blocks for solutions of all higher‑order linear recurrences: any such solution is a linear combination of exponentials (r_i^n) where the (r_i) are the roots of the characteristic polynomial.</p>
+</section>
+<section id="id12">
+<h3>Emergence<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<p>These sequences exhibit pure exponential growth: each term is a fixed multiple of the previous.  In combinatorics, (2^n) counts the number of subsets of an (n)‑element set or the number of binary strings of length (n), while (3^n) counts ternary strings and (4^n) counts quaternary strings.  In computer science, powers of two measure memory sizes, and in number theory they appear in proofs of the infinitude of primes via Fermat numbers.  Geometric progressions thus represent the “simplest” recurrences and set the baseline for comparing growth rates: more complicated recurrences (like Fibonacci or Pell) ultimately reduce to sums of such pure exponentials.</p>
+</section>
+</section>
+<section id="factorials-oeis-a000142">
+<h2>2.6 Factorials – OEIS A000142<a class="headerlink" href="#factorials-oeis-a000142" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Factorial sequence
+import math
+
+# Compute first 10 factorials
+fact_list = [math.factorial(n) for n in range(10)]
+print(&#39;First 10 factorials:&#39;, fact_list)
+
+# Verify recurrence n! = n * (n-1)!
+recurrence_ok = [fact_list[n] == n * fact_list[n-1] if n&gt;0 else True for n in range(len(fact_list))]
+print(&#39;Recurrence holds for n! = n*(n-1)!:&#39;, all(recurrence_ok))
+
+# Ratios n!/ (n-1)! (should equal n)
+ratios = [fact_list[n] / fact_list[n-1] for n in range(1, len(fact_list))]
+print(&#39;Ratios factorial(n)/factorial(n-1):&#39;, ratios)
+
+# Stirling approximation comparison
+def stirling_approx(n):
+    import math
+    return math.sqrt(2*math.pi*n) * (n/math.e)**n
+
+stirling_values = [stirling_approx(n) for n in range(1, 10)]
+relative_errors = [abs(fact_list[n] - stirling_values[n-1])/fact_list[n] for n in range(1, 10)]
+print(&#39;Stirling approximation values:&#39;, [round(val) for val in stirling_values])
+print(&#39;Relative errors of Stirling approximation:&#39;, relative_errors)
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id13">
+<h3>Base<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
+<p>The <strong>factorial</strong> of a non‑negative integer (n) is the product of all positive integers up to (n).  In product notation</p>
+<p>[n!=1\cdot2\cdot3\cdots(n-1)\cdot n=\prod_{i=1}^{n}i【297126807461950†L369-L372】.]</p>
+<p>An equivalent description is the <strong>recurrence relation</strong></p>
+<p>[n!=n\cdot (n-1)!【297126807461950†L375-L379】,\quad 0!=1【297126807461950†L385-L405】.
+]</p>
+<p>The factorial counts permutations: there are exactly (n!) ways to arrange (n) distinct objects【297126807461950†L418-L421】.  The sequence begins (1,1,2,6,24,120,720,\dots).</p>
+</section>
+<section id="id14">
+<h3>Bridge<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
+<p>Although factorials do not satisfy a <strong>constant‑coefficient</strong> linear recurrence, the relation (n!=n,(n-1)!) is nonetheless a simple multiplicative recursion.  Factorials underlie many algebraic structures: (n!) is the order of the symmetric group (S_n), linking combinatorics to group theory.  In analysis, factorials appear in power series – the exponential function satisfies (e^x=\sum_{n\ge0}x^n/n!).  The function can be extended to non‑integers via the <strong>gamma function</strong> (\Gamma(n+1)=n!).  The exponential generating function of the factorial sequence is (\sum_{n\ge0} n!,\frac{x^n}{n!}=\sum_{n\ge0} x^n = \frac{1}{1-x}) (which converges only for (|x|&lt;1)).  Despite the variable coefficient in its recurrence, the factorial sequence fits into the study of recursions through this multiplicative perspective.</p>
+</section>
+<section id="id15">
+<h3>Emergence<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
+<p>Factorials grow <strong>super‑exponentially</strong>: Stirling’s approximation shows
+[n!\sim \sqrt{2\pi n}\left(\frac{n}{e}\right)^n,]
+revealing a growth rate faster than any (c^n).  Factorials appear across combinatorics (binomial coefficients, derangements, partitions), algebra (representation theory of symmetric groups), probability (counting sample spaces) and analysis (Taylor series coefficients).  They illustrate how modifying the coefficient in a recurrence to depend on (n) rather than being constant leads from constant bases to variable exponential growth.  In our map of mechanisms, factorials provide a bridge between discrete and continuous mathematics via the gamma function, and they exemplify how recurrences not strictly linear with constant coefficients can still fit into a unified narrative.</p>
+</section>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>Linear recursions serve as a unifying mechanism in mathematics.  Whether defined by constant coefficients (Fibonacci, Lucas, Pell, tribonacci and geometric progressions) or by multiplicative relations (factorials), these sequences exhibit exponential or super‑exponential growth determined by the roots of characteristic polynomials or by multiplicative factors.  <strong>Base</strong> rules specify simple dependencies on previous terms; <strong>bridges</strong> such as characteristic equations, matrix powers, and generating functions reveal underlying algebraic structures; <strong>emergent</strong> phenomena include algebraic constants (golden, silver and tribonacci ratios), combinatorial interpretations, geometric patterns and analytic links.  Studying these sequences together illuminates how a handful of recursions capture the “spectral bands” of diverse mathematical fields, reinforcing the book’s theme that integer sequences are interfaces through which different branches of mathematics communicate.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fibonacci-numbers-oeis-a000045">2.1 Fibonacci Numbers – OEIS A000045</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#base">Base</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bridge">Bridge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#emergence">Emergence</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lucas-numbers-oeis-a000032">2.2 Lucas Numbers – OEIS A000032</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Base</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Bridge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Emergence</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pell-numbers-oeis-a000129">2.3 Pell Numbers – OEIS A000129</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Base</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Bridge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Emergence</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tribonacci-numbers-oeis-a000073-a001045">2.4 Tribonacci Numbers – OEIS A000073 / A001045</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Base</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Bridge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Emergence</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-progressions-powers-of-2-3-and-4-a000079-a000244-a000302">2.5 Geometric Progressions – Powers of 2, 3 and 4 (A000079, A000244, A000302)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Base</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Bridge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Emergence</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factorials-oeis-a000142">2.6 Factorials – OEIS A000142</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Base</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Bridge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Emergence</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Tom Tang
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
