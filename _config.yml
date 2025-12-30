@@ -36,6 +36,12 @@ execute:
 #mathjax:
 #  enable: true
 
+sphinx:
+  config:
+    mermaid_output_format: svg
+  extra_extensions:
+    - sphinxcontrib.mermaid
+
 # sphinx:
 #   config:
 #     html_js_files:
