@@ -8,3 +8,11 @@ parts:
   chapters:
   - file: chapter0_introduction
   - file: 0mathmap
+
+- caption: Old Math
+  numbered: false
+  chapters:
+  - file: math/00intro_math
+  - file: math/01number_algebra
+  - file: math/02discrete_continuous
+  - file: math/03real_world
