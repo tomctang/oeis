@@ -60,9 +60,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'gfunHow To Count Things';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'gfunHowToCountThings';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Math-FP-Lang Combo" href="math/00intro_math.html" />
+    <link rel="prev" title="Math Map" href="0mathmap.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,8 +127,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -177,9 +177,22 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">OEIS &amp; SageMath</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="chapter0_introduction.html">Chapter 0: Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="0mathmap.html">Math Map</a></li>
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">How to Count Things</a></li>
+
+
+
+
+
+
+
 
 
 
@@ -261,7 +274,7 @@
       
       
       
-      <li><a href="_sources/gfunHow To Count Things.ipynb" target="_blank"
+      <li><a href="_sources/gfunHowToCountThings.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -384,7 +397,6 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#variant-mean-purse-size">Variant: Mean Purse Size</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-drink-gift-cards">Problem: Drink Gift Cards</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-multiplications-in-matrix-multiplication">Counting Multiplications in Matrix Multiplication</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
 </ul>
 
             </nav>
@@ -652,8 +664,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 11.3 ms, sys: 643 µs, total: 12 ms
-Wall time: 12.6 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 15.8 ms, sys: 1.71 ms, total: 17.6 ms
+Wall time: 43.1 ms
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3861431277625007961956955484353530119634001892816040917233932945064320273497370215771811960744678098449553175356862760450029708838175822242262792740296878964074883622671541479265048463512360941352413049264274485743297728357502930085506419846119753743423275462450713981257123756695327534235952507322555045959925039572403245743061549541274972562526816439217931608999532601457740681763142591939324781110768274782850152125981385364637513839024687081770052346957401052189529936883629883775724870785833452510126377097128195647948735625551805771200981065390268401761158588370204299868440790417559363818139283430755197453196664541025472104658523804014518931760254828135638415413408780736125999685589725526874318196976263624936793335541955083569139572617638693840543637407782446933562063756941909207810703824222697116352937601482868529114899390708691493432262019965964035273813939182009029538539757438413668036430833988535147478776959903569999055599703304516221455076523484352182404159659661240973630499557250950477386781288167303525408434907471599633608826344342446869378392685927230076723348547049789748491137890119623879128231595262082532286126660730784998797003448161418183918024344043613986269574364002761796194720086663633818066518383357158900007727428966795190669943187944515210398817044521469661682433819382541570464313514353180507280999817655346753846288267575488232309682752190042235927387740555053797529717247933281707578234957297940957985028202675009617273305705968728942732545640071819447202821044438874136038990729299397246489481363094787623333269036228204295737689912072742922999093173704662567170601571800655678495878408411165386708197339087266092115780445248022350264528021426918011958029075557108406192634108388793426193565093359228830473466263938925653882623387099940055081548579900911968982480432787324594136156465497071249090902373689488770079828664684036332439902542305885855063306802357476735193730805776865978477463443216064890685565824039494431583860044254937057151591772329166180799218273949130368000609439119706131185925513231524378443124711002954768565310478734594199963723940004083846148186188631535346393565417946059827530465095391420721324513264443555308798011729355327067365885381721113676766083967129134309202588682281325857855165574371421168078423586430302604691681703448297310856061359072019641696782664700526740970642410648738647199882852824774480069658314840218244137906558931392021855430239022442215072063184370394666755160595637651648014842470092745788026900633378764049390511584307920491613532339464196985013369306439276245475602674051266814071448421271626238787893306176669816773478303604652043427279626683524358370
@@ -772,19 +784,19 @@ we will need a more efficient strategy.</p>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: Counter({(0, 0): 1}),
  1: Counter({(1, 0): 1, (0, 1): 1, (0, 0): 1}),
- 2: Counter({(2, 0): 1,
-          (1, 1): 1,
-          (1, 0): 3,
-          (0, 2): 1,
+ 2: Counter({(1, 0): 3,
           (0, 0): 2,
+          (2, 0): 1,
+          (1, 1): 1,
+          (0, 2): 1,
           (0, 1): 1}),
- 3: Counter({(2, 1): 1,
+ 3: Counter({(1, 0): 8,
           (2, 0): 5,
-          (1, 2): 1,
-          (1, 0): 8,
-          (1, 1): 3,
           (0, 0): 4,
+          (1, 1): 3,
           (0, 1): 2,
+          (2, 1): 1,
+          (1, 2): 1,
           (0, 2): 1})}
 </pre></div>
 </div>
@@ -839,7 +851,7 @@ we will need a more efficient strategy.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/69f6e77e63aba2878c66b9436b55ba0e3b2287b8e9d5395a213b14f68bd9651b.png" src="_images/69f6e77e63aba2878c66b9436b55ba0e3b2287b8e9d5395a213b14f68bd9651b.png" />
+<img alt="_images/09d77b7dd12b8f573b7939b0b74296522a7e2f6259438d2729b12b9d48fb157d.png" src="_images/09d77b7dd12b8f573b7939b0b74296522a7e2f6259438d2729b12b9d48fb157d.png" />
 </div>
 </div>
 </section>
@@ -959,7 +971,7 @@ yields as first result <a class="reference external" href="https://oeis.org/A002
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(Counter({&#39;9&#39;: 2999, &#39;8&#39;: 1, &#39;0&#39;: 2, &#39;1&#39;: 1}), 1.0)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(Counter({&#39;9&#39;: 2999, &#39;0&#39;: 2, &#39;8&#39;: 1, &#39;1&#39;: 1}), 1.0)
 </pre></div>
 </div>
 </div>
@@ -1223,7 +1235,7 @@ As with previous problems, I need a <em>summary</em> of the relevant information
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Counter({0: 0, 1: 1, 2: 3, 3: 1})
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Counter({2: 3, 1: 1, 3: 1, 0: 0})
 </pre></div>
 </div>
 </div>
@@ -1727,11 +1739,15 @@ In general, the number of paths to the goal is the number of paths to the locati
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/215444acd62a72d27daa2184405ad8a52f94c984ab4082f4737be6bd27af0868.png" src="_images/215444acd62a72d27daa2184405ad8a52f94c984ab4082f4737be6bd27af0868.png" />
-<img alt="_images/6f3c28730b375766e4cfd0ba30f1bd62b7f239231e432cd3041c404e34ff3e3a.png" src="_images/6f3c28730b375766e4cfd0ba30f1bd62b7f239231e432cd3041c404e34ff3e3a.png" />
-<img alt="_images/2cea32e936c3f3c62c3a9620c35979e1350d120b750efb0085f8474b27b60702.png" src="_images/2cea32e936c3f3c62c3a9620c35979e1350d120b750efb0085f8474b27b60702.png" />
-<img alt="_images/dca46cc21d5bfa73b46d13d90a1b67dafa40ea841dcbb0e8ccbb362b35668324.png" src="_images/dca46cc21d5bfa73b46d13d90a1b67dafa40ea841dcbb0e8ccbb362b35668324.png" />
-<img alt="_images/4a8d0e1bb99fce245c550abd5b54ead6e39f3f7eaf47e06b5b9ee87cefd534c8.png" src="_images/4a8d0e1bb99fce245c550abd5b54ead6e39f3f7eaf47e06b5b9ee87cefd534c8.png" />
+<img alt="_images/f2139acb49209a37de058ff40efc97e4b0d27bf4dabc706577be94dc2038d098.png" src="_images/f2139acb49209a37de058ff40efc97e4b0d27bf4dabc706577be94dc2038d098.png" />
+<img alt="_images/d623ae42e6e30e024f606f913759475370ad78345404ea1e7afb4bc6df2fad40.png" src="_images/d623ae42e6e30e024f606f913759475370ad78345404ea1e7afb4bc6df2fad40.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_18572/3144559813.py:14: UserWarning: Tight layout not applied. tight_layout cannot make Axes width small enough to accommodate all Axes decorations
+  fig.tight_layout(pad=3.0)
+</pre></div>
+</div>
+<img alt="_images/0e15cbe9b4d6dc8d9092f43976c6681b7c6caa056ca2a1f2e288dbd2b9253b43.png" src="_images/0e15cbe9b4d6dc8d9092f43976c6681b7c6caa056ca2a1f2e288dbd2b9253b43.png" />
+<img alt="_images/05d11a525f3745f8c4d00271c2f023172255afb177bb1d61ebeb0dde6058c83d.png" src="_images/05d11a525f3745f8c4d00271c2f023172255afb177bb1d61ebeb0dde6058c83d.png" />
+<img alt="_images/96ae6da0e607b226d39a3701358e5c653782f323c7b187bc69583c0d6f07691b.png" src="_images/96ae6da0e607b226d39a3701358e5c653782f323c7b187bc69583c0d6f07691b.png" />
 </div>
 </div>
 <p>Let’s also create a table of number of paths as a function of <code class="docutils literal notranslate"><span class="pre">n</span></code>:</p>
@@ -1972,7 +1988,7 @@ In general, the number of paths to the goal is the number of paths to the locati
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f1826f963b9e4af61898221a9b04fbb5d029b9d8da7e42b461d6493cfecef62e.png" src="_images/f1826f963b9e4af61898221a9b04fbb5d029b9d8da7e42b461d6493cfecef62e.png" />
+<img alt="_images/cf4da8dc5cdb60210359a8be1b1e60d4689c7bf659e8431fa0f27d9ce0ab6c5a.png" src="_images/cf4da8dc5cdb60210359a8be1b1e60d4689c7bf659e8431fa0f27d9ce0ab6c5a.png" />
 </div>
 </div>
 <p>It  looks like we first do a little over 1000 levels of recursion, then start popping the stack to return to the top level. But we can’t really see from this plot how it happens; let’s zoom in on the key part of the graph:</p>
@@ -1983,7 +1999,7 @@ In general, the number of paths to the goal is the number of paths to the locati
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9650fe9bacc0ddbfdcf024f8f443a477bda56e6743aac50ace678a5313711066.png" src="_images/9650fe9bacc0ddbfdcf024f8f443a477bda56e6743aac50ace678a5313711066.png" />
+<img alt="_images/057feef48ac92fdf74e7493b0d77f567c614b49d943335c129caaceff74a4824.png" src="_images/057feef48ac92fdf74e7493b0d77f567c614b49d943335c129caaceff74a4824.png" />
 </div>
 </div>
 <p>We can see that right at call number 1000 is the first time when the depth does not increase; it goes sideways for one step. Then we recurse to a maximum depth of 1014, and then gradually start zig-zagging back to the top level. We can figure out why this happens:</p>
@@ -2005,7 +2021,7 @@ In general, the number of paths to the goal is the number of paths to the locati
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/80bd053c170014f50fe5f3d1ee082552f91d3a21e954bc25c4b6d7d548c195a3.png" src="_images/80bd053c170014f50fe5f3d1ee082552f91d3a21e954bc25c4b6d7d548c195a3.png" />
+<img alt="_images/2b0a3a8d7cf58fd2198677f6f447f1ccd75a8806dc527a746f8d4a0907ef25e4.png" src="_images/2b0a3a8d7cf58fd2198677f6f447f1ccd75a8806dc527a746f8d4a0907ef25e4.png" />
 </div>
 </div>
 <p>Each parallelogram corresponds to another 100 amounts being filled in. The depth never goes below 1021, and the parallelograms are gradually making their way up from the depths to the surface.</p>
@@ -2051,7 +2067,7 @@ I’ll use the term <strong>purse</strong> for a collection of coins, because it
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Purse({1: 1, 10: 1}),
- Purse({1: 1, 5: 2}),
+ Purse({5: 2, 1: 1}),
  Purse({1: 6, 5: 1}),
  Purse({1: 11})]
 </pre></div>
@@ -2083,7 +2099,7 @@ I’ll use the term <strong>purse</strong> for a collection of coins, because it
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Purse({25: 1}),
- Purse({5: 1, 10: 2}),
+ Purse({10: 2, 5: 1}),
  Purse({1: 5, 10: 2}),
  Purse({5: 3, 10: 1}),
  Purse({1: 5, 5: 2, 10: 1}),
@@ -2131,7 +2147,7 @@ I’ll use the term <strong>purse</strong> for a collection of coins, because it
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Purse({1: 1, 10: 1}),
- Purse({1: 1, 5: 2}),
+ Purse({5: 2, 1: 1}),
  Purse({1: 6, 5: 1}),
  Purse({1: 11})]
 </pre></div>
@@ -2220,8 +2236,8 @@ I’ll use the term <strong>purse</strong> for a collection of coins, because it
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 33.2 s, sys: 2.42 s, total: 35.7 s
-Wall time: 49.1 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 36.8 s, sys: 2.73 s, total: 39.6 s
+Wall time: 42.1 s
 </pre></div>
 </div>
 </div>
@@ -2317,7 +2333,7 @@ Wall time: 49.1 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Purse({25: 1, 1: 5})
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Purse({1: 5, 25: 1})
 </pre></div>
 </div>
 </div>
@@ -2527,56 +2543,56 @@ Wall time: 49.1 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dist({50: 1.7763568394002505e-15,
-      49: 4.440892098500626e-14,
-      48: 5.662137425588298e-13,
-      47: 4.907185768843192e-12,
-      46: 3.2510105718586146e-11,
-      45: 1.755545708803652e-10,
-      44: 8.046251165350071e-10,
-      43: 3.2185004661400285e-09,
-      42: 1.1465907910623852e-08,
-      41: 3.6945703267565744e-08,
-      40: 1.0898982463931894e-07,
-      39: 2.9724497628905167e-07,
-      38: 7.554976480680063e-07,
-      37: 1.8015713146237074e-06,
-      36: 4.053535457903342e-06,
-      35: 8.647542310193795e-06,
-      34: 1.7565320317581147e-05,
-      33: 3.409738649883399e-05,
-      32: 6.345902487282993e-05,
-      31: 0.0001135582550355904,
-      30: 0.00019588798993639344,
-      29: 0.00032647998322732244,
-      28: 0.0005268199729349975,
-      27: 0.0008245877837243439,
-      26: 0.0012540605877474397,
-      25: 0.0018560096698662107,
-      24: 0.0026769370238454962,
-      23: 0.0037675409965232907,
-      22: 0.005180368870219524,
-      21: 0.006966702963398672,
-      20: 0.009172825568474917,
-      19: 0.011835903959322474,
-      18: 0.014979815948517508,
-      17: 0.01861128648149145,
-      16: 0.022716717322996918,
-      15: 0.027260060787596296,
-      14: 0.03218201620757896,
-      13: 0.03740072153853771,
-      12: 0.04281398386648397,
-      11: 0.04830295615705883,
-      10: 0.053737038724727945,
-      9: 0.05897967664909165,
-      8: 0.06389464970318263,
-      7: 0.0683524159615442,
-      6: 0.07223607595935921,
-      5: 0.07544656822421962,
-      4: 0.0779067824054442,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dist({2: 0.08039316907795838,
+      1: 0.08039316907795838,
       3: 0.07956437352045362,
-      2: 0.08039316907795838,
-      1: 0.08039316907795838})
+      4: 0.0779067824054442,
+      5: 0.07544656822421962,
+      6: 0.07223607595935921,
+      7: 0.0683524159615442,
+      8: 0.06389464970318263,
+      9: 0.05897967664909165,
+      10: 0.053737038724727945,
+      11: 0.04830295615705883,
+      12: 0.04281398386648397,
+      13: 0.03740072153853771,
+      14: 0.03218201620757896,
+      15: 0.027260060787596296,
+      16: 0.022716717322996918,
+      17: 0.01861128648149145,
+      18: 0.014979815948517508,
+      19: 0.011835903959322474,
+      20: 0.009172825568474917,
+      21: 0.006966702963398672,
+      22: 0.005180368870219524,
+      23: 0.0037675409965232907,
+      24: 0.0026769370238454962,
+      25: 0.0018560096698662107,
+      26: 0.0012540605877474397,
+      27: 0.0008245877837243439,
+      28: 0.0005268199729349975,
+      29: 0.00032647998322732244,
+      30: 0.00019588798993639344,
+      31: 0.0001135582550355904,
+      32: 6.345902487282993e-05,
+      33: 3.409738649883399e-05,
+      34: 1.7565320317581147e-05,
+      35: 8.647542310193795e-06,
+      36: 4.053535457903342e-06,
+      37: 1.8015713146237074e-06,
+      38: 7.554976480680063e-07,
+      39: 2.9724497628905167e-07,
+      40: 1.0898982463931894e-07,
+      41: 3.6945703267565744e-08,
+      42: 1.1465907910623852e-08,
+      43: 3.2185004661400285e-09,
+      44: 8.046251165350071e-10,
+      45: 1.755545708803652e-10,
+      46: 3.2510105718586146e-11,
+      47: 4.907185768843192e-12,
+      48: 5.662137425588298e-13,
+      49: 4.440892098500626e-14,
+      50: 1.7763568394002505e-15})
 </pre></div>
 </div>
 </div>
@@ -2593,7 +2609,7 @@ Wall time: 49.1 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.958923738717876
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.958923738717877
 </pre></div>
 </div>
 </div>
@@ -2607,7 +2623,7 @@ Wall time: 49.1 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25.008494650139617
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25.00849465013961
 </pre></div>
 </div>
 </div>
@@ -2644,7 +2660,7 @@ Wall time: 49.1 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a91dffa23bf7e8ec1a3b48f7afd1a421e57d44d33cc50b7069df4fba27eb3a2a.png" src="_images/a91dffa23bf7e8ec1a3b48f7afd1a421e57d44d33cc50b7069df4fba27eb3a2a.png" />
+<img alt="_images/f2fe3207c4186e84156c2126280c7242a3f0cb18a15f6ab7e87616f74f3c9057.png" src="_images/f2fe3207c4186e84156c2126280c7242a3f0cb18a15f6ab7e87616f74f3c9057.png" />
 </div>
 </div>
 </section>
@@ -2825,10 +2841,6 @@ Wall time: 49.1 s
 </div>
 <p>That’s 45 times more work! It seems worthwhile to take the optimal approach.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="conclusion">
-<h1>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h1>
-<p>Thanks for making it all the way to the end of the notebook. I hope you’ve learned something about methods for counting things, and that you can apply them to your own problems.</p>
-</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2860,6 +2872,24 @@ Wall time: 49.1 s
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="0mathmap.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Math Map</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="math/00intro_math.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Math-FP-Lang Combo</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -2905,7 +2935,6 @@ Wall time: 49.1 s
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#variant-mean-purse-size">Variant: Mean Purse Size</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-drink-gift-cards">Problem: Drink Gift Cards</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-multiplications-in-matrix-multiplication">Counting Multiplications in Matrix Multiplication</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
 </ul>
 
   </nav></div>
