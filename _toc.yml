@@ -8,7 +8,8 @@ parts:
   chapters:
   - file: chapter0_introduction
   - file: 0mathmap
-  - file: gfunHowToCountThings
+  - file: 0HowToCountThings
+  - file: 0count
 
 - caption: Old Math
   numbered: false
