@@ -1,0 +1,1349 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Lecture: Algebra review &#8212; Tom Workbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=8dedbda2" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '0algebra';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="0intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Tom Workbook</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="0intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">OEIS &amp; SageMath</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapter0_introduction.html">Chapter 0: Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0mathmap.html">Math Map</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="0HowToCountThings.html">How to Count Things</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="0count.html">Algebraic Structure</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Old Math</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="math/00intro_math.html">Math-FP-Lang Combo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math/01number_algebra.html">Number &amp; Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math/02discrete_continuous.html">Discrete &amp; Continuous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math/03real_world.html">Real World Math</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/tomctang/oeis" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/0algebra.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lecture: Algebra review</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Lecture: Algebra review</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-algebra">What is algebra?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-algebraic-structures">Common algebraic structures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sets-endowed-with-operations">Sets endowed with operations?</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#operations">Operations</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-axioms">Properties / axioms</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-operation-algebraic-structures">Single-operation algebraic structures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-fast-exponentiation">Example: fast exponentiation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-map-reduce-paradigm">Example: Map-Reduce paradigm</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-functional-programming-and-monads">Example: functional programming and monads</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-colouring-the-faces-of-a-cube">Example: colouring the faces of a cube</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-the-rubicks-cube">Example: The Rubicks cube</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-management-of-stacks-of-t-shirts">Example: Management of stacks of T-Shirts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#semi-rings-rings-fields">Semi-Rings, Rings, Fields</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-finite-fields-gf-p">Example: finite fields <span class="math notranslate nohighlight">\(GF(p)\)</span>:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-spaces">Vector spaces</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-sets-with-operations-in-sage">Examples of sets with operations in Sage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-algebra-zoology-of-mathematics">General algebra: zoology of mathematics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#universal-algebra">Universal algebra</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#substructures">Substructures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#free-objects">Free objects</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-algebra">Linear algebra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-little-bit-of-manual-linear-algebra-in-sage">A little bit of manual linear algebra in Sage</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-planes-in-space-rr-3">Example: planes in space <span class="math notranslate nohighlight">\(\RR^3\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#echelon-form-of-a-matrix">Echelon form of a matrix</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sagemath">SageMath</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algebra">Algebra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-algebra">General Algebra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Universal Algebra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Linear algebra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computer-algebra">Computer Algebra</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-algebra-review">
+<h1>Lecture: Algebra review<a class="headerlink" href="#lecture-algebra-review" title="Link to this heading">#</a></h1>
+<p><span class="math notranslate nohighlight">\(\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}\)</span></p>
+<section id="what-is-algebra">
+<h2>What is algebra?<a class="headerlink" href="#what-is-algebra" title="Link to this heading">#</a></h2>
+<p>A founding principle of algebra is that, in order to understand a
+given object, we will not analyse it as an isolated individual, but
+study <strong>how it fits into the overall picture</strong>:</p>
+<ol class="arabic simple">
+<li><p>What is its <a class="reference external" href="https://en.wikipedia.org/wiki/Algebraic_structure">algebraic structure</a>?
+i.e. what are its basic operations and their properties (axioms)?</p></li>
+<li><p>How does it relate to other objects?</p></li>
+</ol>
+<p>Thus, for 1., rather than looking separately at real numbers, complex
+numbers, etc., we will study sets endowed with an addition and a
+multiplication, with the appropriate properties (associativity, etc.),
+and determine the general theorems which follow from them. This
+approach is very similar in nature to object oriented programming: one
+defines abstract classes (=algebraic structures), which are populated
+with generic methods (=theorems) that are valid as soon as the
+specifications (=axioms) are met. All that remains is to implement the
+basic operations (=define addition and multiplication) to use the
+generic methods on (=apply the general theorems to) the object
+studied.</p>
+<p>For 2. we will study the <em>morphisms</em> between objects –
+i.e. structure-preserving functions – and how they are composed. Here
+we come close to functional programming.</p>
+<p>Another strong idea is that <strong>the more structure there is, the more
+rigid an object is and the more the algorithms for computing with it
+are efficient</strong>.</p>
+<p>Example: dictionaries and databases</p>
+<p>All this means is that programming and doing algebra are not so far
+apart.</p>
+<p><strong>Adage of Computer Algebra:</strong> Divide and conquer</p>
+</section>
+<section id="common-algebraic-structures">
+<h2>Common algebraic structures<a class="headerlink" href="#common-algebraic-structures" title="Link to this heading">#</a></h2>
+<section id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h3>
+<p>What do you know as:</p>
+<section id="sets-endowed-with-operations">
+<h4>Sets endowed with operations?<a class="headerlink" href="#sets-endowed-with-operations" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>actual <span class="math notranslate nohighlight">\((\RR,+,*,0,1,-,/,&lt;)\)</span></p></li>
+<li><p>natural integers <span class="math notranslate nohighlight">\((\NN,+,-, *,0,1, //, =, \gt, \lt)\)</span></p></li>
+<li><p>relative integers <span class="math notranslate nohighlight">\((\ZZ,+,-, *, //)\)</span> (// integer division)</p></li>
+<li><p>rationals <span class="math notranslate nohighlight">\(\QQ\)</span> <span class="math notranslate nohighlight">\((\QQ, +, -, *, /)\)</span> (/ only if not divided by 0)</p></li>
+<li><p>complex <span class="math notranslate nohighlight">\((\CC,+,*,0,1,-,/)\)</span></p></li>
+<li><p>vectors in <span class="math notranslate nohighlight">\(\RR^3\)</span>: <span class="math notranslate nohighlight">\((\RR^3, +, -, 0, =)\)</span></p></li>
+<li><p>matrices <span class="math notranslate nohighlight">\((M_n(\RR), +, -, *, 0, Id)\)</span> where <span class="math notranslate nohighlight">\(0\)</span> is the null matrix, * is the matrix product</p></li>
+<li><p><span class="math notranslate nohighlight">\(E\)</span> the set of rational languages <span class="math notranslate nohighlight">\((., +, *, \cup, \cap, \setminus)\)</span> (not all languages are necessarily closed by <span class="math notranslate nohighlight">\(\cup, \cap, \setminus\)</span>)</p></li>
+</ul>
+</section>
+<section id="operations">
+<h4>Operations<a class="headerlink" href="#operations" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>set operations: <span class="math notranslate nohighlight">\(\cup\)</span>, etc.</p></li>
+<li><p>equality: <span class="math notranslate nohighlight">\(=\)</span>, <span class="math notranslate nohighlight">\(\neq\)</span></p></li>
+<li><p>addition: + and any derivatives: -, 0</p></li>
+<li><p>multiplication * and any derivatives: / division, neutral element 1</p></li>
+<li><p>root/exponentiation</p></li>
+<li><p>scalar product</p></li>
+<li><p>comparisons: <span class="math notranslate nohighlight">\(&lt;\)</span> and derivatives: <span class="math notranslate nohighlight">\(\leq\)</span>,  <span class="math notranslate nohighlight">\(&gt;\)</span></p></li>
+</ul>
+</section>
+<section id="properties-axioms">
+<h4>Properties / axioms<a class="headerlink" href="#properties-axioms" title="Link to this heading">#</a></h4>
+<p>Let us denote by <span class="math notranslate nohighlight">\(E\)</span> the set on which we put the structure.</p>
+<ul class="simple">
+<li><p>internal law / “stability” through operation: <span class="math notranslate nohighlight">\(\forall a, b \in E, \qquad a + b \in E\)</span></p></li>
+<li><p>closing properties</p></li>
+</ul>
+<p>Property of arithmetic operations:</p>
+<ul class="simple">
+<li><p>neutral element<span class="math notranslate nohighlight">\(e\)</span>: <span class="math notranslate nohighlight">\(\forall a \in E, \; a+e = e+a = a\)</span></p></li>
+<li><p>existence of the symmetrical: <span class="math notranslate nohighlight">\(\forall a \in E, \exists b \in E, a+b = b+a = e\)</span> (where <span class="math notranslate nohighlight">\(e\)</span> is the neutral element)</p></li>
+<li><p>commutativity: <span class="math notranslate nohighlight">\(a + b = b + a, \qquad \forall a\in E, b\in E\)</span></p></li>
+<li><p>associativity: <span class="math notranslate nohighlight">\(\forall a, b, c \in E \qquad a + (b + c) = (a + b) + c\)</span></p></li>
+<li><p>distributivity of multiplication over addition: <span class="math notranslate nohighlight">\(\forall a, b, c \in E \qquad a(b+c) = ab + ac\)</span></p></li>
+</ul>
+<p>Properties of comparison operations:</p>
+<ul class="simple">
+<li><p>Symmetry: <span class="math notranslate nohighlight">\(\forall a, b \in E, \; a = b \qquad \longleftrightarrow \qquad b=a\)</span></p></li>
+<li><p>Antisymmetry: <span class="math notranslate nohighlight">\(\forall a, b \in E, (a \leq b \wedge b \leq a) \Rightarrow a = b\)</span></p></li>
+<li><p>Reflexivity: <span class="math notranslate nohighlight">\(\forall x \in E, \; x = x\)</span></p></li>
+<li><p>Transitivity: <span class="math notranslate nohighlight">\(\forall a, b, c \in E, \; a = b \wedge b = c \Rightarrow a = c\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a-b \gt 0 \leftrightarrow a \gt b\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a \gt b \leftrightarrow b \lt a\)</span></p></li>
+<li><p>(optional) Total: <span class="math notranslate nohighlight">\(\forall a, b \in E, \qquad a \leq b \lor b \leq a\)</span></p></li>
+</ul>
+</section>
+</section>
+<section id="single-operation-algebraic-structures">
+<h3>Single-operation algebraic structures<a class="headerlink" href="#single-operation-algebraic-structures" title="Link to this heading">#</a></h3>
+<p>Let’s start at the beginning. What’s the common point between
+integers, real numbers, symmetries of a geometrical figure, the
+Rubicks Cube, or a pile of T-shirts in a wardrobe?</p>
+<p>In all cases, there is an underlying <strong>monoid</strong>. What is a monoid?</p>
+<div class="admonition-definition admonition">
+<p class="admonition-title">Definition</p>
+<p>A monoid is a **set, with an associative internal <strong>internal binary
+operation internal</strong> <span class="math notranslate nohighlight">\(.\)</span> **** with <strong>neutral element</strong> <span class="math notranslate nohighlight">\(e\)</span>.</p>
+<ul class="simple">
+<li><p>binary operation: function <span class="math notranslate nohighlight">\(E\times E -&gt; E\)</span></p></li>
+<li><p>associative: $(a . b) . c = a . (b . c) \forall a,b</p></li>
+<li><p>neutral element: <span class="math notranslate nohighlight">\(a . e = e . a = a \forall a\)</span></p></li>
+</ul>
+</div>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\((M_n(\RR), +, 0)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((\NN, +, 0)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((\ZZ, +, 0)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((\ZZ, -, 0)\)</span> : non-associative: <span class="math notranslate nohighlight">\(1 - (2 - 4) \neq (1 - 2) - 4\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((\QQ, *, 1)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((\RR, *, 1)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((E,\cup, \emptyset)\)</span> where <span class="math notranslate nohighlight">\(E\)</span> is a set of stable sets by union</p></li>
+<li><p><span class="math notranslate nohighlight">\((E,\cap, U)\)</span> where <span class="math notranslate nohighlight">\(E\)</span> is a set of sets included in some universe
+<span class="math notranslate nohighlight">\(U\)</span>, with <span class="math notranslate nohighlight">\(E\)</span> stable by intersection</p></li>
+<li><p>(B the set of Booleans, <span class="math notranslate nohighlight">\(\lor\)</span>, <span class="math notranslate nohighlight">\(\bot\)</span>)</p></li>
+<li><p><span class="math notranslate nohighlight">\((\mathcal{F}, \circ, id)\)</span> where <span class="math notranslate nohighlight">\(\mathcal{F}\)</span> is the set of
+functions and <span class="math notranslate nohighlight">\(\circ\)</span> is the composition of functions</p></li>
+<li><p><span class="math notranslate nohighlight">\((\NN, max, 0)\)</span> (Exercise: prove that max is associative)</p></li>
+<li><p><span class="math notranslate nohighlight">\((\NN \cup \{+\infty\}, min, +\infty)\)</span></p></li>
+</ul>
+</div>
+</section>
+<section id="example-fast-exponentiation">
+<h3>Example: fast exponentiation<a class="headerlink" href="#example-fast-exponentiation" title="Link to this heading">#</a></h3>
+<p>Objective: compute quickly <span class="math notranslate nohighlight">\(a^4=a*a*a*a\)</span></p>
+<p>Naive method: <span class="math notranslate nohighlight">\(a^4= ((a*a)*a)*a\)</span>
+Quick method: <span class="math notranslate nohighlight">\(a^4= (a*a)*(a*a)\)</span>
+Algorithm: <span class="math notranslate nohighlight">\(a = a*a; a = a*a\)</span></p>
+<p>Generalisation: <span class="math notranslate nohighlight">\(a^n\)</span> is calculated in <span class="math notranslate nohighlight">\(log_2(n)\)</span> operations</p>
+</section>
+<section id="example-map-reduce-paradigm">
+<h3>Example: Map-Reduce paradigm<a class="headerlink" href="#example-map-reduce-paradigm" title="Link to this heading">#</a></h3>
+<p>Objective:</p>
+<ul class="simple">
+<li><p>We have a large dataset <span class="math notranslate nohighlight">\(E\)</span>; so large that it does not fit on a
+single machine.</p></li>
+<li><p>We have an operation on this dataset that can be expressed as follows:</p>
+<ul>
+<li><p>Map: Apply a function <span class="math notranslate nohighlight">\(f\)</span> to all the elements</p></li>
+<li><p>Reduce: an associative operation that combines all the results</p></li>
+</ul>
+</li>
+<li><p>What we want to calculate: <code class="docutils literal notranslate"><span class="pre">reduce(</span> <span class="pre">f(x)</span> <span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">E</span> <span class="pre">)</span></code></p></li>
+</ul>
+<p>Silly application: count the number of elements of <span class="math notranslate nohighlight">\(E\)</span>:</p>
+<ul class="simple">
+<li><p>Map: f: x -&gt; 1</p></li>
+<li><p>Reduce: +</p></li>
+</ul>
+<p>In general: compute statistics: mean, …</p>
+<p>Application: do a search: is e in <span class="math notranslate nohighlight">\(E\)</span></p>
+<ul class="simple">
+<li><p>Map: f: x -&gt; x==e?</p></li>
+<li><p>Reduce: or</p></li>
+</ul>
+<p>More complex searches</p>
+<p>What does this have to do with associativity?</p>
+<p>It is a way to divide and conquer:</p>
+<p>If <span class="math notranslate nohighlight">\(E\)</span> is the concatenation of <span class="math notranslate nohighlight">\(E1\)</span> and <span class="math notranslate nohighlight">\(E2\)</span> then:</p>
+<p><code class="docutils literal notranslate"><span class="pre">reduce(</span> <span class="pre">reduce(f(x)</span> <span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">E1),</span> <span class="pre">reduce(f(x)</span> <span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">E2)</span> <span class="pre">)</span></code></p>
+<p>With commutativity, we can cut <span class="math notranslate nohighlight">\(E\)</span> in half in any way we like.</p>
+</section>
+<section id="example-functional-programming-and-monads">
+<h3>Example: functional programming and monads<a class="headerlink" href="#example-functional-programming-and-monads" title="Link to this heading">#</a></h3>
+</section>
+<section id="example-colouring-the-faces-of-a-cube">
+<h3>Example: colouring the faces of a cube<a class="headerlink" href="#example-colouring-the-faces-of-a-cube" title="Link to this heading">#</a></h3>
+<div class="admonition-problem admonition">
+<p class="admonition-title">Problem</p>
+<p>In how many different ways can you colour the faces of a cube?</p>
+</div>
+<p>Let’s move on to symmetries: you have long known that, to solve a
+problem efficiently, it is good to study and exploit symmetries:
+i.e. the set of transformations that do not change the problem.</p>
+<p>When you have two symmetries, you can compose them; the result is
+always a symmetry. The composition is associative. Doing nothing is a
+symmetry. The set of symmetries with composition is therefore a
+monoid.</p>
+<p>In fact, we have more than that: the application of a symmetry is a
+reversible operation: it can be inversed.</p>
+<p>We have a <strong>group</strong>: a monoid where every element has an inverse.</p>
+<p>We have algorithms that allow us to calculate with very large groups,
+even of size factorial(1000).</p>
+<p>For a given problem, we will consider all its symmetries</p>
+</section>
+<section id="example-the-rubicks-cube">
+<h3>Example: The Rubicks cube<a class="headerlink" href="#example-the-rubicks-cube" title="Link to this heading">#</a></h3>
+<p>Which set, equipped with which operation underpins the Rubicks cube?</p>
+<p>What’s interesting is not so much the possible configurations of the
+Rubicks cube, but the transformations that can be applied on it:
+rotating a face, rotating the cube, and above all composing these
+transformations. What is studied is the set of all the transformations
+that can be obtained by composition of elementary transformations; the
+operation is the composition. The neutral element is to do nothing.</p>
+<p>Again, this is a group.</p>
+</section>
+<section id="example-management-of-stacks-of-t-shirts">
+<h3>Example: Management of stacks of T-Shirts<a class="headerlink" href="#example-management-of-stacks-of-t-shirts" title="Link to this heading">#</a></h3>
+<p>Basic operations: take the i-th T-Shirt and put it on top (this is not
+reversible!)</p>
+<p>Monoid of all operations obtained by composition.</p>
+<p>It has good order-theoretical properties (it is so-called R-trivial).
+This yields theorems and algorithms to analyse the evolution of the
+system. With nice combinatorics.</p>
+</section>
+<section id="semi-rings-rings-fields">
+<h3>Semi-Rings, Rings, Fields<a class="headerlink" href="#semi-rings-rings-fields" title="Link to this heading">#</a></h3>
+<p>TODO: explain the construction of the usual sets by equivalence/quotient relations:
+the smallest set that … we want such a property; we proceed like this …</p>
+<p><span class="math notranslate nohighlight">\((\NN, +,*)\)</span>: associativity of + and *, commutativity of + and *,
+distributivity of + over *, 0 neutral element of +, 1 neutral element
+of *.</p>
+<p>It is a <strong>semi-ring</strong>.</p>
+<p><span class="math notranslate nohighlight">\((\ZZ, +,*)\)</span>: as <span class="math notranslate nohighlight">\(\NN\)</span>, but with opposites (inverse for subtraction)</p>
+<p>It is a <strong>ring</strong>.</p>
+<p><span class="math notranslate nohighlight">\((\QQ, +, *)\)</span>: why rationals were invented: it is the smallest
+containing set <span class="math notranslate nohighlight">\(\ZZ\)</span> and stable by division: existence of inverse for
+everyone except <span class="math notranslate nohighlight">\(0\)</span>.</p>
+<p>It is a <strong>field</strong>.</p>
+<p><span class="math notranslate nohighlight">\((\RR,+,*)\)</span>: <strong>complete field</strong>: property of limits of Cauchy
+sequences; here we go to the analysis side. Less useful for us. But
+there are other complete fields that are very relevant for exact
+calculation (<span class="math notranslate nohighlight">\(p\)</span>-adic numbers). And then there are very few real
+numbers that can be represented on a machine.</p>
+<p><span class="math notranslate nohighlight">\((\CC,+,*)\)</span> <strong>algebraically closed field</strong>: we want to have the roots
+of any number. More generally: every polynomial has a root. Same
+defect as for <span class="math notranslate nohighlight">\(\RR\)</span>.</p>
+<p>In practice, we will calculate with smaller fields, obtained by
+extensions of <span class="math notranslate nohighlight">\(\QQ\)</span> to add just the elements we need for our
+calculation. For example <span class="math notranslate nohighlight">\(\QQ[\sqrt(2)]\)</span>.</p>
+</section>
+<section id="example-finite-fields-gf-p">
+<h3>Example: finite fields <span class="math notranslate nohighlight">\(GF(p)\)</span>:<a class="headerlink" href="#example-finite-fields-gf-p" title="Link to this heading">#</a></h3>
+<p>Let’s take <span class="math notranslate nohighlight">\(p=5\)</span> (or more generally a prime number). We will construct
+the integers modulo <span class="math notranslate nohighlight">\(p\)</span> and endow it with a field structure.</p>
+<p>Consider the equivalence relation <span class="math notranslate nohighlight">\(x\sim y\)</span> if <span class="math notranslate nohighlight">\(y-x \mod p =0\)</span>. For
+<span class="math notranslate nohighlight">\(x\in \ZZ\)</span>, we denote by <span class="math notranslate nohighlight">\(\overline x= \{y, y-x \mod p = 0\}\)</span> the
+equivalence class of <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>Example: <span class="math notranslate nohighlight">\(\overline{4} = \{ ... -1, 4, 9, 14, ... \}\)</span></p>
+<p>Let <span class="math notranslate nohighlight">\(E=\ZZ/p\ZZ\)</span> be the set of the equivalence classes:</p>
+<div class="math notranslate nohighlight">
+\[E=\{\overline{0},\overline{1},\overline{2},\overline{3},\overline{4}\}\]</div>
+<p>We define the operations + and * on <span class="math notranslate nohighlight">\(E\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[\overline{x} + \overline{y} = \overline{x+y}\]</div>
+<div class="math notranslate nohighlight">
+\[\overline{x} * \overline{y} = \overline{x*y}\]</div>
+<p>and the same for the other operations (-, …)</p>
+<p>Miracle: the result does not depend on the choice of representatives
+<span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>. The operations are well defined. In addition, all the
+properties of <span class="math notranslate nohighlight">\(\ZZ\)</span> (associativity, etc.) remain valid. The result is
+a ring.</p>
+<p>Example: (without using bars to lighten the notations)</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>+</p></th>
+<th class="head"><p>0</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>4</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>4</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>*</p></th>
+<th class="head"><p>0</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>4</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>4</p></td>
+<td><p>1</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>0</p></td>
+<td><p>3</p></td>
+<td><p>1</p></td>
+<td><p>4</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>0</p></td>
+<td><p>4</p></td>
+<td><p>3</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>x</p></th>
+<th class="head"><p>0</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>4</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1/x</p></td>
+<td><p>ND</p></td>
+<td><p>1</p></td>
+<td><p>3</p></td>
+<td><p>2</p></td>
+<td><p>4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>It can be seen that all elements except <span class="math notranslate nohighlight">\(0\)</span> admit an inverse. As a
+result, <span class="math notranslate nohighlight">\(E\)</span> is a field. And it’s finite.</p>
+<p>Because they are finite, these fields and their generalisations can be
+represented very naturally on a computer. They will play an essential
+role in error correcting codes, cryptography, etc., as well as for
+computing in general.</p>
+</section>
+<section id="vector-spaces">
+<h3>Vector spaces<a class="headerlink" href="#vector-spaces" title="Link to this heading">#</a></h3>
+</section>
+<section id="examples-of-sets-with-operations-in-sage">
+<h3>Examples of sets with operations in Sage<a class="headerlink" href="#examples-of-sets-with-operations-in-sage" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="n">ZZ</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="n">K</span> <span class="o">=</span> <span class="n">GF</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="n">K</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="n">K</span><span class="o">.</span><span class="n">category</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="general-algebra-zoology-of-mathematics">
+<h3>General algebra: zoology of mathematics<a class="headerlink" href="#general-algebra-zoology-of-mathematics" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://github.com/OpenDreamKit/OpenDreamKit/raw/master/ReportingPeriod2/ReviewPresentations/Pictures/sage-category-graph.pdf">Algebraic structures in SageMath</a></p>
+</section>
+</section>
+<section id="universal-algebra">
+<h2>Universal algebra<a class="headerlink" href="#universal-algebra" title="Link to this heading">#</a></h2>
+<p><strong>Adage:</strong> treat all algebraic structures uniformly</p>
+<section id="substructures">
+<h3>Substructures<a class="headerlink" href="#substructures" title="Link to this heading">#</a></h3>
+<p>How to define them?</p>
+<p>How to describe them?</p>
+</section>
+<section id="free-objects">
+<h3>Free objects<a class="headerlink" href="#free-objects" title="Link to this heading">#</a></h3>
+</section>
+</section>
+<section id="linear-algebra">
+<h2>Linear algebra<a class="headerlink" href="#linear-algebra" title="Link to this heading">#</a></h2>
+</section>
+<section id="motivation">
+<h2>Motivation<a class="headerlink" href="#motivation" title="Link to this heading">#</a></h2>
+<p>Consider the following vectors:
+$<span class="math notranslate nohighlight">\((0, 0, 3, 1, 4), (3, 1, 4, 2, 1), (4, 3, 2, 1, 3)\)</span>$</p>
+<p>We wish to determine whether the following vectors are linear
+combinations of the previous ones:</p>
+<div class="math notranslate nohighlight">
+\[ u = (1,2,4,1,0) \qquad v = (2,1,4,0,1)\]</div>
+<p>We will continue in Sage. Look at the worksheet included in the assignment.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="a-little-bit-of-manual-linear-algebra-in-sage">
+<h1>A little bit of manual linear algebra in Sage<a class="headerlink" href="#a-little-bit-of-manual-linear-algebra-in-sage" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="n">K</span> <span class="o">=</span> <span class="n">GF</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="n">K</span><span class="o">.</span><span class="n">cardinality</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="n">K</span><span class="o">.</span><span class="n">category</span><span class="p">()</span><span class="o">.</span><span class="n">axioms</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">display</span> <span class="n">latex</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let us define a matrix, seen as a collection of row vectors:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]]);</span> <span class="n">M</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="n">v0</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">v1</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">v2</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And let’s take two vectors:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="n">u</span> <span class="o">=</span> <span class="n">vector</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">vector</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Problem:</strong>
+Is <span class="math notranslate nohighlight">\(u\)</span> in the vector subspace generated by v0,v1,v2?</p>
+<p>In other words: can we find <span class="math notranslate nohighlight">\(a0,a1,a2\)</span> so that:</p>
+<div class="math notranslate nohighlight">
+\[ u = a0 v0 + a1 v1 + a2 v2 \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="n">M</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="n">u</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Find <span class="math notranslate nohighlight">\(a0,a1,a2\)</span> so that:</p>
+<ul class="simple">
+<li><p>1 = a0*0 + a1 *3 + a2 * 4</p></li>
+<li><p>…</p></li>
+<li><p>…</p></li>
+</ul>
+<p>Let’s put our matrix into <strong>echelon form</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="n">M</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">M</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="n">M</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="n">M</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="n">M</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="n">M</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="n">M</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="n">M</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">K</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="n">M</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">*</span><span class="n">M</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="n">M</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="n">u</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">M</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>a0 M[0] + a1 M[1] + a2 M[2]  =  u</p>
+<p>Equations:</p>
+<ul class="simple">
+<li><p>a0      = 1</p></li>
+<li><p>2*a0      = 2</p></li>
+<li><p>3<em>a0+3</em>a1 = 4</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="n">M</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">K</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="n">M</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">K</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="n">M</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">M</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="n">M</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="n">u</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>a0 M[0] + a1 M[1] + a2 M[2]  =  u</p>
+<p>Equations:</p>
+<ul class="simple">
+<li><p>a0 = 1</p></li>
+<li><p>2*a0 = 2</p></li>
+<li><p>a1 = 4</p></li>
+<li><p>3a0+2a1=1</p></li>
+<li><p>3a0+3a1=0</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="n">K</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="n">u</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">M</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><span class="math notranslate nohighlight">\(M\)</span> is said to be in reduced echelon form</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sage notranslate"><div class="highlight"><pre><span></span><span class="n">M</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notion of a good matrix: in reduced echelon form
+Algorithm to obtain a matrix in echelon form
+from any matrix.</p>
+<section id="example-planes-in-space-rr-3">
+<h2>Example: planes in space <span class="math notranslate nohighlight">\(\RR^3\)</span><a class="headerlink" href="#example-planes-in-space-rr-3" title="Link to this heading">#</a></h2>
+</section>
+<section id="echelon-form-of-a-matrix">
+<h2>Echelon form of a matrix<a class="headerlink" href="#echelon-form-of-a-matrix" title="Link to this heading">#</a></h2>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="summary">
+<h1>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h1>
+<section id="sagemath">
+<h2>SageMath<a class="headerlink" href="#sagemath" title="Link to this heading">#</a></h2>
+<p>Free software for mathematical calculation based on Python</p>
+</section>
+<section id="algebra">
+<h2>Algebra<a class="headerlink" href="#algebra" title="Link to this heading">#</a></h2>
+<p><strong>Adage</strong>: understanding an object by studying how it fits into the
+panorama:</p>
+<ol class="arabic simple">
+<li><p>What is its <a class="reference external" href="https://fr.wikipedia.org/wiki/Structure_alg%C3%A9brique">algebraic
+structure</a>?
+i.e. what are its basic operations and their properties (axioms)?</p></li>
+<li><p>How does it relate to other objects?</p></li>
+</ol>
+</section>
+<section id="general-algebra">
+<h2>General Algebra<a class="headerlink" href="#general-algebra" title="Link to this heading">#</a></h2>
+<p>Zoology of algebraic structures in maths: monoids, groups, rings,
+fields, vector spaces, …</p>
+</section>
+<section id="id1">
+<h2>Universal Algebra<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p><strong>Adage:</strong> treat all algebraic structures uniformly</p>
+</section>
+<section id="id2">
+<h2>Linear algebra<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+</section>
+<section id="computer-algebra">
+<h2>Computer Algebra<a class="headerlink" href="#computer-algebra" title="Link to this heading">#</a></h2>
+<p><strong>Adages</strong>:</p>
+<ul class="simple">
+<li><p>Divide and conquer</p></li>
+<li><p>Elimination methods</p></li>
+<li><p>Evaluation methods and changes of representation</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "sagemath"
+        },
+        kernelOptions: {
+            name: "sagemath",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'sagemath'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Lecture: Algebra review</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-algebra">What is algebra?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-algebraic-structures">Common algebraic structures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sets-endowed-with-operations">Sets endowed with operations?</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#operations">Operations</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-axioms">Properties / axioms</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-operation-algebraic-structures">Single-operation algebraic structures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-fast-exponentiation">Example: fast exponentiation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-map-reduce-paradigm">Example: Map-Reduce paradigm</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-functional-programming-and-monads">Example: functional programming and monads</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-colouring-the-faces-of-a-cube">Example: colouring the faces of a cube</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-the-rubicks-cube">Example: The Rubicks cube</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-management-of-stacks-of-t-shirts">Example: Management of stacks of T-Shirts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#semi-rings-rings-fields">Semi-Rings, Rings, Fields</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-finite-fields-gf-p">Example: finite fields <span class="math notranslate nohighlight">\(GF(p)\)</span>:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-spaces">Vector spaces</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-sets-with-operations-in-sage">Examples of sets with operations in Sage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-algebra-zoology-of-mathematics">General algebra: zoology of mathematics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#universal-algebra">Universal algebra</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#substructures">Substructures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#free-objects">Free objects</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-algebra">Linear algebra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-little-bit-of-manual-linear-algebra-in-sage">A little bit of manual linear algebra in Sage</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-planes-in-space-rr-3">Example: planes in space <span class="math notranslate nohighlight">\(\RR^3\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#echelon-form-of-a-matrix">Echelon form of a matrix</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sagemath">SageMath</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algebra">Algebra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-algebra">General Algebra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Universal Algebra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Linear algebra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computer-algebra">Computer Algebra</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Tom Tang
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
