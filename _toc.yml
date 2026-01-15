@@ -9,7 +9,7 @@ parts:
   - file: chapter0_introduction
   - file: 0mathmap
   - file: 0HowToCountThings
-  - file: 0count
+  - file: 111c
 
 - caption: Old Math
   numbered: false
