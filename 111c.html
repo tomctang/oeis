@@ -509,28 +509,28 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Twelvefold Way in SageMath (fixed n balls, k boxes)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Twelvefold Way in SageMath (n balls --&gt; k boxes)</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">TF_distinctBalls_labeledBoxes</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span> <span class="c1">#     Balls distinct/labeled, boxes labeled.</span>
-    <span class="nb">any</span> <span class="o">=</span> <span class="n">k</span><span class="o">^</span><span class="n">n</span>                                                    <span class="c1"># k^n , unrestricted</span>
-    <span class="n">inj</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="n">k</span> <span class="k">else</span> <span class="n">factorial</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">//</span> <span class="n">factorial</span><span class="p">(</span><span class="n">k</span> <span class="o">-</span> <span class="n">n</span><span class="p">)</span>      <span class="c1"># (k)_n</span>
-    <span class="n">sur</span> <span class="o">=</span> <span class="n">factorial</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">stirling_number2</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>                  <span class="c1"># k! S(n,k)</span>
+    <span class="nb">any</span> <span class="o">=</span> <span class="n">k</span><span class="o">^</span><span class="n">n</span>                                                 <span class="c1"># k^n , unrestricted</span>
+    <span class="n">inj</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="n">k</span> <span class="k">else</span> <span class="n">factorial</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">//</span> <span class="n">factorial</span><span class="p">(</span><span class="n">k</span> <span class="o">-</span> <span class="n">n</span><span class="p">)</span>    <span class="c1"># (k)_n, falling_factorial(k,n)</span>
+    <span class="n">sur</span> <span class="o">=</span> <span class="n">factorial</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">stirling_number2</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>               <span class="c1"># k! S(n,k)</span>
+    <span class="k">return</span> <span class="nb">any</span><span class="p">,</span> <span class="n">inj</span><span class="p">,</span> <span class="n">sur</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">TF_identicalBalls_labeledBoxes</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span> <span class="c1"># Occupancy is vector</span>
+    <span class="nb">any</span> <span class="o">=</span> <span class="n">binomial</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>              <span class="c1"># xi&gt;=0, sum=n -&gt; stars and bars C(n+k-1,k-1)</span>
+    <span class="n">inj</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="n">k</span> <span class="k">else</span> <span class="n">binomial</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>          <span class="c1"># xi in {0,1}, sum=n -&gt; choose n boxes</span>
+    <span class="n">sur</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="n">k</span> <span class="k">else</span> <span class="n">binomial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># xi&gt;=1, sum=n -&gt; compositions count C(n-1,k-1)</span>
     <span class="k">return</span> <span class="nb">any</span><span class="p">,</span> <span class="n">inj</span><span class="p">,</span> <span class="n">sur</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">TF_distinctBalls_unlabeledBoxes</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span> <span class="c1">#   Balls distinct, boxes unlabeled/identical</span>
     <span class="nb">any</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">stirling_number2</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># set partitions into &lt;= k blocks -&gt; sum_{i=0..k} S(n,i)</span>
-    <span class="n">inj</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="n">k</span> <span class="k">else</span> <span class="mi">0</span>    <span class="c1"># all balls separated (possible iff n&lt;=k)</span>
+    <span class="n">inj</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="n">k</span> <span class="k">else</span> <span class="mi">0</span>     <span class="c1"># all balls separated (possible iff n&lt;=k)</span>
     <span class="n">sur</span> <span class="o">=</span> <span class="n">stirling_number2</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="c1"># set partitions into exactly k blocks -&gt; S(n,k)</span>
-    <span class="k">return</span> <span class="nb">any</span><span class="p">,</span> <span class="n">inj</span><span class="p">,</span> <span class="n">sur</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">TF_identicalBalls_labeledBoxes</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span> <span class="c1"># Occupancy is vector</span>
-    <span class="nb">any</span> <span class="o">=</span> <span class="n">binomial</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># xi&gt;=0, sum=n -&gt; stars and bars C(n+k-1,k-1)</span>
-    <span class="n">inj</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="n">k</span> <span class="k">else</span> <span class="n">binomial</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>   <span class="c1"># xi in {0,1}, sum=n -&gt; choose n boxes</span>
-    <span class="n">sur</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="n">k</span> <span class="k">else</span> <span class="n">binomial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># xi&gt;=1, sum=n -&gt; compositions count C(n-1,k-1)</span>
     <span class="k">return</span> <span class="nb">any</span><span class="p">,</span> <span class="n">inj</span><span class="p">,</span> <span class="n">sur</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">TF_identicalBalls_unlabeledBoxes</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span> <span class="c1"># Occupancy is a partition (multiset of block sizes)</span>
     <span class="nb">any</span> <span class="o">=</span> <span class="n">Partitions</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">cardinality</span><span class="p">()</span>  <span class="c1"># partitions of n into &lt;= k parts -&gt; p_{&lt;=k}(n)</span>
-    <span class="n">inj</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="n">k</span> <span class="k">else</span> <span class="mi">0</span>  <span class="c1"># pattern is 1+...+1 (n ones) (possible iff n&lt;=k)</span>
+    <span class="n">inj</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="n">k</span> <span class="k">else</span> <span class="mi">0</span>                         <span class="c1"># pattern is 1+...+1 (n ones) (possible iff n&lt;=k)</span>
     <span class="n">sur</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="n">k</span> <span class="k">else</span> <span class="n">Partitions</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">cardinality</span><span class="p">()</span> <span class="c1"># partitions of n into k positive parts -&gt; p_k(n)</span>
     <span class="k">return</span> <span class="nb">any</span><span class="p">,</span> <span class="n">inj</span><span class="p">,</span> <span class="n">sur</span>
 
@@ -595,22 +595,9 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Claude made</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">twelvefold_way_table</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
-<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Compute all twelve cases of the twelvefold way for n balls and k boxes.</span>
-<span class="sd">    </span>
-<span class="sd">    INPUT:</span>
-<span class="sd">    - n -- number of balls</span>
-<span class="sd">    - k -- number of boxes</span>
-<span class="sd">    </span>
-<span class="sd">    OUTPUT:</span>
-<span class="sd">    Dictionary containing all twelve cases with their counts</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    
+<span class="k">def</span><span class="w"> </span><span class="nf">twelvefold_way_table</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span> <span class="c1"># n -- number of balls ;  k -- number of boxes</span>
     <span class="n">results</span> <span class="o">=</span> <span class="p">{}</span>
-    
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;=== THE TWELVEFOLD WAY: </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> balls, </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2"> boxes ===</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-    
     <span class="c1"># ========================================</span>
     <span class="c1"># CASE 1: Distinguishable balls, Distinguishable boxes, Any number</span>
     <span class="c1"># Formula: k^n</span>
@@ -856,6 +843,293 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
 <span class="c1"># Example 3: Equal balls and boxes</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;EXAMPLE 3: Equal balls and boxes</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="n">create_summary_table</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>EXAMPLE 1: Small case
+
+=== THE TWELVEFOLD WAY: 4 balls, 3 boxes ===
+
+Case 1: Distinguishable balls → Distinguishable boxes (unrestricted)
+  Formula: k^n = 3^4 = 81
+  Interpretation: Functions from n-set to k-set
+
+Case 2: Distinguishable balls → Distinguishable boxes (injective)
+  Formula: k!/(k-n)! = P(k,n)
+  Value: 0
+  Interpretation: Injective functions (permutations)
+
+Case 3: Distinguishable balls → Distinguishable boxes (surjective)
+  Formula: k! × S(n,k)
+  Value: 36
+  Interpretation: Surjective functions (onto)
+
+Case 4: Distinguishable balls → Indistinguishable boxes (unrestricted)
+  Formula: B_n (Bell number)
+  Value: 15
+  Interpretation: Set partitions of n elements
+
+Case 5: Distinguishable balls → Indistinguishable boxes (injective)
+  Formula: 1 if n≤k, else 0
+  Value: 0
+  Interpretation: At most one ball per box
+
+Case 6: Distinguishable balls → Indistinguishable boxes (surjective)
+  Formula: S(n,k) (Stirling number of 2nd kind)
+  Value: 6
+  Interpretation: Partitions of n-set into k non-empty subsets
+
+Case 7: Indistinguishable balls → Distinguishable boxes (unrestricted)
+  Formula: C(n+k-1, n)
+  Value: 15
+  Interpretation: Multisets of size n from k elements
+
+Case 8: Indistinguishable balls → Distinguishable boxes (injective)
+  Formula: C(k,n) if n≤k
+  Value: 0
+  Interpretation: n-subsets of k-set
+
+Case 9: Indistinguishable balls → Distinguishable boxes (surjective)
+  Formula: C(n-1, k-1) if n≥k
+  Value: 3
+  Interpretation: Compositions of n into k positive parts
+
+Case 10: Indistinguishable balls → Indistinguishable boxes (unrestricted)
+  Formula: p(n,k) - partitions of n into ≤k parts
+  Value: 4
+  Interpretation: Integer partitions
+
+Case 11: Indistinguishable balls → Indistinguishable boxes (injective)
+  Formula: 1 if n≤k, else 0
+  Value: 0
+  Interpretation: At most one ball per box
+
+Case 12: Indistinguishable balls → Indistinguishable boxes (surjective)
+  Formula: p_k(n) - partitions of n into exactly k parts
+  Value: 1
+  Interpretation: Integer partitions of n into k parts
+
+
+================================================================================
+SUMMARY TABLE
+================================================================================
+Case   Balls              Boxes              Restriction     Count     
+--------------------------------------------------------------------------------
+1      Distinguishable    Distinguishable    Any             81        
+2      Distinguishable    Distinguishable    Injective       0         
+3      Distinguishable    Distinguishable    Surjective      36        
+4      Distinguishable    Indistinguishable  Any             15        
+5      Distinguishable    Indistinguishable  Injective       0         
+6      Distinguishable    Indistinguishable  Surjective      6         
+7      Indistinguishable  Distinguishable    Any             15        
+8      Indistinguishable  Distinguishable    Injective       0         
+9      Indistinguishable  Distinguishable    Surjective      3         
+10     Indistinguishable  Indistinguishable  Any             4         
+11     Indistinguishable  Indistinguishable  Injective       0         
+12     Indistinguishable  Indistinguishable  Surjective      1         
+================================================================================
+
+
+=== DETAILED EXAMPLES for n=4, k=3 ===
+
+Case 6 Example: Partitions of set {1,...,4} into 3 non-empty subsets:
+  Count: 6 = S(4,3)
+  Partitions:
+    {{1, 4}, {2}, {3}}
+    {{1}, {2, 4}, {3}}
+    {{1}, {2}, {3, 4}}
+    {{1, 3}, {2}, {4}}
+    {{1}, {2, 3}, {4}}
+    {{1, 2}, {3}, {4}}
+
+Case 10 Example: Integer partitions of 4 with at most 3 parts:
+  Count: 4
+  Partitions:
+    [4]
+    [3, 1]
+    [2, 2]
+    [2, 1, 1]
+
+Case 12 Example: Integer partitions of 4 into exactly 3 parts:
+  Count: 1
+  Partitions:
+    [2, 1, 1]
+
+
+
+################################################################################
+
+
+EXAMPLE 2: Larger case
+
+=== THE TWELVEFOLD WAY: 7 balls, 5 boxes ===
+
+Case 1: Distinguishable balls → Distinguishable boxes (unrestricted)
+  Formula: k^n = 5^7 = 78125
+  Interpretation: Functions from n-set to k-set
+
+Case 2: Distinguishable balls → Distinguishable boxes (injective)
+  Formula: k!/(k-n)! = P(k,n)
+  Value: 0
+  Interpretation: Injective functions (permutations)
+
+Case 3: Distinguishable balls → Distinguishable boxes (surjective)
+  Formula: k! × S(n,k)
+  Value: 16800
+  Interpretation: Surjective functions (onto)
+
+Case 4: Distinguishable balls → Indistinguishable boxes (unrestricted)
+  Formula: B_n (Bell number)
+  Value: 877
+  Interpretation: Set partitions of n elements
+
+Case 5: Distinguishable balls → Indistinguishable boxes (injective)
+  Formula: 1 if n≤k, else 0
+  Value: 0
+  Interpretation: At most one ball per box
+
+Case 6: Distinguishable balls → Indistinguishable boxes (surjective)
+  Formula: S(n,k) (Stirling number of 2nd kind)
+  Value: 140
+  Interpretation: Partitions of n-set into k non-empty subsets
+
+Case 7: Indistinguishable balls → Distinguishable boxes (unrestricted)
+  Formula: C(n+k-1, n)
+  Value: 330
+  Interpretation: Multisets of size n from k elements
+
+Case 8: Indistinguishable balls → Distinguishable boxes (injective)
+  Formula: C(k,n) if n≤k
+  Value: 0
+  Interpretation: n-subsets of k-set
+
+Case 9: Indistinguishable balls → Distinguishable boxes (surjective)
+  Formula: C(n-1, k-1) if n≥k
+  Value: 15
+  Interpretation: Compositions of n into k positive parts
+
+Case 10: Indistinguishable balls → Indistinguishable boxes (unrestricted)
+  Formula: p(n,k) - partitions of n into ≤k parts
+  Value: 13
+  Interpretation: Integer partitions
+
+Case 11: Indistinguishable balls → Indistinguishable boxes (injective)
+  Formula: 1 if n≤k, else 0
+  Value: 0
+  Interpretation: At most one ball per box
+
+Case 12: Indistinguishable balls → Indistinguishable boxes (surjective)
+  Formula: p_k(n) - partitions of n into exactly k parts
+  Value: 2
+  Interpretation: Integer partitions of n into k parts
+
+
+================================================================================
+SUMMARY TABLE
+================================================================================
+Case   Balls              Boxes              Restriction     Count     
+--------------------------------------------------------------------------------
+1      Distinguishable    Distinguishable    Any             78125     
+2      Distinguishable    Distinguishable    Injective       0         
+3      Distinguishable    Distinguishable    Surjective      16800     
+4      Distinguishable    Indistinguishable  Any             877       
+5      Distinguishable    Indistinguishable  Injective       0         
+6      Distinguishable    Indistinguishable  Surjective      140       
+7      Indistinguishable  Distinguishable    Any             330       
+8      Indistinguishable  Distinguishable    Injective       0         
+9      Indistinguishable  Distinguishable    Surjective      15        
+10     Indistinguishable  Indistinguishable  Any             13        
+11     Indistinguishable  Indistinguishable  Injective       0         
+12     Indistinguishable  Indistinguishable  Surjective      2         
+================================================================================
+
+
+################################################################################
+
+
+EXAMPLE 3: Equal balls and boxes
+
+=== THE TWELVEFOLD WAY: 5 balls, 5 boxes ===
+
+Case 1: Distinguishable balls → Distinguishable boxes (unrestricted)
+  Formula: k^n = 5^5 = 3125
+  Interpretation: Functions from n-set to k-set
+
+Case 2: Distinguishable balls → Distinguishable boxes (injective)
+  Formula: k!/(k-n)! = P(k,n)
+  Value: 120
+  Interpretation: Injective functions (permutations)
+
+Case 3: Distinguishable balls → Distinguishable boxes (surjective)
+  Formula: k! × S(n,k)
+  Value: 120
+  Interpretation: Surjective functions (onto)
+
+Case 4: Distinguishable balls → Indistinguishable boxes (unrestricted)
+  Formula: B_n (Bell number)
+  Value: 52
+  Interpretation: Set partitions of n elements
+
+Case 5: Distinguishable balls → Indistinguishable boxes (injective)
+  Formula: 1 if n≤k, else 0
+  Value: 1
+  Interpretation: At most one ball per box
+
+Case 6: Distinguishable balls → Indistinguishable boxes (surjective)
+  Formula: S(n,k) (Stirling number of 2nd kind)
+  Value: 1
+  Interpretation: Partitions of n-set into k non-empty subsets
+
+Case 7: Indistinguishable balls → Distinguishable boxes (unrestricted)
+  Formula: C(n+k-1, n)
+  Value: 126
+  Interpretation: Multisets of size n from k elements
+
+Case 8: Indistinguishable balls → Distinguishable boxes (injective)
+  Formula: C(k,n) if n≤k
+  Value: 1
+  Interpretation: n-subsets of k-set
+
+Case 9: Indistinguishable balls → Distinguishable boxes (surjective)
+  Formula: C(n-1, k-1) if n≥k
+  Value: 1
+  Interpretation: Compositions of n into k positive parts
+
+Case 10: Indistinguishable balls → Indistinguishable boxes (unrestricted)
+  Formula: p(n,k) - partitions of n into ≤k parts
+  Value: 7
+  Interpretation: Integer partitions
+
+Case 11: Indistinguishable balls → Indistinguishable boxes (injective)
+  Formula: 1 if n≤k, else 0
+  Value: 1
+  Interpretation: At most one ball per box
+
+Case 12: Indistinguishable balls → Indistinguishable boxes (surjective)
+  Formula: p_k(n) - partitions of n into exactly k parts
+  Value: 1
+  Interpretation: Integer partitions of n into k parts
+
+
+================================================================================
+SUMMARY TABLE
+================================================================================
+Case   Balls              Boxes              Restriction     Count     
+--------------------------------------------------------------------------------
+1      Distinguishable    Distinguishable    Any             3125      
+2      Distinguishable    Distinguishable    Injective       120       
+3      Distinguishable    Distinguishable    Surjective      120       
+4      Distinguishable    Indistinguishable  Any             52        
+5      Distinguishable    Indistinguishable  Injective       1         
+6      Distinguishable    Indistinguishable  Surjective      1         
+7      Indistinguishable  Distinguishable    Any             126       
+8      Indistinguishable  Distinguishable    Injective       1         
+9      Indistinguishable  Distinguishable    Surjective      1         
+10     Indistinguishable  Indistinguishable  Any             7         
+11     Indistinguishable  Indistinguishable  Injective       1         
+12     Indistinguishable  Indistinguishable  Surjective      1         
+================================================================================
 </pre></div>
 </div>
 </div>
