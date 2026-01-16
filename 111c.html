@@ -630,12 +630,10 @@ S(n,k)=kS(n-1,k)+S(n-1,k-1)</p></li>
     <span class="n">ib_ub</span> <span class="o">=</span> <span class="n">TF_identicalBalls_unlabeledBoxes</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Twelvefold way (&quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="s2">&quot;balls, &quot;</span><span class="p">,</span><span class="n">k</span><span class="p">,</span> <span class="s2">&quot;boxes) with capacity rule:&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; Any = unrestricted;  Inj = at most 1 per box;  Sur = no empty box&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1) Balls distinct,  Boxes labeled:   Any:&quot;</span><span class="p">,</span> <span class="n">db_lb</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;  Inj:&quot;</span><span class="p">,</span> <span class="n">db_lb</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;  Sur:&quot;</span><span class="p">,</span> <span class="n">db_lb</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2) Balls distinct,  Boxes unlabeled: Any:&quot;</span><span class="p">,</span> <span class="n">db_ub</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;  Inj:&quot;</span><span class="p">,</span> <span class="n">db_ub</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;  Sur:&quot;</span><span class="p">,</span> <span class="n">db_ub</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3) Balls identical, Boxes labeled:   Any:&quot;</span><span class="p">,</span> <span class="n">ib_lb</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;  Inj:&quot;</span><span class="p">,</span> <span class="n">ib_lb</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;  Sur:&quot;</span><span class="p">,</span> <span class="n">ib_lb</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;4) Balls identical, Boxes unlabeled: Any:&quot;</span><span class="p">,</span> <span class="n">ib_ub</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;  Inj:&quot;</span><span class="p">,</span> <span class="n">ib_ub</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;  Sur:&quot;</span><span class="p">,</span> <span class="n">ib_ub</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1) Balls labeled,   Boxes labeled:   Any:&quot;</span><span class="p">,</span> <span class="n">db_lb</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;  Inj:&quot;</span><span class="p">,</span> <span class="n">db_lb</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;  Sur:&quot;</span><span class="p">,</span> <span class="n">db_lb</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2) Balls labeled,   Boxes unlabeled: Any:&quot;</span><span class="p">,</span> <span class="n">db_ub</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;  Inj:&quot;</span><span class="p">,</span> <span class="n">db_ub</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;  Sur:&quot;</span><span class="p">,</span> <span class="n">db_ub</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3) Balls unlabeled, Boxes labeled:   Any:&quot;</span><span class="p">,</span> <span class="n">ib_lb</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;  Inj:&quot;</span><span class="p">,</span> <span class="n">ib_lb</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;  Sur:&quot;</span><span class="p">,</span> <span class="n">ib_lb</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;4) Balls unlabeled, Boxes unlabeled: Any:&quot;</span><span class="p">,</span> <span class="n">ib_ub</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;  Inj:&quot;</span><span class="p">,</span> <span class="n">ib_ub</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;  Sur:&quot;</span><span class="p">,</span> <span class="n">ib_ub</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
 
 <span class="c1"># Optional: small brute checks (useful for sanity for small n,k)</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">brute_distinctBalls_labeledBoxes_any</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
@@ -647,6 +645,7 @@ S(n,k)=kS(n-1,k)+S(n-1,k-1)</p></li>
     <span class="k">return</span> <span class="n">factorial</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">stirling_number2</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="c1"># surj count via Stirling is already exact; brute is expensive</span>
 
 <span class="c1"># 3 examples </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;           Any=unrestricted;   Injective=at most 1 per box;  Surjective=no empty box&quot;</span><span class="p">)</span>
 <span class="n">twelvefold_summary</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="c1"># it is bijective </span>
 <span class="n">twelvefold_summary</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">twelvefold_summary</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
@@ -654,29 +653,25 @@ S(n,k)=kS(n-1,k)+S(n-1,k-1)</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Twelvefold way ( 5 balls,  5 boxes) with capacity rule:
- Any = unrestricted;  Inj = at most 1 per box;  Sur = no empty box
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>           Any=unrestricted;   Injective=at most 1 per box;  Surjective=no empty box
 
-1) Balls distinct,  Boxes labeled:   Any: 3125   Inj: 120   Sur: 120
-2) Balls distinct,  Boxes unlabeled: Any: 52   Inj: 1   Sur: 1
-3) Balls identical, Boxes labeled:   Any: 126   Inj: 1   Sur: 1
-4) Balls identical, Boxes unlabeled: Any: 7   Inj: 1   Sur: 1
+Twelvefold way ( 5 balls,  5 boxes) with capacity rule:
+1) Balls labeled,   Boxes labeled:   Any: 3125   Inj: 120   Sur: 120
+2) Balls labeled,   Boxes unlabeled: Any: 52   Inj: 1   Sur: 1
+3) Balls unlabeled, Boxes labeled:   Any: 126   Inj: 1   Sur: 1
+4) Balls unlabeled, Boxes unlabeled: Any: 7   Inj: 1   Sur: 1
 
 Twelvefold way ( 5 balls,  3 boxes) with capacity rule:
- Any = unrestricted;  Inj = at most 1 per box;  Sur = no empty box
-
-1) Balls distinct,  Boxes labeled:   Any: 243   Inj: 0   Sur: 150
-2) Balls distinct,  Boxes unlabeled: Any: 41   Inj: 0   Sur: 25
-3) Balls identical, Boxes labeled:   Any: 21   Inj: 0   Sur: 6
-4) Balls identical, Boxes unlabeled: Any: 5   Inj: 0   Sur: 2
+1) Balls labeled,   Boxes labeled:   Any: 243   Inj: 0   Sur: 150
+2) Balls labeled,   Boxes unlabeled: Any: 41   Inj: 0   Sur: 25
+3) Balls unlabeled, Boxes labeled:   Any: 21   Inj: 0   Sur: 6
+4) Balls unlabeled, Boxes unlabeled: Any: 5   Inj: 0   Sur: 2
 
 Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
- Any = unrestricted;  Inj = at most 1 per box;  Sur = no empty box
-
-1) Balls distinct,  Boxes labeled:   Any: 7776   Inj: 720   Sur: 0
-2) Balls distinct,  Boxes unlabeled: Any: 52   Inj: 1   Sur: 0
-3) Balls identical, Boxes labeled:   Any: 252   Inj: 6   Sur: 0
-4) Balls identical, Boxes unlabeled: Any: 7   Inj: 1   Sur: 0
+1) Balls labeled,   Boxes labeled:   Any: 7776   Inj: 720   Sur: 0
+2) Balls labeled,   Boxes unlabeled: Any: 52   Inj: 1   Sur: 0
+3) Balls unlabeled, Boxes labeled:   Any: 252   Inj: 6   Sur: 0
+4) Balls unlabeled, Boxes unlabeled: Any: 7   Inj: 1   Sur: 0
 </pre></div>
 </div>
 </div>
