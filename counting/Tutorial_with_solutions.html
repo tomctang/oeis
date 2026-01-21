@@ -1,0 +1,1989 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Tutorial : Use SageMath Notebook, navigate the documentation and use SageMath as a calculator. &#8212; Tom Workbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=8dedbda2" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'counting/Tutorial_with_solutions';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../0intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Tom Workbook</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../0intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">OEIS &amp; SageMath</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter0_introduction.html">Chapter 0: Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0mathmap.html">Math Map</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="HowToCountThings.html">How to Count Things</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../111c.html">Twelvefold Way -&gt; 二十四路计数模型</a></li>
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Old Math</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../math/00intro_math.html">Math-FP-Lang Combo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../math/01number_algebra.html">Number &amp; Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../math/02discrete_continuous.html">Discrete &amp; Continuous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../math/03real_world.html">Real World Math</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/tomctang/oeis" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/counting/Tutorial_with_solutions.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Tutorial : Use SageMath Notebook, navigate the documentation and use SageMath as a calculator.</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tutorial : Use SageMath Notebook, navigate the documentation and use SageMath as a calculator.</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obtain-some-help">Obtain some help</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-python-basics-for-using-sagemath">II. Python basics for using SageMath</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-syntax">Python Syntax</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Python Syntax</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-and-while-loops"><code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code> Loops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-structures">Data structures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-sets-and-dictionaries">Lists, sets and dictionaries</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#map-and-zip-functions"><code class="docutils literal notranslate"><span class="pre">map</span></code> and <code class="docutils literal notranslate"><span class="pre">zip</span></code> functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-programing-with-python-lambda">Functional programing with Python:  <code class="docutils literal notranslate"><span class="pre">lambda</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-combinatorial-sequences-with-sagemath">III. Combinatorial sequences with SageMath</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stirling-numbers">Stirling numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sieving">Sieving</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-derangements">Number of derangements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eulerian-numbers">Eulerian numbers</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-combinatorial-sequences-with-sagemath">IV. Combinatorial sequences with SageMath</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-from-professor-balazs-see-how-faster-it-is-with-sagemath">Exercise from Professor Balázs. See how faster it is with SageMath!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-from-professor-balazs-with-some-extra-prompts-see-how-faster-it-is-with-sagemath">Exercise from Professor Balázs, with some extra prompts. See how faster it is with SageMath!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-challenge-problem">A challenge problem!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-a-recurrence-from-a-generating-function">Finding a recurrence from a generating function</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="tutorial-use-sagemath-notebook-navigate-the-documentation-and-use-sagemath-as-a-calculator">
+<h1>Tutorial : Use SageMath Notebook, navigate the documentation and use SageMath as a calculator.<a class="headerlink" href="#tutorial-use-sagemath-notebook-navigate-the-documentation-and-use-sagemath-as-a-calculator" title="Link to this heading">#</a></h1>
+<p><strong><span style="color:red">This version has solutions.</span></strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here</span>
+<span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Compute the number <span class="math notranslate nohighlight">\(7\cdot 17^2.\)</span> To answer, create a new cell by clicking on the blue line that appears when hovering over it (in CoCalc), or type <code class="docutils literal notranslate"><span class="pre">B</span></code> in command mode.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span><span class="o">*</span><span class="mi">17</span><span class="o">^</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Compute the result of <span class="math notranslate nohighlight">\(540931 \div 83\)</span> under decimal form.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here</span>
+<span class="nb">float</span><span class="p">(</span><span class="mi">540931</span><span class="o">/</span><span class="mi">83</span><span class="p">)</span>  <span class="c1"># float ensures decimal form, up to 16 digits of precision</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Compute the integer quotient and the remainder of the euclidian division of <span class="math notranslate nohighlight">\(540 931\)</span> by <span class="math notranslate nohighlight">\(83\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here</span>
+<span class="mf">540931.</span><span class="n">quo_rem</span><span class="p">(</span><span class="mi">83</span><span class="p">)</span>  <span class="c1"># alternatively (540931//83, 540931%83)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Compute the sum and the mean of the following values:
+<span class="math notranslate nohighlight">\(3121, 71072, 44563, 10986, 43048, 8081, 44681, 23757, 4093, 24805, 30750, 73504.\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3121</span><span class="p">,</span> <span class="mi">71072</span><span class="p">,</span> <span class="mi">44563</span><span class="p">,</span> <span class="mi">10986</span><span class="p">,</span> <span class="mi">43048</span><span class="p">,</span> <span class="mi">8081</span><span class="p">,</span> <span class="mi">44681</span><span class="p">,</span> <span class="mi">23757</span><span class="p">,</span> <span class="mi">4093</span><span class="p">,</span> <span class="mi">24805</span><span class="p">,</span> <span class="mi">30750</span><span class="p">,</span> <span class="mi">73504</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The sum is </span><span class="si">{</span><span class="nb">sum</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The mean is </span><span class="si">{</span><span class="nb">float</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">list1</span><span class="p">))</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>What operation is done first when computing <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">*</span> <span class="pre">2</span> <span class="pre">**</span> <span class="pre">5</span> <span class="pre">+</span> <span class="pre">3</span></code>? Is the value equal to <span class="math notranslate nohighlight">\(7 \cdot 2^{5+3}\)</span>?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sage follows mathematical operation priorities</span>
+<span class="c1"># So first operation is the exponentiation (2^5). They are not equal, just as shown below:</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">7</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">**</span> <span class="mi">5</span> <span class="o">+</span><span class="mi">3</span> <span class="o">==</span> <span class="mi">7</span> <span class="o">*</span> <span class="mi">2</span><span class="o">^</span><span class="p">(</span><span class="mi">5</span><span class="o">+</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">7</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">**</span> <span class="mi">5</span> <span class="o">+</span><span class="mi">3</span> <span class="o">==</span> <span class="p">(</span><span class="mi">7</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">^</span><span class="mi">5</span><span class="p">))</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Is the answer what you thought?</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">7</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">**</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">7</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">**</span> <span class="p">(</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Consider the expression <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">**</span> <span class="pre">3</span> <span class="pre">**</span> <span class="pre">3</span></code>. What exponientiation <span class="math notranslate nohighlight">\((**)\)</span> is done first, the first or the second?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">27</span><span class="o">^</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">3</span><span class="o">^</span><span class="mi">27</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here</span>
+<span class="c1"># The second is done first. In general, ambiguous code like this should be avoided.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let <span class="math notranslate nohighlight">\(p(x) = -21 x^5 - 10 x^4 + x^3 + x^2 - 1\)</span>. Evaluate <span class="math notranslate nohighlight">\(p(x)\)</span> for all values of <span class="math notranslate nohighlight">\(x\)</span> in <span class="math notranslate nohighlight">\(\{ 6, 7, 9, 13, 16, 17, 19\}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here</span>
+<span class="n">p</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">5</span><span class="o">-</span><span class="mi">10</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">4</span><span class="o">+</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span><span class="o">+</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">19</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;-&gt;&#39;</span><span class="p">,</span> <span class="n">p</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Write the expression <span class="math notranslate nohighlight">\(\frac{5}{x+3} + \frac{3}{x-5} - \frac{8}{x}\)</span> on a common denominator.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here</span>
+<span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="mi">5</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="mi">3</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span><span class="o">-</span><span class="mi">8</span><span class="o">/</span><span class="n">x</span>
+<span class="n">f</span><span class="o">.</span><span class="n">simplify_rational</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Solve the equation <span class="math notranslate nohighlight">\(x^4 - 4 x^3 + 2x^2 - x = 0\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here</span>
+<span class="n">show</span><span class="p">(</span><span class="n">solve</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">4</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">-</span><span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Solve the equation system <span class="math notranslate nohighlight">\(x+y = 4, xy = 3\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here</span>
+<span class="n">var</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>  <span class="c1"># so Sage knows it is a variable. It always assumes &#39;x&#39; is</span>
+<span class="n">solve</span><span class="p">([</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">4</span><span class="p">,</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">3</span><span class="p">],</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Find the equation of the line <span class="math notranslate nohighlight">\(y = ax +b\)</span> that passes through the points <span class="math notranslate nohighlight">\((8,13)\)</span> and <span class="math notranslate nohighlight">\((5, 37)\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;a,b&#39;</span><span class="p">)</span>
+<span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span>
+<span class="c1"># Your answer here</span>
+<span class="n">solve</span><span class="p">([</span><span class="n">y</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="o">==</span> <span class="mi">13</span><span class="p">,</span> <span class="n">y</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">==</span> <span class="mi">37</span><span class="p">],</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Plot that line.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here</span>
+<span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="o">-</span><span class="mi">8</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">77</span>
+<span class="n">f</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Plot the curves of the equations <span class="math notranslate nohighlight">\( x + y = 4, xy = 3\)</span> after having isolated the variable <span class="math notranslate nohighlight">\(y\)</span>. Do the intersection points, if there are some, correspond to those you have obtained above?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here</span>
+<span class="n">plot</span><span class="p">([</span><span class="mi">4</span><span class="o">-</span><span class="n">x</span><span class="p">,</span> <span class="mi">3</span><span class="o">/</span><span class="n">x</span><span class="p">],</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Plot the curves of the equations <span class="math notranslate nohighlight">\( 4x^2 + Bxy + 9y^2 = 1\)</span> for different values of <span class="math notranslate nohighlight">\(B\)</span> such that <span class="math notranslate nohighlight">\(−10 \leq B \leq 10\)</span>. Deduce the range of the values of <span class="math notranslate nohighlight">\(B\)</span> for which the equation describes an ellipse.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Continuous range for B</span>
+<span class="n">var</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">)</span>
+<span class="n">ellipse</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">B</span> <span class="o">*</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">9</span> <span class="o">*</span> <span class="n">y</span><span class="o">^</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="c1"># Your answer here (the way to plot it)</span>
+<span class="n">implicit_plot3d</span><span class="p">(</span><span class="n">ellipse</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">B</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Discrete range for B</span>
+<span class="n">var</span><span class="p">(</span><span class="s1">&#39;x, y&#39;</span><span class="p">)</span>
+<span class="c1"># Your answer here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># They are all ellipsesvar(&#39;x, y&#39;)</span>
+<span class="nb">sum</span><span class="p">([</span><span class="n">implicit_plot</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">B</span> <span class="o">*</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">9</span> <span class="o">*</span> <span class="n">y</span><span class="o">^</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="k">for</span> <span class="n">B</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is possible to go backwards and modify the content of a cell by clicking on it (or entering the edit mode by typing enter). Without retyping, nor copying, find the equation of the line that passes through <span class="math notranslate nohighlight">\((8, 13)\)</span> and <span class="math notranslate nohighlight">\((18, 26)\)</span>.</p>
+<p>It is also possible to modify this text by clicking on it. Or even better, you can insert mathematics in <span class="math notranslate nohighlight">\(\LaTeX\)</span>!</p>
+<section id="obtain-some-help">
+<h2>Obtain some help<a class="headerlink" href="#obtain-some-help" title="Link to this heading">#</a></h2>
+<p>There are different ways to access SageMath documentation.</p>
+<ul class="simple">
+<li><p>Navigate in the documentation : <a class="reference external" href="https://doc.sagemath.org/html/en/tutorial/index.html">https://doc.sagemath.org/html/en/tutorial/index.html</a> or, on your computer, <a class="reference external" href="http://localhost:8888/kernelspecs/sagemath/doc/index.html">http://localhost:8888/kernelspecs/sagemath/doc/index.html</a></p></li>
+<li><p>The Tab-completion</p></li>
+<li><p>The contextual help (with the question mark - ?)</p></li>
+<li><p>The access to the source code (with the two question marks - ??)</p></li>
+</ul>
+<p>The following examples are made to make you at your ease with those functionalities.</p>
+<p>What is the largest prime factor of <span class="math notranslate nohighlight">\(600851475143\)</span>?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here</span>
+<span class="mf">600851475143.</span><span class="n">factor</span><span class="p">()[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Create the permutation <span class="math notranslate nohighlight">\(51324\)</span>. What is its inverse?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here</span>
+<span class="n">Permutation</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span><span class="o">.</span><span class="n">inverse</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Create the matrix
+$<span class="math notranslate nohighlight">\(
+M = \left(
+\begin{array}{rrrr}
+10 &amp; 4 &amp; 1 &amp; 1 \\
+4 &amp; 6 &amp; 5 &amp; 1 \\
+1 &amp; 5 &amp; 6 &amp; 4 \\
+1 &amp; 1 &amp; 4 &amp; 10
+\end{array}
+\right)
+\)</span>$
+Is it symmetric? Diagonalizable? Hermitian? (And what means hermitian, by the way? If you don’t know or have forgotten, find it in the documentation.) What is its kernel?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span><span class="n">QQ</span><span class="p">,</span> <span class="p">[[</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">10</span><span class="p">]])</span>
+<span class="c1"># Your answers here (you can print them all)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Symmetric? &quot;</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">is_symmetric</span><span class="p">(),</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Diagonalizable? &quot;</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">is_diagonalizable</span><span class="p">(),</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hermitian?&quot;</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">is_hermitian</span><span class="p">(),</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Kernel :&quot;</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">kernel</span><span class="p">())</span>
+
+<span class="c1"># For the documentation</span>
+M.is_hermitian<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Trace the curves of the equations <span class="math notranslate nohighlight">\(\sin(3x +2)\)</span> in blue and <span class="math notranslate nohighlight">\(\cos(x^2+3)\)</span>, in red. Indicate the axes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">),</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span> <span class="o">+</span><span class="n">plot</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="ii-python-basics-for-using-sagemath">
+<h1>II. Python basics for using SageMath<a class="headerlink" href="#ii-python-basics-for-using-sagemath" title="Link to this heading">#</a></h1>
+<section id="python-syntax">
+<h2>Python Syntax<a class="headerlink" href="#python-syntax" title="Link to this heading">#</a></h2>
+<p>Python has a very lightweight syntax. There is no curly bracket, semicolon of other elements that would influence the structure of the code.</p>
+<p>On the other hand, the indentation is fundamental. To describe the content of a block, we move it 4 spaces right of its header. The header ends with a colon.</p>
+<p>Predict the output of each of the following blocks.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sum_of_numbers</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>  <span class="c1"># If you do not know what range(n) is, try it!</span>
+    <span class="n">sum_of_numbers</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">sum_of_numbers</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sum_of_numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sum_of_numbers</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">sum_of_numbers</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">sum_of_numbers</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sum_of_numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Check your answers by copying it into Python!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sum_of_numbers</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>  <span class="c1"># If you do not know what range(n) is, try it!</span>
+    <span class="n">sum_of_numbers</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">sum_of_numbers</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sum_of_numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+3
+6
+10
+15
+21
+28
+36
+45
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sum_of_numbers</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">sum_of_numbers</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">sum_of_numbers</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sum_of_numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>45
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h2>Python Syntax<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p><strong>Indentation</strong> is crucial in Python. This is achieved through 4 spaces at a time or, equivalently, a tab. If you enter 3, 5, or 8 spaces instead, the program will refuse to run.</p>
+<p>A <strong>block</strong> is some part of the code that has the same indentation. You can think of it as something within parenthesis in math, so this is all executed at the same level of priority.</p>
+<p>The difference between the two</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sum_of_numbers</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>  <span class="c1"># If you do not know what range(n) is, try it!</span>
+    <span class="n">sum_of_numbers</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">sum_of_numbers</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sum_of_numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sum_of_numbers</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">sum_of_numbers</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">sum_of_numbers</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sum_of_numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>is the indentation of the last line. The first block prints the <code class="docutils literal notranslate"><span class="pre">sum_of_numbers</span></code> 10 times, and the final sum is the only thing that is printed by the second block</p>
+</section>
+<section id="for-and-while-loops">
+<h2><code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code> Loops<a class="headerlink" href="#for-and-while-loops" title="Link to this heading">#</a></h2>
+<p><strong>If you ever programmed, you should probably skip this section.</strong></p>
+<p>Predict the output of the following two functions:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="nb">str</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">i</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="n">s</span> <span class="o">+=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">prime</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>  <span class="c1"># Challenge: Guess what sympy.prime(i) does</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In general, what do <code class="docutils literal notranslate"><span class="pre">while</span></code> and <code class="docutils literal notranslate"><span class="pre">for</span></code> do?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try the first loop here</span>
+<span class="n">s</span> <span class="o">=</span> <span class="nb">str</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">i</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>abcd
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try the second one here</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="n">s</span> <span class="o">+=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">prime</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>  <span class="c1"># Challenge: Guess what sympy.prime(i) does</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23592
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">sympy.prime(i)</span></code> returns the <span class="math notranslate nohighlight">\(i\)</span>-th prime. You could also know this from the documentation, by typing <code class="docutils literal notranslate"><span class="pre">sympy.prime?</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">while</span></code> checks a condition, and keep running through the code until that condition is not met anymore.</p>
+<p><code class="docutils literal notranslate"><span class="pre">for</span></code> goes through the code it contains multiple times, but all the inputs (the result of the condition) are known ahead of time.</p>
+<p>Compute the value of <span class="math notranslate nohighlight">\(65!\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">prod</span>
+<span class="n">prod</span><span class="p">([</span><span class="n">_</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">66</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-9223372036854775808
+</pre></div>
+</div>
+</div>
+</div>
+<p>Does that make any sense? Can you think of what happened?</p>
+<p>Of course, a product of positive numbers cannot be negative. This happended because the number is too large to be recorded. We know it by verifying the <code class="docutils literal notranslate"><span class="pre">type</span></code> of the number, meaning the type of storage for that number.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">prod</span><span class="p">([</span><span class="n">_</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">66</span><span class="p">)]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>numpy.int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>An <code class="docutils literal notranslate"><span class="pre">int</span></code> with 64 bits of precision has at most <span class="math notranslate nohighlight">\(\frac{64*\ln(2)}{\ln(10)}\)</span> digits. Clearly, <span class="math notranslate nohighlight">\(65!\)</span> is too large, so it is reset so that at some point.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">factorial</span>
+<span class="c1"># Your answer here</span>
+<span class="n">factorial</span><span class="p">(</span><span class="mi">65</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8247650592082470666723170306785496252186258551345437492922123134388955774976000000000000000
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">factorial</span><span class="p">(</span><span class="mi">65</span><span class="p">)</span><span class="o">%</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">64</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9223372036854775808
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that this is the same number as above, up to a sign.</p>
+</section>
+<section id="data-structures">
+<h2>Data structures<a class="headerlink" href="#data-structures" title="Link to this heading">#</a></h2>
+<section id="lists-sets-and-dictionaries">
+<h3>Lists, sets and dictionaries<a class="headerlink" href="#lists-sets-and-dictionaries" title="Link to this heading">#</a></h3>
+<p>Try to understand the behavior of these three structures with the functions<code class="docutils literal notranslate"><span class="pre">sort</span></code>, first element and <code class="docutils literal notranslate"><span class="pre">keys</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">struct1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;Alligator&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="s1">&#39;Beluga&#39;</span><span class="p">}</span>
+<span class="n">struct2</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s2">&quot;Alligator&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s2">&quot;Beluga&quot;</span><span class="p">)])</span>
+<span class="n">struct3</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Alligator&#39;</span><span class="p">,</span> <span class="s1">&#39;Beluga&#39;</span><span class="p">]</span>
+<span class="n">struct4</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Alligator&#39;</span><span class="p">,</span> <span class="s1">&#39;Beluga&#39;</span><span class="p">}</span>
+<span class="n">struct5</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">struct4</span><span class="p">)</span>
+<span class="n">struct6</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">struct3</span><span class="p">)</span>
+<span class="n">struct7</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">struct1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Which of these are sets, lists and dictionaries? What specificities do each have?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">struct1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;Alligator&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="s1">&#39;Beluga&#39;</span><span class="p">}</span>
+<span class="n">struct2</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s2">&quot;Alligator&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s2">&quot;Beluga&quot;</span><span class="p">)])</span>
+<span class="n">struct3</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Alligator&#39;</span><span class="p">,</span> <span class="s1">&#39;Beluga&#39;</span><span class="p">]</span>
+<span class="n">struct4</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Alligator&#39;</span><span class="p">,</span> <span class="s1">&#39;Beluga&#39;</span><span class="p">}</span>
+<span class="n">struct5</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">struct4</span><span class="p">)</span>
+<span class="n">struct6</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">struct3</span><span class="p">)</span>
+<span class="n">struct7</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">struct1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Structures 1 and 2 are dictionaries, so they have keys (a and b) attached to values (alligator and beluga, espectively).</p></li>
+<li><p>Structures 3, 4, 6 and 7 are sets, so they are like list, but they are unordered, (so {‘Alligator’, ‘Beluga’} = {‘Beluga’, ‘Alligator’}). For lists, {‘Alligator’, ‘Beluga’} <span class="math notranslate nohighlight">\(\neq\)</span> {‘Beluga’, ‘Alligator’}.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Play with the data structures</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">struct7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;b&#39;, &#39;a&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>To what structure do “Alligator” and “Beluga” <strong>not</strong> belong?</p>
+<p>struct7 only contains a and b (the keys) in the set. The values disappear when we change a dictionary into a set or a list.</p>
+</section>
+</section>
+<section id="map-and-zip-functions">
+<h2><code class="docutils literal notranslate"><span class="pre">map</span></code> and <code class="docutils literal notranslate"><span class="pre">zip</span></code> functions<a class="headerlink" href="#map-and-zip-functions" title="Link to this heading">#</a></h2>
+<p>This sections features two functions that are Python-specific and that operate on lists, namely <code class="docutils literal notranslate"><span class="pre">zip</span></code> and<code class="docutils literal notranslate"><span class="pre">map</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">zip</span></code> takes two lists of the same length, and creates a new list  of tuples for each pair of items. Thus, the first tuple of the new list contains the two heads of the original lists.</p>
+<p><code class="docutils literal notranslate"><span class="pre">map</span></code> uses a function and an iterable (a list, a tuple, etc.). It applies the function to each element of the iterable. Here are some examples for the map <code class="docutils literal notranslate"><span class="pre">len</span></code>, <code class="docutils literal notranslate"><span class="pre">prod</span></code>, <code class="docutils literal notranslate"><span class="pre">sum</span></code>, <code class="docutils literal notranslate"><span class="pre">min</span></code>, <code class="docutils literal notranslate"><span class="pre">max</span></code>, <code class="docutils literal notranslate"><span class="pre">set</span></code> and <code class="docutils literal notranslate"><span class="pre">sorted</span></code>.</p>
+<p>With the following lists, try the functions <code class="docutils literal notranslate"><span class="pre">zip</span></code> and <code class="docutils literal notranslate"><span class="pre">map</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">l2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
+<span class="n">l3</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]</span>
+<span class="n">l4</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">l2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
+<span class="n">l3</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]</span>
+<span class="n">l4</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Play with them</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">l2</span><span class="p">,</span> <span class="n">l3</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="nb">zip</span><span class="p">(</span><span class="n">l2</span><span class="p">,</span> <span class="n">l3</span><span class="p">))))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="n">l2</span><span class="p">),</span> <span class="n">l3</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="n">l2</span><span class="p">,</span> <span class="n">l3</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(10, &#39;a&#39;), (15, &#39;b&#39;), (20, &#39;c&#39;), (25, &#39;d&#39;)]
+[(3, (10, &#39;a&#39;)), (4, (15, &#39;b&#39;)), (5, (20, &#39;c&#39;)), (6, (25, &#39;d&#39;))]
+[((3, 10), &#39;a&#39;), ((4, 15), &#39;b&#39;), ((5, 20), &#39;c&#39;), ((6, 25), &#39;d&#39;)]
+[(3, 10, &#39;a&#39;), (4, 15, &#39;b&#39;), (5, 20, &#39;c&#39;), (6, 25, &#39;d&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Can you get the sum of the elements of the first list?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here</span>
+<span class="nb">sum</span><span class="p">(</span><span class="n">l1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18
+</pre></div>
+</div>
+</div>
+</div>
+<p>What happens if <code class="docutils literal notranslate"><span class="pre">zip</span></code> is applied to more than one list?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="n">l2</span><span class="p">,</span> <span class="n">l3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(3, 10, &#39;a&#39;), (4, 15, &#39;b&#39;), (5, 20, &#39;c&#39;), (6, 25, &#39;d&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is much better than <code class="docutils literal notranslate"><span class="pre">list(zip(zip(l1,l2),</span> <span class="pre">l3))</span></code>, as it gets rid of the parentheses.</p>
+<p>What happens if <code class="docutils literal notranslate"><span class="pre">zip</span></code> is applied to lists with distinct lengths?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it!</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">l3</span><span class="p">,</span> <span class="n">l4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{(&#39;a&#39;, 7), (&#39;b&#39;, 11), (&#39;c&#39;, 13), (&#39;d&#39;, 17)}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Answer: it gets rid of the extra coordinates. Proceed with care!</p>
+<p>Only with the functions presented here, compute the dot product of <code class="docutils literal notranslate"><span class="pre">l1</span></code> and <code class="docutils literal notranslate"><span class="pre">l2</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here</span>
+<span class="nb">sum</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">prod</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="n">l2</span><span class="p">))))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>340
+</pre></div>
+</div>
+</div>
+</div>
+<p>Try to reproduce the same result with built-in functions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Works only with Sage</span>
+<span class="c1">#vector(l1) * vector(l2)</span>
+
+<span class="c1"># With numpy</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span>
+<span class="n">numpy</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="n">l2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>340
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="functional-programing-with-python-lambda">
+<h2>Functional programing with Python:  <code class="docutils literal notranslate"><span class="pre">lambda</span></code><a class="headerlink" href="#functional-programing-with-python-lambda" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">lambda</span></code> funciton is a way to create a simple function as a one-liner. Its syntax is as in the following example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">addition</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span> 
+</pre></div>
+</div>
+<p>Define and use a function called power, using the lambda function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here</span>
+<span class="n">power</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">power</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="o">**</span><span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="iii-combinatorial-sequences-with-sagemath">
+<h1>III. Combinatorial sequences with SageMath<a class="headerlink" href="#iii-combinatorial-sequences-with-sagemath" title="Link to this heading">#</a></h1>
+<section id="stirling-numbers">
+<h2>Stirling numbers<a class="headerlink" href="#stirling-numbers" title="Link to this heading">#</a></h2>
+<p><strong>Question</strong> 37 from Per Alexandersson’s notes</p>
+<blockquote>
+<div><p>How many permutations in <span class="math notranslate nohighlight">\(S_{10}\)</span> are there of type <span class="math notranslate nohighlight">\((2, 2, 2, 2, 1, 1)\)</span>?</p>
+</div></blockquote>
+<p>This can be solved through many ways:</p>
+<ul class="simple">
+<li><p>Multinomial coefficients, as you learned in the course</p></li>
+<li><p>Brute force: generating permutations of 10, filtering, then counting</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using multinomial coefficients. If you don&#39;t know how to get multinomial coefficients, search the documentation or</span>
+<span class="c1"># ask another student</span>
+<span class="n">multinomial</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="n">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>  <span class="c1"># the division is because the order of the cycle does not matter</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4725
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generating permutations of 10, filtering, counting.</span>
+<span class="c1"># WARNING: you&#39;ll need to be clever to do it without making SageMath crash.</span>
+<span class="c1"># If this takes too long, interrupt your computations with the square above, and try to </span>
+<span class="c1">#g et the number of permutations  type. That will be handy later</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">Permutations</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">cycle_type</span><span class="p">()</span> <span class="o">==</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">count</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4725
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Another technique that we will explore in more details later this week is to gather information for many</span>
+<span class="c1"># instances (here partitions), and then to supply this information to a database.</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">Partitions</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">sigma</span> <span class="ow">in</span> <span class="n">Permutations</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">sigma</span><span class="o">.</span><span class="n">cycle_type</span><span class="p">()</span> <span class="o">==</span> <span class="n">p</span><span class="p">:</span>
+                <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">p</span><span class="p">,</span> <span class="n">count</span><span class="p">))</span>
+<span class="nb">dict</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{[1]: 1,
+ [2]: 1,
+ [1, 1]: 1,
+ [3]: 2,
+ [2, 1]: 3,
+ [1, 1, 1]: 1,
+ [4]: 6,
+ [3, 1]: 8,
+ [2, 2]: 3,
+ [2, 1, 1]: 6,
+ [1, 1, 1, 1]: 1}
+</pre></div>
+</div>
+</div>
+</div>
+<p>The code above is very naive, but it still works because the number of objects is small.</p>
+<p>Later this week, we will see a process for finding out the name of this statistic, using the FindStat database. Here is a preview.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">findstat</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0: St000182 (quality [100, 100])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">findstat</span><span class="p">(</span><span class="mi">182</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>St000182: The number of permutations whose cycle type is the given integer partition.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Looking at the documentation for Statistics with Id 182 in FindStat, we see that there is a product formula to count them. It is worth having a look (to do so, execute the next cell).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span><span class="o">.</span><span class="n">browse</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Another potential, less naive methods for generating all permutations with a given cycle type:</p>
+<blockquote>
+<div><p>T = SetPartitions(10, [2,2,2,2,1,1]) and then T.random_element() to get a partition into cycles. Because all cycles have length at most 2, there is a unique such permutation for each set partition. Then form all possible permutations from them.</p>
+</div></blockquote>
+<p>(from <a class="reference external" href="https://ask.sagemath.org/question/65102/is-there-a-way-in-sage-to-generate-a-random-permutation-with-a-given-cycle-type/">https://ask.sagemath.org/question/65102/is-there-a-way-in-sage-to-generate-a-random-permutation-with-a-given-cycle-type/</a>)</p>
+<p>Applying <code class="docutils literal notranslate"><span class="pre">SetPartitions</span></code> along with cardinality, we get the right answer.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SetPartitions</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">cardinality</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4725
+</pre></div>
+</div>
+</div>
+</div>
+<p>We could also inspect <code class="docutils literal notranslate"><span class="pre">cardinality</span></code> to see how this is calculated:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="n">SetPartitions</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+S.cardinality<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="sieving">
+<h2>Sieving<a class="headerlink" href="#sieving" title="Link to this heading">#</a></h2>
+<p><strong>Question</strong> 55 from Per Alexandersson’s notes:</p>
+<blockquote>
+<div><p>How many numbers from {1, … , 100} are divisible by either 3, 5 or 11?</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">3</span> == 0 or i%5 == 0 or i%11 == 0:
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">count</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>52
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is also the number obtained using inclusion-exclusion.</p>
+</section>
+<section id="number-of-derangements">
+<h2>Number of derangements<a class="headerlink" href="#number-of-derangements" title="Link to this heading">#</a></h2>
+<p><strong>Question</strong>: Secret Santa</p>
+<blockquote>
+<div><p>For the end of the ICTP-EAUMP school, we will organize a gift exchange. We will put a bowl with all the names in it, and ask every participant to draw one name. The exchange is <em>successful</em> if no one draws their own name. What are the odds, roughly, that this happens?</p>
+</div></blockquote>
+<p>In the previous lectures, you learned how to do it using inclusion-exclusion, and you might have learned how to find the asymptotics. What I’m suggesting here is a method for approximating the answer, done through sampling.</p>
+<p>Idea: simulating 1,000 (or more, or less) gift exchanges (uniformly at random), and see what proportion is successful.</p>
+<ul class="simple">
+<li><p>Generating 1,000 permutations of 40, and checking if they have fixed points = <strong>EASY</strong></p></li>
+<li><p>Generating all 40! permutations of 40 and checking if they have fixed points = <strong>IMPOSSIBLE</strong></p></li>
+</ul>
+<p>This method has the advantage of not requiring knowledge about derangements (permutations without fixed points).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find a way to generate 1,000 permutations of 40, at random. Count the number of successful exchanges.</span>
+<span class="n">number_successful</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">Permutations</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span><span class="o">.</span><span class="n">random_element</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">is_derangement</span><span class="p">():</span>
+        <span class="n">number_successful</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">number_successful</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>362
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find a way to generate 1,000 permutations of 40, at random. Count the number of successful exchanges.</span>
+<span class="n">number_successful</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">Permutations</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span><span class="o">.</span><span class="n">random_element</span><span class="p">()</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">fixed_points</span><span class="p">())</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">number_successful</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">number_successful</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>359
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hence, we would estimate that around 35-40% are successful. The actual proportion is <span class="math notranslate nohighlight">\(e^{-1}\)</span>. Either method (<code class="docutils literal notranslate"><span class="pre">p.is_derangemen()</span></code> and <code class="docutils literal notranslate"><span class="pre">len(p.fixed_points())</span> <span class="pre">==</span> <span class="pre">0</span></code>) work the same.</p>
+<ul class="simple">
+<li><p>Finding the exact answer requires a proof, and knowledge. Finding exact asymptotics too.</p></li>
+<li><p>Simulation allows one to get a very good rough idea of how big a quantity is.</p></li>
+</ul>
+</section>
+<section id="eulerian-numbers">
+<h2>Eulerian numbers<a class="headerlink" href="#eulerian-numbers" title="Link to this heading">#</a></h2>
+<p>Recall from Per Alexandersson’s lecture that the Eulerian number <span class="math notranslate nohighlight">\(A(n,k)\)</span> is the number of permutations of <span class="math notranslate nohighlight">\(S_n\)</span> with exactly <span class="math notranslate nohighlight">\(k\)</span> descents.
+Recall that for <span class="math notranslate nohighlight">\(\pi \in S_n\)</span>, a <em>descent</em> in the permutation <span class="math notranslate nohighlight">\(\pi\)</span> is an index <span class="math notranslate nohighlight">\(i \in [n − 1]\)</span> such that <span class="math notranslate nohighlight">\(\pi(i) &gt; \pi(i + 1)\)</span>.</p>
+<blockquote>
+<div><p>Write some code to compute the Eulerian number <span class="math notranslate nohighlight">\(A(10,4)\)</span>.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write a function called &#39;my_eulerian_number(n, k)&#39; that computes A(n, k)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">my_eulerian_number</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">S</span> <span class="ow">in</span> <span class="n">Subsets</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="n">k</span><span class="p">):</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">Permutations</span><span class="p">(</span><span class="n">descents</span><span class="o">=</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">S</span><span class="p">),</span><span class="n">n</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="n">count</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="o">%</span><span class="k">time</span> my_eulerian_number(n, k)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 47.3 ms, sys: 14 µs, total: 47.3 ms
+Wall time: 45.1 ms
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1310354
+</pre></div>
+</div>
+</div>
+</div>
+<p>A method called ‘eulerian_number’ exists in sage.combinat.combinat. Import the appropriate module (like we did in the lecture for the Narayana numbers), then evaluate how much time it takes to execute it (for <span class="math notranslate nohighlight">\(n=10\)</span> and <span class="math notranslate nohighlight">\(k=4\)</span> again). We will use it to compare our results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sage.combinat.combinat</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="o">%</span><span class="k">time</span> eulerian_number(10, 4)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 3.81 ms, sys: 0 ns, total: 3.81 ms
+Wall time: 3.42 ms
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1310354
+</pre></div>
+</div>
+</div>
+</div>
+<p>We see that we get the same number, but the built-in methods is much faster. This is a hint that we should look at the code for <code class="docutils literal notranslate"><span class="pre">eulerian_number</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>eulerian_number<span class="o">??</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We see that it uses a recursion. In Per Alexandersson’s course, you learned that
+$<span class="math notranslate nohighlight">\(A(n, k) = (n − k)A(n − 1, k − 1) + (k + 1)A(n − 1, k).\)</span>$</p>
+<p>Now use it to write a fast method for eulerian numbers. It might have to be recursive (so calling the same method over a smaller instance).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write a function called `my_eulerian_number_fast(n, k)`.</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">my_eulerian_number_fast</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="n">k</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">k</span><span class="p">)</span><span class="o">*</span><span class="n">my_eulerian_number_fast</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">my_eulerian_number_fast</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">time</span> my_eulerian_number_fast(10, 4)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 1.62 ms, sys: 0 ns, total: 1.62 ms
+Wall time: 1.64 ms
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1310354
+</pre></div>
+</div>
+</div>
+</div>
+<p>However, this methods gets pretty slow when <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(k\)</span> grow, especially in comparison with eulerian_number. This is because it computes <strong>many</strong> times the same things. Execute the two cells below to see the time difference.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">time</span> my_eulerian_number_fast(30, 7)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 4.62 s, sys: 0 ns, total: 4.62 s
+Wall time: 4.62 s
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>637869809663929594478505540
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">time</span> eulerian_number(30, 7)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 854 µs, sys: 0 ns, total: 854 µs
+Wall time: 860 µs
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>637869809663929594478505540
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can avoid this by <em>caching</em> the result of our previous computations. This will require a little more memory, but so much less time. This is achieved through a <em>decorator</em>, so something we put right before the start of the function.</p>
+<p>Write a cached function, by doing the same thing as before, but adding <code class="docutils literal notranslate"><span class="pre">&#64;cached_function</span></code> on the line before the definition.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@cached_function</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">my_eulerian_number_fast</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="n">k</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">k</span><span class="p">)</span><span class="o">*</span><span class="n">my_eulerian_number_fast</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">my_eulerian_number_fast</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">time</span> my_eulerian_number_fast(30, 7)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 2.44 ms, sys: 10 µs, total: 2.45 ms
+Wall time: 2.48 ms
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>637869809663929594478505540
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Bonus exercise:</strong> Come up with another combinatorial calculation where the use of the decorator <code class="docutils literal notranslate"><span class="pre">&#64;cached_function</span></code> could be helptul. Test your hypothesis by writing the code for it, both with and without decorator.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="iv-combinatorial-sequences-with-sagemath">
+<h1>IV. Combinatorial sequences with SageMath<a class="headerlink" href="#iv-combinatorial-sequences-with-sagemath" title="Link to this heading">#</a></h1>
+<section id="exercise-from-professor-balazs-see-how-faster-it-is-with-sagemath">
+<h2>Exercise from Professor Balázs. See how faster it is with SageMath!<a class="headerlink" href="#exercise-from-professor-balazs-see-how-faster-it-is-with-sagemath" title="Link to this heading">#</a></h2>
+<p>With the help of SageMath, write the following in partial fraction form. For each of them, add a Markdown box with the answer.
+$<span class="math notranslate nohighlight">\(\frac{1}{1-x^2}, \frac{1}{2-3x+x^2}, \frac{1}{1+x^2}, \frac{1}{1-x^3}.\)</span>$</p>
+<p><strong>Bonus exercise: if the decomposition over <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span> is not satisfactory, decompose over <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> or <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your computations here. Your answer should be in a Markdown box that you add below.</span>
+<span class="n">f</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">partial_fraction_decomposition</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1/2/(x + 1), -1/2/(x - 1)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hence, $<span class="math notranslate nohighlight">\( \frac{1}{1-x^2} = \frac{1}{2(x+1)} - \frac{1}{2(x-1)}.\)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># One can always verify their work</span>
+<span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">simplify_rational</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1/(x^2 - 1)
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Some other problems are similar, so their answers are not provided</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your computations here. Your answer should be in a Markdown box that you add below.</span>
+<span class="n">f</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">partial_fraction_decomposition</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, x^2 + 1]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span><span class="o">.&lt;</span><span class="n">x</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">PolynomialRing</span><span class="p">(</span><span class="n">CC</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">partial_fraction_decomposition</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0, [(-0.500000000000000*I)/(x - I), 0.500000000000000*I/(x + I)])
+</pre></div>
+</div>
+</div>
+</div>
+<p>We found
+$<span class="math notranslate nohighlight">\(\frac{1}{1+x^2} = \frac{i}{2(x+i)}- \frac{i}{2(x-i)}. \)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your computations here. Your answer should be in a Markdown box that you add below.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your computations here. Your answer should be in a Markdown box that you add below.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-from-professor-balazs-with-some-extra-prompts-see-how-faster-it-is-with-sagemath">
+<h2>Exercise from Professor Balázs, with some extra prompts. See how faster it is with SageMath!<a class="headerlink" href="#exercise-from-professor-balazs-with-some-extra-prompts-see-how-faster-it-is-with-sagemath" title="Link to this heading">#</a></h2>
+<p>For each of the following recursions, find the generating function, the OEIS identifier (if you have internet) and the 100th term. If you can, find a closed form for the general term. Write your answer in a separate Markdown box.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a_0=1\)</span>, <span class="math notranslate nohighlight">\(a_{n+1} = 5 \cdot a_n\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a_0=0\)</span>, <span class="math notranslate nohighlight">\(a_1 = 1\)</span>, <span class="math notranslate nohighlight">\(a_{n+1}= a_{n-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a_0=0\)</span>, <span class="math notranslate nohighlight">\(a_1 = 1\)</span>, <span class="math notranslate nohighlight">\(a_{n+1}= -a_n-a_{n-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a_0=0\)</span>, <span class="math notranslate nohighlight">\(a_1 = 1\)</span>, <span class="math notranslate nohighlight">\(a_{n+1}= 3\cdot a_{n}-2\cdot a_{n-1}\)</span></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your computations here. Your answer should be in a Markdown box that you add below.</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">CFiniteSequences</span><span class="p">(</span><span class="n">QQ</span><span class="p">)</span>
+<span class="n">seq</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">from_recurrence</span><span class="p">([</span><span class="mi">5</span><span class="p">],[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The generating function is </span><span class="si">{</span><span class="n">seq</span><span class="o">.</span><span class="n">ogf</span><span class="p">()</span><span class="si">}</span><span class="s2">, and the 100-th term is </span><span class="si">{</span><span class="n">seq</span><span class="p">[</span><span class="mi">100</span><span class="p">]</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The generating function is -1/5/(x - 1/5), and the 100-th term is 7888609052210118054117285652827862296732064351090230047702789306640625.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">oeis</span><span class="p">([</span><span class="n">seq</span><span class="p">[</span><span class="n">_</span><span class="p">]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0: A000351: Powers of 5: a(n) = 5^n.
+1: A133500: The powertrain or power train map: Powertrain(n): if abcd... is the decimal expansion of a number n, then the powertrain of n is the number n&#39; = a^b*c^d* ..., which ends in an exponent or a base according as the number of digits is even or odd. a(0) = 0 by convention.
+2: A256229: Powering the decimal digits of n (right-associative) with 0^0 = 1 by convention.
+</pre></div>
+</div>
+</div>
+</div>
+<p>The OEIS ID is A000351.The generating function is <span class="math notranslate nohighlight">\(\frac{-1/5}{x - 1/5}\)</span>, and the 100-th term is 7888609052210118054117285652827862296732064351090230047702789306640625.</p>
+<p><em>Only the code to generate the sequence and find their generating function is given below</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your computations here. Your answer should be in a Markdown box that you add below.</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">CFiniteSequences</span><span class="p">(</span><span class="n">QQ</span><span class="p">)</span>
+<span class="n">seq</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">from_recurrence</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The generating function is </span><span class="si">{</span><span class="n">seq</span><span class="o">.</span><span class="n">ogf</span><span class="p">()</span><span class="si">}</span><span class="s2">, and the 100-th term is </span><span class="si">{</span><span class="n">seq</span><span class="p">[</span><span class="mi">100</span><span class="p">]</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The first terms of the sequence are </span><span class="si">{</span><span class="p">[</span><span class="n">seq</span><span class="p">[</span><span class="n">_</span><span class="p">]</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">_</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The generating function is -x/(x^2 - 1), and the 100-th term is 0.
+The first terms of the sequence are [0, 1, 0, 1, 0, 1, 0, 1, 0, 1].
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your computations here. Your answer should be in a Markdown box that you add below.</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">CFiniteSequences</span><span class="p">(</span><span class="n">QQ</span><span class="p">)</span>
+<span class="n">seq</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">from_recurrence</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The generating function is </span><span class="si">{</span><span class="n">seq</span><span class="o">.</span><span class="n">ogf</span><span class="p">()</span><span class="si">}</span><span class="s2">, and the 100-th term is </span><span class="si">{</span><span class="n">seq</span><span class="p">[</span><span class="mi">100</span><span class="p">]</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The first terms of the sequence are </span><span class="si">{</span><span class="p">[</span><span class="n">seq</span><span class="p">[</span><span class="n">_</span><span class="p">]</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">_</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The generating function is x/(x^2 + x + 1), and the 100-th term is 1.
+The first terms of the sequence are [0, 1, -1, 0, 1, -1, 0, 1, -1, 0].
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your computations here. Your answer should be in a Markdown box that you add below.</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">CFiniteSequences</span><span class="p">(</span><span class="n">QQ</span><span class="p">)</span>
+<span class="n">seq</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">from_recurrence</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The generating function is </span><span class="si">{</span><span class="n">seq</span><span class="o">.</span><span class="n">ogf</span><span class="p">()</span><span class="si">}</span><span class="s2">, and the 100-th term is </span><span class="si">{</span><span class="n">seq</span><span class="p">[</span><span class="mi">100</span><span class="p">]</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The first terms of the sequence are </span><span class="si">{</span><span class="p">[</span><span class="n">seq</span><span class="p">[</span><span class="n">_</span><span class="p">]</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">_</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The generating function is 1/2*x/(x^2 - 3/2*x + 1/2), and the 100-th term is 1267650600228229401496703205375.
+The first terms of the sequence are [0, 1, 3, 7, 15, 31, 63, 127, 255, 511].
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="a-challenge-problem">
+<h2>A challenge problem!<a class="headerlink" href="#a-challenge-problem" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Find a symbolic expression for the number of Motzkin Paths of length n. <em>Hint: mimic the one Professor Hans gave for Dyck Paths: <span class="math notranslate nohighlight">\(F = 1 + xF^2\)</span>. Justify. You should work as a team for that, and feel free to use the help of the TA’s and instructors.</em> You don’t need SageMath for that step.</p></li>
+<li><p>Solve it. You will get two answers, so you need to check which one is the right one.</p></li>
+<li><p>If internet available, check, with the OEIS, that this is the sequence for Motzkin numbers. Also, check that the generating function listed there is right.</p></li>
+<li><p>Browse the formulae in the OEIS to find those that Professor Hans asked us to prove.</p></li>
+<li><p>Browse the formulae in the OEIS to answer the question of how many times more Motzkin paths of length 101 there are compared to Motzkin paths of length 100. No computation is needed.</p></li>
+<li><p>Compare your hypothesis with the ratio of the 100th and 101st coefficient of the generating function you found.</p></li>
+</ol>
+<blockquote>
+<div><p>Find a symbolic expression for the number of Motzkin Paths of length n. <em>Hint: mimic the one Professor Hans gave for Dyck Paths: <span class="math notranslate nohighlight">\(F = 1 + xF^2\)</span>. Justify. You should work as a team for that, and feel free to use the help of the TA’s and instructors.</em> You don’t need SageMath for that step.</p>
+</div></blockquote>
+<p>Using the symbolic method:</p>
+<ul class="simple">
+<li><p>Let <span class="math notranslate nohighlight">\(M\)</span> be a Motzkin path. Then, either <span class="math notranslate nohighlight">\(M\)</span> is empty, or it returns to the <span class="math notranslate nohighlight">\(x\)</span>-axis at some point. Let <span class="math notranslate nohighlight">\(P\)</span> be the first return to the <span class="math notranslate nohighlight">\(x\)</span>-axis. Hence, there is a Motzkin path before <span class="math notranslate nohighlight">\(P\)</span> and one after <span class="math notranslate nohighlight">\(P\)</span>. The one after <span class="math notranslate nohighlight">\(P\)</span> can be anything.</p></li>
+<li><p>The Motzkin path before <span class="math notranslate nohighlight">\(P\)</span> does not return to the <span class="math notranslate nohighlight">\(x\)</span>-axis during until point <span class="math notranslate nohighlight">\(P\)</span>. Hence, it is either just a level step  - so one step, denoted <span class="math notranslate nohighlight">\(x\)</span> -, or it is of the form /<span class="math notranslate nohighlight">\(M\)</span>\ (up-Motzkin path-down) - so two steps and a Motzkin paths (this is the same argument as for Dyck paths).</p></li>
+<li><p>Hence, our three options for a Motzkin path is either the empty path (<span class="math notranslate nohighlight">\(1\)</span>), a level step + a Motzkin path (<span class="math notranslate nohighlight">\(xM\)</span>) + or two steps (one up, one down) and two Motzkin paths (<span class="math notranslate nohighlight">\(x^2M^2\)</span>). Hence, the generating function for the Motzkin paths (where <span class="math notranslate nohighlight">\(x\)</span> tracks the number of steps) satisfies <span class="math notranslate nohighlight">\(M = 1 + xM+ x^2M^2\)</span>.</p></li>
+</ul>
+<blockquote>
+<div><p>Pass it on to SageMath</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;M, x&#39;</span><span class="p">)</span>
+<span class="n">sys</span> <span class="o">=</span> <span class="p">[</span><span class="n">M</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">M</span><span class="o">*</span><span class="n">x</span><span class="o">+</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">M</span><span class="o">^</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p>Solve it. You will get two answers, so you need to check which one is the right one.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sol</span> <span class="o">=</span> <span class="n">solve</span><span class="p">([</span><span class="n">M</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">M</span><span class="o">*</span><span class="n">x</span><span class="o">+</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">M</span><span class="o">^</span><span class="mi">2</span><span class="p">],</span> <span class="n">M</span><span class="p">);</span> <span class="n">show</span><span class="p">(</span><span class="n">sol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html>\(\displaystyle \left[M = -\frac{x + \sqrt{-3 \, x^{2} - 2 \, x + 1} - 1}{2 \, x^{2}}, M = -\frac{x - \sqrt{-3 \, x^{2} - 2 \, x + 1} - 1}{2 \, x^{2}}\right]\)</html></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sol</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">rhs</span><span class="p">()</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 + 1*x + 2*x^2 + 4*x^3 + 9*x^4 + 21*x^5 + 51*x^6 + 127*x^7 + 323*x^8 + 835*x^9 + 2188*x^10 + 5798*x^11 + 15511*x^12 + 41835*x^13 + 113634*x^14 + 310572*x^15 + 853467*x^16 + 2356779*x^17 + 6536382*x^18 + 18199284*x^19 + Order(x^20)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sol</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">rhs</span><span class="p">()</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1*x^(-2) + (-1)*x^(-1) + (-1) + (-1)*x + (-2)*x^2 + (-4)*x^3 + (-9)*x^4 + (-21)*x^5 + (-51)*x^6 + (-127)*x^7 + (-323)*x^8 + (-835)*x^9 + (-2188)*x^10 + (-5798)*x^11 + (-15511)*x^12 + (-41835)*x^13 + (-113634)*x^14 + (-310572)*x^15 + (-853467)*x^16 + (-2356779)*x^17 + (-6536382)*x^18 + (-18199284)*x^19 + Order(x^20)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your answer here.</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The generating function is </span><span class="si">{</span><span class="n">sol</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The generating function is M == -1/2*(x + sqrt(-3*x^2 - 2*x + 1) - 1)/x^2.
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p>If internet available, check, with the OEIS, that this is the sequence for Motzkin numbers. Also, check that the generating function listed there is right</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">oeis</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">51</span><span class="p">,</span><span class="mi">127</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0: A001006: Motzkin numbers: number of ways of drawing any number of nonintersecting chords joining n (labeled) points on a circle.
+1: A086246: Expansion of (1 + x - sqrt(1 - 2*x - 3*x^2)) / 2 in powers of x.
+2: A168049: Expansion of (3 -x -sqrt(1-2*x-3*x^2))/2.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">oeis</span><span class="p">(</span><span class="s1">&#39;A001006&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">formulas</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0: G.f.: A(x) = ( 1 - x - (1-2*x-3*x^2)^(1/2) ) / (2*x^2).
+ 1: G.f. A(x) satisfies A(x) = 1 + x*A(x) + x^2*A(x)^2.
+ 2: G.f.: F(x)/x where F(x) is the reversion of x/(1+x+x^2). - _Joerg Arndt_, Oct 23 2012
+ 3: a(n) = (-1/2) Sum_{i+j = n+2, i &gt;= 0, j &gt;= 0} (-3)^i*C(1/2, i)*C(1/2, j).
+ 4: a(n) = (3/2)^(n+2) * Sum_{k &gt;= 1} 3^(-k) * Catalan(k-1) * binomial(k, n+2-k). [Doslic et al.]
+ 5: a(n) ~ 3^(n+1)*sqrt(3)*(1 + 1/(16*n))/((2*n+3)*sqrt((n+2)*Pi)). [Barcucci, Pinzani and Sprugnoli]
+ 6: Limit_{n-&gt;infinity} a(n)/a(n-1) = 3. [Aigner]
+ 7: a(n+2) - a(n+1) = a(0)*a(n) + a(1)*a(n-1) + ... + a(n)*a(0). [Bernhart]
+ 8: a(n) = (1/(n+1)) * Sum_{i} (n+1)!/(i!*(i+1)!*(n-2*i)!). [Bernhart]
+ 9: From _Len Smiley_: (Start)
+10: a(n) = Sum_{k=0..n} (-1)^(n-k)*binomial(n, k)*A000108(k+1), inv. Binomial Transform of A000108.
+11: a(n) = (1/(n+1))*Sum_{k=0..ceiling((n+1)/2)} binomial(n+1, k)*binomial(n+1-k, k-1);
+12: D-finite with recurrence: (n+2)*a(n) = (2*n+1)*a(n-1) + (3*n-3)*a(n-2). (End)
+13: a(n) = Sum_{k=0..n} C(n, 2k)*A000108(k). - _Paul Barry_, Jul 18 2003
+14: E.g.f.: exp(x)*BesselI(1, 2*x)/x. - _Vladeta Jovovic_, Aug 20 2003
+15: a(n) = A005043(n) + A005043(n+1).
+16: The Hankel transform of this sequence gives A000012 = [1, 1, 1, 1, 1, 1, ...]. E.g., Det([1, 1, 2, 4; 1, 2, 4, 9; 2, 4, 9, 21; 4, 9, 21, 51]) = 1. - _Philippe Deléham_, Feb 23 2004
+17: a(m+n) = Sum_{k&gt;=0} A064189(m, k)*A064189(n, k). - _Philippe Deléham_, Mar 05 2004
+18: a(n) = (1/(n+1))*Sum_{j=0..floor(n/3)} (-1)^j*binomial(n+1, j)*binomial(2*n-3*j, n). - _Emeric Deutsch_, Mar 13 2004
+19: a(n) = A086615(n) - A086615(n-1) (n &gt;= 1). - _Emeric Deutsch_, Jul 12 2004
+20: G.f.: A(x)=(1-y+y^2)/(1-y)^2 where (1+x)*(y^2-y)+x=0; A(x)=4*(1+x)/(1+x+sqrt(1-2*x-3*x^2))^2; a(n)=(3/4)*(1/2)^n*Sum_(k=0..2*n, 3^(n-k)*C(k)*C(k+1, n+1-k) ) + 0^n/4 [after Doslic et al.]. - _Paul Barry_, Feb 22 2005
+21: G.f.: c(x^2/(1-x)^2)/(1-x), c(x) the g.f. of A000108. - _Paul Barry_, May 31 2006
+22: Asymptotic formula: a(n) ~ sqrt(3/4/Pi)*3^(n+1)/n^(3/2). - _Benoit Cloitre_, Jan 25 2007
+23: a(n) = A007971(n+2)/2. - _Zerinvary Lajos_, Feb 28 2007
+24: a(n) = (1/(2*Pi))*Integral_{x=-1..3} x^n*sqrt((3-x)*(1+x)) is the moment representation. - _Paul Barry_, Sep 10 2007
+25: Given an integer t &gt;= 1 and initial values u = [a_0, a_1, ..., a_{t-1}], we may define an infinite sequence Phi(u) by setting a_n = a_{n-1} + a_0*a_{n-1} + a_1*a_{n-2} + ... + a_{n-2}*a_1 for n &gt;= t. For example, Phi([1]) is the Catalan numbers A000108. The present sequence is Phi([0,1,1]), see the 6th formula. - _Gary W. Adamson_, Oct 27 2008
+26: G.f.: 1/(1-x-x^2/(1-x-x^2/(1-x-x^2/(1-x-x^2/(1-x-x^2/.... (continued fraction). - _Paul Barry_, Dec 06 2008
+27: G.f.: 1/(1-(x+x^2)/(1-x^2/(1-(x+x^2)/(1-x^2/(1-(x+x^2)/(1-x^2/(1-.... (continued fraction). - _Paul Barry_, Feb 08 2009
+28: a(n) = (-3)^(1/2)/(6*(n+2)) * (-1)^n*(3*hypergeom([1/2, n+1],[1],4/3) - hypergeom([1/2, n+2],[1],4/3)). - _Mark van Hoeij_, Nov 12 2009
+29: G.f.: 1/(1-x/(1-x/(1-x^2/(1-x/(1-x/(1-x^2/(1-x/(1-x/(1-x^2/(1-... (continued fraction). - _Paul Barry_, Mar 02 2010
+30: G.f.: 1/(1-x/(1-x/(1+x-x/(1-x/(1+x-x/(1-x/(1+x-x/(1-x/(1+x-x/(1-... (continued fraction). - _Paul Barry_, Jan 26 2011 [Adds apparently a third &#39;1&#39; in front. - _R. J. Mathar_, Jan 29 2011]
+31: Let A(x) be the g.f., then B(x)=1+x*A(x) = 1 + 1*x + 1*x^2 + 2*x^3 + 4*x^4 + 9*x^5 + ... = 1/(1-z/(1-z/(1-z/(...)))) where z=x/(1+x) (continued fraction); more generally B(x)=C(x/(1+x)) where C(x) is the g.f. for the Catalan numbers (A000108). - _Joerg Arndt_, Mar 18 2011
+32: a(n) = (2/Pi)*Integral_{x=-1..1} (1+2*x)^n*sqrt(1-x^2). - _Peter Luschny_, Sep 11 2011
+33: G.f.: (1-x-sqrt(1-2*x-3*(x^2)))/(2*(x^2)) = 1/2/(x^2)-1/2/x-1/2/(x^2)*G(0); G(k) = 1+(4*k-1)*x*(2+3*x)/(4*k+2-x*(2+3*x)*(4*k+1)*(4*k+2) /(x*(2+3*x)*(4*k+1)+(4*k+4)/G(k+1)), if -1 &lt; x &lt; 1/3; (continued fraction). - _Sergei N. Gladkovskii_, Dec 01 2011
+34: G.f.: (1-x-sqrt(1-2*x-3*(x^2)))/(2*(x^2)) = (-1 + 1/G(0))/(2*x); G(k) = 1-2*x/(1+x/(1+x/(1-2*x/(1-x/(2-x/G(k+1)))))); (continued fraction). - _Sergei N. Gladkovskii_, Dec 11 2011
+35: 0 = a(n) * (9*a(n+1) + 15*a(n+2) - 12*a(n+3)) + a(n+1) * ( -3*a(n+1) + 10*a(n+2) - 5*a(n+3)) + a(n+2) * (a(n+2) + a(n+3)) unless n=-2. - _Michael Somos_, Mar 23 2012
+36: a(n) = (-1)^n*hypergeometric([-n,3/2],[3],4). - _Peter Luschny_, Aug 15 2012
+37: Representation in terms of special values of Jacobi polynomials P(n,alpha,beta,x), in Maple notation: a(n)= 2*(-1)^n*n!*JacobiP(n,2,-3/2-n,-7)/(n+2)!, n&gt;=0. - _Karol A. Penson_, Jun 24 2013
+38: G.f.: Q(0)/x - 1/x, where Q(k) = 1 + (4*k+1)*x/((1+x)*(k+1) - x*(1+x)*(2*k+2)*(4*k+3)/(x*(8*k+6)+(2*k+3)*(1+x)/Q(k+1))); (continued fraction). - _Sergei N. Gladkovskii_, May 14 2013
+39: Catalan(n+1) = Sum_{k=0..n} binomial(n,k)*a(k). E.g.: 42 = 1*1 + 4*1 + 6*2 + 4*4 + 1*9. - _Doron Zeilberger_, Mar 12, 2015
+40: G.f. A(x) with offset 1 satisfies: A(x)^2 = A( x^2/(1-2*x) ). - _Paul D. Hanna_, Nov 08 2015
+41: Conjecture: +(n+2)*a(n) +(-2*n-1)*a(n-1) +3*(-n+1)*a(n-2)=0. - _R. J. Mathar_, Sep 06 2016 [Conjecture follows from the D.E. (3*x^3+2*x^2-x)*g&#39;(x)+(3*x^2+3*x-2)*g(x)+2=0 satisfied by the g.f. - _Robert Israel_, Mar 16 2018]
+42: a(n) = GegenbauerPoly(n,-n-1,-1/2)/(n+1). - _Emanuele Munarini_, Oct 20 2016
+43: a(n) = a(n-1) + A002026(n-1). Number of Motzkin paths that start with an F step plus number of Motzkin paths that start with an U step. - _R. J. Mathar_, Jul 25 2017
+44: G.f. A(x) satisfies A(x)*A(-x) = F(x^2), where F(x) is the g.f. of A168592. - _Alexander Burstein_, Oct 04 2017
+45: G.f.: A(x) = exp(int((E(x)-1)/x dx), where E(x) is the g.f. of A002426. Equivalently, E(x) = 1 + x*A&#39;(x)/A(x). - _Alexander Burstein_, Oct 05 2017
+46: G.f. A(x) satisfies: A(x) = Sum_{j&gt;=0} x^j * Sum_{k=0..j} binomial(j,k)*x^k*A(x)^k. - _Ilya Gutkovskiy_, Apr 11 2019
+47: From _Gennady Eremin_, May 08 2021: (Start)
+48: G.f.: 2/(1 - x + sqrt(1-2*x-3*x^2)).
+49: a(n) = A107587(n) + A343386(n) = 2*A107587(n) - A343773(n) = 2*A343386(n) + A343773(n). (End)
+50: Revert transform of A049347 (after Michael Somos). - _Gennady Eremin_, Jun 11 2021
+51: Sum_{n&gt;=0} 1/a(n) = 2.941237337631025604300320152921013604885956025483079699366681494505960039781389... - _Vaclav Kotesovec_, Jun 17 2021
+52: Let a(-1) = (1 - sqrt(-3))/2 and a(n) = a(-3-n)*(-3)^(n+3/2) for all n in Z. Then a(n) satisfies my previous formula relation from Mar 23 2012 now for all n in Z. - _Michael Somos_, Apr 17 2022
+53: Let b(n) = 1 for n &lt;= 1, otherwise b(n) = Sum_{k=2..n} b(k-1) * b(n-k), then a(n) = b(n+1) (conjecture). - _Joerg Arndt_, Jan 16 2023
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p>Browse the formulae in the OEIS to answer the question of how many times more Motzkin paths of length 101 there are compared to Motzkin paths of length 100. No computation is needed.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Equation 0 is the generating function we found above.</p></li>
+<li><p>Equation 1 is the recurrence we found through the symbolic method.</p></li>
+<li><p>Equation 7 is equivalent to <span class="math notranslate nohighlight">\(M_{n+1} = M_n + \sum_{n=0}^{n-1}M_k M_{n-k-1}\)</span>.</p></li>
+<li><p>Equation 13 is equivalent to <span class="math notranslate nohighlight">\(M_n = \sum_{k=0}^{n-2}\binom{n}{n-2k}C_k\)</span> where <span class="math notranslate nohighlight">\(C_k\)</span> is the <span class="math notranslate nohighlight">\(k\)</span>-th Catalan number.</p></li>
+</ul>
+<blockquote>
+<div><p>Browse the formulae in the OEIS to answer the question of how many times more Motzkin paths of length 101 there are compared to Motzkin paths of length 100. No computation is needed.</p>
+</div></blockquote>
+<p><em>Write your answer here.</em></p>
+<p>Formula 6 suggests that there should be 3 times as many Motzkin paths of length 101 compared to length 100.</p>
+<blockquote>
+<div><p>Compare your answer to what you get by extracting the 100-th and 101-th terms of the generating function, and taking the ratio.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="n">sol</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">rhs</span><span class="p">()</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="nb">float</span><span class="p">(</span><span class="n">S</span><span class="o">.</span><span class="n">coefficients</span><span class="p">()[</span><span class="mi">101</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">S</span><span class="o">.</span><span class="n">coefficients</span><span class="p">()[</span><span class="mi">100</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.9562566099189227
+</pre></div>
+</div>
+</div>
+</div>
+<p>The ratio we expected is 3, and we got ~2.96. It is pretty close.</p>
+</section>
+<section id="finding-a-recurrence-from-a-generating-function">
+<h2>Finding a recurrence from a generating function<a class="headerlink" href="#finding-a-recurrence-from-a-generating-function" title="Link to this heading">#</a></h2>
+<p>Here is a linear recurrence, expressed in the form of a generating function
+$<span class="math notranslate nohighlight">\(\frac{x}{-4x^3 - 5x^2 - 7x + 1}.\)</span>$
+Can you find the recurrence?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pass the generating function to SageMath</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">CFiniteSequences</span><span class="p">(</span><span class="n">ZZ</span><span class="p">)</span>
+<span class="n">seq</span> <span class="o">=</span> <span class="n">C</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">7</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">));</span> <span class="n">seq</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C-finite sequence, generated by x/(-4*x^3 - 5*x^2 - 7*x + 1)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find the recurrence</span>
+<span class="n">seq</span><span class="o">.</span><span class="n">recurrence_repr</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;homogeneous linear recurrence with constant coefficients of degree 3: a(n+3) = 7*a(n+2) + 5*a(n+1) + 4*a(n), starting a(1...) = [1, 7, 54]&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "sagemath"
+        },
+        kernelOptions: {
+            name: "sagemath",
+            path: "./counting"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'sagemath'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tutorial : Use SageMath Notebook, navigate the documentation and use SageMath as a calculator.</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obtain-some-help">Obtain some help</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-python-basics-for-using-sagemath">II. Python basics for using SageMath</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-syntax">Python Syntax</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Python Syntax</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-and-while-loops"><code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code> Loops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-structures">Data structures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-sets-and-dictionaries">Lists, sets and dictionaries</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#map-and-zip-functions"><code class="docutils literal notranslate"><span class="pre">map</span></code> and <code class="docutils literal notranslate"><span class="pre">zip</span></code> functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-programing-with-python-lambda">Functional programing with Python:  <code class="docutils literal notranslate"><span class="pre">lambda</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-combinatorial-sequences-with-sagemath">III. Combinatorial sequences with SageMath</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stirling-numbers">Stirling numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sieving">Sieving</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-derangements">Number of derangements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eulerian-numbers">Eulerian numbers</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-combinatorial-sequences-with-sagemath">IV. Combinatorial sequences with SageMath</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-from-professor-balazs-see-how-faster-it-is-with-sagemath">Exercise from Professor Balázs. See how faster it is with SageMath!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-from-professor-balazs-with-some-extra-prompts-see-how-faster-it-is-with-sagemath">Exercise from Professor Balázs, with some extra prompts. See how faster it is with SageMath!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-challenge-problem">A challenge problem!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-a-recurrence-from-a-generating-function">Finding a recurrence from a generating function</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Tom Tang
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -64,7 +64,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Math-FP-Lang Combo" href="math/00intro_math.html" />
-    <link rel="prev" title="How to Count Things" href="0HowToCountThings.html" />
+    <link rel="prev" title="How to Count Things" href="counting/HowToCountThings.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -185,7 +185,7 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="0HowToCountThings.html">How to Count Things</a></li>
+<li class="toctree-l1"><a class="reference internal" href="counting/HowToCountThings.html">How to Count Things</a></li>
 
 
 
@@ -199,6 +199,9 @@
 
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Twelvefold Way -&gt; 二十四路计数模型</a></li>
+
+
+
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Old Math</span></p>
@@ -374,13 +377,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stirling-arise-from-both-permutation-set-partitions">Stirling arise from both permutation &amp; set partitions</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#me-typed">Me typed</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poker">Poker</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subsets">Subsets</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-partition-composition-permutation-updating">Integer partition &amp; composition &amp; permutation(updating)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gf-4-enumeration-tree">GF 4 enumeration tree</a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#poker">Poker</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#subsets">Subsets</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-partition-composition-permutation-updating">Integer partition &amp; composition &amp; permutation(updating)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#gf-4-enumeration-tree">GF 4 enumeration tree</a></li>
 </ul>
 
             </nav>
@@ -393,12 +393,55 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p>组合计数</p>
+  <p><strong>Combinatorics</strong> is essentially the art of avoiding overcounting while ensuring completeness.</p>
+<p>组合计数</p>
 <ol class="arabic simple">
-<li><p>基础计数： 处理元素与容器的区分度（球盒模型）- Twelvefold Way</p></li>
-<li><p>约束计数： 处理容斥原理、抽屉原理（约束条件）。</p></li>
-<li><p>等价计数： 处理群论下的对称性（Burnside &amp; Pólya）。</p></li>
+<li><p>基础计数： 处理元素与容器的区分度（球盒模型）- Twelvefold Way</p>
+<ol class="arabic simple">
+<li><p>If objects are labeled, we are dealing with functions (<span class="math notranslate nohighlight">\(f: A \to B\)</span>). The math is grounded in set theory and exponential growth (<span class="math notranslate nohighlight">\(m^n\)</span>).</p></li>
+<li><p>If objects are labeled, we are no longer mapping specific elements; we are simply partitioning integers.</p></li>
 </ol>
+</li>
+<li><p>约束计数： 处理容斥问题、抽屉原理（约束条件）、生成函数。</p>
+<ol class="arabic simple">
+<li><p>If you can pick 0, 1, or 2 oranges, you write <span class="math notranslate nohighlight">\((1 + x^1 + x^2)\)</span>. If you have 3 boxes, you calculate <span class="math notranslate nohighlight">\((1 + x + x^2)^3\)</span>. The coefficient of <span class="math notranslate nohighlight">\(x^n\)</span> is your answer.</p></li>
+</ol>
+</li>
+<li><p>等价计数： 处理群论下的对称性 Burnside’s Lemma &amp; Pólya Enumeration Theorem (PET)。</p>
+<ol class="arabic simple">
+<li><p><strong>Orbits</strong> (the “stacms” of equivalent states)</p></li>
+<li><p><strong>Burnside</strong> is the “global” view: To find the number of unique objects, you find the average number of states that remain “fixed” (unchanged) under each symmetry operation.</p></li>
+<li><p><strong>Pólya</strong> (PET) is the “local” view: It uses the Cycle form. If a rotation of a necmlace swaps beads in cycles of length 2, you can choose any color for each cycle, not each bead. PET allows you to weight these colors, giving you a generating function for unique colored objects.</p></li>
+</ol>
+</li>
+</ol>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Counting levels</p></th>
+<th class="head"><p>- Obstacle <br> - Goal</p></th>
+<th class="head"><p>Focus</p></th>
+<th class="head"><p>Tools</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>Fundamental <br> <em>building</em></p></td>
+<td><p>- Identity ambiguity <br> - labeled or not (Set Theory / Functions)</p></td>
+<td><p>Twelvefold Way</p></td>
+<td><p>Objects labelled: You are counting Functions. <br> Objects unlabelled: You are counting Occupancy Numbers.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Constrained <br> <em>filtering</em></p></td>
+<td><p>- Overlapping restrictions <br> - Apply “Filters” to the raw count.</p></td>
+<td><p>Sieving, Number Theory, Series</p></td>
+<td><p>Inclusion-Exclusion Principle(Derangements <span class="math notranslate nohighlight">\(!n\)</span> 错排问题); <br>Pigeonhole Principle(抽屉原理); <br>Generating Functions(infinite pocmet); <br>Stars and Bars(隔板法)</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Equivalence <br> <em>topological</em></p></td>
+<td><p>- Redundancy from dynamic/topological, not static like above <br> - To eliminate duplicates caused by rotation or flipping.</p></td>
+<td><p>Symmetry/Groups</p></td>
+<td><p>count Orbits under a Group Action.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <section id="twelvefold-way">
 <h1>Twelvefold Way -&gt; 二十四路计数模型<a class="headerlink" href="#twelvefold-way" title="Link to this heading">#</a></h1>
 <p><strong>Bell数</strong>的整数数列：B0=1,B1=1,B2=2,B3=5,B4=15,B5=52,B6=203…. , Bn是基数为n的集合的划分方法数目。</p>
@@ -492,41 +535,81 @@ S(n,k)=kS(n-1,k)+S(n-1,k-1)</p></li>
 </ul>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Ball <span class="math notranslate nohighlight">\(N\)</span></p></th>
-<th class="head"><p>Box <span class="math notranslate nohighlight">\(K\)</span></p></th>
+<tr class="row-odd"><th class="head"><p>f-class</p></th>
+<th class="head"><p>Ball <span class="math notranslate nohighlight">\(N\)</span> <b> Box <span class="math notranslate nohighlight">\(M\)</span></p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(f\)</span> unrestricted</p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(f\)</span> one-to-one injective</p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(f\)</span> onto Surjective</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>f</p></td>
+<td><p>ball labeled <br> box labeled</p></td>
+<td class="text-center"><p>1: Tuple</p></td>
+<td class="text-center"><p>2: Permu</p></td>
+<td class="text-center"><p>3: Stir</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(f\circ S_n\)</span></p></td>
+<td><p>ball unlabeled <br> box labeled</p></td>
+<td class="text-center"><p>4: w-Comp</p></td>
+<td class="text-center"><p>5: Binom</p></td>
+<td class="text-center"><p>6: Comp</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(S_m \circ f\)</span></p></td>
+<td><p>ball labeled <br> box unlabeled</p></td>
+<td class="text-center"><p>7: Stir</p></td>
+<td class="text-center"><p>8: Ordin</p></td>
+<td class="text-center"><p>9: Stir</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(S_m \circ f\circ S_n\)</span></p></td>
+<td><p>ballunlabeled <br> box unlabeled</p></td>
+<td class="text-center"><p>10: GF</p></td>
+<td class="text-center"><p>11: Ordin</p></td>
+<td class="text-center"><p>12: GF</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>f-class</p></th>
+<th class="head"><p>Ball <span class="math notranslate nohighlight">\(N\)</span> <b> Box <span class="math notranslate nohighlight">\(M\)</span></p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(f\)</span> unrestricted</p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(f\)</span> one-to-one injective</p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(f\)</span> onto Surjective</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>labeled</p></td>
-<td><p>labeled</p></td>
-<td><p><span class="math notranslate nohighlight">\(k^n\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\((k-n+1)_n\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(k!\,S(n,k)\)</span></p></td>
+<tr class="row-even"><td><p>f</p></td>
+<td><p>ball labeled <br> box labeled</p></td>
+<td><p><span class="math notranslate nohighlight">\(m^n\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\((m-n+1)_n\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(m!\,S(n,m)\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p>unlabeled</p></td>
-<td><p>labeled</p></td>
-<td><p><span class="math notranslate nohighlight">\(\binom{k+n-1}{n}\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\binom{k}{n}\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\binom{n-1}{\,n-k\,}\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(f\circ S_n\)</span></p></td>
+<td><p>ball unlabeled <br> box labeled</p></td>
+<td><p><span class="math notranslate nohighlight">\(\binom{m+n-1}{n}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\binom{m}{n}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\binom{n-1}{\,n-m\,}\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p>labeled</p></td>
-<td><p>unlabeled</p></td>
-<td><p><span class="math notranslate nohighlight">\(S(n,1)+S(n,2)+\cdots+S(n,k)\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\begin{cases}1 &amp; n\le k\\0 &amp; n&gt;k\end{cases}\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(S(n,k)\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(S_m \circ f\)</span></p></td>
+<td><p>ball labeled <br> box unlabeled</p></td>
+<td><p><span class="math notranslate nohighlight">\(S(n,1)+S(n,2)+\cdots+S(n,m)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\begin{cases}1 &amp; n\le m\\0 &amp; n&gt;m\end{cases}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(S(n,m)\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p>unlabeled</p></td>
-<td><p>unlabeled</p></td>
-<td><p><span class="math notranslate nohighlight">\(p_k(n)\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\begin{cases}1 &amp; n\le k\\0 &amp; n&gt;k\end{cases}\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(p_k(n)-p_{k-1}(n)\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(S_m \circ f\circ S_n\)</span></p></td>
+<td><p>ballunlabeled <br> box unlabeled</p></td>
+<td><p><span class="math notranslate nohighlight">\(p_m(n)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\begin{cases}1 &amp; n\le m\\0 &amp; n&gt;m\end{cases}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(p_m(n)-p_{m-1}(n)\)</span></p></td>
 </tr>
 </tbody>
 </table>
 </div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(S_m, S_n\)</span>: Symmetric/permutation groups acting on balls and boxes, respectively. The “<span class="math notranslate nohighlight">\(\circ\)</span>” is the group action (composition/transformation)</p></li>
+</ul>
 <p>二十四路计数的三个逻辑维度</p>
 <ul class="simple">
 <li><p>元素（球）是否可区分？ (Distinguishable / Indistinguishable)</p></li>
@@ -645,7 +728,7 @@ S(n,k)=kS(n-1,k)+S(n-1,k-1)</p></li>
     <span class="k">return</span> <span class="n">factorial</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">stirling_number2</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="c1"># surj count via Stirling is already exact; brute is expensive</span>
 
 <span class="c1"># 3 examples </span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;           Any=unrestricted;   Injective=at most 1 per box;  Surjective=no empty box&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;           Any=unrestricted;   Injective=no multi-balls;  Surjective=no empty box&quot;</span><span class="p">)</span>
 <span class="n">twelvefold_summary</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="c1"># it is bijective </span>
 <span class="n">twelvefold_summary</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">twelvefold_summary</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
@@ -653,7 +736,7 @@ S(n,k)=kS(n-1,k)+S(n-1,k-1)</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>           Any=unrestricted;   Injective=at most 1 per box;  Surjective=no empty box
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>           Any=unrestricted;   Injective=no multi-balls;  Surjective=no empty box
 
 Twelvefold way ( 5 balls,  5 boxes) with capacity rule:
 1) Balls labeled,   Boxes labeled:   Any: 3125   Inj: 120   Sur: 120
@@ -703,10 +786,8 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
 </div>
 </section>
 </section>
-<section id="me-typed">
-<h1>Me typed<a class="headerlink" href="#me-typed" title="Link to this heading">#</a></h1>
 <section id="poker">
-<h2>Poker<a class="headerlink" href="#poker" title="Link to this heading">#</a></h2>
+<h1>Poker<a class="headerlink" href="#poker" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">############ Poker Simulator ############</span>
@@ -741,7 +822,7 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
 </div>
 </section>
 <section id="subsets">
-<h2>Subsets<a class="headerlink" href="#subsets" title="Link to this heading">#</a></h2>
+<h1>Subsets<a class="headerlink" href="#subsets" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">(</span><span class="n">binomial</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
@@ -764,7 +845,7 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
 </div>
 </section>
 <section id="integer-partition-composition-permutation-updating">
-<h2>Integer partition &amp; composition &amp; permutation(updating)<a class="headerlink" href="#integer-partition-composition-permutation-updating" title="Link to this heading">#</a></h2>
+<h1>Integer partition &amp; composition &amp; permutation(updating)<a class="headerlink" href="#integer-partition-composition-permutation-updating" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P5</span><span class="o">=</span><span class="n">Partitions</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="n">s</span><span class="p">(</span><span class="n">P5</span><span class="p">)</span>
@@ -871,7 +952,7 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
 </div>
 </section>
 <section id="gf-4-enumeration-tree">
-<h2>GF 4 enumeration tree<a class="headerlink" href="#gf-4-enumeration-tree" title="Link to this heading">#</a></h2>
+<h1>GF 4 enumeration tree<a class="headerlink" href="#gf-4-enumeration-tree" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">############ Start from an Integer Seq, to find out GF ############</span>
@@ -921,7 +1002,6 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
 </div>
 </div>
 </section>
-</section>
 
     <script type="text/x-thebe-config">
     {
@@ -954,7 +1034,7 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="0HowToCountThings.html"
+       href="counting/HowToCountThings.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
@@ -991,13 +1071,10 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stirling-arise-from-both-permutation-set-partitions">Stirling arise from both permutation &amp; set partitions</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#me-typed">Me typed</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poker">Poker</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subsets">Subsets</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-partition-composition-permutation-updating">Integer partition &amp; composition &amp; permutation(updating)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gf-4-enumeration-tree">GF 4 enumeration tree</a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#poker">Poker</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#subsets">Subsets</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-partition-composition-permutation-updating">Integer partition &amp; composition &amp; permutation(updating)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#gf-4-enumeration-tree">GF 4 enumeration tree</a></li>
 </ul>
 
   </nav></div>
