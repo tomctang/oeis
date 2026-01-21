@@ -8,7 +8,7 @@ parts:
   chapters:
   - file: chapter0_introduction
   - file: 0mathmap
-  - file: 0HowToCountThings
+  - file: counting/HowToCountThings
   - file: 111c
 
 - caption: Old Math
