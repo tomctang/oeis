@@ -12,6 +12,7 @@ parts:
   - file: counting/Lectures_output
   - file: counting/Tutorial-nosolution
   - file: counting/Tutorial-withsolutions
+  - file: counting/slides1-Intro
 
 - caption: Math Map
   numbered: false
