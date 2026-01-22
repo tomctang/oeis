@@ -7,14 +7,16 @@ parts:
   numbered: false
   chapters:
   - file: chapter0_introduction
-  - file: 0mathmap
   - file: counting/HowToCountThings
-  - file: 111c
+  - file: counting/Lectures
+  - file: counting/Tutorial-nosolution
+  - file: counting/Tutorial-withsolutions
 
-- caption: Old Math
+- caption: Math Map
   numbered: false
   chapters:
-  - file: math/00intro_math
-  - file: math/01number_algebra
-  - file: math/02discrete_continuous
-  - file: math/03real_world
+  - file: 0mathmap
+  - file: old00intro_math
+  - file: old01number_algebra
+  - file: old02discrete_continuous
+  - file: old03real_world
