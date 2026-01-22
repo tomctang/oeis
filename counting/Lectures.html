@@ -60,9 +60,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'counting/Lecture 1 - Intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'counting/Lectures';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Tutorial I" href="Tutorial-nosolution.html" />
+    <link rel="prev" title="How to Count Things" href="HowToCountThings.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,8 +127,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -177,14 +177,8 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">OEIS &amp; SageMath</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter0_introduction.html">Chapter 0: Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../0mathmap.html">Math Map</a></li>
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="HowToCountThings.html">How to Count Things</a></li>
 
 
@@ -198,18 +192,34 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../111c.html">Twelvefold Way -&gt; 二十四路计数模型</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">I. EAUMP-ICTP Enumerative Combinatorics</a></li>
 
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Tutorial-nosolution.html">Tutorial I</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Tutorial-withsolutions.html">Tutorial I. SageMath</a></li>
 
 
 
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Old Math</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Math Map</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../math/00intro_math.html">Math-FP-Lang Combo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../math/01number_algebra.html">Number &amp; Algebra</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../math/02discrete_continuous.html">Discrete &amp; Continuous</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../math/03real_world.html">Real World Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0mathmap.html">Math Map</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../old00intro_math.html">Math-FP-Lang Combo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../old01number_algebra.html">Number &amp; Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../old02discrete_continuous.html">Discrete &amp; Continuous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../old03real_world.html">Real World Math</a></li>
 </ul>
 
     </div>
@@ -279,7 +289,7 @@
       
       
       
-      <li><a href="../_sources/counting/Lecture 1 - Intro.ipynb" target="_blank"
+      <li><a href="../_sources/counting/Lectures.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -385,7 +395,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#before-you-go">Before you go…</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-combinatorial-structures-and-statistics-with-sagemath">II. Combinatorial structures and statistics with SageMath</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-combinatorial-structures-and-statistics">II. Combinatorial structures and statistics</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combinatorial-structures">Combinatorial structures</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-objects-from-a-combinatorial-structure">Generating objects from a combinatorial structure</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-combinatorial-structures">Other combinatorial structures</a></li>
@@ -394,7 +404,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#different-ways-to-draw-objects">Different ways to draw objects</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-combinatorics-with-sagemath-generating-functions">III. Combinatorics with SageMath: Generating functions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-generating-functions">III. Generating functions</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-motivating-example">A motivating example</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bivariate-generating-functions">Bivariate generating functions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-at-the-board-bivariate-generating-functions">[Lecture at the board: bivariate generating functions]</a></li>
@@ -415,7 +425,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#takeaway">Takeaway</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-combinatorics-with-sagemath-graphs">IV. Combinatorics with SageMath: Graphs</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-graphs">IV. Graphs</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graphs">Graphs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Motivation</a></li>
@@ -447,7 +457,7 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#v-combinatorics-with-sagemath-databases">V. Combinatorics with SageMath: Databases</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#v-databases">V. Databases</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interface-with-databases">Interface with databases</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#online-encyclopedia-of-integer-sequences-https-oeis-org">Online Encyclopedia of Integer Sequences: https://oeis.org/</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oeis-examples">OEIS examples</a><ul class="nav section-nav flex-column">
@@ -544,6 +554,11 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>21
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="id2">
@@ -572,6 +587,11 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="id3">
@@ -581,6 +601,13 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># What is this sequence?</span>
 <span class="n">oeis</span><span class="p">(</span><span class="n">sequence_no_consecutive</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0: A000045: Fibonacci numbers: F(n) = F(n-1) + F(n-2) with F(0) = 0 and F(1) = 1.
+1: A212804: Expansion of (1 - x)/(1 - x - x^2).
+2: A324969: Number of unlabeled rooted identity trees with n vertices whose non-leaf terminal subtrees are all different.
 </pre></div>
 </div>
 </div>
@@ -607,10 +634,245 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Init signature:</span> Partitions<span class=" -Color -Color-Blue">(</span>is_infinite<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">False</span><span class=" -Color -Color-Blue">)</span>
+<span class=" -Color -Color-Red">Docstring:</span>     
+   &quot;Partitions(n, **kwargs)&quot; returns the combinatorial class of
+   integer partitions of n subject to the constraints given by the
+   keywords.
+
+   Valid keywords are: &quot;starting&quot;, &quot;ending&quot;, &quot;min_part&quot;, &quot;max_part&quot;,
+   &quot;max_length&quot;, &quot;min_length&quot;, &quot;length&quot;, &quot;max_slope&quot;, &quot;min_slope&quot;,
+   &quot;inner&quot;, &quot;outer&quot;, &quot;parts_in&quot;, &quot;regular&quot;, and &quot;restricted&quot;. They
+   have the following meanings:
+
+   * &quot;starting=p&quot; specifies that the partitions should all be less
+     than or equal to p in lex order. This argument cannot be combined
+     with any other (see
+     https://github.com/sagemath/sage/issues/15467).
+
+   * &quot;ending=p&quot; specifies that the partitions should all be greater
+     than or equal to p in lex order. This argument cannot be combined
+     with any other (see
+     https://github.com/sagemath/sage/issues/15467).
+
+   * &quot;length=k&quot; specifies that the partitions have exactly k parts.
+
+   * &quot;min_length=k&quot; specifies that the partitions have at least k
+     parts.
+
+   * &quot;min_part=k&quot; specifies that all parts of the partitions are at
+     least k.
+
+   * &quot;inner=p&quot; specifies that the partitions must contain the
+     partition p.
+
+   * &quot;outer=p&quot; specifies that the partitions be contained inside the
+     partition p.
+
+   * &quot;min_slope=k&quot; specifies that the partitions have slope at least
+     k; the slope at position i is the difference between the (i+1)-th
+     part and the i-th part.
+
+   * &quot;parts_in=S&quot; specifies that the partitions have parts in the set
+     S, which can be any sequence of pairwise distinct positive
+     integers. This argument cannot be combined with any other (see
+     https://github.com/sagemath/sage/issues/15467).
+
+   * &quot;regular=ell&quot; specifies that the partitions are \ell-regular, and
+     can only be combined with the &quot;max_length&quot; or &quot;max_part&quot;, but not
+     both, keywords if n is not specified
+
+   * &quot;restricted=ell&quot; specifies that the partitions are \ell-
+     restricted, and cannot be combined with any other keywords
+
+   The &quot;max_*&quot; versions, along with &quot;inner&quot; and &quot;ending&quot;, work
+   analogously.
+
+   Right now, the &quot;parts_in&quot;, &quot;starting&quot;, &quot;ending&quot;, &quot;regular&quot;, and
+   &quot;restricted&quot; keyword arguments are mutually exclusive, both of each
+   other and of other keyword arguments. If you specify, say,
+   &quot;parts_in&quot;, all other keyword arguments will be ignored;
+   &quot;starting&quot;, &quot;ending&quot;, &quot;regular&quot;, and &quot;restricted&quot; work the same
+   way.
+
+   EXAMPLES:
+
+   If no arguments are passed, then the combinatorial class of all
+   integer partitions is returned:
+
+      sage: Partitions()
+      Partitions
+      sage: [2,1] in Partitions()
+      True
+
+   If an integer n is passed, then the combinatorial class of integer
+   partitions of n is returned:
+
+      sage: Partitions(3)
+      Partitions of the integer 3
+      sage: Partitions(3).list()
+      [[3], [2, 1], [1, 1, 1]]
+
+   If &quot;starting=p&quot; is passed, then the combinatorial class of
+   partitions greater than or equal to p in lexicographic order is
+   returned:
+
+      sage: Partitions(3, starting=[2,1])
+      Partitions of the integer 3 starting with [2, 1]
+      sage: Partitions(3, starting=[2,1]).list()
+      [[2, 1], [1, 1, 1]]
+
+   If &quot;ending=p&quot; is passed, then the combinatorial class of partitions
+   at most p in lexicographic order is returned:
+
+      sage: Partitions(3, ending=[2,1])
+      Partitions of the integer 3 ending with [2, 1]
+      sage: Partitions(3, ending=[2,1]).list()
+      [[3], [2, 1]]
+
+   Using &quot;max_slope=-1&quot; yields partitions into distinct parts -- each
+   part differs from the next by at least 1. Use a different
+   &quot;max_slope&quot; to get parts that differ by, say, 2:
+
+      sage: Partitions(7, max_slope=-1).list()
+      [[7], [6, 1], [5, 2], [4, 3], [4, 2, 1]]
+      sage: Partitions(15, max_slope=-1).cardinality()
+      27
+
+   The number of partitions of n into odd parts equals the number of
+   partitions into distinct parts. Let&#39;s test that for n from 10 to
+   20:
+
+      sage: def test(n):
+      ....:     return (Partitions(n, max_slope=-1).cardinality()
+      ....:              == Partitions(n, parts_in=[1,3..n]).cardinality())
+      sage: all(test(n) for n in [10..20])
+      True
+
+   The number of partitions of n into distinct parts that differ by at
+   least 2 equals the number of partitions into parts that equal 1 or
+   4 modulo 5; this is one of the Rogers-Ramanujan identities:
+
+      sage: def test(n):
+      ....:     return (Partitions(n, max_slope=-2).cardinality()
+      ....:              == Partitions(n, parts_in=([1,6..n] + [4,9..n])).cardinality())
+      sage: all(test(n) for n in [10..20])
+      True
+
+   Here are some more examples illustrating &quot;min_part&quot;, &quot;max_part&quot;,
+   and &quot;length&quot;:
+
+      sage: Partitions(5, min_part=2)
+      Partitions of 5 whose parts are at least 2
+      sage: Partitions(5, min_part=2).list()
+      [[5], [3, 2]]
+
+      sage: Partitions(3, max_length=2).list()
+      [[3], [2, 1]]
+
+      sage: Partitions(10, min_part=2, length=3).list()
+      [[6, 2, 2], [5, 3, 2], [4, 4, 2], [4, 3, 3]]
+
+   Some examples using the &quot;regular&quot; keyword:
+
+      sage: Partitions(regular=4)
+      4-Regular Partitions
+      sage: Partitions(regular=4, max_length=3)
+      4-Regular Partitions with max length 3
+      sage: Partitions(regular=4, max_part=3)
+      4-Regular 3-Bounded Partitions
+      sage: Partitions(3, regular=4)
+      4-Regular Partitions of the integer 3
+
+   Some examples using the &quot;restricted&quot; keyword:
+
+      sage: Partitions(restricted=4)
+      4-Restricted Partitions
+      sage: Partitions(3, restricted=4)
+      4-Restricted Partitions of the integer 3
+
+   Here are some further examples using various constraints:
+
+      sage: [x for x in Partitions(4)]
+      [[4], [3, 1], [2, 2], [2, 1, 1], [1, 1, 1, 1]]
+      sage: [x for x in Partitions(4, length=2)]
+      [[3, 1], [2, 2]]
+      sage: [x for x in Partitions(4, min_length=2)]
+      [[3, 1], [2, 2], [2, 1, 1], [1, 1, 1, 1]]
+      sage: [x for x in Partitions(4, max_length=2)]
+      [[4], [3, 1], [2, 2]]
+      sage: [x for x in Partitions(4, min_length=2, max_length=2)]
+      [[3, 1], [2, 2]]
+      sage: [x for x in Partitions(4, max_part=2)]
+      [[2, 2], [2, 1, 1], [1, 1, 1, 1]]
+      sage: [x for x in Partitions(4, min_part=2)]
+      [[4], [2, 2]]
+      sage: [x for x in Partitions(4, outer=[3,1,1])]
+      [[3, 1], [2, 1, 1]]
+      sage: [x for x in Partitions(4, outer=[infinity, 1, 1])]
+      [[4], [3, 1], [2, 1, 1]]
+      sage: [x for x in Partitions(4, inner=[1,1,1])]
+      [[2, 1, 1], [1, 1, 1, 1]]
+      sage: [x for x in Partitions(4, max_slope=-1)]
+      [[4], [3, 1]]
+      sage: [x for x in Partitions(4, min_slope=-1)]
+      [[4], [2, 2], [2, 1, 1], [1, 1, 1, 1]]
+      sage: [x for x in Partitions(11, max_slope=-1, min_slope=-3, min_length=2, max_length=4)]
+      [[7, 4], [6, 5], [6, 4, 1], [6, 3, 2], [5, 4, 2], [5, 3, 2, 1]]
+      sage: [x for x in Partitions(11, max_slope=-1, min_slope=-3, min_length=2, max_length=4, outer=[6,5,2])]
+      [[6, 5], [6, 4, 1], [6, 3, 2], [5, 4, 2]]
+
+   Note that if you specify &quot;min_part=0&quot;, then it will treat the
+   minimum part as being 1 (see
+   https://github.com/sagemath/sage/issues/13605):
+
+      sage: [x for x in Partitions(4, length=3, min_part=0)]
+      [[2, 1, 1]]
+      sage: [x for x in Partitions(4, min_length=3, min_part=0)]
+      [[2, 1, 1], [1, 1, 1, 1]]
+
+   Except for very special cases, counting is done by brute force
+   iteration through all the partitions. However the iteration itself
+   has a reasonable complexity (see &quot;IntegerListsLex&quot;), which allows
+   for manipulating large partitions:
+
+      sage: Partitions(1000, max_length=1).list()
+      [[1000]]
+
+   In particular, getting the first element is also constant time:
+
+      sage: Partitions(30, max_part=29).first()
+      [29, 1]
+<span class=" -Color -Color-Red">Init docstring:</span>
+   Initialize &quot;self&quot;.
+
+   INPUT:
+
+   * &quot;is_infinite&quot; -- boolean (default: &quot;False&quot;); if &quot;True&quot;, then the
+     number of partitions in this set is infinite
+
+   EXAMPLES:
+
+      sage: Partitions()
+      Partitions
+      sage: Partitions(2)
+      Partitions of the integer 2
+<span class=" -Color -Color-Red">File:</span>           ~/miniconda3/envs/sage-env/lib/python3.12/site-packages/sage/combinat/partition.py
+<span class=" -Color -Color-Red">Type:</span>           ClasscallMetaclass
+<span class=" -Color -Color-Red">Subclasses:</span>     Partitions_all, Partitions_all_constrained, Partitions_all_bounded, Partitions_n, Partitions_nk, Partitions_parts_in, Partitions_starting, Partitions_ending, PartitionsInBox, RegularPartitions, ...
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">Partitions</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="n">max_part</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>21
 </pre></div>
 </div>
 </div>
@@ -631,6 +893,202 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Signature:</span> number_of_partitions<span class=" -Color -Color-Blue">(</span>n<span class=" -Color -Color-Blue">,</span> algorithm<span class=" -Color -Color-Blue">=&#39;default&#39;)</span>
+<span class=" -Color -Color-Red">Docstring:</span>
+   Return the number of partitions of n with, optionally, at most k
+   parts.
+
+   The options of &quot;number_of_partitions()&quot; are being deprecated
+   https://github.com/sagemath/sage/issues/13072 in favour of
+   &quot;Partitions_n.cardinality()&quot; so that &quot;number_of_partitions()&quot; can
+   become a stripped down version of the fastest algorithm available
+   (currently this is using FLINT).
+
+   INPUT:
+
+   * &quot;n&quot; -- integer
+
+   * &quot;algorithm&quot; -- (default: &quot;&#39;default&#39;&quot;)
+        [Will be deprecated except in Partition().cardinality() ]
+
+        * &quot;&#39;default&#39;&quot; -- if &quot;k&quot; is not &quot;None&quot;, then use Gap (very
+          slow);
+             if  &quot;k&quot; is &quot;None&quot;, use FLINT
+
+        * &quot;&#39;flint&#39;&quot; -- use FLINT
+
+   EXAMPLES:
+
+      sage: v = Partitions(5).list(); v
+      [[5], [4, 1], [3, 2], [3, 1, 1], [2, 2, 1], [2, 1, 1, 1], [1, 1, 1, 1, 1]]
+      sage: len(v)
+      7
+
+   The input must be a nonnegative integer or a &quot;ValueError&quot; is
+   raised.
+
+      sage: number_of_partitions(-5)
+      Traceback (most recent call last):
+      ...
+      ValueError: n (=-5) must be a nonnegative integer
+
+      sage: number_of_partitions(10)
+      42
+      sage: number_of_partitions(3)
+      3
+      sage: number_of_partitions(10)
+      42
+      sage: number_of_partitions(40)
+      37338
+      sage: number_of_partitions(100)
+      190569292
+      sage: number_of_partitions(100000)
+      27493510569775696512677516320986352688173429315980054758203125984302147328114964173055050741660736621590157844774296248940493063070200461792764493033510116079342457190155718943509725312466108452006369558934464248716828789832182345009262853831404597021307130674510624419227311238999702284408609370935531629697851569569892196108480158600569421098519
+
+   A generating function for the number of partitions p_n is given by
+   the reciprocal of Euler&#39;s function:
+
+      \sum_{n=0}^{\infty} p_n x^n = \prod_{k=1}^{\infty} (
+      \frac{1}{1-x^k} ).
+
+   We use Sage to verify that the first several coefficients do
+   instead agree:
+
+      sage: q = PowerSeriesRing(QQ, &#39;q&#39;, default_prec=9).gen()
+      sage: prod([(1-q^k)^(-1) for k in range(1,9)])  # partial product of
+      1 + q + 2*q^2 + 3*q^3 + 5*q^4 + 7*q^5 + 11*q^6 + 15*q^7 + 22*q^8 + O(q^9)
+      sage: [number_of_partitions(k) for k in range(2,10)]
+      [2, 3, 5, 7, 11, 15, 22, 30]
+
+   REFERENCES:
+
+   * https://en.wikipedia.org/wiki/Partition_(number_theory)
+<span class=" -Color -Color-Red">Source:</span>   
+<span class=" -Color -Color-Green">def</span> number_of_partitions<span class=" -Color -Color-Blue">(</span>n<span class=" -Color -Color-Blue">,</span> algorithm<span class=" -Color -Color-Blue">=&#39;default&#39;):</span>
+    <span class=" -Color -Color-Blue">r&quot;&quot;&quot;</span>
+<span class=" -Color -Color-Blue">    Return the number of partitions of `n` with, optionally, at most `k`</span>
+<span class=" -Color -Color-Blue">    parts.</span>
+
+<span class=" -Color -Color-Blue">    The options of :meth:`number_of_partitions()` are being deprecated</span>
+<span class=" -Color -Color-Blue">    :issue:`13072` in favour of :meth:`Partitions_n.cardinality()` so that</span>
+<span class=" -Color -Color-Blue">    :meth:`number_of_partitions()` can become a stripped down version of</span>
+<span class=" -Color -Color-Blue">    the fastest algorithm available (currently this is using FLINT).</span>
+
+<span class=" -Color -Color-Blue">    INPUT:</span>
+
+<span class=" -Color -Color-Blue">    - ``n`` -- integer</span>
+
+<span class=" -Color -Color-Blue">    - ``algorithm`` -- (default: ``&#39;default&#39;``)</span>
+<span class=" -Color -Color-Blue">       [Will be deprecated except in Partition().cardinality() ]</span>
+
+<span class=" -Color -Color-Blue">       - ``&#39;default&#39;`` -- if ``k`` is not ``None``, then use Gap (very slow);</span>
+<span class=" -Color -Color-Blue">          if  ``k`` is ``None``, use FLINT</span>
+
+<span class=" -Color -Color-Blue">       - ``&#39;flint&#39;`` -- use FLINT</span>
+
+<span class=" -Color -Color-Blue">    EXAMPLES::</span>
+
+<span class=" -Color -Color-Blue">        sage: v = Partitions(5).list(); v</span>
+<span class=" -Color -Color-Blue">        [[5], [4, 1], [3, 2], [3, 1, 1], [2, 2, 1], [2, 1, 1, 1], [1, 1, 1, 1, 1]]</span>
+<span class=" -Color -Color-Blue">        sage: len(v)</span>
+<span class=" -Color -Color-Blue">        7</span>
+
+<span class=" -Color -Color-Blue">    The input must be a nonnegative integer or a :exc:`ValueError` is raised.</span>
+
+<span class=" -Color -Color-Blue">    ::</span>
+
+<span class=" -Color -Color-Blue">        sage: number_of_partitions(-5)</span>
+<span class=" -Color -Color-Blue">        Traceback (most recent call last):</span>
+<span class=" -Color -Color-Blue">        ...</span>
+<span class=" -Color -Color-Blue">        ValueError: n (=-5) must be a nonnegative integer</span>
+
+<span class=" -Color -Color-Blue">    ::</span>
+
+<span class=" -Color -Color-Blue">        sage: # needs sage.libs.flint</span>
+<span class=" -Color -Color-Blue">        sage: number_of_partitions(10)</span>
+<span class=" -Color -Color-Blue">        42</span>
+<span class=" -Color -Color-Blue">        sage: number_of_partitions(3)</span>
+<span class=" -Color -Color-Blue">        3</span>
+<span class=" -Color -Color-Blue">        sage: number_of_partitions(10)</span>
+<span class=" -Color -Color-Blue">        42</span>
+<span class=" -Color -Color-Blue">        sage: number_of_partitions(40)</span>
+<span class=" -Color -Color-Blue">        37338</span>
+<span class=" -Color -Color-Blue">        sage: number_of_partitions(100)</span>
+<span class=" -Color -Color-Blue">        190569292</span>
+<span class=" -Color -Color-Blue">        sage: number_of_partitions(100000)</span>
+<span class=" -Color -Color-Blue">        27493510569775696512677516320986352688173429315980054758203125984302147328114964173055050741660736621590157844774296248940493063070200461792764493033510116079342457190155718943509725312466108452006369558934464248716828789832182345009262853831404597021307130674510624419227311238999702284408609370935531629697851569569892196108480158600569421098519</span>
+
+<span class=" -Color -Color-Blue">    A generating function for the number of partitions `p_n` is given by the</span>
+<span class=" -Color -Color-Blue">    reciprocal of Euler&#39;s function:</span>
+
+<span class=" -Color -Color-Blue">    .. MATH::</span>
+
+<span class=" -Color -Color-Blue">        \sum_{n=0}^{\infty} p_n x^n = \prod_{k=1}^{\infty} \left(</span>
+<span class=" -Color -Color-Blue">        \frac{1}{1-x^k} \right).</span>
+
+<span class=" -Color -Color-Blue">    We use Sage to verify that the first several coefficients do</span>
+<span class=" -Color -Color-Blue">    instead agree::</span>
+
+<span class=" -Color -Color-Blue">        sage: q = PowerSeriesRing(QQ, &#39;q&#39;, default_prec=9).gen()</span>
+<span class=" -Color -Color-Blue">        sage: prod([(1-q^k)^(-1) for k in range(1,9)])  # partial product of</span>
+<span class=" -Color -Color-Blue">        1 + q + 2*q^2 + 3*q^3 + 5*q^4 + 7*q^5 + 11*q^6 + 15*q^7 + 22*q^8 + O(q^9)</span>
+<span class=" -Color -Color-Blue">        sage: [number_of_partitions(k) for k in range(2,10)]                            # needs sage.libs.flint</span>
+<span class=" -Color -Color-Blue">        [2, 3, 5, 7, 11, 15, 22, 30]</span>
+
+<span class=" -Color -Color-Blue">    REFERENCES:</span>
+
+<span class=" -Color -Color-Blue">    - :wikipedia:`Partition\_(number\_theory)`</span>
+
+<span class=" -Color -Color-Blue">    TESTS::</span>
+
+<span class=" -Color -Color-Blue">        sage: # needs sage.libs.flint</span>
+<span class=" -Color -Color-Blue">        sage: n = 500 + randint(0,500)</span>
+<span class=" -Color -Color-Blue">        sage: number_of_partitions( n - (n % 385) + 369) % 385 == 0</span>
+<span class=" -Color -Color-Blue">        True</span>
+<span class=" -Color -Color-Blue">        sage: n = 1500 + randint(0,1500)</span>
+<span class=" -Color -Color-Blue">        sage: number_of_partitions( n - (n % 385) + 369) % 385 == 0</span>
+<span class=" -Color -Color-Blue">        True</span>
+<span class=" -Color -Color-Blue">        sage: n = 1000000 + randint(0,1000000)</span>
+<span class=" -Color -Color-Blue">        sage: number_of_partitions( n - (n % 385) + 369) % 385 == 0</span>
+<span class=" -Color -Color-Blue">        True</span>
+<span class=" -Color -Color-Blue">        sage: n = 1000000 + randint(0,1000000)</span>
+<span class=" -Color -Color-Blue">        sage: number_of_partitions( n - (n % 385) + 369) % 385 == 0</span>
+<span class=" -Color -Color-Blue">        True</span>
+<span class=" -Color -Color-Blue">        sage: n = 1000000 + randint(0,1000000)</span>
+<span class=" -Color -Color-Blue">        sage: number_of_partitions( n - (n % 385) + 369) % 385 == 0</span>
+<span class=" -Color -Color-Blue">        True</span>
+<span class=" -Color -Color-Blue">        sage: n = 1000000 + randint(0,1000000)</span>
+<span class=" -Color -Color-Blue">        sage: number_of_partitions( n - (n % 385) + 369) % 385 == 0</span>
+<span class=" -Color -Color-Blue">        True</span>
+<span class=" -Color -Color-Blue">        sage: n = 1000000 + randint(0,1000000)</span>
+<span class=" -Color -Color-Blue">        sage: number_of_partitions( n - (n % 385) + 369) % 385 == 0</span>
+<span class=" -Color -Color-Blue">        True</span>
+<span class=" -Color -Color-Blue">        sage: n = 1000000 + randint(0,1000000)</span>
+<span class=" -Color -Color-Blue">        sage: number_of_partitions( n - (n % 385) + 369) % 385 == 0</span>
+<span class=" -Color -Color-Blue">        True</span>
+<span class=" -Color -Color-Blue">        sage: n = 100000000 + randint(0,100000000)</span>
+<span class=" -Color -Color-Blue">        sage: number_of_partitions( n - (n % 385) + 369) % 385 == 0     # long time (4s on sage.math, 2011)</span>
+<span class=" -Color -Color-Blue">        True</span>
+<span class=" -Color -Color-Blue">    &quot;&quot;&quot;</span>
+    n <span class=" -Color -Color-Blue">=</span> ZZ<span class=" -Color -Color-Blue">(</span>n<span class=" -Color -Color-Blue">)</span>
+    <span class=" -Color -Color-Green">if</span> n <span class=" -Color -Color-Blue">&lt;</span> <span class=" -Color -Color-Cyan">0</span><span class=" -Color -Color-Blue">:</span>
+        <span class=" -Color -Color-Green">raise</span> ValueError<span class=" -Color -Color-Blue">(&quot;n (=%s) must be a nonnegative integer&quot;</span> <span class=" -Color -Color-Blue">%</span> n<span class=" -Color -Color-Blue">)</span>
+    <span class=" -Color -Color-Green">elif</span> n <span class=" -Color -Color-Blue">==</span> <span class=" -Color -Color-Cyan">0</span><span class=" -Color -Color-Blue">:</span>
+        <span class=" -Color -Color-Green">return</span> ZZ<span class=" -Color -Color-Blue">.</span>one<span class=" -Color -Color-Blue">()</span>
+
+    <span class=" -Color -Color-Green">if</span> algorithm <span class=" -Color -Color-Blue">==</span> <span class=" -Color -Color-Blue">&#39;default&#39;:</span>
+        algorithm <span class=" -Color -Color-Blue">=</span> <span class=" -Color -Color-Blue">&#39;flint&#39;</span>
+
+    <span class=" -Color -Color-Green">if</span> algorithm <span class=" -Color -Color-Blue">==</span> <span class=" -Color -Color-Blue">&#39;flint&#39;:</span>
+        <span class=" -Color -Color-Green">return</span> cached_number_of_partitions<span class=" -Color -Color-Blue">(</span>n<span class=" -Color -Color-Blue">)</span>
+
+    <span class=" -Color -Color-Green">raise</span> ValueError<span class=" -Color -Color-Blue">(&quot;unknown algorithm &#39;%s&#39;&quot;</span> <span class=" -Color -Color-Blue">%</span> algorithm<span class=" -Color -Color-Blue">)</span>
+<span class=" -Color -Color-Red">File:</span>      ~/miniconda3/envs/sage-env/lib/python3.12/site-packages/sage/combinat/partition.py
+<span class=" -Color -Color-Red">Type:</span>      function
+</pre></div>
+</div>
+</div>
 </div>
 <p>The code refers to the algorithm ‘FLINT’, which stands for <em>Fast Library for Number Theory</em>. This means that it uses external code (that is included in Sage anyway), but this code might be written in another programming language.</p>
 <p>We can verify that this is a fast algorithm, by asking Sage how long it takes to count partitions of 1000.</p>
@@ -640,12 +1098,30 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 1.91 ms, sys: 161 μs, total: 2.07 ms
+Wall time: 8.83 ms
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24061467864032622473692149727991
+</pre></div>
+</div>
+</div>
 </div>
 <p>The algorithm is very fast to count all 24061467864032622473692149727991 partitions of 1,000.</p>
 <p>Let us compare it with the method that enumerates all partitions, then counts them.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">time</span> len(Partitions(1000))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">OverflowError</span><span class="g g-Whitespace">                             </span>Traceback (most recent call last)
+<span class="n">File</span> <span class="o">&lt;</span><span class="n">timed</span> <span class="nb">eval</span><span class="o">&gt;</span><span class="p">:</span><span class="mi">1</span>
+
+<span class="ne">OverflowError</span>: cannot fit &#39;int&#39; into an index-sized integer
 </pre></div>
 </div>
 </div>
@@ -667,6 +1143,12 @@ This is called the <em>combinatorial explosion</em>. It means that there exists 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are 42 partitions of 10, and 190569292 partitions of 100.
+There are 24 permutations of 4, and 3628800 permutations of 10.
+</pre></div>
+</div>
+</div>
 </div>
 <p>Algorithms that are already in SageMath are often, not always, optimized to use just what is needed of memory and time.</p>
 <p>If you want to do “large” computations, you have to be mindful of the limitations of your machine.</p>
@@ -683,8 +1165,8 @@ This is called the <em>combinatorial explosion</em>. It means that there exists 
 </ul>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="ii-combinatorial-structures-and-statistics-with-sagemath">
-<h1>II. Combinatorial structures and statistics with SageMath<a class="headerlink" href="#ii-combinatorial-structures-and-statistics-with-sagemath" title="Link to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="ii-combinatorial-structures-and-statistics">
+<h1>II. Combinatorial structures and statistics<a class="headerlink" href="#ii-combinatorial-structures-and-statistics" title="Link to this heading">#</a></h1>
 <section id="combinatorial-structures">
 <h2>Combinatorial structures<a class="headerlink" href="#combinatorial-structures" title="Link to this heading">#</a></h2>
 <p>In Per’s lecture, you learned about many combinatorial structures:</p>
@@ -707,10 +1189,20 @@ This is called the <em>combinatorial explosion</em>. It means that there exists 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 1, 4, 5, 3]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="o">.</span><span class="n">to_cycles</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(1, 2), (3, 4, 5)]
 </pre></div>
 </div>
 </div>
@@ -719,6 +1211,11 @@ This is called the <em>combinatorial explosion</em>. It means that there exists 
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P</span> <span class="o">=</span> <span class="n">Permutations</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span> <span class="n">P</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Standard permutations of 5
 </pre></div>
 </div>
 </div>
@@ -732,11 +1229,22 @@ This is called the <em>combinatorial explosion</em>. It means that there exists 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>120
+120
+</pre></div>
+</div>
+</div>
 </div>
 <p>Of course, if we know that the number of permutations of <span class="math notranslate nohighlight">\(n\)</span> is <span class="math notranslate nohighlight">\(n!\)</span>, one can simply ask how large is <span class="math notranslate nohighlight">\(n!\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>120
 </pre></div>
 </div>
 </div>
@@ -776,10 +1284,25 @@ This is called the <em>combinatorial explosion</em>. It means that there exists 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>265252859812191058636308480000000
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">Permutations</span><span class="p">(</span><span class="mi">30</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">OverflowError</span><span class="g g-Whitespace">                             </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">len</span><span class="p">(</span><span class="n">Permutations</span><span class="p">(</span><span class="n">Integer</span><span class="p">(</span><span class="mi">30</span><span class="p">)))</span>
+
+<span class="ne">OverflowError</span>: cannot fit &#39;int&#39; into an index-sized integer
 </pre></div>
 </div>
 </div>
@@ -828,6 +1351,31 @@ This is called the <em>combinatorial explosion</em>. It means that there exists 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[3, 3, 3, 3, 1],
+ [3, 3, 3, 2, 2],
+ [3, 3, 3, 2, 1, 1],
+ [3, 3, 3, 1, 1, 1, 1],
+ [3, 3, 2, 2, 2, 1],
+ [3, 3, 2, 2, 1, 1, 1],
+ [3, 3, 2, 1, 1, 1, 1, 1],
+ [3, 3, 1, 1, 1, 1, 1, 1, 1],
+ [3, 2, 2, 2, 2, 2],
+ [3, 2, 2, 2, 2, 1, 1],
+ [3, 2, 2, 2, 1, 1, 1, 1],
+ [3, 2, 2, 1, 1, 1, 1, 1, 1],
+ [3, 2, 1, 1, 1, 1, 1, 1, 1, 1],
+ [3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+ [2, 2, 2, 2, 2, 2, 1],
+ [2, 2, 2, 2, 2, 1, 1, 1],
+ [2, 2, 2, 2, 1, 1, 1, 1, 1],
+ [2, 2, 2, 1, 1, 1, 1, 1, 1, 1],
+ [2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+ [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+ [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -835,6 +1383,11 @@ This is called the <em>combinatorial explosion</em>. It means that there exists 
 <span class="c1"># Ask SageMath to generate only the partitions that have only parts at most 3</span>
 <span class="c1"># through an *argument* in the generator, passed as a parameter. Count the number of such partitions.</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">Partitions</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="n">max_part</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>21
 </pre></div>
 </div>
 </div>
@@ -862,11 +1415,65 @@ This is called the <em>combinatorial explosion</em>. It means that there exists 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[3, 3, 3, 3, 1],
+ [3, 3, 3, 2, 2],
+ [3, 3, 3, 2, 1, 1],
+ [3, 3, 3, 1, 1, 1, 1],
+ [3, 3, 2, 2, 2, 1],
+ [3, 3, 2, 2, 1, 1, 1],
+ [3, 3, 2, 1, 1, 1, 1, 1],
+ [3, 3, 1, 1, 1, 1, 1, 1, 1],
+ [3, 2, 2, 2, 2, 2],
+ [3, 2, 2, 2, 2, 1, 1],
+ [3, 2, 2, 2, 1, 1, 1, 1],
+ [3, 2, 2, 1, 1, 1, 1, 1, 1],
+ [3, 2, 1, 1, 1, 1, 1, 1, 1, 1],
+ [3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+ [2, 2, 2, 2, 2, 2, 1],
+ [2, 2, 2, 2, 2, 1, 1, 1],
+ [2, 2, 2, 2, 1, 1, 1, 1, 1],
+ [2, 2, 2, 1, 1, 1, 1, 1, 1, 1],
+ [2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+ [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+ [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using %time to see how fast this is</span>
 <span class="o">%</span><span class="k">time</span> list_partitions_with_max_part(13, 3)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 852 μs, sys: 0 ns, total: 852 μs
+Wall time: 917 μs
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[3, 3, 3, 3, 1],
+ [3, 3, 3, 2, 2],
+ [3, 3, 3, 2, 1, 1],
+ [3, 3, 3, 1, 1, 1, 1],
+ [3, 3, 2, 2, 2, 1],
+ [3, 3, 2, 2, 1, 1, 1],
+ [3, 3, 2, 1, 1, 1, 1, 1],
+ [3, 3, 1, 1, 1, 1, 1, 1, 1],
+ [3, 2, 2, 2, 2, 2],
+ [3, 2, 2, 2, 2, 1, 1],
+ [3, 2, 2, 2, 1, 1, 1, 1],
+ [3, 2, 2, 1, 1, 1, 1, 1, 1],
+ [3, 2, 1, 1, 1, 1, 1, 1, 1, 1],
+ [3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+ [2, 2, 2, 2, 2, 2, 1],
+ [2, 2, 2, 2, 2, 1, 1, 1],
+ [2, 2, 2, 2, 1, 1, 1, 1, 1],
+ [2, 2, 2, 1, 1, 1, 1, 1, 1, 1],
+ [2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+ [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+ [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]
 </pre></div>
 </div>
 </div>
@@ -879,11 +1486,21 @@ This is called the <em>combinatorial explosion</em>. It means that there exists 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.87 ms ± 317 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+</pre></div>
+</div>
+</div>
 </div>
 <p>Of course, we should get the same answer regardless of how we generated the partitions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Set</span><span class="p">(</span><span class="n">list_partitions_with_max_part</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="o">==</span> <span class="n">Set</span><span class="p">(</span><span class="n">Partitions</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="n">max_part</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -901,6 +1518,236 @@ This is called the <em>combinatorial explosion</em>. It means that there exists 
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To do that, we check in the documentation. We see that there is a lot.</span>
 Partitions<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Init signature:</span> Partitions<span class=" -Color -Color-Blue">(</span>is_infinite<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">False</span><span class=" -Color -Color-Blue">)</span>
+<span class=" -Color -Color-Red">Docstring:</span>     
+   &quot;Partitions(n, **kwargs)&quot; returns the combinatorial class of
+   integer partitions of n subject to the constraints given by the
+   keywords.
+
+   Valid keywords are: &quot;starting&quot;, &quot;ending&quot;, &quot;min_part&quot;, &quot;max_part&quot;,
+   &quot;max_length&quot;, &quot;min_length&quot;, &quot;length&quot;, &quot;max_slope&quot;, &quot;min_slope&quot;,
+   &quot;inner&quot;, &quot;outer&quot;, &quot;parts_in&quot;, &quot;regular&quot;, and &quot;restricted&quot;. They
+   have the following meanings:
+
+   * &quot;starting=p&quot; specifies that the partitions should all be less
+     than or equal to p in lex order. This argument cannot be combined
+     with any other (see
+     https://github.com/sagemath/sage/issues/15467).
+
+   * &quot;ending=p&quot; specifies that the partitions should all be greater
+     than or equal to p in lex order. This argument cannot be combined
+     with any other (see
+     https://github.com/sagemath/sage/issues/15467).
+
+   * &quot;length=k&quot; specifies that the partitions have exactly k parts.
+
+   * &quot;min_length=k&quot; specifies that the partitions have at least k
+     parts.
+
+   * &quot;min_part=k&quot; specifies that all parts of the partitions are at
+     least k.
+
+   * &quot;inner=p&quot; specifies that the partitions must contain the
+     partition p.
+
+   * &quot;outer=p&quot; specifies that the partitions be contained inside the
+     partition p.
+
+   * &quot;min_slope=k&quot; specifies that the partitions have slope at least
+     k; the slope at position i is the difference between the (i+1)-th
+     part and the i-th part.
+
+   * &quot;parts_in=S&quot; specifies that the partitions have parts in the set
+     S, which can be any sequence of pairwise distinct positive
+     integers. This argument cannot be combined with any other (see
+     https://github.com/sagemath/sage/issues/15467).
+
+   * &quot;regular=ell&quot; specifies that the partitions are \ell-regular, and
+     can only be combined with the &quot;max_length&quot; or &quot;max_part&quot;, but not
+     both, keywords if n is not specified
+
+   * &quot;restricted=ell&quot; specifies that the partitions are \ell-
+     restricted, and cannot be combined with any other keywords
+
+   The &quot;max_*&quot; versions, along with &quot;inner&quot; and &quot;ending&quot;, work
+   analogously.
+
+   Right now, the &quot;parts_in&quot;, &quot;starting&quot;, &quot;ending&quot;, &quot;regular&quot;, and
+   &quot;restricted&quot; keyword arguments are mutually exclusive, both of each
+   other and of other keyword arguments. If you specify, say,
+   &quot;parts_in&quot;, all other keyword arguments will be ignored;
+   &quot;starting&quot;, &quot;ending&quot;, &quot;regular&quot;, and &quot;restricted&quot; work the same
+   way.
+
+   EXAMPLES:
+
+   If no arguments are passed, then the combinatorial class of all
+   integer partitions is returned:
+
+      sage: Partitions()
+      Partitions
+      sage: [2,1] in Partitions()
+      True
+
+   If an integer n is passed, then the combinatorial class of integer
+   partitions of n is returned:
+
+      sage: Partitions(3)
+      Partitions of the integer 3
+      sage: Partitions(3).list()
+      [[3], [2, 1], [1, 1, 1]]
+
+   If &quot;starting=p&quot; is passed, then the combinatorial class of
+   partitions greater than or equal to p in lexicographic order is
+   returned:
+
+      sage: Partitions(3, starting=[2,1])
+      Partitions of the integer 3 starting with [2, 1]
+      sage: Partitions(3, starting=[2,1]).list()
+      [[2, 1], [1, 1, 1]]
+
+   If &quot;ending=p&quot; is passed, then the combinatorial class of partitions
+   at most p in lexicographic order is returned:
+
+      sage: Partitions(3, ending=[2,1])
+      Partitions of the integer 3 ending with [2, 1]
+      sage: Partitions(3, ending=[2,1]).list()
+      [[3], [2, 1]]
+
+   Using &quot;max_slope=-1&quot; yields partitions into distinct parts -- each
+   part differs from the next by at least 1. Use a different
+   &quot;max_slope&quot; to get parts that differ by, say, 2:
+
+      sage: Partitions(7, max_slope=-1).list()
+      [[7], [6, 1], [5, 2], [4, 3], [4, 2, 1]]
+      sage: Partitions(15, max_slope=-1).cardinality()
+      27
+
+   The number of partitions of n into odd parts equals the number of
+   partitions into distinct parts. Let&#39;s test that for n from 10 to
+   20:
+
+      sage: def test(n):
+      ....:     return (Partitions(n, max_slope=-1).cardinality()
+      ....:              == Partitions(n, parts_in=[1,3..n]).cardinality())
+      sage: all(test(n) for n in [10..20])
+      True
+
+   The number of partitions of n into distinct parts that differ by at
+   least 2 equals the number of partitions into parts that equal 1 or
+   4 modulo 5; this is one of the Rogers-Ramanujan identities:
+
+      sage: def test(n):
+      ....:     return (Partitions(n, max_slope=-2).cardinality()
+      ....:              == Partitions(n, parts_in=([1,6..n] + [4,9..n])).cardinality())
+      sage: all(test(n) for n in [10..20])
+      True
+
+   Here are some more examples illustrating &quot;min_part&quot;, &quot;max_part&quot;,
+   and &quot;length&quot;:
+
+      sage: Partitions(5, min_part=2)
+      Partitions of 5 whose parts are at least 2
+      sage: Partitions(5, min_part=2).list()
+      [[5], [3, 2]]
+
+      sage: Partitions(3, max_length=2).list()
+      [[3], [2, 1]]
+
+      sage: Partitions(10, min_part=2, length=3).list()
+      [[6, 2, 2], [5, 3, 2], [4, 4, 2], [4, 3, 3]]
+
+   Some examples using the &quot;regular&quot; keyword:
+
+      sage: Partitions(regular=4)
+      4-Regular Partitions
+      sage: Partitions(regular=4, max_length=3)
+      4-Regular Partitions with max length 3
+      sage: Partitions(regular=4, max_part=3)
+      4-Regular 3-Bounded Partitions
+      sage: Partitions(3, regular=4)
+      4-Regular Partitions of the integer 3
+
+   Some examples using the &quot;restricted&quot; keyword:
+
+      sage: Partitions(restricted=4)
+      4-Restricted Partitions
+      sage: Partitions(3, restricted=4)
+      4-Restricted Partitions of the integer 3
+
+   Here are some further examples using various constraints:
+
+      sage: [x for x in Partitions(4)]
+      [[4], [3, 1], [2, 2], [2, 1, 1], [1, 1, 1, 1]]
+      sage: [x for x in Partitions(4, length=2)]
+      [[3, 1], [2, 2]]
+      sage: [x for x in Partitions(4, min_length=2)]
+      [[3, 1], [2, 2], [2, 1, 1], [1, 1, 1, 1]]
+      sage: [x for x in Partitions(4, max_length=2)]
+      [[4], [3, 1], [2, 2]]
+      sage: [x for x in Partitions(4, min_length=2, max_length=2)]
+      [[3, 1], [2, 2]]
+      sage: [x for x in Partitions(4, max_part=2)]
+      [[2, 2], [2, 1, 1], [1, 1, 1, 1]]
+      sage: [x for x in Partitions(4, min_part=2)]
+      [[4], [2, 2]]
+      sage: [x for x in Partitions(4, outer=[3,1,1])]
+      [[3, 1], [2, 1, 1]]
+      sage: [x for x in Partitions(4, outer=[infinity, 1, 1])]
+      [[4], [3, 1], [2, 1, 1]]
+      sage: [x for x in Partitions(4, inner=[1,1,1])]
+      [[2, 1, 1], [1, 1, 1, 1]]
+      sage: [x for x in Partitions(4, max_slope=-1)]
+      [[4], [3, 1]]
+      sage: [x for x in Partitions(4, min_slope=-1)]
+      [[4], [2, 2], [2, 1, 1], [1, 1, 1, 1]]
+      sage: [x for x in Partitions(11, max_slope=-1, min_slope=-3, min_length=2, max_length=4)]
+      [[7, 4], [6, 5], [6, 4, 1], [6, 3, 2], [5, 4, 2], [5, 3, 2, 1]]
+      sage: [x for x in Partitions(11, max_slope=-1, min_slope=-3, min_length=2, max_length=4, outer=[6,5,2])]
+      [[6, 5], [6, 4, 1], [6, 3, 2], [5, 4, 2]]
+
+   Note that if you specify &quot;min_part=0&quot;, then it will treat the
+   minimum part as being 1 (see
+   https://github.com/sagemath/sage/issues/13605):
+
+      sage: [x for x in Partitions(4, length=3, min_part=0)]
+      [[2, 1, 1]]
+      sage: [x for x in Partitions(4, min_length=3, min_part=0)]
+      [[2, 1, 1], [1, 1, 1, 1]]
+
+   Except for very special cases, counting is done by brute force
+   iteration through all the partitions. However the iteration itself
+   has a reasonable complexity (see &quot;IntegerListsLex&quot;), which allows
+   for manipulating large partitions:
+
+      sage: Partitions(1000, max_length=1).list()
+      [[1000]]
+
+   In particular, getting the first element is also constant time:
+
+      sage: Partitions(30, max_part=29).first()
+      [29, 1]
+<span class=" -Color -Color-Red">Init docstring:</span>
+   Initialize &quot;self&quot;.
+
+   INPUT:
+
+   * &quot;is_infinite&quot; -- boolean (default: &quot;False&quot;); if &quot;True&quot;, then the
+     number of partitions in this set is infinite
+
+   EXAMPLES:
+
+      sage: Partitions()
+      Partitions
+      sage: Partitions(2)
+      Partitions of the integer 2
+<span class=" -Color -Color-Red">File:</span>           ~/miniconda3/envs/sage-env/lib/python3.12/site-packages/sage/combinat/partition.py
+<span class=" -Color -Color-Red">Type:</span>           ClasscallMetaclass
+<span class=" -Color -Color-Red">Subclasses:</span>     Partitions_all, Partitions_all_constrained, Partitions_all_bounded, Partitions_n, Partitions_nk, Partitions_parts_in, Partitions_starting, Partitions_ending, PartitionsInBox, RegularPartitions, ...
 </pre></div>
 </div>
 </div>
@@ -955,6 +1802,11 @@ Partitions<span class="o">?</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Object `narayana_number` not found.
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -963,10 +1815,48 @@ Partitions<span class="o">?</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>narayana_number<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Signature:</span>      narayana_number<span class=" -Color -Color-Blue">(</span>n<span class=" -Color -Color-Blue">:</span> <span class=" -Color -Color-Blue">&#39;Integer&#39;,</span> k<span class=" -Color -Color-Blue">:</span> <span class=" -Color -Color-Blue">&#39;Integer&#39;)</span> <span class=" -Color -Color-Blue">-&gt;</span> <span class=" -Color -Color-Blue">&#39;Integer&#39;</span>
+<span class=" -Color -Color-Red">Docstring:</span>     
+   Return the Narayana number of index &quot;(n, k)&quot;.
+
+   For every integer n &gt;= 1, the sum of Narayana numbers \sum_k
+   N_{n,k} is the Catalan number C_n.
+
+   INPUT:
+
+   * &quot;n&quot; -- integer
+
+   * &quot;k&quot; -- integer between &quot;0&quot; and &quot;n - 1&quot;
+
+   OUTPUT: integer
+
+   EXAMPLES:
+
+      sage: from sage.combinat.combinat import narayana_number
+      sage: [narayana_number(3, i) for i in range(3)]
+      [1, 3, 1]
+      sage: sum(narayana_number(7,i) for i in range(7)) == catalan_number(7)
+      True
+
+   REFERENCES:
+
+   * https://en.wikipedia.org/wiki/Narayana_number
+<span class=" -Color -Color-Red">Init docstring:</span> Initialize self.  See help(type(self)) for accurate signature.
+<span class=" -Color -Color-Red">File:</span>           ~/miniconda3/envs/sage-env/lib/python3.12/site-packages/sage/combinat/combinat.py
+<span class=" -Color -Color-Red">Type:</span>           function
 </pre></div>
 </div>
 </div>
@@ -978,6 +1868,84 @@ Partitions<span class="o">?</span>
 <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">DyckWords</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">peaks</span><span class="p">())</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">ascii_art</span><span class="p">(</span><span class="n">path</span><span class="p">),</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      /\  
+     /  \ 
+/\/\/    \ 
+
+   /\  /\ 
+/\/  \/  \ 
+
+      /\  
+   /\/  \ 
+/\/      \ 
+
+    /\    
+   /  \   
+/\/    \/\ 
+
+    /\    
+   /  \/\ 
+/\/      \ 
+
+    /\/\  
+   /    \ 
+/\/      \ 
+
+ /\    /\ 
+/  \/\/  \ 
+
+ /\  /\   
+/  \/  \/\ 
+
+ /\  /\/\ 
+/  \/    \ 
+
+ /\/\  /\ 
+/    \/  \ 
+
+      /\  
+ /\/\/  \ 
+/        \ 
+
+    /\    
+ /\/  \   
+/      \/\ 
+
+    /\    
+ /\/  \/\ 
+/        \ 
+
+    /\/\  
+ /\/    \ 
+/        \ 
+
+  /\      
+ /  \     
+/    \/\/\ 
+
+  /\      
+ /  \/\   
+/      \/\ 
+
+  /\      
+ /  \/\/\ 
+/        \ 
+
+  /\/\    
+ /    \   
+/      \/\ 
+
+  /\/\    
+ /    \/\ 
+/        \ 
+
+  /\/\/\  
+ /      \ 
+/        \ 
 </pre></div>
 </div>
 </div>
@@ -1001,6 +1969,9 @@ Partitions<span class="o">?</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/eab7180ea390e6f2d96469bc2faacf214514889957b698bc33010dc257e549f8.svg" src="../_images/eab7180ea390e6f2d96469bc2faacf214514889957b698bc33010dc257e549f8.svg" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1008,11 +1979,23 @@ Partitions<span class="o">?</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html>\(\displaystyle \vcenter{\hbox{$\begin{tikzpicture}[scale=1]
+  \draw[dotted] (0, 0) grid (10, 3);
+  \draw[rounded corners=1, color=black, line width=2] (0, 0) -- (1, 1) -- (2, 2) -- (3, 3) -- (4, 2) -- (5, 1) -- (6, 2) -- (7, 1) -- (8, 0) -- (9, 1) -- (10, 0);
+\end{tikzpicture}$}}\)</html></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A more compact, yet visual representation (works for many structures)</span>
 <span class="n">ascii_art</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  /\      
+ /  \/\   
+/      \/\
 </pre></div>
 </div>
 </div>
@@ -1023,10 +2006,21 @@ Partitions<span class="o">?</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/2c66171633db2dc904502a5172f11231c2171a17ebbf4ddd62e11f703c2caef2.png" src="../_images/2c66171633db2dc904502a5172f11231c2171a17ebbf4ddd62e11f703c2caef2.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">latex</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>  <span class="c1"># also latex source</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\vcenter{\hbox{$\begin{tikzpicture}[scale=1]
+  \draw[dotted] (0, 0) grid (10, 3);
+  \draw[rounded corners=1, color=black, line width=2] (0, 0) -- (1, 1) -- (2, 2) -- (3, 3) -- (4, 2) -- (5, 1) -- (6, 2) -- (7, 1) -- (8, 0) -- (9, 1) -- (10, 0);
+\end{tikzpicture}$}}
 </pre></div>
 </div>
 </div>
@@ -1038,11 +2032,21 @@ Partitions<span class="o">?</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         _
+     ___| 
+ ___| x  .
+| x x  . .
+| x  . . .
+|  . . . .
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="iii-combinatorics-with-sagemath-generating-functions">
-<h1>III. Combinatorics with SageMath: Generating functions<a class="headerlink" href="#iii-combinatorics-with-sagemath-generating-functions" title="Link to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="iii-generating-functions">
+<h1>III. Generating functions<a class="headerlink" href="#iii-generating-functions" title="Link to this heading">#</a></h1>
 <p><strong>Acknowledgements:</strong></p>
 <ul class="simple">
 <li><p>Steven Melczer’s <a class="reference external" href="https://melczer.ca/files/TextbookCode/Chapter2/Example2-4-VirahankaFibonacci.html">worksheet</a> on the Fibonacci numbers</p></li>
@@ -1546,6 +2550,110 @@ $<span class="math notranslate nohighlight">\( \frac{1}{(1-yx^6) (1-yx^9)(1-yx^{
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Signature:</span>      ogf_fibo<span class=" -Color -Color-Blue">.</span>partial_fraction_decomposition<span class=" -Color -Color-Blue">(</span>decompose_powers<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">True</span><span class=" -Color -Color-Blue">)</span>
+<span class=" -Color -Color-Red">Docstring:</span>     
+   Decompose fraction field element into a whole part and a list of
+   fraction field elements over prime power denominators.
+
+   The sum will be equal to the original fraction.
+
+   INPUT:
+
+   * &quot;decompose_powers&quot; -- boolean (default: &quot;True&quot;); whether to
+     decompose prime power denominators as opposed to having a single
+     term for each irreducible factor of the denominator
+
+   OUTPUT: partial fraction decomposition of &quot;self&quot; over the base ring
+
+   AUTHORS:
+
+   * Robert Bradshaw (2007-05-31)
+
+   EXAMPLES:
+
+      sage: S.&lt;t&gt; = QQ[]
+      sage: q = 1/(t+1) + 2/(t+2) + 3/(t-3); q
+      (6*t^2 + 4*t - 6)/(t^3 - 7*t - 6)
+      sage: whole, parts = q.partial_fraction_decomposition(); parts
+      [3/(t - 3), 1/(t + 1), 2/(t + 2)]
+      sage: sum(parts) == q
+      True
+      sage: q = 1/(t^3+1) + 2/(t^2+2) + 3/(t-3)^5
+      sage: whole, parts = q.partial_fraction_decomposition(); parts
+      [1/3/(t + 1), 3/(t^5 - 15*t^4 + 90*t^3 - 270*t^2 + 405*t - 243),
+       (-1/3*t + 2/3)/(t^2 - t + 1), 2/(t^2 + 2)]
+      sage: sum(parts) == q
+      True
+      sage: q = 2*t / (t + 3)^2
+      sage: q.partial_fraction_decomposition()
+      (0, [2/(t + 3), -6/(t^2 + 6*t + 9)])
+      sage: for p in q.partial_fraction_decomposition()[1]:
+      ....:     print(p.factor())
+      (2) * (t + 3)^-1
+      (-6) * (t + 3)^-2
+      sage: q.partial_fraction_decomposition(decompose_powers=False)
+      (0, [2*t/(t^2 + 6*t + 9)])
+
+   We can decompose over a given algebraic extension:
+
+      sage: R.&lt;x&gt; = QQ[sqrt(2)][]
+      sage: r = 1/(x^4+1)
+      sage: r.partial_fraction_decomposition()
+      (0,
+       [(-1/4*sqrt2*x + 1/2)/(x^2 - sqrt2*x + 1),
+        (1/4*sqrt2*x + 1/2)/(x^2 + sqrt2*x + 1)])
+
+      sage: R.&lt;x&gt; = QQ[I][]  # of QQ[sqrt(-1)]
+      sage: r =  1/(x^4+1)
+      sage: r.partial_fraction_decomposition()
+      (0, [(-1/2*I)/(x^2 - I), 1/2*I/(x^2 + I)])
+
+   We can also ask Sage to find the least extension where the
+   denominator factors in linear terms:
+
+      sage: R.&lt;x&gt; = QQ[]
+      sage: r = 1/(x^4+2)
+      sage: N = r.denominator().splitting_field(&#39;a&#39;); N
+      Number Field in a with defining polynomial x^8 - 8*x^6 + 28*x^4 + 16*x^2 + 36
+      sage: R1.&lt;x1&gt; = N[]
+      sage: r1 = 1/(x1^4+2)
+      sage: r1.partial_fraction_decomposition()
+      (0,
+       [(-1/224*a^6 + 13/448*a^4 - 5/56*a^2 - 25/224)/(x1 - 1/28*a^6 + 13/56*a^4 - 5/7*a^2 - 25/28),
+        (1/224*a^6 - 13/448*a^4 + 5/56*a^2 + 25/224)/(x1 + 1/28*a^6 - 13/56*a^4 + 5/7*a^2 + 25/28),
+        (-5/1344*a^7 + 43/1344*a^5 - 85/672*a^3 - 31/672*a)/(x1 - 5/168*a^7 + 43/168*a^5 - 85/84*a^3 - 31/84*a),
+        (5/1344*a^7 - 43/1344*a^5 + 85/672*a^3 + 31/672*a)/(x1 + 5/168*a^7 - 43/168*a^5 + 85/84*a^3 + 31/84*a)])
+
+   Or we may work directly over an algebraically closed field:
+
+      sage: R.&lt;x&gt; = QQbar[]
+      sage: r =  1/(x^4+1)
+      sage: r.partial_fraction_decomposition()
+      (0,
+       [(-0.1767766952966369? - 0.1767766952966369?*I)/(x - 0.7071067811865475? - 0.7071067811865475?*I),
+        (-0.1767766952966369? + 0.1767766952966369?*I)/(x - 0.7071067811865475? + 0.7071067811865475?*I),
+        (0.1767766952966369? - 0.1767766952966369?*I)/(x + 0.7071067811865475? - 0.7071067811865475?*I),
+        (0.1767766952966369? + 0.1767766952966369?*I)/(x + 0.7071067811865475? + 0.7071067811865475?*I)])
+
+   We do the best we can over inexact fields:
+
+      sage: R.&lt;x&gt; = RealField(20)[]
+      sage: q = 1/(x^2 + x + 2)^2 + 1/(x-1); q
+      (x^4 + 2.0000*x^3
+        + 5.0000*x^2 + 5.0000*x + 3.0000)/(x^5 + x^4 + 3.0000*x^3 - x^2 - 4.0000)
+      sage: whole, parts = q.partial_fraction_decomposition(); parts
+      [1.0000/(x - 1.0000),
+       1.0000/(x^4 + 2.0000*x^3 + 5.0000*x^2 + 4.0000*x + 4.0000)]
+      sage: sum(parts)
+      (x^4 + 2.0000*x^3
+        + 5.0000*x^2 + 5.0000*x + 3.0000)/(x^5 + x^4 + 3.0000*x^3 - x^2 - 4.0000)
+<span class=" -Color -Color-Red">Init docstring:</span> Initialize self.  See help(type(self)) for accurate signature.
+<span class=" -Color -Color-Red">File:</span>           ~/miniconda3/envs/sage-env/lib/python3.12/site-packages/sage/categories/quotient_fields.py
+<span class=" -Color -Color-Red">Type:</span>           method
+</pre></div>
+</div>
+</div>
 </div>
 <p>Here, however, the denominator cannot we factored over <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span>, so it is already decomposed.</p>
 <div class="cell docutils container">
@@ -1676,8 +2784,8 @@ $<span class="math notranslate nohighlight">\( \frac{1}{(1-yx^6) (1-yx^9)(1-yx^{
 <p><strong>Open problem</strong>: Make a uniform framework for generating functions in SageMath!</p>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="iv-combinatorics-with-sagemath-graphs">
-<h1>IV. Combinatorics with SageMath: Graphs<a class="headerlink" href="#iv-combinatorics-with-sagemath-graphs" title="Link to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="iv-graphs">
+<h1>IV. Graphs<a class="headerlink" href="#iv-graphs" title="Link to this heading">#</a></h1>
 <section id="graphs">
 <h2>Graphs<a class="headerlink" href="#graphs" title="Link to this heading">#</a></h2>
 <p>A <strong>graph</strong> is given by a set of <em>vertices</em> and a set of <em>edges</em> connecting the vertices. Just that!</p>
@@ -1704,12 +2812,18 @@ $<span class="math notranslate nohighlight">\( \frac{1}{(1-yx^6) (1-yx^9)(1-yx^{
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/2eb7d3f068a032d05437d50c0678128495dddf539ebcb4458032d82b8033451e.png" src="../_images/2eb7d3f068a032d05437d50c0678128495dddf539ebcb4458032d82b8033451e.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">B</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">layout</span><span class="o">=</span><span class="s1">&#39;planar&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/1b1dae246151029d66e1c9d4e49ec82db8cc77e543a35bc41bd7d6b60235568f.png" src="../_images/1b1dae246151029d66e1c9d4e49ec82db8cc77e543a35bc41bd7d6b60235568f.png" />
 </div>
 </div>
 <p>When we ask this question in graph theory, we mean ‘Can we draw a picture <em>equivalent to this one</em>, in the sense that the same vertices are connected?’</p>
@@ -1724,6 +2838,9 @@ $<span class="math notranslate nohighlight">\( \frac{1}{(1-yx^6) (1-yx^9)(1-yx^{
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/7e708761be2f51f38a9d95f6340069ae24235899585ed56dcafec1b620350107.png" src="../_images/7e708761be2f51f38a9d95f6340069ae24235899585ed56dcafec1b620350107.png" />
+</div>
 </div>
 <p>These problems look like children problems because the graphs are small, but we could ask the same question for much much larger graphs.</p>
 <div class="cell docutils container">
@@ -1731,6 +2848,9 @@ $<span class="math notranslate nohighlight">\( \frac{1}{(1-yx^6) (1-yx^9)(1-yx^{
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graphics_array</span><span class="p">([</span><span class="n">graphs</span><span class="o">.</span><span class="n">HararyGraph</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vertex_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span><span class="n">graphs</span><span class="o">.</span><span class="n">CompleteBipartiteGraph</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vertex_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">)])</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/9aba119deb1299667473c15b8ebe6d2c224cd53fabf9650d937ffbd572a1ae38.png" src="../_images/9aba119deb1299667473c15b8ebe6d2c224cd53fabf9650d937ffbd572a1ae38.png" />
 </div>
 </div>
 </section>
@@ -1747,6 +2867,11 @@ SageMath can confirm that.</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This number is called the chromatic number of a graph</span>
 <span class="n">G</span> <span class="o">=</span> <span class="n">graphs</span><span class="o">.</span><span class="n">AfricaMap</span><span class="p">()</span>  <span class="c1"># already in SageMath</span>
 <span class="n">G</span><span class="o">.</span><span class="n">chromatic_number</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
@@ -1770,6 +2895,14 @@ SageMath can confirm that.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Algeria, Chad, Burkina Faso, Republic of the Congo, South Sudan, Tanzania, Senegal, Liberia, Namibia, Zimbabwe, Equatorial Guinea, Eritrea, Somalia, Egypt, Swaziland, Lesotho, Cape Verde, Seychelles, Mauritius, São Tomé and Príncipe, Madagascar, Comoros, 
+Libya, Mali, Benin, Cameroon, Democratic Republic of the Congo, Ethiopia, Mozambique, Ghana, Botswana, Guinea-Bissau, Sierra Leone, Morocco, Gambia, 
+Niger, Central Africa, Angola, Gabon, Kenya, Rwanda, Malawi, Mauritania, Guinea, Tunisia, South Africa, Togo, Djibouti, 
+Nigeria, Sudan, Uganda, Zambia, Burundi, Ivory Coast, 
+</pre></div>
+</div>
+</div>
 </div>
 <p>Then we can export that list to some online tools that can plot for us the map.</p>
 <p><em>Notice that <code class="docutils literal notranslate"><span class="pre">G.coloring()</span></code> does not always return the same coloring, so the list above might not match the picture below.</em></p>
@@ -1784,6 +2917,466 @@ SageMath can confirm that.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>Graph<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Init signature:</span>
+Graph<span class=" -Color -Color-Blue">(</span>
+    data<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    pos<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    loops<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    format<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    weighted<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    data_structure<span class=" -Color -Color-Blue">=&#39;sparse&#39;,</span>
+    vertex_labels<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">True</span><span class=" -Color -Color-Blue">,</span>
+    name<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    multiedges<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    convert_empty_dict_labels_to_None<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    sparse<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">True</span><span class=" -Color -Color-Blue">,</span>
+    immutable<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">False</span><span class=" -Color -Color-Blue">,</span>
+    hash_labels<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+<span class=" -Color -Color-Blue">)</span>
+<span class=" -Color -Color-Red">Docstring:</span>     
+   Undirected graph.
+
+   A graph is a set of vertices connected by edges. See the
+   https://en.wikipedia.org/wiki/Graph_(mathematics) for more
+   information. For a collection of pre-defined graphs, see the
+   &quot;graph_generators&quot; module.
+
+   A &quot;Graph&quot; object has many methods whose list can be obtained by
+   typing &quot;g.&lt;tab&gt;&quot; (i.e. hit the &quot;Tab&quot; key) or by reading the
+   documentation of &quot;graph&quot;, &quot;generic_graph&quot;, and &quot;digraph&quot;.
+
+   INPUT:
+
+   By default, a &quot;Graph&quot; object is simple (i.e. no *loops* nor
+   *multiple edges*) and unweighted. This can be easily tuned with the
+   appropriate flags (see below).
+
+   * &quot;data&quot; -- can be any of the following (see the &quot;format&quot;
+     argument):
+
+     1. &quot;Graph()&quot; -- build a graph on 0 vertices.
+
+     2. &quot;Graph(5)&quot; -- return an edgeless graph on the 5 vertices
+        0,...,4.
+
+     3. &quot;Graph([list_of_vertices, list_of_edges])&quot; -- returns a graph
+        with given vertices/edges.
+
+        To bypass auto-detection, prefer the more explicit &quot;Graph([V,
+        E], format=&#39;vertices_and_edges&#39;)&quot;.
+
+     4. &quot;Graph(list_of_edges)&quot; -- return a graph with a given list of
+        edges (see documentation of &quot;add_edges()&quot;).
+
+        To bypass auto-detection, prefer the more explicit &quot;Graph(L,
+        format=&#39;list_of_edges&#39;)&quot;.
+
+     5. &quot;Graph({1: [2, 3, 4], 3: [4]})&quot; -- return a graph by
+        associating to each vertex the list of its neighbors.
+
+        To bypass auto-detection, prefer the more explicit &quot;Graph(D,
+        format=&#39;dict_of_lists&#39;)&quot;.
+
+     6. &quot;Graph({1: {2: &#39;a&#39;, 3:&#39;b&#39;} ,3:{2:&#39;c&#39;}})&quot; -- return a graph by
+        associating a list of neighbors to each vertex and providing
+        its edge label.
+
+        To bypass auto-detection, prefer the more explicit &quot;Graph(D,
+        format=&#39;dict_of_dicts&#39;)&quot;.
+
+        For graphs with multiple edges, you can provide a list of
+        labels instead, e.g.: &quot;Graph({1: {2: [&#39;a1&#39;, &#39;a2&#39;], 3:[&#39;b&#39;]}
+        ,3:{2:[&#39;c&#39;]}})&quot;.
+
+     7. &quot;Graph(a_symmetric_matrix)&quot; -- return a graph with given
+        (weighted) adjacency matrix (see documentation of
+        &quot;adjacency_matrix()&quot;).
+
+        To bypass auto-detection, prefer the more explicit &quot;Graph(M,
+        format=&#39;adjacency_matrix&#39;)&quot;. To take weights into account, use
+        &quot;format=&#39;weighted_adjacency_matrix&#39;&quot; instead.
+
+     8. &quot;Graph(a_nonsymmetric_matrix)&quot; -- return a graph with given
+        incidence matrix (see documentation of &quot;incidence_matrix()&quot;).
+
+        To bypass auto-detection, prefer the more explicit &quot;Graph(M,
+        format=&#39;incidence_matrix&#39;)&quot;.
+
+     9. &quot;Graph([V, f])&quot; -- return a graph from a vertex set &quot;V&quot; and a
+        *symmetric* function &quot;f&quot;. The graph contains an edge u,v
+        whenever &quot;f(u,v)&quot; is &quot;True&quot;.. Example: &quot;Graph([ [1..10],
+        lambda x,y: abs(x-y).is_square()])&quot;
+
+     10. &quot;Graph(&#39;:I`ES@obGkqegW~&#39;)&quot; -- return a graph from a graph6 or
+         sparse6 string (see documentation of &quot;graph6_string()&quot; or
+         &quot;sparse6_string()&quot;).
+
+     11. &quot;Graph(a_seidel_matrix, format=&#39;seidel_adjacency_matrix&#39;)&quot; --
+         return a graph with a given Seidel adjacency matrix (see
+         documentation of &quot;seidel_adjacency_matrix()&quot;).
+
+     12. &quot;Graph(another_graph)&quot; -- return a graph from a Sage
+         (di)graph, pygraphviz graph, NetworkX graph, or igraph graph.
+
+   * &quot;pos&quot; -- a positioning dictionary (cf. documentation of
+     &quot;layout()&quot;). For example, to draw 4 vertices on a square:
+
+        {0: [-1,-1],
+         1: [ 1,-1],
+         2: [ 1, 1],
+         3: [-1, 1]}
+
+   * &quot;name&quot; -- (must be an explicitly named parameter, i.e.,
+        &quot;name=&#39;complete&#39;)&quot; gives the graph a name
+
+   * &quot;loops&quot; -- boolean (default: &quot;None&quot;); whether to allow loops
+     (ignored if data is an instance of the &quot;Graph&quot; class)
+
+   * &quot;multiedges&quot; -- boolean (default: &quot;None&quot;); whether to allow
+     multiple edges (ignored if data is an instance of the &quot;Graph&quot;
+     class)
+
+   * &quot;weighted&quot; -- boolean (default: &quot;None&quot;); whether graph thinks of
+     itself as weighted or not. See &quot;weighted()&quot;.
+
+   * &quot;format&quot; -- if set to &quot;None&quot; (default), &quot;Graph&quot; tries to guess
+     input&#39;s format. To avoid this possibly time-consuming step, one
+     of the following values can be specified (see description above):
+     &quot;&#39;int&#39;&quot;, &quot;&#39;graph6&#39;&quot;, &quot;&#39;sparse6&#39;&quot;, &quot;&#39;rule&#39;&quot;, &quot;&#39;list_of_edges&#39;&quot;,
+     &quot;&#39;dict_of_lists&#39;&quot;, &quot;&#39;dict_of_dicts&#39;&quot;, &quot;&#39;adjacency_matrix&#39;&quot;,
+     &quot;&#39;weighted_adjacency_matrix&#39;&quot;, &quot;&#39;seidel_adjacency_matrix&#39;&quot;,
+     &quot;&#39;incidence_matrix&#39;&quot;, &quot;&quot;NX&quot;&quot;, &quot;&#39;igraph&#39;&quot;.
+
+   * &quot;sparse&quot; -- boolean (default: &quot;True&quot;); &quot;sparse=True&quot; is an alias
+     for &quot;data_structure=&quot;sparse&quot;&quot;, and &quot;sparse=False&quot; is an alias for
+     &quot;data_structure=&quot;dense&quot;&quot;.
+
+   * &quot;data_structure&quot; -- one of the following (for more information,
+     see &quot;overview&quot;)
+
+        * &quot;&#39;dense&#39;&quot; -- selects the &quot;dense_graph&quot; backend.
+
+        * &quot;&#39;sparse&#39;&quot; -- selects the &quot;sparse_graph&quot; backend.
+
+        * &quot;&#39;static_sparse&#39;&quot; -- selects the &quot;static_sparse_backend&quot;
+          (this backend is faster than the sparse backend and smaller
+          in memory, and it is immutable, so that the resulting graphs
+          can be used as dictionary keys).
+
+   * &quot;immutable&quot; -- boolean (default: &quot;False&quot;); whether to create a
+     immutable graph. Note that &quot;immutable=True&quot; is actually a
+     shortcut for &quot;data_structure=&#39;static_sparse&#39;&quot;. Set to &quot;False&quot; by
+     default.
+
+   * &quot;hash_labels&quot; -- boolean (default: &quot;None&quot;); whether to include
+     edge labels during hashing. This parameter defaults to &quot;True&quot; if
+     the graph is weighted. This parameter is ignored if the graph is
+     mutable. Beware that trying to hash unhashable labels will raise
+     an error.
+
+   * &quot;vertex_labels&quot; -- boolean (default: &quot;True&quot;); whether to allow
+     any object as a vertex (slower), or only the integers 0,...,n-1,
+     where n is the number of vertices.
+
+   * &quot;convert_empty_dict_labels_to_None&quot; -- this arguments sets the
+     default edge labels used by NetworkX (empty dictionaries) to be
+     replaced by &quot;None&quot;, the default Sage edge label. It is set to
+     &quot;True&quot; iff a NetworkX graph is on the input.
+
+   EXAMPLES:
+
+   We illustrate the first seven input formats (the other two involve
+   packages that are currently not standard in Sage):
+
+   1. An integer giving the number of vertices:
+
+         sage: g = Graph(5); g
+         Graph on 5 vertices
+         sage: g.vertices(sort=True)
+         [0, 1, 2, 3, 4]
+         sage: g.edges(sort=False)
+         []
+
+   2. A dictionary of dictionaries:
+
+         sage: g = Graph({0:{1:&#39;x&#39;,2:&#39;z&#39;,3:&#39;a&#39;}, 2:{5:&#39;out&#39;}}); g
+         Graph on 5 vertices
+
+      The labels (&#39;x&#39;, &#39;z&#39;, &#39;a&#39;, &#39;out&#39;) are labels for edges. For
+      example, &#39;out&#39; is the label for the edge on 2 and 5. Labels can
+      be used as weights, if all the labels share some common parent.:
+
+         sage: a, b, c, d, e, f = sorted(SymmetricGroup(3))
+         sage: Graph({b: {d: &#39;c&#39;, e: &#39;p&#39;}, c: {d: &#39;p&#39;, e: &#39;c&#39;}})
+         Graph on 4 vertices
+
+   3. A dictionary of lists:
+
+         sage: g = Graph({0:[1,2,3], 2:[4]}); g
+         Graph on 5 vertices
+
+   4. A list of vertices and a function describing adjacencies. Note
+      that the list of vertices and the function must be enclosed in a
+      list (i.e., [list of vertices, function]).
+
+      Construct the Paley graph over GF(13).:
+
+         sage: g = Graph([GF(13), lambda i,j: i!=j and (i-j).is_square()])
+         sage: g.vertices(sort=True)
+         [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+         sage: g.adjacency_matrix()
+         [0 1 0 1 1 0 0 0 0 1 1 0 1]
+         [1 0 1 0 1 1 0 0 0 0 1 1 0]
+         [0 1 0 1 0 1 1 0 0 0 0 1 1]
+         [1 0 1 0 1 0 1 1 0 0 0 0 1]
+         [1 1 0 1 0 1 0 1 1 0 0 0 0]
+         [0 1 1 0 1 0 1 0 1 1 0 0 0]
+         [0 0 1 1 0 1 0 1 0 1 1 0 0]
+         [0 0 0 1 1 0 1 0 1 0 1 1 0]
+         [0 0 0 0 1 1 0 1 0 1 0 1 1]
+         [1 0 0 0 0 1 1 0 1 0 1 0 1]
+         [1 1 0 0 0 0 1 1 0 1 0 1 0]
+         [0 1 1 0 0 0 0 1 1 0 1 0 1]
+         [1 0 1 1 0 0 0 0 1 1 0 1 0]
+
+      Construct the line graph of a complete graph.:
+
+         sage: g = graphs.CompleteGraph(4)
+         sage: line_graph = Graph([g.edges(sort=True, labels=false),
+         ....:                     lambda i,j: len(set(i).intersection(set(j)))&gt;0],
+         ....:                    loops=False)
+         sage: line_graph.vertices(sort=True)
+         [(0, 1), (0, 2), (0, 3), (1, 2), (1, 3), (2, 3)]
+         sage: line_graph.adjacency_matrix()
+         [0 1 1 1 1 0]
+         [1 0 1 1 0 1]
+         [1 1 0 0 1 1]
+         [1 1 0 0 1 1]
+         [1 0 1 1 0 1]
+         [0 1 1 1 1 0]
+
+   5. A graph6 or sparse6 string: Sage automatically recognizes
+      whether a string is in graph6 or sparse6 format:
+
+         sage: s = &#39;:I`AKGsaOs`cI]Gb~&#39;
+         sage: Graph(s, sparse=True)
+         Looped multi-graph on 10 vertices
+
+         sage: G = Graph(&#39;G?????&#39;)
+         sage: G = Graph(&quot;G&#39;?G?C&quot;)
+         Traceback (most recent call last):
+         ...
+         RuntimeError: the string seems corrupt: valid characters are
+         ?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[^_`abcdefghijklmnopqrstuvwxyz{|}~
+         sage: G = Graph(&#39;G??????&#39;)
+         Traceback (most recent call last):
+         ...
+         RuntimeError: the string (G??????) seems corrupt: for n = 8, the string is too long
+
+         sage: G = Graph(&quot;:I&#39;AKGsaOs`cI]Gb~&quot;)
+         Traceback (most recent call last):
+         ...
+         RuntimeError: the string seems corrupt: valid characters are
+         ?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[^_`abcdefghijklmnopqrstuvwxyz{|}~
+
+      There are also list functions to take care of lists of graphs:
+
+         sage: s = &#39;:IgMoqoCUOqeb\n:I`AKGsaOs`cI]Gb~\n:I`EDOAEQ?PccSsge\\N\n&#39;
+         sage: graphs_list.from_sparse6(s)
+         [Looped multi-graph on 10 vertices,
+          Looped multi-graph on 10 vertices,
+          Looped multi-graph on 10 vertices]
+
+   6. A Sage matrix: Note: If format is not specified, then Sage
+      assumes a symmetric square matrix is an adjacency matrix,
+      otherwise an incidence matrix.
+
+      * an adjacency matrix:
+
+           sage: M = graphs.PetersenGraph().am(); M
+           [0 1 0 0 1 1 0 0 0 0]
+           [1 0 1 0 0 0 1 0 0 0]
+           [0 1 0 1 0 0 0 1 0 0]
+           [0 0 1 0 1 0 0 0 1 0]
+           [1 0 0 1 0 0 0 0 0 1]
+           [1 0 0 0 0 0 0 1 1 0]
+           [0 1 0 0 0 0 0 0 1 1]
+           [0 0 1 0 0 1 0 0 0 1]
+           [0 0 0 1 0 1 1 0 0 0]
+           [0 0 0 0 1 0 1 1 0 0]
+           sage: Graph(M)
+           Graph on 10 vertices
+
+           sage: Graph(matrix([[1,2], [2,4]]), loops=True, sparse=True)
+           Looped multi-graph on 2 vertices
+
+           sage: M = Matrix([[0,1,-1], [1,0,-1/2], [-1,-1/2,0]]); M
+           [   0    1   -1]
+           [   1    0 -1/2]
+           [  -1 -1/2    0]
+           sage: G = Graph(M, sparse=True); G
+           Graph on 3 vertices
+           sage: G.weighted()
+           True
+
+      * an incidence matrix:
+
+           sage: M = Matrix(6, [-1,0,0,0,1, 1,-1,0,0,0, 0,1,-1,0,0,
+           ....:                0,0,1,-1,0, 0,0,0,1,-1, 0,0,0,0,0]); M
+           [-1  0  0  0  1]
+           [ 1 -1  0  0  0]
+           [ 0  1 -1  0  0]
+           [ 0  0  1 -1  0]
+           [ 0  0  0  1 -1]
+           [ 0  0  0  0  0]
+           sage: Graph(M)
+           Graph on 6 vertices
+
+           sage: Graph(Matrix([[1],[1],[1]]))
+           Traceback (most recent call last):
+           ...
+           ValueError: there must be one or two nonzero entries per column
+           in an incidence matrix, got entries [1, 1, 1] in column 0
+           sage: Graph(Matrix([[1],[1],[0]]))
+           Graph on 3 vertices
+
+           sage: M = Matrix([[0,1,-1], [1,0,-1], [-1,-1,0]]); M
+           [ 0  1 -1]
+           [ 1  0 -1]
+           [-1 -1  0]
+           sage: Graph(M, sparse=True)
+           Graph on 3 vertices
+
+           sage: M = Matrix([[0,1,1], [1,0,1], [-1,-1,0]]); M
+           [ 0  1  1]
+           [ 1  0  1]
+           [-1 -1  0]
+           sage: Graph(M)
+           Traceback (most recent call last):
+           ...
+           ValueError: there must be one or two nonzero entries per column
+           in an incidence matrix, got entries [1, 1] in column 2
+
+         Check that https://github.com/sagemath/sage/issues/9714 is
+         fixed:
+
+            sage: MA = Matrix([[1,2,0], [0,2,0], [0,0,1]])
+            sage: GA = Graph(MA, format=&#39;adjacency_matrix&#39;)
+            sage: MI = GA.incidence_matrix(oriented=False); MI
+            [2 1 1 0 0 0]
+            [0 1 1 2 2 0]
+            [0 0 0 0 0 2]
+            sage: Graph(MI).edges(sort=True, labels=None)
+            [(0, 0), (0, 1), (0, 1), (1, 1), (1, 1), (2, 2)]
+
+            sage: M = Matrix([[1], [-1]]); M
+            [ 1]
+            [-1]
+            sage: Graph(M).edges(sort=True)
+            [(0, 1, None)]
+
+   7. A Seidel adjacency matrix:
+
+         sage: from sage.combinat.matrices.hadamard_matrix import (
+         ....:  regular_symmetric_hadamard_matrix_with_constant_diagonal as rshcd)
+         sage: m = rshcd(16,1) - matrix.identity(16)
+         sage: Graph(m,
+         ....:       format=&#39;seidel_adjacency_matrix&#39;).is_strongly_regular(parameters=True)
+         (16, 6, 2, 2)
+
+   8. List of edges, or labelled edges:
+
+         sage: g = Graph([(1, 3), (3, 8), (5, 2)]); g
+         Graph on 5 vertices
+
+         sage: g = Graph([(1, 2, &quot;Peace&quot;), (7, -9, &quot;and&quot;), (77, 2, &quot;Love&quot;)]); g
+         Graph on 5 vertices
+         sage: g = Graph([(0, 2, &#39;0&#39;), (0, 2, &#39;1&#39;), (3, 3, &#39;2&#39;)],
+         ....:           loops=True, multiedges=True)
+         sage: g.loops()
+         [(3, 3, &#39;2&#39;)]
+
+   9. A NetworkX MultiGraph:
+
+         sage: import networkx
+         sage: g = networkx.MultiGraph({0:[1,2,3], 2:[4]})
+         sage: Graph(g)
+         Multi-graph on 5 vertices
+
+   10. A NetworkX graph:
+
+          sage: import networkx
+          sage: g = networkx.Graph({0:[1,2,3], 2:[4]})
+          sage: DiGraph(g)
+          Digraph on 5 vertices
+
+   11. An igraph Graph (see also &quot;igraph_graph()&quot;):
+
+          sage: import igraph                       # optional - python_igraph
+          sage: g = igraph.Graph([(0, 1), (0, 2)])  # optional - python_igraph
+          sage: Graph(g)                            # optional - python_igraph
+          Graph on 3 vertices
+
+       If &quot;vertex_labels&quot; is &quot;True&quot;, the names of the vertices are
+       given by the vertex attribute &quot;&#39;name&#39;&quot;, if available:
+
+          sage: # optional - python_igraph
+          sage: g = igraph.Graph([(0,1),(0,2)], vertex_attrs={&#39;name&#39;:[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]})
+          sage: Graph(g).vertices(sort=True)
+          [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
+          sage: g = igraph.Graph([(0,1),(0,2)], vertex_attrs={&#39;label&#39;:[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]})
+          sage: Graph(g).vertices(sort=True)
+          [0, 1, 2]
+
+       If the igraph Graph has edge attributes, they are used as edge
+       labels:
+
+          sage: g = igraph.Graph([(0, 1), (0, 2)],                             # optional - python_igraph
+          ....:                  edge_attrs={&#39;name&#39;: [&#39;a&#39;, &#39;b&#39;], &#39;weight&#39;: [1, 3]})
+          sage: Graph(g).edges(sort=True)                                      # optional - python_igraph
+          [(0, 1, {&#39;name&#39;: &#39;a&#39;, &#39;weight&#39;: 1}), (0, 2, {&#39;name&#39;: &#39;b&#39;, &#39;weight&#39;: 3})]
+
+   When defining an undirected graph from a function &quot;f&quot;, it is *very*
+   important that &quot;f&quot; be symmetric. If it is not, anything can happen:
+
+      sage: f_sym = lambda x,y: abs(x-y) == 1
+      sage: f_nonsym = lambda x,y: (x-y) == 1
+      sage: G_sym = Graph([[4,6,1,5,3,7,2,0], f_sym])
+      sage: G_sym.is_isomorphic(graphs.PathGraph(8))
+      True
+      sage: G_nonsym = Graph([[4,6,1,5,3,7,2,0], f_nonsym])
+      sage: G_nonsym.size()
+      4
+      sage: G_nonsym.is_isomorphic(G_sym)
+      False
+
+   By default, graphs are mutable and can thus not be used as a
+   dictionary key:
+
+      sage: G = graphs.PetersenGraph()
+      sage: {G:1}[G]
+      Traceback (most recent call last):
+      ...
+      TypeError: This graph is mutable, and thus not hashable.
+      Create an immutable copy by `g.copy(immutable=True)`
+
+   When providing the optional arguments
+   &quot;data_structure=&quot;static_sparse&quot;&quot; or &quot;immutable=True&quot; (both mean the
+   same), then an immutable graph results:
+
+      sage: G_imm = Graph(G, immutable=True)
+      sage: H_imm = Graph(G, data_structure=&#39;static_sparse&#39;)
+      sage: G_imm == H_imm == G
+      True
+      sage: {G_imm:1}[H_imm]
+      1
+<span class=" -Color -Color-Red">File:</span>           ~/miniconda3/envs/sage-env/lib/python3.12/site-packages/sage/graphs/graph.py
+<span class=" -Color -Color-Red">Type:</span>           type
+<span class=" -Color -Color-Red">Subclasses:</span>     BipartiteGraph, MatchingCoveredGraph
 </pre></div>
 </div>
 </div>
@@ -1837,6 +3430,9 @@ incidence matrix (see documentation of “incidence_matrix()”).
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/05c2b968b5ba31eccccab8e112390db72fdccf66cc5c500d7a9ffe37f7d27f5b.png" src="../_images/05c2b968b5ba31eccccab8e112390db72fdccf66cc5c500d7a9ffe37f7d27f5b.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1844,6 +3440,9 @@ incidence matrix (see documentation of “incidence_matrix()”).
 <span class="n">G</span> <span class="o">=</span> <span class="n">graphs</span><span class="o">.</span><span class="n">PetersenGraph</span><span class="p">();</span> <span class="n">c</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">coloring</span><span class="p">(</span><span class="n">hex_colors</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span> <span class="n">G</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vertex_colors</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">vertex_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/dc2611c730c4c56a509fbb30a474bb8190ebaff16ef36ed2aefc766a6fbcee6b.png" src="../_images/dc2611c730c4c56a509fbb30a474bb8190ebaff16ef36ed2aefc766a6fbcee6b.png" />
 </div>
 </div>
 <section id="some-homework-problems-that-my-students-could-use-sagemath-for">
@@ -1868,6 +3467,19 @@ incidence matrix (see documentation of “incidence_matrix()”).
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 True
+2 True
+3 True
+4 True
+5 True
+6 True
+7 True
+8 True
+9 True
+</pre></div>
+</div>
+</div>
 </div>
 <p><strong>Theorem</strong>: All hypergraphs are bipartite.</p>
 <p>(The proof can be done easily, by writing the coordinates as tuples over 0 and 1 and taking their sum. All the neighbors of an odd-sum vertex have an even sum.)</p>
@@ -1883,6 +3495,19 @@ incidence matrix (see documentation of “incidence_matrix()”).
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 2
+2 6
+3 14
+4 30
+5 62
+6 126
+7 254
+8 510
+9 1022
+</pre></div>
+</div>
+</div>
 </div>
 <p><strong>Conjecture</strong>: the number of non-loop edges in a DeBruijn graph for <span class="math notranslate nohighlight">\(n\)</span> is <span class="math notranslate nohighlight">\(2^{n+1}-2\)</span>.</p>
 <p>It is not hard to prove, but we would need to know what a DeBruijn graph is, and to understand it.</p>
@@ -1891,6 +3516,9 @@ incidence matrix (see documentation of “incidence_matrix()”).
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">digraphs</span><span class="o">.</span><span class="n">DeBruijn</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vertex_size</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/d29b245e96e5b4927b423591172bc44f3232e2f2ec7c7c46c14c13cf02c42eb9.png" src="../_images/d29b245e96e5b4927b423591172bc44f3232e2f2ec7c7c46c14c13cf02c42eb9.png" />
 </div>
 </div>
 <p>A <em>De Bruijn</em> graph has for vertices all the binary sequence of a given length, and there is an arrow connecting two sequences if taking the tail removing the first letter and replacing the last letter by anything, we can get the tip of the arrow.</p>
@@ -1905,6 +3533,9 @@ incidence matrix (see documentation of “incidence_matrix()”).
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/ff0fa4f2b4ebc8f2b7c930abc52b887a885b5a581acd5a43d9e8de94d6819a86.png" src="../_images/ff0fa4f2b4ebc8f2b7c930abc52b887a885b5a581acd5a43d9e8de94d6819a86.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1913,11 +3544,19 @@ incidence matrix (see documentation of “incidence_matrix()”).
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/420c6d53fd0f4b61548c8209f5d292dcd0ab67144d433b64aedd057366729da7.png" src="../_images/420c6d53fd0f4b61548c8209f5d292dcd0ab67144d433b64aedd057366729da7.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">graphs</span><span class="o">.</span><span class="n">PetersenGraph</span><span class="p">()</span>
 <span class="n">G</span><span class="o">.</span><span class="n">is_planar</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
 </pre></div>
 </div>
 </div>
@@ -1955,6 +3594,9 @@ Then solve all the problems above.</p>
 <span class="n">G</span> <span class="o">=</span> <span class="n">graphs</span><span class="o">.</span><span class="n">RandomGNP</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">);</span> <span class="n">G</span>  <span class="c1"># parameters are # of vertices and probability of an edge to be in the graph</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/d36c78f8fa4336e67edb1aab37db08645eaf34140c0af483cba5e6ef6c3458a7.png" src="../_images/d36c78f8fa4336e67edb1aab37db08645eaf34140c0af483cba5e6ef6c3458a7.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2005,10 +3647,18 @@ Then solve all the problems above.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/7ba3a18d5b0eddbe68b68159e9fa3ee96691558d9c6fd697ffd0752fecfada25.png" src="../_images/7ba3a18d5b0eddbe68b68159e9fa3ee96691558d9c6fd697ffd0752fecfada25.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">14</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 </pre></div>
 </div>
 </div>
@@ -2019,10 +3669,20 @@ Then solve all the problems above.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">independent_set</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
 </pre></div>
 </div>
 </div>
@@ -2033,6 +3693,11 @@ Then solve all the problems above.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2040,10 +3705,20 @@ Then solve all the problems above.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 14]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="o">.</span><span class="n">clique_number</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
@@ -2107,6 +3782,11 @@ Then solve all the problems above.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[2, 14]]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2114,6 +3794,9 @@ Then solve all the problems above.</p>
 <span class="n">G</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">edge_colors</span><span class="o">=</span><span class="nb">dict</span><span class="p">([(</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">edges_in_path</span><span class="p">)]))</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/69581c592a098cf7f2cfea9270b175f99a8c773eb66b48c075d4a3301ca14e3d.png" src="../_images/69581c592a098cf7f2cfea9270b175f99a8c773eb66b48c075d4a3301ca14e3d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2123,6 +3806,9 @@ Then solve all the problems above.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/717dcf3ae142c0a10faaf9be4e59a424fc8c52eea037355ee807393d4c150e40.png" src="../_images/717dcf3ae142c0a10faaf9be4e59a424fc8c52eea037355ee807393d4c150e40.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2131,6 +3817,9 @@ Then solve all the problems above.</p>
 <span class="n">G</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vertex_colors</span><span class="o">=</span><span class="nb">dict</span><span class="p">([(</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">I</span><span class="p">)]))</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/24ae8197c17298821ce6e3a19e89c6888ae0a3c3b373deeae85b1460ebf38e9e.png" src="../_images/24ae8197c17298821ce6e3a19e89c6888ae0a3c3b373deeae85b1460ebf38e9e.png" />
 </div>
 </div>
 <p>Etc. [Solutions here will be added later]</p>
@@ -2156,12 +3845,18 @@ Then solve all the problems above.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/d83da2d8856a3bf118383abcb68783589ad59f9df1a9e3f4ef445a306472b793.png" src="../_images/d83da2d8856a3bf118383abcb68783589ad59f9df1a9e3f4ef445a306472b793.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">coloring</span><span class="p">(</span><span class="n">hex_colors</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span> <span class="n">G</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vertex_colors</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">vertex_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/e892f9f61c73001b0c55dcb279f81e624dc12e0b443dcd1e7588a79ee7875c2f.png" src="../_images/e892f9f61c73001b0c55dcb279f81e624dc12e0b443dcd1e7588a79ee7875c2f.png" />
 </div>
 </div>
 <p>For complete graphs, so graphs for which all possible exist, the chromatic number is the number of vertices.</p>
@@ -2181,12 +3876,18 @@ Then solve all the problems above.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/a78785c0f93e4b29b93c47f6eda9d011133d2e184a1e612bb42d349c402925bb.png" src="../_images/a78785c0f93e4b29b93c47f6eda9d011133d2e184a1e612bb42d349c402925bb.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">coloring</span><span class="p">(</span><span class="n">hex_colors</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span> <span class="n">G</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vertex_colors</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">vertex_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/1d35cec8099a565f82ed1e65c43ab6db4756de4f1870e8c1c96c6c0be8f18653.png" src="../_images/1d35cec8099a565f82ed1e65c43ab6db4756de4f1870e8c1c96c6c0be8f18653.png" />
 </div>
 </div>
 <p>This is a bipartite graph (because there is no edge from the top set to the top set, or between two vertices of the bottom set). All vertices of the top can be coloured the same, just like all the vertices in the bottom.</p>
@@ -2206,12 +3907,18 @@ Then solve all the problems above.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/c127f86b2032abc0dbfa7575abc453b0c585d81481aadbfbd87e6742b057997c.png" src="../_images/c127f86b2032abc0dbfa7575abc453b0c585d81481aadbfbd87e6742b057997c.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">coloring</span><span class="p">(</span><span class="n">hex_colors</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span> <span class="n">G</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vertex_colors</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">vertex_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ac2aebbf91f0a40e17fae3ed6f2de9630b837e8b39fa41df88248f5c95ba203e.png" src="../_images/ac2aebbf91f0a40e17fae3ed6f2de9630b837e8b39fa41df88248f5c95ba203e.png" />
 </div>
 </div>
 <p>Cycles of odd length need to be colored with 3 different colors.</p>
@@ -2231,12 +3938,18 @@ Then solve all the problems above.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/dd624bf4223b971022372a24ff4b9395537d75ece1039878b4cc6a74938d2dda.png" src="../_images/dd624bf4223b971022372a24ff4b9395537d75ece1039878b4cc6a74938d2dda.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">coloring</span><span class="p">(</span><span class="n">hex_colors</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span> <span class="n">G</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vertex_colors</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">vertex_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/60280fd99a66769daa64bff9f03fb0044cf48029243a6691304eaf1792a6414a.png" src="../_images/60280fd99a66769daa64bff9f03fb0044cf48029243a6691304eaf1792a6414a.png" />
 </div>
 </div>
 <p>Cycles of even length are bipartite graphs, so they can be colored with two colors.</p>
@@ -2256,6 +3969,9 @@ Then solve all the problems above.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/dea60cda95df494bbc22d469b14e21cdb3bb5302e633ada1f96a0c4ce276f80e.png" src="../_images/dea60cda95df494bbc22d469b14e21cdb3bb5302e633ada1f96a0c4ce276f80e.png" />
+</div>
 </div>
 </section>
 <section id="for-1-point-if-you-accept-the-hint">
@@ -2267,6 +3983,9 @@ Then solve all the problems above.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/d151924bfa3c0db974abe3dd7a95c69257f020de95bb1f26418cd0a576fd6cd0.png" src="../_images/d151924bfa3c0db974abe3dd7a95c69257f020de95bb1f26418cd0a576fd6cd0.png" />
+</div>
 </div>
 <p>Mycielski’s do not contain any triangle, but they have arbitrary large chromatic numbers.</p>
 <div class="cell docutils container">
@@ -2274,6 +3993,9 @@ Then solve all the problems above.</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graphics_array</span><span class="p">([</span><span class="n">graphs</span><span class="o">.</span><span class="n">MycielskiGraph</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vertex_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">vertex_colors</span><span class="o">=</span><span class="n">graphs</span><span class="o">.</span><span class="n">MycielskiGraph</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">coloring</span><span class="p">(</span><span class="n">hex_colors</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)])</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/7a4582f085d7ff8609751bcc5ae5174da4e91f3de9615a7ed268141270a3017b.png" src="../_images/7a4582f085d7ff8609751bcc5ae5174da4e91f3de9615a7ed268141270a3017b.png" />
 </div>
 </div>
 </section>
@@ -2292,12 +4014,18 @@ Then solve all the problems above.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/53ff72ce86d804017f838c70800be153d9717f64ed8ae7b68f522089c333c270.png" src="../_images/53ff72ce86d804017f838c70800be153d9717f64ed8ae7b68f522089c333c270.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">coloring</span><span class="p">(</span><span class="n">hex_colors</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span> <span class="n">G</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vertex_colors</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">vertex_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/45fdfb140ff4c314c85dedeb21a3ae1b8fe6d917abd0609a627d0c1b5d1a2848.png" src="../_images/45fdfb140ff4c314c85dedeb21a3ae1b8fe6d917abd0609a627d0c1b5d1a2848.png" />
 </div>
 </div>
 <p>This is the hypercube of dimension 4, and hypercubes are bipartite.</p>
@@ -2320,12 +4048,18 @@ Then solve all the problems above.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/e26ba6e93764edc502722305462a4a0ce92e60ae60f8e69c6407805a969554f2.png" src="../_images/e26ba6e93764edc502722305462a4a0ce92e60ae60f8e69c6407805a969554f2.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vertex_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="s1">&#39;planar&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/e1779d12e4f359f9bcf537b9c9c19df41d08d745e8f23a8e42d8ff63751aac73.png" src="../_images/e1779d12e4f359f9bcf537b9c9c19df41d08d745e8f23a8e42d8ff63751aac73.png" />
 </div>
 </div>
 <p>The complete graph on four vertices is also the skeleton of the tetrahedron, and can be drawn in a planar way.</p>
@@ -2345,6 +4079,9 @@ Then solve all the problems above.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/180c5faa9020de3e6c913b1d0f60181cf0dd34f903dfa568e4cbeae14e81d326.png" src="../_images/180c5faa9020de3e6c913b1d0f60181cf0dd34f903dfa568e4cbeae14e81d326.png" />
+</div>
 </div>
 <p>The complete graph on five vertices is the smallest graph that is not planar.</p>
 </section>
@@ -2363,6 +4100,9 @@ Then solve all the problems above.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/318a51c30db77fc4270f916794c58b980ac6f9bf36cd1b77598bd225f094a65f.png" src="../_images/318a51c30db77fc4270f916794c58b980ac6f9bf36cd1b77598bd225f094a65f.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2370,6 +4110,9 @@ Then solve all the problems above.</p>
 <span class="n">G</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">layout</span> <span class="o">=</span><span class="s1">&#39;circular&#39;</span><span class="p">,</span> <span class="n">vertex_size</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b2c21cf7c236d73aa5e8e3afc2fb901a9cd7ca23d48b57c3c1b0ad763d609496.png" src="../_images/b2c21cf7c236d73aa5e8e3afc2fb901a9cd7ca23d48b57c3c1b0ad763d609496.png" />
 </div>
 </div>
 <p>This is the Cube Graph! The cube graph is planar.</p>
@@ -2389,6 +4132,9 @@ Then solve all the problems above.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/53ff72ce86d804017f838c70800be153d9717f64ed8ae7b68f522089c333c270.png" src="../_images/53ff72ce86d804017f838c70800be153d9717f64ed8ae7b68f522089c333c270.png" />
+</div>
 </div>
 <p>The hypercube of dimension 4 is not planar…</p>
 </section>
@@ -2398,8 +4144,8 @@ Then solve all the problems above.</p>
 </section>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="v-combinatorics-with-sagemath-databases">
-<h1>V. Combinatorics with SageMath: Databases<a class="headerlink" href="#v-combinatorics-with-sagemath-databases" title="Link to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="v-databases">
+<h1>V. Databases<a class="headerlink" href="#v-databases" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>  <span class="c1"># So pictures of posets fit on the slides</span>
@@ -2445,6 +4191,13 @@ Then solve all the problems above.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0: A001263: Triangle of Narayana numbers T(n,k) = C(n-1,k-1)*C(n,k-1)/k with 1 &lt;= k &lt;= n, read by rows. Also called the Catalan triangle.
+1: A000930: Narayana&#39;s cows sequence: a(0) = a(1) = a(2) = 1; thereafter a(n) = a(n-1) + a(n-3).
+2: A090181: Triangle of Narayana (A001263) with 0 &lt;= k &lt;= n, read by rows.
+</pre></div>
+</div>
+</div>
 </div>
 <p><a class="reference external" href="https://oeis.org/A001263">https://oeis.org/A001263</a></p>
 <p>What is your favourite sequence?</p>
@@ -2473,6 +4226,13 @@ Then solve all the problems above.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0: A000796: Decimal expansion of Pi (or digits of Pi).
+1: A379323: Decimal expansion of log((2*5! + (8 - 1)!)^sqrt(9) + 4! + (3!)!)/sqrt(67).
+2: A212131: Decimal expansion of k such that e^(k*sqrt(163)) = round(e^(Pi*sqrt(163))).
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="pi">
@@ -2487,6 +4247,14 @@ Then solve all the problems above.</p>
 <span class="nb">print</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">pi</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">pi</span><span class="p">)))</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">pi</span><span class="p">))))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pi
+3.141592653589793
+3.141592653589793
+[&#39;3&#39;, &#39;.&#39;, &#39;1&#39;, &#39;4&#39;, &#39;1&#39;, &#39;5&#39;, &#39;9&#39;, &#39;2&#39;, &#39;6&#39;, &#39;5&#39;, &#39;3&#39;, &#39;5&#39;, &#39;8&#39;, &#39;9&#39;, &#39;7&#39;, &#39;9&#39;, &#39;3&#39;]
 </pre></div>
 </div>
 </div>
@@ -2530,12 +4298,74 @@ Most often, it is a function <span class="math notranslate nohighlight">\(\mathc
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0: St000445oMp00118 (quality [100, 100])
+1: St000445oMp00121oMp00118 (quality [100, 100])
+2: St001126oMp00030oMp00118 (quality [100, 100])
+3: St001232oMp00222oMp00199 (quality [14, 60])
+4: St001879oMp00047oMp00026 (quality [14, 60])
+5: St001880oMp00047oMp00026 with offset 1 (quality [14, 60])
+6: St001880oMp00242oMp00143 with offset 2 (quality [14, 40])
+</pre></div>
+</div>
+</div>
 </div>
 <p>I made up some statistic for some Dyck Paths, and store them as tuples in <code class="docutils literal notranslate"><span class="pre">list_for_search</span></code>. Can you find what is that statistics?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">pair</span> <span class="ow">in</span> <span class="n">list_for_search</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">ascii_art</span><span class="p">(</span><span class="n">pair</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">pair</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/\/\ 0
+ /\ 
+/  \ 2
+/\/\/\ 0
+   /\ 
+/\/  \ 1
+ /\   
+/  \/\ 1
+ /\/\ 
+/    \ 1
+  /\  
+ /  \ 
+/    \ 3
+/\/\/\/\ 0
+     /\ 
+/\/\/  \ 1
+   /\   
+/\/  \/\ 1
+   /\/\ 
+/\/    \ 2
+    /\  
+   /  \ 
+/\/    \ 2
+ /\     
+/  \/\/\ 0
+ /\  /\ 
+/  \/  \ 0
+ /\/\   
+/    \/\ 2
+ /\/\/\ 
+/      \ 2
+    /\  
+ /\/  \ 
+/      \ 2
+  /\    
+ /  \   
+/    \/\ 1
+  /\    
+ /  \/\ 
+/      \ 1
+  /\/\  
+ /    \ 
+/      \ 2
+   /\   
+  /  \  
+ /    \ 
+/      \ 4
 </pre></div>
 </div>
 </div>
@@ -2558,6 +4388,17 @@ Most often, it is a function <span class="math notranslate nohighlight">\(\mathc
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0: St000445oMp00118 (quality [100, 100])
+1: St000445oMp00121oMp00118 (quality [100, 100])
+2: St001126oMp00030oMp00118 (quality [100, 100])
+3: St001232oMp00222oMp00199 (quality [14, 60])
+4: St001879oMp00047oMp00026 (quality [14, 60])
+5: St001880oMp00047oMp00026 with offset 1 (quality [14, 60])
+6: St001880oMp00242oMp00143 with offset 2 (quality [14, 40])
+</pre></div>
+</div>
+</div>
 </div>
 <p>This gives several options, of varying quality… The top three are high quality, meaning that they match 100%. We can ask FindStat what they are.</p>
 <p>Exploring</p>
@@ -2571,11 +4412,21 @@ Most often, it is a function <span class="math notranslate nohighlight">\(\mathc
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;The number of rises of length 1 of a Dyck path.&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p>One can also get the code used to generate the statistic.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">findstat</span><span class="p">(</span><span class="mi">445</span><span class="p">)</span><span class="o">.</span><span class="n">code</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;def statistic(D):\r\n    return list(D.rise_composition()).count(1)\r\n&#39;
 </pre></div>
 </div>
 </div>
@@ -2587,10 +4438,29 @@ Most often, it is a function <span class="math notranslate nohighlight">\(\mathc
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1: q,
+ 2: q^2 + 1,
+ 3: q^3 + 3*q + 1,
+ 4: q^4 + 6*q^2 + 4*q + 3,
+ 5: q^5 + 10*q^3 + 10*q^2 + 15*q + 6,
+ 6: q^6 + 15*q^4 + 20*q^3 + 45*q^2 + 36*q + 15,
+ 7: q^7 + 21*q^5 + 35*q^4 + 105*q^3 + 126*q^2 + 105*q + 36}
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">findstat</span><span class="p">(</span><span class="mi">445</span><span class="p">)</span><span class="o">.</span><span class="n">oeis_search</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Searching the OEIS for &quot;1  1,0,1  1,3,0,1  3,4,6,0,1  6,15,10,10,0,1  15,36,45,20,15,0,1  36,105,126,105,35,21&quot;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0: A091867: Triangle read by rows: T(n,k) = number of Dyck paths of semilength n having k peaks at odd height.
 </pre></div>
 </div>
 </div>
@@ -2599,6 +4469,11 @@ Most often, it is a function <span class="math notranslate nohighlight">\(\mathc
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">findstat</span><span class="p">(</span><span class="mi">445</span><span class="p">)</span><span class="o">.</span><span class="n">references</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0: [1]  Kangro, K., Pourmoradnasseri, M., Theis, D. O., Short note on the number of 1-ascents in dispersed dyck paths [[arXiv:1603.01422]]
 </pre></div>
 </div>
 </div>
@@ -2644,6 +4519,9 @@ These subsets are such that if <span class="math notranslate nohighlight">\(x \l
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P</span> <span class="o">=</span> <span class="n">Posets</span><span class="o">.</span><span class="n">DivisorLattice</span><span class="p">(</span><span class="mi">12</span><span class="p">);</span> <span class="n">P</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/378cd0b6f783d7b3628903f901f3ab77aa827da77854394d0daadd8b3c422c14.png" src="../_images/378cd0b6f783d7b3628903f901f3ab77aa827da77854394d0daadd8b3c422c14.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2708,6 +4586,9 @@ These subsets are such that if <span class="math notranslate nohighlight">\(x \l
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/8bafcaa0cf32137ae26a2fa57be7ea3ae0debaf537b505c53382dc73235ab488.png" src="../_images/8bafcaa0cf32137ae26a2fa57be7ea3ae0debaf537b505c53382dc73235ab488.png" />
+</div>
 </div>
 <p>We were wondering how many interval-closed sets had items in all <span class="math notranslate nohighlight">\(a\)</span> chains for the divisors poset of <span class="math notranslate nohighlight">\(2^{a-1}3^{b-1}\)</span>.</p>
 <p>The left-hand side subset (in red) has items in all 4 chains, while the one on the right does not (no element in top chain).</p>
@@ -2717,6 +4598,9 @@ These subsets are such that if <span class="math notranslate nohighlight">\(x \l
 <span class="n">graphics_array</span><span class="p">([</span><span class="n">subset_plot</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">12</span><span class="p">)),</span> <span class="n">subset_plot</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">36</span><span class="p">))])</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/29d30c2029991949c3e23d7d98c97ce2eb63d58e4788f703b8f3d066fb4eb7be.png" src="../_images/29d30c2029991949c3e23d7d98c97ce2eb63d58e4788f703b8f3d066fb4eb7be.png" />
 </div>
 </div>
 <section id="counting-interval-closed-sets-with-items-in-all-a-chains">
@@ -2766,6 +4650,12 @@ These subsets are such that if <span class="math notranslate nohighlight">\(x \l
 <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">9</span><span class="p">):</span>
     <span class="n">counts</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">count_ICS_that_have_elements_in_all_a_chains</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">b</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="o">+</span><span class="mi">1</span><span class="p">)])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">counts</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">oeis</span><span class="p">(</span><span class="n">counts</span><span class="p">))</span>  <span class="c1"># Requires internet access. If you don&#39;t have it, replace this line with `print(counts)`, and enter the output in the OEIS.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 1, 1, 3, 1, 1, 6, 6, 1, 1, 10, 20, 10, 1, 1, 15, 50, 50, 15, 1, 1, 21, 105, 175, 105, 21, 1, 1, 28, 196, 490, 490, 196, 28, 1] 
+ 0: A001263: Triangle of Narayana numbers T(n,k) = C(n-1,k-1)*C(n,k-1)/k with 1 &lt;= k &lt;= n, read by rows. Also called the Catalan triangle.
 </pre></div>
 </div>
 </div>
@@ -2854,11 +4744,26 @@ Extended documentation can be found at <a class="reference external" href="https
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/cd8da87b511bbe30588babc2d3b34a95bc0e244112436558bbc2eaef2cce1024.png" src="../_images/cd8da87b511bbe30588babc2d3b34a95bc0e244112436558bbc2eaef2cce1024.png" />
+<img alt="../_images/104f925e2bf0569cd634624ab84f0689b1d12c38c6cbd0fbd7ea60826e9b8c4c.png" src="../_images/104f925e2bf0569cd634624ab84f0689b1d12c38c6cbd0fbd7ea60826e9b8c4c.png" />
+<img alt="../_images/b3ef41f01acd9898b7d37e52687b45c9c2871a95d62081e51fd2289efb8cbb59.png" src="../_images/b3ef41f01acd9898b7d37e52687b45c9c2871a95d62081e51fd2289efb8cbb59.png" />
+<img alt="../_images/fe14b752552447eabac74ea10a480d7b1e800439e6535c8e13c1d90468e20ee2.png" src="../_images/fe14b752552447eabac74ea10a480d7b1e800439e6535c8e13c1d90468e20ee2.png" />
+<img alt="../_images/5fba65d55259d2c5b5a47f7b6983011b48def7aa04d5b832ff58784b3ca8fea2.png" src="../_images/5fba65d55259d2c5b5a47f7b6983011b48def7aa04d5b832ff58784b3ca8fea2.png" />
+</div>
 </div>
 <p>We can even see what all the constraints are on the bijection.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">bij</span><span class="o">.</span><span class="n">minimal_subdistributions_iterator</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[([[1, 0, 1, 0, 1, 0]], [[[], [], []]]),
+ ([[1, 1, 1, 0, 0, 0]], [[[[[]]]]]),
+ ([[1, 0, 1, 1, 0, 0], [1, 1, 0, 0, 1, 0], [1, 1, 0, 1, 0, 0]],
+  [[[], [[]]], [[[]], []], [[[], []]]])]
 </pre></div>
 </div>
 </div>
@@ -2917,6 +4822,24 @@ so that they are equidistributed.</p>
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="HowToCountThings.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">How to Count Things</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Tutorial-nosolution.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Tutorial I</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -2945,7 +4868,7 @@ so that they are equidistributed.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#before-you-go">Before you go…</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-combinatorial-structures-and-statistics-with-sagemath">II. Combinatorial structures and statistics with SageMath</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-combinatorial-structures-and-statistics">II. Combinatorial structures and statistics</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combinatorial-structures">Combinatorial structures</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-objects-from-a-combinatorial-structure">Generating objects from a combinatorial structure</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-combinatorial-structures">Other combinatorial structures</a></li>
@@ -2954,7 +4877,7 @@ so that they are equidistributed.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#different-ways-to-draw-objects">Different ways to draw objects</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-combinatorics-with-sagemath-generating-functions">III. Combinatorics with SageMath: Generating functions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-generating-functions">III. Generating functions</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-motivating-example">A motivating example</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bivariate-generating-functions">Bivariate generating functions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-at-the-board-bivariate-generating-functions">[Lecture at the board: bivariate generating functions]</a></li>
@@ -2975,7 +4898,7 @@ so that they are equidistributed.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#takeaway">Takeaway</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-combinatorics-with-sagemath-graphs">IV. Combinatorics with SageMath: Graphs</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-graphs">IV. Graphs</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graphs">Graphs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Motivation</a></li>
@@ -3007,7 +4930,7 @@ so that they are equidistributed.</p>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#v-combinatorics-with-sagemath-databases">V. Combinatorics with SageMath: Databases</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#v-databases">V. Databases</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interface-with-databases">Interface with databases</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#online-encyclopedia-of-integer-sequences-https-oeis-org">Online Encyclopedia of Integer Sequences: https://oeis.org/</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oeis-examples">OEIS examples</a><ul class="nav section-nav flex-column">

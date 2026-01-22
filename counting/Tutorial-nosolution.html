@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Tutorial : Use SageMath Notebook, navigate the documentation and use SageMath as a calculator. &#8212; Tom Workbook</title>
+    <title>Tutorial I &#8212; Tom Workbook</title>
   
   
   
@@ -60,9 +60,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'counting/Tutorial_no_solution';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'counting/Tutorial-nosolution';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Tutorial I. SageMath" href="Tutorial-withsolutions.html" />
+    <link rel="prev" title="I. EAUMP-ICTP Enumerative Combinatorics" href="Lectures.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,8 +127,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -177,14 +177,8 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">OEIS &amp; SageMath</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter0_introduction.html">Chapter 0: Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../0mathmap.html">Math Map</a></li>
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="HowToCountThings.html">How to Count Things</a></li>
 
 
@@ -198,18 +192,34 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../111c.html">Twelvefold Way -&gt; 二十四路计数模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lectures.html">I. EAUMP-ICTP Enumerative Combinatorics</a></li>
 
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tutorial I</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Tutorial-withsolutions.html">Tutorial I. SageMath</a></li>
 
 
 
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Old Math</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Math Map</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../math/00intro_math.html">Math-FP-Lang Combo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../math/01number_algebra.html">Number &amp; Algebra</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../math/02discrete_continuous.html">Discrete &amp; Continuous</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../math/03real_world.html">Real World Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0mathmap.html">Math Map</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../old00intro_math.html">Math-FP-Lang Combo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../old01number_algebra.html">Number &amp; Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../old02discrete_continuous.html">Discrete &amp; Continuous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../old03real_world.html">Real World Math</a></li>
 </ul>
 
     </div>
@@ -279,7 +289,7 @@
       
       
       
-      <li><a href="../_sources/counting/Tutorial_no_solution.ipynb" target="_blank"
+      <li><a href="../_sources/counting/Tutorial-nosolution.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -363,7 +373,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Tutorial : Use SageMath Notebook, navigate the documentation and use SageMath as a calculator.</h1>
+    <h1>Tutorial I</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -373,7 +383,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tutorial : Use SageMath Notebook, navigate the documentation and use SageMath as a calculator.</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tutorial I</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obtain-some-help">Obtain some help</a></li>
 </ul>
 </li>
@@ -421,8 +431,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="tutorial-use-sagemath-notebook-navigate-the-documentation-and-use-sagemath-as-a-calculator">
-<h1>Tutorial : Use SageMath Notebook, navigate the documentation and use SageMath as a calculator.<a class="headerlink" href="#tutorial-use-sagemath-notebook-navigate-the-documentation-and-use-sagemath-as-a-calculator" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="tutorial-i">
+<h1>Tutorial I<a class="headerlink" href="#tutorial-i" title="Link to this heading">#</a></h1>
 <p><strong>Acknowledgements:</strong> This worksheet is an English translation of the French version released for SageMath afternoons at UQAM and is broadly inspired by the exercices of Sébastien Labbé’s course <em>Logiciels mathématiques</em>, that are available online (in French only): <a class="reference external" href="http://www.slabbe.org/Enseignements/MATH2010/exercices.pdf">http://www.slabbe.org/Enseignements/MATH2010/exercices.pdf</a></p>
 <p>Some other parts come from Franco Saliola’s introduction to Sage worksheets or from SageMath documentation (the first thematic tutorial is here : <a class="reference external" href="https://doc.sagemath.org/html/en/thematic_tutorials/tutorial-notebook-and-help-long.html">https://doc.sagemath.org/html/en/thematic_tutorials/tutorial-notebook-and-help-long.html</a>)</p>
 <div class="cell docutils container">
@@ -1406,6 +1416,24 @@ Can you find the recurrence?</p>
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="Lectures.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">I. EAUMP-ICTP Enumerative Combinatorics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Tutorial-withsolutions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Tutorial I. SageMath</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -1422,7 +1450,7 @@ Can you find the recurrence?</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tutorial : Use SageMath Notebook, navigate the documentation and use SageMath as a calculator.</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tutorial I</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obtain-some-help">Obtain some help</a></li>
 </ul>
 </li>
