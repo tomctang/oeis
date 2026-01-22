@@ -9,6 +9,7 @@ parts:
   - file: chapter0_introduction
   - file: counting/HowToCountThings
   - file: counting/Lectures
+  - file: counting/Lectures_output
   - file: counting/Tutorial-nosolution
   - file: counting/Tutorial-withsolutions
 
