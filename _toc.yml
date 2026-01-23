@@ -7,17 +7,22 @@ parts:
   numbered: false
   chapters:
   - file: chapter0_introduction
-  - file: counting/HowToCountThings
-  - file: counting/Lectures
-  - file: counting/Lectures_output
-  - file: counting/Tutorial-nosolution
-  - file: counting/Tutorial-withsolutions
+  - file: chapter1_arithmetic_functions
+
+- caption: Counting
+  numbered: false
+  chapters:
+  - file: counthow_to_count_things
+  - file: countlectures
+  - file: countlectures_output
+  - file: counttutorial_nosolution
+  - file: counttutorial_withsolutions
 
 - caption: Math Map
   numbered: false
   chapters:
-  - file: 0mathmap
-  - file: old00intro_math
-  - file: old01number_algebra
-  - file: old02discrete_continuous
-  - file: old03real_world
+  - file: mathmap
+  - file: mathmap_old00intro_math
+  - file: mathmap_old01number_algebra
+  - file: mathmap_old02discrete_continuous
+  - file: mathmap_old03real_world
