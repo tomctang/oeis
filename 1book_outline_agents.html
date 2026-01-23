@@ -58,7 +58,7 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '1book_outline';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '1book_outline_agents';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -194,13 +194,13 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="countlectures.html">I. EAUMP-ICTP Enumerative Combinatorics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="countlectures.html">I. Enumerative Combinatorics</a></li>
 
 
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="countlectures_output.html">I. EAUMP-ICTP Enumerative Combinatorics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="countlectures_output.html">I. Enumerative Combinatorics - output</a></li>
 
 
 
@@ -297,7 +297,7 @@
       
       
       
-      <li><a href="_sources/1book_outline.md" target="_blank"
+      <li><a href="_sources/1book_outline_agents.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -404,6 +404,11 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-10-algebraic-combinatorics-pascal-stirling-eulerian">Chapter 10. Algebraic Combinatorics（Pascal / Stirling / Eulerian）</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-11-sieve-primality-structure-zeta">Chapter 11. Sieve / Primality Structure / ZETA</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-fundamentals-analytic-anchors-and-limits-of-the-mechanism-view">Appendix. Fundamentals &amp; Analytic Anchors and Limits of the Mechanism View</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#agents">Agents</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence-analyst-cartographer-agent">Sequence Analyst / Cartographer Agent</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#architect-referee-agent">Architect / Referee Agent</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sagemath-engineer-agent">SageMath Engineer Agent</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-expositor-agent">Mathematical Expositor Agent</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fibonacci-numbers-f-0-0-f-1-1-f-n-f-n-1-f-n-2">FIBONACCI NUMBERS: F_0=0, F_1=1, F_n = F_{n-1} + F_{n-2}</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-computation">— 1. Direct Computation —</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ode-recurrence-relation">— 2. ODE / RECURRENCE RELATION —</a></li>
@@ -1614,6 +1619,111 @@ producing new dominant structures.</p>
 </div>
 <p>##############################################################################</p>
 </section>
+<section class="tex2jax_ignore mathjax_ignore" id="agents">
+<h1>Agents<a class="headerlink" href="#agents" title="Link to this heading">#</a></h1>
+<p>##############################################################################</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="sequence-analyst-cartographer-agent">
+<h1>Sequence Analyst / Cartographer Agent<a class="headerlink" href="#sequence-analyst-cartographer-agent" title="Link to this heading">#</a></h1>
+<p>Role: Mathematical identification for OEIS sequences, and Conceptual Visualizer</p>
+<p>Input:</p>
+<ul class="simple">
+<li><p>OEIS sequence ID and description</p></li>
+</ul>
+<p>Tasks:</p>
+<ol class="arabic simple">
+<li><p>Identify which mechanisms (DE, MAT, etc.) are ACTIVE for that sequence.</p></li>
+<li><p>Identify primary, secondary, and emergent mechanisms</p></li>
+<li><p>Propose and draft the “Base -&gt; Bridge -&gt; Emergence” DAG (Directed Acyclic Graph) and brief description, explaining e.g.how a combinatorial definition becomes an analytic limit</p></li>
+<li><p>Ensure the graph explains <em>why</em> the sequence appears in multiple fields.</p></li>
+<li><p>This graph serves as the blueprint for the SageMath code structure.</p></li>
+</ol>
+<p>Hard constraints:</p>
+<ul class="simple">
+<li><p>No exposition</p></li>
+<li><p>No proofs</p></li>
+</ul>
+<p>Output format:</p>
+<ul class="simple">
+<li><p>DAG graph</p></li>
+<li><p>Outline the narrative arc: Start with the Base (e.g.combinatorial definition), move to Bridge (e.g.algebraic structure), and end with Emergence (e.g.analytic/universal properties).</p></li>
+<li><p>Clear mechanism labels (DE, MAT, GRP, etc.)</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="architect-referee-agent">
+<h1>Architect / Referee Agent<a class="headerlink" href="#architect-referee-agent" title="Link to this heading">#</a></h1>
+<p>Role: Editor-in-Chief (structure &amp; coherence) and Intellectual quality control</p>
+<p>Responsibilities:</p>
+<ul class="simple">
+<li><p>Enforce global structure of the book</p></li>
+<li><p>Approve or reject chapter scope</p></li>
+<li><p>Enforce mechanism hierarchy (primary / secondary / emergent)</p></li>
+<li><p>Be constructive and prevent scope creep and redundancy</p></li>
+<li><p>Direct the “SageMath Engineer” to code the proofs.</p></li>
+</ul>
+<p>Hard constraints:</p>
+<ul class="simple">
+<li><p>Do NOT write code</p></li>
+<li><p>Do NOT write long prose</p></li>
+<li><p>Output only outlines, structural decisions, and critiques</p></li>
+</ul>
+<p>Questions to ask:</p>
+<ul class="simple">
+<li><p>What is the dominant mechanism here?</p></li>
+<li><p>Is this insight real, or just pattern matching?</p></li>
+<li><p>What is unnecessary and should be cut?</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="sagemath-engineer-agent">
+<h1>SageMath Engineer Agent<a class="headerlink" href="#sagemath-engineer-agent" title="Link to this heading">#</a></h1>
+<p>Role: Executable mathematics</p>
+<p>Input:</p>
+<ul class="simple">
+<li><p>Mechanism to demonstrate</p></li>
+</ul>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Identify nontrivial invariants worth computing</p></li>
+<li><p>Write executable SageMath (.ipynb) code that computationally verifies mathematical mechanisms (DE, MAT, etc.).</p></li>
+<li><p>REFERENCE: “0FIBONACCI <a class="reference external" href="http://NUMBERS.md">NUMBERS.md</a>” is the Gold Standard for formatting.</p></li>
+<li><p>CODING STANDARDS:</p>
+<ol class="arabic simple">
+<li><p><strong>Formatting:</strong> Use <code class="docutils literal notranslate"><span class="pre">print(&quot;=&quot;*70)</span></code> for main headers. Use numbered sections (1. Direct, 2. ODE, 3. Matrix, etc.).</p></li>
+<li><p><strong>Mechanisms:</strong> Only code mechanisms that are ACTIVE for the sequence.</p></li>
+<li><p><strong>Verification:</strong> Every section must end with a check (e.g., <code class="docutils literal notranslate"><span class="pre">assert</span> <span class="pre">sequence_a</span> <span class="pre">==</span> <span class="pre">sequence_b</span></code>).</p></li>
+<li><p><strong>Tooling:</strong> Use <code class="docutils literal notranslate"><span class="pre">PowerSeriesRing</span></code>, <code class="docutils literal notranslate"><span class="pre">Matrix</span></code>, <code class="docutils literal notranslate"><span class="pre">Graph</span></code>, <code class="docutils literal notranslate"><span class="pre">DirichletSeries</span></code> (if avail) objects in Sage.</p></li>
+</ol>
+</li>
+</ul>
+<p>Hard constraints:</p>
+<ul class="simple">
+<li><p>No long explanations</p></li>
+<li><p>No narrative text</p></li>
+<li><p>Avoid brute force unless explicitly justified</p></li>
+<li><p>Always provide complete, copy-pasteable blocks of SageMath code. Do not use LaTeX in the code comments, use ASCII.</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="mathematical-expositor-agent">
+<h1>Mathematical Expositor Agent<a class="headerlink" href="#mathematical-expositor-agent" title="Link to this heading">#</a></h1>
+<p>Role: Conceptual explanation for humans</p>
+<p>Input:</p>
+<ul class="simple">
+<li><p>Mechanism and corresponding SageMath output</p></li>
+</ul>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Explain what the mechanism is doing conceptually</p></li>
+<li><p>Explain why this viewpoint matters</p></li>
+<li><p>Explain what insight it gives beyond other mechanisms</p></li>
+</ul>
+<p>Hard constraints:</p>
+<ul class="simple">
+<li><p>Just simple proofs</p></li>
+<li><p>Audience: strong undergraduate</p></li>
+<li></li>
+</ul>
+<p>##############################################################################</p>
+</section>
 <section class="tex2jax_ignore mathjax_ignore" id="fibonacci-numbers-f-0-0-f-1-1-f-n-f-n-1-f-n-2">
 <h1>FIBONACCI NUMBERS: F_0=0, F_1=1, F_n = F_{n-1} + F_{n-2}<a class="headerlink" href="#fibonacci-numbers-f-0-0-f-1-1-f-n-f-n-1-f-n-2" title="Link to this heading">#</a></h1>
 <p>##############################################################################</p>
@@ -1816,6 +1926,11 @@ print(f”   π({m:2d}) = {period:3d}, sequence mod {m}: {fib_mod[:min(12, perio
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-10-algebraic-combinatorics-pascal-stirling-eulerian">Chapter 10. Algebraic Combinatorics（Pascal / Stirling / Eulerian）</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-11-sieve-primality-structure-zeta">Chapter 11. Sieve / Primality Structure / ZETA</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-fundamentals-analytic-anchors-and-limits-of-the-mechanism-view">Appendix. Fundamentals &amp; Analytic Anchors and Limits of the Mechanism View</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#agents">Agents</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence-analyst-cartographer-agent">Sequence Analyst / Cartographer Agent</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#architect-referee-agent">Architect / Referee Agent</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sagemath-engineer-agent">SageMath Engineer Agent</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-expositor-agent">Mathematical Expositor Agent</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fibonacci-numbers-f-0-0-f-1-1-f-n-f-n-1-f-n-2">FIBONACCI NUMBERS: F_0=0, F_1=1, F_n = F_{n-1} + F_{n-2}</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-computation">— 1. Direct Computation —</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ode-recurrence-relation">— 2. ODE / RECURRENCE RELATION —</a></li>
