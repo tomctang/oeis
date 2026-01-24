@@ -394,10 +394,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#twelvefold-way">Twelvefold Way -&gt; 二十四路计数模型</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stirling-arise-from-both-permutation-set-partitions">Stirling arise from both permutation &amp; set partitions</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#twelvefold-way">Twelvefold Way -&gt; 二十四路计数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">二十四路计数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">格路径</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poker">Poker</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subsets">Subsets</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-partition-composition-permutation-updating">Integer partition &amp; composition &amp; permutation(updating)</a></li>
@@ -408,8 +407,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#catalan">Catalan</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partition">Partition</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#findstat">FindStat</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-pull">Docker pull</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-cross-citations">Image &amp; Cross-citations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-operations">Common operations</a></li>
 </ul>
             </nav>
         </div>
@@ -475,7 +473,50 @@ document.write(`
 </table>
 </div>
 <section id="twelvefold-way">
-<h2>Twelvefold Way -&gt; 二十四路计数模型<a class="headerlink" href="#twelvefold-way" title="Link to this heading">#</a></h2>
+<h2>Twelvefold Way -&gt; 二十四路计数<a class="headerlink" href="#twelvefold-way" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>f-class</p></th>
+<th class="head"><p>Ball <span class="math notranslate nohighlight">\(N\)</span> <b> Box <span class="math notranslate nohighlight">\(M\)</span></p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(f\)</span> unrestricted</p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(f\)</span> one-to-one injective</p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(f\)</span> onto Surjective</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>f</p></td>
+<td><p>ball labeled <br> box labeled</p></td>
+<td class="text-center"><p>1: Tuple</p></td>
+<td class="text-center"><p>2: Permu</p></td>
+<td class="text-center"><p>3: Stir</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(f\circ S_n\)</span></p></td>
+<td><p>ball unlabeled <br> box labeled</p></td>
+<td class="text-center"><p>4: w-Comp</p></td>
+<td class="text-center"><p>5: Binom</p></td>
+<td class="text-center"><p>6: Comp</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(S_m \circ f\)</span></p></td>
+<td><p>ball labeled <br> box unlabeled</p></td>
+<td class="text-center"><p>7: Stir</p></td>
+<td class="text-center"><p>8: Ordin</p></td>
+<td class="text-center"><p>9: Stir</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(S_m \circ f\circ S_n\)</span></p></td>
+<td><p>ballunlabeled <br> box unlabeled</p></td>
+<td class="text-center"><p>10: GF</p></td>
+<td class="text-center"><p>11: Ordin</p></td>
+<td class="text-center"><p>12: GF</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Structural summary</p>
+<ul class="simple">
+<li><p>Stirling numbers = unlabeled blocks</p></li>
+<li><p>Bell numbers = all partitions</p></li>
+<li><p>Partitions = size-only structure</p></li>
+</ul>
 <p><strong>Bell数</strong>的整数数列：B0=1,B1=1,B2=2,B3=5,B4=15,B5=52,B6=203…. , Bn是基数为n的集合的划分方法数目。</p>
 <ul class="simple">
 <li><p>集合S的一个划分partition是定义为S的两两不相交的非空子集的族，他们的并是S。</p></li>
@@ -569,43 +610,6 @@ S(n,k)=kS(n-1,k)+S(n-1,k-1)</p></li>
 <thead>
 <tr class="row-odd"><th class="head"><p>f-class</p></th>
 <th class="head"><p>Ball <span class="math notranslate nohighlight">\(N\)</span> <b> Box <span class="math notranslate nohighlight">\(M\)</span></p></th>
-<th class="head text-center"><p><span class="math notranslate nohighlight">\(f\)</span> unrestricted</p></th>
-<th class="head text-center"><p><span class="math notranslate nohighlight">\(f\)</span> one-to-one injective</p></th>
-<th class="head text-center"><p><span class="math notranslate nohighlight">\(f\)</span> onto Surjective</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>f</p></td>
-<td><p>ball labeled <br> box labeled</p></td>
-<td class="text-center"><p>1: Tuple</p></td>
-<td class="text-center"><p>2: Permu</p></td>
-<td class="text-center"><p>3: Stir</p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(f\circ S_n\)</span></p></td>
-<td><p>ball unlabeled <br> box labeled</p></td>
-<td class="text-center"><p>4: w-Comp</p></td>
-<td class="text-center"><p>5: Binom</p></td>
-<td class="text-center"><p>6: Comp</p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(S_m \circ f\)</span></p></td>
-<td><p>ball labeled <br> box unlabeled</p></td>
-<td class="text-center"><p>7: Stir</p></td>
-<td class="text-center"><p>8: Ordin</p></td>
-<td class="text-center"><p>9: Stir</p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(S_m \circ f\circ S_n\)</span></p></td>
-<td><p>ballunlabeled <br> box unlabeled</p></td>
-<td class="text-center"><p>10: GF</p></td>
-<td class="text-center"><p>11: Ordin</p></td>
-<td class="text-center"><p>12: GF</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>f-class</p></th>
-<th class="head"><p>Ball <span class="math notranslate nohighlight">\(N\)</span> <b> Box <span class="math notranslate nohighlight">\(M\)</span></p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(f\)</span> unrestricted</p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(f\)</span> one-to-one injective</p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(f\)</span> onto Surjective</p></th>
@@ -642,74 +646,29 @@ S(n,k)=kS(n-1,k)+S(n-1,k-1)</p></li>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(S_m, S_n\)</span>: Symmetric/permutation groups acting on balls and boxes, respectively. The “<span class="math notranslate nohighlight">\(\circ\)</span>” is the group action (composition/transformation)</p></li>
 </ul>
-<p>二十四路计数的三个逻辑维度</p>
-<ul class="simple">
-<li><p>元素（球）是否可区分？ (Distinguishable / Indistinguishable)</p></li>
-<li><p>容器（盒）是否可区分？ (Distinguishable / Indistinguishable)</p></li>
-<li><p>容器内的元素是否有序？ (Ordered / Unordered) —— 这是 24 路相比 12 路增加的关键维度</p></li>
-</ul>
-<p>ps: Twelvefold Way是所有计数的核心，剩下的“有序”情况(即24路)可以通过“先分组、再排列”推导出来</p>
-<p>Structural summary</p>
-<ul class="simple">
-<li><p>Stirling numbers = unlabeled blocks</p></li>
-<li><p>Bell numbers = all partitions</p></li>
-<li><p>Partitions = size-only structure</p></li>
-</ul>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>球是否相同</p></th>
-<th class="head"><p>盒是否相同</p></th>
-<th class="head"><p>盒内是否有序</p></th>
-<th class="head"><p>无限制 (L)</p></th>
-<th class="head"><p>单射 (I)</p></th>
-<th class="head"><p>满射 (S)</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>不同</p></td>
-<td><p>不同</p></td>
-<td><p>无序</p></td>
-<td><p>m^n</p></td>
-<td><p>“P(m,n)”</p></td>
-<td><p>“m!S2​(n,m)”</p></td>
-</tr>
-<tr class="row-odd"><td><p>相同</p></td>
-<td><p>不同</p></td>
-<td><p>无序</p></td>
-<td><p>“C(n+m−1,m−1)”</p></td>
-<td><p>“C(m,n)”</p></td>
-<td><p>“C(n−1,m−1)”</p></td>
-</tr>
-<tr class="row-even"><td><p>不同</p></td>
-<td><p>相同</p></td>
-<td><p>无序</p></td>
-<td><p>“∑S2​(n,k)”</p></td>
-<td><p>[n≤m]</p></td>
-<td><p>“S2​(n,m)”</p></td>
-</tr>
-<tr class="row-odd"><td><p>相同</p></td>
-<td><p>相同</p></td>
-<td><p>无序</p></td>
-<td><p>“p(n,m)”</p></td>
-<td><p>[n≤m]</p></td>
-<td><p>“p(n−m,m)”</p></td>
-</tr>
-<tr class="row-even"><td><p>不同</p></td>
-<td><p>不同</p></td>
-<td><p>有序</p></td>
-<td><p>“P(n+m−1,n)”</p></td>
-<td><p>“P(m,n)”</p></td>
-<td><p>“n!C(n−1,m−1)”</p></td>
-</tr>
-<tr class="row-odd"><td><p>不同</p></td>
-<td><p>相同</p></td>
-<td><p>有序</p></td>
-<td><p>(分配并除以 m!)</p></td>
-<td><p>[n≤m]</p></td>
-<td><p>(同左)</p></td>
-</tr>
-</tbody>
-</table>
+<p>btw: Stirling arise from both permutation &amp; set partitions</p>
+<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>flowchart LR
+    A[&quot;Finite set {1,2,3,4,5}&quot;] --&gt; B[Partition into k blocks]
+    A --&gt; C[Permutation]
+
+    %% Set partitions
+    B --&gt; B1[&quot;Block 1: {1,3,5}&quot;]
+    B --&gt; B2[&quot;Block 2: {2,4}&quot;]
+    B1 --&gt; D[&quot;S(n,k)&quot;]
+    B2 --&gt; D
+
+    %% Permutation cycles
+    C --&gt; C1[&quot;Cycle: (1 3 5)&quot;]
+    C --&gt; C2[&quot;Cycle: (2 4)&quot;]
+    C1 --&gt; E[&quot;c(n,k)&quot;]
+    C2 --&gt; E
+
+    %% Conceptual bridge
+    D --&gt; F[Unlabeled components]
+    E --&gt; F
+
+    F --&gt; G[Same decomposition into k components]
+</pre></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -791,32 +750,162 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
 </div>
 </div>
 </div>
-<section id="stirling-arise-from-both-permutation-set-partitions">
-<h3>Stirling arise from both permutation &amp; set partitions<a class="headerlink" href="#stirling-arise-from-both-permutation-set-partitions" title="Link to this heading">#</a></h3>
-<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>flowchart LR
-    A[&quot;Finite set {1,2,3,4,5}&quot;] --&gt; B[Partition into k blocks]
-    A --&gt; C[Permutation]
-
-    %% Set partitions
-    B --&gt; B1[&quot;Block 1: {1,3,5}&quot;]
-    B --&gt; B2[&quot;Block 2: {2,4}&quot;]
-    B1 --&gt; D[&quot;S(n,k)&quot;]
-    B2 --&gt; D
-
-    %% Permutation cycles
-    C --&gt; C1[&quot;Cycle: (1 3 5)&quot;]
-    C --&gt; C2[&quot;Cycle: (2 4)&quot;]
-    C1 --&gt; E[&quot;c(n,k)&quot;]
-    C2 --&gt; E
-
-    %% Conceptual bridge
-    D --&gt; F[Unlabeled components]
-    E --&gt; F
-
-    F --&gt; G[Same decomposition into k components]
-</pre></div>
+</section>
+<section id="id1">
+<h2>二十四路计数<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>三个逻辑维度 - 比 12 路多一个</p>
+<ul class="simple">
+<li><p>元素（球）是否可区分？ (Distinguishable / Indistinguishable)</p></li>
+<li><p>容器（盒）是否可区分？ (Distinguishable / Indistinguishable)</p></li>
+<li><p>容器内的元素是否有序？ (Ordered / Unordered) —— 这是 24 路相比 12 路增加的关键维度</p></li>
+</ul>
+<p>ps: 12fold Way是所有计数的核心，“有序”情况(即24路)可以通过“先分组、再排列”推导出来</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>球是否相同</p></th>
+<th class="head"><p>盒是否相同</p></th>
+<th class="head"><p>盒内是否有序</p></th>
+<th class="head"><p>无限制 (L)</p></th>
+<th class="head"><p>单射 (I)</p></th>
+<th class="head"><p>满射 (S)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>不同</p></td>
+<td><p>不同</p></td>
+<td><p>无序</p></td>
+<td><p>m^n</p></td>
+<td><p>“P(m,n)”</p></td>
+<td><p>“m!S2​(n,m)”</p></td>
+</tr>
+<tr class="row-odd"><td><p>相同</p></td>
+<td><p>不同</p></td>
+<td><p>无序</p></td>
+<td><p>“C(n+m−1,m−1)”</p></td>
+<td><p>“C(m,n)”</p></td>
+<td><p>“C(n−1,m−1)”</p></td>
+</tr>
+<tr class="row-even"><td><p>不同</p></td>
+<td><p>相同</p></td>
+<td><p>无序</p></td>
+<td><p>“∑S2​(n,k)”</p></td>
+<td><p>[n≤m]</p></td>
+<td><p>“S2​(n,m)”</p></td>
+</tr>
+<tr class="row-odd"><td><p>相同</p></td>
+<td><p>相同</p></td>
+<td><p>无序</p></td>
+<td><p>“p(n,m)”</p></td>
+<td><p>[n≤m]</p></td>
+<td><p>“p(n−m,m)”</p></td>
+</tr>
+<tr class="row-even"><td><p>不同</p></td>
+<td><p>不同</p></td>
+<td><p>有序</p></td>
+<td><p>“P(n+m−1,n)”</p></td>
+<td><p>“P(m,n)”</p></td>
+<td><p>“n!C(n−1,m−1)”</p></td>
+</tr>
+<tr class="row-odd"><td><p>不同</p></td>
+<td><p>相同</p></td>
+<td><p>有序</p></td>
+<td><p>(分配并除以 m!)</p></td>
+<td><p>[n≤m]</p></td>
+<td><p>(同左)</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </section>
+<section id="id2">
+<h2>格路径<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Combinatorial Object</p></th>
+<th class="head"><p>Start-End</p></th>
+<th class="head"><p>Allowed Steps</p></th>
+<th class="head"><p>Boundary</p></th>
+<th class="head"><p>Lattice Path Model - Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>Binomial coefficients <span class="math notranslate nohighlight">\(\binom{a+b}{a}\)</span></p></td>
+<td><p>(0,0)–&gt;(a,b)</p></td>
+<td><p>R(1,0), U(0,1)</p></td>
+<td><p>None</p></td>
+<td><p>Rectangular grid paths in 2D</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Multinomial coeff<br><span class="math notranslate nohighlight">\(\binom{n}{k_1, \dots, k_d}\)</span></p></td>
+<td><p><strong>0</strong>–&gt;(<span class="math notranslate nohighlight">\(k_1\dots, k_d\)</span>)</p></td>
+<td><p>Unit step vector</p></td>
+<td><p>None</p></td>
+<td><p>Generalization to d-dimensional grid.</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Catalan numbers<br> <span class="math notranslate nohighlight">\(C_n = \frac{1}{n+1} \binom{2n}{n}\)</span></p></td>
+<td><p>(0,0)–&gt;(n,n)</p></td>
+<td><p>R(1,0), U(0,1)</p></td>
+<td><p><span class="math notranslate nohighlight">\(y\leq x\)</span> (stay on or below diagonal)</p></td>
+<td><p>Dyck paths in rotated or grid form.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Narayana <br><span class="math notranslate nohighlight">\(N(n,k)=\frac{1}{n}\binom{n}{k}\binom{n}{k-1}\)</span></p></td>
+<td><p>(0,0)–&gt;(n,n)</p></td>
+<td><p>R(1,0), U(0,1)</p></td>
+<td><p><span class="math notranslate nohighlight">\(y\leq x\)</span>, exactly k peaks (rigid up-right step in grid)</p></td>
+<td><p>Dyck paths with exactly <span class="math notranslate nohighlight">\(k\)</span> peaks, refines Catalan numbers; <span class="math notranslate nohighlight">\(\sum_k N(n,k) = C_n\)</span>.</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Delannoy<br> <span class="math notranslate nohighlight">\(D(a,b)\)</span></p></td>
+<td><p>(0,0)–&gt;(a,b)</p></td>
+<td><p>R(1,0), U(0,1), D(1,1)</p></td>
+<td><p>None</p></td>
+<td><p>Binomial –&gt; + diagonal steps</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Large Schröder<br> <span class="math notranslate nohighlight">\(r_n\)</span> or <span class="math notranslate nohighlight">\(S_n\)</span></p></td>
+<td><p>(0,0)–&gt;(n,n)</p></td>
+<td><p>R(1,0), U(0,1), D(1,1)</p></td>
+<td><p><span class="math notranslate nohighlight">\(y\leq x\)</span> (stay on or below diagonal)</p></td>
+<td><p>Catalan –&gt; + diagonal steps.</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Motzkin<br>  <span class="math notranslate nohighlight">\(M_n\)</span></p></td>
+<td><p>(0,0)–&gt;(n,0)</p></td>
+<td><p>Level (1,0), U(1,1), Down(1,-1)</p></td>
+<td><p>Height <span class="math notranslate nohighlight">\(y\geq 0\)</span> always</p></td>
+<td><p>Motzkin paths interpolate between Dyck (no level steps) and Schröder paths. <br>Paths never go below ground and allow level steps at any height.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Stirling(2nd)<br> <span class="math notranslate nohighlight">\(S(n,k)\)</span></p></td>
+<td><p>(0,0)–&gt;Ends at height <span class="math notranslate nohighlight">\(k\)</span> after <span class="math notranslate nohighlight">\(n\)</span> steps</p></td>
+<td><p>Horizontal: add element to an existing block.<br>Vertical: start a new block<br>Diagonal: start a new block and immediately populate it</p></td>
+<td><p>No horizontal step at height 0 (blocks are never empty)</p></td>
+<td><p>Models building set partitions (Paths of length <span class="math notranslate nohighlight">\(n\)</span> encoding block construction).</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Bell numbers<br> <span class="math notranslate nohighlight">\(B_n = \sum_k S(n,k)\)</span></p></td>
+<td><p>(0,0)–&gt;Any endpoint consistent with total length n</p></td>
+<td><p>same as above</p></td>
+<td><p>No horizontal steps at height 0</p></td>
+<td><p>Same as Stirling(2nd), but summing over all final heights <span class="math notranslate nohighlight">\(k\)</span>. <br>All valid block-creation paths of length <span class="math notranslate nohighlight">\(n\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>R=Right, U=Up, D=Diagonal</p>
+<p>Step-set enrichment:</p>
+<ul class="simple">
+<li><p>Binomial → Delannoy → Schröder
+-Dyck → Motzkin → Schröder</p></li>
+</ul>
+<p>Boundary refinement:</p>
+<ul class="simple">
+<li><p>None → half-plane constraint → statistic-refined subclasses (Narayana)</p></li>
+</ul>
+<p>Combinatorial meaning of boundaries:</p>
+<ul class="simple">
+<li><p>Diagonal constraint: balance / nonnegativity (stacks, parentheses, trees)</p></li>
+<li><p>No horizontal at zero: forbids empty structures (non-empty blocks)</p></li>
+</ul>
+<p>Exponential vs ordinary structures:</p>
+<ul class="simple">
+<li><p>Catalan / Motzkin / Schröder: recursive (tree-like)</p></li>
+<li><p>Stirling / Bell: set-like, exponential combinatorics encoded by paths</p></li>
+</ul>
 </section>
 <section id="poker">
 <h2>Poker<a class="headerlink" href="#poker" title="Link to this heading">#</a></h2>
@@ -2328,8 +2417,13 @@ The unity of mathematics: sequences as windows into structure!
 </table>
 </div>
 </section>
-<section id="docker-pull">
-<h2>Docker pull<a class="headerlink" href="#docker-pull" title="Link to this heading">#</a></h2>
+<section id="common-operations">
+<h2>Common operations<a class="headerlink" href="#common-operations" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><blockquote>
+<div><p><strong>Docker pull</strong></p>
+</div></blockquote>
+</div></blockquote>
 <p>My phone internet limitation, so I can’t use usual docker pull. Instead, use <a class="reference external" href="https://github.com/heran226813/docker-drag">docker-drag</a>.
 Open terminal, example:</p>
 <ul class="simple">
@@ -2337,18 +2431,19 @@ Open terminal, example:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">load</span> <span class="pre">-i</span> <span class="pre">sagemath.tar</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-it</span> <span class="pre">sagemath</span></code></p></li>
 </ul>
-</section>
-<section id="image-cross-citations">
-<h2>Image &amp; Cross-citations<a class="headerlink" href="#image-cross-citations" title="Link to this heading">#</a></h2>
 <blockquote>
-<div><p>Image-Hosting</p>
+<div><blockquote>
+<div><p><strong>Image-Hosting</strong></p>
+</div></blockquote>
 </div></blockquote>
 <p>All figures are synchronised in Tom’s GitHub folder <code class="docutils literal notranslate"><span class="pre">./NB_img/</span></code>. Using codes to insert pic:</p>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;img</span> <span class="pre">src=&quot;https://raw.githubusercontent.com/tomctang/NB_img/main/3bias.png&quot;</span> <span class="pre">alt=&quot;Causality-confounder&quot;</span> <span class="pre">width=&quot;500&quot;&gt;</span></code></p>
 <p>Markdown image <strong>center</strong>:</p>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;div</span> <span class="pre">align=center&gt;![Figure.</span> <span class="pre">Various</span> <span class="pre">treatments</span> <span class="pre">choice</span> <span class="pre">for</span> <span class="pre">OA](https://raw.githubusercontent.com/ctang83/NB_img/main/EPS_OAtreat.jpg){width=60%}</span></code></p>
 <blockquote>
-<div><p>Cross-citations</p>
+<div><blockquote>
+<div><p><strong>Cross-citations</strong></p>
+</div></blockquote>
 </div></blockquote>
 <p>Header automatically generate {#mathFP}, so<code class="docutils literal notranslate"><span class="pre">[anytext](#mathFP)</span></code> in citing</p>
 <p>Between pages: <code class="docutils literal notranslate"><span class="pre">[Discrete</span> <span class="pre">&amp;</span> <span class="pre">Continuous](../10pe/02discrete_continuous.ipynb#discrete-continuous)</span></code>(ipynb auto changed to html in website)</p>
@@ -2416,10 +2511,9 @@ Open terminal, example:</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#twelvefold-way">Twelvefold Way -&gt; 二十四路计数模型</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stirling-arise-from-both-permutation-set-partitions">Stirling arise from both permutation &amp; set partitions</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#twelvefold-way">Twelvefold Way -&gt; 二十四路计数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">二十四路计数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">格路径</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poker">Poker</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subsets">Subsets</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-partition-composition-permutation-updating">Integer partition &amp; composition &amp; permutation(updating)</a></li>
@@ -2430,8 +2524,7 @@ Open terminal, example:</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#catalan">Catalan</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partition">Partition</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#findstat">FindStat</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-pull">Docker pull</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-cross-citations">Image &amp; Cross-citations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-operations">Common operations</a></li>
 </ul>
   </nav></div>
 
