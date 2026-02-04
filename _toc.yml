@@ -13,11 +13,10 @@ parts:
   numbered: false
   chapters:
   - file: counthow_to_count_things
-  - file: 12fold_set
   - file: countlectures
   - file: countlectures_output
-  - file: counttutorial_nosolution
-  - file: counttutorial_withsolutions
+  - file: counttutorial
+  - file: counttutorial_solution
 
 - caption: Math Map
   numbered: false
