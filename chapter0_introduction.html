@@ -400,7 +400,14 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relation-to-langlands-and-to-effective-theories-in-physics">5. Relation to Langlands and to Effective Theories in Physics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-read-this-book">How to Read This Book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#my-plan-oeis-11-core-sequences">My plan: OEIS 11 core sequences</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fibonacci">Fibonacci</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prime-counting">Prime counting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#catalan">Catalan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#partition">Partition</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#findstat">FindStat</a></li>
 </ul>
             </nav>
         </div>
@@ -422,6 +429,21 @@ lie a small number of <em>structural mechanisms</em> that reappear, with remarka
 fields.</p>
 <p>The central thesis of this book is simple: <strong>integer sequences expose these shared mechanisms
 with unusual clarity</strong>.</p>
+<blockquote>
+<div><p>How to Read This Book</p>
+</div></blockquote>
+<p>Each chapter of this book follows a consistent pattern:</p>
+<ol class="arabic simple">
+<li><p><strong>Sequence selection</strong> from OEIS.</p></li>
+<li><p><strong>Mechanism identification</strong> via structural analysis.</p></li>
+<li><p><strong>Executable realization</strong> using SageMath.</p></li>
+<li><p><strong>Conceptual synthesis</strong> explaining why the sequence appears in multiple domains.</p></li>
+</ol>
+<p>The goal is not encyclopedic coverage, but <strong>mechanism literacy</strong>: the ability to recognize when two problems are secretly the same because they share the same generating structure.</p>
+<p>In this sense, the book may be read as a <em>concrete, computational analogue of a unification program</em>: not technical Langlands theory, but a mechanism-first map showing how mathematics coheres.</p>
+<p>OEIS provides the coordinates.<br />
+Mechanisms provide the roads.<br />
+Computation provides the vehicle.</p>
 <section id="oeis-as-a-structural-map-of-mathematics">
 <h2>1. OEIS as a Structural Map of Mathematics<a class="headerlink" href="#oeis-as-a-structural-map-of-mathematics" title="Link to this heading">#</a></h2>
 <p>The <em>On-Line Encyclopedia of Integer Sequences</em> (OEIS) is usually described as a database.
@@ -568,20 +590,914 @@ Trees, paths, posets, and homological invariants produce sequences that appear s
 distinct mathematical domains collapse onto the same sequence. The goal is structural literacy:
 learning to recognize when different problems are governed by the same mechanism.</p>
 </section>
-<section id="how-to-read-this-book">
-<h2>How to Read This Book<a class="headerlink" href="#how-to-read-this-book" title="Link to this heading">#</a></h2>
-<p>Each chapter of this book follows a consistent pattern:</p>
+<section id="my-plan-oeis-11-core-sequences">
+<h2>My plan: OEIS 11 core sequences<a class="headerlink" href="#my-plan-oeis-11-core-sequences" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://oeis.org/wiki/Index_to_OEIS:_Section_Cor#core">11 categories of “Core Sequences” </a></p>
+<ul class="simple">
+<li><p>1 - 3: Foundations &amp; “Superstars”. Contain the most ubiquitous sequences in mathematics, especially discrete math</p></li>
+<li><p>4 - 5: Geometry, Powers &amp; Forms. Bridges the gap btw pure arithmetic and geometric shapes or complex analysis.</p></li>
+<li><p>6 - 8: Constants, Graphs &amp; Distribution. Intersection of discrete graph theory with continuous analysis constants.</p></li>
+<li><p>9 - 11: Number Properties &amp; Special Functions. Categorize numbers by their intrinsic properties and provide the tools for calculus and analysis.</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Foundations &amp; “Superstars”</p></th>
+<th class="head"><p>List</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1. Axiomatic &amp; Algebraic Basics: Fundamental building blocks of math. This group defines the basics of counting (Natural numbers, 0s, 1s) and the primary structures of Abstract Algebra (Groups, Permutation Groups). It also introduces elementary Number Theory via Divisors and Totients.</p></td>
+<td><p>A000001 (groups), A000002 (Kolakoski), A000004 (0’s), A000005 (divisors), A000007 (0^n), A000009 (distinct partitions), A000010 (totient), A000012 (1’s), A000014 (series-reduced trees), A000019 (prim. perm. groups), A000027 (natural numbers), A000029 (necklaces), A000031 (necklaces), A000032 (Lucas), A000035 (0101…)</p></td>
+</tr>
+<tr class="row-odd"><td><p>2. Primes &amp; Recurrences: most famous sequences in history. It holds the primary objects of Number Theory (Primes, Mersenne primes) and the most famous recurrence relations (Fibonacci) and combinatorial counts (Catalan numbers, Partitions).</p></td>
+<td><p>A000040 (primes), A000041 (partitions), A000043 (Mersenne), A000045 (Fibonacci), A000048 (necklaces), A000055 (trees), A000058 (Sylvester), A000069 (odious), A000079 (2^n), A000081 (rooted trees), A000085 (self-inverse perms.), A000088 (graphs), A000105 (polyominoes), A000108 (Catalan), A000109 (polyhedra)</p></td>
+</tr>
+<tr class="row-even"><td><p>3. Enumerative Combinatorics: Counting ways to arrange objects. Focused on “How many ways can we…?” problems. It covers set partitions (Bell numbers), orderings (Factorials), and derangements (shuffling where nothing stays in place).</p></td>
+<td><p>A000110 (Bell), A000111 (Euler), A000112 (posets), A000120 (1’s in n), A000123 (binary partitions), A000124 (Lazy Caterer), A000129 (Pell), A000140 (Kendall-Mann), A000142 (n!), A000161 (partitions into 2 squares), A000166 (derangements), A000169 (labeled rooted trees)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Geometry, Powers &amp; Forms</p></th>
+<th class="head"><p>List</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>4. Geometric Numbers &amp; Arithmetic Functions: Numbers that form shapes and measure size. Contains “Figurate Numbers” (Triangular, Tetrahedral) which arrange dots in geometric shapes. It also includes functions that sum parts of numbers (Sigma) and basic powers (2^n,3^n).</p></td>
+<td><p>A000182 (tangent), A000203 (sigma), A000204 (Lucas), A000217 (triangular), A000219 (planar partitions), A000225 (2^n-1), A000244 (3^n), A000262 (sets of lists), A000272 (n^(n-2)), A000273 (directed graphs), A000290 (n^2), A000292 (tetrahedral)</p></td>
+</tr>
+<tr class="row-odd"><td><p>5. Higher Forms &amp; Modular Theory (arithmetic and complex analysis): Advanced structures and Physics connections. Moves into higher-dimensional figurate numbers (Pyramidal) and deep number theory objects like Modular Forms (j-invariant, Ramanujan’s τ), which connect to String Theory and Elliptic Curves.</p></td>
+<td><p>A000302 (4^n), A000311 (Schroeder’s fourth), A000312 (mappings), A000326 (pentagonal), A000330 (square pyramidal), A000364 (Euler or secant), A000396 (perfect), A000521 (j), A000578 (n^3), A000583 (n^4), A000593 (sum odd divisors), A000594 (Ramanujan tau), A000602 (hydrocarbons), A000609 (threshold functions), A000670 (preferential arrangements)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Constants, Graphs &amp; Distribution</p></th>
+<th class="head"><p>List</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>6. Universal Constants &amp; Algebra: The bridge between Discrete and Continuous. Features the fundamental constants of the universe (π,e) alongside deep algebraic classifications (Simple Groups) and prime distribution functions (π(n)).</p></td>
+<td><p>A000688 (abelian groups), A000720 (pi(n)), A000793 (Landau), A000796 (Pi), A000798 (quasi-orders or topologies), A000959 (Lucky), A000961 (prime powers), A000984 (binomial(2n,n)), A001003 (Schroeder’s second problem), A001006 (Motzkin), A001034 (simple groups), A001037 (irreducible polynomials), A001045 (Jacobsthal), A001055 (multiplicative partition function), A001065 (sum of divisors), A001057 (all integers), A001097 (twin primes), A001113 (e), A001147 (double factorials), A001157 (sum of squares of divisors), A001190 (Wedderburn-Etherington), A001221 (omega), A001222 (Omega), A001227 (odd divisors), A001285 (Thue-Morse), A001333 (sqrt(2))</p></td>
+</tr>
+<tr class="row-odd"><td><p>7. Graph Theory &amp; Recursion: Nodes, Edges, and Self-Reference. Heavily focused on Graph Theory (Connected graphs, Binary trees) and recursive sequences that reference themselves (Golomb sequence).</p></td>
+<td><p>A001349 (connected graphs), A001358 (semiprimes), A001405 (binomial(n,n/2)), A001462 (Golomb), A001477 (integers), A001478 (negatives), A001481 (sums of 2 squares), A001489 (negatives), A001511 (ruler function), A001615 (sublattices), A001699 (binary trees), A001700 (binomial(2n+1, n+1)), A001519 (Fib. bisection),A001764 (C3n,n)/(2n+1)), A001906 (Fib. bisection), A001969 (evil), A002033 (perfect partitions), A002083 (Narayana-Zidek-Capell), A002106 (transitive perm. groups), A002110 (primorials), A002113 (palindromes), A002275 (repunits)</p></td>
+</tr>
+<tr class="row-even"><td><p>8. Lattices &amp; Roots: Grids and Irrationals. Focuses on structures defined on grids (Lattices, Planar graphs) and the expansion of irrational roots, which relate to Diophantine approximations.</p></td>
+<td><p>A002322 (psi), A002378 (pronic), A002426 (central trinomial coefficients), A002487 (Stern), A002530 (sqrt(3)), A002531 (sqrt(3)), A002572 (binary rooted trees), A002620 (quarter-squares), A002654 (re: sums of squares), A002658 (3-trees), A002808 (composites), A003094 (connected planar graphs), A003136 (Loeschian), A003418 (LCM), A003484 (Hurwitz-Radon), A004011 (D_4), A004018 (square lattice)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Number Properties &amp; Special Functions</p></th>
+<th class="head"><p>List</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>9. “Zoology” of Numbers: Classifying integers by their “personality.” Sorts numbers based on the sum of their factors (Abundant, Deficient, Perfect) or their prime factors (Squarefree). It treats numbers like biological specimens with distinct traits.</p></td>
+<td><p>A004526 (ints repeated), A005036 (dissections), A005100 (deficient), A005101 (abundant), A005117 (squarefree), A005130 (Robbins), A005230 (Stern), A005408 (odd), A005470 (planar graphs), A005588 (binary rooted trees), A005811 (runs in n), A005843 (even), A006318 (royal paths or Schroeder numbers), A006530 (largest prime factor)</p></td>
+</tr>
+<tr class="row-odd"><td><p>10. Calculus Toolkit (Coefficients): Tools for expansions and series. This is the “Engine Room” of analysis. It contains the coefficients used in Taylor series and finite differences: Pascal’s Triangle (Binomial), Stirling numbers, and Bernoulli numbers.</p></td>
+<td><p>A006882 (n!!), A006894 (3-trees), A006966 (lattices), A007318 (Pascal’s triangle), A008275 (Stirling 1), A008277 (Stirling 2), A008279 (permutations k at a time), A008292 (Eulerian), A008683 (Moebius), A010060 (Thue-Morse), A018252 (nonprimes), A020639 (smallest prime factor), A020652 (fractal), A020653 (fractal), A025487 (prime sigs.), A027641 (Bernoulli), A027642 (Bernoulli), A035099 (j_2), A038566 (fractal), A038567 (fractal), A038568 (fractal), A038569 (fractal), A049310 (Chebyshev), A055512 (lattices)</p></td>
+</tr>
+<tr class="row-even"><td><p>11. Factorization &amp; Structure: The anatomy of multiplication. A deeper look into how numbers break down, focusing on Prime Signatures, Factorizations, and binary lengths.</p></td>
+<td><p>A070939 (binary length), A074206 (ordered factorizations), A104725 (complementing systems), , A226898 (Hooley’s Delta), A246655 (prime powers)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="fibonacci">
+<h3>Fibonacci<a class="headerlink" href="#fibonacci" title="Link to this heading">#</a></h3>
+<p>斐波那契数列背后机制来自 7/9 个模块, 最典型的“全栈序列”。</p>
 <ol class="arabic simple">
-<li><p><strong>Sequence selection</strong> from OEIS.</p></li>
-<li><p><strong>Mechanism identification</strong> via structural analysis.</p></li>
-<li><p><strong>Executable realization</strong> using SageMath.</p></li>
-<li><p><strong>Conceptual synthesis</strong> explaining why the sequence appears in multiple domains.</p></li>
+<li><p>ODE: 𝐸′′= 𝐸′+ 𝐸</p></li>
+<li><p>Matrix: ([1,1][1,0])^n</p></li>
+<li><p>Group action: 自由幺半群上的字计数</p></li>
+<li><p>Zeta: Dirichlet series → polylog</p></li>
+<li><p>Graph: path graph 的独立集数</p></li>
+<li><p>AG代数几何: 某些椭圆曲线 Frobenius eigenvalues = φ</p></li>
+<li><p>Representation: TL algebra、任何子群表示维数</p></li>
 </ol>
-<p>The goal is not encyclopedic coverage, but <strong>mechanism literacy</strong>: the ability to recognize when two problems are secretly the same because they share the same generating structure.</p>
-<p>In this sense, the book may be read as a <em>concrete, computational analogue of a unification program</em>: not technical Langlands theory, but a mechanism-first map showing how mathematics coheres.</p>
-<p>OEIS provides the coordinates.<br />
-Mechanisms provide the roads.<br />
-Computation provides the vehicle.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>机制类别</p></th>
+<th class="head"><p>斐波那契出现方式</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>微分方程</strong></p></td>
+<td><p>指数生成函数满足二阶 ODE</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>矩阵</strong></p></td>
+<td><p>2×2 矩阵幂、特征值 φ</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>群作用</strong></p></td>
+<td><p>Burnside计数、tiling</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>zeta</strong></p></td>
+<td><p>Dirichlet 级数、Liₛ(φ)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>模形式</strong></p></td>
+<td><p>Lambert series → mock modular</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>图论（额外机制）</strong></p></td>
+<td><p>path graph 独立集、匹配数</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>代数几何</strong></p></td>
+<td><p>椭圆曲线 Frobenius eigenvalues</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>表示论</strong></p></td>
+<td><p>Fibonacci anyons、TL algebra 分支</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>同调计数</strong></p></td>
+<td><p>Betti 数 obey Fibonacci</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fibonacci sequence</span>
+
+<span class="c1"># 0) Simple recurrence (baseline)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fib_rec</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="mi">1</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="o">+</span><span class="n">b</span>
+    <span class="k">return</span> <span class="n">a</span>
+
+<span class="c1"># 1) 2x2 Matrix power (Binet via eigenvalues)</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">fib_matrix</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="n">M</span> <span class="o">=</span> <span class="n">Q</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>   <span class="c1"># Q^{n-1} * [F1; F0] = [Fn; F_{n-1}]</span>
+    <span class="k">return</span> <span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># 2) Generating function viewpoint (algebraic OGF and EGF ODE)</span>
+<span class="c1"># Ordinary generating function G(x) = x/(1 - x - x^2) satisfies algebraic equation</span>
+<span class="c1"># (1 - x - x^2) * G(x) = x</span>
+<span class="c1"># Exponential generating function E(x) = sum_{n&gt;=0} F_n x^n / n! satisfies a linear ODE with lower-order correction terms:</span>
+<span class="c1"># E&#39;&#39; - E&#39; - E = c0 + c1*x^{-1} terms coming from initial indices; we verify numerically for coefficients.</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">ogf_series</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="mi">20</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">x</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">x</span> <span class="o">-</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">G</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+
+<span class="c1"># Verify EGF differential relation numerically by power series</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">egf_series_check</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="mi">12</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+    <span class="c1"># build EGF as formal series using fib_rec</span>
+    <span class="n">E</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">fib_rec</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="n">n</span><span class="o">/</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">))</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="n">derivative</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">derivative</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">E</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">E</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">N</span><span class="p">),</span> <span class="n">L</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">N</span><span class="p">))</span>
+
+<span class="c1"># 3) Combinatorial / tilings (group action &amp; tiling)</span>
+<span class="c1"># Number of ways to tile a 1 x n board with 1x1 and 1x2 tiles equals F_{n+1}</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">tilings_count</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="c1"># simple DP: ways[n] = ways[n-1] + ways[n-2]</span>
+    <span class="n">ways</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># ways[0]=1 (empty), ways[1]=1</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">ways</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ways</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">ways</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">ways</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+
+<span class="c1"># 4) Graph-theoretic: number of independent sets in path graph P_n equals F_{n+2}</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">indep_sets_path</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="c1"># DP: a_n = a_{n-1} + a_{n-2} with initial a_0 = 1, a_1 = 2</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">a</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+
+<span class="c1"># 5) Dirichlet / zeta-style generating function (numerical exploration)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">dirichlet_F</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">terms</span><span class="o">=</span><span class="mi">2000</span><span class="p">):</span>
+    <span class="c1"># D(s) = sum_{n&gt;=1} F_n / n^s</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">Integer</span><span class="p">(</span><span class="n">fib_rec</span><span class="p">(</span><span class="n">n</span><span class="p">))</span><span class="o">*</span><span class="n">n</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">terms</span><span class="p">))</span>
+
+<span class="c1"># 6) Lambert series exploration: L(q) = sum_{n&gt;=1} F_n q^n / (1 - q^n)</span>
+<span class="c1"># numeric series evaluation for |q|&lt;1</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">lambert_series</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">terms</span><span class="o">=</span><span class="mi">200</span><span class="p">):</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">QQ</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+    <span class="n">S</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">terms</span><span class="p">):</span>
+        <span class="n">S</span> <span class="o">+=</span> <span class="n">fib_rec</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">q</span><span class="o">**</span><span class="n">n</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">q</span><span class="o">**</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">S</span>
+
+<span class="c1"># 7) Temperley-Lieb / anyon-style fusion spaces (representation-theoretic viewpoint)</span>
+<span class="c1"># Fibonacci anyon fusion dimensions satisfy the same recurrence:</span>
+<span class="c1"># dim(n) = dim(n-1) + dim(n-2), with dim(0)=1, dim(1)=1 (or other base depending on boundary conditions)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">fusion_dim</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">fib_rec</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># depending on indexing conventions</span>
+
+<span class="c1"># 8) Elliptic-curve / Frobenius eigenvalue toy: Lucas sequences from trace of Frobenius</span>
+<span class="c1"># This is a short demonstration: many linear recurrences (including Fibonacci/Lucas) arise from traces of Frobenius</span>
+<span class="c1"># for rank-1 motives. We show a small example computing #E(F_p) for a curve and forming a_n = p + 1 - #E(F_p).</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">frobenius_trace_sequence</span><span class="p">(</span><span class="n">curve</span><span class="p">,</span> <span class="n">primes_list</span><span class="p">):</span>
+    <span class="n">seq</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">primes_list</span><span class="p">:</span>
+        <span class="n">Fp</span> <span class="o">=</span> <span class="n">GF</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">E</span> <span class="o">=</span> <span class="n">EllipticCurve</span><span class="p">(</span><span class="n">Fp</span><span class="p">,</span> <span class="n">curve</span><span class="o">.</span><span class="n">a4</span><span class="p">(),</span> <span class="n">curve</span><span class="o">.</span><span class="n">a6</span><span class="p">())</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="c1"># Try different constructor</span>
+            <span class="n">E</span> <span class="o">=</span> <span class="n">EllipticCurve</span><span class="p">(</span><span class="n">Fp</span><span class="p">,</span> <span class="n">curve</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">],</span> <span class="n">curve</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">])</span>
+        <span class="n">ap</span> <span class="o">=</span> <span class="n">p</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">E</span><span class="o">.</span><span class="n">count_points</span><span class="p">()</span>
+        <span class="n">seq</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ap</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">seq</span>
+
+<span class="c1"># Helper: small test suite that prints comparisons up to n</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="mi">16</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;n, fib_rec, fib_matrix, tilings (F_{n+1}), indep_sets_path (F_{n+2})&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">fib_rec</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">fib_matrix</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">tilings_count</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">n</span><span class="o">&gt;=</span><span class="mi">1</span> <span class="k">else</span> <span class="mi">1</span><span class="p">,</span> <span class="n">indep_sets_path</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">OGF series (first terms):&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ogf_series</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">EGF check (E, L = E</span><span class="se">\&#39;\&#39;</span><span class="s1"> - E</span><span class="se">\&#39;</span><span class="s1"> - E):&#39;</span><span class="p">)</span>
+    <span class="n">E_series</span><span class="p">,</span> <span class="n">L_series</span> <span class="o">=</span> <span class="n">egf_series_check</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">E_series</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">L_series</span><span class="p">)</span>
+
+    <span class="c1"># numeric Dirichlet demo (s=2)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Dirichlet partial sum D(2) (200 terms):&#39;</span><span class="p">,</span> <span class="n">dirichlet_F</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">terms</span><span class="o">=</span><span class="mi">200</span><span class="p">))</span>
+
+    <span class="c1"># Lambert numeric demo q=1/2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Lambert partial sum q=1/2 (100 terms):&#39;</span><span class="p">,</span> <span class="n">lambert_series</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">terms</span><span class="o">=</span><span class="mi">100</span><span class="p">))</span>
+
+    <span class="c1"># fusion dims</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Fusion dims (first 10):&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">fusion_dim</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)])</span>
+
+    <span class="c1"># Note: For serious research-level identifications (modular/elliptic-curve identifications,</span>
+    <span class="c1"># or rigorous relations to mock modular forms / polylogarithms) one typically uses</span>
+    <span class="c1"># symbolic/analytic number theory tools and references. This script provides</span>
+    <span class="c1"># computational experiments and demonstrations showing that many mathematical</span>
+    <span class="c1"># structures produce the Fibonacci recurrence or Fibonacci-indexed counts.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># FIBONACCI NUMBERS: F_0=0, F_1=1, F_n = F_{n-1} + F_{n-2}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FIBONACCI NUMBERS&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
+
+<span class="c1"># --- 1. Direct Computation ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">1. First 20 Fibonacci numbers:&quot;</span><span class="p">)</span>
+<span class="n">fibs</span> <span class="o">=</span> <span class="p">[</span><span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fibs</span><span class="p">)</span>
+
+<span class="c1"># --- 2. ODE / RECURRENCE RELATION ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">2. ODE CONNECTION: y&#39;&#39; = y&#39; + y&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   Characteristic equation: λ² = λ + 1&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   Solutions: λ = (1 ± √5)/2 (golden ratio φ and conjugate)&quot;</span><span class="p">)</span>
+
+<span class="n">phi</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">psi</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">   Golden ratio φ = </span><span class="si">{</span><span class="n">phi</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="n">digits</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Conjugate ψ = </span><span class="si">{</span><span class="n">psi</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="n">digits</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">fibonacci_binet</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Binet&#39;s formula: F_n = (φ^n - ψ^n)/√5&quot;&quot;&quot;</span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span>
+    <span class="n">psi</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="p">((</span><span class="n">phi</span><span class="o">^</span><span class="n">n</span> <span class="o">-</span> <span class="n">psi</span><span class="o">^</span><span class="n">n</span><span class="p">)</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span><span class="o">.</span><span class="n">simplify_full</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">   Via Binet&#39;s formula (closed form from ODE):&quot;</span><span class="p">)</span>
+<span class="n">fibs_binet</span> <span class="o">=</span> <span class="p">[</span><span class="n">fibonacci_binet</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   </span><span class="si">{</span><span class="n">fibs_binet</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Verify it matches</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Match? </span><span class="si">{</span><span class="nb">all</span><span class="p">(</span><span class="n">fibonacci_binet</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nb">range</span><span class="p">(</span><span class="mi">15</span><span class="p">))</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># --- 3. MATRIX POWERS ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">3. MATRIX: Powers of [[1,1],[1,0]]&quot;</span><span class="p">)</span>
+
+<span class="n">F</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Fibonacci matrix F = &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">F</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">   Powers of F:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">):</span>
+    <span class="n">Fn</span> <span class="o">=</span> <span class="n">F</span><span class="o">^</span><span class="n">n</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   F^</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">Fn</span><span class="o">.</span><span class="n">list</span><span class="p">()</span><span class="si">}</span><span class="s2">, F_</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">Fn</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">, F_</span><span class="si">{</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">Fn</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Eigenvalues are φ and ψ</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">   Eigenvalues of F:&quot;</span><span class="p">)</span>
+<span class="n">eigenvals</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   </span><span class="si">{</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="n">digits</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">eigenvals</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   These are φ and ψ!&quot;</span><span class="p">)</span>
+
+<span class="c1"># Diagonalization: F = PDP^(-1)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">   Diagonalization F = PDP⁻¹:&quot;</span><span class="p">)</span>
+<span class="n">P</span><span class="p">,</span> <span class="n">D</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">eigenmatrix_right</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   P = </span><span class="si">{</span><span class="n">P</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   D = </span><span class="si">{</span><span class="n">D</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Verify: F = PDP⁻¹? </span><span class="si">{</span><span class="n">F</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">P</span><span class="o">*</span><span class="n">D</span><span class="o">*</span><span class="n">P</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># --- 4. GENERATING FUNCTION ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">4. GENERATING FUNCTION: F(x) = x/(1-x-x²)&quot;</span><span class="p">)</span>
+
+<span class="n">R</span><span class="o">.&lt;</span><span class="n">x</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">PowerSeriesRing</span><span class="p">(</span><span class="n">QQ</span><span class="p">,</span> <span class="n">default_prec</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">F_gen</span> <span class="o">=</span> <span class="n">x</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">x</span> <span class="o">-</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   F(x) = </span><span class="si">{</span><span class="n">F_gen</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Coefficients: </span><span class="si">{</span><span class="n">F_gen</span><span class="o">.</span><span class="n">list</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Verify partial fractions (from ODE eigenvalues)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">   Partial fraction decomposition (using φ, ψ):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   F(x) = 1/√5 * [1/(1-φx) - 1/(1-ψx)]&quot;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+
+<span class="n">phi</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">psi</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span>
+
+<span class="n">F_partial</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">phi</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">psi</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">F_partial</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span>  <span class="c1"># expand as a power series about x=0 up to x^14</span>
+
+<span class="c1"># --- 5. CONTINUED FRACTIONS ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">5. CONTINUED FRACTIONS: φ = [1; 1, 1, 1, 1, ...]&quot;</span><span class="p">)</span>
+
+<span class="n">cf</span> <span class="o">=</span> <span class="n">continued_fraction</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Golden ratio as continued fraction: </span><span class="si">{</span><span class="n">cf</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   First 15 convergents:&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">15</span><span class="p">):</span>
+    <span class="n">conv</span> <span class="o">=</span> <span class="n">cf</span><span class="o">.</span><span class="n">convergent</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   p_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">/q_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">conv</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">conv</span><span class="o">.</span><span class="n">numerator</span><span class="p">()</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">conv</span><span class="o">.</span><span class="n">denominator</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; → Ratio of F_</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">/F_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">()</span>
+
+<span class="c1"># --- 6. GROUP THEORY / WORD STRUCTURES ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">6. GROUP THEORY: Fibonacci counts in free monoid&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   Words of length n using {a, b} with no consecutive b&#39;s&quot;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">count_no_consecutive_b</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">memo</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">2</span><span class="p">}):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Count binary strings of length n with no consecutive 1&#39;s (or b&#39;s)&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">memo</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">memo</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+    <span class="c1"># Either ends in &#39;a&#39; (0) or &#39;b&#39; (1)</span>
+    <span class="c1"># If ends in &#39;a&#39;: previous n-1 can be anything</span>
+    <span class="c1"># If ends in &#39;b&#39;: previous must end in &#39;a&#39;, so n-2 positions</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">count_no_consecutive_b</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">memo</span><span class="p">)</span> <span class="o">+</span> <span class="n">count_no_consecutive_b</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">memo</span><span class="p">)</span>
+    <span class="n">memo</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Counts: </span><span class="si">{</span><span class="p">[</span><span class="n">count_no_consecutive_b</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nb">range</span><span class="p">(</span><span class="mi">12</span><span class="p">)]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   These are F_</span><span class="si">{</span><span class="n">n</span><span class="o">+</span><span class="mi">2</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
+
+<span class="c1"># --- 7. TILINGS ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">7. TILINGS: Ways to tile 1×n board with 1×1 and 1×2 tiles&quot;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">count_tilings</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">memo</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">1</span><span class="p">}):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Count ways to tile 1×n board&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">memo</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">memo</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+    <span class="c1"># Either place 1×1 tile (leaving n-1) or 1×2 tile (leaving n-2)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">count_tilings</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">memo</span><span class="p">)</span> <span class="o">+</span> <span class="n">count_tilings</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">memo</span><span class="p">)</span>
+    <span class="n">memo</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="n">tilings</span> <span class="o">=</span> <span class="p">[</span><span class="n">count_tilings</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">15</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Tiling counts: </span><span class="si">{</span><span class="n">tilings</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   These are Fibonacci numbers!&quot;</span><span class="p">)</span>
+
+<span class="c1"># --- 8. MODULAR ARITHMETIC (Pisano Periods) ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">8. MODULAR ARITHMETIC: Fibonacci mod m (Pisano periods)&quot;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">pisano_period</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Find period of Fibonacci sequence mod m&quot;&quot;&quot;</span>
+    <span class="n">prev</span><span class="p">,</span> <span class="n">curr</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span> <span class="o">*</span> <span class="n">m</span><span class="p">):</span>
+        <span class="n">prev</span><span class="p">,</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="p">,</span> <span class="p">(</span><span class="n">prev</span> <span class="o">+</span> <span class="n">curr</span><span class="p">)</span> <span class="o">%</span> <span class="n">m</span>
+        <span class="k">if</span> <span class="n">prev</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">curr</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   Pisano periods π(m) for small m:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>
+    <span class="n">period</span> <span class="o">=</span> <span class="n">pisano_period</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+    <span class="n">fib_mod</span> <span class="o">=</span> <span class="p">[</span><span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">%</span> <span class="n">m</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">period</span><span class="p">)]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   π(</span><span class="si">{</span><span class="n">m</span><span class="si">:</span><span class="s2">2d</span><span class="si">}</span><span class="s2">) = </span><span class="si">{</span><span class="n">period</span><span class="si">:</span><span class="s2">3d</span><span class="si">}</span><span class="s2">, sequence mod </span><span class="si">{</span><span class="n">m</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">fib_mod</span><span class="p">[:</span><span class="nb">min</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="n">period</span><span class="p">)]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="prime-counting">
+<h3>Prime counting<a class="headerlink" href="#prime-counting" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># PRIME COUNTING AND RELATED FUNCTIONS</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PRIME COUNTING FUNCTIONS&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
+
+<span class="c1"># --- 1. π(x): Prime Counting Function ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">1. π(x): Number of primes ≤ x&quot;</span><span class="p">)</span>
+
+<span class="n">x_vals</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">5000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">   x       π(x)    x/ln(x)   li(x)      Ratio π(x)/li(x)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   &quot;</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span><span class="o">*</span><span class="mi">65</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x_vals</span><span class="p">:</span>
+    <span class="n">pi_x</span> <span class="o">=</span> <span class="n">prime_pi</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x_over_logx</span> <span class="o">=</span> <span class="n">x</span><span class="o">/</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">li_x</span> <span class="o">=</span> <span class="n">Li</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">n</span><span class="p">()</span>
+    <span class="n">ratio</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">pi_x</span><span class="o">/</span><span class="n">li_x</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   </span><span class="si">%5s</span><span class="s2">   </span><span class="si">%5s</span><span class="s2">   </span><span class="si">%10.4f</span><span class="s2">   </span><span class="si">%10.4f</span><span class="s2">   </span><span class="si">%.6f</span><span class="s2">&quot;</span> <span class="o">%</span>
+          <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">pi_x</span><span class="p">,</span> <span class="n">x_over_logx</span><span class="p">,</span> <span class="n">li_x</span><span class="p">,</span> <span class="n">ratio</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">   Note: li(x) = integral from 0 to x of dt/ln(t)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   π(x) ~ li(x) as x → ∞ (Prime Number Theorem)&quot;</span><span class="p">)</span>
+
+<span class="c1"># --- 2. RIEMANN ZETA FUNCTION ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">2. RIEMANN ZETA FUNCTION: ζ(s) = Σ 1/n^s = ∏ 1/(1-p^(-s))&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">   Values at integers:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">):</span>
+    <span class="n">zeta_val</span> <span class="o">=</span> <span class="n">zeta</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   ζ(</span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s2">) = </span><span class="si">{</span><span class="n">zeta_val</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="n">digits</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">   ζ(2) = π²/6 = </span><span class="si">{</span><span class="p">(</span><span class="n">pi</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="n">digits</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   ζ(4) = π⁴/90 = </span><span class="si">{</span><span class="p">(</span><span class="n">pi</span><span class="o">^</span><span class="mi">4</span><span class="o">/</span><span class="mi">90</span><span class="p">)</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="n">digits</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Euler product</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">   Euler product for ζ(2) using first 10 primes:&quot;</span><span class="p">)</span>
+<span class="n">primes_list</span> <span class="o">=</span> <span class="n">primes_first_n</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">euler_product</span> <span class="o">=</span> <span class="n">prod</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">primes_list</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   ∏ 1/(1-p^(-2)) ≈ </span><span class="si">{</span><span class="n">euler_product</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="n">digits</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Actual ζ(2) = </span><span class="si">{</span><span class="n">zeta</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="n">digits</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># --- 3. VON MANGOLDT FUNCTION Λ(n) ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">3. VON MANGOLDT FUNCTION: Λ(n)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   Λ(n) = log(p) if n = p^k for prime p, else 0&quot;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">von_mangoldt</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;von Mangoldt function&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">factor</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1"># Prime power</span>
+        <span class="n">p</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">log</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">0</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">   n:  &quot;</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">)))</span>
+<span class="n">mangoldt_vals</span> <span class="o">=</span> <span class="p">[</span><span class="n">von_mangoldt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   Λ(n):&quot;</span><span class="p">,</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="n">digits</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span> <span class="k">if</span> <span class="n">v</span> <span class="o">!=</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">mangoldt_vals</span><span class="p">])</span>
+
+<span class="c1"># Chebyshev functions</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">   Chebyshev ψ(x) = Σ_{n≤x} Λ(n)&quot;</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">chebyshev_psi</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">von_mangoldt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">500</span><span class="p">]:</span>
+    <span class="n">psi_x</span> <span class="o">=</span> <span class="n">chebyshev_psi</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">ratio</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">psi_x</span><span class="o">/</span><span class="n">x</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   ψ(</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">3d</span><span class="si">}</span><span class="s2">) = </span><span class="si">{</span><span class="n">psi_x</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="n">digits</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span><span class="si">:</span><span class="s2">8.2f</span><span class="si">}</span><span class="s2">, ψ(x)/x = </span><span class="si">{</span><span class="n">ratio</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Note: ψ(x)/x → 1 as x → ∞ (equivalent to PNT)&quot;</span><span class="p">)</span>
+
+<span class="c1"># --- 4. MÖBIUS FUNCTION μ(n) ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">4. MÖBIUS FUNCTION: μ(n)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   μ(n) = 1 if n is square-free with even # of prime factors&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   μ(n) = -1 if n is square-free with odd # of prime factors&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   μ(n) = 0 if n is not square-free&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">   n:  &quot;</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">)))</span>
+<span class="n">mobius_vals</span> <span class="o">=</span> <span class="p">[</span><span class="n">moebius</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   μ(n):&quot;</span><span class="p">,</span> <span class="n">mobius_vals</span><span class="p">)</span>
+
+<span class="c1"># Möbius inversion</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">   Möbius inversion: Σ_{d|n} μ(d) = [n=1]&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">30</span><span class="p">]:</span>
+    <span class="n">divisor_sum</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">moebius</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">divisors</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   n=</span><span class="si">{</span><span class="n">n</span><span class="si">:</span><span class="s2">2d</span><span class="si">}</span><span class="s2">: Σ μ(d) = </span><span class="si">{</span><span class="n">divisor_sum</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Mertens function</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">   Mertens function M(x) = Σ_{n≤x} μ(n)&quot;</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">mertens</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">moebius</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="n">mertens_vals</span> <span class="o">=</span> <span class="p">[</span><span class="n">mertens</span><span class="p">(</span><span class="mi">10</span><span class="o">^</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   M(10^k): </span><span class="si">{</span><span class="n">mertens_vals</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Riemann Hypothesis ⟺ M(x) = O(x^(1/2 + ε))&quot;</span><span class="p">)</span>
+
+<span class="c1"># --- 5. DIRICHLET L-FUNCTIONS ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">5. DIRICHLET L-FUNCTIONS (generalizations of ζ)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   Example: L(s, χ₄) where χ₄ is character mod 4&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   χ₄(n) = 0 if n even, 1 if n≡1 (mod 4), -1 if n≡3 (mod 4)&quot;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">chi_4</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Dirichlet character mod 4&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">elif</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">   χ₄(n) for n=1..16: </span><span class="si">{</span><span class="p">[</span><span class="n">chi_4</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">17</span><span class="p">)]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># L(1, χ₄) = π/4 (related to Leibniz formula for π)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">   L(1, χ₄) = Σ χ₄(n)/n = π/4&quot;</span><span class="p">)</span>
+<span class="n">L_approx</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">chi_4</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">/</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10001</span><span class="p">)</span> <span class="k">if</span> <span class="n">chi_4</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Partial sum (10000 terms): </span><span class="si">{</span><span class="n">L_approx</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="n">digits</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   π/4 = </span><span class="si">{</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="n">digits</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># --- 6. PRIME GAPS ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">6. PRIME GAPS: g_n = p_{n+1} - p_n&quot;</span><span class="p">)</span>
+
+<span class="n">gaps</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">prev_p</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">primes</span><span class="p">(</span><span class="mi">100</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">gaps</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span> <span class="o">-</span> <span class="n">prev_p</span><span class="p">)</span>
+    <span class="n">prev_p</span> <span class="o">=</span> <span class="n">p</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   First 25 prime gaps: </span><span class="si">{</span><span class="n">gaps</span><span class="p">[:</span><span class="mi">25</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Average gap: </span><span class="si">{</span><span class="nb">float</span><span class="p">(</span><span class="n">mean</span><span class="p">(</span><span class="n">gaps</span><span class="p">[:</span><span class="mi">25</span><span class="p">]))</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Cramér&#39;s conjecture</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">   Cramér&#39;s conjecture: g_n = O((log p_n)²)&quot;</span><span class="p">)</span>
+<span class="n">p_100</span> <span class="o">=</span> <span class="n">nth_prime</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   p_100 = </span><span class="si">{</span><span class="n">p_100</span><span class="si">}</span><span class="s2">, (log p_100)² = </span><span class="si">{</span><span class="p">(</span><span class="n">log</span><span class="p">(</span><span class="n">p_100</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="n">digits</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># --- 7. TWIN PRIMES ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">7. TWIN PRIMES: Primes p where p+2 is also prime&quot;</span><span class="p">)</span>
+
+<span class="n">twin_primes</span> <span class="o">=</span> <span class="p">[(</span><span class="n">p</span><span class="p">,</span> <span class="n">p</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">primes</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span> <span class="k">if</span> <span class="n">is_prime</span><span class="p">(</span><span class="n">p</span><span class="o">+</span><span class="mi">2</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   First 15 twin prime pairs:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">twin_primes</span><span class="p">[:</span><span class="mi">15</span><span class="p">]):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   (</span><span class="si">{</span><span class="n">p1</span><span class="si">:</span><span class="s2">3d</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">p2</span><span class="si">:</span><span class="s2">3d</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;  &quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">()</span>
+
+<span class="c1"># Twin prime constant</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">   Twin prime conjecture: infinitely many twin primes&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   If true, # of twin primes &lt; x ~ 2C₂ x/(ln x)²&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   where C₂ ≈ 0.66016... is the twin prime constant&quot;</span><span class="p">)</span>
+
+<span class="c1"># --- 8. EXPLICIT FORMULA (Riemann-von Mangoldt) ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">8. EXPLICIT FORMULA: Connects primes to zeta zeros&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   ψ(x) = x - Σ_ρ (x^ρ/ρ) - log(2π)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   where ρ are non-trivial zeros of ζ(s)&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">   First few non-trivial zeros (on critical line Re(s)=1/2):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   (Computing these requires numerical methods)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   ρ₁ ≈ 1/2 + 14.134725i&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   ρ₂ ≈ 1/2 + 21.022040i&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   ρ₃ ≈ 1/2 + 25.010858i&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">   The distribution of primes is intimately connected&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   to the distribution of zeta zeros!&quot;</span><span class="p">)</span>
+
+<span class="c1"># --- 9. ADJACENCY MATRIX OF PRIME GRAPH ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">9. MATRIX: Adjacency matrix of prime graph&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   Connect primes p, q if p+q is also prime&quot;</span><span class="p">)</span>
+
+<span class="n">small_primes</span> <span class="o">=</span> <span class="n">primes_first_n</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">small_primes</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">(</span><span class="n">ZZ</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">j</span> <span class="ow">and</span> <span class="n">is_prime</span><span class="p">(</span><span class="n">small_primes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">small_primes</span><span class="p">[</span><span class="n">j</span><span class="p">]):</span>
+            <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Primes: </span><span class="si">{</span><span class="n">small_primes</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Adjacency matrix:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Eigenvalues: </span><span class="si">{</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="n">digits</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">A</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">()]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;From discrete recurrences to continuous analysis:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The golden thread connecting algebra, analysis, and number theory!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="catalan">
+<h3>Catalan<a class="headerlink" href="#catalan" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># CATALAN NUMBERS: C_n = (1/(n+1)) * binomial(2n, n)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CATALAN NUMBERS&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
+
+<span class="c1"># --- 1. Direct Computation ---</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">catalan</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">binomial</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">catalans</span> <span class="o">=</span> <span class="p">[</span><span class="n">catalan</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">1. First 10 Catalan numbers:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">catalans</span><span class="p">)</span>
+
+<span class="c1"># --- 2. RECURRENCE / ODE Connection ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">2. RECURRENCE (ODE discrete analog):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   C_0 = 1, C_{n+1} = sum_{i=0}^</span><span class="si">{n}</span><span class="s2"> C_i * C_{n-i}&quot;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">catalan_recurrence</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">memo</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mi">1</span><span class="p">}):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">memo</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">memo</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">catalan_recurrence</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">memo</span><span class="p">)</span> <span class="o">*</span> <span class="n">catalan_recurrence</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">i</span><span class="p">,</span> <span class="n">memo</span><span class="p">)</span> 
+                 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+    <span class="n">memo</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="n">catalans_rec</span> <span class="o">=</span> <span class="p">[</span><span class="n">catalan_recurrence</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   Via recurrence:&quot;</span><span class="p">,</span> <span class="n">catalans_rec</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   Match direct?&quot;</span><span class="p">,</span> <span class="n">catalans</span> <span class="o">==</span> <span class="n">catalans_rec</span><span class="p">)</span>
+
+<span class="c1"># --- 3. MATRIX: Hankel Matrix ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">3. MATRIX: Hankel matrix of Catalan numbers&quot;</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">H</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([[</span><span class="n">catalan</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">H</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Determinant: </span><span class="si">{</span><span class="n">H</span><span class="o">.</span><span class="n">determinant</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Rank: </span><span class="si">{</span><span class="n">H</span><span class="o">.</span><span class="n">rank</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># --- 4. GENERATING FUNCTION ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">4. GENERATING FUNCTION: C(x) = (1 - sqrt(1-4x))/(2x)&quot;</span><span class="p">)</span>
+<span class="n">R</span><span class="o">.&lt;</span><span class="n">x</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">PowerSeriesRing</span><span class="p">(</span><span class="n">QQ</span><span class="p">,</span> <span class="n">default_prec</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   C(x) = </span><span class="si">{</span><span class="n">C</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Coefficients: </span><span class="si">{</span><span class="n">C</span><span class="o">.</span><span class="n">list</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Verify functional equation: C(x) = 1 + x*C(x)^2</span>
+<span class="n">C_squared</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">x</span><span class="o">*</span><span class="n">C</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">add_bigoh</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Check C = 1 + xC²: </span><span class="si">{</span><span class="n">C</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">C_squared</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># --- 5. SYMMETRY: Count Dyck paths via automaton ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">5. SYMMETRY/COMBINATORICS: Dyck paths of length 2n&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   (Paths from (0,0) to (2n,0) with steps ±1, never going below 0)&quot;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">count_dyck_paths</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Count Dyck paths using dynamic programming&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="c1"># dp[i][j] = number of paths of length i ending at height j</span>
+    <span class="n">dp</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+    <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="c1"># Can go up if not at max height</span>
+                <span class="k">if</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+                    <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+                <span class="c1"># Can go down if not at ground</span>
+                <span class="k">if</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+    
+    <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">dyck_counts</span> <span class="o">=</span> <span class="p">[</span><span class="n">count_dyck_paths</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Dyck path counts: </span><span class="si">{</span><span class="n">dyck_counts</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># --- 6. 312-AVOIDING PERMUTATIONS (Group theory) ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">6. GROUP THEORY: 312-avoiding permutations in S_n&quot;</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">is_312_avoiding</span><span class="p">(</span><span class="n">perm</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Check if permutation avoids pattern 312&quot;&quot;&quot;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">perm</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">perm</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">perm</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">perm</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+                    <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+    <span class="n">P</span> <span class="o">=</span> <span class="n">Permutations</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">P</span> <span class="k">if</span> <span class="n">is_312_avoiding</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   n=</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2"> permutations (Catalan C_</span><span class="si">{</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="partition">
+<h3>Partition<a class="headerlink" href="#partition" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># PARTITION FUNCTION: p(n) = number of ways to write n as sum of positive ints</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PARTITION FUNCTION&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
+
+<span class="c1"># --- 1. Direct Computation ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">1. First 15 partition numbers:&quot;</span><span class="p">)</span>
+<span class="n">partitions</span> <span class="o">=</span> <span class="p">[</span><span class="n">Partitions</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">cardinality</span><span class="p">()</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">15</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">partitions</span><span class="p">)</span>
+
+<span class="c1"># --- 2. RECURRENCE (Euler&#39;s Pentagonal Number Theorem) ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">2. RECURRENCE: Euler&#39;s pentagonal number theorem&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   p(n) = p(n-1) + p(n-2) - p(n-5) - p(n-7) + p(n-12) + ...&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   Using pentagonal numbers k(3k-1)/2 for k = ±1, ±2, ±3, ...&quot;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">partition_euler</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">memo</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mi">1</span><span class="p">}):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">memo</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">memo</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+    
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">pent1</span> <span class="o">=</span> <span class="n">k</span><span class="o">*</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
+        <span class="n">pent2</span> <span class="o">=</span> <span class="n">k</span><span class="o">*</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
+        
+        <span class="k">if</span> <span class="n">pent1</span> <span class="o">&gt;</span> <span class="n">n</span><span class="p">:</span>
+            <span class="k">break</span>
+            
+        <span class="n">sign</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">+=</span> <span class="n">sign</span> <span class="o">*</span> <span class="n">partition_euler</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">pent1</span><span class="p">,</span> <span class="n">memo</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">pent2</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">+=</span> <span class="n">sign</span> <span class="o">*</span> <span class="n">partition_euler</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">pent2</span><span class="p">,</span> <span class="n">memo</span><span class="p">)</span>
+        
+        <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+    <span class="n">memo</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="n">partitions_euler</span> <span class="o">=</span> <span class="p">[</span><span class="n">partition_euler</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">15</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Via Euler recurrence: </span><span class="si">{</span><span class="n">partitions_euler</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Match direct? </span><span class="si">{</span><span class="n">partitions</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">partitions_euler</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># --- 3. GENERATING FUNCTION ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">3. GENERATING FUNCTION: Product formula&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   1/((1-x)(1-x²)(1-x³)...) = sum p(n)x^n&quot;</span><span class="p">)</span>
+
+<span class="n">R</span><span class="o">.&lt;</span><span class="n">x</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">PowerSeriesRing</span><span class="p">(</span><span class="n">QQ</span><span class="p">,</span> <span class="n">default_prec</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="c1"># Compute product up to degree 14</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">prod</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Coefficients: </span><span class="si">{</span><span class="n">P</span><span class="o">.</span><span class="n">list</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># --- 4. MATRIX: Ferrers Diagrams ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">4. MATRIX: Ferrers diagram for partition [5,3,3,1]&quot;</span><span class="p">)</span>
+<span class="n">partition</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">max_width</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">partition</span><span class="p">)</span>
+<span class="n">ferrers</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span> <span class="k">if</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">partition</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">else</span> <span class="mi">0</span> 
+                   <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_width</span><span class="p">)]</span> 
+                  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">partition</span><span class="p">))])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ferrers</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Sum of entries: </span><span class="si">{</span><span class="nb">sum</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">row</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">ferrers</span><span class="p">)</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="nb">sum</span><span class="p">(</span><span class="n">partition</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Conjugate partition (transpose)</span>
+<span class="n">conjugate</span> <span class="o">=</span> <span class="n">ferrers</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">   Conjugate partition (transpose):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">conjugate</span><span class="p">)</span>
+<span class="n">conj_parts</span> <span class="o">=</span> <span class="p">[</span><span class="nb">sum</span><span class="p">(</span><span class="n">conjugate</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">conjugate</span><span class="o">.</span><span class="n">ncols</span><span class="p">())]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Conjugate partition: </span><span class="si">{</span><span class="n">conj_parts</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># --- 5. GROUP THEORY: Conjugacy classes in S_n ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">5. GROUP THEORY: Partitions label conjugacy classes in S_n&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">):</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">SymmetricGroup</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">conj_classes</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">conjugacy_classes</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   S_</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> has </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">conj_classes</span><span class="p">)</span><span class="si">}</span><span class="s2"> conjugacy classes = p(</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">) = </span><span class="si">{</span><span class="n">Partitions</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">cardinality</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Example: S_5 conjugacy class representatives:&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">cc</span> <span class="ow">in</span> <span class="n">conj_classes</span><span class="p">[:</span><span class="mi">5</span><span class="p">]:</span>  <span class="c1"># Show first 5</span>
+            <span class="n">rep</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">representative</span><span class="p">()</span>
+            <span class="n">cycle_type</span> <span class="o">=</span> <span class="n">rep</span><span class="o">.</span><span class="n">cycle_type</span><span class="p">()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;      Cycle type </span><span class="si">{</span><span class="n">cycle_type</span><span class="si">}</span><span class="s2">: size </span><span class="si">{</span><span class="n">cc</span><span class="o">.</span><span class="n">cardinality</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># --- 6. YOUNG TABLEAUX (Representation Theory) ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">6. REPRESENTATION THEORY: Young tableaux&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   Standard Young tableaux for partition [3,2]:&quot;</span><span class="p">)</span>
+
+<span class="n">partition_shape</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">tableaux</span> <span class="o">=</span> <span class="n">StandardTableaux</span><span class="p">(</span><span class="n">partition_shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Number of standard tableaux: </span><span class="si">{</span><span class="n">tableaux</span><span class="o">.</span><span class="n">cardinality</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   First few tableaux:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tableaux</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">   Tableau </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">t</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;      </span><span class="si">{</span><span class="n">row</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># --- 7. ZETA CONNECTION: Asymptotic formula ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">7. ZETA/ANALYTIC: Hardy-Ramanujan asymptotic formula&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   p(n) ~ (1/(4n*sqrt(3))) * exp(pi*sqrt(2n/3))&quot;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">hardy_ramanujan_approx</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">)))</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">   n    p(n)      Approximation     Ratio&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   &quot;</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span><span class="o">*</span><span class="mi">50</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">]:</span>
+    <span class="n">exact</span> <span class="o">=</span> <span class="n">Partitions</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">cardinality</span><span class="p">()</span>
+    <span class="n">approx</span> <span class="o">=</span> <span class="n">hardy_ramanujan_approx</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">ratio</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">exact</span><span class="o">/</span><span class="n">approx</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   </span><span class="si">%3s</span><span class="s2">  </span><span class="si">%8s</span><span class="s2">  </span><span class="si">%13.1f</span><span class="s2">     </span><span class="si">%.6f</span><span class="s2">&quot;</span> <span class="o">%</span>
+        <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">exact</span><span class="p">,</span> <span class="n">approx</span><span class="p">,</span> <span class="n">ratio</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The unity of mathematics: sequences as windows into structure!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="findstat">
+<h2>FindStat<a class="headerlink" href="#findstat" title="Link to this heading">#</a></h2>
+<p>OEIS and FindStat</p>
+<p>Combine of Seq:   → New Seq without point</p>
+<ul class="simple">
+<li><p>Seq + Seq: a(n) + b(n)</p></li>
+<li><p>Seq × Seq: a(n) * b(n)</p></li>
+</ul>
+<p>Combine of Statistic:   → New Stat with point</p>
+<ul class="simple">
+<li><p>Stat + Stat: (f + g)(x) = f(x) + g(x)</p></li>
+<li><p>Stat ∘ Stat: (f ∘ map)(x)</p></li>
+<li><p>co-Stat: (f, g)(x) = (f(x), g(x))</p></li>
+</ul>
+<p><strong>FindStat to OEIS</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>FindStat对象</p></th>
+<th class="head"><p>→   主导OEIS生成机制</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Permutations</p></td>
+<td><p>→ 3,7,9,6</p></td>
+</tr>
+<tr class="row-odd"><td><p>ASMs</p></td>
+<td><p>→ 7,9,8</p></td>
+</tr>
+<tr class="row-even"><td><p>Integer partitions</p></td>
+<td><p>→ 6,1,8</p></td>
+</tr>
+<tr class="row-odd"><td><p>Dyck paths / Catalan类</p></td>
+<td><p>→ 1,2,3,7</p></td>
+</tr>
+<tr class="row-even"><td><p>Binary words</p></td>
+<td><p>→ 1,2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Integer compositions</p></td>
+<td><p>→ 1,2,3</p></td>
+</tr>
+<tr class="row-even"><td><p>Ordered trees</p></td>
+<td><p>→ 1,7,3</p></td>
+</tr>
+<tr class="row-odd"><td><p>Parking functions</p></td>
+<td><p>→ 3,9,6</p></td>
+</tr>
+<tr class="row-even"><td><p>Cores / Finite Cartan</p></td>
+<td><p>→ 4,9,3,6</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gelfand–Tsetlin patterns</p></td>
+<td><p>→ 2,9</p></td>
+</tr>
+<tr class="row-even"><td><p>Graphs / matchings</p></td>
+<td><p>→ 7,2,9</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lattices</p></td>
+<td><p>→ 4,3</p></td>
+</tr>
+<tr class="row-even"><td><p>Ordered set partitions</p></td>
+<td><p>→ 6,3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 </section>
 
@@ -658,7 +1574,14 @@ Computation provides the vehicle.</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relation-to-langlands-and-to-effective-theories-in-physics">5. Relation to Langlands and to Effective Theories in Physics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-read-this-book">How to Read This Book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#my-plan-oeis-11-core-sequences">My plan: OEIS 11 core sequences</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fibonacci">Fibonacci</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prime-counting">Prime counting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#catalan">Catalan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#partition">Partition</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#findstat">FindStat</a></li>
 </ul>
   </nav></div>
 
