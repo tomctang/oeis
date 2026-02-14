@@ -1,0 +1,761 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Technical Highlights &#8212; Tom Workbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=8dedbda2" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'try_oil/WTI-Brent-spreadtrading';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How to Count Things" href="../counthow_to_count_things.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="Stochastic-mod-pricing-WTI.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../0intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Tom Workbook</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../0intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">OEIS &amp; SageMath</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter0_introduction.html">Chapter 0: Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter1_arithmetic_functions.html">Chapter 1: Arithmetic Functions and Multiplicatives</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Counting</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Forecasting_Crude.html">Petroleum Inventory Level: A Leading Indicator of Crude Oil Prices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fred-oil-brent-wti.html">Kalman filter strategy</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Oil_price_predict_project_LSTM.html">Oil Price WTI Predict by LSTM and TCN model</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Technical Highlights</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Counting</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../counthow_to_count_things.html">How to Count Things</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../countlectures.html">I. Enumerative Comb</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../countlectures_output.html">I. Enumerative Comb - output</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../counttutorial.html">I. Tutorial</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../counttutorial_solution.html">I. Tutorial - solution</a></li>
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Math Map</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../mathmap.html">Math Map</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../mathmap_old00intro_math.html">Math-FP-Lang Combo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mathmap_old01number_algebra.html">Number &amp; Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mathmap_old02discrete_continuous.html">Discrete &amp; Continuous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mathmap_old03real_world.html">Real World Math</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/tomctang/oeis" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/try_oil/WTI-Brent-spreadtrading.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Technical Highlights</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <blockquote>
+<div><p>WTI/Brent Statistical Arbitrage Strategy</p>
+</div></blockquote>
+<p>Augustin Debove</p>
+<p><strong>Quantitative research project: Implementation of a mean-reversion strategy on energy futures spreads.</strong></p>
+<p>This repository contains a systematic algorithmic trading strategy exploiting the statistical co-integration between <strong>WTI (NYMEX)</strong> and <strong>Brent (ICE)</strong> Crude Oil futures. The project demonstrates a full quantitative pipeline, from raw data ingestion and synchronization to risk-adjusted performance analysis.</p>
+<section id="technical-highlights">
+<h1>Technical Highlights<a class="headerlink" href="#technical-highlights" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><strong>Data Engineering and Synchronization:</strong> The framework implements a custom alignment logic to handle asynchronous trading calendars. By reconciling NYMEX and ICE exchange holidays, the backtest eliminates data stale-pricing bias.</p></li>
+<li><p><strong>Mean-Reversion Engine:</strong> Signals are generated via a dynamic Z-Score calculated on a rolling lookback window. This normalizes the spread volatility and identifies statistically significant entry and exit points.</p></li>
+<li><p><strong>Robustness vs. Overfitting:</strong> Parameter selection (window size and thresholds) was conducted using stability cluster analysis rather than raw historical optimization. This ensures higher generalization capabilities on unseen data.</p></li>
+<li><p><strong>Risk Management:</strong> A hard statistical stop-loss is integrated at <span class="math notranslate nohighlight">\(|Z| &gt; 3.5\)</span> to protect the portfolio against structural regime shifts or geopolitical shocks.</p></li>
+</ul>
+<blockquote>
+<div><blockquote>
+<div><p>Out-of-Sample Results (Jan 2024 - Feb 2026)
+The model was validated on strictly unseen data to confirm its predictive power:</p>
+</div></blockquote>
+</div></blockquote>
+<ul class="simple">
+<li><p><strong>Sharpe Ratio:</strong> 2.17</p></li>
+<li><p><strong>Net PnL per Barrel:</strong> $14.60 (inclusive of estimated transaction costs)</p></li>
+<li><p><strong>Execution Logic:</strong> Entry at <span class="math notranslate nohighlight">\(|Z| &gt; 1.9\)</span>, Mean-reversion exit at <span class="math notranslate nohighlight">\(|Z| &lt; 0.5\)</span>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">yfinance</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">yf</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="c1">########### PART 1 : OPTIMIZATION ###########</span>
+<span class="n">tickers</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;CL=F&#39;</span><span class="p">,</span> <span class="s1">&#39;BZ=F&#39;</span><span class="p">]</span>  
+<span class="n">raw_data</span> <span class="o">=</span> <span class="n">yf</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">tickers</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="s2">&quot;2024-01-01&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;2026-01-01&quot;</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>   <span class="c1"># Data Cleaning and Alignment</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;WTI&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">raw_data</span><span class="p">[</span><span class="s1">&#39;CL=F&#39;</span><span class="p">]</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;Brent&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">raw_data</span><span class="p">[</span><span class="s1">&#39;BZ=F&#39;</span><span class="p">]</span>
+<span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># Aligning TS: we only keep observations where both NYMEX (WTI) and ICE (Brent) markets are open to avoid non-synchronous data bias.</span>
+
+<span class="n">profit</span> <span class="o">=</span> <span class="p">{}</span>   <span class="c1"># Grid search for the best Z-score and the optimal rolling window</span>
+<span class="n">sharpe</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">drawdown</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;spread&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;WTI&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Brent&#39;</span><span class="p">]</span> <span class="c1"># Computation of the spread价差</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;spread_diff&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;spread&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span>
+
+<span class="n">transaction_cost</span> <span class="o">=</span> <span class="mf">0.05</span>  <span class="c1"># transaction cost per unit, covering spread and transaction fees</span>
+
+<span class="c1"># Loop over windows from 5 to 50 days</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span> 
+    <span class="n">mean</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;spread&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>   <span class="c1"># Pre-calculate rolling stats for this window to speed up the loop</span>
+    <span class="n">std</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;spread&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">401</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span> <span class="c1"># Loop over Z-score thresholds from 0.1 to 4.0</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">k</span> <span class="o">/</span> <span class="mi">100</span>
+        <span class="n">temp_Z</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;spread&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">mean</span><span class="p">)</span> <span class="o">/</span> <span class="n">std</span>         <span class="c1"># Z-score calculation</span>
+
+        <span class="c1"># 1. Initialize signal with NaN</span>
+        <span class="n">signal</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+        
+        <span class="c1"># 2. Entries</span>
+        <span class="n">signal</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">temp_Z</span> <span class="o">&lt;</span> <span class="o">-</span><span class="n">z</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># Long Spread</span>
+        <span class="n">signal</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">temp_Z</span> <span class="o">&gt;</span> <span class="n">z</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>  <span class="c1"># Short Spread</span>
+        
+        <span class="c1"># 3. Exits (Mean Reversion)</span>
+        <span class="c1"># We exit when Z-score comes back to normal (between -0.5 and 0.5)</span>
+        <span class="n">signal</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">temp_Z</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        
+        <span class="c1"># 4. Stop Loss (Optional but recommended for optimization realism)</span>
+        <span class="c1"># If Z-score explodes &gt; 4, we cut (Black Swan protection)</span>
+        <span class="n">signal</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">temp_Z</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        
+        <span class="c1"># 5. Position Filling</span>
+        <span class="c1"># We propagate the signal until a new condition (Exit or Reverse) is met</span>
+        <span class="n">pos</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">ffill</span><span class="p">()</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        
+        <span class="c1"># Computation of the costs</span>
+        <span class="n">trades</span> <span class="o">=</span> <span class="n">pos</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span> 
+        <span class="n">total_costs</span> <span class="o">=</span> <span class="n">trades</span> <span class="o">*</span> <span class="n">transaction_cost</span>
+        
+        <span class="c1"># Net performance computation</span>
+        <span class="n">strat_return</span> <span class="o">=</span> <span class="p">(</span><span class="n">pos</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;spread_diff&#39;</span><span class="p">])</span> <span class="o">-</span> <span class="n">total_costs</span>
+        
+        <span class="n">profit_final</span> <span class="o">=</span> <span class="n">strat_return</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+        
+        <span class="c1"># Storing of the final profit</span>
+        <span class="n">profit</span><span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="n">z</span><span class="p">)]</span> <span class="o">=</span> <span class="n">profit_final</span>
+        
+        <span class="c1"># Sharpe Ratio Computation</span>
+        <span class="k">if</span> <span class="n">strat_return</span><span class="o">.</span><span class="n">std</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># Annulized Sharpe</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="n">strat_return</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">/</span> <span class="n">strat_return</span><span class="o">.</span><span class="n">std</span><span class="p">())</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">252</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">sharpe</span><span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="n">z</span><span class="p">)]</span> <span class="o">=</span> <span class="n">s</span>
+
+        <span class="c1"># Max Drawdown Computation</span>
+        <span class="n">equity_curve</span> <span class="o">=</span> <span class="n">strat_return</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+        <span class="n">max_dd</span> <span class="o">=</span> <span class="p">(</span><span class="n">equity_curve</span> <span class="o">-</span> <span class="n">equity_curve</span><span class="o">.</span><span class="n">cummax</span><span class="p">())</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+        <span class="n">drawdown</span><span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="n">z</span><span class="p">)]</span> <span class="o">=</span> <span class="n">max_dd</span>
+        
+<span class="n">df_opti</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">profit</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span> <span class="c1"># Converting profit dictionary to a DataFrame</span>
+<span class="n">df_opti</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Fenetre&#39;</span><span class="p">,</span> <span class="s1">&#39;Z_score&#39;</span><span class="p">,</span> <span class="s1">&#39;Profit&#39;</span><span class="p">]</span>
+
+<span class="n">df_dd</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">drawdown</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span> <span class="c1"># Converting Drawdown dictionary to a DataFramee</span>
+<span class="n">df_dd</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Fenetre&#39;</span><span class="p">,</span> <span class="s1">&#39;Z_score&#39;</span><span class="p">,</span> <span class="s1">&#39;Drawdown&#39;</span><span class="p">]</span>
+<span class="n">df_opti</span> <span class="o">=</span> <span class="n">df_opti</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">df_dd</span><span class="p">[</span><span class="s1">&#39;Drawdown&#39;</span><span class="p">])</span>
+
+<span class="n">df_risk</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">sharpe</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span> <span class="c1"># Converting Sharpe dictionary to a DataFrame</span>
+<span class="n">df_risk</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Fenêtre&#39;</span><span class="p">,</span> <span class="s1">&#39;Z_score&#39;</span><span class="p">,</span> <span class="s1">&#39;Sharpe&#39;</span><span class="p">]</span>
+<span class="n">df_opti</span> <span class="o">=</span> <span class="n">df_opti</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">df_risk</span><span class="p">[</span><span class="s1">&#39;Sharpe&#39;</span><span class="p">])</span>
+
+<span class="c1"># Displaying the best results</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">TOP 5 BY PROFIT&quot;</span><span class="p">)</span>
+<span class="n">top_5_profit</span> <span class="o">=</span> <span class="n">df_opti</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Profit&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">top_5_profit</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">TOP 5 BY SHARPE RATIO&quot;</span><span class="p">)</span>
+<span class="n">top_5_sharpe</span> <span class="o">=</span> <span class="n">df_opti</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Sharpe&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">top_5_sharpe</span><span class="p">)</span>
+
+<span class="c1"># Automatic link: find the best parameters to use in Part 2</span>
+<span class="n">best_row</span> <span class="o">=</span> <span class="n">df_opti</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Sharpe&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">best_window</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">best_row</span><span class="p">[</span><span class="s1">&#39;Fenetre&#39;</span><span class="p">])</span>
+<span class="n">best_z_entry</span> <span class="o">=</span> <span class="n">best_row</span><span class="p">[</span><span class="s1">&#39;Z_score&#39;</span><span class="p">]</span>
+
+<span class="c1">########### PART 2 : OUT-OF-SAMPLE TEST ###########</span>
+<span class="c1"># 1. Fetching data that is unknown for the model (Out-of-Sample)????</span>
+<span class="n">end_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span> 
+<span class="n">raw_data_oos</span> <span class="o">=</span> <span class="n">yf</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">tickers</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="s2">&quot;2024-01-02&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="n">end_date</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span>
+
+<span class="c1"># 2. DATA CLEANING AND ALIGNMENT</span>
+<span class="n">data_oos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">data_oos</span><span class="p">[</span><span class="s1">&#39;WTI&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">raw_data_oos</span><span class="p">[</span><span class="s1">&#39;CL=F&#39;</span><span class="p">]</span>
+<span class="n">data_oos</span><span class="p">[</span><span class="s1">&#39;Brent&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">raw_data_oos</span><span class="p">[</span><span class="s1">&#39;BZ=F&#39;</span><span class="p">]</span>
+
+<span class="c1"># Aligning time series: we only keep observations where both NYMEX (WTI) and ICE (Brent) markets are open.</span>
+<span class="n">data_oos</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
+
+<span class="c1"># 3. PARAMETERIZATION: These are automatically assigned from the optimization above</span>
+<span class="n">stop_loss_z</span> <span class="o">=</span> <span class="mf">3.5</span> 
+<span class="n">transaction_cost</span> <span class="o">=</span> <span class="mf">0.05</span> 
+
+<span class="c1"># 4. INDICATORS</span>
+<span class="n">data_oos</span><span class="p">[</span><span class="s1">&#39;spread&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_oos</span><span class="p">[</span><span class="s1">&#39;WTI&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">data_oos</span><span class="p">[</span><span class="s1">&#39;Brent&#39;</span><span class="p">]</span>
+<span class="n">data_oos</span><span class="p">[</span><span class="s1">&#39;spread_diff&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_oos</span><span class="p">[</span><span class="s1">&#39;spread&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span>
+
+<span class="c1"># Moving calculations</span>
+<span class="n">mean_oos</span> <span class="o">=</span> <span class="n">data_oos</span><span class="p">[</span><span class="s1">&#39;spread&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="n">best_window</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">std_oos</span> <span class="o">=</span> <span class="n">data_oos</span><span class="p">[</span><span class="s1">&#39;spread&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="n">best_window</span><span class="p">)</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">data_oos</span><span class="p">[</span><span class="s1">&#39;z_score&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">data_oos</span><span class="p">[</span><span class="s1">&#39;spread&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">mean_oos</span><span class="p">)</span> <span class="o">/</span> <span class="n">std_oos</span>
+
+<span class="c1"># Step A: Initialize signal container with NaN (Empty)</span>
+<span class="n">data_oos</span><span class="p">[</span><span class="s1">&#39;position&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span> 
+
+<span class="c1"># Step B: Entry Signals</span>
+<span class="c1"># Long if Z &lt; -best_z_entry</span>
+<span class="n">data_oos</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">data_oos</span><span class="p">[</span><span class="s1">&#39;z_score&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="o">-</span><span class="n">best_z_entry</span><span class="p">,</span> <span class="s1">&#39;position&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>  
+<span class="c1"># Short if Z &gt; best_z_entry</span>
+<span class="n">data_oos</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">data_oos</span><span class="p">[</span><span class="s1">&#39;z_score&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">best_z_entry</span><span class="p">,</span> <span class="s1">&#39;position&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> 
+
+<span class="c1"># Step C: Exit Conditions (Mean Reversion): Exit when Z returns inside [-0.5, 0.5]. </span>
+<span class="n">data_oos</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">data_oos</span><span class="p">[</span><span class="s1">&#39;z_score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39;position&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Step D: Stop Loss (Risk Management): Force exit if Z explodes (&gt; 3.5)</span>
+<span class="n">data_oos</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">data_oos</span><span class="p">[</span><span class="s1">&#39;z_score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">stop_loss_z</span><span class="p">,</span> <span class="s1">&#39;position&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Step E: Propagation (The fix)</span>
+<span class="n">data_oos</span><span class="p">[</span><span class="s1">&#39;position&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_oos</span><span class="p">[</span><span class="s1">&#39;position&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">ffill</span><span class="p">()</span>
+
+<span class="c1"># Step F: Handle the very beginning (before first signal)</span>
+<span class="n">data_oos</span><span class="p">[</span><span class="s1">&#39;position&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_oos</span><span class="p">[</span><span class="s1">&#39;position&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># 6. PERFORMANCE CALCULATION</span>
+<span class="n">trades_oos</span> <span class="o">=</span> <span class="n">data_oos</span><span class="p">[</span><span class="s1">&#39;position&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span>
+<span class="n">costs_oos</span> <span class="o">=</span> <span class="n">trades_oos</span> <span class="o">*</span> <span class="n">transaction_cost</span>
+
+<span class="c1"># PnL strategy (using shift(1) to avoid look-ahead bias)</span>
+<span class="n">data_oos</span><span class="p">[</span><span class="s1">&#39;strategy_return&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">data_oos</span><span class="p">[</span><span class="s1">&#39;position&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">data_oos</span><span class="p">[</span><span class="s1">&#39;spread_diff&#39;</span><span class="p">])</span> <span class="o">-</span> <span class="n">costs_oos</span>
+
+<span class="c1"># Cumulative Returns</span>
+<span class="n">data_oos</span><span class="p">[</span><span class="s1">&#39;cum_profit&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_oos</span><span class="p">[</span><span class="s1">&#39;strategy_return&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+
+<span class="c1"># 7. VISUALIZATION &amp; METRICS</span>
+<span class="n">final_pnl</span> <span class="o">=</span> <span class="n">data_oos</span><span class="p">[</span><span class="s1">&#39;cum_profit&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">sharpe_ratio</span> <span class="o">=</span> <span class="p">(</span><span class="n">data_oos</span><span class="p">[</span><span class="s1">&#39;strategy_return&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">/</span> <span class="n">data_oos</span><span class="p">[</span><span class="s1">&#39;strategy_return&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">())</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">252</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> RESULTS (2024 - Today) &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Net PnL per Barrel : </span><span class="si">{</span><span class="n">final_pnl</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> $&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sharpe Ratio : </span><span class="si">{</span><span class="n">sharpe_ratio</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Chart</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_oos</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">data_oos</span><span class="p">[</span><span class="s1">&#39;cum_profit&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;PnL Stratégie (Net)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Performance Out-of-Sample (WTI/Brent) - Sharpe: </span><span class="si">{</span><span class="n">sharpe_ratio</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Date&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Profit ($)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_23616/3274917961.py:8: FutureWarning: YF.download() has changed argument auto_adjust default to True
+  raw_data = yf.download(tickers, start=&quot;2024-01-01&quot;, end=&quot;2026-01-01&quot;, progress=False)[&#39;Close&#39;]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TOP 5 BY PROFIT
+     Fenetre  Z_score     Profit  Drawdown    Sharpe
+246       20     0.55  19.210019 -1.239998  2.064370
+251       20     0.80  18.980021 -1.310002  2.051578
+252       20     0.85  18.830002 -1.259999  2.035092
+243       20     0.40  18.530015 -1.249997  1.989195
+244       20     0.45  18.530015 -1.249997  1.989195
+
+TOP 5 BY SHARPE RATIO
+     Fenetre  Z_score     Profit  Drawdown    Sharpe
+429       30     1.80  15.630005 -1.480005  2.222741
+655       45     1.25  17.210014 -1.519997  2.214097
+432       30     1.95  15.119997 -1.480005  2.173248
+431       30     1.90  15.119997 -1.480005  2.173248
+433       30     2.00  15.119997 -1.480005  2.173248
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_23616/3274917961.py:113: FutureWarning: YF.download() has changed argument auto_adjust default to True
+  raw_data_oos = yf.download(tickers, start=&quot;2024-01-02&quot;, end=end_date, progress=False)[&#39;Close&#39;]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> RESULTS (2024 - Today) 
+Net PnL per Barrel : 15.74 $
+Sharpe Ratio : 2.10
+</pre></div>
+</div>
+<img alt="../_images/2f680aa56943b12f6674b64fe8a2a1134d14725523e1490d14a05713f2ab46cf.png" src="../_images/2f680aa56943b12f6674b64fe8a2a1134d14725523e1490d14a05713f2ab46cf.png" />
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./try_oil"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Stochastic-mod-pricing-WTI.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../counthow_to_count_things.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">How to Count Things</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Tom Tang
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
