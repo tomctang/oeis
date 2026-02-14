@@ -12,6 +12,15 @@ parts:
 - caption: Counting
   numbered: false
   chapters:
+  - file: try_oil/Forecasting_Crude
+  - file: try_oil/fred-oil-brent-wti
+  - file: try_oil/Oil_price_predict_project_LSTM
+  - file: try_oil/Stochastic-mod-pricing-WTI
+  - file: try_oil/WTI-Brent-spreadtrading
+
+- caption: Counting
+  numbered: false
+  chapters:
   - file: counthow_to_count_things
   - file: countlectures
   - file: countlectures_output
