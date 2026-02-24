@@ -1,0 +1,2325 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Introduction &#8212; Tom Workbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=8dedbda2" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '2025-11-26-discrete-calculus';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="0intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Tom Workbook</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="0intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">OEIS &amp; SageMath</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapter0_introduction.html">Chapter 0: Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter1_arithmetic_functions.html">Chapter 1: Arithmetic Functions and Multiplicatives</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Counting</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="counthow_to_count_things.html">How to Count Things</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="countlectures.html">I. Enumerative Comb</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="countlectures_output.html">I. Enumerative Comb - output</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="counttutorial.html">I. Tutorial</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="counttutorial_solution.html">I. Tutorial - solution</a></li>
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Math Map</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="mathmap.html">Math Map</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="mathmap_old00intro_math.html">Math-FP-Lang Combo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mathmap_old01number_algebra.html">Number &amp; Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mathmap_old02discrete_continuous.html">Discrete &amp; Continuous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mathmap_old03real_world.html">Real World Math</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/tomctang/oeis" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/2025-11-26-discrete-calculus.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introduction</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduction</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-and-sum-operators">Difference and Sum Operators</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomials-falling-powers">Polynomials: Falling Powers</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stirling-numbers">Stirling Numbers</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-functions">Generating functions</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#natural-discrete-base-2">Natural Discrete Base 2</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#newton-series">Newton series</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-application-find-the-closed-form">Example Application: Find the closed form</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-formula-for-the-sum-of-cubes">Example: Formula for the Sum of Cubes</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#umbral-calculus">Umbral Calculus</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warmup">Warmup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-umbral-trick-linear-functionals">The “Umbral Trick”: Linear Functionals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-1-vandermonde-s-convolution-identity">Problem 1: Vandermonde’s Convolution Identity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-2-bernoulli-numbers-and-sums-of-powers">Problem 2: Bernoulli Numbers and Sums of Powers</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bernoulli-polynomials">Bernoulli Polynomials</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-general-summation-formula">The General Summation Formula</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-the-difference-operator-and-falling-powers">Part 1: The Difference Operator and Falling Powers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-discrete-integration-summation">Part 2: Discrete Integration (Summation)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-newton-series-and-interpolation">Part 3: Newton Series and Interpolation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-4-conceptual-proofs">Part 4: Conceptual Proofs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions-hints">Solutions / Hints</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#references-and-further-reading">References and Further Reading</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p>tags:</p>
+<ul class="simple">
+<li><p>Sequence</p></li>
+<li><p>Forward Difference</p></li>
+<li><p>Finite Difference</p></li>
+<li><p>Sum</p></li>
+<li><p>Generating Function</p></li>
+<li><p>Binomial Coefficient</p></li>
+<li><p>Stirling Number</p></li>
+</ul>
+<section id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
+<p>The modern term “calculus” pretty much always refers in common contexts to the study of infinitesimal calculus for continuous changes. However, there is a parallel world for the discrete case, with finite changes. This theory is quite overpowered for discrete math, e.g. in competitive mathematics and programming.</p>
+<p>These worlds turns out to be very similar to each other, and learning about the discrete version makes some intuition for results much more clear. Typically, we are better at keeping track of a finite number of things in the discrete case rather than infinitely many infinitesimal changes in the continuous case.</p>
+<blockquote class="box-example" markdown="1">
+<div class="title" markdown="1">
+Gradient descent discretizes gradient flow
+<p>Numerical algorithms to carry out large computations on computers are almost always done in discrete bits. In ML, the gradient descent algorithm models the gradient flow ODE:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dt}w_{t}=-\nabla_{w_{t}} f(w_{t})
+\]</div>
+<p>for some weights <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(w_{t}\)</span></span> evolving through training time <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(t\)</span></span> under a loss <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(f\)</span></span>.
+We approximate by discretizing the derivative to a <em>finite difference quotient</em>.</p>
+</blockquote>
+<blockquote class="box-definition" markdown="1">
+<div class="title" markdown="1">
+Forward difference operator
+<p>The forward difference operator</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta_{h}f(t):=f(t+h)-f(t)
+\]</div>
+</blockquote>
+<p>Note that by definition of a derivative,</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dw_{t}}{dt}=\lim_{ h \to 0 } \frac{w_{t+h}-w_{t}}{h}=\lim_{ h \to 0 } \frac{\Delta_{h}w_{t}}{\Delta_{h}t}
+\]</div>
+<p>So in the discrete case, we use a finite <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(h\)</span></span> instead of the limit as <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(h\to 0\)</span></span>. This gives us the finite difference quotient <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\frac{\Delta_{h}w_{t}}{\Delta_{h}t}=\frac{w_{t+h}-w_{t}}{h}\)</span></span>.</p>
+<blockquote class="box-example" markdown="1">
+<div class="title" markdown="1">
+Gradient descent algorithm
+<p>Discretizing the gradient flow ODE through the forward difference operator is called forward Euler integration, and recovers the gradient descent algorithm.
+We replace <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\frac{d}{dt}\)</span></span> by <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\frac{\Delta_{h}}{\Delta_{h}t}\)</span></span> in the gradient flow ODE:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\Delta_{h}}{\Delta_{h}t}w_{t}=-\nabla f(w_{t})=\frac{w_{t+h}-w_{t}}{h}
+\]</div>
+<p>Solving for <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(w_{t+h}\)</span></span> gives the explicit form:</p>
+<div class="math notranslate nohighlight">
+\[
+w_{t+h}=w_{t}-h\nabla f(w_{t})
+\]</div>
+</blockquote>
+<p>Indeed, discrete calculus is more far-reaching than you might think. Now, we can index discrete objects using the natural numbers. Hence, we will often think of time as steps <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(t=1,2,3,\dots\)</span></span> and analyze the specific case with normalized increment to <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(h=1\)</span></span> so that <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta f(x)=f(x+1)-f(x)\)</span></span>.</p>
+<blockquote class="box-definition" markdown="1">
+<div class="title" markdown="1">
+Forward difference operator <span class="math-inline" markdown="1">$\Delta$</span>
+<div class="math notranslate nohighlight">
+\[
+\Delta f(x):=f(x+1)-f(x)
+\]</div>
+<p>(Note: the notation <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta\)</span></span> clashes with the symbol commonly used for the Laplacian, so be careful to avoid confusion.)</p>
+</blockquote>
+<p>This has the convenient effect that the denominator in the finite difference quotient just cancels, so we only need to keep track of the difference itself:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\Delta f(x)}{\Delta x}=\frac{f(x+1)-f(x)}{(x+1)-x}=\frac{f(x+1)-f(x)}{1}=\Delta f(x)
+\]</div>
+</section>
+<section id="difference-and-sum-operators">
+<h1>Difference and Sum Operators<a class="headerlink" href="#difference-and-sum-operators" title="Link to this heading">#</a></h1>
+<p>From the section above, the discrete analog to the derivative is the difference <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta\)</span></span>. Then what is the integral? Straightforwardly, it is simply the sum operator <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\sum\)</span></span>. Then, some results in discrete calculus seem very familiar to their infinitesimal counterparts.</p>
+<blockquote class="box-exercise" markdown="1">
+<div class="title" markdown="1">
+Properties of forward difference and sum
+<ul class="simple">
+<li><p>Linearity: for constants <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(a,b\)</span></span>,</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\Delta (af+bg)=a\Delta f+b\Delta g
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\sum(af+bg)=a\sum f+b\sum g
+\]</div>
+<ul class="simple">
+<li><p>Constant rule: for a constant <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(c\)</span></span>, <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta c=0\)</span></span>.</p></li>
+<li><p>Fundamental theorem of discrete calculus:</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Telescoping:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+\sum_{k=a}^{b}\Delta f(k)=f(b+1)-f(a)
+\]</div>
+<ol class="arabic simple" start="2">
+<li><p>This doesn’t really have a name, maybe we should call it “microscoping” in spirit of the other part, since we zoom in on a single term.</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+\frac{\Delta}{\Delta n} \sum_{k=a}^{n-1}f(k)=f(n)
+\]</div>
+<ul class="simple">
+<li><p>Compared to the infinitesimal case, where we have <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\int_{[a,b)}=\int_{[a,b]}\)</span></span> so <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\int_{[a,b)} \frac{df}{dx} \,dx=f(b)-f(a)\)</span></span>, the distinction does matter in the discrete case, where we sum <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta f(k)\)</span></span> over the integer interval <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\([a,n)=\{ a, \dots, n-1 \}\)</span></span> to recover <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(f(n)\)</span></span>.
+However, in the case of the product rule, the discrete version differs from its infinitesimal counterpart, because we don’t discard the second-order term:</p></li>
+<li><p>Discrete product rule: <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta (fg)=f\Delta g+\Delta f g+\Delta f \Delta g\)</span></span></p></li>
+<li><p>Compare to continuous product rule: <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(d(fg)=(f+df)(g+dg)-fg=f\,dg+g\,df+\cancel{ df\,dg }\)</span></span></p></li>
+</ul>
+</blockquote>
+<blockquote class="box-proposition" markdown="1">
+<div class="title" markdown="1">
+Summation by parts
+<ul class="simple">
+<li><p>The product rule can be simplified to</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\Delta(fg)(x)=f(x+1)\Delta g(x)+\Delta f(x)g(x)=\Delta f(x)g(x+1)+f(x)\Delta g(x)
+\]</div>
+<p>Re-arranging and summing both sides gives summation by parts:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{x=a}^{b-1} f(x) \Delta g(x)=f(b)g(b)-f(a)g(a)-\sum_{x=a}^{b-1} \Delta f(x)g(x+1)
+\]</div>
+</blockquote>
+<p>When I first learned about the fundamental theorems of calculus, I just thought of them as mechanical rules to apply to crunch algebra. But the discrete versions seem so obvious, and they explain what’s really going on: because we are accumulating changes, everything along your path will eventually cancel out, leaving only the endpoints relevant.</p>
+<p>A similar logic generalizes in several dimensions if you think about walking along a square, or a cube. In the continuous case, Green’s theorem and Stokes’ generalized integration theorem basically say that a change in one direction will be cancelled by a change in another direction unless you lie along the boundary.</p>
+<p>This image from <a class="reference external" href="https://en.wikipedia.org/wiki/Discrete_calculus#Discrete_differential_forms:_cochains">Wikipedia</a> sums it well:
+<img alt="Paths in the interior cancel each other out" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Stokes_patch.svg/2560px-Stokes_patch.svg.png" /></p>
+</section>
+<section id="polynomials-falling-powers">
+<h1>Polynomials: Falling Powers<a class="headerlink" href="#polynomials-falling-powers" title="Link to this heading">#</a></h1>
+<p>The first interesting functions we differentiate in calculus are the monomials:</p>
+<blockquote class="box-fact" markdown="1">
+<div class="title" markdown="1">
+Derivative of <span class="math-inline" markdown="1">$x^n$</span>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dx}x^n=nx^{n-1}
+\]</div>
+</blockquote>
+<p>Naturally, let’s start with them for the discrete case as well. For example, take</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta x=(x+1)-x=1
+\]</div>
+<p>So far so good. Let’s move up a degree.</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta x^2=(x+1)^2-x^2=2x+1
+\]</div>
+<p>Huh. That’s not quite the same as in the continuous version. Strange. Let’s try a few more:</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta x^3=(x+1)^3-x^3=3x^2+3x+1
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\Delta x^4=(x+1)^4-x^4=4x^3+6x^2+4x+1
+\]</div>
+<p>Okay, this is really not going as well as we expected, given that all the properties of operators seemed to match up pretty well before. Let’s take a step back and think through what goes differently in the discrete versus the continuous case.</p>
+<p>Typically, we do the proof using the binomial theorem, <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\((a+b)^n=\sum_{k=0}^{n} \binom{n}{k}a^k b^{n-k}\)</span></span>.</p>
+<blockquote class="box-proposition" markdown="1">
+<div class="title" markdown="1">
+Derivative of $x^n$
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dx}x^n=\lim_{ h \to 0 } \frac{(x+h)^n-x^n}{h}=\lim_{ h \to 0 } \frac{1}{h}\sum_{k=1}^{n}\binom{n}{k}h^k x^{n-k}=\binom{n}{1}x^{n-1}=nx^{n-1}
+\]</div>
+</blockquote>
+<p>The crucial step here is that <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\frac{1}{h}\cdot h^k=h^{k-1}\to 0\)</span></span> as <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(h\to 0\)</span></span> for any <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(k&gt;1\)</span></span>. But in the discrete case, this doesn’t happen: the terms survive as <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(h=1\)</span></span>. So for <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta x^n=(x+1)^n-x^n\)</span></span> we have that the coefficients <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\((x+1)^n\)</span></span> are literally just generated by the binomial expansion in Pascal’s triangle, and we delete the highest degree due to <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(-x^n\)</span></span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{|c||c|c|c|c|c|c|}
+\hline
+\textbf{n} &amp; \mathbf{x^0} &amp; \mathbf{x^1} &amp; \mathbf{x^2} &amp; \mathbf{x^3} &amp; \mathbf{x^4} &amp; \mathbf{x^5} \\
+\hline
+\hline
+\textbf{0} &amp; 1 &amp; &amp; &amp; &amp; &amp; \\
+\hline
+\textbf{1} &amp; 1 &amp; 1 &amp; &amp; &amp; &amp; \\
+\hline
+\textbf{2} &amp; 1 &amp; 2 &amp; 1 &amp; &amp; &amp; \\
+\hline
+\textbf{3} &amp; 1 &amp; 3 &amp; 3 &amp; 1 &amp; &amp; \\
+\hline
+\textbf{4} &amp; 1 &amp; 4 &amp; 6 &amp; 4 &amp; 1 &amp; \\
+\hline
+\textbf{5} &amp; 1 &amp; 5 &amp; 10 &amp; 10 &amp; 5 &amp; 1 \\
+\hline
+\end{array}
+\end{split}\]</div>
+<p><em>Binomial expansion of <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\((x+1)^n\)</span></span> for <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(n=1,2,3,4,5\)</span></span></em></p>
+<p>But having explored linearity so far, we know that we should be able to use linear combinations to construct a polynomial basis that would indeed satisfy an identity like <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\frac{d}{dx}x^n=nx^{n-1}\)</span></span>. Let’s try it out.</p>
+<p>By exploiting the linearity of <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta\)</span></span>, let’s construct polynomials <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(p_{n}(x)\)</span></span> so that <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta p_{n}(x)=np_{n-1}(x)\)</span></span>. From the table, we start at <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta x^0=\Delta 1=0 \implies p_{0}=1\)</span></span> from the constant rule. Also, <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta x=1=1x^0\)</span></span>, giving <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(p_{1}=x\)</span></span>.</p>
+<p>But the problem arises starting from quadratics, where <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta x^2=2x+1\)</span></span>. But <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(2x=\frac{d}{dx}x^2\)</span></span> is the part we are looking for, so let’s isolate it and use the fundamental theorem of discrete calculus. With it, the equation <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta p_{n}=np_{n-1}\)</span></span> is equivalent to <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(p_{n}=\sum np_{n-1}\)</span></span>, i.e. we are computing its anti-difference = sum.</p>
+<div class="math notranslate nohighlight">
+\[
+2x=\Delta x^2-1=\Delta x^2-\Delta x=\Delta (x^2-x)=\Delta [x(x-1)]=\Delta p_{2}
+\]</div>
+<p>Nice, <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(p_{2}=x(x-1)\)</span></span>. Let’s try <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta p_{3}=3p_{2}=3x(x-1)=3x^2-3x\)</span></span>:</p>
+<div class="math notranslate nohighlight">
+\[
+3x^2-3x=(\Delta x^3-3x-1)-3x=\Delta x^3-6x-1=\Delta x^3-3\Delta x(x-1)-\Delta x
+\]</div>
+<p>Hence,</p>
+<div class="math notranslate nohighlight">
+\[
+p_{3}=x^3-3x(x-1)-x=x(x^2-3x+3-1)=x(x^2-3x+2)=x(x-1)(x-2)
+\]</div>
+<p>Hold on, that seems like a suspicious pattern. So far, we got:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+p_{0} &amp;= 1 \\
+p_{1} &amp;= x \\
+p_{2} &amp;= x(x-1) \\
+p_{3} &amp;= x(x-1)(x-2)
+\end{align}
+\end{split}\]</div>
+<p>It seems like our polynomials will look like <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x(x-1)(x-2)(x-3)\dots\)</span></span> as we go on.</p>
+<blockquote class="box-exercise" markdown="1">
+<div class="title" markdown="1">
+Try one more!
+<p>As we did before, compute <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(p_{4}\)</span></span> from <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(4p_{3}=\Delta p_{4}\)</span></span> and verify that the pattern still holds: <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(p_{4}=x(x-1)(x-2)(x-3)\)</span></span>.</p>
+</blockquote>
+<p>Let’s see if we can verify this. Define the falling power:</p>
+<blockquote class="box-definition" markdown="1">
+<div class="title" markdown="1">
+Falling power <span class="math-inline" markdown="1">$x^\underline{n}$</span>
+<div class="math notranslate nohighlight">
+\[
+x^\underline{n}:=\underbrace{ x(x-1)(x-2)\dots(x-(n-1)) }_{ n\text{ terms} }
+\]</div>
+<p>By convention, <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^\underline{0}=1\)</span></span>.</p>
+</blockquote>
+<p>Now, let’s try taking <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta x^\underline{n}\)</span></span>:</p>
+<blockquote class="box-proposition" markdown="1">
+<div class="title" markdown="1">
+Forward difference of <span class="math-inline" markdown="1">$x^\underline{n}$</span>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\Delta x^\underline{n}&amp;=(x+1)\underbrace{ \textcolor{red}{x(x-1)\dots(x-n)} }_{ =x^\underline{n-1} }-\underbrace{ \textcolor{red}{x(x-1)(x-2)\dots(x-n)} }_{ =x^\underline{n-1} }(x-n+1) \\
+&amp;=x^\underline{n-1}[\cancel{ x }+\cancel{ 1 }-(\cancel{ x }-n+\cancel{ 1 })] \\
+&amp;=nx^\underline{n-1}
+\end{align}
+\end{split}\]</div>
+</blockquote>
+<blockquote class="box-corollary" markdown="1">
+<div class="title" markdown="1">
+Sum of $x^\underline{n}$
+<p>Summing and telescoping the identity <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^\underline{n}=\Delta \frac{1}{n+1} x^\underline{n+1}\)</span></span>,</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{x=a}^{b-1} x^\underline{n}=\sum_{x=a}^{b-1}\Delta \frac{1}{n+1}x^\underline{n+1}=\frac{1}{n+1}b^\underline{n+1}-\frac{1}{n+1}a^\underline{n+1}
+\]</div>
+</blockquote>
+<p>So we’ve found exactly the result we were looking for: when using the forward difference instead of the derivative, we have <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta x^\underline{n}=nx^\underline{n-1}\)</span></span> compared to <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(Dx^n=nx^{n-1}\)</span></span>.</p>
+<blockquote class="box-proposition" markdown="1">
+<div class="title" markdown="1">
+Characterization of falling power basis <span class="math-inline" markdown="1">$x^\underline{n}$</span>
+<p><span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^\underline{n}\)</span></span> is the unique sequence of polynomials <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(p_{n}(x)\)</span></span> that satisfies</p>
+<ul class="simple">
+<li><p><span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta p_{n}(x)=p_{n}(x+1)-p_{n}(x)=np_{n-1}(x)\)</span></span></p></li>
+<li><p><span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(p_{0}(x)=1\)</span></span></p></li>
+<li><p><span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(n\ge 1 \implies p_{n}(0)=0\)</span></span> (only <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(p_{0}\)</span></span> has a non-zero constant term)</p></li>
+</ul>
+</blockquote>
+<details class="box-proof" markdown="1">
+<summary markdown="1">
+Characterization of falling power basis <span class="math-inline" markdown="1">$x^\underline{n}$</span>
+</summary>
+1. Existence
+<div class="math notranslate nohighlight">
+\[
+\Delta x^\underline{n} =(x+1)^\underline{n}-x^\underline{n}=(x+1)x^\underline{n-1}-x^\underline{n-1}(x-n+1)=nx^\underline{n-1}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+x^\underline{0}=1
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+n\ge 1 \implies 0^\underline{n}=0(-1)(-2)\dots(-n+1)=0
+\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Uniqueness
+By the fundamental theorem of discrete calculus, sum <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\sum_{x=0}^{k-1}\)</span></span> both sides of the condition <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta p_{n}(x)=np_{n-1}(x)\)</span></span> to get</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+p_{n}(k)\cancel{ -p_{n}(0) }=\sum_{x=0}^{k-1}np_{n-1}(x)
+\]</div>
+<p>for all <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(k\in \mathbb{Z}\)</span></span>. But choosing <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\deg p_{n}+1\)</span></span> points is enough to uniquely determine <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(p_{n}\)</span></span>.</p>
+</details>
+<p>Once we have this, what can we do with it? Let’s see the following problem.</p>
+<blockquote class="box-problem" markdown="1">
+<div class="title" markdown="1">
+Sum of <span class="math-inline" markdown="1">$n$</span> first squares
+<div class="math notranslate nohighlight">
+\[
+\sum_{k=1}^{n}k^2=1^2+2^2+3^2+\dots+n^2=\;?
+\]</div>
+</blockquote>
+<p>Knowing that the basis of <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(n^\underline{r}\)</span></span> is very convenient for differences and sums, we could simply decompose <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(n^2\)</span></span> in terms of <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\{ n^\underline{0},n^\underline{1},n^\underline{2} \}=\{ 1,n,n^\underline{2}\}\)</span></span>. Write <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(k^2=(k^2-k)+k=k^\underline{2}+k\)</span></span>, so that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\sum_{k=1}^{n} k^2&amp;=\sum_{k=0}^nk^2 \\
+&amp;=\sum_{k=0}^{n} k^\underline{2}+\sum_{k=0}^{n} k \\
+&amp;=\frac{1}{3}(n+1)^\underline{3}+\frac{1}{2}(n+1)^\underline{2} \\
+&amp;=\frac{\textcolor{red}{2}}{6}\textcolor{aqua}{(n+1)n}\textcolor{red}{(n-1)}+\frac{\textcolor{red}{3}}{6}\textcolor{aqua}{(n+1)n} \\
+&amp;=\boxed{ \frac{1}{6}n(n+1)(2n+1) } \\ 
+\end{align}
+\end{split}\]</div>
+<blockquote class="box-exercise" markdown="1">
+<div class="title" markdown="1">
+Sum of first <span class="math-inline" markdown="1">$n$</span> cubes
+<div class="math notranslate nohighlight">
+\[
+\sum_{k=1}^{n}k^3=1^3+2^3+3^3+\dots+n^3=\; ?
+\]</div>
+</blockquote>
+<p>Here is a combinatorics problem. Try it out using the following lemma:</p>
+<blockquote class="box-lemma" markdown="1">
+<div class="title" markdown="1">
+Difference and summation of binomial coefficient
+<p>The binomial coefficient is given by</p>
+<div class="math notranslate nohighlight">
+\[
+\binom{x}{k}=\frac{x^\underline{k}}{k!}=\frac{x^\underline{k}}{k^\underline{k}}
+\]</div>
+<p>Then:</p>
+<ul class="simple">
+<li><p>Pascal’s identity:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\frac{\Delta}{\Delta x} \binom{x}{k}=\binom{x+1}{k}-\binom{x}{k}=\binom{x}{k-1}
+\]</div>
+<ul class="simple">
+<li><p>Hockey-stick identity:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\sum_{x=0}^{n-1}\binom{x}{k}=\binom{n}{k+1}
+\]</div>
+</blockquote>
+<blockquote class="box-problem" markdown="1">
+<div class="title" markdown="1">
+Up and Down
+<p>How many 4-digit positive integers <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(d_{1}d_{2}d_{3}d_{4}\)</span></span> satisfy the inequalities <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(d_{1}&gt;d_{2}&lt;d_{3}&gt;d_{4}\)</span></span>?</p>
+</blockquote>
+<details class="box-solution" markdown="1">
+<summary markdown="1">
+Up and Down
+</summary>
+Note that the conditions make <span class="math-inline" markdown="1">$d_{2},d_{4}\in \{ 0,1,2,\dots,9 \}$</span> while <span class="math-inline" markdown="1">$d_{1},d_{3}\in \{ 1,2,\dots,9 \}$</span>, so we don't need to worry about leading digit <span class="math-inline" markdown="1">$0$</span>. We can encode our constraints into a big sum, counting 1 for each valid case:
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\sum_{d_{1}=1}^{9} \sum_{d_{2}=0}^{d_{1}-1}\sum_{d_{3}=d_{2}+1}^{9}\sum_{d_{4}=0}^{d_{3}-1}1
+&amp;=\sum_{d_{1}=1}^{9} \sum_{d_{2}=0}^{d_{1}-1}\sum_{d_{3}=d_{2}+1}^{9} d_{3} \\
+&amp;=\sum_{d_{1}=1}^{9} \sum_{d_{2}=0}^{d_{1}-1}\left(\underbrace{ \binom{10}{2} }_{ =45 }-\binom{d_{2}+1}{2}\right) \\
+&amp;=\sum_{d_{1}=1}^{9}\left(45d_{1}-\sum_{n=1}^{d_{1}}\binom{n}{2}\right) \\
+&amp;=\sum_{d_{1}=1}^{9}\left(45d_{1}-\left.\binom{n}{3}\right\vert_{\cancel{ 1 }}^{d_{1}+1}\right) \\
+&amp;=\sum_{d_{1}=1}^{9}\left( 45d_{1}-\binom{d_{1}+1}{3} \right)  \\
+&amp;=45\binom{10}{2}-\sum_{n=2}^{10} \binom{n}{3} \\
+&amp;=45^2-\left.\binom{n}{4}\right\vert_{\cancel{ 2 }}^{11} \\
+&amp;=2025-\binom{11}{4} \\
+&amp;=2025-330 \\
+&amp;=\boxed{ 1695 }
+\end{align}
+\end{split}\]</div>
+</details>
+<section id="stirling-numbers">
+<h2>Stirling Numbers<a class="headerlink" href="#stirling-numbers" title="Link to this heading">#</a></h2>
+<p>We have seen that the basis <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^\underline{n}\)</span></span> is easier to work with than <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^n\)</span></span> in the discrete case. So, how can we convert between the two in general? They are given by the following linear combinations:</p>
+<div class="math notranslate nohighlight">
+\[
+x^\underline{n}=\sum_{k=0}^{n} s(n,k)x^k
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\newcommand{\bracenom}{\genfrac{\lbrace}{\rbrace}{0pt}{}} 
+x^n=\sum_{k=0}^{n} \bracenom{n}{k}
+\]</div>
+<p>where <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(s(n,k)\)</span></span> are the <em>signed Stirling numbers of the first kind</em> and and <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\newcommand{\bracenom}{\genfrac{\lbrace}{\rbrace}{0pt}{}} \bracenom{n}{k}\)</span></span> are the <em>unsigned Stirling numbers of the second kind</em>. They have many interpretations in combinatorics, but we won’t go over them. To help remember them better, I will use the following notation suggested by Gemini 3.0 Pro that I found really great: <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\binom{\text{Target}}{\text{Source}}\)</span></span>.</p>
+<div class="math notranslate nohighlight">
+\[
+x^\underline{n}=\sum_{k=0}^{n}\binom{\underline{n}}{k}x^k
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+x^n=\sum_{k=0}^{n}\binom{n}{\underline{k}}x^\underline{k}
+\]</div>
+<p>As you can see, the powers line up with the notation in the coefficients.
+We can also use matrix notation for change of basis. Let <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\mathbf{x^{\underline{n}}}\)</span></span> be the column vector of falling factorials and <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\mathbf{x^n}\)</span></span> be the column vector of standard powers:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{x^{\underline{n}}} = \begin{bmatrix} x^{\underline{0}} \\ x^{\underline{1}} \\ x^{\underline{2}} \\ \vdots \\ x^{\underline{n}} \end{bmatrix}, \quad
+\mathbf{x^n} = \begin{bmatrix} x^0 \\ x^1 \\ x^2 \\ \vdots \\ x^n \end{bmatrix}
+\end{split}\]</div>
+<p>We can represent the transformations as matrix multiplications involving lower-triangular matrices. For <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^\underline{n} \mapsto x^n\)</span></span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix} x^{\underline{0}} \\ x^{\underline{1}} \\ x^{\underline{2}} \\ \vdots \\ x^{\underline{n}} \end{bmatrix}
+=
+\begin{bmatrix} 
+\binom{\underline{0}}{0} &amp; 0 &amp; 0 &amp; \cdots &amp; 0 \\
+\binom{\underline{1}}{0} &amp; \binom{\underline{1}}{1} &amp; 0 &amp; \cdots &amp; 0 \\
+\binom{\underline{2}}{0} &amp; \binom{\underline{2}}{1} &amp; \binom{\underline{2}}{1} &amp; \cdots &amp; 0 \\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+\binom{\underline{n}}{0} &amp; \binom{\underline{n}}{1} &amp; \binom{\underline{n}}{1} &amp; \cdots &amp; \binom{\underline{n}}{n}
+\end{bmatrix}
+\begin{bmatrix} x^0 \\ x^1 \\ x^2 \\ \vdots \\ x^n \end{bmatrix}
+\end{split}\]</div>
+<p>For <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^n \mapsto x^\underline{n}\)</span></span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix} x^{0} \\ x^{1} \\ x^{2} \\ \vdots \\ x^{n} \end{bmatrix}
+=
+\begin{bmatrix} 
+\binom{0}{\underline{0}} &amp; 0 &amp; 0 &amp; \cdots &amp; 0 \\
+\binom{1}{\underline{0}} &amp; \binom{1}{\underline{1}} &amp; 0 &amp; \cdots &amp; 0 \\
+\binom{2}{\underline{0}} &amp; \binom{2}{\underline{1}} &amp; \binom{2}{\underline{2}} &amp; \cdots &amp; 0 \\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+\binom{n}{\underline{0}} &amp; \binom{n}{\underline{1}} &amp; \binom{n}{\underline{2}} &amp; \cdots &amp; \binom{n}{\underline{n}}
+\end{bmatrix}
+\begin{bmatrix} x^{\underline{0}} \\ x^{\underline{1}} \\ x^{\underline{2}} \\ \vdots \\ x^{\underline{n}} \end{bmatrix}
+\end{split}\]</div>
+<p>By nature of change of basis, these matrices are inverses of each other. Therefore,</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{k} \binom{\underline{n}}{k}\binom{k}{\underline{m}}=\delta_{nm}
+\]</div>
+<p>where <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(n=m\implies \delta_{nm}=1\)</span></span> else <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(n\ne m \implies \delta_{nm}=0\)</span></span> is the Kronecker delta.</p>
+<p>Now that we have defined a notation for our basis conversions, how can we actually compute the coefficients? To solve this problem, we will introduce perhaps the most overpowered tool in all of discrete mathematics, the theory of <a class="reference external" href="https://math.mit.edu/~goemans/18310S15/generating-function-notes.pdf">generating functions</a>.</p>
+</section>
+</section>
+<section id="generating-functions">
+<h1>Generating functions<a class="headerlink" href="#generating-functions" title="Link to this heading">#</a></h1>
+<blockquote class="box-info" markdown="1">
+<p>A generating function is a clothesline on which we hang up a sequence of numbers for display.</p>
+<ul class="simple">
+<li><p>Herbert S. Wilf, <a class="reference external" href="https://www2.math.upenn.edu/~wilf/gfology2.pdf"><em>generatingfunctionology</em></a></p></li>
+</ul>
+</blockquote>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=bOXCLR3Wric">Video by 3Blue1Brown</a> on generating functions.</p>
+<p>The core idea between generating functions is to take a sequence of numbers <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(a_{0},a_{1},a_{2},\dots\)</span></span> and attach them to a power of some dummy variable <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x\)</span></span>.</p>
+<blockquote class="box-definition" markdown="1">
+<div class="title" markdown="1">
+Generating function
+<p>Given a sequence <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(a_{0},a_{1},a_{2},\dots\)</span></span>, its generating function <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(G(x)\)</span></span> is given by</p>
+<div class="math notranslate nohighlight">
+\[
+G(x)=a_{0}+a_{1}x+a_{2}x^2+a_{3}x^3+\dots=\sum_{n \ge 0}a_{n}x^n
+\]</div>
+</blockquote>
+<p>The natural first question to ask is: are you crazy? Doesn’t this just make everything even more complicated? On its own, yes, of course it accomplishes nothing. But the motivation behind this approach is that relationships concerning the sequence are often easier to encode using the generating functions, and we can then manipulate these generating functions algebraically. Let’s see an example.</p>
+<blockquote class="box-example" markdown="1">
+<div class="title" markdown="1">
+Geometric series
+<p>Suppose you have the sequence <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(1,1,1,1,\dots\)</span></span>. Its generating function is derive like this:</p>
+<div class="math notranslate nohighlight">
+\[
+G(x)=1+x+x^2+\dots=\sum_{n \ge 0}x^n
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+xG(x)=x+x^2+\dots=G(x)-1
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\boxed{ G(x)=\frac{1}{1-x} }
+\]</div>
+<p>Normally, in calculus, you would have to assert that this sum only converges for <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\vert x\vert &lt;1\)</span></span>. However, in the basic setting of generating functions in discrete math, we said in the beginning that <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x\)</span></span> is a dummy variable, so it doesn’t actually have to hold any meaning. Of course, as is common in mathematics, it is possible to draw connections, here between the worlds of discrete and continuous math, but we’ll get to that later.</p>
+</blockquote>
+<blockquote class="box-example" markdown="1">
+<div class="title" markdown="1">
+Reciprocal factorials
+<p>The sequence <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\frac{1}{0!},\frac{1}{1!}, \frac{1}{2!}, \frac{1}{3!},\dots\)</span></span> has generating function</p>
+<div class="math notranslate nohighlight">
+\[
+G(x)=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\dots=\sum_{n \ge 0} \frac{x^n}{n!}=e^x
+\]</div>
+</blockquote>
+<p>So, from these examples alone, we see that generating functions can simplify to something simpler. But that doesn’t solve our problems: to calculate the generating function, we already knew exactly what our sequence was, but the main challenge with sequences is usually to understand them given only some indirect relationships such as recurrence relations.</p>
+<blockquote class="box-problem" markdown="1">
+<div class="title" markdown="1">
+Fibonacci sequence
+<p>The famous Fibonacci sequence is defined recursively through the equation</p>
+<div class="math notranslate nohighlight">
+\[
+f_{n+2}=f_{n+1}+f_{n}, \quad n\ge 0
+\]</div>
+<p>with initial values <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(f_{0}=f_{1}=1\)</span></span>. Now, we will walk through an example of how we can derive a closed-form solution for <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(f_{n}\)</span></span> through generating functions.</p>
+<p>Let the generating function be <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(F(x)=\sum_{n\ge 0}f_{n}x^n\)</span></span>. Now, we try to recover this function in the original defining recurrence relation. Multiply both sides by <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^{n+2}\)</span></span> and sum <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\sum_{n\ge 0}\)</span></span> to get:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{n\ge 0} f_{n+2}x^{n+2}=\sum_{n\ge 0} f_{n+1}x^{n+2}+\sum_{n\ge 0}f_{n}x^{n+2}
+\]</div>
+<p>We can re-index and pull out extra factors of <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x\)</span></span> to obtain</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{n\ge 2}f_{n}x^n=x\sum_{n\ge 1}f_{n}x^n+x^2\sum_{n\ge 0}f_{n}x^n
+\]</div>
+<p>Now we can express these in terms of <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(F(x)=1+x+\sum_{n\ge 2}f_{n}x^n=1+\sum_{n\ge 1}f_{n}x^n\)</span></span>:</p>
+<div class="math notranslate nohighlight">
+\[
+F(x)-x-1=x(F(x)-1)+x^2F(x)
+\]</div>
+<p>Solving for <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(F(x)\)</span></span>, we get</p>
+<div class="math notranslate nohighlight">
+\[
+F(x)(1-x-x^2)=1
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\boxed{ F(x)=\frac{1}{1-x-x^2} }
+\]</div>
+<p>Here, we started with a convenient indexing so we wouldn’t encounter some trouble with bookkeeping. Now we get to the same answer slightly differently to learn how to deal with these troubles, this time starting with this re-indexed recurrence relation</p>
+<div class="math notranslate nohighlight">
+\[
+f_{n}=f_{n-1}+f_{n-2},\quad n\ge 2
+\]</div>
+<p>again with <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(f_{0}=f_{1}=1\)</span></span>. Notice that we now have to deal more carefully with the edge cases, because our recurrence relation only works for <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(n\ge 2\)</span></span>. So, we are only allowed to sum over the equation for <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\sum_{n\ge 2}\)</span></span> after multiplying by <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^n\)</span></span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{n \ge 2}f_{n}x^n=\sum_{n\ge 2}f_{n-1}x^n+\sum_{n\ge 2}f_{n-2}x^n
+\]</div>
+<p>In the end, it turns out to be the same as our original problem. If you tried to sum over <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(n\ge 0\)</span></span> when the equation only holds for <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(n\ge 2\)</span></span>, you would get the wrong answer. So you need to keep track of the problem constraints.</p>
+</blockquote>
+<p>Now that we have found a formula for <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(F(x)\)</span></span>, how do we derive a formula for <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(f_{n}\)</span></span>? The trick is to remember our first identity for the geometric series:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{1-rx}=1+rx+r^2x^2+r^3x^3+\dots
+\]</div>
+<p>So we know the closed-form for the <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(n\)</span></span>-th term a geometric series. But using partial fraction decomposition, we can precisely turn <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(F(x)=\frac{1}{1-x-x^2}\)</span></span> into a linear combination of geometric series. Let’s force</p>
+<div class="math notranslate nohighlight">
+\[
+F(x)=\frac{1}{1-x-x^2}=\frac{1}{(1-\alpha x)(1-\beta x)}=\frac{a}{1-\alpha x}+\frac{b}{1-\beta x}
+\]</div>
+<p>where <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(1-x-x^2=(1-\alpha x)(1-\beta x)\)</span></span>. Comparing coefficients, <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\alpha\beta=-1,-(\alpha+\beta)=-1\)</span></span>, so after substituting <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\beta=-\frac{1}{\alpha}\)</span></span> in <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\alpha+\beta=1\)</span></span>, we get</p>
+<div class="math notranslate nohighlight">
+\[
+\alpha-\frac{1}{\alpha}=1\iff \alpha^2-\alpha-1=0
+\]</div>
+<p>which is the famous equation for the golden ratio: <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\alpha=\phi=\frac{1+\sqrt{5}}{2},\beta=\psi=\frac{1-\sqrt{5}}{2}\)</span></span>. To solve for the partial fraction coefficients, so after clearing denominators, we apply linear operator of evaluation at <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x=\frac{1}{\alpha}\)</span></span> and <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x=\frac{1}{\beta}\)</span></span>, giving <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(a=\frac{1}{1-\frac{\beta}{\alpha}}=\frac{\alpha}{\alpha-\beta}=\frac{\alpha}{\sqrt{5}}\)</span></span>, <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(b=\frac{1}{1-\frac{\alpha}{\beta}}=\frac{\beta}{\beta-\alpha}=-\frac{\beta}{\sqrt{5}}\)</span></span>.</p>
+<blockquote class="box-notation" markdown="1">
+<div class="title" markdown="1">
+Coefficient <span class="math-inline" markdown="1">$a_{n}$</span> of <span class="math-inline" markdown="1">$x^n$</span> in <span class="math-inline" markdown="1">$G(x)$</span>
+<p>For convenience, the notation</p>
+<div class="math notranslate nohighlight">
+\[
+[x^n]G(x)=a_{n}
+\]</div>
+<p>is often used to extract the <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(n\)</span></span>-th term in a sequence from the coefficient of <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^n\)</span></span> in <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(G(x)\)</span></span> (note that <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\([x^n]\)</span></span> is a linear functional).</p>
+</blockquote>
+<p>Hence, our closed-form solution comes from</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+f_{n}&amp;=[x^n]F(x) \\
+&amp;=[x^n] \frac{1}{1-x-x^2} \\
+&amp;=[x^n] \frac{1}{\sqrt{5}}\left(\frac{\phi}{1-\phi x}-\frac{\psi}{1-\psi x}\right) \\
+&amp;=[x^n] \frac{1}{\sqrt{5}} \phi \sum_{n\ge 0}\phi^n x^n-\psi \sum_{n\ge 0}\psi^n x^n \\
+&amp;=[x^n] \frac{1}{\sqrt{5}} \sum_{n\ge 0}\left( \phi^{n+1}-\psi^{n+1} \right) \\
+&amp;=\frac{\phi^{n+1}-\psi^{n+1}}{\sqrt{5}} \\
+&amp;=\boxed{ \frac{1}{\sqrt{5}}\left( \left( \frac{1+\sqrt{5}}{2} \right)^{n+1} - \left( \frac{1-\sqrt{5}}{2} \right)^{n+1}  \right)  }
+\end{align}
+\end{split}\]</div>
+<blockquote class="box-exercise" markdown="1">
+<div class="title" markdown="1">
+Geometric series via recurrence relation
+<p>Using a similar approach on the recursive relation</p>
+<div class="math notranslate nohighlight">
+\[
+g_{n+1}=rg_{n},\quad n\ge 0
+\]</div>
+<p>with <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(g_{0}=a\)</span></span>, prove that <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(G(x)=\frac{a}{1-r}\)</span></span>.</p>
+</blockquote>
+<p>Another reason why generating functions are so useful is that you can create a factor of <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(n\)</span></span> in a recursion by taking the derivative. Here is an example where the dummy variable <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x\)</span></span> does mean something, and we care about convergence.</p>
+<blockquote class="box-problem" markdown="1">
+<div class="title" markdown="1">
+Random problem on Twitter
+<p>Taken from &#64;abakcus on X: <a class="reference external" href="https://x.com/abakcus/status/1990261853801611758">https://x.com/abakcus/status/1990261853801611758</a>
+Find</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{n=1}^{\infty}\frac{n^3}{2^n}=\; ?
+\]</div>
+</blockquote>
+<p>We use generating functions for this problem. Note that <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(n^3=n^\underline{3}+3n^\underline{2}+n^\underline{1}\)</span></span>. Write</p>
+<div class="math notranslate nohighlight">
+\[
+f(x)=\sum_{n\ge 1}n^3 x^n=\sum_{n\ge 1}(n^\underline{3}+3n^\underline{2}+n^\underline{1})x^n
+\]</div>
+<p>which converges for <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\vert x\vert &lt;1\)</span></span>.</p>
+<blockquote class="box-principle" markdown="1">
+<div class="title" markdown="1">
+Derivative
+<p>Using our convenient falling power basis for <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(n\)</span></span>, we decompose the sum by noting that <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(D^k x^n:=\left( \frac{d}{dx} \right)^k x^n=n^\underline{k}x^{n-k}\)</span></span>.</p>
+<div class="math notranslate nohighlight">
+\[
+D^k \sum_{n\ge 0}a_{n}x^n=\sum_{n\ge 0}a_{n}D^kx^n= \sum_{n\ge 0}n^{\underline{k}}a_{n}x^{n-k}
+\]</div>
+</blockquote>
+<div class="math notranslate nohighlight">
+\[
+f(x)=x^3 \sum_{n\ge 1}n^\underline{3}x^{n-3}+3x^2 \sum_{n\ge 1}n^\underline{2}x^{n-2}+x\sum_{n\ge 1}n^\underline{1}x^{n-1}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+f(x)=x^3 \sum_{n\ge 1} D^3 x^n+3x^2 \sum_{n\ge 1} D^2x^n+x\sum_{n\ge 1}Dx^n
+\]</div>
+<p>Interchanging the derivative and summation:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x)=x^3 D^3 \sum_{n\ge 1}x^n+3x^2 D^2 \sum_{n\ge 1}x^n+xD \sum_{n\ge 1}x^n
+\]</div>
+<p>Using the geometric series formula <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\sum_{n \ge 1}x^n=x\sum_{n\ge 0} x^n=\frac{x}{1-x}\)</span></span>, we now just need to apply <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(D,D^2,D^3\)</span></span> on it then add everything together.</p>
+<div class="math notranslate nohighlight">
+\[
+D \frac{x}{1-x}=D\left( \frac{x-1+1}{1-x} \right)=D\left( -1+\frac{1}{1-x} \right)=(1-x)^{-2}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+D^2 \frac{x}{1-x}=D (1-x)^{-2}=2(1-x)^{-3}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+D^3 \frac{x}{1-x}=D \; 2(1-x)^{-3}=6(1-x)^{-4}
+\]</div>
+<blockquote class="box-remark" markdown="1">
+<div class="title" markdown="1">
+Feynman's trick: differentiation under the integral sign
+<p>In the continuous case, the act of creating a generating function and manipulating it with derivatives is called <em>differentiation under the integral sign</em>, <em>Feynman’s integration trick</em>.
+We first turn our function <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(f(x)\)</span></span> into a generating function with parameter <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\alpha\)</span></span>, and then integrate:</p>
+<div class="math notranslate nohighlight">
+\[
+I(\alpha)=\int f(x,\alpha)\, dx
+\]</div>
+<p>Under suitable conditions for convergence,</p>
+<div class="math notranslate nohighlight">
+\[
+I'(\alpha)=\frac{ \partial }{ \partial \alpha } \int f(x,\alpha)\,dx=\int \frac{ \partial }{ \partial \alpha } f(x,\alpha)\,dx
+\]</div>
+</blockquote>
+<blockquote class="box-exercise" markdown="1">
+<div class="title" markdown="1">
+Spot the pattern!
+<p>Can you find a closed-form expression for <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(D^n \frac{x}{1-x}\)</span></span>?</p>
+</blockquote>
+<p>Now, we can simply plug everything in.</p>
+<div class="math notranslate nohighlight">
+\[
+f(x):=\sum_{n\ge 1}n^3 x^n=x^3\cdot 6(1-x)^{-4}+3x^2 \cdot 2(1-x)^{-3}+x(1-x)^{-2}
+\]</div>
+<p>Evaluating at <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x=\frac{1}{2}\)</span></span> for the original sum <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\sum_{n=1}^{\infty}\frac{n^3}{2^n}\)</span></span>, note that <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\left( 1-\frac{1}{2} \right)^{-k}=2^k\)</span></span>, so <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\left( \frac{1}{2} \right)^k \cdot (1-\frac{1}{2})^{-k-1}=2^{-k}\cdot 2^{k+1}=2\)</span></span>.</p>
+<div class="math notranslate nohighlight">
+\[
+f\left( \frac{1}{2} \right)=6\cdot 2+3\cdot 2\cdot 2+2=\boxed{ 26 }
+\]</div>
+<blockquote class="box-exercise" markdown="1">
+<div class="title" markdown="1">
+<span class="math-inline" markdown="1">$(xD)^n$</span>
+<p>The operator of differentiation then multiplication by a polynomial <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(E=p(x)\cdot D\)</span></span> is sometimes called the Cauchy-Euler operator, defined for some polynomial <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(p(x)\)</span></span> and the differentiation operator <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(D:=\frac{d}{dx}\)</span></span>. Applied to a function <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(f(x)\)</span></span>, it gives <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(Ef(x)=p(x)f'(x)\)</span></span>.</p>
+<p>Notably, the simplest example <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(E=xD\)</span></span> has eigenfunctions <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^n\)</span></span>, since <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(Ex^n=xDx^n=nx^n\)</span></span>. This matches the form in our earlier problem! Based on our steps, find a closed-form expression for <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\((xD)^n\)</span></span> as a linear combination of the terms <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^k D^k\)</span></span>.</p>
+</blockquote>
+<p>Now that we have the powerful tool of generating functions in our pockets, let’s go back to the question of figuring out how to compute the Stirling numbers.</p>
+<div class="math notranslate nohighlight">
+\[
+x^\underline{n}=\sum_{k=0}^{n}\binom{\underline{n}}{k}x^k
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+x^n=\sum_{k=0}^{n}\binom{n}{\underline{k}}x^\underline{k}
+\]</div>
+<p>Let’s start by trying a recursive approach. <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^\underline{n+1}=x^\underline{n} (x-n)\)</span></span>, so</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{k=0}^{n+1}\binom{\underline{n+1}}{k}x^k=(x-n)\sum_{j=0}^{n}\binom{\underline{n}}{j}x^j=\sum_{i=0}^{n}\binom{\underline{n}}{i}x^{i+1}-n\sum_{j=0}^{n}\binom{\underline{n}}{j}x^{j}
+\]</div>
+<p>Take <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\([x^k]\)</span></span> on both sides for <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(1\le k \le n\)</span></span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\binom{\underline{n+1}}{k}=\binom{\underline{n}}{k-1}-n\binom{\underline{n}}{k}
+\]</div>
+<p>Great, now we construct the generating function. Note that <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\binom{\underline{n}}{k}=0\)</span></span> for <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(n&lt;k\)</span></span>, since the polynomials <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^\underline{n},x^{n}\)</span></span> have the same degrees, high powers can’t contribute, so let the generating function</p>
+<div class="math notranslate nohighlight">
+\[
+A_{k}(y)=\sum_{n\ge 0}\binom{\underline{n}}{k}y^n=\sum_{n\ge k} \binom{\underline{n}}{k}y^n
+\]</div>
+<p>Now we multiply our recurrence relation by <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(y^{n+1}\)</span></span> and sum over <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(n\ge k\)</span></span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{n\ge k}\binom{\underline{n+1}}{k}y^{n+1}=y\sum_{n\ge k}\binom{\underline{n}}{k-1}y^{n}-ny\sum_{n\ge k}\binom{\underline{n}}{k}y^{n}
+\]</div>
+<p>Writing in terms of <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(A_{k}(y)\)</span></span>:</p>
+<div class="math notranslate nohighlight">
+\[
+LHS=\sum_{n\ge k+1}\binom{\underline{n}}{k}y^n=A_{k}(y)-\underbrace{ \binom{\underline{k}}{k} }_{ =1 }y^{k}=A_{k}(y)-y^k
+\]</div>
+<p>where we know polynomials <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(y^\underline{k},y^k\)</span></span> have the same leading coefficient <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(1\)</span></span>, so <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\binom{\underline{k}}{k}=1\)</span></span>.
+Let the terms in the RHS be <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(RHS_{1}\)</span></span> and <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(RHS_{2}\)</span></span> in order:</p>
+<div class="math notranslate nohighlight">
+\[
+RHS_{1}=y\left(A_{k-1}(y)-\underbrace{ \binom{\underline{k-1}}{k-1} }_{ =1 }y^{k-1}\right)=yA_{k-1}(y)-y^k
+\]</div>
+<p>The second term has a factor of <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(n\)</span></span>, so we need a derivative.
+Note that</p>
+<div class="math notranslate nohighlight">
+\[
+A'_{k}(y)=\sum_{n\ge k}\binom{\underline{n}}{k}ny^{n-1}=\frac{n}{y}\sum_{n\ge k}\binom{\underline{n}}{k}y^n
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+RHS_{2}=-y^2 A'_{k}(y)
+\]</div>
+<p>Altogether,</p>
+<div class="math notranslate nohighlight">
+\[
+A_{k}(y)\cancel{ -y^k }=yA_{k-1}(y)\cancel{ -y^k }-y^2 A'_{k}(y)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+A_{k}(y)+y^2 A'_{k}(y)=yA_{k-1}
+\]</div>
+<p>This is a first-order ODE, and you can solve it using integrating factors, but it results in some very ugly algebra and a lot of integration. It turns out, there’s a better approach to this problem.</p>
+<blockquote class="box-definition" markdown="1">
+<div class="title" markdown="1">
+Exponential Generating Function (EGF)
+<p>So far, we have only been working with something called the <em>ordinary generating function (OGF)</em>. For a sequence <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(a_{0},a_{1},a_{2},\dots\)</span></span></p>
+<div class="math notranslate nohighlight">
+\[
+OGF(x)=\sum_{n\ge 0}a_{n}x^{n}
+\]</div>
+<p>But for problems involving falling powers (which includes factorials, binomial coefficients, e.g. labeled set structures and permutations), the <em>exponential generating function (EGF)</em> often simplifies better:</p>
+<div class="math notranslate nohighlight">
+\[
+EGF(x)=\sum_{n\ge 0}\frac{a_{n}}{n!}x^n
+\]</div>
+<p>If <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(a_{n}=1\)</span></span> for all <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(n\)</span></span>, then we recover the Taylor series of <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(e^x\)</span></span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{n\ge 0}\frac{x^n}{n!}=e^x
+\]</div>
+<p>as opposed to the geometric series <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\sum_{n\ge 0}x^n=\frac{1}{1-x}\)</span></span> for the OGFs.</p>
+</blockquote>
+<blockquote class="box-example" markdown="1">
+<div class="title" markdown="1">
+Derivative of EGF
+<div class="math notranslate nohighlight">
+\[
+A(x)=\sum_{n\ge 0}\frac{a_{n}}{n!}x^n=a_{0}+a_{1}x+\frac{a_{2}}{2!}x^2+\frac{a_{3}}{3!}x^3+\cdots
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+A'(x)=a_{1}+a_{2}x+\frac{a_{3}}{2!}x^2+\cdots=\sum_{n\ge 1}\frac{a_{n}}{(n-1)!}x^{n-1}=\sum_{n\ge 0}\frac{a_{n+1}}{n!}x^n
+\]</div>
+<p>So the factor of <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(n\)</span></span> cancels, and the index just shifts by <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(1\)</span></span>. This simplifies algebra for ODEs with recursions like <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(a_{n}=na_{n-1}\)</span></span>.</p>
+</blockquote>
+<p>Let’s try it out on our problem of computing Stirling coefficients.</p>
+<p>First, we need the binomial theorem.</p>
+<blockquote class="box-exercise" markdown="1">
+<div class="title" markdown="1">
+Binomial theorem
+<p>Define the binomial coefficient</p>
+<div class="math notranslate nohighlight">
+\[
+\binom{n}{k}=\frac{n^\underline{k}}{k^\underline{k}}=\frac{n^\underline{k}}{k!}
+\]</div>
+<p>Using the generating function</p>
+<div class="math notranslate nohighlight">
+\[
+G(x,y)=\sum_{n\ge 0}\sum_{k\ge 0}\binom{n}{k}x^n y^k
+\]</div>
+<p>Prove by taking <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\([x^n]\)</span></span> that</p>
+<div class="math notranslate nohighlight">
+\[
+(y+1)^n=\sum_{k=0}^{n}\binom{n}{k}y^k
+\]</div>
+<p>Hint: note that <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\binom{n}{0}=1,n\ge 0\)</span></span>, <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\binom{0}{k}=0, k\ge 1\)</span></span>,</p>
+<div class="math notranslate nohighlight">
+\[
+\binom{n+1}{k+1}=\binom{n}{k+1}+\binom{n}{k},\quad n,k\ge 0
+\]</div>
+<p>Then, replacing <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(y=\frac{a}{b}\)</span></span>, prove the full binomial theorem:</p>
+<div class="math notranslate nohighlight">
+\[
+(a+b)^n=\sum_{k=0}^{n}\binom{n}{k}a^k b^{n-k}
+\]</div>
+<p>If you more practice, you can also take <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\([y^k]\)</span></span> to prove the Stars and Bars identity:</p>
+<div class="math notranslate nohighlight">
+\[
+[x^n]\left( \frac{1}{1-x} \right)^{k}=\binom{n+k-1}{k-1}
+\]</div>
+<p>which by remembering <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\frac{1}{1-x}=1+x+x^2+\cdots\)</span></span> is the number of nonnegative integer solutions to</p>
+<div class="math notranslate nohighlight">
+\[
+x_{1}+x_{2}+\dots+x_{k}=n
+\]</div>
+</blockquote>
+<p>Now, to recover an exponential generating function, we apply the clever identity</p>
+<div class="math notranslate nohighlight">
+\[
+a^b=e^{\ln(a^b)}=e^{b \ln a}
+\]</div>
+<p>with <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(a=(x+1),b=n\)</span></span>. Define</p>
+<div class="math notranslate nohighlight">
+\[
+F(x,n)=(x+1)^n=\sum_{k=0}^n \binom{n}{k}x^k=\sum_{k=0}^n \frac{n^\underline{k}}{k!}x^k
+\]</div>
+<p>From our definition <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(n^\underline{k}=\sum_{j=0}^{k}\binom{\underline{k}}{j}n^j\)</span></span>,</p>
+<div class="math notranslate nohighlight">
+\[
+F(x,n)=\sum_{k=0}^{n}\frac{x^k}{k!}\sum_{j=0}^{k} \binom{\underline{k}}{j}n^j
+\]</div>
+<p>then we have</p>
+<div class="math notranslate nohighlight">
+\[
+F(x,n)=e^{n\ln(x+1)}=\sum_{j\ge 0}\frac{(n \ln(x+1))^j}{j!}=\sum_{j\ge 0} \frac{(\ln(x+1))^j}{j!} n^j
+\]</div>
+<p>Comparing coefficients with <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\([n^j]\)</span></span>, we get that</p>
+<div class="math notranslate nohighlight">
+\[
+[n^j]F(x,n)=\sum_{k=0}^{n} \binom{\underline{k}}{j}\frac{x^k}{k!}=\frac{(\ln(x+1))^j}{j!}
+\]</div>
+<blockquote class="box-exercise" markdown="1">
+<div class="title" markdown="1">
+Stirling numbers of the second kind <span class="math-inline" markdown="1">$\binom{n}{\underline{k}}$</span>
+<p>Find a similar relationship for <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\binom{n}{\underline{k}}\)</span></span> using the following trick:</p>
+<div class="math notranslate nohighlight">
+\[
+e^{zt}=(1+(e^t-1))^z
+\]</div>
+<p>You should arrive at</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{n\ge k} \binom{n}{\underline{k}}\frac{t^n}{n!}=\frac{(e^{t}-1)^k}{k!}
+\]</div>
+</blockquote>
+<p>For solving discrete problems (sums), we usually convert from the power basis <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^k\)</span></span> to the falling power basis <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^\underline{k}\)</span></span> via the Stirling numbers of the second kind, so we’ll derive an expression for them. We expand the RHS using binomial theorem and Taylor series of <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(e^x\)</span></span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\sum_{n\ge k}\binom{n}{\underline{k}}\frac{t^n}{n!}
+&amp;=\frac{1}{k!} \sum_{j=0}^{k} \binom{k}{j}e^{jt}(-1)^{k-j} \\
+&amp;=\frac{1}{k!} \sum_{j=0}^{k} (-1)^{k-j}\binom{k}{j} \sum_{n \ge 0}\frac{(jt)^n}{n!}
+\end{align}
+\end{split}\]</div>
+<p>Comparing coefficients <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\left[ \frac{t^n}{n!} \right]\)</span></span> of the EGF:</p>
+<blockquote class="box-proposition" markdown="1">
+<div class="title" markdown="1">
+Closed-form solution for Stirling numbers of the second kind <span class="math-inline" markdown="1">$\binom{n}{\underline{k}}$</span>
+<div class="math notranslate nohighlight">
+\[
+\boxed{ \binom{n}{\underline{k}}=\frac{1}{k!}\sum_{j=0}^k (-1)^{k-j}\binom{k}{j}j^n }
+\]</div>
+</blockquote>
+<p>So we can convert from <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^k\)</span></span> to <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^\underline{k}\)</span></span> basis fairly OK, but as for the Stirling numbers of the first kind <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\binom{\underline{n}}{k}\)</span></span> for the inverse matrix, from <a class="reference external" href="https://en.wikipedia.org/wiki/Stirling_numbers_of_the_first_kind#Explicit_formula">Wikipedia</a>:</p>
+<blockquote>
+<div><p>No one-sum formula for Stirling numbers of the first kind is currently known. A two-sum formula can be obtained using one of the <a class="reference external" href="https://en.wikipedia.org/wiki/Stirling_number#Symmetric_formulae" title="Stirling number">symmetric formulae for Stirling numbers</a> in conjunction with the explicit formula for <a class="reference external" href="https://en.wikipedia.org/wiki/Stirling_numbers_of_the_second_kind" title="Stirling numbers of the second kind">Stirling numbers of the second kind</a>.</p>
+</div></blockquote>
+<blockquote class="box-exercise" markdown="1">
+<div class="title" markdown="1">
+Taylor series of <span class="math-inline" markdown="1">$\ln(1+x)$</span>
+<p>Find the Taylor series of <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\ln(1+x)\)</span></span>, given</p>
+<div class="math notranslate nohighlight">
+\[
+\ln(1+x)=\int \frac{1}{1+x} \,dx
+\]</div>
+<p>and <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\frac{1}{1+x}=\frac{1}{1-(-x)}=\sum_{n \ge 0}(-x)^n\)</span></span>.</p>
+</blockquote>
+</section>
+<section id="natural-discrete-base-2">
+<h1>Natural Discrete Base 2<a class="headerlink" href="#natural-discrete-base-2" title="Link to this heading">#</a></h1>
+<p>In infinitesimal calculus, we define the <em>natural base</em> <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(e\)</span></span> by</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dx}e^x=e^x
+\]</div>
+<p>What is the natural basis <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(a\)</span></span> in the continuous world? It’s a lot easier to solve:</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta a^n=a^n
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+a^{n+1}-a^n=a^n\iff a^{n+1}=2a^n
+\]</div>
+<p>For the non-trivial solution <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(a\ne 0\)</span></span>, we divide both sides by <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(a^n\)</span></span> to find <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(a=2\)</span></span>. So actually, <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(2\)</span></span> is the natural basis for the discrete world. We expand on this in the next section.</p>
+<blockquote class="box-example" markdown="1">
+<div class="title" markdown="1">
+<span class="math-inline" markdown="1">$\sum_{n=0}^{k} n 2^n$</span>
+<p>You could use generating functions, of course. Here, just like in <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\int_{a}^{b} xe^x \,dx\)</span></span>, we apply summation by parts.</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{x=a}^{b-1} f(x) \Delta g(x)=\left.f(x)g(x)\right\vert_{a}^{b}-\sum_{x=a}^{b-1} \Delta f(x)g(x+1)
+\]</div>
+<p>Take <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(f(n)=n=n^\underline{1},g(n)=2^n\)</span></span>, so <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta f(n)=1, \Delta g(n)=2^n\)</span></span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\sum_{n=0}^{k} n 2^n&amp;=\left.\left(n\cdot 2^n\right)\right\vert_{0}^{k+1}-\sum_{n=0}^{k}1 \cdot 2^{n+1} \\
+&amp;=(k+1)2^{k+1}-(2^{k+2}-2) \\
+&amp;=\boxed{ (k-1)2^{k+1}+2 }
+\end{align}
+\end{split}\]</div>
+</blockquote>
+</section>
+<section id="newton-series">
+<h1>Newton series<a class="headerlink" href="#newton-series" title="Link to this heading">#</a></h1>
+<p>Given the defining equation</p>
+<div class="math notranslate nohighlight">
+\[
+e^x=\frac{d}{dx}e^x
+\]</div>
+<p>If we assume that <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(e^x\)</span></span> is analytic, i.e. we can write it as a power series, then we are generating a sequence defined by <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(Dx^n=nx^{n-1},n\ne 0\)</span></span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+a_{0}+a_{1}x+a_{2}x^2+a_{3}x^3+\dots&amp;=\frac{d}{dx}(a_{0}+a_{1}x+a_{2}x^2+a_{3}x^3+\dots) \\
+&amp;=a_{1}+2a_{2}x+3a_{3}x^2+\dots
+\end{align}
+\end{split}\]</div>
+<p>Comparing <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^n\)</span></span>, we get the recurrence <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(a_{n+1}=na_{n}\)</span></span>, <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(a_{0}=e^{0}=1\)</span></span>, or <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(a_{n}=n!\)</span></span> giving the famous Taylor series</p>
+<div class="math notranslate nohighlight">
+\[
+e^x=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots
+\]</div>
+<p>The Taylor series is an expansion in the basis <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^k\)</span></span> and <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(D=\frac{d}{dx}\)</span></span>:</p>
+<blockquote class="box-definition" markdown="1">
+<div class="title" markdown="1">
+Taylor series
+<div class="math notranslate nohighlight">
+\[
+f(x)=\sum_{n=0}^\infty \frac{(D^nf)(a)}{n!}(x-a)^n
+\]</div>
+</blockquote>
+<p>But lesser know is the notion of Newton series, which is simply a series in the basis of <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^\underline{k}\)</span></span> and <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta\)</span></span>. It is also called the Gregory-Newton forward difference interpolation formula because it interpolates at integer points based on <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta\)</span></span>.</p>
+<blockquote class="box-definition" markdown="1">
+<div class="title" markdown="1">
+Newton series
+<div class="math notranslate nohighlight">
+\[
+f(x)=\sum_{n=0}^{\infty} \frac{(\Delta^n f)(a)}{n!}(x-a)^\underline{n}=\sum_{n=0}^{\infty} \binom{x-a}{k}(\Delta^n f)(a)
+\]</div>
+</blockquote>
+<blockquote class="box-example" markdown="1">
+<div class="title" markdown="1">
+Newton series of <span class="math-inline" markdown="1">$2^x$</span>
+<p>Based on the change of basis through the Stirling numbers, the Newton series of <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(2^x\)</span></span> in <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^\underline{k}\)</span></span> looks exactly like <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(e^x\)</span></span> in <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^k\)</span></span> since just as <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(D^n e^x=e^x\)</span></span> with <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(e^0=1\)</span></span>, <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta^n 2^x=2^x\)</span></span>, and <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(2^0=1\)</span></span>, so <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(2^x\)</span></span> encodes the sequence <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(1,1,1,1,\dots\)</span></span> in an EGF in <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^\underline{k}\)</span></span>:</p>
+<div class="math notranslate nohighlight">
+\[
+2^x=\sum_{n=0}^\infty \frac{1}{n!}x^\underline{n}=1+x^\underline{1}+\frac{x^\underline{2}}{2!}+\frac{x^\underline{3}}{3!}+\dots
+\]</div>
+</blockquote>
+<p>We can also derive it in a funny way using operator calculus. Let <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(E=e^D\)</span></span> be the shift operator <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(Ef(x)=f(x+1)\)</span></span>, so that <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(E=I+\Delta\)</span></span> for the identity operator <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(If(x)=f(x)\)</span></span>. Then Newton series for integers comes from the (extended) binomial theorem:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+f(x)&amp;=E^x f(0) \\
+&amp;=(I+\Delta)^x f(0) \\
+&amp;=\sum_{k\ge 0} \binom{x}{k}\Delta^k f(0)
+\end{align}
+\end{split}\]</div>
+<p>For an example application, you can use this formula to solve for sequences that you know have a polynomial solution of degree <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(n\)</span></span> with <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(n+1\)</span></span> points.</p>
+<p>Here is a quick worked example and an exercise based on the logic that <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(f(x) = \sum_{k=0}^\infty \frac{(\Delta^k f)(0)}{k!} x^{\underline{k}}\)</span></span>.</p>
+<p>While <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(2^x\)</span></span> is an infinite series (because the differences never go to zero), this method is most powerful for finding <strong>polynomial closed forms</strong> for integer sequences, where the differences eventually become zero.</p>
+</section>
+<section id="example-application-find-the-closed-form">
+<h1>Example Application: Find the closed form<a class="headerlink" href="#example-application-find-the-closed-form" title="Link to this heading">#</a></h1>
+<blockquote class="box-example" markdown="1">
+<div class="title" markdown="1">
+**Problem:** Find the lowest degree polynomial <span class="math-inline" markdown="1">$f(x)$</span> that generates the sequence: <span class="math-inline" markdown="1">$1, 6, 15, 28, \dots$</span> for <span class="math-inline" markdown="1">$x=0, 1, 2, 3 \dots$</span>
+<p><strong>Step 1: Build the Difference Table</strong>
+Just as a Taylor series requires derivatives at <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x=0\)</span></span>, the Newton series requires the forward differences at <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x=0\)</span></span> (the first number in each row).</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{r|cccccl}
+x &amp; f(x) &amp; \Delta &amp; \Delta^2 &amp; \Delta^3 &amp; \dots \\
+\hline
+0 &amp; \mathbf{1} &amp; &amp; &amp; &amp; \\
+&amp; &amp; \mathbf{5} &amp; &amp; &amp; \\
+1 &amp; 6 &amp; &amp; \mathbf{4} &amp; &amp; \\
+&amp; &amp; 9 &amp; &amp; \mathbf{0} &amp; \leftarrow \text{Stops here} \\
+2 &amp; 15 &amp; &amp; 4 &amp; &amp; \\
+&amp; &amp; 13 &amp; &amp; &amp; \\
+3 &amp; 28 &amp; &amp; &amp; &amp; \\
+\end{array}
+\end{split}\]</div>
+<p><strong>Step 2: Apply the Formula</strong>
+We take the “diagonal” values <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\((\mathbf{1}, \mathbf{5}, \mathbf{4}, \mathbf{0})\)</span></span> as our coefficients for <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\frac{x^\underline{k}}{k!}\)</span></span>.</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = 1 \cdot \frac{x^\underline{0}}{0!} + 5 \cdot \frac{x^\underline{1}}{1!} + 4 \cdot \frac{x^\underline{2}}{2!}
+\]</div>
+<p><strong>Step 3: Convert to Standard Polynomials</strong>
+Recall that <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^\underline{1} = x\)</span></span> and <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^\underline{2} = x(x-1)\)</span></span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+f(x) &amp;= 1(1) + 5(x) + \frac{4}{2} x(x-1) \\
+&amp;= 1 + 5x + 2(x^2 - x) \\
+&amp;= 1 + 5x + 2x^2 - 2x \\
+&amp;= \mathbf{2x^2 + 3x + 1}
+\end{aligned}
+\end{split}\]</div>
+<p><em>(Check: If <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x=3\)</span></span>, <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(2(9) + 9 + 1 = 28\)</span></span>. It works.)</em></p>
+</blockquote>
+</section>
+<section id="example-formula-for-the-sum-of-cubes">
+<h1>Example: Formula for the Sum of Cubes<a class="headerlink" href="#example-formula-for-the-sum-of-cubes" title="Link to this heading">#</a></h1>
+<p>This is a classic application of the method. Because the sum of polynomials of degree <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(d\)</span></span> results in a polynomial of degree <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(d+1\)</span></span>, we know ahead of time that the sum of cubes (degree 3) will result in a degree 4 polynomial. This guarantees the difference table will eventually hit zero.</p>
+<blockquote class="box-example" markdown="1">
+<div class="title" markdown="1">
+**Problem:** Find the formula for <span class="math-inline" markdown="1">$S(x) = \sum_{i=1}^x i^3 = 1^3 + 2^3 + \dots + x^3$</span>.
+<p><strong>Step 1: Generate the Sequence and Difference Table</strong>
+We must include <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x=0\)</span></span> (the empty sum, which is 0) to anchor the Newton series properly.</p>
+<ul class="simple">
+<li><p><span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x=0, S=0\)</span></span></p></li>
+<li><p><span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x=1, S=1\)</span></span></p></li>
+<li><p><span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x=2, S=1+8=9\)</span></span></p></li>
+<li><p><span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x=3, S=9+27=36\)</span></span></p></li>
+<li><p><span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x=4, S=36+64=100\)</span></span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{r|cccccl}
+x &amp; S(x) &amp; \Delta &amp; \Delta^2 &amp; \Delta^3 &amp; \Delta^4 &amp; \dots \\
+\hline
+0 &amp; \mathbf{0} &amp; &amp; &amp; &amp; &amp; \\
+&amp; &amp; \mathbf{1} &amp; &amp; &amp; &amp; \\
+1 &amp; 1 &amp; &amp; \mathbf{7} &amp; &amp; &amp; \leftarrow (8-1) \\
+&amp; &amp; 8 &amp; &amp; \mathbf{12} &amp; &amp; \leftarrow (19-7) \\
+2 &amp; 9 &amp; &amp; 19 &amp; &amp; \mathbf{6} &amp; \leftarrow (18-12) \\
+&amp; &amp; 27 &amp; &amp; 18 &amp; &amp; \\
+3 &amp; 36 &amp; &amp; 37 &amp; &amp; 0 &amp; \leftarrow \text{Stops!} \\
+&amp; &amp; 64 &amp; &amp; &amp; &amp; \\
+4 &amp; 100 &amp; &amp; &amp; &amp; &amp;
+\end{array}
+\end{split}\]</div>
+<p><strong>Step 2: Apply the Newton Series Formula</strong>
+The diagonal values are <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\mathbf{0, 1, 7, 12, 6}\)</span></span>.</p>
+<div class="math notranslate nohighlight">
+\[
+S(x) = 0 \frac{x^\underline{0}}{0!} + 1 \frac{x^\underline{1}}{1!} + 7 \frac{x^\underline{2}}{2!} + 12 \frac{x^\underline{3}}{3!} + 6 \frac{x^\underline{4}}{4!}
+\]</div>
+<p><strong>Step 3: Simplify</strong>
+Evaluate the factorials: <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(1! = 1, 2!=2, 3!=6, 4!=24\)</span></span>.</p>
+<div class="math notranslate nohighlight">
+\[
+S(x) = x + \frac{7}{2}x(x-1) + \frac{12}{6}x(x-1)(x-2) + \frac{6}{24}x(x-1)(x-2)(x-3)
+\]</div>
+<p>This is a valid formula, but to show it matches the standard textbook formula, we simplify algebraically.</p>
+<ol class="arabic simple">
+<li><p><strong>Linear/Quadratic terms:</strong> <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x + 3.5(x^2-x) = 3.5x^2 - 2.5x\)</span></span></p></li>
+<li><p><strong>Cubic term:</strong> <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(2(x^3 - 3x^2 + 2x) = 2x^3 - 6x^2 + 4x\)</span></span></p></li>
+<li><p><strong>Quartic term:</strong> <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\frac{1}{4}(x^4 - 6x^3 + 11x^2 - 6x)\)</span></span></p></li>
+</ol>
+<p>Summing these up:</p>
+<ul class="simple">
+<li><p><span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^4\)</span></span>: <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\frac{1}{4}x^4\)</span></span></p></li>
+<li><p><span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^3\)</span></span>: <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(-\frac{6}{4}x^3 + 2x^3 = \frac{1}{2}x^3\)</span></span></p></li>
+<li><p><span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^2\)</span></span>: <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\frac{11}{4}x^2 - 6x^2 + 3.5x^2 = \frac{1}{4}x^2\)</span></span></p></li>
+<li><p><span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^1\)</span></span>: <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(-\frac{6}{4}x + 4x - 2.5x = 0\)</span></span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+S(x) = \frac{1}{4}x^4 + \frac{1}{2}x^3 + \frac{1}{4}x^2 = \frac{x^2}{4}(x^2 + 2x + 1)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{S(x) = \left[ \frac{x(x+1)}{2} \right]^2}
+\]</div>
+<p>This confirms the famous identity that <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\sum i^3 = (\sum i)^2\)</span></span>.</p>
+</blockquote>
+<blockquote class="box-exercise" markdown="1">
+<p><strong>Problem:</strong>
+Using the Newton Series method, find the polynomial <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(f(x)\)</span></span> for the following sequence (where <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x=0, 1, 2\dots\)</span></span>):</p>
+<div class="math notranslate nohighlight">
+\[
+3, 5, 9, 15, 23, \dots
+\]</div>
+<ol class="arabic simple">
+<li><p>Construct the difference table to find <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta^n f(0)\)</span></span>.</p></li>
+<li><p>Write out the Newton series using falling factorials (<span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^{\underline{k}}\)</span></span>).</p></li>
+<li><p>Simplify it into a standard polynomial form (<span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(ax^2+bx+c\)</span></span>).</p></li>
+</ol>
+</blockquote>
+<details class="box-tip" markdown="1">
+<summary markdown="1">
+**Click for Solution**
+</summary>
+**1. The Difference Table:**
+*   Sequence (<span class="math-inline" markdown="1">$f$</span>): <span class="math-inline" markdown="1">$3, 5, 9, 15, 23$</span>
+*   <span class="math-inline" markdown="1">$\Delta^1$</span>: <span class="math-inline" markdown="1">$2, 4, 6, 8$</span>
+*   <span class="math-inline" markdown="1">$\Delta^2$</span>: <span class="math-inline" markdown="1">$2, 2, 2$</span>  (Constant!)
+*   <span class="math-inline" markdown="1">$\Delta^3$</span>: <span class="math-inline" markdown="1">$0$</span>
+<p>The coefficients at <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x=0\)</span></span> are <strong>3, 2, 2</strong>.</p>
+<p><strong>2. The Newton Series:</strong></p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = 3 \frac{x^\underline{0}}{0!} + 2 \frac{x^\underline{1}}{1!} + 2 \frac{x^\underline{2}}{2!}
+\]</div>
+<p><strong>3. Simplification:</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+f(x) &amp;= 3(1) + 2(x) + \frac{2}{2}x(x-1) \\
+&amp;= 3 + 2x + x^2 - x \\
+&amp;= \mathbf{x^2 + x + 3}
+\end{aligned}
+\end{split}\]</div>
+</details>
+</section>
+<section id="umbral-calculus">
+<h1>Umbral Calculus<a class="headerlink" href="#umbral-calculus" title="Link to this heading">#</a></h1>
+<section id="warmup">
+<h2>Warmup<a class="headerlink" href="#warmup" title="Link to this heading">#</a></h2>
+<p>A <em>convolution</em> <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(f \ast g\)</span></span> is a process where “multiplying” objects adds their “degrees”. A good example is polynomials.</p>
+<blockquote class="box-example" markdown="1">
+<div class="title" markdown="1">
+Polynomial multiplication
+<p>If we multiply two quadratics <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(A(x)\cdot B(x)=C(x)\)</span></span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather}
+(a_{0}+a_{1}x+a_{2}x^2)(b_{0}+b_{1}x+b_{2}x^2) \\
+=a_{0}b_{0}+(a_{0}b_{1}+b_{0}a_{1})x+(a_{0}b_{2}+a_{1}b_{1}+a_{2}b_{0})x^2+(a_{1}b_{2}+a_{2}b_{1})x^3+a_{2}b_{2}x^4
+\end{gather}
+\end{split}\]</div>
+<p>As you can see, the subscripts add together to the degree encoded by the monomial <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^d\)</span></span>, e.g. <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(a_{0}b_{1}\)</span></span> gets assigned to <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^{0+1}=x\)</span></span>. So <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(c_{n}=\sum_{k}a_{k}b_{n-k}\)</span></span> are the coefficients of <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(C(x)\)</span></span>.</p>
+</blockquote>
+<blockquote class="box-example" markdown="1">
+<div class="title" markdown="1">
+Dice rolls
+<p>Another example is the addition of random variables: let <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(X,Y\)</span></span> be the outcomes of a standard 6-sided die. Then <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(X+Y\)</span></span> is given by the convolution of the <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(X\)</span></span> and <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(Y\)</span></span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{c|cccccc}
+{}_{X} \setminus ^{Y} &amp; \mathbf{1} &amp; \mathbf{2} &amp; \mathbf{3} &amp; \mathbf{4} &amp; \mathbf{5} &amp; \mathbf{6} \\
+\hline
+\mathbf{1} &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 \\
+\mathbf{2} &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 \\
+\mathbf{3} &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9 \\
+\mathbf{4} &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9 &amp; 10 \\
+\mathbf{5} &amp; 6 &amp; 7 &amp; 8 &amp; 9 &amp; 10 &amp; 11 \\
+\mathbf{6} &amp; 7 &amp; 8 &amp; 9 &amp; 10 &amp; 11 &amp; 12 \\
+\end{array}
+\end{split}\]</div>
+<p>The number outcomes for <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(X+Y\)</span></span> amounts to “counting along the off-diagonal”. For example, finding the number of ways for <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(X+Y=6\)</span></span>, you get <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(5\)</span></span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{c|cccccc}
+{}_{X} \setminus ^{Y} &amp; \mathbf{1} &amp; \mathbf{2} &amp; \mathbf{3} &amp; \mathbf{4} &amp; \mathbf{5} &amp; \mathbf{6} \\
+\hline
+\mathbf{1} &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; \textcolor{red}{6} &amp; 7 \\
+\mathbf{2} &amp; 3 &amp; 4 &amp; 5 &amp; \textcolor{red}{6} &amp; 7 &amp; 8 \\
+\mathbf{3} &amp; 4 &amp; 5 &amp; \textcolor{red}{6} &amp; 7 &amp; 8 &amp; 9 \\
+\mathbf{4} &amp; 5 &amp; \textcolor{red}{6} &amp; 7 &amp; 8 &amp; 9 &amp; 10 \\
+\mathbf{5} &amp; \textcolor{red}{6} &amp; 7 &amp; 8 &amp; 9 &amp; 10 &amp; 11 \\
+\mathbf{6} &amp; 7 &amp; 8 &amp; 9 &amp; 10 &amp; 11 &amp; 12 \\
+\end{array}
+\end{split}\]</div>
+</blockquote>
+<blockquote class="box-definition" markdown="1">
+<div class="title" markdown="1">
+Discrete convolution
+<p>Define OGFs for sequences <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\((a_{i})_{i},(b_{j})_{j}\)</span></span>.</p>
+<div class="math notranslate nohighlight">
+\[
+A(x)=\sum_{i=i_{0}}^{i_{1}}a_{i}x^i=a_{i_{0}}x^{i_{0}}+a_{i_{0}+1}x^{i_{0}+1}+\dots+a_{i_{1}}x^{i_{1}}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+B(x)=\sum_{j=j_{0}}^{j_{1}}b_{j}x^j=b_{j_{0}}x^{j_{0}}+b_{j_{0}+1}x^{j_{0}+1}+\dots+b_{j_{1}}x^{j_{1}}
+\]</div>
+<p>Define</p>
+<div class="math notranslate nohighlight">
+\[
+C(x)=A(x)B(x)
+\]</div>
+<p>Then we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+C(x)&amp;=\left( \sum_{i=i_{0}}^{i_{1}}a_{i}x^i \right)\left( \sum_{j=j_{0}}^{j_{1}} b_{j}x^j \right) \\
+&amp;=(a_{i_{0}}x^{i_{0}}+\dots+a_{i_{1}}x^{i_{1}})(b_{j_{0}}x^{j_{0}}+\dots+b_{j_{1}}x^{j_{1}}) \\
+&amp;=a_{i_{0}}b_{j_{0}}x^{i_{0}+j_{0}}+(a_{i_{0}}b_{j_{0}+1}+a_{i_{0}+1}b_{j_{0}})x^{i_{0}+j_{0}+1}+\dots+a_{i_{1}}b_{j_{1}}x^{i_{1}+j_{1}} \\
+&amp;=\sum_{n=i_{0}+j_{0}}^{i_{1}+j_{1}}x^n \left( \sum_{k=\max(i_{0},j_{0})}^{\min(i_{1},j_{1})} a_{k}b_{n-k}\right) 
+\end{align}
+\end{split}\]</div>
+<p>We define the <em>discrete convolution</em> of <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\((a_{i})_{i},(b_{j})_{j}\)</span></span>  as a sequence <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\((c_{n})_{n}=(a_{i})_{i} \ast (b_{j})_{j}\)</span></span>, with</p>
+<div class="math notranslate nohighlight">
+\[
+c_{n}=[x^n]C(x)=\sum_{k=\max(i_{0},j_{0})}^{\min(i_{1},j_{1})} a_{k}b_{n-k}
+\]</div>
+<p>for <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(i_{0}+j_{0}\le n\le i_{1}+j_{1}\)</span></span>.</p>
+</blockquote>
+<blockquote class="box-exercise" markdown="1">
+<div class="title" markdown="1">
+Vandermonde's convolution identity
+<p>Comparing coefficients of <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\((x+1)^{m+n}=(x+1)^m (x+1)^n\)</span></span>, prove</p>
+<div class="math notranslate nohighlight">
+\[
+\binom{m+n}{m}=\sum_{j=0}^{k}\binom{n}{j}\binom{m}{k-j}
+\]</div>
+</blockquote>
+<blockquote class="box-solution" markdown="1">
+<div class="title" markdown="1">
+Vandermonde's convolution identity
+<p>Here is an alternative solution using operator calculus again. First, we prove that the binomial theorem holds with falling powers:</p>
+<div class="math notranslate nohighlight">
+\[
+(x+y)^\underline{n}=\sum_{k=0}^{n}x^\underline{k} y^{\underline{n-k}}
+\]</div>
+<p>Expand into the Newton series by <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\((x+y)^\underline{n}=E^yx^\underline{n}\)</span></span>:</p>
+<div class="math notranslate nohighlight">
+\[
+(x+y)^\underline{n}=(\Delta+I)^y x^\underline{n}=\sum_{k\ge 0}\binom{y}{k}\Delta^k x^\underline{n}
+\]</div>
+<p>Compute <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta^k x^\underline{n}=n^\underline{k}x^\underline{n-k}\)</span></span>, so</p>
+<div class="math notranslate nohighlight">
+\[
+(x+y)^\underline{n}=\sum_{k\ge 0} \frac{y^\underline{k}}{k!} n^\underline{k} x^\underline{n-k}=\sum_{k=0}^{n}\binom{n}{k}y^\underline{k}x^\underline{n-k}
+\]</div>
+<p>Now, dividing both sides by <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(n! =n^\underline{k}(n-k)!\)</span></span> proves the identity.</p>
+</blockquote>
+<p>It’s very interesting that the binomial theorem also holds in the discrete world with falling powers instead of regular powers. But this is no coincidence, it turns out to hold for many more identities (but not all!). As you might guess from the recurring theme, we will view this with the perspective of linearity. With this warmup in mind, let’s get introduced to Umbral calculus.</p>
+<p>Throughout this guide, we have seen a recurring theme: discrete math behaves eerily like continuous math if you simply swap the components correctly.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Continuous</p></th>
+<th class="head text-left"><p>Discrete</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Power <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^n\)</span></span></p></td>
+<td class="text-left"><p>Falling Power <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^{\underline{n}}\)</span></span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Derivative <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(D\)</span></span></p></td>
+<td class="text-left"><p>Difference <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta\)</span></span></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Integral <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\int\)</span></span></p></td>
+<td class="text-left"><p>Sum <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\sum\)</span></span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Base <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(e\)</span></span></p></td>
+<td class="text-left"><p>Base <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(2\)</span></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Historically, 19th-century mathematicians (like Sylvester and Cayley) noticed they could prove difficult identities regarding number sequences by pretending the indices were exponents. They called this <strong>Umbral Calculus</strong> (from the Latin <em>umbra</em>, meaning “shadow”), because these techniques were “shadowy” like dark arts.</p>
+<p>For a long time, this was considered “black magic” that lacked rigor. However, in the 1970s, Gian-Carlo Rota formalized this theory using <strong>linear functionals</strong>, turning it into a rigorous and overpowered algebraic tool.</p>
+</section>
+<section id="the-umbral-trick-linear-functionals">
+<h2>The “Umbral Trick”: Linear Functionals<a class="headerlink" href="#the-umbral-trick-linear-functionals" title="Link to this heading">#</a></h2>
+<p>To understand why the discrete world mirrors the continuous one, we must define the machinery that allows us to treat indices like exponents.</p>
+<blockquote class="box-definition" markdown="1">
+<div class="title" markdown="1">
+Linear Functional
+<p>Let <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(P\)</span></span> be the vector space of all polynomials in the variable <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(z\)</span></span>. A <strong>linear functional</strong> is a map <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(L: P \to \mathbb{K}\)</span></span> (where <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\mathbb{K}\)</span></span> is a field like <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\mathbb{R}\)</span></span> or <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\mathbb{C}\)</span></span>) such that for any polynomials <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(p(z), q(z)\)</span></span> and constants <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(c_1, c_2\)</span></span>:</p>
+<div class="math notranslate nohighlight">
+\[
+L(c_1 \cdot p(z) + c_2 \cdot q(z)) = c_1 \cdot L(p(z)) + c_2 \cdot L(q(z))
+\]</div>
+<p>Essentially, <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(L\)</span></span> is a machine that “eats” a polynomial and spits out a scalar.</p>
+</blockquote>
+<p>The most common linear functional is simply <strong>evaluation</strong>. For example, if <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(L\)</span></span> is “evaluate at <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(z=0\)</span></span>”, then <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(L(z+3) = 3\)</span></span>. (Verify that this is really is linear as an exercise). However, the power of Umbral calculus comes from defining functionals based on sequences.</p>
+<p><strong>The Isomorphism:</strong>
+Suppose we have a sequence of numbers <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(a_0, a_1, a_2, \dots\)</span></span>. We can define a linear functional <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(L\)</span></span> by specifying its action on the basis vectors <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(z^n\)</span></span>:</p>
+<div class="math notranslate nohighlight">
+\[
+L(z^n) = a_n
+\]</div>
+<p>Because <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(L\)</span></span> is linear, knowing how it acts on <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(z^n\)</span></span> tells us how it acts on <em>any</em> polynomial. This formalizes the “black magic” notation where we write <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(a^n\)</span></span> during algebraic manipulation and then “lower the index” to <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(a_n\)</span></span> at the very end.</p>
+</section>
+<section id="problem-1-vandermonde-s-convolution-identity">
+<h2>Problem 1: Vandermonde’s Convolution Identity<a class="headerlink" href="#problem-1-vandermonde-s-convolution-identity" title="Link to this heading">#</a></h2>
+<p>A classic problem in combinatorics is proving <strong>Vandermonde’s Identity</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{k=0}^n \binom{r}{k} \binom{s}{n-k} = \binom{r+s}{n}
+\]</div>
+<p>Standard proofs involve combinatorial counting arguments (choosing a committee from two groups of people). However, in Umbral calculus, this is simply a consequence of the fact that our falling factorial basis behaves exactly like a binomial expansion.</p>
+<blockquote class="box-proposition" markdown="1">
+<div class="title" markdown="1">
+The Discrete Binomial Theorem
+<p>Just as <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\((a+b)^n = \sum \binom{n}{k} a^k b^{n-k}\)</span></span>, the falling powers satisfy:</p>
+<div class="math notranslate nohighlight">
+\[
+(x+y)^{\underline{n}} = \sum_{k=0}^n \binom{n}{k} x^{\underline{k}} y^{\underline{n-k}}
+\]</div>
+</blockquote>
+<p><strong>Proof via Linear Functionals:</strong>
+We will prove this by mapping the standard binomial theorem to the discrete world.
+Start with two variables <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(a, b\)</span></span> and the standard identity:</p>
+<div class="math notranslate nohighlight">
+\[
+(a+b)^n = \sum_{k=0}^n \binom{n}{k} a^k b^{n-k}
+\]</div>
+<p>We define two linear functionals, <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(L_x\)</span></span> and <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(L_y\)</span></span>, that act as “basis changers” from standard powers to falling powers:</p>
+<ul class="simple">
+<li><p><span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(L_x(a^k) = x^{\underline{k}}\)</span></span></p></li>
+<li><p><span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(L_y(b^k) = y^{\underline{k}}\)</span></span></p></li>
+<li><p>Let <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(L = L_x L_y\)</span></span> be the joint functional acting on products.</p></li>
+</ul>
+<p><strong>1. Apply <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(L\)</span></span> to the Right Hand Side:</strong></p>
+<div class="math notranslate nohighlight">
+\[
+L\left( \sum_{k=0}^n \binom{n}{k} a^k b^{n-k} \right) = \sum_{k=0}^n \binom{n}{k} L_x(a^k) L_y(b^{n-k}) = \sum_{k=0}^n \binom{n}{k} x^{\underline{k}} y^{\underline{n-k}}
+\]</div>
+<p>This matches the desired expansion.</p>
+<p><strong>2. Apply <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(L\)</span></span> to the Left Hand Side:</strong>
+To evaluate <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(L((a+b)^n)\)</span></span>, we look at the <strong>Exponential Generating Functions (EGF)</strong>.
+The EGF for the standard basis is <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(e^{at}\)</span></span>.
+The EGF for the falling factorial basis is <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\((1+t)^x\)</span></span>, because <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\sum \frac{x^{\underline{n}}}{n!}t^n = (1+t)^x\)</span></span>.
+Therefore, the functional <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(L_x\)</span></span> is defined by the mapping <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(L_x(e^{at}) = (1+t)^x\)</span></span>.</p>
+<p>Applying this to the joint exponential:</p>
+<div class="math notranslate nohighlight">
+\[
+L(e^{(a+b)t}) = L(e^{at} e^{bt}) = L_x(e^{at})L_y(e^{bt}) = (1+t)^x (1+t)^y = (1+t)^{x+y}
+\]</div>
+<p>We know that <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\((1+t)^{x+y}\)</span></span> is the generating function for the sequence <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\((x+y)^{\underline{n}}\)</span></span>. Thus, by comparing coefficients of <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(t^n/n!\)</span></span>, we conclude:</p>
+<div class="math notranslate nohighlight">
+\[
+L((a+b)^n) = (x+y)^{\underline{n}}
+\]</div>
+<p>Equating LHS and RHS proves the Discrete Binomial Theorem.</p>
+<p><strong>Deriving Vandermonde’s Identity:</strong>
+Now that we have <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\((x+y)^{\underline{n}} = \sum_{k=0}^n \binom{n}{k} x^{\underline{k}} y^{\underline{n-k}}\)</span></span>, we simply divide both sides by <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(n!\)</span></span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{(x+y)^{\underline{n}}}{n!} = \sum_{k=0}^n \frac{1}{n!} \binom{n}{k} x^{\underline{k}} y^{\underline{n-k}}
+\]</div>
+<p>Using the identity <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\binom{n}{k} = \frac{n!}{k!(n-k)!}\)</span></span> and rearranging terms:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{(x+y)^{\underline{n}}}{n!} = \sum_{k=0}^n \frac{x^{\underline{k}}}{k!} \frac{y^{\underline{n-k}}}{(n-k)!}
+\]</div>
+<p>Substituting <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\frac{z^{\underline{m}}}{m!} = \binom{z}{m}\)</span></span>, we recover the identity:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{ \binom{x+y}{n} = \sum_{k=0}^n \binom{x}{k} \binom{y}{n-k} }
+\]</div>
+</section>
+<section id="problem-2-bernoulli-numbers-and-sums-of-powers">
+<h2>Problem 2: Bernoulli Numbers and Sums of Powers<a class="headerlink" href="#problem-2-bernoulli-numbers-and-sums-of-powers" title="Link to this heading">#</a></h2>
+<p>The “Killer App” of Umbral Calculus is solving for sums of powers, <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\sum_{k=0}^{m-1} k^p\)</span></span>.
+While we know <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\sum k = \frac{m(m-1)}{2}\)</span></span>, formulas for <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\sum k^{10}\)</span></span> are tedious to find manually. Umbral calculus gives us <strong>Faulhaber’s Formula</strong> for the sum of first natural number powers almost for free.</p>
+<p>First, we define the <strong>Bernoulli Numbers</strong> <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(B_n\)</span></span> using an implicit Umbral recurrence. We pretend <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(B\)</span></span> is a variable, write the relation, and then “lower the shadow” (convert powers <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(B^k\)</span></span> to indices <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(B_k\)</span></span> by a linear functional <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(L: B^k \mapsto B_{k}\)</span></span>).</p>
+<p><strong>Definition:</strong> <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(B_0 = 1\)</span></span>, and for <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(n &gt; 1\)</span></span>:</p>
+<div class="math notranslate nohighlight">
+\[
+L ((B+1)^n - B^n) = 0
+\]</div>
+<p><em>(Note: This expands to <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(L\left( \sum_{k=0}^{n} \binom{n}{k} B^k - B^n \right) = 0\)</span></span>, or <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\sum_{k=0}^{n-1} \binom{n}{k} B_k = 0\)</span></span>).</em></p>
+<p>Now, consider the problem of integration. In standard calculus, <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\int x^n dx = \frac{x^{n+1}}{n+1}\)</span></span>.
+In discrete calculus, we are looking for the sum, which is the anti-difference <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta^{-1}\)</span></span>. It turns out the Bernoulli numbers allow us to integrate standard powers <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^n\)</span></span> directly.</p>
+<blockquote class="box-theorem" markdown="1">
+<div class="title" markdown="1">
+Faulhaber’s Formula (Umbral Form)
+<div class="math notranslate nohighlight">
+\[
+\sum_{k=0}^{m-1} k^n = \frac{1}{n+1} \left( (m+B)^{n+1} - B^{n+1} \right)
+\]</div>
+</blockquote>
+<details class="box-example" markdown="1">
+<summary markdown="1">
+Sum of First <span class="math-inline" markdown="1">$m$</span> Squares (<span class="math-inline" markdown="1">$n=2$</span>)
+</summary>
+We want to compute <span class="math-inline" markdown="1">$\sum_{k=0}^{m-1} k^2$</span>. Using the formula with <span class="math-inline" markdown="1">$n=2$</span>:
+<div class="math notranslate nohighlight">
+\[
+\Sigma = \frac{1}{3} \left( (m+B)^3 - B^3 \right)
+\]</div>
+<p>Expand the binomial <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\((m+B)^3 = m^3 + 3m^2B + 3mB^2 + B^3\)</span></span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\Sigma = \frac{1}{3} \left( (m^3 + 3m^2B^1 + 3mB^2 + B^3) - B^3 \right)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\Sigma = \frac{1}{3} m^3 + m^2 B^1 + m B^2
+\]</div>
+<p>Now we “lower the shadow.” We interpret <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(B^1\)</span></span> as <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(B_1\)</span></span> and <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(B^2\)</span></span> as <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(B_2\)</span></span>.
+From the definition of Bernoulli numbers:</p>
+<ul class="simple">
+<li><p><span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(B_0 = 1\)</span></span></p></li>
+<li><p><span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\((B+1)^2 - B^2 = 0 \implies B_0 + 2B_1 = 0 \implies 1 + 2B_1 = 0 \implies \mathbf{B_1 = -1/2}\)</span></span></p></li>
+<li><p><span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\((B+1)^3 - B^3 = 0 \implies B_0 + 3B_1 + 3B_2 = 0 \implies 1 - \frac{3}{2} + 3B_2 = 0 \implies \mathbf{B_2 = 1/6}\)</span></span></p></li>
+</ul>
+<p>Substitute these values back:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{k=0}^{m-1} k^2 = \frac{1}{3}m^3 - \frac{1}{2}m^2 + \frac{1}{6}m
+\]</div>
+<p>This is exactly the standard formula <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\frac{m(m-1)(2m-1)}{6}\)</span></span> (adjusted for the summation limit <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(m-1\)</span></span>).</p>
+</details>
+</section>
+</section>
+<section id="bernoulli-polynomials">
+<h1>Bernoulli Polynomials<a class="headerlink" href="#bernoulli-polynomials" title="Link to this heading">#</a></h1>
+<p>We have seen two parallel worlds:</p>
+<ol class="arabic simple">
+<li><p><strong>Continuous:</strong> <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(D x^n = n x^{n-1}\)</span></span> is easy, so we integrate <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^n\)</span></span> easily.</p></li>
+<li><p><strong>Discrete:</strong> <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta x^{\underline{n}} = n x^{\underline{n-1}}\)</span></span> is easy, so we sum <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^{\underline{n}}\)</span></span> easily.</p></li>
+</ol>
+<p>But what if we stubbornly want to sum standard powers <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^n\)</span></span> without converting to falling powers? We need a sequence of polynomials <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(P_n(x)\)</span></span> that satisfies a “mixed” property:</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta P_n(x) = n x^{n-1}
+\]</div>
+<p>If we found such polynomials, we could sum <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^n\)</span></span> immediately by telescoping: <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\sum k^n = \frac{P_{n+1}(k)}{n+1}\)</span></span>.
+These are exactly the <strong>Bernoulli Polynomials</strong>.</p>
+<blockquote class="box-definition" markdown="1">
+<div class="title" markdown="1">
+Bernoulli Polynomials (Umbral Definition)
+<p>Using the same umbral variable <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(B\)</span></span> (where <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(B^k \to B_k\)</span></span>) from the previous section, we define the Bernoulli polynomial <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(B_n(x)\)</span></span> as:</p>
+<div class="math notranslate nohighlight">
+\[
+B_n(x) := (B + x)^n = \sum_{k=0}^n \binom{n}{k} B_k x^{n-k}
+\]</div>
+</blockquote>
+<p>This definition reveals their superpower. In the continuous world, they are an <strong>Appell sequence</strong>, meaning their derivative lowers their degree:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dx} B_n(x) = \frac{d}{dx} (B+x)^n = n(B+x)^{n-1} = n B_{n-1}(x)
+\]</div>
+<p>But in the discrete world, they satisfy an even more important property.</p>
+<blockquote class="box-proposition" markdown="1">
+<div class="title" markdown="1">
+The Difference Property
+<div class="math notranslate nohighlight">
+\[
+\Delta B_n(x) = n x^{n-1}
+\]</div>
+</blockquote>
+<blockquote class="box-proof" markdown="1">
+<p>Using the Umbral definition <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(B_n(x) = (B+x)^n\)</span></span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\Delta B_n(x) &amp;= (B+x+1)^n - (B+x)^n \\
+&amp;= \sum_{k=0}^n \binom{n}{k} (B+1)^k x^{n-k} - \sum_{k=0}^n \binom{n}{k} B^k x^{n-k} \\
+&amp;= \sum_{k=0}^n \binom{n}{k} x^{n-k} \left[ (B+1)^k - B^k \right]
+\end{align}
+\end{split}\]</div>
+<p>Recall the definition of Bernoulli numbers: <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\((B+1)^k - B^k\)</span></span> is <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(0\)</span></span> for all <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(k &gt; 1\)</span></span>.
+For <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(k=0\)</span></span>, the term is <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(1-1=0\)</span></span>.
+The only term that survives is <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(k=1\)</span></span>, where <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\((B+1)^1 - B^1 = 1\)</span></span>.
+Thus, the sum collapses to the term where <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(k=1\)</span></span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta B_n(x) = \binom{n}{1} x^{n-1} (1) = n x^{n-1}
+\]</div>
+</blockquote>
+<section id="the-general-summation-formula">
+<h2>The General Summation Formula<a class="headerlink" href="#the-general-summation-formula" title="Link to this heading">#</a></h2>
+<p>Because <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta \frac{B_{n+1}(x)}{n+1} = x^n\)</span></span>, we can integrate (sum) <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^n\)</span></span> directly. This gives us the explicit form of Faulhaber’s formula for any range <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\([0, m)\)</span></span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{k=0}^{m-1} k^n = \sum_{k=0}^{m-1} \Delta \left( \frac{B_{n+1}(k)}{n+1} \right) = \boxed{ \frac{B_{n+1}(m) - B_{n+1}(0)}{n+1} }
+\]</div>
+<p>Since <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(B_{n+1}(0) = B_{n+1}\)</span></span> (the Bernoulli number), this matches our previous Umbral formula.</p>
+<details class="box-example" markdown="1">
+<summary markdown="1">
+Sum of first <span class="math-inline" markdown="1">$m-1$</span> squares
+</summary>
+Let's find <span class="math-inline" markdown="1">$\sum_{k=0}^{m-1} k^2$</span> using the polynomial <span class="math-inline" markdown="1">$B_3(x)$</span>.
+<p>First, construct <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(B_3(x)\)</span></span> using <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(B_0=1, B_1=-1/2, B_2=1/6\)</span></span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+B_3(x) &amp;= \sum_{k=0}^3 \binom{3}{k} B_k x^{3-k} \\
+&amp;= \binom{3}{0}B_0 x^3 + \binom{3}{1}B_1 x^2 + \binom{3}{2}B_2 x + \binom{3}{3}B_3 \\
+&amp;= 1 \cdot x^3 + 3(-\frac{1}{2})x^2 + 3(\frac{1}{6})x + B_3 \\
+&amp;= x^3 - \frac{3}{2}x^2 + \frac{1}{2}x + B_3
+\end{align}
+\end{split}\]</div>
+<p>Now apply the formula <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\sum k^2 = \frac{B_3(m) - B_3(0)}{3}\)</span></span>. Note that <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(B_3(0)\)</span></span> is just the constant term <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(B_3\)</span></span>, so they cancel out:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{k=0}^{m-1} k^2 = \frac{1}{3} \left( x^3 - \frac{3}{2}x^2 + \frac{1}{2}x \right) = \frac{m^3}{3} - \frac{m^2}{2} + \frac{m}{6}
+\]</div>
+<p>Which is the correct result.</p>
+</details>
+### Bonus: The Continuous Operator Algebra
+<p>To wrap up, let’s look at how these operator techniques apply to the continuous world. throughout this text, we saw that the discrete derivative <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta\)</span></span> and the falling power <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^{\underline{n}}\)</span></span> satisfy the relationship <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta x^{\underline{n}} = n x^{\underline{n-1}}\)</span></span>.</p>
+<p>In the continuous world, we have the derivative <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(D = \frac{d}{dx}\)</span></span> and the position operator <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x\)</span></span> (multiplying by <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x\)</span></span>). The fundamental relationship between them is the <strong>commutator</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+[D, x] = Dx - xD = 1
+\]</div>
+<p>(This is because <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(D(xf) - x(Df) = (f + xf') - xf' = f\)</span></span>).</p>
+<p>This non-commutative structure generates the <strong>Hermite Polynomials</strong> (specifically the “probabilist” convention <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(He_n(x)\)</span></span> used in statistics and Brownian motion), which are the continuous analogs to the discrete falling factorials.</p>
+<blockquote class="box-definition" markdown="1">
+<div class="title" markdown="1">
+Probabilist's Hermite Polynomials
+<p>Instead of using a Taylor expansion, we can define these polynomials purely through an operator acting on the constant <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(1\)</span></span>:</p>
+<div class="math notranslate nohighlight">
+\[
+He_n(x) := (x - D)^n \cdot 1
+\]</div>
+<p>For example:</p>
+<ul class="simple">
+<li><p><span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(He_0(x) = 1\)</span></span></p></li>
+<li><p><span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(He_1(x) = (x - D)1 = x\)</span></span></p></li>
+<li><p><span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(He_2(x) = (x - D)x = x^2 - Dx = x^2 - 1\)</span></span></p></li>
+<li><p><span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(He_3(x) = (x - D)(x^2 - 1) = x(x^2 - 1) - D(x^2 - 1) = x^3 - x - 2x = x^3 - 3x\)</span></span></p></li>
+</ul>
+</blockquote>
+<p>Does this structure look familiar? It should. In the discrete case, <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^{\underline{n}}\)</span></span> is the eigenbasis for the operator <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x\Delta\)</span></span>. In the continuous case, <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(He_n(x)\)</span></span> allows us to solve differential equations involving <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(e^{-x^2/2}\)</span></span> purely through algebra.</p>
+<blockquote class="box-exercise" markdown="1">
+<div class="title" markdown="1">
+The Hermite Recurrence Relation
+<p>Using <strong>only</strong> the operator definition <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(He_n(x) = (x-D)^n \cdot 1\)</span></span> and the commutator <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\([D, x] = 1\)</span></span>, prove the famous three-term recurrence relation:</p>
+<div class="math notranslate nohighlight">
+\[
+He_{n+1}(x) = x He_n(x) - n He_{n-1}(x)
+\]</div>
+<p><strong>Hint:</strong></p>
+<ol class="arabic simple">
+<li><p>Write <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(He_{n+1} = (x-D)(x-D)^n \cdot 1\)</span></span>.</p></li>
+<li><p>Expand the product. You will need to figure out how to swap <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(D\)</span></span> and <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\((x-D)^n\)</span></span>.</p></li>
+<li><p>Prove the lemma that <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\([D, (x-D)^n] = n(x-D)^{n-1}\)</span></span> (which looks suspiciously like a power rule!).</p></li>
+</ol>
+</blockquote>
+<details class="box-solution" markdown="1">
+<summary markdown="1">
+**Click for Solution**
+</summary>
+We start with the definition:
+<div class="math notranslate nohighlight">
+\[
+He_{n+1}(x) = (x - D) \underbrace{(x - D)^n \cdot 1}_{He_n(x)}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+He_{n+1}(x) = x He_n(x) - D He_n(x)
+\]</div>
+<p>Now we need to evaluate <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(D He_n(x)\)</span></span>. Let’s find the commutator of <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(D\)</span></span> with the operator <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(A = (x-D)\)</span></span>.
+Note that <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\([D, x-D] = [D, x] - [D, D] = 1 - 0 = 1\)</span></span>.</p>
+<p>Since <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(D\)</span></span> commutes with itself, the commutator <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\([D, A^n]\)</span></span> follows the derivative rule for operators (similar to <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(d/dx(f^n) = n f^{n-1} f'\)</span></span>):</p>
+<div class="math notranslate nohighlight">
+\[
+[D, (x-D)^n] = n(x-D)^{n-1} [D, (x-D)] = n(x-D)^{n-1} \cdot 1
+\]</div>
+<p>So, we have the identity:</p>
+<div class="math notranslate nohighlight">
+\[
+D(x-D)^n = (x-D)^n D + n(x-D)^{n-1}
+\]</div>
+<p>Apply this to the constant function <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(1\)</span></span> (remembering that <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(D \cdot 1 = 0\)</span></span>):</p>
+<div class="math notranslate nohighlight">
+\[
+D He_n(x) = D(x-D)^n \cdot 1 = \left( (x-D)^n D + n(x-D)^{n-1} \right) \cdot 1
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+D He_n(x) = 0 + n \underbrace{(x-D)^{n-1} \cdot 1}_{He_{n-1}(x)}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+D He_n(x) = n He_{n-1}(x)
+\]</div>
+<p>Substituting this back into our first equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{ He_{n+1}(x) = x He_n(x) - n He_{n-1}(x) }
+\]</div>
+<p>This exercise confirms that <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(He_n(x)\)</span></span> behaves in the continuous “operator world” exactly like the falling powers <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^{\underline{n}}\)</span></span> behave in the discrete world, just with a different “creation operator” (<span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x-D\)</span></span> instead of multiplication by <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x\)</span></span>).</p>
+</details>
+<blockquote class="box-exercise" markdown="1">
+<div class="title" markdown="1">
+Appell sequence
+<p>Prove that</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dx} He_{n}(x)=nHe_{n-1}(x)
+\]</div>
+</blockquote>
+<blockquote class="box-exercise" markdown="1">
+<div class="title" markdown="1">
+Shift operator
+<p>Show that</p>
+<div class="math notranslate nohighlight">
+\[
+e^{tD}xe^{-tD}=x+t
+\]</div>
+<p>Then prove for suitable <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(f\)</span></span></p>
+<div class="math notranslate nohighlight">
+\[
+(e^{tD}f)(x)=f(x+t)
+\]</div>
+<p>Hint: take <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\frac{d}{dt} (e^{tD}xe^{-tD})\)</span></span> using <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\([D,x]=1\)</span></span></p>
+</blockquote>
+<blockquote class="box-exercise" markdown="1">
+<div class="title" markdown="1">
+Ladder operator
+<p>Define operators</p>
+<div class="math notranslate nohighlight">
+\[
+a=\frac{1}{\sqrt{2}}(x+D), \qquad a^{\dagger}=\frac{1}{\sqrt{ 2 }}(x-D)
+\]</div>
+<p>Use only <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\([D,x]=1\)</span></span> to prove <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\([a,a^{\dagger}]=1\)</span></span>.
+Hint: expand <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(aa^{\dagger},a^{\dagger}a\)</span></span> in <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x,D\)</span></span>.</p>
+</blockquote>
+</section>
+</section>
+<section id="conclusion">
+<h1>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h1>
+<p>Discrete Calculus is not just a “low-resolution” version of Continuous Calculus. It is a parallel universe with its own basis functions (<span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^{\underline{n}}\)</span></span>), operators (<span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta, \Sigma\)</span></span>), and constants (<span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(B_n\)</span></span>).</p>
+<p>By understanding the mapping between these worlds—using tools like Stirling numbers to change bases, and linear functionals to manipulate “shadows”—you can solve complex combinatorial summations and difference equations as easily as you solve integrals in standard calculus.</p>
+<p>When you face a problem in discrete math involving sums of polynomials, binomial coefficients, or recursive sequences, ask yourself: <strong>“What would this look like if I wrote it in the falling factorial basis?”</strong> Usually, the answer is “a lot simpler.”</p>
+<hr class="docutils" />
+<p><strong>Exercise 1: Umbral Evaluation</strong>
+Let <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(L\)</span></span> be a linear functional defined on the basis <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(z^n\)</span></span> such that <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(L(z^n) = n!\)</span></span> (This corresponds to the Gamma function, <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\int_0^\infty t^n e^{-t} dt\)</span></span>).
+Compute <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(L((z+1)^2)\)</span></span> in two steps:</p>
+<ol class="arabic simple">
+<li><p>Expand the polynomial <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\((z+1)^2\)</span></span> algebraically.</p></li>
+<li><p>Apply <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(L\)</span></span> to the resulting terms.</p></li>
+</ol>
+<p><strong>Exercise 2: Proving the Difference Rule</strong>
+Using the Discrete Binomial Theorem <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\((x+y)^{\underline{n}} = \sum_{k=0}^n \binom{n}{k} x^{\underline{k}} y^{\underline{n-k}}\)</span></span>, prove that:</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta (x^{\underline{n}}) = n x^{\underline{n-1}}
+\]</div>
+<p><em>Hint: Recall that <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta f(x) = f(x+1) - f(x)\)</span></span>. Set <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(y=1\)</span></span> in the expansion.</em></p>
+<p><strong>Exercise 3: Sum of Integers</strong>
+Use the Umbral Faulhaber Formula to derive the sum of the first <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(m\)</span></span> integers (<span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(n=1\)</span></span>).</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{k=0}^{m-1} k = \frac{1}{2} \left( (m+B)^2 - B^2 \right)
+\]</div>
+<p>Remember that <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(B_1 = -1/2\)</span></span>. Does your result match <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\frac{m(m-1)}{2}\)</span></span>?</p>
+<hr class="docutils" />
+</section>
+<section id="exercises">
+<h1>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h1>
+<section id="part-1-the-difference-operator-and-falling-powers">
+<h2>Part 1: The Difference Operator and Falling Powers<a class="headerlink" href="#part-1-the-difference-operator-and-falling-powers" title="Link to this heading">#</a></h2>
+<p><strong>Exercise 1: The Discrete Product Rule</strong>
+Recall the discrete product rule: <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta(u v) = u \Delta v + E(v) \Delta u\)</span></span>, where <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(E(v) = v(x+1)\)</span></span>.
+Calculate <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta(x \cdot 2^x)\)</span></span> in two ways:</p>
+<ol class="arabic simple">
+<li><p>By applying the definition <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta f(x) = f(x+1) - f(x)\)</span></span> directly.</p></li>
+<li><p>By applying the discrete product rule with <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(u=x\)</span></span> and <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(v=2^x\)</span></span>.</p></li>
+</ol>
+<p><strong>Exercise 2: The Discrete Power Rule</strong>
+We know that <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta x^\underline{n} = n x^\underline{n-1}\)</span></span>.
+Using the linearity of <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta\)</span></span>, find the forward difference of the polynomial:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = 3x^\underline{4} - 5x^\underline{2} + 7
+\]</div>
+<p><strong>Exercise 3: Converting Bases (Stirling Numbers)</strong>
+To differentiate (difference) standard powers like <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^3\)</span></span>, we usually convert them to falling powers first.</p>
+<ol class="arabic simple">
+<li><p>Express <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^3\)</span></span> as a linear combination of falling powers (<span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(Ax^\underline{3} + Bx^\underline{2} + Cx^\underline{1}\)</span></span>) using algebraic manipulation or Stirling numbers of the second kind.</p></li>
+<li><p>Use your result to calculate <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta x^3\)</span></span>. Verify that your answer matches <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\((x+1)^3 - x^3\)</span></span>.</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="part-2-discrete-integration-summation">
+<h2>Part 2: Discrete Integration (Summation)<a class="headerlink" href="#part-2-discrete-integration-summation" title="Link to this heading">#</a></h2>
+<p><strong>Exercise 4: Sum of Cubes</strong>
+Using the method of falling powers, calculate the closed-form formula for the sum of the first <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(n\)</span></span> cubes:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{k=0}^{n} k^3
+\]</div>
+<p><em>Hint: Use your conversion from Exercise 3, then apply the Fundamental Theorem of Discrete Calculus: <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\sum_{0}^{n} x^\underline{k} \delta x = \left[ \frac{x^\underline{k+1}}{k+1} \right]_0^{n+1}\)</span></span>.</em></p>
+<p><strong>Exercise 5: The Geometric Series</strong>
+In continuous calculus, <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\int e^{ax} dx = \frac{1}{a}e^{ax}\)</span></span>.
+In discrete calculus, we know <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta c^x = c^x(c-1)\)</span></span>.</p>
+<ol class="arabic simple">
+<li><p>Use the antidifference concept to find a closed form for <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\sum_{k=0}^{n-1} 3^k\)</span></span>.</p></li>
+<li><p>Generalize this to find the standard formula for a geometric series <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\sum_{k=0}^{n-1} r^k\)</span></span>.</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="part-3-newton-series-and-interpolation">
+<h2>Part 3: Newton Series and Interpolation<a class="headerlink" href="#part-3-newton-series-and-interpolation" title="Link to this heading">#</a></h2>
+<p><strong>Exercise 6: Finding the Function</strong>
+You are given a sequence generated by a polynomial function <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(f(n)\)</span></span>:</p>
+<div class="math notranslate nohighlight">
+\[
+0, 6, 24, 60, 120, \dots
+\]</div>
+<p>(for <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(n=0, 1, 2, 3, 4 \dots\)</span></span>)</p>
+<ol class="arabic simple">
+<li><p>Construct a <strong>difference table</strong> (calculate <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta f\)</span></span>, <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta^2 f\)</span></span>, etc.) until the differences become constant.</p></li>
+<li><p>Use the Newton Series formula to write <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(f(n)\)</span></span> as a sum of falling powers:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+f(n) = \sum_{k=0}^\infty \frac{(\Delta^k f)(0)}{k!} n^\underline{k}
+\]</div>
+<ol class="arabic simple" start="3">
+<li><p>Convert your answer back to standard powers (<span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(n^3, n^2\)</span></span>, etc.) to find the standard polynomial form.</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="part-4-conceptual-proofs">
+<h2>Part 4: Conceptual Proofs<a class="headerlink" href="#part-4-conceptual-proofs" title="Link to this heading">#</a></h2>
+<p><strong>Exercise 7: The Pascal’s Triangle Identity</strong>
+The binomial coefficient is defined as <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\binom{n}{k} = \frac{n^\underline{k}}{k!}\)</span></span>.
+Using the property <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta n^\underline{k} = k n^\underline{k-1}\)</span></span>, prove that:</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta \binom{n}{k} = \binom{n}{k-1}
+\]</div>
+<p>Then, write out what this equation means in terms of <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(n\)</span></span> and <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(k\)</span></span> using the definition <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta f(n) = f(n+1)-f(n)\)</span></span>. Does it look like a familiar identity from Pascal’s Triangle?</p>
+<p><strong>Exercise 8: Summation by Parts (Discrete Integration by Parts)</strong>
+The integration by parts formula is <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\int u dv = uv - \int v du\)</span></span>.
+Derive the <strong>Summation by Parts</strong> formula by summing the discrete product rule identity (<span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta(uv) = u \Delta v + E(v) \Delta u\)</span></span>).
+<em>Result should look like:</em></p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{k=a}^{b-1} u_k \Delta v_k = [u_k v_k]_a^b - \sum_{k=a}^{b-1} v_{k+1} \Delta u_k
+\]</div>
+</section>
+<hr class="docutils" />
+<section id="solutions-hints">
+<h2>Solutions / Hints<a class="headerlink" href="#solutions-hints" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(2^x(x+2)\)</span></span>.</p></li>
+<li><p><span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(12x^\underline{3} - 10x^\underline{1}\)</span></span>.</p></li>
+<li><p><span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(x^3 = x^\underline{3} + 3x^\underline{2} + x^\underline{1}\)</span></span>. Thus <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta x^3 = 3x^\underline{2} + 6x^\underline{1} + 1\)</span></span>.</p></li>
+<li><p><span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\left(\frac{n(n+1)}{2}\right)^2\)</span></span>.</p></li>
+<li><p><span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\sum r^k = \frac{r^n - 1}{r-1}\)</span></span>.</p></li>
+<li><p>The terms are <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(n^3 - n\)</span></span> (or <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(1n^\underline{3} + 3n^\underline{2} + 2n^\underline{1}\)</span></span> before conversion).</p></li>
+<li><p>This recovers <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\binom{n+1}{k} - \binom{n}{k} = \binom{n}{k-1}\)</span></span>, which is Pascal’s Identity.</p></li>
+<li><p>Sum both sides of <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\Delta(u_k v_k) = u_k \Delta v_k + v_{k+1} \Delta u_k\)</span></span>. Rearrange to isolate <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\(\sum u \Delta v\)</span></span>. Note that the boundary term is <span class="math-inline" markdown="1"><span class="math notranslate nohighlight">\([u_k v_k]_a^b\)</span></span>.</p></li>
+</ol>
+</section>
+</section>
+<section id="references-and-further-reading">
+<h1>References and Further Reading<a class="headerlink" href="#references-and-further-reading" title="Link to this heading">#</a></h1>
+<p>{% bibliography –file posts/2025-11-26-discrete-calculus/discrete-calculus.bib %}</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduction</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-and-sum-operators">Difference and Sum Operators</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomials-falling-powers">Polynomials: Falling Powers</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stirling-numbers">Stirling Numbers</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-functions">Generating functions</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#natural-discrete-base-2">Natural Discrete Base 2</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#newton-series">Newton series</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-application-find-the-closed-form">Example Application: Find the closed form</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-formula-for-the-sum-of-cubes">Example: Formula for the Sum of Cubes</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#umbral-calculus">Umbral Calculus</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warmup">Warmup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-umbral-trick-linear-functionals">The “Umbral Trick”: Linear Functionals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-1-vandermonde-s-convolution-identity">Problem 1: Vandermonde’s Convolution Identity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-2-bernoulli-numbers-and-sums-of-powers">Problem 2: Bernoulli Numbers and Sums of Powers</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bernoulli-polynomials">Bernoulli Polynomials</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-general-summation-formula">The General Summation Formula</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-the-difference-operator-and-falling-powers">Part 1: The Difference Operator and Falling Powers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-discrete-integration-summation">Part 2: Discrete Integration (Summation)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-newton-series-and-interpolation">Part 3: Newton Series and Interpolation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-4-conceptual-proofs">Part 4: Conceptual Proofs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions-hints">Solutions / Hints</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#references-and-further-reading">References and Further Reading</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Tom Tang
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
