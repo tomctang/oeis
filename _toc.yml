@@ -9,14 +9,10 @@ parts:
   - file: chapter0_introduction
   - file: chapter1_arithmetic_functions
 
-- caption: Counting
+- caption: Try oil
   numbered: false
   chapters:
-  - file: try_oil/Forecasting_Crude
-  - file: try_oil/fred-oil-brent-wti
-  - file: try_oil/Oil_price_predict_project_LSTM
-  - file: try_oil/Stochastic-mod-pricing-WTI
-  - file: try_oil/WTI-Brent-spreadtrading
+  - file: oil-predict4个模型1基本面
 
 - caption: Counting
   numbered: false
