@@ -16,42 +16,45 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=8dedbda2" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -59,10 +62,13 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter2_linear_recursion';</script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script src="_static/mermaid-init.js?v=512eb59e"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -78,19 +84,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -98,7 +93,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -106,8 +100,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -125,7 +119,8 @@
       
         
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -155,15 +150,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -236,9 +227,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -336,7 +332,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -350,25 +346,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -446,45 +434,45 @@ document.write(`
 <h2>2.1 Fibonacci Numbers – OEIS A000045<a class="headerlink" href="#fibonacci-numbers-oeis-a000045" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Compute Fibonacci numbers
-import math
-from sympy import symbols, roots, sqrt
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute Fibonacci numbers</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">roots</span><span class="p">,</span> <span class="n">sqrt</span>
 
-# Define recurrence and compute first 12 terms
-def fibonacci(n):
-    if n == 0: return 0
-    if n == 1: return 1
-    a, b = 0, 1
-    for _ in range(2, n+1):
-        a, b = b, a + b
-    return b
+<span class="c1"># Define recurrence and compute first 12 terms</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="k">return</span> <span class="mi">1</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">b</span>
 
-# Generate first 12 Fibonacci numbers
-fib_list = [fibonacci(i) for i in range(12)]
-print(&#39;First 12 Fibonacci numbers:&#39;, fib_list)
+<span class="c1"># Generate first 12 Fibonacci numbers</span>
+<span class="n">fib_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">fibonacci</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">12</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;First 12 Fibonacci numbers:&#39;</span><span class="p">,</span> <span class="n">fib_list</span><span class="p">)</span>
 
-# Characteristic polynomial roots
-r = symbols(&#39;r&#39;)
-char_poly = r**2 - r - 1
-roots_dict = roots(char_poly, r)
-phi = roots_dict.keys()[0]  # golden ratio
-psi = roots_dict.keys()[1]  # conjugate
-print(&#39;Characteristic roots:&#39;, roots_dict)
+<span class="c1"># Characteristic polynomial roots</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">char_poly</span> <span class="o">=</span> <span class="n">r</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">r</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">roots_dict</span> <span class="o">=</span> <span class="n">roots</span><span class="p">(</span><span class="n">char_poly</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+<span class="n">phi</span> <span class="o">=</span> <span class="n">roots_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># golden ratio</span>
+<span class="n">psi</span> <span class="o">=</span> <span class="n">roots_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># conjugate</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Characteristic roots:&#39;</span><span class="p">,</span> <span class="n">roots_dict</span><span class="p">)</span>
 
-# Binet formula and verification
-from math import sqrt
-def binet(n):
-    phi = (1 + sqrt(5)) / 2
-    psi = (1 - sqrt(5)) / 2
-    return int(round((phi**n - psi**n) / sqrt(5)))
+<span class="c1"># Binet formula and verification</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">sqrt</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">binet</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="n">psi</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">((</span><span class="n">phi</span><span class="o">**</span><span class="n">n</span> <span class="o">-</span> <span class="n">psi</span><span class="o">**</span><span class="n">n</span><span class="p">)</span> <span class="o">/</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="p">)))</span>
 
-print(&#39;Binet formula values:&#39;, [binet(i) for i in range(12)])
-print(&#39;Matches recurrence:&#39;, fib_list == [binet(i) for i in range(12)])
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Binet formula values:&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">binet</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">12</span><span class="p">)])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Matches recurrence:&#39;</span><span class="p">,</span> <span class="n">fib_list</span> <span class="o">==</span> <span class="p">[</span><span class="n">binet</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">12</span><span class="p">)])</span>
 
-# Ratios approaching golden ratio
-ratios = [fib_list[i+1] / fib_list[i] for i in range(2, len(fib_list)-1)]
-print(&#39;Ratios F(n+1)/F(n):&#39;, ratios)
-print(&#39;Approximate golden ratio:&#39;, float((1 + sqrt(5)) / 2))
+<span class="c1"># Ratios approaching golden ratio</span>
+<span class="n">ratios</span> <span class="o">=</span> <span class="p">[</span><span class="n">fib_list</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">fib_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fib_list</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ratios F(n+1)/F(n):&#39;</span><span class="p">,</span> <span class="n">ratios</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Approximate golden ratio:&#39;</span><span class="p">,</span> <span class="nb">float</span><span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -521,36 +509,36 @@ and encapsulates the recurrence in its denominator.</p>
 <h2>2.2 Lucas Numbers – OEIS A000032<a class="headerlink" href="#lucas-numbers-oeis-a000032" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Compute Lucas numbers
-from sympy import symbols, sqrt
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute Lucas numbers</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">sqrt</span>
 
-# Lucas sequence recurrence
-def lucas(n):
-    if n == 0: return 2
-    if n == 1: return 1
-    a, b = 2, 1
-    for _ in range(2, n+1):
-        a, b = b, a + b
-    return b
+<span class="c1"># Lucas sequence recurrence</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">lucas</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="mi">2</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="k">return</span> <span class="mi">1</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">b</span>
 
-# First 12 Lucas numbers
-lucas_list = [lucas(i) for i in range(12)]
-print(&#39;First 12 Lucas numbers:&#39;, lucas_list)
+<span class="c1"># First 12 Lucas numbers</span>
+<span class="n">lucas_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">lucas</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">12</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;First 12 Lucas numbers:&#39;</span><span class="p">,</span> <span class="n">lucas_list</span><span class="p">)</span>
 
-# Closed form using golden ratio
-from math import sqrt
-def lucas_closed(n):
-    phi = (1 + sqrt(5)) / 2
-    psi = (1 - sqrt(5)) / 2
-    return int(round(phi**n + psi**n))
+<span class="c1"># Closed form using golden ratio</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">sqrt</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">lucas_closed</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="n">psi</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">phi</span><span class="o">**</span><span class="n">n</span> <span class="o">+</span> <span class="n">psi</span><span class="o">**</span><span class="n">n</span><span class="p">))</span>
 
-print(&#39;Closed form values:&#39;, [lucas_closed(i) for i in range(12)])
-print(&#39;Matches recurrence:&#39;, lucas_list == [lucas_closed(i) for i in range(12)])
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Closed form values:&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">lucas_closed</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">12</span><span class="p">)])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Matches recurrence:&#39;</span><span class="p">,</span> <span class="n">lucas_list</span> <span class="o">==</span> <span class="p">[</span><span class="n">lucas_closed</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">12</span><span class="p">)])</span>
 
-# Ratio tends to golden ratio
-ratios = [lucas_list[i+1] / lucas_list[i] for i in range(1, len(lucas_list)-1)]
-print(&#39;Ratios L(n+1)/L(n):&#39;, ratios)
-print(&#39;Approximate golden ratio:&#39;, float((1 + sqrt(5)) / 2))
+<span class="c1"># Ratio tends to golden ratio</span>
+<span class="n">ratios</span> <span class="o">=</span> <span class="p">[</span><span class="n">lucas_list</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">lucas_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">lucas_list</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ratios L(n+1)/L(n):&#39;</span><span class="p">,</span> <span class="n">ratios</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Approximate golden ratio:&#39;</span><span class="p">,</span> <span class="nb">float</span><span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -578,36 +566,36 @@ highlighting the interplay between these families.  Lucas numbers appear in prim
 <h2>2.3 Pell Numbers – OEIS A000129<a class="headerlink" href="#pell-numbers-oeis-a000129" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Compute Pell numbers
-from sympy import sqrt, symbols, roots
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute Pell numbers</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">roots</span>
 
-# Pell recurrence
-def pell(n):
-    if n == 0: return 0
-    if n == 1: return 1
-    a, b = 0, 1
-    for _ in range(2, n+1):
-        a, b = b, 2*b + a
-    return b
+<span class="c1"># Pell recurrence</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">pell</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="k">return</span> <span class="mi">1</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">b</span> <span class="o">+</span> <span class="n">a</span>
+    <span class="k">return</span> <span class="n">b</span>
 
-# First 12 Pell numbers
-pell_list = [pell(i) for i in range(12)]
-print(&#39;First 12 Pell numbers:&#39;, pell_list)
+<span class="c1"># First 12 Pell numbers</span>
+<span class="n">pell_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">pell</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">12</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;First 12 Pell numbers:&#39;</span><span class="p">,</span> <span class="n">pell_list</span><span class="p">)</span>
 
-# Closed form using silver ratio
-from math import sqrt
-def pell_closed(n):
-    delta_s = 1 + sqrt(2)
-    psi = 1 - sqrt(2)
-    return int(round((delta_s**n - psi**n) / (2*sqrt(2))))
+<span class="c1"># Closed form using silver ratio</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">sqrt</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">pell_closed</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">delta_s</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">psi</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">((</span><span class="n">delta_s</span><span class="o">**</span><span class="n">n</span> <span class="o">-</span> <span class="n">psi</span><span class="o">**</span><span class="n">n</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))))</span>
 
-print(&#39;Closed form values:&#39;, [pell_closed(i) for i in range(12)])
-print(&#39;Matches recurrence:&#39;, pell_list == [pell_closed(i) for i in range(12)])
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Closed form values:&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">pell_closed</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">12</span><span class="p">)])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Matches recurrence:&#39;</span><span class="p">,</span> <span class="n">pell_list</span> <span class="o">==</span> <span class="p">[</span><span class="n">pell_closed</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">12</span><span class="p">)])</span>
 
-# Ratios approaching silver ratio
-ratios = [pell_list[i+1] / pell_list[i] for i in range(1, len(pell_list)-1)]
-print(&#39;Ratios P(n+1)/P(n):&#39;, ratios)
-print(&#39;Approximate silver ratio:&#39;, float(1 + sqrt(2)))
+<span class="c1"># Ratios approaching silver ratio</span>
+<span class="n">ratios</span> <span class="o">=</span> <span class="p">[</span><span class="n">pell_list</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">pell_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">pell_list</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ratios P(n+1)/P(n):&#39;</span><span class="p">,</span> <span class="n">ratios</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Approximate silver ratio:&#39;</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
@@ -633,35 +621,34 @@ print(&#39;Approximate silver ratio:&#39;, float(1 + sqrt(2)))
 <h2>2.4 Tribonacci Numbers – OEIS A000073 / A001045<a class="headerlink" href="#tribonacci-numbers-oeis-a000073-a001045" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Compute Tribonacci numbers
-from sympy import roots
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">roots</span>
 
-# Tribonacci recurrence
-def tribonacci(n):
-    if n == 0: return 0
-    if n == 1: return 0
-    if n == 2: return 1
-    a, b, c = 0, 0, 1
-    for _ in range(3, n+1):
-        a, b, c = b, c, a + b + c
-    return c
+<span class="c1"># Tribonacci recurrence</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">tribonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span> <span class="k">return</span> <span class="mi">1</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span>
+    <span class="k">return</span> <span class="n">c</span>
 
-# First 12 tribonacci numbers
-trib_list = [tribonacci(i) for i in range(12)]
-print(&#39;First 12 tribonacci numbers:&#39;, trib_list)
+<span class="c1"># First 12 tribonacci numbers</span>
+<span class="n">trib_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">tribonacci</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">12</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;First 12 tribonacci numbers:&#39;</span><span class="p">,</span> <span class="n">trib_list</span><span class="p">)</span>
 
-# Characteristic polynomial roots
-import sympy as sp
-r = sp.symbols(&#39;r&#39;)
-roots_dict = sp.nroots(r**3 - r**2 - r - 1)
-print(&#39;Approximate roots of r^3 - r^2 - r - 1:&#39;, roots_dict)
-trib_constant = max([complex(val) for val in roots_dict], key=lambda z: abs(z)).real
-print(&#39;Tribonacci constant (largest real root):&#39;, trib_constant)
+<span class="c1"># Characteristic polynomial roots</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">roots_dict</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">nroots</span><span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="n">r</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">r</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Approximate roots of r^3 - r^2 - r - 1:&#39;</span><span class="p">,</span> <span class="n">roots_dict</span><span class="p">)</span>
+<span class="n">trib_constant</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([</span><span class="nb">complex</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">roots_dict</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">z</span><span class="p">:</span> <span class="nb">abs</span><span class="p">(</span><span class="n">z</span><span class="p">))</span><span class="o">.</span><span class="n">real</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tribonacci constant (largest real root):&#39;</span><span class="p">,</span> <span class="n">trib_constant</span><span class="p">)</span>
 
-# Ratios approaching tribonacci constant
-ratios = [trib_list[i+1] / trib_list[i] for i in range(3, len(trib_list)-1)]
-print(&#39;Ratios T(n+1)/T(n):&#39;, ratios)
-print(&#39;Approximate tribonacci constant:&#39;, trib_constant)
+<span class="c1"># Ratios approaching tribonacci constant</span>
+<span class="n">ratios</span> <span class="o">=</span> <span class="p">[</span><span class="n">trib_list</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">trib_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">trib_list</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ratios T(n+1)/T(n):&#39;</span><span class="p">,</span> <span class="n">ratios</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Approximate tribonacci constant:&#39;</span><span class="p">,</span> <span class="n">trib_constant</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -688,23 +675,23 @@ and a 3×3 companion matrix can be used to realize the recurrence.</p>
 <h2>2.5 Geometric Progressions – Powers of 2, 3 and 4 (A000079, A000244, A000302)<a class="headerlink" href="#geometric-progressions-powers-of-2-3-and-4-a000079-a000244-a000302" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Geometric sequences (powers of 2, 3, 4)
-from math import pow
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Geometric sequences (powers of 2, 3, 4)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="nb">pow</span>
 
-powers2 = [int(pow(2, n)) for n in range(10)]
-powers3 = [int(pow(3, n)) for n in range(10)]
-powers4 = [int(pow(4, n)) for n in range(10)]
-print(&#39;Powers of 2:&#39;, powers2)
-print(&#39;Powers of 3:&#39;, powers3)
-print(&#39;Powers of 4:&#39;, powers4)
+<span class="n">powers2</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="nb">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<span class="n">powers3</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="nb">pow</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<span class="n">powers4</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="nb">pow</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Powers of 2:&#39;</span><span class="p">,</span> <span class="n">powers2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Powers of 3:&#39;</span><span class="p">,</span> <span class="n">powers3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Powers of 4:&#39;</span><span class="p">,</span> <span class="n">powers4</span><span class="p">)</span>
 
-# Ratios
-ratios2 = [powers2[i+1] / powers2[i] for i in range(len(powers2)-1)]
-ratios3 = [powers3[i+1] / powers3[i] for i in range(len(powers3)-1)]
-ratios4 = [powers4[i+1] / powers4[i] for i in range(len(powers4)-1)]
-print(&#39;Ratios 2^(n+1)/2^n:&#39;, ratios2)
-print(&#39;Ratios 3^(n+1)/3^n:&#39;, ratios3)
-print(&#39;Ratios 4^(n+1)/4^n:&#39;, ratios4)
+<span class="c1"># Ratios</span>
+<span class="n">ratios2</span> <span class="o">=</span> <span class="p">[</span><span class="n">powers2</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">powers2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">powers2</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span>
+<span class="n">ratios3</span> <span class="o">=</span> <span class="p">[</span><span class="n">powers3</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">powers3</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">powers3</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span>
+<span class="n">ratios4</span> <span class="o">=</span> <span class="p">[</span><span class="n">powers4</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">powers4</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">powers4</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ratios 2^(n+1)/2^n:&#39;</span><span class="p">,</span> <span class="n">ratios2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ratios 3^(n+1)/3^n:&#39;</span><span class="p">,</span> <span class="n">ratios3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ratios 4^(n+1)/4^n:&#39;</span><span class="p">,</span> <span class="n">ratios4</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -728,30 +715,30 @@ then the solution is the <em>geometric progression</em> (a(n)=c^n).  For example
 <h2>2.6 Factorials – OEIS A000142<a class="headerlink" href="#factorials-oeis-a000142" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Factorial sequence
-import math
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Factorial sequence</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 
-# Compute first 10 factorials
-fact_list = [math.factorial(n) for n in range(10)]
-print(&#39;First 10 factorials:&#39;, fact_list)
+<span class="c1"># Compute first 10 factorials</span>
+<span class="n">fact_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;First 10 factorials:&#39;</span><span class="p">,</span> <span class="n">fact_list</span><span class="p">)</span>
 
-# Verify recurrence n! = n * (n-1)!
-recurrence_ok = [fact_list[n] == n * fact_list[n-1] if n&gt;0 else True for n in range(len(fact_list))]
-print(&#39;Recurrence holds for n! = n*(n-1)!:&#39;, all(recurrence_ok))
+<span class="c1"># Verify recurrence n! = n * (n-1)!</span>
+<span class="n">recurrence_ok</span> <span class="o">=</span> <span class="p">[</span><span class="n">fact_list</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">==</span> <span class="n">n</span> <span class="o">*</span> <span class="n">fact_list</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">n</span><span class="o">&gt;</span><span class="mi">0</span> <span class="k">else</span> <span class="kc">True</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">fact_list</span><span class="p">))]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Recurrence holds for n! = n*(n-1)!:&#39;</span><span class="p">,</span> <span class="nb">all</span><span class="p">(</span><span class="n">recurrence_ok</span><span class="p">))</span>
 
-# Ratios n!/ (n-1)! (should equal n)
-ratios = [fact_list[n] / fact_list[n-1] for n in range(1, len(fact_list))]
-print(&#39;Ratios factorial(n)/factorial(n-1):&#39;, ratios)
+<span class="c1"># Ratios n!/ (n-1)! (should equal n)</span>
+<span class="n">ratios</span> <span class="o">=</span> <span class="p">[</span><span class="n">fact_list</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">/</span> <span class="n">fact_list</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fact_list</span><span class="p">))]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ratios factorial(n)/factorial(n-1):&#39;</span><span class="p">,</span> <span class="n">ratios</span><span class="p">)</span>
 
-# Stirling approximation comparison
-def stirling_approx(n):
-    import math
-    return math.sqrt(2*math.pi*n) * (n/math.e)**n
+<span class="c1"># Stirling approximation comparison</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">stirling_approx</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">n</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">e</span><span class="p">)</span><span class="o">**</span><span class="n">n</span>
 
-stirling_values = [stirling_approx(n) for n in range(1, 10)]
-relative_errors = [abs(fact_list[n] - stirling_values[n-1])/fact_list[n] for n in range(1, 10)]
-print(&#39;Stirling approximation values:&#39;, [round(val) for val in stirling_values])
-print(&#39;Relative errors of Stirling approximation:&#39;, relative_errors)
+<span class="n">stirling_values</span> <span class="o">=</span> <span class="p">[</span><span class="n">stirling_approx</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)]</span>
+<span class="n">relative_errors</span> <span class="o">=</span> <span class="p">[</span><span class="nb">abs</span><span class="p">(</span><span class="n">fact_list</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">-</span> <span class="n">stirling_values</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="n">fact_list</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Stirling approximation values:&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">stirling_values</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Relative errors of Stirling approximation:&#39;</span><span class="p">,</span> <span class="n">relative_errors</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -819,14 +806,16 @@ revealing a growth rate faster than any (c^n).  Factorials appear across combina
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fibonacci-numbers-oeis-a000045">2.1 Fibonacci Numbers – OEIS A000045</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#base">Base</a></li>
@@ -913,8 +902,8 @@ By Tom Tang
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

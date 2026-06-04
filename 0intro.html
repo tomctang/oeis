@@ -16,42 +16,45 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=8dedbda2" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -61,11 +64,14 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '0intro';</script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script src="_static/mermaid-init.js?v=512eb59e"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Chapter 0: Introduction" href="chapter0_introduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -81,19 +87,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -101,7 +96,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -109,8 +103,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -128,7 +122,8 @@
       
         
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -158,15 +153,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -239,9 +230,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -339,7 +335,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -353,25 +349,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -394,7 +382,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculus-finite-difference-combinatorics">Calculus - Finite Difference - Combinatorics</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-operations">Common operations</a></li>
 </ul>
             </nav>
@@ -411,144 +398,6 @@ document.write(`
 <h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
 <p><a class="reference external" href="https://ctang.netlify.app/">My Profile</a>, please send me email.</p>
 <p>motion(change) was governed by ODE, now I know is also by Group Theory</p>
-<section id="calculus-finite-difference-combinatorics">
-<h2>Calculus - Finite Difference - Combinatorics<a class="headerlink" href="#calculus-finite-difference-combinatorics" title="Link to this heading">#</a></h2>
-<p>排列组合是“离散的微积分”，排列组合提供了组合恒等式和离散的单项，而有限差分微积分提供了一套处理离散序列的计算工具</p>
-<p>帕斯卡三角形不仅是组合数的列表，它也是第 n 阶差分为0的函数表，体现了差分方程的性质。</p>
-<p>牛顿-莱布尼茨公式在离散情况下对应“组合数求和”公式</p>
-<p>How permutations enter directly?</p>
-<ul class="simple">
-<li><p>The permutation number <span class="math notranslate nohighlight">\(P(x,n) = \frac{x!}{(x−n)!} = x^{\underline{n}}\)</span>  (when x ≥ n integer) So:</p></li>
-<li><p><span class="math notranslate nohighlight">\(P(x,n)  ≡  x\)</span> permute <span class="math notranslate nohighlight">\(n\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(Δ P(x,n) = n ⋅ P(x, n−1)\)</span></p></li>
-<li><p>This is the discrete analogue of <span class="math notranslate nohighlight">\(\frac{d}{dx} x^n = n x^{n−1}\)</span></p></li>
-</ul>
-<p>How combinations enter directly?</p>
-<ul class="simple">
-<li><p>The binomial coeff <span class="math notranslate nohighlight">\(\binom{x}{n} = \frac{x(x−1)⋯(x−n+1)}{n!} = \frac{P(x,n)}{n!}\)</span>, So <span class="math notranslate nohighlight">\(Δ \binom{x}{n} = \binom{x}{n−1} \)</span></p></li>
-<li><p>This is one of the most beautiful (and useful) identities in discrete calculus (x can be any real or complex number for generalized binomial coeff)</p></li>
-</ul>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Concept</p></th>
-<th class="head"><p>Continuous Calculus</p></th>
-<th class="head"><p>Discrete Calculus (Combinatorics)</p></th>
-<th class="head"><p>Combinatorial Significance</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Operator</p></td>
-<td><p>Derivative <span class="math notranslate nohighlight">\(Df(x)=df/dx​\)</span></p></td>
-<td><p>Forward Difference <span class="math notranslate nohighlight">\(Δf(x)=f(x+1)−f(x)\)</span></p></td>
-<td><p>Rate of change in a sequence</p></td>
-</tr>
-<tr class="row-odd"><td><p>Power Function</p></td>
-<td><p>Standard Power <span class="math notranslate nohighlight">\(x^n\)</span></p></td>
-<td><p><a class="reference external" href="https://en.wikipedia.org/wiki/Falling_and_rising_factorials#">Falling Factorial <span class="math notranslate nohighlight">\(x^{\underline{k}}\)</span></a>​</p></td>
-<td><p>Permutations <span class="math notranslate nohighlight">\(P(x, k)\)</span></p></td>
-</tr>
-<tr class="row-even"><td><p>Power Rule</p></td>
-<td><p><span class="math notranslate nohighlight">\(D(x^n)=nx^{n−1}\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(Δ(x^{\underline{k}}​)=kx^{\underline{k-1}}​\)</span></p></td>
-<td><p>Recurrence of permutations</p></td>
-</tr>
-<tr class="row-odd"><td><p>Basis Function</p></td>
-<td><p><span class="math notranslate nohighlight">\(\frac{x^n}{n!}\)</span>​</p></td>
-<td><p>Binomial Coefficient <span class="math notranslate nohighlight">\(\binom{x}{k​}=\frac{x^{\underline{k}}}{k!}\)</span>​​</p></td>
-<td><p>Combinations (Pascal’s Triangle)</p></td>
-</tr>
-<tr class="row-even"><td><p>Derivative Rule</p></td>
-<td><p><span class="math notranslate nohighlight">\(D(\frac{x^n}{n!})=\frac{x^{n−1}}{(n−1)!}​\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(Δ\binom{x}{k​}=\binom{x}{k​-1} \)</span></p></td>
-<td><p>Pascal’s Identity: <span class="math notranslate nohighlight">\(\binom{n}{k}+\binom{n}{k−1}=\binom{n+1​}{k}\)</span></p></td>
-</tr>
-<tr class="row-odd"><td><p>Inverse Operator</p></td>
-<td><p>Integral <span class="math notranslate nohighlight">\(∫f(x)dx \)</span></p></td>
-<td><p>Indefinite Sum <span class="math notranslate nohighlight">\(∑f(x)δx\)</span></p></td>
-<td><p>Summation of a sequence</p></td>
-</tr>
-<tr class="row-even"><td><p>Fundamental Theorem</p></td>
-<td><p><span class="math notranslate nohighlight">\(∫^{b}_{a} ​f(x)dx=F(b)−F(a) \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(∑^{b-1}_{i=a}​f(i)=[F(i)]_{a}^{b}​\)</span></p></td>
-<td><p>Telescoping sums</p></td>
-</tr>
-<tr class="row-odd"><td><p>Expansion</p></td>
-<td><p>Taylor Series</p></td>
-<td><p>Newton’s Series</p></td>
-<td><p>Fitting a sequence to combinations</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><a class="reference external" href="https://jiha-kim.github.io/posts/discrete-calculus/">see Hard one</a></p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Conceptual Role</p></th>
-<th class="head"><p>Continuous Calculus</p></th>
-<th class="head"><p>Finite Differences (Discrete Calculus)</p></th>
-<th class="head"><p>- Combinatorics/Counting view <br> - Structural meaning</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><strong>Basic object/Domain</strong></p></td>
-<td><p>Function <span class="math notranslate nohighlight">\(f(x)\)</span>, <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span></p></td>
-<td><p>Sequence <span class="math notranslate nohighlight">\(a_n\)</span>, <span class="math notranslate nohighlight">\(n \in \mathbb{Z}\)</span></p></td>
-<td><p>- Counting function(size/cardinality)/integer sequence <br>- Quantity indexed by an ordered parameter (Parameter space)</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Local change operator</strong></p></td>
-<td><p>Derivative <span class="math notranslate nohighlight">\(Df(x)\)</span></p></td>
-<td><p>Forward difference <span class="math notranslate nohighlight">\(\Delta a_n = a_{n+1}-a_n\)</span></p></td>
-<td><p>- Pascal-type recurrences <br>- Measures incremental variation</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>Higher-order change</strong></p></td>
-<td><p><span class="math notranslate nohighlight">\(D^k f(x)\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\Delta^k a_n\)</span></p></td>
-<td><p>- Rows / diagonals of Pascal triangle <br>- Iterated variation</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Key identity</strong></p></td>
-<td><p><span class="math notranslate nohighlight">\(D x^n = n x^{n-1}\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\Delta n^{\underline{k}} = k n^{\underline{k-1}}\)</span></p></td>
-<td><p>- <span class="math notranslate nohighlight">\(\binom{n}{k}\)</span> recursion <br>- Degree-lowering mechanism</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>Polynomial characterization</strong></p></td>
-<td><p>Degree <span class="math notranslate nohighlight">\(d \Rightarrow D^{d+1} f = 0\)</span></p></td>
-<td><p>Degree <span class="math notranslate nohighlight">\(d \Rightarrow \Delta^{d+1} a_n = 0\)</span></p></td>
-<td><p>- Binomial coefficient basis   <br>- Finite-dimensional invariant space</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Basis</strong></p></td>
-<td><p>Powers <span class="math notranslate nohighlight">\(x^k\)</span></p></td>
-<td><p>Falling factorials <span class="math notranslate nohighlight">\(n^{\underline{k}}\)</span></p></td>
-<td><p>- Green’s function analogue <br>- Coordinate system adapted to operator</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>Expansion</strong></p></td>
-<td><p>Taylor series <span class="math notranslate nohighlight">\(f(x)=\sum \frac{x^k}{k!} f^{(k)}(0)\)</span></p></td>
-<td><p>Newton series <span class="math notranslate nohighlight">\(f(n)=\sum \binom{n}{k} \Delta^k f(0)\)</span></p></td>
-<td><p>- Binomial expansion logic <br>- Basis decomposition. Same algebra, different basis</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Convolution / Inverse of change</strong></p></td>
-<td><p>Integral <span class="math notranslate nohighlight">\(\int f(x),dx\)</span></p></td>
-<td><p>Indefinite sum <span class="math notranslate nohighlight">\(\sum a_n\)</span></p></td>
-<td><p>- Product/Summation identities <br>- Operator inverse</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>Fundamental theorem</strong></p></td>
-<td><p><span class="math notranslate nohighlight">\(\int_a^b f'(x)dx = f(b)-f(a)\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\sum_{k=m}^{n-1} \Delta a_k = a_n-a_m\)</span></p></td>
-<td><p>- Hockey-stick identity <br>- Boundary accumulation law</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Eigenfunction problem</strong></p></td>
-<td><p><span class="math notranslate nohighlight">\(Df=\lambda f\)</span>, Exponential <span class="math notranslate nohighlight">\(e^{\lambda x}\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\Delta a_n=\lambda a_n\)</span>, Geometric <span class="math notranslate nohighlight">\((1+\lambda)^n\)</span></p></td>
-<td><p>- Shift / growth encoding <br>- Characteristic solutions</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>Transform tool</strong></p></td>
-<td><p>Laplace / Fourier transform</p></td>
-<td><p>Generating functions / Z-transform</p></td>
-<td><p>- Enumeration machinery <br>- Operator diagonalization</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
 <section id="common-operations">
 <h2>Common operations<a class="headerlink" href="#common-operations" title="Link to this heading">#</a></h2>
 <blockquote>
@@ -636,16 +485,17 @@ Open terminal, example:</p>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculus-finite-difference-combinatorics">Calculus - Finite Difference - Combinatorics</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-operations">Common operations</a></li>
 </ul>
   </nav></div>
@@ -695,8 +545,8 @@ By Tom Tang
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
