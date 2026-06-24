@@ -8,6 +8,7 @@ parts:
   chapters:
   - file: chapter0_introduction
   - file: chapter1_arithmetic_functions
+  - file: UNE_MTeach
 
 - caption: Try oil
   numbered: false
