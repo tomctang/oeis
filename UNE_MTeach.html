@@ -1,0 +1,1068 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>EDLT500 Planning for Effective Learning &#8212; Tom Workbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=8dedbda2" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'UNE_MTeach';</script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script src="_static/mermaid-init.js?v=512eb59e"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="How to Count Things" href="counthow_to_count_things.html" />
+    <link rel="prev" title="Chapter 1: Arithmetic Functions and Multiplicatives" href="chapter1_arithmetic_functions.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="0intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Tom Workbook</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="0intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">OEIS &amp; SageMath</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapter0_introduction.html">Chapter 0: Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter1_arithmetic_functions.html">Chapter 1: Arithmetic Functions and Multiplicatives</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">EDLT500 Planning for Effective Learning</a></li>
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Counting</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="counthow_to_count_things.html">How to Count Things</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="countlectures.html">I. Enumerative Comb</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="countlectures_output.html">I. Enumerative Comb - output</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="counttutorial.html">I. Tutorial</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="counttutorial_solution.html">I. Tutorial - solution</a></li>
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Math Map</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="mathmap.html">Math Map</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="mathmap_old00intro_math.html">Math-FP-Lang Combo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mathmap_old01number_algebra.html">Number &amp; Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mathmap_old02discrete_continuous.html">Discrete &amp; Continuous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mathmap_old03real_world.html">Real World Math</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/tomctang/oeis" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/UNE_MTeach.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>EDLT500 Planning for Effective Learning</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">EDLT500 Planning for Effective Learning</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#educ503-cultural-diversity-eal-d-students">EDUC503 Cultural Diversity – EAL/D Students</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#edcx513-aboriginal-education">EDCX513 Aboriginal Education</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#educ540-classroom-management-and-research-online-prex-10-days">EDUC540 Classroom Management and Research (Online PrEx 10 days)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pmth339-differential-equations">PMTH339 - Differential Equations</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pmth213-linear-algebra">PMTH213 - Linear Algebra</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pmth332-abstract-algebra">PMTH332 - Abstract Algebra</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="edlt500-planning-for-effective-learning">
+<h1>EDLT500 Planning for Effective Learning<a class="headerlink" href="#edlt500-planning-for-effective-learning" title="Link to this heading">#</a></h1>
+<p>Learning outcomes</p>
+<ul class="simple">
+<li><p>develop learning theory into a coherent and justified teaching philosophy and link it to the elements of the Australian Professional Standards for Teachers as a framework for ongoing professional learning (GTSD 1.2.1, 6.1.1);</p></li>
+</ul>
+<ul class="simple">
+<li><p>apply knowledge and understanding of the stages of child and adolescent development to meet the specific learning needs of students across the full range of abilities (GTSD 1.1.1, 1.2.1, 1.6.1);</p></li>
+</ul>
+<ul class="simple">
+<li><p>apply the teaching cycle to plan effective teaching and learning experiences, including assessment, that promote higher-order critical thinking in learners, including the use of verbal and non-verbal communication strategies (GTSD 1.5.1, 3.1.1, 3.2.1, 3.3.1, 3.5.1, 3.6.1, 5.1.1, 5.2.1);</p></li>
+</ul>
+<ul class="simple">
+<li><p>apply a range of strategies to interpret assessment data and modify teaching practice (GTSD 5.1.1, 5.3.1, 5.4.1).</p></li>
+</ul>
+</section>
+<section id="educ503-cultural-diversity-eal-d-students">
+<h1>EDUC503 Cultural Diversity – EAL/D Students<a class="headerlink" href="#educ503-cultural-diversity-eal-d-students" title="Link to this heading">#</a></h1>
+</section>
+<section id="edcx513-aboriginal-education">
+<h1>EDCX513 Aboriginal Education<a class="headerlink" href="#edcx513-aboriginal-education" title="Link to this heading">#</a></h1>
+</section>
+<section id="educ540-classroom-management-and-research-online-prex-10-days">
+<h1>EDUC540 Classroom Management and Research (Online PrEx 10 days)<a class="headerlink" href="#educ540-classroom-management-and-research-online-prex-10-days" title="Link to this heading">#</a></h1>
+<p>Learning outcomes</p>
+<ul class="simple">
+<li><p>demonstrate knowledge and understanding of research into how students learn, including knowledge of child and adolescent development, and the implications for teaching by observing recordings of teacher practice, gathering data, analysing, evaluating findings informed by current research literature, and synthesising knowledge of effective teacher practice (GTSD 1.1.1, 1.2.1);</p></li>
+</ul>
+<ul class="simple">
+<li><p>demonstrate knowledge and understanding of the concepts, substance and structure of the content and teaching strategies of teaching areas (including literacy and numeracy in primary and secondary contexts), by observing teacher practice, and critiquing in terms of current research literature (GTSD 1.5.1, 2.1.1);</p></li>
+</ul>
+<ul class="simple">
+<li><p>demonstrate understanding of a range of teaching strategies including verbal and non-verbal communication to support student engagement by observing teacher practice, and critiquing in terms of current research literature (GTSD 3.3.1, 3.5.1);</p></li>
+</ul>
+<ul class="simple">
+<li><p>identify, observe and critique practising teachers’ strategies to support inclusive student participation, engagement in classroom activities, the management of challenging behaviours, and implications for mental health, informed by research literature (GTSD 4.1.1, 4.2.1, 4.3.1, 4.4.1);</p></li>
+</ul>
+<ul class="simple">
+<li><p>demonstrate understanding of the purpose of providing timely and appropriate feedback to students about their learning by observing teacher practice, and critiquing in terms of current research literature (GTSD 5.2.1);</p></li>
+</ul>
+<ul class="simple">
+<li><p>demonstrate an understanding of the sources of professional learning, a rationale for continued professional learning and the implications for improved student learning by engaging in collaborative professional learning processes (GTSD 6.2.1, 6.4.1, 7.4.1).</p></li>
+</ul>
+</section>
+<section id="pmth339-differential-equations">
+<h1>PMTH339 - Differential Equations<a class="headerlink" href="#pmth339-differential-equations" title="Link to this heading">#</a></h1>
+<p>Offers you qualitative and quantitative methods for ODE and PDE. You will explore first order equations, second order linear equations, series solutions, boundary value problems and phase plane analysis. Learning outcomes:</p>
+<ol class="arabic simple">
+<li><p>use a broad and coherent theoretical knowledge to demonstrate an in-depth understanding of the theory of elementary, ODE and PDE and some of its applications;</p>
+<ul class="simple">
+<li><p><strong>重點：</strong> 不要只背公式。要理解「為什麼」解是這個形式。例如，理解 Wronskian 為什麼能判斷線性無關，理解特徵值問題為什麼在 ODE 和 PDE 中反覆出現。</p></li>
+</ul>
+</li>
+<li><p>develop a deep level of theoretical knowledge about PDE;</p>
+<ul class="simple">
+<li><p><strong>重點：</strong> 這是 3 年級課程的難點。必須熟練掌握 <strong>Sturm-Liouville 理論</strong> 和 <strong>PDE 的分類與特徵線</strong>。理解邊界條件（Boundary Conditions）如何決定解的性質（例如傅里葉係數的計算）。</p></li>
+</ul>
+</li>
+<li><p>apply well-developed knowledge and skills relating to applications of DEs; and</p>
+<ul class="simple">
+<li><p><strong>重點：</strong> 考試中通常會有 Application 大題。你需要熟練掌握「文字題 -&gt; 數學方程 -&gt; 求解 -&gt; 解釋物理意義」的完整流程。特別注意相平面分析在生物模型中的應用。</p></li>
+</ul>
+</li>
+<li><p>analyse and generate solutions to sometimes complex problems, with logical and coherent methodolgy in solving DEs.</p>
+<ul class="simple">
+<li><p><strong>重點：</strong> 培養「解題框架」思維。遇到複雜方程時，第一步判斷類型（線性/非線性、常/偏、階數），第二步選擇合適的方法（分離變量、級數、積分變換、定性分析），第三步執行計算，第四步驗證與解釋。</p></li>
+</ul>
+</li>
+</ol>
+<ol class="arabic simple">
+<li><p>一階常微分方程與定性分析 (First-Order ODEs &amp; Qualitative Analysis) <em>對應大綱：first order equations, qualitative methods, phase plane analysis</em></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>定量求解方法（Quantitative Methods）：</strong></p>
+<ul>
+<li><p>可分離變量方程、齊次方程。</p></li>
+<li><p>一階線性方程與積分因子（Integrating factors）。</p></li>
+<li><p>全微分方程（Exact equations）與伯努利方程（Bernoulli equations）。</p></li>
+</ul>
+</li>
+<li><p><strong>存在性與唯一性理論（Theoretical Knowledge）：</strong></p>
+<ul>
+<li><p>皮卡-林德洛夫定理（Picard-Lindelöf Theorem）與皮卡迭代法。</p></li>
+<li><p>解對初值和參數的連續依賴性。</p></li>
+</ul>
+</li>
+<li><p><strong>定性分析與相平面分析（Qualitative &amp; Phase Plane Analysis）：</strong></p>
+<ul>
+<li><p>方向場（Direction fields）與等斜線（Isoclines）。</p></li>
+<li><p>自治系統（Autonomous systems）與一維相線分析。</p></li>
+<li><p><strong>二維相平面分析：</strong> 臨界點/平衡點（Equilibrium points）的分類（節點、鞍點、螺旋點、中心點）。</p></li>
+<li><p>非線性系統的線性化（Linearization）與李雅普諾夫穩定性（Lyapunov stability）基礎。</p></li>
+<li><p>極限環（Limit cycles）與龐加萊-本迪克松定理（Poincaré-Bendixson Theorem）簡介。</p></li>
+</ul>
+</li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>高階線性常微分方程與級數解 (Higher-Order Linear ODEs &amp; Series Solutions) <em>對應大綱：second order linear equations, series solutions</em></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>二階及高階線性 ODE 理論：</strong></p>
+<ul>
+<li><p>齊次與非齊次方程的解的結構。</p></li>
+<li><p>朗斯基行列式（Wronskian）與阿貝爾定理（Abel’s Theorem）。</p></li>
+<li><p>常係數線性方程的求解（特徵方程法）。</p></li>
+<li><p>待定係數法（Method of Undetermined Coefficients）與參數變易法（Variation of Parameters）。</p></li>
+</ul>
+</li>
+<li><p><strong>冪級數解法（Series Solutions）：</strong></p>
+<ul>
+<li><p>常點（Ordinary points）處的冪級數解。</p></li>
+<li><p>正則奇點（Regular singular points）處的 <strong>Frobenius 方法</strong>。</p></li>
+<li><p>指標方程（Indicial equation）與根的分類（實根、重根、複根）對應的解的形式。</p></li>
+</ul>
+</li>
+<li><p><strong>特殊函數（Special Functions - 3年級核心考點）：</strong></p>
+<ul>
+<li><p>貝塞爾方程（Bessel’s equation）與貝塞爾函數。</p></li>
+<li><p>勒讓德方程（Legendre’s equation）與勒讓德多項式。</p></li>
+</ul>
+</li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>邊值問題與施圖姆-劉維爾理論 (Boundary Value Problems &amp; Sturm-Liouville Theory) <em>對應大綱：boundary value problems, 連接 PDE 的橋樑</em></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>邊值問題（BVPs）基礎：</strong></p>
+<ul>
+<li><p>初值問題（IVP）與邊值問題（BVP）的區別（解的存在性與唯一性差異）。</p></li>
+</ul>
+</li>
+<li><p><strong>施圖姆-劉維爾理論（Sturm-Liouville Theory）：</strong></p>
+<ul>
+<li><p>正則施圖姆-劉維爾問題（Regular S-L problems）的標準形式。</p></li>
+<li><p>特徵值（Eigenvalues）與特徵函數（Eigenfunctions）的性質。</p></li>
+<li><p>特徵函數的正交性（Orthogonality）與權函數（Weight functions）。</p></li>
+</ul>
+</li>
+<li><p><strong>傅里葉級數（Fourier Series）：</strong></p>
+<ul>
+<li><p>傅里葉正弦級數與餘弦級數。</p></li>
+<li><p>週期函數的傅里葉展開與狄利克雷條件（Dirichlet conditions）。</p></li>
+</ul>
+</li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p>Deep Theory of PDEs <em>對應大綱：PDE, deep level of theoretical knowledge about PDE</em></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>PDE 基礎與分類：</strong></p>
+<ul>
+<li><p>二階線性 PDE 的分類：橢圓型（Elliptic）、拋物型（Parabolic）、雙曲型（Hyperbolic）。</p></li>
+<li><p>特徵線方法（Method of Characteristics）與標準型化簡。</p></li>
+</ul>
+</li>
+<li><p><strong>分離變量法（Separation of Variables）：</strong></p>
+<ul>
+<li><p>將 PDE 轉化為 ODE 邊值問題的系統方法。</p></li>
+</ul>
+</li>
+<li><p><strong>三大經典 PDE 的解析解：</strong></p>
+<ul>
+<li><p><strong>熱傳導方程（Heat/Diffusion Equation）：</strong> 一維/二維熱傳導，穩態解。</p></li>
+<li><p><strong>波動方程（Wave Equation）：</strong> 達朗貝爾解（D’Alembert’s solution），行波與駐波，弦振動問題。</p></li>
+<li><p><strong>拉普拉斯/泊松方程（Laplace’s/Poisson’s Equation）：</strong> 穩態溫度分佈，極值原理（Maximum principle）。</p></li>
+</ul>
+</li>
+<li><p><strong>積分變換法（Integral Transforms）：</strong></p>
+<ul>
+<li><p>拉普拉斯變換（Laplace Transform）在求解 PDE 和 ODE 中的應用。</p></li>
+<li><p>傅里葉變換（Fourier Transform）在無限域 PDE 問題中的應用。</p></li>
+</ul>
+</li>
+</ul>
+<ol class="arabic simple" start="5">
+<li><p>Applications &amp; Complex Problem Solving <em>對應大綱：applications of DEs, analyse and generate solutions to complex problems</em></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>物理與工程建模：</strong></p>
+<ul>
+<li><p>機械振動（彈簧-質量-阻尼系統，共振現象）。</p></li>
+<li><p>電路分析（RLC 電路）。</p></li>
+<li><p>連續介質力學基礎（弦的橫振動、桿的縱振動推導）。</p></li>
+</ul>
+</li>
+<li><p><strong>生物與生態建模（結合定性分析）：</strong></p>
+<ul>
+<li><p>種群動力學（Population dynamics）。</p></li>
+<li><p>Lotka-Volterra 捕食者-獵物模型（利用相平面分析其週期性與穩定性）。</p></li>
+</ul>
+</li>
+<li><p><strong>複雜問題的方法論（Logical and coherent methodology）：</strong></p>
+<ul>
+<li><p>如何將複雜的實際物理/工程問題轉化為數學模型（建立 DE）。</p></li>
+<li><p>當精確解析解無法求得時，如何結合定性分析（如穩定性）和近似/漸近方法來理解系統行為。</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="pmth213-linear-algebra">
+<h1>PMTH213 - Linear Algebra<a class="headerlink" href="#pmth213-linear-algebra" title="Link to this heading">#</a></h1>
+<p>linear transformations between vector spaces. This unit offers you an introduction to linear algebra using familiar examples, and explores earlier results, like the Fundamental Theorem of Calculus, in a new light. Building on your understanding of algebra, DEs and multivariable calculus, you will explore systems of linear equations, matrices and algebraic operations on them, and inner products. Learning outcomes:</p>
+<ol class="arabic simple">
+<li><p>unify algebra, DEs and multivariate calculus;</p>
+<ul class="simple">
+<li><p><strong>策略：</strong> 不要孤立地學習矩陣。當學到特徵值時，立刻去複習二階常係數 ODE 的求解；當學到雅可比矩陣時，去複習多元微積分中的鏈式法則和極值問題。<strong>建立「萬物皆可線性化」的思維</strong>。</p></li>
+</ul>
+</li>
+<li><p>theoretical understanding and computational methods;</p>
+<ul class="simple">
+<li><p><strong>策略：</strong> 考試通常分為兩部分。一部分是純計算（如求 SVD、做 Gram-Schmidt），另一部分是證明（如證明某個映射是線性變換、證明子空間的性質）。<strong>計算要保證 100% 準確，證明要注重邏輯嚴密和定義的準確使用</strong>。</p></li>
+</ul>
+</li>
+<li><p>prepare for later studies in algebra, statistics, functional analysis, complex variables, differential geometry, signal processing, harmonic analysis, physics; and</p>
+<ul class="simple">
+<li><p><strong>策略：</strong> 這意味著課程會引入一些「無限維」或「抽象」的視角。在學習內積空間時，<strong>一定要重視函數空間（如傅里葉級數的內積定義）的例子</strong>，這是未來學習泛函分析和信號處理的絕對核心。理解「正交投影」在幾何和數據擬合中的雙重意義。</p></li>
+</ul>
+</li>
+<li><p>illustrate, demonstrate and teach modern mathematics.</p>
+<ul class="simple">
+<li><p><strong>策略：</strong> 這要求你具備「費曼技巧」。在複習時，嘗試用直觀的幾何圖形（如二維/三維空間中的拉伸、旋轉、投影）來解釋抽象的代數概念（如特徵值、核、像）。如果課程有 Presentation 或 Peer-teaching 環節，重點放在**「幾何直觀」與「代數計算」的結合**上。<strong>特別關注「函數空間」和「微積分算子」的線性代數解釋，這是這門課拿高分和真正領悟數學之美的關鍵。</strong></p></li>
+</ul>
+</li>
+</ol>
+<ol class="arabic simple">
+<li><p>矩陣代數與線性方程組（具體與計算基礎）<em>對應大綱：familiar examples, systems of linear equations, matrices and algebraic operations</em></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>線性方程組與矩陣運算：</strong></p>
+<ul>
+<li><p>高斯消元法（Gaussian elimination）與高斯-若爾當消元法。</p></li>
+<li><p>矩陣的代數運算（加法、乘法、轉置、逆矩陣）。</p></li>
+<li><p>行列式（Determinants）的性質與計算（克萊姆法則）。</p></li>
+</ul>
+</li>
+<li><p><strong>矩陣的分解與標準型（計算方法）：</strong></p>
+<ul>
+<li><p>LU 分解（簡介，為後續數值計算做準備）。</p></li>
+<li><p>矩陣的秩（Rank）、零度（Nullity）與秩-零化度定理（Rank-Nullity Theorem）。</p></li>
+</ul>
+</li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>抽象向量空間與線性變換（核心理論）<em>對應大綱：linear transformations between vector spaces, introduction using familiar examples</em></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>向量空間的公理化定義：</strong></p>
+<ul>
+<li><p>從熟悉的 <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> 過渡到抽象向量空間。</p></li>
+<li><p><strong>非矩陣向量空間的例子：</strong> 多項式空間 <span class="math notranslate nohighlight">\(P_n\)</span>、連續函數空間 <span class="math notranslate nohighlight">\(C[a,b]\)</span>、矩陣空間 <span class="math notranslate nohighlight">\(M_{m \times n}\)</span>。</p></li>
+</ul>
+</li>
+<li><p><strong>子空間與基：</strong></p>
+<ul>
+<li><p>子空間（Subspaces）、張成（Span）、線性相關與無關。</p></li>
+<li><p>基（Basis）與維度（Dimension）。</p></li>
+</ul>
+</li>
+<li><p><strong>線性變換（Linear Transformations）：</strong></p>
+<ul>
+<li><p>線性變換的定義、核（Kernel）與像（Image）。</p></li>
+<li><p><strong>線性變換的矩陣表示：</strong> 如何在給定基底下將抽象線性變換轉化為矩陣。</p></li>
+<li><p>基變換（Change of basis）與過渡矩陣（Transition matrices）。</p></li>
+<li><p>同構（Isomorphism）：證明有限維向量空間與其坐標空間 <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> 同構。</p></li>
+</ul>
+</li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>特徵值理論與微分方程的聯繫（統一性與應用）<em>對應大綱：unify material learnt in earlier units (DEs), computational methods</em></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>特徵值與特徵向量：</strong></p>
+<ul>
+<li><p>特徵多項式、特徵值、特徵空間。</p></li>
+<li><p>矩陣的對角化（Diagonalization）條件與方法。</p></li>
+<li><p>凱萊-哈密頓定理（Cayley-Hamilton Theorem）。</p></li>
+</ul>
+</li>
+<li><p><strong>線性代數在常微分方程（DEs）中的統一應用：</strong></p>
+<ul>
+<li><p>將高階線性 ODE 轉化為<strong>一階線性 ODE 方程組（狀態空間形式）</strong>。</p></li>
+<li><p>利用矩陣指數（Matrix exponential, <span class="math notranslate nohighlight">\(e^{At}\)</span>）和特徵值/特徵向量求解線性常係數 ODE 方程組。</p></li>
+</ul>
+</li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p>內積空間與正交性（通往高級課程的橋樑）<em>對應大綱：inner products, prepare for statistics, signal processing, harmonic analysis</em></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>內積空間基礎：</strong></p>
+<ul>
+<li><p>實/複內積的定義與性質。</p></li>
+<li><p>範數（Norm）、距離、柯西-施瓦茨不等式（Cauchy-Schwarz Inequality）。</p></li>
+</ul>
+</li>
+<li><p><strong>正交性與投影：</strong></p>
+<ul>
+<li><p>正交補（Orthogonal complements）。</p></li>
+<li><p><strong>格拉姆-施密特正交化過程（Gram-Schmidt process）</strong>。</p></li>
+<li><p>正交投影（Orthogonal projections）與<strong>最小二乘法（Least Squares approximations）</strong>（統計學與數據擬合的核心）。</p></li>
+</ul>
+</li>
+<li><p><strong>正交矩陣與酉矩陣：</strong></p>
+<ul>
+<li><p>正交矩陣（Orthogonal matrices）的性質。</p></li>
+<li><p>實對稱矩陣的對角化（譜定理 Spectral Theorem 基礎）。</p></li>
+</ul>
+</li>
+</ul>
+<ol class="arabic simple" start="5">
+<li><p>微積分與線性代數的統一（核心亮點）<em>對應大綱：explores earlier results, like the Fundamental Theorem of Calculus, in a new light; unify multivariable calculus</em></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>微積分算子作為線性變換：</strong></p>
+<ul>
+<li><p>將微分算子 <span class="math notranslate nohighlight">\(D = \frac{d}{dx}\)</span> 和積分算子 <span class="math notranslate nohighlight">\(I = \int\)</span> 視為函數空間（如多項式空間 <span class="math notranslate nohighlight">\(P_n\)</span> 或光滑函數空間）上的<strong>線性變換</strong>。</p></li>
+<li><p>求微分算子的矩陣表示（例如在基 <span class="math notranslate nohighlight">\(\{1, x, x^2\}\)</span> 下）。</p></li>
+</ul>
+</li>
+<li><p><strong>用線性代數重新詮釋微積分基本定理（FTC）：</strong></p>
+<ul>
+<li><p>從線性代數角度看，FTC 本質上是關於<strong>核（Kernel）與像（Image）</strong> 的關係。</p></li>
+<li><p>微分算子 <span class="math notranslate nohighlight">\(D\)</span> 的核是常數空間。積分算子 <span class="math notranslate nohighlight">\(I\)</span> 是 <span class="math notranslate nohighlight">\(D\)</span> 的右逆（<span class="math notranslate nohighlight">\(D \circ I = \text{Id}\)</span>），而 <span class="math notranslate nohighlight">\(I \circ D = \text{Id} - P_0\)</span>（其中 <span class="math notranslate nohighlight">\(P_0\)</span> 是投影到常數空間的投影算子）。這完美解釋了為什麼不定積分要加常數 <span class="math notranslate nohighlight">\(C\)</span>。</p></li>
+</ul>
+</li>
+<li><p><strong>多變量微積分中的線性代數：</strong></p>
+<ul>
+<li><p><strong>雅可比矩陣（Jacobian matrix）</strong> 作為多變量函數在某一點的「最佳線性近似（Best linear approximation）」。</p></li>
+<li><p>海森矩陣（Hessian matrix）與多元函數的極值判定（正定/負定矩陣）。</p></li>
+</ul>
+</li>
+</ul>
+<ol class="arabic simple" start="6">
+<li><p>高級主題與數學表達 <em>對應大綱：prepare for functional analysis, differential geometry, physics; illustrate and teach modern mathematics</em></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>對偶空間與張量初步（為微分幾何/物理準備）：</strong></p>
+<ul>
+<li><p>線性泛函（Linear functionals）與對偶空間（Dual space, <span class="math notranslate nohighlight">\(V^*\)</span>）。</p></li>
+<li><p>伴隨變換（Adjoint transformations）。</p></li>
+</ul>
+</li>
+<li><p><strong>奇異值分解（SVD）與主成分分析（PCA）初步（為統計/信號處理準備）：</strong></p>
+<ul>
+<li><p>SVD 的幾何意義與計算。</p></li>
+<li><p>協方差矩陣（Covariance matrices）與數據降維的線性代數基礎。</p></li>
+</ul>
+</li>
+<li><p><strong>數學溝通與證明（LO4 的落實）：</strong></p>
+<ul>
+<li><p>嚴格的數學證明寫作（直接證明、反證法、數學歸納法在線性代數中的應用）。</p></li>
+<li><p>可能包含小組展示（Presentation）或撰寫數學解釋報告，練習如何「illustrate and teach」數學概念。</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="pmth332-abstract-algebra">
+<h1>PMTH332 - Abstract Algebra<a class="headerlink" href="#pmth332-abstract-algebra" title="Link to this heading">#</a></h1>
+<p>This unit will introduce you to the theory of groups and rings. You will explore basic properties, subgroups and subrings, quotient structures, products of groups and rings, and isomorphism theorems. You will meet key results such as the Fundamental Theorem of Finitely Generated Abelian Groups and the Sylow Theorems as well as cyclic groups, polynomial rings and fields of quotients. To boost your ability to construct proofs and your communication of complex concepts to prepare for further studies in advanced mathematics. Learning outcomes:</p>
+<ol class="arabic simple">
+<li><p>demonstrate an understanding of basic topics in Abstract Algebra;</p></li>
+<li><p>demonstrate a preliminary understanding of central elementary concepts of modern algebra;</p>
+<ul class="simple">
+<li><p><strong>策略：</strong> 抽象代數的定義極多且極其嚴格。<strong>必須做到對定義的「肌肉記憶」</strong>。例如，證明一個子集是正規子群，必須嚴格寫出 <span class="math notranslate nohighlight">\(gNg^{-1} \subseteq N\)</span> 的過程，不能跳步。</p></li>
+</ul>
+</li>
+<li><p>continue the unification of earlier material commenced in PMTH213;</p>
+<ul class="simple">
+<li><p><strong>策略：</strong> 在學習「商群/商環」和「同態」時，不斷回想線性代數中的「商空間（Quotient space）」和「線性映射的核與像（Rank-Nullity Theorem）」。你會發現抽象代數的定理是線性代數定理在更一般結構下的完美推廣。</p></li>
+</ul>
+</li>
+<li><p>develop both theoretical understanding and computational methods;</p>
+<ul class="simple">
+<li><p><strong>策略：</strong> 考試通常分為「證明題」和「計算題」。</p>
+<ul>
+<li><p><em>計算題：</em> 熟練計算對稱群的置換、求商群的階、利用西羅定理計算特定階數群的西羅子群數量、將有限阿貝爾群分解為標準型。</p></li>
+<li><p><em>證明題：</em> 掌握「構造同構映射」的標準套路（定義映射 -&gt; 證明良定義 -&gt; 證明同態 -&gt; 證明單射 -&gt; 證明滿射）。</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>prepare themselves for further studies in number theory, commutative algebra, Lie algebras, algebraic geometry, representation theory, algebraic topology, homological algebra, category theory; and</p>
+<ul class="simple">
+<li><p><strong>策略：</strong> 不要只把這門課當作孤立的知識。在學到「多項式環」和「極大理想」時，主動去了解一下它們在代數幾何（Algebraic Geometry）中代表什麼（即「點」）；在學到「群作用」時，思考它在拓撲學（基本群）中的意義。這會極大拓寬你的數學視野。</p></li>
+</ul>
+</li>
+<li><p>illustrate, demonstrate and teach modern mathematics.</p>
+<ul class="simple">
+<li><p><strong>策略：</strong> 這是區分「普通學生」和「優秀學生」的關鍵。在複習時，嘗試用<strong>費曼技巧</strong>：能不能用一句話或一個具體的例子（如魔方、撲克牌洗牌、晶體對稱性）向非數學專業的人解釋什麼是「群」或「商群」？如果課程有 Presentation，務必準備好豐富的幾何/物理直觀例子來輔助你的抽象證明。</p></li>
+</ul>
+</li>
+</ol>
+<ol class="arabic simple">
+<li><p>Group Theory &amp; Cyclic Groups <em>對應大綱：basic properties, subgroups, cyclic groups</em></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>群的基本概念：</strong></p>
+<ul>
+<li><p>群、阿貝爾群（交換群）的定義與基本性質。eg. 對稱群（Symmetric groups <span class="math notranslate nohighlight">\(S_n\)</span>）、二面體群（Dihedral groups <span class="math notranslate nohighlight">\(D_n\)</span>）、一般線性群/特殊線性群（矩陣群，<strong>這裡與 PMTH213 線性代數產生強烈連結</strong>）。</p></li>
+</ul>
+</li>
+<li><p><strong>子群與循環群：</strong></p>
+<ul>
+<li><p>子群（Subgroups）的判定定理。</p></li>
+<li><p>循環群（Cyclic groups）的生成元、階（Order）與分類（同構於 <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> 或 <span class="math notranslate nohighlight">\(\mathbb{Z}_n\)</span>）。</p></li>
+</ul>
+</li>
+<li><p><strong>陪集與拉格朗日定理：</strong></p>
+<ul>
+<li><p>左/右陪集（Cosets）。</p></li>
+<li><p><strong>拉格朗日定理（Lagrange’s Theorem）</strong> 及其推論（如費馬小定理、歐拉定理的群論證明）。</p></li>
+</ul>
+</li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>群的同態與高級結構 (Group Homomorphisms &amp; Advanced Structures)
+<em>對應大綱：quotient structures, products of groups, isomorphism theorems, Sylow Theorems, Fundamental Theorem of Finitely Generated Abelian Groups</em></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>同態與商群：</strong></p>
+<ul>
+<li><p>群同態（Homomorphisms）、核（Kernel）與像（Image）。</p></li>
+<li><p>正規子群（Normal subgroups）的定義與判定。</p></li>
+<li><p><strong>商群（Quotient groups）</strong> 的構造與性質。</p></li>
+</ul>
+</li>
+<li><p><strong>同構定理與直積：</strong></p>
+<ul>
+<li><p><strong>群的第一、第二、第三同構定理</strong>（核心考點）。</p></li>
+<li><p>群的直積（Direct products）與內部/外部直積。</p></li>
+</ul>
+</li>
+<li><p><strong>有限群的高級分類定理（三年級核心難點）：</strong></p>
+<ul>
+<li><p><strong>西羅定理（Sylow Theorems）：</strong> 西羅 <span class="math notranslate nohighlight">\(p\)</span>-子群的存在性、共軛性與數量計算（用於分類特定階數的群）。</p></li>
+<li><p><strong>有限生成阿貝爾群基本定理（Fundamental Theorem of Finitely Generated Abelian Groups）：</strong> 將有限阿貝爾群分解為循環群直積的標準型（不變因子型與初等因子型）。</p>
+<ul>
+<li><p><strong>群論的西羅定理和阿貝爾群分類定理，以及環論的理想與商環構造，是這門課的兩座大山。</strong> 跨越這兩座大山，你將真正具備現代純數學的思維方式</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ol class="arabic simple">
+<li><p>Ring Theory <em>對應大綱：rings, subrings, quotient structures, products of rings, isomorphism theorems</em></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>環的基本概念：</strong></p>
+<ul>
+<li><p>環、交換環、含幺環的定義。</p></li>
+<li><p>整環（Integral domains）與域（Fields）的定義與關係。</p></li>
+<li><p>子環（Subrings）與理想（Ideals：主理想、素理想、極大理想）。</p></li>
+</ul>
+</li>
+<li><p><strong>環的同態與商環：</strong></p>
+<ul>
+<li><p>環同態、核與像。</p></li>
+<li><p><strong>商環（Quotient rings）</strong> 的構造。</p></li>
+<li><p><strong>環的同構定理</strong>（與群的同構定理對比學習）。</p></li>
+</ul>
+</li>
+<li><p><strong>環的直積：</strong></p>
+<ul>
+<li><p>環的直積結構與中國剩餘定理（Chinese Remainder Theorem）在環論中的推廣。</p></li>
+</ul>
+</li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p>多項式環與商域 (Polynomial Rings &amp; Fields of Quotients) <em>對應大綱：polynomial rings, fields of quotients</em></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>多項式環理論：</strong></p>
+<ul>
+<li><p>多項式環 <span class="math notranslate nohighlight">\(R[x]\)</span> 的性質。</p></li>
+<li><p>帶餘除法、最大公因式。</p></li>
+<li><p>不可約多項式（Irreducible polynomials）與愛森斯坦判別法（Eisenstein’s criterion）。</p></li>
+</ul>
+</li>
+<li><p><strong>特殊整環的分類：</strong></p>
+<ul>
+<li><p>歐幾里得整環（ED） <span class="math notranslate nohighlight">\(\subset\)</span> 主理想整環（PID） <span class="math notranslate nohighlight">\(\subset\)</span> 唯一分解整環（UFD） <span class="math notranslate nohighlight">\(\subset\)</span> 整環（Integral Domain）。</p></li>
+<li><p>高斯引理（Gauss’s Lemma）與多項式環的 UFD 性質。</p></li>
+</ul>
+</li>
+<li><p><strong>商域（Fields of Quotients）：</strong></p>
+<ul>
+<li><p>從整環構造其商域（例如從 <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> 構造 <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span>，從多項式環構造有理函數域）。</p></li>
+<li><p>商域的泛性質（Universal property）。</p></li>
+</ul>
+</li>
+</ul>
+<ol class="arabic simple" start="5">
+<li><p>統一性與前瞻 (Unification &amp; Forward Look) <em>對應大綱：continue the unification of earlier material commenced in PMTH213; prepare for further studies (number theory, algebraic geometry, Lie algebras, etc.)</em></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>與 PMTH213（線性代數）的統一：</strong></p>
+<ul>
+<li><p><strong>模（Modules）的初步概念：</strong> 將向量空間視為「域上的模」，將阿貝爾群視為「整數環 <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> 上的模」。這將線性代數中的基、維度、線性變換統一到了抽象代數的框架下。</p></li>
+<li><p>矩陣環 <span class="math notranslate nohighlight">\(M_n(F)\)</span> 的結構與線性變換的環同態。</p></li>
+</ul>
+</li>
+<li><p><strong>為高級課程鋪路（LO5 的落實）：</strong></p>
+<ul>
+<li><p><strong>數論：</strong> 環論中的理想與數論中的整除性。</p></li>
+<li><p><strong>代數幾何：</strong> 多項式環的極大理想與仿射空間中的點（希爾伯特零點定理預習）。</p></li>
+<li><p><strong>表示論/李代數：</strong> 群作用（Group actions）與對稱性的代數化。</p></li>
+<li><p><strong>範疇論/同調代數：</strong> 同態、核、像、同構定理本質上都是範疇論中「態射（morphisms）」的具體體現。</p></li>
+</ul>
+</li>
+</ul>
+<ol class="arabic simple" start="6">
+<li><p>證明建構與數學溝通 (Proof Construction &amp; Mathematical Communication) <em>對應大綱：boost your ability to construct proofs, communication of complex concepts, illustrate, demonstrate and teach</em></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>抽象代數的證明技巧：</strong></p>
+<ul>
+<li><p>構造性證明（如構造同構映射）。</p></li>
+<li><p>利用泛性質（Universal properties）進行證明。</p></li>
+<li><p>反證法與數學歸納法在群/環階數與整除性中的應用。</p></li>
+</ul>
+</li>
+<li><p><strong>數學直觀與教學溝通（LO6 的核心）：</strong></p>
+<ul>
+<li><p><strong>幾何直觀化：</strong> 例如用正方形的對稱性（翻轉、旋轉）來「illustrate」二面體群 <span class="math notranslate nohighlight">\(D_4\)</span>；用時鐘算術來「demonstrate」商群 <span class="math notranslate nohighlight">\(\mathbb{Z}/n\mathbb{Z}\)</span>。</p></li>
+<li><p><strong>數學寫作與演講：</strong> 課程可能包含書寫嚴格的證明作業（Proof assignments），甚至要求進行小組展示（Presentation），向同學「teach」某個抽象定理（如西羅定理的證明思路），訓練將極度抽象的概念轉化為他人能聽懂的語言。</p></li>
+</ul>
+</li>
+</ul>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="chapter1_arithmetic_functions.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Chapter 1: Arithmetic Functions and Multiplicatives</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="counthow_to_count_things.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">How to Count Things</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">EDLT500 Planning for Effective Learning</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#educ503-cultural-diversity-eal-d-students">EDUC503 Cultural Diversity – EAL/D Students</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#edcx513-aboriginal-education">EDCX513 Aboriginal Education</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#educ540-classroom-management-and-research-online-prex-10-days">EDUC540 Classroom Management and Research (Online PrEx 10 days)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pmth339-differential-equations">PMTH339 - Differential Equations</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pmth213-linear-algebra">PMTH213 - Linear Algebra</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pmth332-abstract-algebra">PMTH332 - Abstract Algebra</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Tom Tang
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
