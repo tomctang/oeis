@@ -10,6 +10,8 @@ parts:
   - file: chapter1_arithmetic_functions
   - file: UNE_MTeach
   - file: UNE_Math_Econ
+  - file: 1线性方程组
+  - file: 8矩阵的几何解释-线性变换
 
 - caption: Try oil
   numbered: false
