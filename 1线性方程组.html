@@ -509,8 +509,8 @@ x_{3}=3.
 <h2>2.高斯消元法求解线性方程组<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p><span class="math notranslate nohighlight">\(\quad\)</span>每一个学过线性代数的学生都学过高斯消元，它可被用于求解线性方程组、求逆矩阵等。算法主要思路就是对一个矩阵进行一系列<strong>初等行变换</strong>，将其转换为一个<strong>阶梯型矩阵</strong>进而求解。<br />
 <span class="math notranslate nohighlight">\(\quad\)</span>阶梯型矩阵的形式如下图所示。其中阶梯型矩阵的每一行的首个非零元素我们称之为<strong>主元</strong>，主元所在的列称之为<strong>主元列</strong>。阶梯型矩阵中主元所在列，主元以下全为0；某一行的主元所在列位于前一行主元的右边。</p>
-<img src="./image/1_1.jpg" width="300" height="150" />
-<img src="./image/1_2.png" width="300" height="150" />
+<img src="./images/1_1.jpg" width="300" height="150" />
+<img src="./images/1_2.png" width="300" height="150" />
 <p><span class="math notranslate nohighlight">\(\quad\)</span>矩阵的初等行变换包括以下三个操作。当一个矩阵A经过一系列初等行变化变为矩阵B，它们是<strong>行等价</strong>的；两个线性方程组的增广矩阵行等价时，它们的解集是相同的。</p>
 <ul class="simple">
 <li><p>（倍加变换）把某一行换成它本身与另一行的倍数的和；</p></li>
@@ -530,9 +530,9 @@ x_{3}=3.
   \end{matrix} 
   \right]\end{split}\]</div>
 <p>1.先求第一行主元。找出第一行、第一列中绝对值最大元素所在行i，接着交换第i行和第一行。第一行通过倍加变换、倍乘变换将第一行第一列以下的元素清0：</p>
-<img src="./image/1_3.png" width="700" height="250" />  
+<img src="./images/1_3.png" width="700" height="250" />  
 <p>2.求第二行主元。找出第二行、第二列中绝对值最大元素所在行i，接着交换第i行和第二行。第二行通过倍加变换、倍乘变换将第二行第二列以下的元素清0：</p>
-<img src="./image/1_4.png" width="700" height="250" />  
+<img src="./images/1_4.png" width="700" height="250" />  
 <p>3.以此类推，直至矩阵为一个阶梯型矩阵。如果消元过程中所求位置为0，则切换至下一列继续消元；过程中如果已经为阶梯型矩阵则结束算法。<br />
 <span class="math notranslate nohighlight">\(\quad\)</span>最后推得下式。将增广矩阵还原回线性方程组，我们称对应于主元列的变量<span class="math notranslate nohighlight">\(x_{1},x_{2},x_{4}\)</span>为<strong>基本变量</strong>，其他变量<span class="math notranslate nohighlight">\(x_{3}\)</span>为<strong>自由变量</strong>。</p>
 <div class="math notranslate nohighlight">
@@ -570,7 +570,7 @@ x_{3}=3.
   \end{bmatrix}\end{split}\]</div>
 <p><span class="math notranslate nohighlight">\(\quad\)</span>向量之间可以进行加减法得到新的向量（平行四边形法则）；也支持和实数做标量乘法，即向量中的每个元素和该实数做乘法得到新的向量。<br />
 <span class="math notranslate nohighlight">\(\quad\)</span>若<span class="math notranslate nohighlight">\(n\)</span>是正整数，<span class="math notranslate nohighlight">\(\Bbb{R}^n\)</span>表示所有具有<span class="math notranslate nohighlight">\(n\)</span>个元素的向量的集合。<span class="math notranslate nohighlight">\(\Bbb{R}^2\)</span>可以理解为一个平面上的直角坐标系，那么<span class="math notranslate nohighlight">\(\Bbb{R}^2\)</span>中的每个向量<span class="math notranslate nohighlight">\(\mathbf{u}=\begin{bmatrix}u_{1}\\u_{2}\end{bmatrix}\)</span>可看作是平面上的一个点<span class="math notranslate nohighlight">\((u_{1},u_{2})\)</span>，或者看成是平面上的一个从原点指向<span class="math notranslate nohighlight">\((u_{1},u_{2})\)</span>的有向箭头，如图：</p>
-<img src="./image/2_1.jpg" width="300" height="150" />
+<img src="./images/2_1.jpg" width="300" height="150" />
 <section id="id7">
 <h3>1.1 线性组合<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <p><span class="math notranslate nohighlight">\(\quad\)</span>给定<span class="math notranslate nohighlight">\(\Bbb{R}^n\)</span>中向量<span class="math notranslate nohighlight">\(\mathbf{v}_{1},\mathbf{v}_{2},\cdots,\mathbf{v}_{p}\)</span>和标量<span class="math notranslate nohighlight">\(c_{1},c_{2},\cdots,c_{p}\)</span>，向量</p>
@@ -584,9 +584,9 @@ x_{3}=3.
 \end{bmatrix}
 \end{split}\]</div>
 <p>其中<span class="math notranslate nohighlight">\(\mathbf{v}_{1},\mathbf{v}_{2}\)</span>在<span class="math notranslate nohighlight">\(\Bbb{R}^2\)</span>中表示如下图所示：</p>
-<img src="./image/2_2.png" width="250" height="150" />  
+<img src="./images/2_2.png" width="250" height="150" />  
 <p>接着我们在图中表示出线性组合<span class="math notranslate nohighlight">\(\mathbf{u}=3\mathbf{v}_{1}-2\mathbf{v}_{2}\)</span>的生成过程。其中左图的线性组合表示为：原点分别沿着<span class="math notranslate nohighlight">\(3\mathbf{v}_{1}\)</span>、<span class="math notranslate nohighlight">\(-2\mathbf{v}_{2}\)</span>生成所求<span class="math notranslate nohighlight">\(\mathbf{u}\)</span>；右图的线性组合表示为：向量<span class="math notranslate nohighlight">\(3\mathbf{v}_{1}\)</span>、<span class="math notranslate nohighlight">\(-2\mathbf{v}_{2}\)</span>的一次相加（平行四边形法则）。</p>
-<img src="./image/2_3.png" width="500" height="250" />
+<img src="./images/2_3.png" width="500" height="250" />
 <p><span class="math notranslate nohighlight">\(\quad\)</span>线性代数的一个主要思想是研究可以表示为某一固定向量集合<span class="math notranslate nohighlight">\(\{\mathbf{v}_{1},\mathbf{v}_{2},\cdots,\mathbf{v}_{p}\}\)</span>的线性组合的所有向量（基）。若<span class="math notranslate nohighlight">\(\mathbf{v}_{1},\cdots,\mathbf{v}_{p}\)</span>是<span class="math notranslate nohighlight">\(\Bbb{R}^n\)</span>中的向量，则<span class="math notranslate nohighlight">\(\mathbf{v}_{1},\cdots,\mathbf{v}_{p}\)</span>的所有线性组合所成的集合用记号<span class="math notranslate nohighlight">\(Span\{\mathbf{v}_{1},\cdots,\mathbf{v}_{p}\}\)</span>表示，称为由<span class="math notranslate nohighlight">\(\mathbf{v}_{1},\cdots,\mathbf{v}_{p}\)</span>所生成（张成）的<span class="math notranslate nohighlight">\(\Bbb{R}^n\)</span>的子集。更具体地说，<span class="math notranslate nohighlight">\(Span\{\mathbf{v}_{1},\cdots,\mathbf{v}_{p}\}\)</span>是所有形如：</p>
 <div class="math notranslate nohighlight">
 \[c_{1}\mathbf{v}_{1}+\cdots+c_{p}\mathbf{v}_{p}\]</div>
@@ -613,9 +613,9 @@ A\mathbf{x}=\begin{bmatrix}
 x_{1}\mathbf{a}_{1}+\cdots+x_{n}\mathbf{a}_{n}
 \end{split}\]</div>
 <p>观察该式我们也能看出，<span class="math notranslate nohighlight">\(A\)</span>的列数必须等于<span class="math notranslate nohighlight">\(\mathbf{x}\)</span>的行数。举例：</p>
-<img src="./image/2_5.png" width="400" height="250" />  
+<img src="./images/2_5.png" width="400" height="250" />  
 <p><span class="math notranslate nohighlight">\(\quad\)</span>回到线性方程组，要将一个线性方程组表示成一个矩阵方程，我们只需要表示为系数矩阵与变量向量相乘即可，例如：</p>
-<img src="./image/2_6.png" width="500" height="250" />  
+<img src="./images/2_6.png" width="500" height="250" />  
 <p>由图可以看出，这三种方程形式的解集都是一致的。2、3式表明：判断该线性方程组是否有解，等价于判断<span class="math notranslate nohighlight">\(\mathbf{b}\)</span>是否是<span class="math notranslate nohighlight">\(A\)</span>的列向量的一个线性组合（或者说<span class="math notranslate nohighlight">\(\mathbf{b}\)</span>是否属于<span class="math notranslate nohighlight">\(Span\{\mathbf{v}_{1},\cdots,\mathbf{v}_{n}\}\)</span>）。</p>
 <section id="id9">
 <h3>2.1齐次线性方程组与线性无关<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
@@ -630,7 +630,7 @@ x_{1}\mathbf{a}_{1}+\cdots+x_{n}\mathbf{a}_{n}
 <section id="id10">
 <h3>2.2矩阵的积<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
 <p><span class="math notranslate nohighlight">\(\quad\)</span>两个矩阵相乘<span class="math notranslate nohighlight">\(A\times B\)</span>可以看做是<span class="math notranslate nohighlight">\(B\)</span>的每个列向量与<span class="math notranslate nohighlight">\(A\)</span>作一次乘法形成新的矩阵。具体如下所示：</p>
-<img src="./image/2_7.png" width="400" height="250" />  
+<img src="./images/2_7.png" width="400" height="250" />  
 <p>类似进行了<span class="math notranslate nohighlight">\(n\)</span>次矩阵方程的计算。</p>
 </section>
 </section>
@@ -645,12 +645,12 @@ x_{1}\mathbf{a}_{1}+\cdots+x_{n}\mathbf{a}_{n}
 <li><p>零矩阵，矩阵元素全为0。</p></li>
 </ul>
 <p><span class="math notranslate nohighlight">\(\quad\)</span>若<span class="math notranslate nohighlight">\(A,B,C\)</span>是相同维数的矩阵，<span class="math notranslate nohighlight">\(r\)</span>与<span class="math notranslate nohighlight">\(s\)</span>为一实数，则有：</p>
-<img src="./image/3_1.png" width="200" height="150"/>  
+<img src="./images/3_1.png" width="200" height="150"/>  
 <p><span class="math notranslate nohighlight">\(\quad\)</span>设<span class="math notranslate nohighlight">\(A\)</span>为<span class="math notranslate nohighlight">\(m\times n\)</span>矩阵，<span class="math notranslate nohighlight">\(B,C\)</span>维数使下列各式的乘积有定义（矩阵<span class="math notranslate nohighlight">\(A,B\)</span>相乘，前者的列数等于后者的行数）。关于矩阵乘法则有：</p>
-<img src="./image/3_2.png" width="250" height="200"/>  
+<img src="./images/3_2.png" width="250" height="200"/>  
 <p><span class="math notranslate nohighlight">\(\quad\)</span>矩阵的<strong>乘幂</strong>表示为<span class="math notranslate nohighlight">\(A^{k}\)</span>，其中<span class="math notranslate nohighlight">\(A\)</span>是<span class="math notranslate nohighlight">\(n\times n\)</span>矩阵，<span class="math notranslate nohighlight">\(A^{k}\)</span>表示为<span class="math notranslate nohighlight">\(k\)</span>个<span class="math notranslate nohighlight">\(A\)</span>的乘积<span class="math notranslate nohighlight">\(A^{k}=A\cdots A\)</span>。<span class="math notranslate nohighlight">\(A^{0}\)</span>为单位矩阵。<br />
 <span class="math notranslate nohighlight">\(\quad\)</span>矩阵的<strong>转置</strong>表示为<span class="math notranslate nohighlight">\(A^{T}\)</span>，其中<span class="math notranslate nohighlight">\(A\)</span>是一个<span class="math notranslate nohighlight">\(m\times n\)</span>矩阵，则<span class="math notranslate nohighlight">\(A^{T}\)</span>是一个<span class="math notranslate nohighlight">\(n\times m\)</span>矩阵，<span class="math notranslate nohighlight">\(A^{T}\)</span>的列是由<span class="math notranslate nohighlight">\(A\)</span>的行构成的。设<span class="math notranslate nohighlight">\(A,B\)</span>为矩阵，其维数使下列和与积有定义，则有：</p>
-<img src="./image/3_3.png" width="200" height="150"/>  
+<img src="./images/3_3.png" width="200" height="150"/>  
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="id12">
 <h1>2.逆矩阵<a class="headerlink" href="#id12" title="Link to this heading">#</a></h1>
@@ -662,11 +662,11 @@ x_{1}\mathbf{a}_{1}+\cdots+x_{n}\mathbf{a}_{n}
 \[AA^{-1}=I,A^{-1}A=I\]</div>
 <p>不可逆矩阵也称之为<strong>奇异矩阵</strong>，可逆矩阵也称为<strong>非奇异矩阵</strong>。可逆矩阵一定是方阵。<br />
 <span class="math notranslate nohighlight">\(\quad\)</span>下面是有关可逆矩阵的基本定理，假设<span class="math notranslate nohighlight">\(A\)</span>可逆：</p>
-<img src="./image/3_5.png" width="300" height="200"/>  
+<img src="./images/3_5.png" width="300" height="200"/>  
 <section id="id13">
 <h2>2.1伴随矩阵求逆矩阵<a class="headerlink" href="#id13" title="Link to this heading">#</a></h2>
 <p><span class="math notranslate nohighlight">\(\quad\)</span>伴随矩阵求矩阵的逆是一种常用的手算算法，是借助高斯消元的一种算法。假设求矩阵<span class="math notranslate nohighlight">\(A\)</span>的逆矩阵，将同维度的单位矩阵<span class="math notranslate nohighlight">\(I\)</span>与<span class="math notranslate nohighlight">\(A\)</span>构成增广矩阵<span class="math notranslate nohighlight">\([A \quad I]\)</span>，要么有一系列行变换把<span class="math notranslate nohighlight">\(A\)</span>变成<span class="math notranslate nohighlight">\(I\)</span>，同时<span class="math notranslate nohighlight">\(I\)</span>变成<span class="math notranslate nohighlight">\(A^{-1}\)</span>；要么A是不可逆的。例如：</p>
-<img src="./image/3_4.png" width="300" height="200"/>  
+<img src="./images/3_4.png" width="300" height="200"/>  
 <p>伴随矩阵求逆矩阵时间复杂度过大，只适合于手算；计算机中求逆矩阵会借助矩阵的<a class="reference internal" href="#%E3%80%8A%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E3%80%8B%E7%AC%94%E8%AE%B016.%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3-LU%E5%88%86%E8%A7%A3.ipynb"><span class="xref myst"><span class="math notranslate nohighlight">\(LUP\)</span>分解</span></a>。还可以通过<a class="reference internal" href="#%E3%80%8A%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E3%80%8B%E7%AC%94%E8%AE%B004.%E8%A1%8C%E5%88%97%E5%BC%8F%E5%8F%8A%E5%85%B6%E5%87%A0%E4%BD%95%E6%84%8F%E4%B9%89.ipynb"><span class="xref myst">逆矩阵公式</span></a>求<span class="math notranslate nohighlight">\(A^{-1}\)</span>。</p>
 </section>
 <section id="id14">
@@ -674,12 +674,12 @@ x_{1}\mathbf{a}_{1}+\cdots+x_{n}\mathbf{a}_{n}
 <p><span class="math notranslate nohighlight">\(\quad\)</span>求出一个矩阵的逆矩阵有啥么用？可逆矩阵的一个重要的性质就是求解矩阵方程。<br />
 <span class="math notranslate nohighlight">\(\quad\)</span>若<span class="math notranslate nohighlight">\(A\)</span>可逆，则对每一个<span class="math notranslate nohighlight">\(\Bbb{R}^{n}\)</span>中的<span class="math notranslate nohighlight">\(\mathbf{b}\)</span>，方程<span class="math notranslate nohighlight">\(A\mathbf{x}=\mathbf{b}\)</span>都有唯一解：<span class="math notranslate nohighlight">\(\mathbf{x}=A^{-1}\mathbf{b}\)</span>。<br />
 <span class="math notranslate nohighlight">\(\quad\)</span>我们举例如下：</p>
-<img src="./image/3_6.png" width="450" height="450"/>
+<img src="./images/3_6.png" width="450" height="450"/>
 </section>
 <section id="id15">
 <h2>2.3可逆矩阵定理<a class="headerlink" href="#id15" title="Link to this heading">#</a></h2>
 <p><span class="math notranslate nohighlight">\(\quad\)</span>我们将逆矩阵和线性方程组的概念结合一起，称为可逆矩阵定理。设<span class="math notranslate nohighlight">\(A\)</span>为<span class="math notranslate nohighlight">\(n\times n\)</span>矩阵：</p>
-<img src="./image/3_7.png" width="500" height="250"/>  
+<img src="./images/3_7.png" width="500" height="250"/>  
 <p><span class="math notranslate nohighlight">\(\quad\)</span>利用可逆矩阵定理，我们可以从不同的角度去判断一个矩阵<span class="math notranslate nohighlight">\(A\)</span>是否可逆，例如给出一个矩阵<span class="math notranslate nohighlight">\(A\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -720,7 +720,7 @@ A=\begin{bmatrix}
  =a_{11}a_{22}a_{33}+a_{12}a_{23}a_{31}+a_{13}a_{21}a_{32}-a_{11}a_{23}a_{32}-a_{12}a_{21}a_{33}-a_{13}a_{22}a_{31}\)</span></p></li>
 </ul>
 <p><span class="math notranslate nohighlight">\(\quad\)</span>接着我们来讲解计算行列式的一般公式，先引入<strong>余子式</strong>和<strong>代数余子式</strong>的概念。在<span class="math notranslate nohighlight">\(n\)</span>阶行列式中，把元素<span class="math notranslate nohighlight">\(a_{ij}\)</span>所在行列在矩阵中删去后，余下的<span class="math notranslate nohighlight">\(n-1\)</span>阶行列式叫做<span class="math notranslate nohighlight">\(a_{ij}\)</span>元素的<strong>余子式</strong>，记作<span class="math notranslate nohighlight">\(M_{ij}\)</span>，同时<span class="math notranslate nohighlight">\(A_{ij}=(-1)^{i+j}M_{ij}\)</span>叫做<span class="math notranslate nohighlight">\(a_{ij}\)</span>的<strong>代数余子式</strong>。要注意的是，余子式和代数余子式均为行列式，且行列式的阶越低越容易计算。余子式和代数余子式的例子如下所示：</p>
-<img src="./image/4_1.png" width="500" height="250" />  
+<img src="./images/4_1.png" width="500" height="250" />  
 <p><span class="math notranslate nohighlight">\(\quad\)</span>行列式的计算可以某一行或某一列的元素乘以它对应的代数余子式的累加：</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}|A|=\begin{vmatrix}
@@ -730,7 +730,7 @@ A=\begin{bmatrix}
   \end{vmatrix} 
   =a_{i1}A_{i1}+a_{i2}A_{i2}+\dots+a_{in}A_{in}=a_{1j}A_{ij}+a_{2j}A_{2j}+\dots+a_{nj}A_{nj}\end{split}\]</div>
 <p>具体沿着哪一行或者哪一列的展开是要依据情况而定。例如：</p>
-<img src="./image/4_2.png" width="500" height="250" /> 
+<img src="./images/4_2.png" width="500" height="250" /> 
 </section>
 <section id="id18">
 <h2>1.2行列式的性质与可逆矩阵定理<a class="headerlink" href="#id18" title="Link to this heading">#</a></h2>
@@ -743,9 +743,9 @@ A=\begin{bmatrix}
 <li><p>若<span class="math notranslate nohighlight">\(A,B\)</span>均为<span class="math notranslate nohighlight">\(n\times n\)</span>矩阵，则<span class="math notranslate nohighlight">\(|AB|=|A||B|\)</span>.</p></li>
 </ul>
 <p>根据行列式的性质，我们在计算一个矩阵的行列式时，可以先对其进行一系列的行变换使其化简为阶梯型矩阵，这时直接计算对角线上的元素乘积即可，大约需要<span class="math notranslate nohighlight">\(2n^{3}/3\)</span>次运算次数。例如：</p>
-<img src="./image/4_3.png" width="500" height="250" />    
+<img src="./images/4_3.png" width="500" height="250" />    
 <p><span class="math notranslate nohighlight">\(\quad\)</span>如果一个<span class="math notranslate nohighlight">\(n\times n\)</span>矩阵经过一系列行变换形成阶梯型矩阵，具有<span class="math notranslate nohighlight">\(n\)</span>个主元（对角线上元素均不为0），说明<span class="math notranslate nohighlight">\(|A|\neq 0\)</span>，再结合回<a class="reference internal" href="#%E3%80%8A%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E3%80%8B%E7%AC%94%E8%AE%B003.%E7%9F%A9%E9%98%B5%E8%BF%90%E7%AE%97%E4%B8%8E%E9%80%86%E7%9F%A9%E9%98%B5.ipynb"><span class="xref myst">可逆矩阵定理</span></a>，可以得出结论：<span class="math notranslate nohighlight">\(A\)</span>可逆当且仅当<span class="math notranslate nohighlight">\(|A|\neq 0\)</span>，可逆矩阵定理可再做补充：</p>
-<img src="./image/4_4.png" width="500" height="300" />    
+<img src="./images/4_4.png" width="500" height="300" />    
 </section>
 <section id="id19">
 <h2>1.3克拉默法则<a class="headerlink" href="#id19" title="Link to this heading">#</a></h2>
@@ -753,9 +753,9 @@ A=\begin{bmatrix}
 <span class="math notranslate nohighlight">\(\quad\)</span>设<span class="math notranslate nohighlight">\(A\)</span>是一个可逆的<span class="math notranslate nohighlight">\(n\times n\)</span>矩阵，对<span class="math notranslate nohighlight">\(\Bbb{R}^{n}\)</span>中任意向量<span class="math notranslate nohighlight">\(\mathbf{b}\)</span>，方程<span class="math notranslate nohighlight">\(A\mathbf{x}=\mathbf{b}\)</span>的唯一解可由下式给出：
 $<span class="math notranslate nohighlight">\(x_{i}=\frac{|A_{i}(\mathbf{b})|}{|A|},i=1,2,\dots,n\)</span><span class="math notranslate nohighlight">\(
 其中\)</span>A_{i}(\mathbf{b})<span class="math notranslate nohighlight">\(表示\)</span>A<span class="math notranslate nohighlight">\(中第\)</span>i<span class="math notranslate nohighlight">\(列由向量\)</span>\mathbf{b}$替换：</p>
-<img src="./image/4_5.png" width="200" height="150" />     
+<img src="./images/4_5.png" width="200" height="150" />     
 <p><span class="math notranslate nohighlight">\(\quad\)</span>例如：</p>
-<img src="./image/4_6.png" width="500" height="300" />     
+<img src="./images/4_6.png" width="500" height="300" />     
 <p><span class="math notranslate nohighlight">\(\quad\)</span>必须说明的是，克拉默法则对一个很大的矩阵是无效的，仅计算一个行列式就大约与用行化简解<span class="math notranslate nohighlight">\(A\mathbf{x}=\mathbf{b}\)</span>有相同的工作量。</p>
 </section>
 <section id="id20">
@@ -774,7 +774,7 @@ adj(A)=\begin{bmatrix}{}
   \end{bmatrix} 
 \)</span><span class="math notranslate nohighlight">\(
 \)</span>\quad$用一个例子来说明</p>
-<img src="./image/4_7.png" width="500" height="300" />  
+<img src="./images/4_7.png" width="500" height="300" />  
 <p><span class="math notranslate nohighlight">\(\quad\)</span>逆矩阵公式也印证了行列式与逆矩阵的关系：矩阵可逆当且仅当行列式不为零。</p>
 </section>
 <section id="id21">
@@ -791,37 +791,37 @@ adj(A)=\begin{bmatrix}{}
    =ad={Area}
 \end{split}\]</div>
 <p>可能不够直观，我们在平面直角坐标系下观察，矩阵的列向量在坐标系下显示出来，如下图所示：</p>
-<img src="./image/4_8.png" width="150" height="100" />     
+<img src="./images/4_8.png" width="150" height="100" />     
 <p><span class="math notranslate nohighlight">\(\quad\)</span>上述小例子会帮助你去更好地理解。现在我们试着去将这种几何意义表达出来，我们从<span class="math notranslate nohighlight">\(2\times 2\)</span>的单位阵<span class="math notranslate nohighlight">\(A\)</span>出发，将其线性变换为其他的矩阵，观察面积以及其绝对值的变化：</p>
-<img src="./image/4_9.png" width="600" height="400" />     
+<img src="./images/4_9.png" width="600" height="400" />     
 <p>希望大家在脑子里想象这个面积变化过程。因为初始矩阵的面积为1，因此每次变化的面积为行列式的绝对值（缩放比例乘以1等于缩放比例）。根据行列式的几何意义，我们可以去计算某些几何图形的面积，例如椭圆形，如下所示：</p>
-<img src="./image/4_10.png" width="600" height="400" />     
+<img src="./images/4_10.png" width="600" height="400" />     
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="id22">
 <h1>1.向量空间<a class="headerlink" href="#id22" title="Link to this heading">#</a></h1>
 <p><span class="math notranslate nohighlight">\(\quad\)</span>实际上我们在<a class="reference internal" href="#%E3%80%8A%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E3%80%8B%E7%AC%94%E8%AE%B002.%E5%90%91%E9%87%8F%E4%B8%8E%E7%9F%A9%E9%98%B5%E6%96%B9%E7%A8%8B.ipynb"><span class="xref myst">向量与矩阵方程</span></a>中已经介绍过向量空间的一些概念了，这次我们打算更深入而具体地讨论向量空间为何物。<br />
 <span class="math notranslate nohighlight">\(\quad\)</span>一个<strong>向量空间</strong>是由一些向量构成的非空集合<span class="math notranslate nohighlight">\(V\)</span>，在这个集合上定义了两个运算：加法和标量乘法，服从以下公理，这些公理必须对<span class="math notranslate nohighlight">\(V\)</span>中所有向量<span class="math notranslate nohighlight">\(\mathbf{u},\mathbf{v},\mathbf{w}\)</span>及所有标量<span class="math notranslate nohighlight">\(c,d\)</span>成立:</p>
-<img src="./image/5_1.png" width="300" height="250" />  
+<img src="./images/5_1.png" width="300" height="250" />  
 <p>定理说明了向量空间中零向量是唯一且必须存在的。</p>
 <section id="id23">
 <h2>1.1子空间<a class="headerlink" href="#id23" title="Link to this heading">#</a></h2>
 <p><span class="math notranslate nohighlight">\(\quad\)</span><strong>子空间</strong>是由一个向量空间中适当的向量的子集所构成。在此情形下，向量空间的十个公理我们只需要验证三个，其余的自然成立。<br />
 <span class="math notranslate nohighlight">\(\quad\)</span>因此我们可以说，向量空间<span class="math notranslate nohighlight">\(V\)</span>的一个子空间是<span class="math notranslate nohighlight">\(V\)</span>的一个满足性质的子集<span class="math notranslate nohighlight">\(H\)</span>:</p>
-<img src="./image/5_2.png" width="400" height="300" />  
+<img src="./images/5_2.png" width="400" height="300" />  
 <p><span class="math notranslate nohighlight">\(\quad\)</span>每个子空间都是一个向量空间，每个向量空间都是一个子空间(针对本身或更大的空间而言)。特别地，向量空间<span class="math notranslate nohighlight">\(V\)</span>中仅由零向量组成的集合是<span class="math notranslate nohighlight">\(V\)</span>中一个子空间，成为零子空间，写成<span class="math notranslate nohighlight">\(\{\mathbf{0}\}\)</span>。<br />
 <span class="math notranslate nohighlight">\(\quad\)</span>对两个向量空间，若其中一个在另一个内部，此时子空间这个词被使用，如下图所示，<span class="math notranslate nohighlight">\(H\)</span>为<span class="math notranslate nohighlight">\(V\)</span>的一个子空间:</p>
-<img src="./image/5_3.png" width="200" height="150" />  
+<img src="./images/5_3.png" width="200" height="150" />  
 </section>
 <section id="id24">
 <h2>1.2由集合生成的子空间<a class="headerlink" href="#id24" title="Link to this heading">#</a></h2>
 <p><span class="math notranslate nohighlight">\(\quad\)</span>式子<span class="math notranslate nohighlight">\(Span\{\mathbf{v}_{1},\dots,\mathbf{v}_{n}\}\)</span>表示为一组向量<span class="math notranslate nohighlight">\(\mathbf{v}_{1},\dots,\mathbf{v}_{n}\)</span>的所有线性组合所张成的<span class="math notranslate nohighlight">\(\Bbb{R}^{n}\)</span>的子集。现在我们给出证明，以<span class="math notranslate nohighlight">\(Span\{\mathbf{v}_{1},\mathbf{v}_{2}\}\)</span>为例：</p>
-<img src="./image/5_4.png" width="450" height="250" />  
+<img src="./images/5_4.png" width="450" height="250" />  
 <p>为此我们可以推广出，若从一个向量空间<span class="math notranslate nohighlight">\(V\)</span>中取出一组向量<span class="math notranslate nohighlight">\(\mathbf{v}_{1},\dots,\mathbf{v}_{p}\)</span>，则<span class="math notranslate nohighlight">\(Span\{\mathbf{v}_{1},\dots,\mathbf{v}_{p}\}\)</span>是<span class="math notranslate nohighlight">\(V\)</span>的一个子空间。<br />
 <span class="math notranslate nohighlight">\(\quad\)</span>为了能更好地去理解向量空间，我们往往会从很直观的一维以及二维空间中去理解。例如,<span class="math notranslate nohighlight">\(Span\{\mathbf{v}_{1},\mathbf{v}_{2}\}\)</span>是一个经过原点的网格线平面，<span class="math notranslate nohighlight">\(Span\{\mathbf{v}_{1}\}\)</span>是一个过原点的直线：</p>
-<img src="./image/5_5.png" width="200" height="150" />  
+<img src="./images/5_5.png" width="200" height="150" />  
 <p><span class="math notranslate nohighlight">\(\quad\)</span>我们最后举一个例子来说明该定理的作用：</p>
-<img src="./image/5_6.png" width="400" height="350" />  
+<img src="./images/5_6.png" width="400" height="350" />  
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="id25">
@@ -831,7 +831,7 @@ adj(A)=\begin{bmatrix}{}
 <p><span class="math notranslate nohighlight">\(\quad\)</span>满足<span class="math notranslate nohighlight">\(A\mathbf{x}=\mathbf{0}\)</span>的所有<span class="math notranslate nohighlight">\(\mathbf{x}\)</span>的集合为矩阵<span class="math notranslate nohighlight">\(A\)</span>的<strong>零空间</strong>，<span class="math notranslate nohighlight">\(NulA=\{\mathbf{x}:\mathbf{x}\in\Bbb{R}^{n},A\mathbf{x}=\mathbf{0}\}\)</span>。特别地，零空间也叫核空间。<br />
 <span class="math notranslate nohighlight">\(\quad\)</span>要判断一个向量<span class="math notranslate nohighlight">\(\mathbf{x}\)</span>是否属于<span class="math notranslate nohighlight">\(A\)</span>的零空间，只需判断<span class="math notranslate nohighlight">\(A\mathbf{x}\)</span>是否为<span class="math notranslate nohighlight">\(\mathbf{0}\)</span>即可。<br />
 <span class="math notranslate nohighlight">\(\quad\)</span>从几何上理解，矩阵<span class="math notranslate nohighlight">\(A\)</span>是一个线性变换，若<span class="math notranslate nohighlight">\(A\mathbf{x}=\mathbf{0}\)</span>说明向量<span class="math notranslate nohighlight">\(\mathbf{x}\)</span>经过了<span class="math notranslate nohighlight">\(A\)</span>线性变换后变为<span class="math notranslate nohighlight">\(\mathbf{0}\)</span>。因此矩阵的零空间就是线性变换后落在原点的向量。例如下图所示：</p>
-<img src="./image/5_7.png" width="600" height="400" />  
+<img src="./images/5_7.png" width="600" height="400" />  
 <p><span class="math notranslate nohighlight">\(\quad\)</span>零空间的基的求法可阅读<a class="reference internal" href="#./%E3%80%8A%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E3%80%8B%E7%AC%94%E8%AE%B006.%E5%9F%BA.ipynb"><span class="xref myst">基</span></a>。一个<span class="math notranslate nohighlight">\(m\times n\)</span>的矩阵的零空间是<span class="math notranslate nohighlight">\(\Bbb{R}^{n}\)</span>的子空间。</p>
 </section>
 <section id="id27">
@@ -840,7 +840,7 @@ adj(A)=\begin{bmatrix}{}
 <span class="math notranslate nohighlight">\(\quad\)</span>若<span class="math notranslate nohighlight">\(A=\begin{bmatrix}{}a_{1} &amp; \cdots &amp; a_{n}\end{bmatrix}\)</span>，则<span class="math notranslate nohighlight">\(ColA=Span\{a_{1},\cdots,a_{n}\}\)</span>，也可以表示为<span class="math notranslate nohighlight">\(ColA=\{\mathbf{b}:\mathbf{x}\in\Bbb{R}^{n},\mathbf{b}=A\mathbf{x}\}\)</span>。<br />
 <span class="math notranslate nohighlight">\(\quad\)</span>要判断一个向量<span class="math notranslate nohighlight">\(\mathbf{v}\)</span>是否属于<span class="math notranslate nohighlight">\(A\)</span>的列空间，只需判断方程<span class="math notranslate nohighlight">\(A\mathbf{x}=\mathbf{v}\)</span>是否有解即可。故<span class="math notranslate nohighlight">\(m\times n\)</span>矩阵<span class="math notranslate nohighlight">\(A\)</span>的列空间等于<span class="math notranslate nohighlight">\(\Bbb{R}^{m}\)</span>当且仅当方程<span class="math notranslate nohighlight">\(A\mathbf{x}=\mathbf{b}\)</span>对<span class="math notranslate nohighlight">\(\Bbb{R}^{m}\)</span>中每一个<span class="math notranslate nohighlight">\(\mathbf{b}\)</span>有一个解。<br />
 <span class="math notranslate nohighlight">\(\quad\)</span>从几何上理解，矩阵<span class="math notranslate nohighlight">\(A\)</span>是一个线性变换，<span class="math notranslate nohighlight">\(A\mathbf{x}=\mathbf{b}\)</span>表明<span class="math notranslate nohighlight">\(\mathbf{b}\)</span>是由<span class="math notranslate nohighlight">\(\mathbf{x}\)</span>经过<span class="math notranslate nohighlight">\(A\)</span>线性变换后形成。因此每个位于列空间的向量都是从一个向量线性变换而来，如下图所示：</p>
-<img src="./image/5_8.png" width="500" height="400" />  
+<img src="./images/5_8.png" width="500" height="400" />  
 <p><span class="math notranslate nohighlight">\(\quad\)</span>列空间的基的求法可阅读<a class="reference internal" href="#./%E3%80%8A%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E3%80%8B%E7%AC%94%E8%AE%B006.%E5%9F%BA.ipynb"><span class="xref myst">基</span></a>。一个<span class="math notranslate nohighlight">\(m\times n\)</span>的矩阵的列空间是<span class="math notranslate nohighlight">\(\Bbb{R}^{m}\)</span>的子空间（思索一下与零空间的不同）。</p>
 </section>
 <section id="id28">
@@ -858,7 +858,7 @@ adj(A)=\begin{bmatrix}{}
 </ul>
 <p><span class="math notranslate nohighlight">\(\quad\)</span>例如，若<span class="math notranslate nohighlight">\(A\)</span>是一个可逆的<span class="math notranslate nohighlight">\(n\times n\)</span>矩阵，则由<a class="reference internal" href="#%E3%80%8A%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E3%80%8B%E7%AC%94%E8%AE%B004.%E8%A1%8C%E5%88%97%E5%BC%8F%E5%8F%8A%E5%85%B6%E5%87%A0%E4%BD%95%E6%84%8F%E4%B9%89.ipynb"><span class="xref myst">可逆矩阵定理</span></a>可知，<span class="math notranslate nohighlight">\(A\)</span>的列向量组成<span class="math notranslate nohighlight">\(\Bbb{R}^{n}\)</span>的一组基。<br />
 <span class="math notranslate nohighlight">\(\quad\)</span>例如，令<span class="math notranslate nohighlight">\(e_{i},\cdots,e_{n}\)</span>是<span class="math notranslate nohighlight">\(n\times n\)</span>单位矩阵<span class="math notranslate nohighlight">\(I_{n}\)</span>的列，集合<span class="math notranslate nohighlight">\(\{e_{i},\cdots,e_{n}\}\)</span>称为<span class="math notranslate nohighlight">\(\Bbb{R}^{n}\)</span>的<strong>标准基</strong>，如下图所示：</p>
-<img src="./image/6_1.png" width="150" height="100" />    
+<img src="./images/6_1.png" width="150" height="100" />    
 <p><span class="math notranslate nohighlight">\(\quad\)</span>通常地，我们也会将基写为矩阵的形式，例如<span class="math notranslate nohighlight">\(\{\begin{bmatrix}
    0\\
    1
@@ -897,19 +897,19 @@ adj(A)=\begin{bmatrix}{}
 <h2>1.2零空间的基<a class="headerlink" href="#id31" title="Link to this heading">#</a></h2>
 <p><span class="math notranslate nohighlight">\(\quad\)</span>令<span class="math notranslate nohighlight">\(NulA\)</span>是方程<span class="math notranslate nohighlight">\(A\mathbf{x}=\mathbf{0}\)</span>中所有<span class="math notranslate nohighlight">\(\mathbf{x}\)</span>的集合，要求矩阵的零空间的基，先解方程<span class="math notranslate nohighlight">\(A\mathbf{x}=\mathbf{0}\)</span>，解方程可以通过高斯消元化为阶梯型、逆矩阵等。<br />
 <span class="math notranslate nohighlight">\(\quad\)</span>我们给出例子来说明如何求矩阵零空间的基：</p>
-<img src="./image/6_2.png" width="450" height="300" />    
+<img src="./images/6_2.png" width="450" height="300" />    
 </section>
 <section id="id32">
 <h2>1.3列空间的基<a class="headerlink" href="#id32" title="Link to this heading">#</a></h2>
 <p><span class="math notranslate nohighlight">\(\quad\)</span>一个矩阵<span class="math notranslate nohighlight">\(A\)</span>被行化简为<span class="math notranslate nohighlight">\(B\)</span>时，虽然两个矩阵的列通常不同，但是<span class="math notranslate nohighlight">\(A\mathbf{x}=\mathbf{0}\)</span>与<span class="math notranslate nohighlight">\(B\mathbf{x}=\mathbf{0}\)</span>有完全相同的解集，即<span class="math notranslate nohighlight">\(A\)</span>的列和<span class="math notranslate nohighlight">\(B\)</span>的列具有<strong>完全相同的线性相关关系</strong>。<br />
 <span class="math notranslate nohighlight">\(\quad\)</span>令<span class="math notranslate nohighlight">\(ColA\)</span>为矩阵<span class="math notranslate nohighlight">\(A\)</span>的列向量所有线性组合组成的集合，要求矩阵<span class="math notranslate nohighlight">\(A\)</span>的列空间的基，通常是将矩阵<span class="math notranslate nohighlight">\(A\)</span>行变换为阶梯型矩阵<span class="math notranslate nohighlight">\(B\)</span>、判断主元列位置来确定基。我们给出例子来说明如何求矩阵的列空间的基。</p>
-<img src="./image/6_3.png" width="450" height="300" />  
+<img src="./images/6_3.png" width="450" height="300" />  
 </section>
 <section id="id33">
 <h2>1.4行空间的基<a class="headerlink" href="#id33" title="Link to this heading">#</a></h2>
 <p><span class="math notranslate nohighlight">\(\quad\)</span>若两个矩阵<span class="math notranslate nohighlight">\(A\)</span>和<span class="math notranslate nohighlight">\(B\)</span>等价，则它们的行空间相同。若<span class="math notranslate nohighlight">\(B\)</span>是阶梯型矩阵，则<span class="math notranslate nohighlight">\(B\)</span>的非零行构成<span class="math notranslate nohighlight">\(A\)</span>的行空间的一个基同时也是<span class="math notranslate nohighlight">\(B\)</span>的行空间的一个基。<br />
 <span class="math notranslate nohighlight">\(\quad\)</span>要求一个矩阵<span class="math notranslate nohighlight">\(A\)</span>的行空间的一个基，通常是将<span class="math notranslate nohighlight">\(A\)</span>行变换为阶梯型矩阵<span class="math notranslate nohighlight">\(B\)</span>，判断主元位置来确定，做法和求矩阵的列空间的基相似，但是又不同。例子如下：</p>
-<img src="./image/6_4.png" width="450" height="300" />    </section>
+<img src="./images/6_4.png" width="450" height="300" />    </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="id34">
 <h1>1.维数<a class="headerlink" href="#id34" title="Link to this heading">#</a></h1>
@@ -922,7 +922,7 @@ adj(A)=\begin{bmatrix}{}
 <li><p>二维子空间。任一由两个线性无关向量生成的子空间，这样的子空间是通过原点的平面。</p></li>
 <li><p>三维子空间。只有<span class="math notranslate nohighlight">\(\Bbb{R}^{3}\)</span>本身是三维子空间，由可逆矩阵定理，<span class="math notranslate nohighlight">\(\Bbb{R}^{3}\)</span>中任意3个线性无关向量生成整个<span class="math notranslate nohighlight">\(\Bbb{R}^{3}\)</span>。</p></li>
 </ul>
-<img src="./image/7_1.jpg" width="450" height="400" />  
+<img src="./images/7_1.jpg" width="450" height="400" />  
 <p><span class="math notranslate nohighlight">\(NulA\)</span>的维数是方程<span class="math notranslate nohighlight">\(A\mathbf{x}=\mathbf{0}\)</span>中自由变量的个数，<span class="math notranslate nohighlight">\(ColA\)</span>的维数是<span class="math notranslate nohighlight">\(A\)</span>中主元列的个数。</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="id35">
@@ -933,11 +933,11 @@ adj(A)=\begin{bmatrix}{}
 \[rankA+dimNulA=n\]</div>
 <p>也可理解为：{主元列个数}+{非主元列个数}={列的个数}。<br />
 <span class="math notranslate nohighlight">\(\quad\)</span>秩定理是处理线性方程组的信息的一个有力工具。例如：</p>
-<img src="./image/7_2.png" width="450" height="400" />  
+<img src="./images/7_2.png" width="450" height="400" />  
 <section id="id36">
 <h2>2.1秩和可逆矩阵定理<a class="headerlink" href="#id36" title="Link to this heading">#</a></h2>
 <p><span class="math notranslate nohighlight">\(\quad\)</span>我们将矩阵的秩和<a class="reference internal" href="#%E3%80%8A%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E3%80%8B%E7%AC%94%E8%AE%B004.%E8%A1%8C%E5%88%97%E5%BC%8F%E5%8F%8A%E5%85%B6%E5%87%A0%E4%BD%95%E6%84%8F%E4%B9%89.ipynb"><span class="xref myst">可逆矩阵定理</span></a>联系起来。一个矩阵如果可逆，说明有<span class="math notranslate nohighlight">\(n\)</span>个主元，说明秩为<span class="math notranslate nohighlight">\(n\)</span>，当一个<span class="math notranslate nohighlight">\(n\times n\)</span>矩阵秩为<span class="math notranslate nohighlight">\(n\)</span>时，称之为<strong>满秩矩阵</strong>。我们再对可逆矩阵定理做拓展：</p>
-<img src="./image/7_3.png" width="550" height="400" />  
+<img src="./images/7_3.png" width="550" height="400" />  
 </section>
 <section id="id37">
 <h2>2.2秩一矩阵<a class="headerlink" href="#id37" title="Link to this heading">#</a></h2>
@@ -946,21 +946,21 @@ adj(A)=\begin{bmatrix}{}
 4 &amp; -2 &amp; 16\\
 6 &amp; -3 &amp; 24
 \end{bmatrix}\)</span>，可以被分解为两个向量相乘：</p>
-<img src="./image/7_4.png" width="250" height="200" />  
+<img src="./images/7_4.png" width="250" height="200" />  
 <p><span class="math notranslate nohighlight">\(\quad\)</span>秩一矩阵可以组合为其他矩阵，例如想得到一个<span class="math notranslate nohighlight">\(5\times 10\)</span>的秩为3的矩阵，可用3个不同的<span class="math notranslate nohighlight">\(5\times 10\)</span>的秩一矩阵相加得到。</p>
 </section>
 <section id="id38">
 <h2>2.3数值计算<a class="headerlink" href="#id38" title="Link to this heading">#</a></h2>
 <p><span class="math notranslate nohighlight">\(\quad\)</span>目前我们计算一个矩阵的秩的方法是计算其主元列个数，但是这只适用于手工计算，在面对现实问题并不太适合。<br />
 <span class="math notranslate nohighlight">\(\quad\)</span>比如矩阵<span class="math notranslate nohighlight">\(\begin{bmatrix}5 &amp; 7\\5 &amp; x\end{bmatrix}\)</span>中的<span class="math notranslate nohighlight">\(x\)</span>如果没有被当做7精确地存储在计算机中，那么秩可能为1或2，这依赖于计算机是否将<span class="math notranslate nohighlight">\(x-7\)</span>当做零处理。一个可靠而有效的方法是由矩阵的奇异值分解来确定，MATLAB计算矩阵的秩的源码如下所示：</p>
-<img src="./image/7_5.png" width="450" height="300" />  
+<img src="./images/7_5.png" width="450" height="300" />  
 </section>
 <section id="id39">
 <h2>2.4秩的理解<a class="headerlink" href="#id39" title="Link to this heading">#</a></h2>
 <p><span class="math notranslate nohighlight">\(\quad\)</span>一个矩阵的秩即该矩阵的列空间的维数。计算起来并不困难，但是我们应该如何去理解。<br />
 <span class="math notranslate nohighlight">\(\quad\)</span>我们常说，要解<span class="math notranslate nohighlight">\(n\)</span>个变量，需要<span class="math notranslate nohighlight">\(n\)</span>个方程，但经过线性代数学习之后，我们知道一个线性方程组是否有解，是看系数矩阵是否满秩，而这个秩就代表着方程中真正有用的部分。<br />
 <span class="math notranslate nohighlight">\(\quad\)</span>举一个例子。左边为方程组，右边为其增广矩阵：</p>
-<img src="./image/7_6.png" width="450" height="300" />  
+<img src="./images/7_6.png" width="450" height="300" />  
 <p><span class="math notranslate nohighlight">\(\quad\)</span>这么一看，不太对啊，怎么解不出来了，这是因为第三个方程在原方程组中是个“多余”的方程，它本身是能够通过另外两条方程线性组合表示出来的，因此这个方程组真正有用的就是前两条，方程的秩为2。<br />
 <span class="math notranslate nohighlight">\(\quad\)</span>秩是矩阵的列空间的维数，也就是矩阵中最大不相关的向量个数。满秩的话就是指矩阵中所有的列向量彼此都线性无关，方程中不存在“多余”的方程，那么方程经过行变换化为阶梯型矩阵自然就能解出。</p>
 </section>
