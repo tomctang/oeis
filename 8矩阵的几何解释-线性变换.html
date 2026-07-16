@@ -1,0 +1,1231 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>矩阵的几何解释-线性变换 &#8212; Tom Workbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=8dedbda2" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '8矩阵的几何解释-线性变换';</script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script src="_static/mermaid-init.js?v=512eb59e"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Math Map" href="mathmap.html" />
+    <link rel="prev" title="线性方程组" href="1%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="0intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Tom Workbook</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="0intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">OEIS &amp; SageMath</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapter0_introduction.html">Chapter 0: Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter1_arithmetic_functions.html">Chapter 1: Arithmetic Functions and Multiplicatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNE_MTeach.html">MTeach &amp; GTPA &amp; PREXUS(PrEx Nexus)</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="UNE_Math_Econ.html">Econ</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="1%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84.html">线性方程组</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">矩阵的几何解释-线性变换</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Math Map</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="mathmap.html">Math Map</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="mathmap_old00intro_math.html">Math-FP-Lang Combo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mathmap_old01number_algebra.html">Number &amp; Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mathmap_old02discrete_continuous.html">Discrete &amp; Continuous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mathmap_old03real_world.html">Real World Math</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/tomctang/oeis" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/8矩阵的几何解释-线性变换.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>矩阵的几何解释-线性变换</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">矩阵的几何解释-线性变换</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.1几何解释-矩阵方程与逆矩阵</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.2应用-图像旋转</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.3非方阵的情况</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">坐标系</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">特征值和特征向量</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">1.特征方程求特征根</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.应用</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">3.几何意义</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">1.矩阵相似与对角化</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">2.对角化</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">2.1矩阵对角化流程</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">2.2矩阵对角化与幂</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">1.内积与范数</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">1.1内积的几何表示</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">2.范数</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">1.正交</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">1.1正交补</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">1.2正交基</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">1.正交分解定理</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">2.最佳逼近定理</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">正交矩阵</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">格拉姆-施密特方法</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lu">LU分解</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">1.介绍</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">3.算法性能分析</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lup">4.LUP分解</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">5.应用</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#qr">QR分解</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">1.介绍</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">2.QR分解求特征值</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">奇异值分解</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id30">1.正交对角化</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id31">2.奇异值分解介绍</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id32">3.奇异值分解算法</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id33">3.1结论一</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id34">3.2结论二</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id35">3.3结论三</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id36">3.4实战</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id37">4.奇异值分解应用</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id38">4.1矩阵求秩</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id39">4.2图像压缩</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>矩阵的几何解释-线性变换<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>在本节我们将介绍矩阵的一种几何理解。先说结论：<strong>矩阵代表了一种线性变换，矩阵乘法能将一个向量线性变换为另一个向量</strong>。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span><strong>线性变换</strong>，可理解为函数，它有输入有输出，输入即与矩阵相乘的向量，输出即相乘的结果。假设线性变换为<span class="math notranslate nohighlight">\(T\)</span>，则需满足：</p>
+<ul class="simple">
+<li><p>对<span class="math notranslate nohighlight">\(T\)</span>的定义域中一切<span class="math notranslate nohighlight">\(\mathbf{u},\mathbf{v}\)</span>，<span class="math notranslate nohighlight">\(T(\mathbf{u}+\mathbf{v})=T(\mathbf{u})+T(\mathbf{v})\)</span>，即<span class="math notranslate nohighlight">\(A(\mathbf{u}+\mathbf{v})=A\mathbf{u}+A\mathbf{v}\)</span>；</p></li>
+<li><p>对<span class="math notranslate nohighlight">\(T\)</span>的定义域中一切<span class="math notranslate nohighlight">\(\mathbf{u}\)</span>和数<span class="math notranslate nohighlight">\(c\)</span>，<span class="math notranslate nohighlight">\(T(c\mathbf{u})=cT(\mathbf{u})\)</span>，即<span class="math notranslate nohighlight">\(A(c\mathbf{u})=cA\mathbf{u}\)</span>；</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>有一些常见的线性变换是很容易想象的，例如围绕着原点的旋转、翻转等，这些在游戏制作过程中非常常见，只需要借助矩阵相乘即可实现。那么如何确定一个线性变换？我们只需要抓住基变换即可，线性变换由它对空间的基向量的作用完全决定，因为任何的向量都可用基向量线性组合表示。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>举个简单的例子。比如希望能对原空间作一次逆时针旋转90°，如下图所示：</p>
+<img src="./_image/8_1.png" width="350" height="300" />  
+<p>就这样我们得到了一个旋转90°的变换矩阵<span class="math notranslate nohighlight">\(\begin{bmatrix}0 &amp; -1\\1 &amp; 0\end{bmatrix}\)</span>。通过这个矩阵，我们可以计算出任何一个向量在逆时针90°后的形成的新向量，比如<span class="math notranslate nohighlight">\(\begin{bmatrix}2\\2\end{bmatrix}\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}0 &amp; -1\\1 &amp; 0\end{bmatrix}\begin{bmatrix}{}2
+\\2
+\end{bmatrix}=\begin{bmatrix}-2
+\\2
+\end{bmatrix}
+\end{split}\]</div>
+<p>是不是很简单？不管多么复杂的线性变换（旋转、剪切等），只要记录好变换后的基向量即可，若是逆时针旋转θ呢？如下图所示：</p>
+<img src="./_image/8_2.png" width="350" height="300" />  
+<section id="id2">
+<h2>1.1几何解释-矩阵方程与逆矩阵<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>我们可以结合回前面所学的一些知识，试着从几何上去理解。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>比如说解方程<span class="math notranslate nohighlight">\(A\mathbf{x}=\mathbf{b}\)</span>，矩阵<span class="math notranslate nohighlight">\(A\)</span>是一次线性变换，那么我们要解的<span class="math notranslate nohighlight">\(\mathbf{x}\)</span>就是在线性变换后为<span class="math notranslate nohighlight">\(\mathbf{b}\)</span>的向量。比如说解方程<span class="math notranslate nohighlight">\(\begin{bmatrix}0 &amp; -1\\1 &amp; 0\end{bmatrix}\begin{bmatrix}\mathbf{x}_{1}\\
+\mathbf{x}_{2}\end{bmatrix} =\begin{bmatrix}-2\\
+2\end{bmatrix}\)</span>，我们需要找到与<span class="math notranslate nohighlight">\(A\)</span>相反的线性变换将<span class="math notranslate nohighlight">\(\mathbf{b}\)</span>再线性变换还原为<span class="math notranslate nohighlight">\(\mathbf{x}\)</span>，与<span class="math notranslate nohighlight">\(A\)</span>相反的线性变换就是<strong>逆矩阵</strong><span class="math notranslate nohighlight">\(A^{-1}\)</span>。比如<span class="math notranslate nohighlight">\(A\)</span>是逆时针旋转90°，那么<span class="math notranslate nohighlight">\(A^{-1}\)</span>就是顺时针旋转90°：</p>
+<img src="./_image/8_3.png" width="350" height="300" />  
+<p>两个矩阵相乘即为两次线性变换，逆时针旋转90°后再顺时针旋转90°，当然是没有变换，<span class="math notranslate nohighlight">\(\begin{bmatrix}0 &amp; -1\\1 &amp; 0\end{bmatrix} \begin{bmatrix}0 &amp; 1\\
+-1 &amp; 0\end{bmatrix}=\begin{bmatrix}1 &amp; 0\\
+0 &amp; 1\end{bmatrix}\)</span>。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>因此要解出<span class="math notranslate nohighlight">\(\mathbf{x}\)</span>，只需要一次相反的线性变换<span class="math notranslate nohighlight">\(A^{-1}\mathbf{b}=\begin{bmatrix}0 &amp; 1\\-1 &amp; 0\end{bmatrix} \begin{bmatrix}-2\\
+2\end{bmatrix}=\begin{bmatrix}2\\
+2\end{bmatrix}\)</span>。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>若是方程无解呢？方程无解意味着矩阵<span class="math notranslate nohighlight">\(A\)</span>找不到相反的线性变换，比如说：</p>
+<img src="./_image/8_4.png" width="400" height="350" />  
+<p>线性变换后空间少了个维度，无法从低维的空间线性变换回高维的空间，故不存在逆矩阵，因此每个线性变换后的向量再也回不去了，方程无解。再推广一下，秩是矩阵列空间的维数，那么从几何上理解，秩就是线性变换后空间的维度，故一个满秩矩阵是可逆的。</p>
+</section>
+<section id="id3">
+<h2>1.2应用-图像旋转<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>学习了线性变换后，我们来做点实际小应用，做目标检测的数据增强时，经常地对一张图片做一次旋转、翻转等，但是图片的改变导致目标输出值的坐标点也随之改变，这时我们得去计算某个坐标随着图片旋转或翻转后的新坐标。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>图片的坐标以左上角作为原点，如下图所示，图中的红点就是我们要计算的坐标：</p>
+<img src="./_image/8_5.png" width="400" height="350" />  
+<p><span class="math notranslate nohighlight">\(\quad\)</span>对图片的翻转用OpenCV很容易实现，但是图中红点变换后的坐标需要我们自己的去计算。举例对图片逆时针旋转90°，计算点(x,y)在翻转后的位置，分成两步：</p>
+<img src="./_image/8_6.png" width="600" height="450" />  
+<p><span class="math notranslate nohighlight">\(\quad\)</span>第一步，旋转，即通过矩阵相乘即可，逆时针旋转90°的基为<span class="math notranslate nohighlight">\(\begin{bmatrix}0 &amp; -1\\1 &amp; 0\end{bmatrix}\)</span>，因此坐标(x,y)变换后为<span class="math notranslate nohighlight">\(\begin{bmatrix}0 &amp; -1\\1 &amp; 0\end{bmatrix}\begin{bmatrix}x\\
+y\end{bmatrix}=\begin{bmatrix}-y\\
+x\end{bmatrix}\)</span>.<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>第二步，平移，观察可知，图片平旋转后需要向下平移图片的宽度width的大小才可让左上角回到原点，故有<span class="math notranslate nohighlight">\(\begin{bmatrix}-y\\x-width\end{bmatrix}\)</span>，最后取绝对值即可完成：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}x\\y\end{bmatrix}\Rightarrow \begin{bmatrix}y\\
+width-x\end{bmatrix}
+\end{split}\]</div>
+<p>一条简单的公式即可完成计算。代码如下：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">img_rotate_90</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">landmark</span><span class="p">):</span>
+    <span class="c1"># 获取图像尺寸</span>
+    <span class="n">height</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1"># 若未指定旋转中心，则将图像中心设为旋转中心</span>
+    <span class="n">center</span> <span class="o">=</span> <span class="p">(</span><span class="n">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="c1"># 执行旋转</span>
+    <span class="n">M</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">getRotationMatrix2D</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">rotate_img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">warpAffine</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">))</span>
+    
+    <span class="c1"># 计算landmark在旋转后的坐标</span>
+    <span class="n">rotated_landmark</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">landmark</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">landmark</span><span class="p">),</span> <span class="mi">2</span><span class="p">):</span>
+        <span class="c1"># landmark为每个待计算的坐标点，例如[x,y,x1,y1,...,xn,yn]，两个两个出现</span>
+        <span class="n">rotated_landmark</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">rotated_landmark</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">landmark</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="o">-</span><span class="n">landmark</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">width</span>
+    <span class="k">return</span> <span class="n">rotate_img</span><span class="p">,</span> <span class="n">rotated_landmark</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id4">
+<h2>1.3非方阵的情况<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>我们讨论的都是方阵，但是如果是非方阵呢？给定一个矩阵<span class="math notranslate nohighlight">\(m\times n\)</span>，当这个矩阵与<span class="math notranslate nohighlight">\(n\)</span>维向量做乘法时，表示将该向量从<span class="math notranslate nohighlight">\(n\)</span>维空间映射<span class="math notranslate nohighlight">\(m\)</span>维空间。下面分别讨论当<span class="math notranslate nohighlight">\(n&gt;m\)</span>或<span class="math notranslate nohighlight">\(m&gt;n\)</span>的情况。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>当一个矩阵<span class="math notranslate nohighlight">\(n&gt;m\)</span>时，例如<span class="math notranslate nohighlight">\(\begin{bmatrix}1 &amp; 0 &amp; -2\\-1 &amp; 2 &amp; -5\end{bmatrix}\)</span>，列空间的维数为3，拥有三个基向量，如下图所示：</p>
+<img src="./_image/8_7.png" width="200" height="150" />  
+<p>当它与一个三维向量做矩阵乘法时，会得到一个二维向量，相当于是做了一次降维，将三维向量投影到二维上、将空间上的一个向量投影到这三个向量所在的平面上，例如：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}1 &amp; 0 &amp; -2\\-1 &amp; 2 &amp; -5\end{bmatrix}\begin{bmatrix}1 \\
+2 \\
+3
+\end{bmatrix}=\begin{bmatrix}-5 \\
+-12\end{bmatrix}
+\end{split}\]</div>
+<p>特别地，如果是一维的情况，例如<span class="math notranslate nohighlight">\(\begin{bmatrix}1 &amp; -5\end{bmatrix}\)</span>，就相当于是一条直线上的两个点，如图：</p>
+<img src="./_image/8_8.png" width="200" height="150" />  
+<p>通过矩阵相乘来做降维是机器学习中常用的手法，例如<a class="reference internal" href="#%E3%80%8A%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E3%80%8B%E7%AC%94%E8%AE%B020.%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90%E6%B3%95.ipynb"><span class="xref myst">主成分分析法</span></a>。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>当一个矩阵<span class="math notranslate nohighlight">\(m&gt;n\)</span>时，例如<span class="math notranslate nohighlight">\(\begin{bmatrix}1 &amp; 2\\0 &amp; -4\\3 &amp; -1\end{bmatrix}\)</span>，从几何上理解，即从三维空间取两个向量构成了一个平面，该平面与平面中的一个向量做乘法得到一个三维的向量，相当于是做了升维，将平面中的的向量投影到空间中，例如：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}1 &amp; 2\\0 &amp; -4\\3 &amp; -1\end{bmatrix}\begin{bmatrix}5 \\
+6
+\end{bmatrix}=\begin{bmatrix}17 \\
+-24 \\
+9
+\end{bmatrix}
+\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>从矩阵方程<span class="math notranslate nohighlight">\(A\mathbf{x}=\mathbf{b}\)</span>的角度，若<span class="math notranslate nohighlight">\(n&gt;m\)</span>，未知量数目大于方程数，方程要从一个低维的向量逆变换为一个高维的向量，要么无解，要么无穷多解；若<span class="math notranslate nohighlight">\(m&gt;n\)</span>，方程数大于未知量数，方程要从一个高维向量逆变换回一个低维向量，要么无解，要么一个解。</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id5">
+<h1>坐标系<a class="headerlink" href="#id5" title="Link to this heading">#</a></h1>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>在本节我们将介绍矩阵的另一种几何理解。先说结论：<strong>将矩阵乘法看成是一个函数，它的输入是一个视角下的坐标，输出是另一个视角下的坐标</strong>。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>对于一个向量空间<span class="math notranslate nohighlight">\(V\)</span>，明确指定一个基<span class="math notranslate nohighlight">\(\cal{B}\)</span>的一个重要原因是在<span class="math notranslate nohighlight">\(V\)</span>上强加一个坐标系。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>一个向量的在不同的坐标系下有不同的坐标，描述一个坐标系最好的手段就是基。我们以<span class="math notranslate nohighlight">\(\Bbb{R}^{2}\)</span>为例，基<span class="math notranslate nohighlight">\(\begin{bmatrix}1 &amp; 0\\ 0 &amp; 1\end{bmatrix}\)</span>,<span class="math notranslate nohighlight">\(\begin{bmatrix}2 &amp; 0\\ 0 &amp; 2\end{bmatrix}\)</span>,<span class="math notranslate nohighlight">\(\begin{bmatrix}2 &amp; -2\\ 0 &amp; 2\end{bmatrix}\)</span>，它们所表示的坐标系分别如下图所示，为了便于观察基向量的位置，图中还保留了横轴与竖轴，希望大家在看图的同时把它想象成是一个动图（坐标系在伸缩旋转）：</p>
+<img src="./_image/9_1.png" width="650" height="500" />  
+<p>基<span class="math notranslate nohighlight">\(\begin{bmatrix}1 &amp; 0\\ 0 &amp; 1\end{bmatrix}\)</span>表示的坐标系就是我们平日里用得最多的，一般向量都是默认为是在该坐标系下。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>假设<span class="math notranslate nohighlight">\(\cal{B}=\{\mathbf{b}_{1},\cdots,\mathbf{b}_{n}\}\)</span>是<span class="math notranslate nohighlight">\(V\)</span>的一个基，<span class="math notranslate nohighlight">\(\mathbf{x}\)</span>在<span class="math notranslate nohighlight">\(V\)</span>中，<span class="math notranslate nohighlight">\(\mathbf{x}\)</span>相对于基<span class="math notranslate nohighlight">\(\cal{B}\)</span>的坐标是使得<span class="math notranslate nohighlight">\(\mathbf{x}=c_{1}\mathbf{b}_{1}+\cdots+c_{n}\mathbf{b}_{n}=[\mathbf{b}_{1} \cdots \mathbf{b}_{n}]\begin{bmatrix}c_{1}\\\vdots\\c_{n}\end{bmatrix}\)</span>的权<span class="math notranslate nohighlight">\(c_{1},\cdots,c_{n}\)</span>，故<span class="math notranslate nohighlight">\(\Bbb{R}^{n}\)</span>中的向量：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}[\mathbf{x}]_{\cal{B}}=\begin{bmatrix}c_{1}\\\vdots\\c_{n}\end{bmatrix}\end{split}\]</div>
+<p>是<span class="math notranslate nohighlight">\(\mathbf{x}\)</span>的<span class="math notranslate nohighlight">\(\cal{B}\)</span>坐标向量，<span class="math notranslate nohighlight">\(\mathbf{x}\mapsto [\mathbf{x}]_{\cal{B}}\)</span>称之为<strong>坐标映射</strong>。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>从几何上解释，虽然是同一个向量，但是在不同的坐标系下所观察的“视角”不同，因而有不同的坐标。因为不同的基要去表示同一个向量所需的基向量的伸缩都是不同的。我们以向量<span class="math notranslate nohighlight">\(\begin{bmatrix}2\\2\end{bmatrix}\)</span>为例，观察它在不同的坐标系下的差异。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>首先是我们的视角下观察：</p>
+<img src="./_image/9_4.png" width="150" height="100" />
+<p>接着是<span class="math notranslate nohighlight">\(\begin{bmatrix}2 &amp; 0\\ 0 &amp; 2\end{bmatrix}\)</span>:</p>
+<img src="./_image/9_5.png" width="350" height="300" />
+<p>接着是<span class="math notranslate nohighlight">\(\begin{bmatrix}2 &amp; -2\\ 0 &amp; 2\end{bmatrix}\)</span>:</p>
+<img src="./_image/9_6.png" width="650" height="600" />
+<p><span class="math notranslate nohighlight">\(\quad\)</span>通过上述例子，我们可以得到关于<span class="math notranslate nohighlight">\([\mathbf{x}]_{\cal{B}},\cal{B}=\{\mathbf{b}_{1},\cdots,\mathbf{b}_{n}\},\mathbf{x}\)</span>三者的关系，令<span class="math notranslate nohighlight">\(P_{\cal{B}}=[\mathbf{b}_{1} \cdots \mathbf{b}_{n}]\)</span>，我们可以写成：</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{x}=P_{\cal{B}}[\mathbf{x}]_{\cal{B}}, P_{\cal{B}}^{-1}\mathbf{x}=[\mathbf{x}]_{\cal{B}}\]</div>
+<p>式子说明，<strong>将矩阵乘法看成是一个函数，它的输入矩阵代表的坐标系下的坐标，输出是我们的视角下的坐标；逆矩阵则相反</strong>。同样的向量，在不同的坐标系下具有不同的坐标，而矩阵相乘，就是将不同视角之间的坐标转换的函数。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>也许你会问，知道了这个可以干嘛？明白线代的几何意义会帮助我们更好地学习线代的概念，比如说矩阵相似，为何这样的等式下的两个矩阵我们称之为相似？结合本节的内容与<a class="reference internal" href="#%E3%80%8A%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E3%80%8B%E7%AC%94%E8%AE%B008.%E7%9F%A9%E9%98%B5%E7%9A%84%E5%87%A0%E4%BD%95%E8%A7%A3%E9%87%8A-%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2.ipynb"><span class="xref myst">线性变换</span></a>的知识就可以很好地理解，具体阅读<a class="reference internal" href="#%E3%80%8A%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E3%80%8B%E7%AC%94%E8%AE%B011.%E7%9F%A9%E9%98%B5%E7%9B%B8%E4%BC%BC%E4%B8%8E%E5%AF%B9%E8%A7%92%E5%8C%96.ipynb"><span class="xref myst">矩阵相似</span></a>.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id6">
+<h1>特征值和特征向量<a class="headerlink" href="#id6" title="Link to this heading">#</a></h1>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>假设<span class="math notranslate nohighlight">\(A\)</span>为<span class="math notranslate nohighlight">\(n\times n\)</span>矩阵，<span class="math notranslate nohighlight">\(\mathbf{x}\)</span>为非零向量，若存在数<span class="math notranslate nohighlight">\(\lambda\)</span>使<span class="math notranslate nohighlight">\(A\mathbf{x}=\lambda \mathbf{x}\)</span>有非平凡解<span class="math notranslate nohighlight">\(\mathbf{x}\)</span>，则称<span class="math notranslate nohighlight">\(\lambda\)</span>为<span class="math notranslate nohighlight">\(A\)</span>的<strong>特征值</strong>（可以为零），<span class="math notranslate nohighlight">\(\mathbf{x}\)</span>称为对应于<span class="math notranslate nohighlight">\(\lambda\)</span>的<strong>特征向量</strong>（非零）。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>若<span class="math notranslate nohighlight">\(\lambda\)</span>为矩阵<span class="math notranslate nohighlight">\(A\)</span>的特征值，那么方程：</p>
+<div class="math notranslate nohighlight">
+\[(A-\lambda I)\mathbf{x}=\mathbf{0}\]</div>
+<p>中所有解的集合（<span class="math notranslate nohighlight">\(A-\lambda I\)</span>的零空间）称为<span class="math notranslate nohighlight">\(A\)</span>的对应于<span class="math notranslate nohighlight">\(\lambda\)</span>的<strong>特征空间</strong>。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>直观地，设<span class="math notranslate nohighlight">\(A=\begin{bmatrix}1 &amp; 6\\5 &amp; 2\end{bmatrix}\)</span>,<span class="math notranslate nohighlight">\(\mathbf{u}=\begin{bmatrix}6\\-5\end{bmatrix} \)</span>,<span class="math notranslate nohighlight">\(\mathbf{v}=\begin{bmatrix}3\\-2\end{bmatrix}\)</span>，计算有：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A\mathbf{u}=\begin{bmatrix}-24\\20\end{bmatrix}=-4\begin{bmatrix}6\\
+-5
+\end{bmatrix}=4\mathbf{u},A\mathbf{v}=\begin{bmatrix}-9\\
+11
+\end{bmatrix}\neq \lambda\begin{bmatrix}3\\
+-2\end{bmatrix}
+\end{split}\]</div>
+<p>因此<span class="math notranslate nohighlight">\(\mathbf{u}\)</span>是特征值-4对应的特征向量，但<span class="math notranslate nohighlight">\(\mathbf{v}\)</span>不是<span class="math notranslate nohighlight">\(A\)</span>的特征向量。</p>
+<img src="./_image/10_1.png" width="250" height="200" />  
+<p><span class="math notranslate nohighlight">\(\quad\)</span>我们考虑特征值为零的情况，当矩阵<span class="math notranslate nohighlight">\(A\)</span>有零特征值时，方程：</p>
+<div class="math notranslate nohighlight">
+\[A\mathbf{x}=\mathbf{0}\mathbf{x}\]</div>
+<p>有非平凡解，说明矩阵<span class="math notranslate nohighlight">\(A\)</span>不可逆，因此可以下一个结论：<strong>0是矩阵<span class="math notranslate nohighlight">\(A\)</span>的特征值当且仅当<span class="math notranslate nohighlight">\(A\)</span>不可逆</strong>。</p>
+<section id="id7">
+<h2>1.特征方程求特征根<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>给定一个<span class="math notranslate nohighlight">\(n\times n\)</span>的矩阵<span class="math notranslate nohighlight">\(A\)</span>，如何求特征值和对应的特征向量？<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>特征值<span class="math notranslate nohighlight">\(\lambda\)</span>需满足方程<span class="math notranslate nohighlight">\(A\mathbf{x}=\lambda \mathbf{x}\)</span>中的<span class="math notranslate nohighlight">\(\mathbf{x}\)</span>有解存在，也即方程：</p>
+<div class="math notranslate nohighlight">
+\[(A-\lambda I)\mathbf{x}=\mathbf{0}\]</div>
+<p>有非零解存在，根据可逆矩阵定理，若矩阵<span class="math notranslate nohighlight">\(A-\lambda I\)</span>线性无关，则方程只有零解，因此要使方程有解，矩阵<span class="math notranslate nohighlight">\(A-\lambda I\)</span>不可逆，也即行列式<span class="math notranslate nohighlight">\(|A-\lambda I|\)</span>等于0。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>引出定理：数<span class="math notranslate nohighlight">\(\lambda\)</span>是<span class="math notranslate nohighlight">\(n\times n\)</span>矩阵<span class="math notranslate nohighlight">\(A\)</span>的特征值的充要条件为<span class="math notranslate nohighlight">\(\lambda\)</span>是<strong>特征方程</strong><span class="math notranslate nohighlight">\(|A-\lambda I|=0\)</span>的根。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>举例如下：</p>
+<img src="./_image/10_2.png" width="450" height="400" />  
+<p>可以发现<strong>特征方程</strong><span class="math notranslate nohighlight">\(|A-\lambda I|=0\)</span>是关于<span class="math notranslate nohighlight">\(\lambda\)</span>的的多项式，也称之为<span class="math notranslate nohighlight">\(\lambda\)</span>的特征多项式。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>还可以应用<a class="reference internal" href="#%E3%80%8A%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E3%80%8B%E7%AC%94%E8%AE%B017.%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3-QR%E5%88%86%E8%A7%A3.ipynb"><span class="xref myst">QR分解</span></a>来求矩阵的特征值。</p>
+</section>
+<section id="id8">
+<h2>2.应用<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>下面通过一个例子来说明特征值和特征向量的作用：</p>
+<img src="./_image/10_3.png" width="450" height="400" />  
+</section>
+<section id="id9">
+<h2>3.几何意义<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>矩阵是一次<a class="reference internal" href="#%E3%80%8A%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E3%80%8B%E7%AC%94%E8%AE%B008.%E7%9F%A9%E9%98%B5%E7%9A%84%E5%87%A0%E4%BD%95%E8%A7%A3%E9%87%8A-%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2.ipynb"><span class="xref myst">线性变换</span></a>，那么特征向量就是在线性变换前后、只做了伸缩未改变方向的向量，而特征值就是伸缩的比例，当特征值为负表明特征向量被反向拉伸。</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id10">
+<h1>1.矩阵相似与对角化<a class="headerlink" href="#id10" title="Link to this heading">#</a></h1>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>假设<span class="math notranslate nohighlight">\(A,B\)</span>是<span class="math notranslate nohighlight">\(n\times n\)</span>矩阵，如果存在可逆矩阵<span class="math notranslate nohighlight">\(P\)</span>使得<span class="math notranslate nohighlight">\(P^{-1}AP=B\)</span>，或等价地<span class="math notranslate nohighlight">\(A=PBP^{-1}\)</span>，则称<span class="math notranslate nohighlight">\(A\)</span><strong>相似</strong>于<span class="math notranslate nohighlight">\(B\)</span>。把<span class="math notranslate nohighlight">\(A\)</span>变成<span class="math notranslate nohighlight">\(P^{-1}AP\)</span>的变换称为<strong>相似变换</strong>。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>若<span class="math notranslate nohighlight">\(n\times n\)</span>矩阵<span class="math notranslate nohighlight">\(A,B\)</span>是相似的，那么它们有相同的特征多项式，从而有相同的特征值。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>结合回<a class="reference internal" href="#%E3%80%8A%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E3%80%8B%E7%AC%94%E8%AE%B008.%E7%9F%A9%E9%98%B5%E7%9A%84%E5%87%A0%E4%BD%95%E8%A7%A3%E9%87%8A-%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2.ipynb"><span class="xref myst">线性变换</span></a>和<a class="reference internal" href="#%E3%80%8A%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E3%80%8B%E7%AC%94%E8%AE%B009.%E7%9F%A9%E9%98%B5%E7%9A%84%E5%87%A0%E4%BD%95%E8%A7%A3%E9%87%8A-%E5%9D%90%E6%A0%87%E7%B3%BB.ipynb"><span class="xref myst">坐标系</span></a>的内容，我们来思索为什么<span class="math notranslate nohighlight">\(P^{-1}AP=B\)</span>称<span class="math notranslate nohighlight">\(A,B\)</span>相似。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>我们知道矩阵可以代表一种线性变换，也能代表一个坐标系。在我们的视角下作一次线性变换很简单，只需要记录基向量变换后的位置即可，例如下图所示做了一次逆时针旋转90°：</p>
+<img src="./_image/8_1.png" width="350" height="300" />  
+<p>但是如果是在别的视角下的呢？我们希望在<span class="math notranslate nohighlight">\(\begin{bmatrix}2 &amp; -2\\ 0 &amp; 2\end{bmatrix}\)</span>的视角下做逆时针旋转90°，如下图所示：</p>
+<img src="./_image/11_1.png" width="450" height="400" />  
+<p>做法和之前<a class="reference internal" href="#%E3%80%8A%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E3%80%8B%E7%AC%94%E8%AE%B008.%E7%9F%A9%E9%98%B5%E7%9A%84%E5%87%A0%E4%BD%95%E8%A7%A3%E9%87%8A-%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2.ipynb"><span class="xref myst">线性变换</span></a>是相同的，只是我们很难从<span class="math notranslate nohighlight">\(\begin{bmatrix}2 &amp; -2\\ 0 &amp; 2\end{bmatrix}\)</span>的视角下去观察逆时针旋转90°后所处的坐标，我们需要通过矩阵相乘转换成我们的视角下。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>比如<span class="math notranslate nohighlight">\(\begin{bmatrix}2 &amp; -2\\ 0 &amp; 2\end{bmatrix}\)</span>视角下有个向量<span class="math notranslate nohighlight">\(\begin{bmatrix}x\\y\end{bmatrix}\)</span>，我们希望得到它经过逆时针90°旋转后的坐标。先将其转换成我们的视角下：</p>
+<img src="./_image/11_2.png" width="650" height="500" />  
+<p>接着在我们的视角下作一次逆时针旋转90°：</p>
+<img src="./_image/11_3.png" width="550" height="400" />  
+<p>最后是乘以逆矩阵还原回原来的视角：</p>
+<img src="./_image/11_4.png" width="400" height="350" />  
+<p><span class="math notranslate nohighlight">\(\quad\)</span>由此可以看出<span class="math notranslate nohighlight">\(A=\begin{bmatrix}2 &amp; -2\\ 0 &amp; 2\end{bmatrix}^{-1}\begin{bmatrix}0 &amp; -1\\
+1 &amp; 0
+\end{bmatrix}\begin{bmatrix}2 &amp; -2\\
+0 &amp; 2
+\end{bmatrix}\)</span>其实就是在<span class="math notranslate nohighlight">\(\begin{bmatrix}2 &amp; -2\\ 0 &amp; 2\end{bmatrix}\)</span>的视角下做<span class="math notranslate nohighlight">\(\begin{bmatrix}0 &amp; -1\\1 &amp; 0\end{bmatrix}\)</span>变换，故<span class="math notranslate nohighlight">\(A\)</span>与<span class="math notranslate nohighlight">\(B=\begin{bmatrix}0 &amp; -1\\1 &amp; 0\end{bmatrix}\)</span>可以说是相似的，因为他们都其实是逆时针旋转90°，只是一个在我们的视角下，一个是在<span class="math notranslate nohighlight">\(\begin{bmatrix}2 &amp; -2\\ 0 &amp; 2\end{bmatrix}\)</span>的视角下。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>这也能解释为什么相似矩阵具有相同的特征值，因为本质上都是同一种变换。</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id11">
+<h1>2.对角化<a class="headerlink" href="#id11" title="Link to this heading">#</a></h1>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>如果方阵<span class="math notranslate nohighlight">\(A\)</span>相似于对角矩阵，即存在可逆矩阵<span class="math notranslate nohighlight">\(P\)</span>和对角矩阵<span class="math notranslate nohighlight">\(D\)</span>，有<span class="math notranslate nohighlight">\(A=PDP^{-1}\)</span>，则称<span class="math notranslate nohighlight">\(A\)</span>可<strong>对角化</strong>。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span><strong>对角化定理</strong>：<span class="math notranslate nohighlight">\(n\times n\)</span>矩阵<span class="math notranslate nohighlight">\(A\)</span>可对角化的充要条件是<span class="math notranslate nohighlight">\(A\)</span>有<span class="math notranslate nohighlight">\(n\)</span>个线性无关的特征向量，这<span class="math notranslate nohighlight">\(n\)</span>个特征向量我们称之为<strong>特征向量基</strong>。若<span class="math notranslate nohighlight">\(A\)</span>可对角化，则<span class="math notranslate nohighlight">\(P\)</span>的列向量是<span class="math notranslate nohighlight">\(A\)</span>的<span class="math notranslate nohighlight">\(n\)</span>个线性无关的特征向量，此时<span class="math notranslate nohighlight">\(D\)</span>的主对角线上元素是<span class="math notranslate nohighlight">\(A\)</span>的对应于<span class="math notranslate nohighlight">\(P\)</span>中特征向量的特征值，证：</p>
+<img src="./_image/11_5.png" width="400" height="350" />  
+<section id="id12">
+<h2>2.1矩阵对角化流程<a class="headerlink" href="#id12" title="Link to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>下面通过一个例子来说明如何对一个矩阵对角化。流程如下：</p>
+<img src="./_image/11_6.png" width="400" height="350" />  
+<p>例如：</p>
+<img src="./_image/11_7.png" width="400" height="350" />  
+</section>
+<section id="id13">
+<h2>2.2矩阵对角化与幂<a class="headerlink" href="#id13" title="Link to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>矩阵对角化相当于是矩阵分解，它最大的作用是求矩阵的幂运算。推导：</p>
+<img src="./_image/11_8.png" width="200" height="150" />  
+<p>而对角矩阵的幂运算又非常简单，例如：</p>
+<img src="./_image/11_9.png" width="200" height="150" />  </section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id14">
+<h1>1.内积与范数<a class="headerlink" href="#id14" title="Link to this heading">#</a></h1>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>假设<span class="math notranslate nohighlight">\(\mathbf{u},\mathbf{v}\)</span>是<span class="math notranslate nohighlight">\(\Bbb{R}^{n}\)</span>中的向量，则称<span class="math notranslate nohighlight">\(\mathbf{u}\cdot \mathbf{v}\)</span>为<span class="math notranslate nohighlight">\(\mathbf{u}\)</span>和<span class="math notranslate nohighlight">\(\mathbf{v}\)</span>的<strong>内积</strong>，计算如下：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{u}\cdot\mathbf{v}=\mathbf{u}^{T}\mathbf{v}=[u_{1}\cdots u_{n}]\begin{bmatrix}
+v_{1}\\
+\vdots\\
+v_{n}
+\end{bmatrix}=u_{1}v_{1}+\cdots+u_{n}v_{n}\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>内积具有如下性质，其中<span class="math notranslate nohighlight">\(\mathbf{u},\mathbf{v},\mathbf{w}\)</span>是<span class="math notranslate nohighlight">\(\Bbb{R}^{n}\)</span>中的向量，<span class="math notranslate nohighlight">\(c\)</span>是一个数：</p>
+<img src="./_image/12_1.png" width="300" height="250" />  
+<section id="id15">
+<h2>1.1内积的几何表示<a class="headerlink" href="#id15" title="Link to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>内积也可以写成如下形式，其中<span class="math notranslate nohighlight">\(\theta\)</span>为<span class="math notranslate nohighlight">\(\mathbf{u},\mathbf{v}\)</span>向量之间的夹角：<span class="math notranslate nohighlight">\(\mathbf{u}\cdot \mathbf{v}=\Vert\mathbf{u}\Vert\Vert\mathbf{v}\Vert cos\theta\)</span>。
+这也是内积的几何意义，即<span class="math notranslate nohighlight">\(\mathbf{u}\)</span>投影到<span class="math notranslate nohighlight">\(\mathbf{v}\)</span>的长度乘以<span class="math notranslate nohighlight">\(\mathbf{v}\)</span>的长度：</p>
+<img src="./_image/12_2.png" width="100" height="50" />  
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id16">
+<h1>2.范数<a class="headerlink" href="#id16" title="Link to this heading">#</a></h1>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>各种范数如下：</p>
+<ul class="simple">
+<li><p><strong>向量的0-范数</strong>：向量的非零元素个数，记作<span class="math notranslate nohighlight">\(\Vert\mathbf{x}\Vert_{0}\)</span>，可理解为<span class="math notranslate nohighlight">\(\mathbf{x}\)</span>到原点的汉明距离。</p></li>
+<li><p><strong>向量的1-范数</strong>：向量的元素绝对值之和，记作<span class="math notranslate nohighlight">\(\Vert\mathbf{x}\Vert_{1}=\sum_{i=1}^n|x_{i}|\)</span>，可理解为<span class="math notranslate nohighlight">\(\mathbf{x}\)</span>到原点的曼哈顿距离。</p></li>
+<li><p><strong>向量的2-范数（向量的长度/范数）</strong>：向量的元素平方和再开方，恰好为与自身的内积再开方，即<span class="math notranslate nohighlight">\(\Vert\mathbf{x}\Vert=\sqrt{\mathbf{x}\cdot\mathbf{x}}=\sqrt{x_{1}^{2}+\cdots+x_{n}^{2}}\)</span>，<span class="math notranslate nohighlight">\(\Vert\mathbf{x}\Vert^{2}=\mathbf{x}\cdot\mathbf{x}\)</span>，可理解为<span class="math notranslate nohighlight">\(\mathbf{x}\)</span>到原点的欧式距离。</p></li>
+<li><p><strong>向量的p-范数</strong>：向量元素绝对值的p次方和的1/p次幂，记作<span class="math notranslate nohighlight">\(\Vert\mathbf{x}\Vert_{p}=(\sum_{i=1}^n|x_{i}|^{p})^{\frac{1}{p}}\)</span></p></li>
+<li><p><strong>矩阵的1-范数</strong>：返回矩阵的每个列向量的1-范数中的最大值。</p></li>
+<li><p><strong>矩阵的2-范数</strong>：<span class="math notranslate nohighlight">\(\Vert X\Vert_{2}=\sqrt{\lambda_{1}}\)</span>，其中<span class="math notranslate nohighlight">\(\lambda_{1}\)</span>为<span class="math notranslate nohighlight">\(X^{T}X\)</span>的最大特征值。</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>对任意数<span class="math notranslate nohighlight">\(c\)</span>，向量<span class="math notranslate nohighlight">\(c\mathbf{x}\)</span>的长度等于<span class="math notranslate nohighlight">\(\Vert c\mathbf{x}\Vert=|c|\Vert\mathbf{x}\Vert\)</span>。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>长度为1的向量我们称之为<strong>单位向量</strong>，单位化是指将向量<span class="math notranslate nohighlight">\(\mathbf{u}\)</span>化为单位向量<span class="math notranslate nohighlight">\(\mathbf{v}\)</span>的过程，即<span class="math notranslate nohighlight">\(\mathbf{v}=\mathbf{u}/\Vert\mathbf{u}\Vert\)</span>，其中<span class="math notranslate nohighlight">\(\mathbf{u},\mathbf{v}\)</span>方向一致。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span><strong>两个向量之间的距离</strong>：<span class="math notranslate nohighlight">\(\Bbb{R}^{n}\)</span>中两个向量<span class="math notranslate nohighlight">\(\mathbf{u},\mathbf{v}\)</span>之间的距离记作<span class="math notranslate nohighlight">\(dist(\mathbf{u},\mathbf{v})\)</span>，表示向量<span class="math notranslate nohighlight">\(\mathbf{u}-\mathbf{v}\)</span>的长度，即<span class="math notranslate nohighlight">\(dist(\mathbf{u},\mathbf{v})=\Vert\mathbf{u}-\mathbf{v}\Vert\)</span>；可推广计算：</p>
+<img src="./_image/12_3.png" width="400" height="350" />  
+<p>即满足平方差定理。</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id17">
+<h1>1.正交<a class="headerlink" href="#id17" title="Link to this heading">#</a></h1>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>考虑<span class="math notranslate nohighlight">\(\Bbb{R}^{2}\)</span>或<span class="math notranslate nohighlight">\(\Bbb{R}^{3}\)</span>中通过原点且由向量<span class="math notranslate nohighlight">\(\mathbf{u},\mathbf{v}\)</span>确定的两条直线，两条直线几何上垂直当且仅当<span class="math notranslate nohighlight">\(dist(\mathbf{u},\mathbf{v})=dist(\mathbf{u},-\mathbf{v})\)</span>，如下图所示：</p>
+<img src="./_image/12_4.png" width="200" height="150" />  
+<p>推导得：</p>
+<img src="./_image/12_5.png" width="400" height="350" />  
+<p>得出结论：<span class="math notranslate nohighlight">\(\Bbb{R}^{n}\)</span>中两个向量<span class="math notranslate nohighlight">\(\mathbf{u},\mathbf{v}\)</span>相互<strong>正交</strong>（垂直）的充要条件是<span class="math notranslate nohighlight">\(\mathbf{u}\cdot\mathbf{v}=0\)</span>。零向量与任何向量都正交。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span><strong>勾股定理</strong>：两个向量正交的充要条件是<span class="math notranslate nohighlight">\(\Vert\mathbf{u}+\mathbf{v}\Vert^{2}=\Vert\mathbf{u}\Vert^{2}+\Vert\mathbf{v}\Vert^{2}\)</span>，如下图所示：</p>
+<img src="./_image/12_6.png" width="200" height="150" />  
+<section id="id18">
+<h2>1.1正交补<a class="headerlink" href="#id18" title="Link to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>如果向量<span class="math notranslate nohighlight">\(\mathbf{z}\)</span>与<span class="math notranslate nohighlight">\(\Bbb{R}^{n}\)</span>的子空间<span class="math notranslate nohighlight">\(W\)</span>中的任意向量都正交，则称<span class="math notranslate nohighlight">\(\mathbf{z}\)</span>正交于<span class="math notranslate nohighlight">\(W\)</span>；与<span class="math notranslate nohighlight">\(W\)</span>正交的全体向量的集合称为<span class="math notranslate nohighlight">\(W\)</span>的<strong>正交补</strong><span class="math notranslate nohighlight">\(W^{\bot}\)</span>。向量<span class="math notranslate nohighlight">\(\mathbf{x}\)</span>属于<span class="math notranslate nohighlight">\(W^{\bot}\)</span>的充要条件是向量<span class="math notranslate nohighlight">\(\mathbf{x}\)</span>与生成空间<span class="math notranslate nohighlight">\(W\)</span>的任一向量正交。</p>
+<img src="./_image/12_7.png" width="200" height="150" />  
+<p><span class="math notranslate nohighlight">\(\quad\)</span>假设<span class="math notranslate nohighlight">\(A\)</span>是<span class="math notranslate nohighlight">\(m\times n\)</span>矩阵，那么<span class="math notranslate nohighlight">\(A\)</span>的行空间的正交补是<span class="math notranslate nohighlight">\(A\)</span>的零空间，且<span class="math notranslate nohighlight">\(A\)</span>的列空间的正交补是<span class="math notranslate nohighlight">\(A^{T}\)</span>的零空间（因为零空间的每个向量与<span class="math notranslate nohighlight">\(A\)</span>的每个行向量正交）：</p>
+<img src="./_image/12_8.png" width="300" height="250" />  
+</section>
+<section id="id19">
+<h2>1.2正交基<a class="headerlink" href="#id19" title="Link to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(\quad\)</span><strong>正交集</strong>：如果<span class="math notranslate nohighlight">\(\Bbb{R}^{n}\)</span>中的向量集合<span class="math notranslate nohighlight">\(\{\mathbf{u}_{1},\cdots,\mathbf{u}_{n}\}\)</span>中任意两个不同向量都正交，则被称之为正交集。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span><strong>正交基</strong>：如果<span class="math notranslate nohighlight">\(S=\{\mathbf{u}_{1},\cdots,\mathbf{u}_{n}\}\)</span>是由<span class="math notranslate nohighlight">\(\Bbb{R}^{n}\)</span>中非零向量构成的正交集，那么<span class="math notranslate nohighlight">\(S\)</span>是线性无关集，因此构成<span class="math notranslate nohighlight">\(S\)</span>所生成的一组正交基。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span><strong>单位正交集</strong>：由单位向量构成的正交集集合<span class="math notranslate nohighlight">\(\{\mathbf{u}_{1},\cdots,\mathbf{u}_{p}\}\)</span>称之为单位正交集。如果<span class="math notranslate nohighlight">\(W\)</span>是一个由单位正交集生成的子空间，那么<span class="math notranslate nohighlight">\(\{\mathbf{u}_{1},\cdots,\mathbf{u}_{p}\}\)</span>是<span class="math notranslate nohighlight">\(W\)</span>的单位正交基或标准正交基。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>正交基相较于其他基更有优越性，更易计算线性组合中的权。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>假设<span class="math notranslate nohighlight">\(\{\mathbf{u}_{1},\cdots,\mathbf{u}_{p}\}\)</span>是<span class="math notranslate nohighlight">\(\Bbb{R}^{n}\)</span>中子空间<span class="math notranslate nohighlight">\(W\)</span>的正交基，对<span class="math notranslate nohighlight">\(W\)</span>中的每个向量<span class="math notranslate nohighlight">\(\mathbf{y}\)</span>，线性组合：
+$<span class="math notranslate nohighlight">\(\mathbf{y}=c_{1}\mathbf{u}_{1}+\cdots+c_{p}\mathbf{u}_{p}\)</span><span class="math notranslate nohighlight">\(
+中的权可以由\)</span>c_{j}=\frac{\mathbf{y}\cdot\mathbf{u}<em>{j}}{\mathbf{u}</em>{j}\cdot\mathbf{u}_{j}}(j=1,\cdots,p)<span class="math notranslate nohighlight">\(计算，所以有：
+\)</span><span class="math notranslate nohighlight">\(\mathbf{y}=\frac{\mathbf{y}\cdot\mathbf{u}_{1}}{\mathbf{u}_{1}\cdot\mathbf{u}_{1}}\mathbf{u}_{1}+\cdots+\frac{\mathbf{y}\cdot\mathbf{u}_{p}}{\mathbf{u}_{p}\cdot\mathbf{u}_{p}}\mathbf{u}_{p}\)</span><span class="math notranslate nohighlight">\(
+\)</span>\quad$证明如下：</p>
+<img src="./_image/13_1.png" width="500" height="450" /> </section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id20">
+<h1>1.正交分解定理<a class="headerlink" href="#id20" title="Link to this heading">#</a></h1>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>若<span class="math notranslate nohighlight">\(W\)</span>是<span class="math notranslate nohighlight">\(\Bbb{R}^{n}\)</span>的一个子空间，那么<span class="math notranslate nohighlight">\(\Bbb{R}^{n}\)</span>中的每一个向量<span class="math notranslate nohighlight">\(\mathbf{y}\)</span>可以唯一地表示为：</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{y}=\hat{\mathbf{y}}+\mathbf{z}\]</div>
+<p>其中<span class="math notranslate nohighlight">\(\hat{\mathbf{y}}\)</span>属于<span class="math notranslate nohighlight">\(W\)</span>而<span class="math notranslate nohighlight">\(\mathbf{z}\)</span>属于<span class="math notranslate nohighlight">\(W^{\bot}\)</span>，实际上，如果<span class="math notranslate nohighlight">\(\{\mathbf{u}_{1},\cdots,\mathbf{u}_{p}\}\)</span>是<span class="math notranslate nohighlight">\(W\)</span>的任意正交基，那么：</p>
+<div class="math notranslate nohighlight">
+\[\hat{\mathbf{y}}=\frac{\mathbf{y}\cdot\mathbf{u}_{1}}{\mathbf{u}_{1}\cdot\mathbf{u}_{1}}\mathbf{u}_{1}+\cdots+\frac{\mathbf{y}\cdot\mathbf{u}_{p}}{\mathbf{u}_{p}\cdot\mathbf{u}_{p}}\mathbf{u}_{p}\]</div>
+<p>且<span class="math notranslate nohighlight">\(\mathbf{z}=\mathbf{y}-\hat{\mathbf{y}}\)</span>。<span class="math notranslate nohighlight">\(\hat{\mathbf{y}}\)</span>称为<span class="math notranslate nohighlight">\(\mathbf{y}\)</span>在<span class="math notranslate nohighlight">\(W\)</span>上的正交投影，记作<span class="math notranslate nohighlight">\(proj_{W}\mathbf{y}\)</span>，如下图所示：</p>
+<img src="./_image/14_1.png" width="200" height="150" />  
+<p><span class="math notranslate nohighlight">\(\quad\)</span>例如：</p>
+<img src="./_image/14_2.png" width="500" height="450" />  
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id21">
+<h1>2.最佳逼近定理<a class="headerlink" href="#id21" title="Link to this heading">#</a></h1>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>假设<span class="math notranslate nohighlight">\(W\)</span>是<span class="math notranslate nohighlight">\(\Bbb{R}^{n}\)</span>的一个子空间，<span class="math notranslate nohighlight">\(\mathbf{y}\)</span>是<span class="math notranslate nohighlight">\(\Bbb{R}^{n}\)</span>中的任意向量，<span class="math notranslate nohighlight">\(\hat{\mathbf{y}}\)</span>是<span class="math notranslate nohighlight">\(\mathbf{y}\)</span>在<span class="math notranslate nohighlight">\(W\)</span>上的正交投影，那么<span class="math notranslate nohighlight">\(\hat{\mathbf{y}}\)</span>是<span class="math notranslate nohighlight">\(W\)</span>中最接近<span class="math notranslate nohighlight">\(\mathbf{y}\)</span>的点，也就是：</p>
+<div class="math notranslate nohighlight">
+\[\Vert\mathbf{y}-\hat{\mathbf{y}}\Vert&lt;\Vert\mathbf{y}-\mathbf{v}\Vert\]</div>
+<p>对所有属于<span class="math notranslate nohighlight">\(W\)</span>又异于<span class="math notranslate nohighlight">\(\hat{\mathbf{y}}\)</span>的<span class="math notranslate nohighlight">\(\mathbf{v}\)</span>成立。可理解为向量<span class="math notranslate nohighlight">\(\hat{\mathbf{y}}\)</span>为<span class="math notranslate nohighlight">\(W\)</span>中元素对<span class="math notranslate nohighlight">\(\mathbf{y}\)</span>的<strong>最佳逼近</strong>。</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id22">
+<h1>正交矩阵<a class="headerlink" href="#id22" title="Link to this heading">#</a></h1>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>各列构成单位正交集的矩阵在应用和用矩阵计算的计算机算法中都非常重要，这样的矩阵我们也称之为<strong>正交矩阵</strong>。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span><strong>定理</strong>：一个<span class="math notranslate nohighlight">\(m\times n\)</span>矩阵<span class="math notranslate nohighlight">\(U\)</span>具有单位正交列向量的充要条件是<span class="math notranslate nohighlight">\(U^{T}U=I\)</span>。证明如下：</p>
+<img src="./_image/15_1.png" width="400" height="350" />  
+<p>易知，如果一个正交矩阵<span class="math notranslate nohighlight">\(U\)</span>可逆（具有单位正交列的方阵），则它的逆矩阵为<span class="math notranslate nohighlight">\(U^{T}\)</span>，例如：
+$<span class="math notranslate nohighlight">\(U=\begin{bmatrix}
+   0 &amp; 1 &amp; 0\\
+   1 &amp; 0 &amp; 0\\
+   0 &amp; 0 &amp; 1
+  \end{bmatrix} 
+  , U^{T}=
+\begin{bmatrix}
+   0 &amp; 1 &amp; 0\\
+   0 &amp; 0 &amp; 1\\
+   1 &amp; 0 &amp; 0
+  \end{bmatrix} 
+\)</span><span class="math notranslate nohighlight">\(
+\)</span>\quad<span class="math notranslate nohighlight">\(**定理**：如果\)</span>{\mathbf{u}<em>{1},\cdots,\mathbf{u}</em>{p}}<span class="math notranslate nohighlight">\(是\)</span>\Bbb{R}_{n}<span class="math notranslate nohighlight">\(中子空间\)</span>W$的单位正交基，那么：</p>
+<div class="math notranslate nohighlight">
+\[proj_{W}\mathbf{y}=\frac{\mathbf{y}\cdot\mathbf{u}_{1}}{\mathbf{u}_{1}\cdot\mathbf{u}_{1}}\mathbf{u}_{1}+\cdots+\frac{\mathbf{y}\cdot\mathbf{u}_{p}}{\mathbf{u}_{p}\cdot\mathbf{u}_{p}}\mathbf{u}_{p}=(\mathbf{y}\cdot\mathbf{u}_{1})\mathbf{u}_{1}+\cdots+(\mathbf{y}\cdot\mathbf{u}_{p})\mathbf{u}_{p}\]</div>
+<p>如果<span class="math notranslate nohighlight">\(U=[\mathbf{u}_{1} \cdots \mathbf{u}_{p}]\)</span>，则：</p>
+<div class="math notranslate nohighlight">
+\[proj_{W}\mathbf{y}=UU^{T}\mathbf{y}\]</div>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>该定理说明了一个空间的单位正交基的优越性，可以很简单地表达出任意向量在该空间的正交投影。</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id23">
+<h1>格拉姆-施密特方法<a class="headerlink" href="#id23" title="Link to this heading">#</a></h1>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>我们说明了正交矩阵、单位正交基的种种好处，而<strong>格拉姆-施密特方法</strong>是对 <span class="math notranslate nohighlight">\(\Bbb{R}_{n}\)</span> 中任何非零子空间构造正交基或标准正交基的简单算法，该算法基于<a class="reference internal" href="#%E3%80%8A%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E3%80%8B%E7%AC%94%E8%AE%B014.%E6%AD%A3%E4%BA%A4%E5%88%86%E8%A7%A3%E5%AE%9A%E7%90%86%E4%B8%8E%E6%9C%80%E4%BD%B3%E9%80%BC%E8%BF%91%E5%AE%9A%E7%90%86.ipynb"><span class="xref myst">正交分解定理</span></a>，逐个使基向量<span class="math notranslate nohighlight">\(\mathbf{x}_{k}\)</span>分解为正交于前<span class="math notranslate nohighlight">\(k\)</span>个基向量的向量。对<span class="math notranslate nohighlight">\(\Bbb{R}^{n}\)</span>的子空间<span class="math notranslate nohighlight">\(W\)</span>的一个基<span class="math notranslate nohighlight">\(\{\mathbf{x}_{1},\cdots,\mathbf{x}_{p}\}\)</span>，其中 <span class="math notranslate nohighlight">\(proj_{W_{k}}\mathbf{x}_{k+1}\)</span> 表示<span class="math notranslate nohighlight">\(\mathbf{x}_{k+1}\)</span>在<span class="math notranslate nohighlight">\(Span\{\mathbf{x}_{1},\cdots,\mathbf{x}_{k}\}\)</span>的正交投影，算法过程为：</p>
+<img src="./_image/15_2.png" width="400" height="350" />  
+<p><span class="math notranslate nohighlight">\(\quad\)</span>那么得到的向量集合<span class="math notranslate nohighlight">\(\{\mathbf{v}_{1},\cdots,\mathbf{v}_{p}\}\)</span>是<span class="math notranslate nohighlight">\(W\)</span>的一个正交基，此外<span class="math notranslate nohighlight">\(Span\{\mathbf{v}_{1},\cdots,\mathbf{v}_{k}\}=Span\{\mathbf{x}_{1},\cdots,\mathbf{x}_{k}\}\)</span>,其中<span class="math notranslate nohighlight">\(1\leq k\leq p\)</span>。举一个简单的小例子：</p>
+<img src="./_image/15_3.png" width="500" height="450" />  </section>
+<section class="tex2jax_ignore mathjax_ignore" id="lu">
+<h1>LU分解<a class="headerlink" href="#lu" title="Link to this heading">#</a></h1>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>分解要求：矩阵各列线性无关。</p>
+<section id="id24">
+<h2>1.介绍<a class="headerlink" href="#id24" title="Link to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>矩阵的因式分解是把A表示为两个或更多矩阵的乘积，矩阵乘法是数据的综合（把两个或更多线性变换的作用结合成一个矩阵），矩阵的因式分解是数据的分解，把数据组成两个或者更多，这种结构可能更有用，或者更便于计算。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>在工业与商业问题中，<span class="math notranslate nohighlight">\(LU\)</span>分解是常见的一种矩阵因式分解算法，用途在于解一系列具有相同系数矩阵中的线性方程：</p>
+<img src="./_image/16_1.png" width="250" height="200" />  
+<p><span class="math notranslate nohighlight">\(\quad\)</span>我们假设<span class="math notranslate nohighlight">\(m\times n\)</span>矩阵<span class="math notranslate nohighlight">\(A\)</span>可以行化简为阶梯型矩阵而<strong>不必进行行变换</strong>（可对比<span class="math notranslate nohighlight">\(LUP\)</span>分解），则<span class="math notranslate nohighlight">\(A\)</span>可以写成形式<span class="math notranslate nohighlight">\(A=LU\)</span>，<span class="math notranslate nohighlight">\(L\)</span>是<span class="math notranslate nohighlight">\(m\times n\)</span>下三角矩阵（可逆），主对角线元素全是1；<span class="math notranslate nohighlight">\(U\)</span>是<span class="math notranslate nohighlight">\(A\)</span>的一个等价的<span class="math notranslate nohighlight">\(m\times n\)</span>阶梯型矩阵，如下图所示：</p>
+<img src="./_image/16_2.png" width="250" height="200" />  
+<p><span class="math notranslate nohighlight">\(\quad\)</span>通过<span class="math notranslate nohighlight">\(LU\)</span>分解求解<span class="math notranslate nohighlight">\(A\mathbf{x}=\mathbf{b}\)</span>可以写成<span class="math notranslate nohighlight">\(LU\mathbf{x}=\mathbf{b}\)</span>，可变换成解下列方程来求解<span class="math notranslate nohighlight">\(\mathbf{x}\)</span>：</p>
+<img src="./_image/16_3.png" width="100" height="50" />  
+<p>先解(1)再(2)，因为<span class="math notranslate nohighlight">\(L,U\)</span>都是三角矩阵，因此很容易计算。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>举一个例子：</p>
+<img src="./_image/16_4.png" width="400" height="350" />  
+## 2.算法流程
+$\quad$算法并不复杂，总的来说为：
+1. 矩阵$A$经过一系列初等行变换变成阶梯型矩阵，即$U$;
+2. 换过程在每个主元列，把主元以下的元素除以主元即为$L$在该列主元以下的元素。  
+<p>以一个例子来讲解：</p>
+<img src="./_image/16_5.png" width="400" height="350" />  
+</section>
+<section id="id25">
+<h2>3.算法性能分析<a class="headerlink" href="#id25" title="Link to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>下列运算次数的计算适用于<span class="math notranslate nohighlight">\(n\times n\)</span>稠密矩阵<span class="math notranslate nohighlight">\(A\)</span>（大部分元素非零），<span class="math notranslate nohighlight">\(n\)</span>相当大，例如<span class="math notranslate nohighlight">\(n\geq 30\)</span>。</p>
+<ol class="arabic simple">
+<li><p>计算<span class="math notranslate nohighlight">\(A\)</span>的<span class="math notranslate nohighlight">\(LU\)</span>分解大约需要<span class="math notranslate nohighlight">\(2n^{3}/3\)</span>浮算，而求<span class="math notranslate nohighlight">\(A^{-1}\)</span>大约需要<span class="math notranslate nohighlight">\(2n^{3}\)</span>浮算。</p></li>
+<li><p>解<span class="math notranslate nohighlight">\(L\mathbf{y}=\mathbf{b}\)</span>和<span class="math notranslate nohighlight">\(U\mathbf{x}=\mathbf{y}\)</span>大约需要<span class="math notranslate nohighlight">\(2n^{3}\)</span>浮算，因为任意<span class="math notranslate nohighlight">\(n\times n\)</span>三角方程组可以用大约<span class="math notranslate nohighlight">\(n^{3}\)</span>浮算解出。</p></li>
+<li><p>把<span class="math notranslate nohighlight">\(\mathbf{b}\)</span>乘以<span class="math notranslate nohighlight">\(A^{-1}\)</span>也需要<span class="math notranslate nohighlight">\(2n^{3}\)</span>浮算，但结果可能不如<span class="math notranslate nohighlight">\(L\)</span>和<span class="math notranslate nohighlight">\(U\)</span>得出的精确(由于计算<span class="math notranslate nohighlight">\(A^{-1}\)</span>及<span class="math notranslate nohighlight">\(A^{-1}\mathbf{b}\)</span>的舍入误差)。</p></li>
+<li><p>若<span class="math notranslate nohighlight">\(A\)</span>是稀疏矩阵（大部分元素为0），则<span class="math notranslate nohighlight">\(L\)</span>和<span class="math notranslate nohighlight">\(U\)</span>可能也是稀疏的，然而<span class="math notranslate nohighlight">\(A^{-1}\)</span>很可能是稠密的，显然用<span class="math notranslate nohighlight">\(LU\)</span>分解来解<span class="math notranslate nohighlight">\(A\mathbf{x}=\mathbf{b}\)</span>很可能比用<span class="math notranslate nohighlight">\(A^{-1}\)</span>快很多。</p></li>
+</ol>
+</section>
+<section id="lup">
+<h2>4.LUP分解<a class="headerlink" href="#lup" title="Link to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>考虑下面一个矩阵的<span class="math notranslate nohighlight">\(LU\)</span>分解：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A=\begin{bmatrix}
+   2 &amp; 4 &amp; -1\\
+   0 &amp; 0 &amp; 3\\
+   0 &amp; -5 &amp; -4
+  \end{bmatrix} 
+\end{split}\]</div>
+<p>根据之前所述算法，先将矩阵<span class="math notranslate nohighlight">\(A\)</span>化为阶梯形矩阵，并在变换的过程中求出<span class="math notranslate nohighlight">\(L\)</span>。但是很明显，在这种情况下，会出现除数为0的情况，这当然是灾难性的。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>除了除数为0外，还有除数很小的情况，这会产生数值不稳定，因此我们希望尽可能选一个较大的主元。所以有的时候我们必须在矩阵的非对角线元素中选主元。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>我们先引入一个<strong>置换矩阵</strong>的概念，考虑下面两个矩阵的相乘：</p>
+<img src="./_image/16_6.png" width="300" height="250" />  
+<p>根据我们之前所学知识很容易解出来，求得：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A=\begin{bmatrix}
+   2 &amp; 4 &amp; -1\\
+   0 &amp; -5 &amp; -4\\
+   0 &amp; 0 &amp; 3
+  \end{bmatrix}
+\end{split}\]</div>
+<p>可以发现，矩阵<span class="math notranslate nohighlight">\(A\)</span>似乎没什么变化，只是行的位置改变了而已。我们把这样的矩阵称之为<strong>置换矩阵</strong>。置换矩阵是一种系数只由0和1组成的方阵。矩阵的每一行/列的第<span class="math notranslate nohighlight">\(i\)</span>个元素为1，表示原矩阵的该行/列为第<span class="math notranslate nohighlight">\(i\)</span>行/列。具体置换的行or列取决于是左乘还是右乘：</p>
+<ul class="simple">
+<li><p>当矩阵<span class="math notranslate nohighlight">\(A\)</span>左乘一个置换矩阵，交换的是矩阵的行。即<span class="math notranslate nohighlight">\(P\cdot A\)</span>;</p></li>
+<li><p>当矩阵<span class="math notranslate nohighlight">\(A\)</span>右乘一个置换矩阵，交换的是矩阵的列。即<span class="math notranslate nohighlight">\(A\cdot P\)</span>.</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>让我们回到<span class="math notranslate nohighlight">\(LUP\)</span>分解。借助这个置换矩阵，我们可以将矩阵<span class="math notranslate nohighlight">\(A\)</span>的行进行置换，每步重新选取较大的主元进行行替换。原来的<span class="math notranslate nohighlight">\(A=LU\)</span>我们改写为<span class="math notranslate nohighlight">\(PA=LU\)</span>，其中<span class="math notranslate nohighlight">\(P\)</span>是一个置换矩阵。该式子表示为先对<span class="math notranslate nohighlight">\(A\)</span>进行行置换，再对行置换后的<span class="math notranslate nohighlight">\(A\)</span>进行<span class="math notranslate nohighlight">\(LU\)</span>分解。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>当我们要求解<span class="math notranslate nohighlight">\(A\mathbf{x}=\mathbf{b}\)</span>，可做如下变换：</p>
+<img src="./_image/16_7.png" width="200" height="150" />  
+<p>于是问题可以变换为：</p>
+<img src="./_image/16_8.png" width="100" height="50" />  
+<p>求解到的<span class="math notranslate nohighlight">\(\mathbf{x}\)</span>就是<span class="math notranslate nohighlight">\(A\mathbf{x}=\mathbf{b}\)</span>的解，证明如下：</p>
+<img src="./_image/16_9.png" width="250" height="200" />  
+<p><span class="math notranslate nohighlight">\(\quad\)</span>其实<span class="math notranslate nohighlight">\(LU\)</span>分解是<span class="math notranslate nohighlight">\(LUP\)</span>分解的一种，当<span class="math notranslate nohighlight">\(P=I\)</span>时，<span class="math notranslate nohighlight">\(LUP\)</span>分解就成为<span class="math notranslate nohighlight">\(LU\)</span>分解。可以理解成是<span class="math notranslate nohighlight">\(A\)</span>矩阵不进行置换的情况下<span class="math notranslate nohighlight">\(LUP\)</span>分解就成为了<span class="math notranslate nohighlight">\(LU\)</span>分解。</p>
+</section>
+<section id="id26">
+<h2>5.应用<a class="headerlink" href="#id26" title="Link to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>利用好矩阵的因式分解，不只是在求解方程组，在求逆矩阵、最小二乘逼近方面也能大大提高效率。目前计算机在计算矩阵的逆都是采用<span class="math notranslate nohighlight">\(LU\)</span>分解。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>在求逆矩阵时，我们可以有两种思路：</p>
+<img src="./_image/16_10.png" width="300" height="250" />  
+<p><span class="math notranslate nohighlight">\(\quad\)</span>通过<span class="math notranslate nohighlight">\(LUP\)</span>分解来求逆矩阵的过程中，分解的过程需要<span class="math notranslate nohighlight">\(O(n^{3})\)</span>，求解三角矩阵的过程需要<span class="math notranslate nohighlight">\(O(n^{2})\)</span>，避免了主元素为0的情况。可提高求解一系列具有相同系数矩阵中的线性方程的效率。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>在Python中<span class="math notranslate nohighlight">\(LUP\)</span>分解可以借助scipy直接求解，代码如下：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.linalg</span><span class="w"> </span><span class="kn">import</span> <span class="n">lu</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>  
+                     <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>  
+                     <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">]])</span>  
+    <span class="n">p</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="n">lu</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1. 0. 0.]
+ [0. 0. 1.]
+ [0. 1. 0.]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="qr">
+<h1>QR分解<a class="headerlink" href="#qr" title="Link to this heading">#</a></h1>
+<p>分解要求：矩阵的列线性无关。</p>
+<section id="id27">
+<h2>1.介绍<a class="headerlink" href="#id27" title="Link to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>如果<span class="math notranslate nohighlight">\(m\times n\)</span>矩阵<span class="math notranslate nohighlight">\(A\)</span>的列线性无关，那么<span class="math notranslate nohighlight">\(A\)</span>可以分解为<span class="math notranslate nohighlight">\(A=QR\)</span>，其中<span class="math notranslate nohighlight">\(Q\)</span>是一个<span class="math notranslate nohighlight">\(m\times n\)</span>矩阵，其列形成<span class="math notranslate nohighlight">\(ColA\)</span>的一个<a class="reference internal" href="#%E3%80%8A%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E3%80%8B%E7%AC%94%E8%AE%B013.%E6%AD%A3%E4%BA%A4%E4%B8%8E%E6%AD%A3%E4%BA%A4%E5%9F%BA.ipynb"><span class="xref myst">标准正交基</span></a>，<span class="math notranslate nohighlight">\(R\)</span>是一个<span class="math notranslate nohighlight">\(n\times n\)</span>上三角可逆矩阵且在对角线上的元素为正数。<span class="math notranslate nohighlight">\(QR\)</span>分解常用于求解<a class="reference internal" href="#%E3%80%8A%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E3%80%8B%E7%AC%94%E8%AE%B010.%E7%89%B9%E5%BE%81%E5%80%BC%E5%92%8C%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F.ipynb"><span class="xref myst">特征值</span></a>以及<a class="reference internal" href="#%E3%80%8A%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E3%80%8B%E7%AC%94%E8%AE%B019.%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95.ipynb"><span class="xref myst">最小二乘求解</span></a>。</p>
+<img src="./_image/17_1.png" width="300" height="250" />  
+<p><span class="math notranslate nohighlight">\(\quad\)</span>对<span class="math notranslate nohighlight">\(m\times n\)</span>矩阵<span class="math notranslate nohighlight">\(A\)</span>做<span class="math notranslate nohighlight">\(QR\)</span>分解步骤如下：</p>
+<ul class="simple">
+<li><p>对<span class="math notranslate nohighlight">\(A\)</span>的列向量应用<a class="reference internal" href="#%E3%80%8A%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E3%80%8B%E7%AC%94%E8%AE%B015.%E6%AD%A3%E4%BA%A4%E7%9F%A9%E9%98%B5%E4%B8%8E%E6%A0%BC%E6%8B%89%E5%A7%86-%E6%96%BD%E5%AF%86%E7%89%B9%E6%96%B9%E6%B3%95.ipynb"><span class="xref myst">格拉姆-施密特方法</span></a>得到一组正交基，再单位化后得到单位正交基，单位正交基构成矩阵Q的列；</p></li>
+<li><p>可知<span class="math notranslate nohighlight">\(Q^{T}Q=I\)</span>（正交矩阵的定理），所以有<span class="math notranslate nohighlight">\(Q^{T}A=Q^{T}QR=R\)</span>，因此计算<span class="math notranslate nohighlight">\(Q^{T}A\)</span>即可得到<span class="math notranslate nohighlight">\(R\)</span>。</p></li>
+</ul>
+<p>举一个例子：</p>
+<img src="./_image/17_2.png" width="300" height="250" />  
+</section>
+<section id="id28">
+<h2>2.QR分解求特征值<a class="headerlink" href="#id28" title="Link to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(\quad\)</span><span class="math notranslate nohighlight">\(QR\)</span>分解被广泛地用来估计一般矩阵<span class="math notranslate nohighlight">\(A\)</span>的特征值。算法流程如下：</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(A\)</span>被分解为<span class="math notranslate nohighlight">\(Q_{1},R_{1}\)</span>，计算<span class="math notranslate nohighlight">\(R_{1}Q_{1}\)</span>得到<span class="math notranslate nohighlight">\(A_{1}\)</span>；</p></li>
+<li><p><span class="math notranslate nohighlight">\(A_{1}\)</span>被分解为<span class="math notranslate nohighlight">\(Q_{2},R_{2}\)</span>，计算<span class="math notranslate nohighlight">\(R_{2}Q_{2}\)</span>得到<span class="math notranslate nohighlight">\(A_{2}\)</span>；</p></li>
+<li><p>以此类推，计算到第<span class="math notranslate nohighlight">\(k\)</span>次时，<span class="math notranslate nohighlight">\(A_{k}\)</span>几乎是上三角的，且对角线上单元素近似于<span class="math notranslate nohighlight">\(A\)</span>的特征值。</p></li>
+</ol>
+<p>可以简单地证明，<span class="math notranslate nohighlight">\(A\)</span>是相似于<span class="math notranslate nohighlight">\(A_k\)</span>的：</p>
+<img src="./_image/17_3.png" width="300" height="250" />  
+<p><span class="math notranslate nohighlight">\(\quad\)</span>我们用Python来实现该算法，取k=20或100来对比，<span class="math notranslate nohighlight">\(A=
+\begin{bmatrix}
+   2 &amp; 3\\
+   3 &amp; -6
+  \end{bmatrix}\)</span>，代码如下所示：</p>
+<p>k=100与k=20相比，通过<span class="math notranslate nohighlight">\(QR\)</span>分解计算出来的矩阵除对角线外元素更趋于0；通过<span class="math notranslate nohighlight">\(QR\)</span>分解计算得到的矩阵对角线上元素均趋于特征值。</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id29">
+<h1>奇异值分解<a class="headerlink" href="#id29" title="Link to this heading">#</a></h1>
+<p>分解条件：条件最低，任何矩阵都有可能。</p>
+<section id="id30">
+<h2>1.正交对角化<a class="headerlink" href="#id30" title="Link to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(\quad\)</span><strong>对称矩阵</strong>是一个满足<span class="math notranslate nohighlight">\(A^{T}=A\)</span>的矩阵<span class="math notranslate nohighlight">\(A\)</span>。自然地，对称矩阵是一个方阵。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span><strong>定理</strong>：如果<span class="math notranslate nohighlight">\(A\)</span>是对称矩阵，那么不同特征空间的任意两个特征向量是正交的。（补充：无论是不是对称矩阵，相异的特征值对应的特征向量组成的集合都是线性无关的）证：</p>
+<img src="./_image/18_1.png" width="400" height="350" />  
+<p><span class="math notranslate nohighlight">\(\quad\)</span>我们知道，<a class="reference internal" href="#%E3%80%8A%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E3%80%8B%E7%AC%94%E8%AE%B011.%E7%9F%A9%E9%98%B5%E7%9B%B8%E4%BC%BC%E4%B8%8E%E5%AF%B9%E8%A7%92%E5%8C%96.ipynb"><span class="xref myst">对角化</span></a>是对于一个方阵<span class="math notranslate nohighlight">\(A\)</span>，能找到<span class="math notranslate nohighlight">\(n\)</span>个线性无关的特征向量组成的矩阵<span class="math notranslate nohighlight">\(P\)</span>、特征值组成的对角矩阵<span class="math notranslate nohighlight">\(D\)</span>使得<span class="math notranslate nohighlight">\(A=PDP^{-1}\)</span>。而当<span class="math notranslate nohighlight">\(P\)</span>为正交矩阵，则称上式为<strong>正交对角化</strong>。我们再引出<strong>定理</strong>：一个<span class="math notranslate nohighlight">\(n\times n\)</span>矩阵<span class="math notranslate nohighlight">\(A\)</span>可正交对角化的充要条件是<span class="math notranslate nohighlight">\(A\)</span>是对称矩阵。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>证明如下：</p>
+<img src="./_image/18_2.png" width="300" height="250" />  
+<p><span class="math notranslate nohighlight">\(\quad\)</span>给一个例子：</p>
+<img src="./_image/18_3.png" width="400" height="350" />  
+</section>
+<section id="id31">
+<h2>2.奇异值分解介绍<a class="headerlink" href="#id31" title="Link to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>对角化在许多应用中都很重要，但是要对一个矩阵进行对角化，该矩阵必须是方阵。下面将介绍另一种矩阵分解：<strong>奇异值分解</strong>，该分解对任意<span class="math notranslate nohighlight">\(m\times n\)</span>矩阵<span class="math notranslate nohighlight">\(A\)</span>都有可能，是线性代数应用中最有用的矩阵分解，被用于求矩阵的秩、降维、压缩图像等。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>奇异值分解的形式如下：</p>
+<div class="math notranslate nohighlight">
+\[A=U\varSigma V^{T}\]</div>
+<p>其中<span class="math notranslate nohighlight">\(U\)</span>为<span class="math notranslate nohighlight">\(m\times m\)</span>正交矩阵，<span class="math notranslate nohighlight">\(V\)</span>为<span class="math notranslate nohighlight">\(n\times n\)</span>正交矩阵，<span class="math notranslate nohighlight">\(U\)</span>的列称为<span class="math notranslate nohighlight">\(A\)</span>的左奇异向量，<span class="math notranslate nohighlight">\(V\)</span>的列称为<span class="math notranslate nohighlight">\(A\)</span>的右奇异向量；<span class="math notranslate nohighlight">\(\varSigma\)</span>为<span class="math notranslate nohighlight">\(m\times n\)</span>”对角矩阵“，<span class="math notranslate nohighlight">\(D\)</span>为一个<span class="math notranslate nohighlight">\(r\times r\)</span>对角矩阵，<span class="math notranslate nohighlight">\(\sigma_{1},\cdots,\sigma_{r}\)</span>为矩阵的<span class="math notranslate nohighlight">\(r\)</span>个奇异值，形式如下：</p>
+<img src="./_image/18_4.png" width="300" height="250" />  
+</section>
+<section id="id32">
+<h2>3.奇异值分解算法<a class="headerlink" href="#id32" title="Link to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>令矩阵<span class="math notranslate nohighlight">\(A\)</span>为<span class="math notranslate nohighlight">\(m\times n\)</span>矩阵，我们希望得到<span class="math notranslate nohighlight">\(A\)</span>的奇异值分解<span class="math notranslate nohighlight">\(A=U\varSigma V^{T}\)</span>，接下来会从这个式子出发，逐步推出<span class="math notranslate nohighlight">\(U,\varSigma,V\)</span>的求解方法以及之间的关系。</p>
+<section id="id33">
+<h3>3.1结论一<a class="headerlink" href="#id33" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>我们计算<span class="math notranslate nohighlight">\(A^{T}A,AA^{T}\)</span>有：</p>
+<img src="./_image/18_5.png" width="300" height="250" />  
+<p>形式与对角化是一致，其中而对称矩阵是可以正交对角化的，为此可以下一个结论：<span class="math notranslate nohighlight">\(A^{T}A\)</span>以及<span class="math notranslate nohighlight">\(AA^{T}\)</span>的特征向量规范化（指化为单位正交基）后可构成<span class="math notranslate nohighlight">\(V\)</span>和<span class="math notranslate nohighlight">\(U\)</span>，特征值的非零项开方称之为<strong>奇异值</strong>，记作<span class="math notranslate nohighlight">\(\sigma_{i}\)</span>，奇异值构成<span class="math notranslate nohighlight">\(\varSigma\)</span>。</p>
+</section>
+<section id="id34">
+<h3>3.2结论二<a class="headerlink" href="#id34" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>令<span class="math notranslate nohighlight">\(\{\mathbf{v}_{1},\cdots,\mathbf{v}_{n}\}\)</span>是<span class="math notranslate nohighlight">\(\Bbb{R}^n\)</span>的单位正交基且构成<span class="math notranslate nohighlight">\(A^{T}A\)</span>的特征向量，<span class="math notranslate nohighlight">\(\lambda_{1},\cdots,\lambda_{n}\)</span>是<span class="math notranslate nohighlight">\(A^{T}A\)</span>对应的特征值，那么我们有:</p>
+<img src="./_image/18_6.png" width="300" height="250" />  
+<p>这里得到两个结论：</p>
+<ul class="simple">
+<li><p>奇异值非负；</p></li>
+<li><p><span class="math notranslate nohighlight">\(\{\mathbf{v}_{1},\cdots,\mathbf{v}_{n}\}\)</span>为<span class="math notranslate nohighlight">\(A^{T}A\)</span>的特征向量，<span class="math notranslate nohighlight">\(A\)</span>的奇异值是向量<span class="math notranslate nohighlight">\(A\mathbf{v}_{1},\cdots,A\mathbf{v}_{n}\)</span>的长度.</p></li>
+</ul>
+</section>
+<section id="id35">
+<h3>3.3结论三<a class="headerlink" href="#id35" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>我们对奇异值分解的式子变换如下：
+$<span class="math notranslate nohighlight">\(AV=U\varSigma\)</span>$
+我们将其展开：</p>
+<img src="./_image/18_7.png" width="400" height="350" />  
+<p>得出结论：</p>
+<img src="./_image/18_8.png" width="100" height="50" />  
+<p>是奇异值、原矩阵、左右奇异向量的关系，在我们通过结论一求出了奇异值、其中一个奇异向量时，可以直接求出另一个奇异向量。通过这些知识我们已经可以对A进行奇异值分解了。</p>
+</section>
+<section id="id36">
+<h3>3.4实战<a class="headerlink" href="#id36" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>例子：</p>
+<img src="./_image/18_9.png" width="400" height="350" />  
+</section>
+</section>
+<section id="id37">
+<h2>4.奇异值分解应用<a class="headerlink" href="#id37" title="Link to this heading">#</a></h2>
+<section id="id38">
+<h3>4.1矩阵求秩<a class="headerlink" href="#id38" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>计算机估计大矩阵<span class="math notranslate nohighlight">\(A\)</span>的<a class="reference internal" href="#%E3%80%8A%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E3%80%8B%E7%AC%94%E8%AE%B007.%E7%BB%B4%E6%95%B0%E5%92%8C%E7%A7%A9.ipynb"><span class="xref myst">秩</span></a>时，最可靠的方法就是计算非零奇异值的个数（特别小的非零奇异值在实际计算中假定为0），可参考MATLAB的rank源码。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span><strong>定理一</strong>：假若<span class="math notranslate nohighlight">\(\{\mathbf{v}_{1},\cdots,\mathbf{v}_{n}\}\)</span>是包含<span class="math notranslate nohighlight">\(A^{T}A\)</span>的特征向量的<span class="math notranslate nohighlight">\(\Bbb{R}^{n}\)</span>上的单位正交基，重新整理使得对应的<span class="math notranslate nohighlight">\(A^{T}A\)</span>的特征值满足<span class="math notranslate nohighlight">\(\lambda_{1}\geq\cdots\geq\lambda_{n}\)</span>。假如<span class="math notranslate nohighlight">\(A\)</span>有<span class="math notranslate nohighlight">\(r\)</span>个非零奇异值，那么<span class="math notranslate nohighlight">\(\{A\mathbf{v}_{1},\cdots,A\mathbf{v}_{r}\}\)</span>是<span class="math notranslate nohighlight">\(ColA\)</span>的一个正交基，且<span class="math notranslate nohighlight">\(rankA=r\)</span>。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>定理一说明了，矩阵的奇异值的个数即为矩阵的秩。我们结合结论三得出定理二：<br />
+<span class="math notranslate nohighlight">\(\quad\)</span><strong>定理二</strong>：给定<span class="math notranslate nohighlight">\(m\times n\)</span>矩阵<span class="math notranslate nohighlight">\(A\)</span>的一个奇异值分解，取<span class="math notranslate nohighlight">\(\mathbf{u}_{1},\cdots,\mathbf{u}_{m}\)</span>是左奇异向量，<span class="math notranslate nohighlight">\(\mathbf{v}_{1},\cdots,\mathbf{v}_{n}\)</span>是右奇异向量，且<span class="math notranslate nohighlight">\(\sigma_{1},\cdots,\sigma_{n}\)</span>是奇异值，<span class="math notranslate nohighlight">\(r\)</span>为<span class="math notranslate nohighlight">\(A\)</span>的秩；<span class="math notranslate nohighlight">\(\{\mathbf{u}_{1},\cdots,\mathbf{u}_{r}\}\)</span>是<span class="math notranslate nohighlight">\(ColA\)</span>的一个单位正交基，<span class="math notranslate nohighlight">\(\{\mathbf{v}_{r+1},\cdots,\mathbf{v}_{n}\}\)</span>是<span class="math notranslate nohighlight">\(NulA\)</span>的一个单位正交基，<span class="math notranslate nohighlight">\(\{\mathbf{v}_{1},\cdots,\mathbf{v}_{r}\}\)</span>是<span class="math notranslate nohighlight">\(RowA\)</span>的一个单位正交基。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>上述的两条定理表明了奇异值个数、列空间、行空间、零空间之间的关系。举一个例子：</p>
+<img src="./_image/18_10.png" width="400" height="350" />  
+</section>
+<section id="id39">
+<h3>4.2图像压缩<a class="headerlink" href="#id39" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>我们知道一个图像其实就是一个矩阵，矩阵上每个元素都代表着像素。<br />
+<span class="math notranslate nohighlight">\(\quad\)</span>假设<span class="math notranslate nohighlight">\(A\)</span>为一个<span class="math notranslate nohighlight">\(m\times n\)</span>矩阵，对<span class="math notranslate nohighlight">\(A\)</span>做奇异值分解有：<span class="math notranslate nohighlight">\(A=U\varSigma V^{T}\)</span>，我们展开计算有：</p>
+<img src="./_image/18_11.png" width="400" height="350" />  
+<p>其中<span class="math notranslate nohighlight">\(\sigma_{i}\)</span>按照从大到小排列，<span class="math notranslate nohighlight">\(\mathbf{u}_{i}\mathbf{v}_{i}^T\)</span>为一个秩一矩阵。我们知道，<span class="math notranslate nohighlight">\(r\)</span>个不同的秩一矩阵相加得到的矩阵秩为<span class="math notranslate nohighlight">\(r\)</span>，可得到两个结论：</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(A\)</span>的奇异值个数为<span class="math notranslate nohighlight">\(A\)</span>的秩；</p></li>
+<li><p>每个奇异值可看作是一个秩一矩阵的权重。</p></li>
+</ol>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>奇异值一般数值间差异很大，我们可以取前<span class="math notranslate nohighlight">\(k\)</span>项来近似等于<span class="math notranslate nohighlight">\(A\)</span>从而压缩：</p>
+<img src="./_image/18_12.png" width="200" height="150" />  
+<p>我们读取图片，再对矩阵做奇异值分解，代码如下:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>  
+<span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>  
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>  
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.linalg</span><span class="w"> </span><span class="kn">import</span> <span class="n">svd</span>  
+  
+<span class="k">def</span><span class="w"> </span><span class="nf">recover_from_k</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>  
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">U</span><span class="p">[:,</span> <span class="p">:</span><span class="n">k</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">S</span><span class="p">[:</span><span class="n">k</span><span class="p">])),</span> <span class="n">V</span><span class="p">[:</span><span class="n">k</span><span class="p">,</span> <span class="p">:])</span>  
+  
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>  
+  
+    <span class="n">pic</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;/Users/lin/study/linear/test.jpg&#39;</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_GRAYSCALE</span><span class="p">)</span>  
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">pic</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray</span><span class="p">)</span>  
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  
+    <span class="n">U</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">V</span> <span class="o">=</span> <span class="n">svd</span><span class="p">(</span><span class="n">pic</span><span class="p">)</span>  
+    <span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>  
+  
+    <span class="n">pic</span> <span class="o">=</span> <span class="n">recover_from_k</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">pic</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray</span><span class="p">)</span>  
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  
+</pre></div>
+</div>
+</div>
+</div>
+<p>图片大小为250x250，共有250个奇异值，前5个奇异值为：</p>
+<div class="math notranslate nohighlight">
+\[28703.2,5937.4,4087.2,3820.3,3148.4\]</div>
+<p><span class="math notranslate nohighlight">\(\quad\)</span>原图为：</p>
+<img src="./_image/18_13.png" width="200" height="150" />  
+<p>我们取前10个奇异值还原，如下:</p>
+<img src="./_image/18_14.png" width="200" height="150" />  
+<p>取前20个还原，如下：</p>
+<img src="./_image/18_15.png" width="200" height="150" />  
+<p>取前50个还原，可以看出已经非常接近原图了：</p>
+<img src="./_image/18_16.png" width="200" height="150" />  
+<p><span class="math notranslate nohighlight">\(\quad\)</span>原图为250x250，总共有62500个元素。我们取前50个奇异值还原，<span class="math notranslate nohighlight">\(\mathbf{u}_{1}\)</span>和<span class="math notranslate nohighlight">\(\mathbf{v}_{1}^T\)</span>均包含250个元素，总共需要50*(250+250+1)=25050个元素，成功达到压缩目地。</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="1%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">线性方程组</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="mathmap.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Math Map</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">矩阵的几何解释-线性变换</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.1几何解释-矩阵方程与逆矩阵</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.2应用-图像旋转</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.3非方阵的情况</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">坐标系</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">特征值和特征向量</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">1.特征方程求特征根</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.应用</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">3.几何意义</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">1.矩阵相似与对角化</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">2.对角化</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">2.1矩阵对角化流程</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">2.2矩阵对角化与幂</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">1.内积与范数</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">1.1内积的几何表示</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">2.范数</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">1.正交</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">1.1正交补</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">1.2正交基</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">1.正交分解定理</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">2.最佳逼近定理</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">正交矩阵</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">格拉姆-施密特方法</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lu">LU分解</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">1.介绍</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">3.算法性能分析</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lup">4.LUP分解</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">5.应用</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#qr">QR分解</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">1.介绍</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">2.QR分解求特征值</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">奇异值分解</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id30">1.正交对角化</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id31">2.奇异值分解介绍</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id32">3.奇异值分解算法</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id33">3.1结论一</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id34">3.2结论二</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id35">3.3结论三</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id36">3.4实战</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id37">4.奇异值分解应用</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id38">4.1矩阵求秩</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id39">4.2图像压缩</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Tom Tang
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
