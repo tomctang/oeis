@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
@@ -40,10 +40,10 @@
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=8dedbda2" />
   
   <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -62,6 +62,7 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'UNE_MTeach';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <script src="_static/mermaid-init.js?v=512eb59e"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -71,20 +72,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
+  
+  
+  
   
   <dialog id="pst-search-dialog">
     
@@ -110,7 +117,51 @@
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
     </header>
   
 
@@ -376,35 +427,33 @@
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">MTeach &amp; GTPA &amp; PREXUS(PrEx Nexus)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#edlt500-planning-for-effective-learning-21st-july-due-quiz-1">EDLT500 Planning for Effective Learning 21st,July Due quiz 1</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#edlt500-planning-for-effective-learning">EDLT500 Planning for Effective Learning</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contents">Contents</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessments">Assessments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessments-due-9-august">Assessments, Due 9 August</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#educ503-cultural-diversity-eal-d">EDUC503 Cultural Diversity – EAL/D</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#educ503-cultural-diversity-eal-d">EDUC503 Cultural Diversity – EAL/D</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Contents</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment-1a-1b-10-40-5-posts-24th-july-due-1a-1b-post-topic-5-submit-pdf">Assessment 1A+1B(10%+40%, 5 posts) 24th,July Due 1A+1B, Post topic 5 &amp; submit PDF</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment-2-lesson-plan-30th-aug-due">Assessment 2 - Lesson Plan 30th,Aug Due</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#edcx513-aboriginal-education-17th-july-due-1a">EDCX513 Aboriginal Education 17th,July Due 1A</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#edcx513-aboriginal-education">EDCX513 Aboriginal Education</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Contents</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment-1a-three-posts-reflections-3-x-150-words-summary-750-words">Assessment 1A - Three Posts/Reflections (3 x 150 words) + Summary (750 words)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment-1b-policy-analysis-800-words-last-edit-docx-16th-aug-due">Assessment 1B - Policy Analysis(800 words) Last: edit docx, 16th Aug,Due</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment-2-unit-plan-rationale-2k-words-last-edit-docx-6th-sep-due">Assessment 2 - Unit Plan &amp; Rationale(2k words) Last: edit docx, 6th Sep,Due</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#educ540-classroom-management-online-prex-10-days-18-july-two-posts">EDUC540 Classroom Management (Online PrEx 10 days) 18,July - two posts</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment-1-10-9-forum-postings-each-week-each-110-words-each-module-comprising-two-forum-postings-content-observation">Assessment 1 (10%): <strong>9 Forum Postings each week</strong>, each &gt;110 words, each module comprising TWO Forum Postings  (content + observation)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#educ540-classroom-management-online-prex-10-days">EDUC540 Classroom Management (Online PrEx 10 days)</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment-1-10-9-forum-postings-each-week-post-110-words">Assessment 1 (10%): <strong>9 Forum Postings each week</strong>, post&gt;110 words</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment-2-40-reflective-observational-analysis-30th-july-due">Assessment 2 (40%): Reflective Observational Analysis 30th,July Due</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment-3-50-formal-written-task-applied-research-use-my-unit-plan-computation-and-economics">Assessment 3 (50%) - Formal written task - Applied research, use my unit plan “computation and economics”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment-3-50-formal-written-task-applied-research-use-my-unit-plan-computation-and-economics">Assessment 3 (50%): Formal written task - Applied research, use my unit plan “computation and economics”</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-outcomes">Learning outcomes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-0-one-post-done">Module 0 - one post done</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-1-quality-learning-environments-two-posts-done">Module 1: Quality Learning Environments - two posts done</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-2">Module 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-0">Module 0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-1-quality-learning-environments">Module 1: Quality Learning Environments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-2-intellectual-quality">Module 2: Intellectual Quality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-3-significance">Module 3: Significance</a></li>
 </ul>
 </li>
 </ul>
@@ -420,12 +469,7 @@
                 <article class="bd-article">
                   
   <ul class="simple">
-<li><p>Lantite Math - not hard, must be <strong>careful reading</strong> - 3 real tests in School Support site</p>
-<ul>
-<li><p>52 questions (calculator), 13 questions (NO calculator)</p></li>
-<li><p>2 hours in total</p></li>
-</ul>
-</li>
+<li><p>Lantite Math - not hard, must be <strong>careful reading</strong> - 52 questions (calculator), 13 questions (NO calculator) - 2 hours in total</p></li>
 <li><p><a class="reference external" href="https://www.aitsl.edu.au/standards">APST</a> ; <a class="reference external" href="https://www.acara.edu.au/curriculum">ACARA (National Curriculum) </a></p></li>
 </ul>
 <section id="mteach-gtpa-prexus-prex-nexus">
@@ -620,8 +664,8 @@
 </ol>
 <p>PrEx: Arrange My School Placement</p>
 </section>
-<section id="edlt500-planning-for-effective-learning-21st-july-due-quiz-1">
-<h1>EDLT500 Planning for Effective Learning 21st,July Due quiz 1<a class="headerlink" href="#edlt500-planning-for-effective-learning-21st-july-due-quiz-1" title="Link to this heading">#</a></h1>
+<section id="edlt500-planning-for-effective-learning">
+<h1>EDLT500 Planning for Effective Learning<a class="headerlink" href="#edlt500-planning-for-effective-learning" title="Link to this heading">#</a></h1>
 <section id="contents">
 <h2>Contents<a class="headerlink" href="#contents" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -654,12 +698,12 @@
 <li><p>vs. Transformative learning theory is heavily influenced by constructivist principles, as both share the core idea that learners actively create and interpret meaning from their experiences. While constructivism focuses generally on how knowledge is built, transformative learning specifically focuses on changing deeply held beliefs and worldviews.</p></li>
 </ul>
 </li>
-<li><p>Jean Piaget</p>
+<li><p>Piaget:</p>
 <ul>
 <li><p>Theory of Cognitive Development (Constructivism)</p></li>
 </ul>
 </li>
-<li><p>VYGOTSKY’S</p>
+<li><p>VYGOTSKY:</p>
 <ul>
 <li><p>Sociocultural Theory of Cognitive Development (Constructivism)</p></li>
 <li><p>Zone of Proximal Development (ZPD)</p></li>
@@ -670,7 +714,7 @@
 <li><p><strong>Theory of Learner Styles</strong> is an outdated perspective.</p></li>
 <li><p>McInerney, D. M., &amp; Putwain, D. W. (2017). Chapter 5: Cognition and cognitive development: Infancy to late childhood. In Developmental and educational psychology for teachers: An applied approach (2nd ed., pp. 91–121). Routledge.</p>
 <ul>
-<li><p>This chapter gives you an outline of cognitive development, drawing from the work of Jean Piaget and Lev Vygotsky.</p></li>
+<li><p>This chapter gives you an outline of cognitive development, drawing from the work of Piaget and Vygotsky.</p></li>
 </ul>
 </li>
 <li><p>Groundwater Smith,S.,  Ewing, R., &amp; Le Cornu, R. (2015). Chapter 3 (pages 50 -75) In Teaching Challenges and Dilemmas</p>
@@ -688,7 +732,30 @@
 </ul>
 </li>
 <li><p>teachers provide <strong>scaffolding</strong> in the form of <strong>metacognitive strategies</strong> (encourage the learner to monitor their own learning by thinking about how to achieve particular learning goals), or help students learn how to learn by scaffolding their learning through the use of <strong>High Impact Teaching Strategies (HITS)</strong></p></li>
-<li><p>HITS: 10 instructional practices (to use them in Assignment 3)</p></li>
+<li><p>HITS: 10 instructional practices (to use them in Assignment 3)</p>
+<ul>
+<li><ol class="arabic simple">
+<li><p>Setting Goals, 2. Structuring Lessons</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="3">
+<li><p>Explicit Teaching, 4. Worked Examples</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="5">
+<li><p>Collaborative Learning, 6. Multiple Exposures</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="7">
+<li><p>Questioning, 8. Feedback</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="9">
+<li><p>Meta-Cognitive, 10. Differentiated Teaching</p></li>
+</ol>
+</li>
+</ul>
+</li>
 <li><p>Shulman’s Model and the Teaching Cycle</p>
 <ul>
 <li><p>Pedagogical Content Knowledge (PCK): special amalgam of content and pedagogy that is unique professional understanding of teachers.</p></li>
@@ -739,6 +806,15 @@
 <li><p>It is a specific classroom management and organising students for learning. Children have particular roles and therefore it is more groupwork. There is no room for free-riding.</p></li>
 </ul>
 </li>
+<li><p>Johnson &amp; Johnson 5 principles:</p>
+<ul>
+<li><p>Positive Interdependence</p></li>
+<li><p>Individual and Group Accountability</p></li>
+<li><p>Promotive (Face-to-Face) Interaction</p></li>
+<li><p>Interpersonal and Small-Group Skills</p></li>
+<li><p>Group Processing</p></li>
+</ul>
+</li>
 </ul>
 <img src="https://raw.githubusercontent.com/tomctang/NB_img/main/CL.png" alt="Causality-confounder" width="1000">
 <ul class="simple">
@@ -770,14 +846,13 @@
 <li><p>?</p></li>
 </ul>
 </section>
-<section id="assessments">
-<h2>Assessments<a class="headerlink" href="#assessments" title="Link to this heading">#</a></h2>
+<section id="assessments-due-9-august">
+<h2>Assessments, Due 9 August<a class="headerlink" href="#assessments-due-9-august" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Assessment 1: Two online Quizzes, Due 26 July &amp; 6 Sep - Once chance 60 min</p>
+<li><p>Assessment 1: one online Quiz left, Due 6 Sep - Once chance 60 min</p>
 <ul>
-<li><p>Quiz 1: lectures, tutorials, and required readings Weeks 1-4. All 20 items in 10 (multiple choice, matching, fill in the blank, true/false).</p></li>
-<li></li>
-<li><p>Quiz 2: lectures, tutorials, and required readings Weeks 5-8. All 20 items in 10 (multiple choice, matching, fill in the blank, true/false).</p></li>
+<li><p>Quiz 1: lectures, tutorials, and required readings Weeks 1-4. See Qwen, Yuanbao review.</p></li>
+<li><p>Quiz 2: lectures, tutorials, and required readings Weeks 5-8. Use AI for review.</p></li>
 </ul>
 </li>
 <li><p>Assessment 2: Learning Sequence - see docx. Due 9 August</p></li>
@@ -812,9 +887,11 @@
 </div>
 </div>
 </div>
-</section>
-<section id="reference">
-<h2>Reference<a class="headerlink" href="#reference" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><blockquote>
+<div><p>Reference</p>
+</div></blockquote>
+</div></blockquote>
 <ul class="simple">
 <li><p>Phan, H. P., Ngu, B. H., &amp; Yeung, A. S. (2017). Achieving optimal best: Instructional efficiency and the
 use of cognitive load theory in mathematical problem solving. Educational Psychology Review, 29(4), 667-692. doi:10.1007/s10648-016-9373-3</p></li>
@@ -862,9 +939,9 @@ use of cognitive load theory in mathematical problem solving. Educational Psycho
 <p>Topic 6: CRP in Action: Working with EAL/D students (1)</p>
 <p>Topic 7: CRP in Action: Working with EAL/D students (2)</p>
 <p>Topic 8: ‘Reality Pedagogy’ - Anti-racism policy and strategy in the classroom and beyond</p>
-</section>
-<section id="assessment-1a-1b-10-40-5-posts-24th-july-due-1a-1b-post-topic-5-submit-pdf">
-<h2>Assessment 1A+1B(10%+40%, 5 posts) 24th,July Due 1A+1B, Post topic 5 &amp; submit PDF<a class="headerlink" href="#assessment-1a-1b-10-40-5-posts-24th-july-due-1a-1b-post-topic-5-submit-pdf" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>Assessment 1A+1B(10%+40%, 5 posts=1 pdf)</p>
+</div></blockquote>
 <p><em>1A</em> - Autobiographical Essay Topic 1 post (400 words/no references required). Relates to GTSD: 1.1.1, 1.3.1, 1.4.1, 1.5.1, 2.4.1, 4.1.1, 4.4.1, 7.1.1, 7.2.1</p>
 <ul class="simple">
 <li><p>before doing any unit readings, just document your current understanding of issues around cultural diversity in the classroom, so you can draw on your own past schooling experiences to contextualise your discussion. 第一步： 回顾你过去的求学经历，学校是如何应对学生（包括你）带入课堂的各种形式的多元性（例如文化、种族、宗教、社会经济和语言差异）的。可以参考以下问题：</p>
@@ -951,8 +1028,8 @@ I have lived in both China and Australia for a long time. I spent my early life 
 </ul>
 </section>
 </section>
-<section id="edcx513-aboriginal-education-17th-july-due-1a">
-<h1>EDCX513 Aboriginal Education 17th,July Due 1A<a class="headerlink" href="#edcx513-aboriginal-education-17th-july-due-1a" title="Link to this heading">#</a></h1>
+<section id="edcx513-aboriginal-education">
+<h1>EDCX513 Aboriginal Education<a class="headerlink" href="#edcx513-aboriginal-education" title="Link to this heading">#</a></h1>
 <section id="id2">
 <h2>Contents<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -978,9 +1055,9 @@ I have lived in both China and Australia for a long time. I spent my early life 
 </li>
 <li><p>Topic 8: Aboriginal Perspectives &amp; Anti-racism</p></li>
 </ul>
-</section>
-<section id="assessment-1a-three-posts-reflections-3-x-150-words-summary-750-words">
-<h2>Assessment 1A - Three Posts/Reflections (3 x 150 words) + Summary (750 words)<a class="headerlink" href="#assessment-1a-three-posts-reflections-3-x-150-words-summary-750-words" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>Assessment 1A - Three Posts/Reflections (3 x 150 words) + Summary (750 words)</p>
+</div></blockquote>
 <p>Topic 1: Current Policies in Aboriginal Education
 write reflection post (150 words//excluding references) to answer questions based on my background; insert 2 reference APA 7th edition</p>
 <ul class="simple">
@@ -1077,12 +1154,12 @@ Harrison, N. &amp; Sellwood, J. (2022). Beginning teachers in Aboriginal and Tor
 </ul>
 </section>
 </section>
-<section id="educ540-classroom-management-online-prex-10-days-18-july-two-posts">
-<h1>EDUC540 Classroom Management (Online PrEx 10 days) 18,July - two posts<a class="headerlink" href="#educ540-classroom-management-online-prex-10-days-18-july-two-posts" title="Link to this heading">#</a></h1>
-<section id="assessment-1-10-9-forum-postings-each-week-each-110-words-each-module-comprising-two-forum-postings-content-observation">
-<h2>Assessment 1 (10%): <strong>9 Forum Postings each week</strong>, each &gt;110 words, each module comprising TWO Forum Postings  (content + observation)<a class="headerlink" href="#assessment-1-10-9-forum-postings-each-week-each-110-words-each-module-comprising-two-forum-postings-content-observation" title="Link to this heading">#</a></h2>
+<section id="educ540-classroom-management-online-prex-10-days">
+<h1>EDUC540 Classroom Management (Online PrEx 10 days)<a class="headerlink" href="#educ540-classroom-management-online-prex-10-days" title="Link to this heading">#</a></h1>
+<section id="assessment-1-10-9-forum-postings-each-week-post-110-words">
+<h2>Assessment 1 (10%): <strong>9 Forum Postings each week</strong>, post&gt;110 words<a class="headerlink" href="#assessment-1-10-9-forum-postings-each-week-post-110-words" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>see Google Doc</p></li>
+<li><p>see Module below(move to Google Doc after finished), each module comprising TWO Forum Postings (content + observation)</p></li>
 </ul>
 </section>
 <section id="assessment-2-40-reflective-observational-analysis-30th-july-due">
@@ -1106,7 +1183,7 @@ Harrison, N. &amp; Sellwood, J. (2022). Beginning teachers in Aboriginal and Tor
 </ul>
 </section>
 <section id="assessment-3-50-formal-written-task-applied-research-use-my-unit-plan-computation-and-economics">
-<h2>Assessment 3 (50%) - Formal written task - Applied research, use my unit plan “computation and economics”<a class="headerlink" href="#assessment-3-50-formal-written-task-applied-research-use-my-unit-plan-computation-and-economics" title="Link to this heading">#</a></h2>
+<h2>Assessment 3 (50%): Formal written task - Applied research, use my unit plan “computation and economics”<a class="headerlink" href="#assessment-3-50-formal-written-task-applied-research-use-my-unit-plan-computation-and-economics" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Introduction (100 words - 5%)</p>
 <ul>
@@ -1164,8 +1241,8 @@ Harrison, N. &amp; Sellwood, J. (2022). Beginning teachers in Aboriginal and Tor
 <li><p>demonstrate an understanding of the sources of professional learning, a rationale for continued professional learning and the implications for improved student learning by engaging in collaborative professional learning processes (GTSD 6.2.1, 6.4.1, 7.4.1).</p></li>
 </ul>
 </section>
-<section id="module-0-one-post-done">
-<h2>Module 0 - one post done<a class="headerlink" href="#module-0-one-post-done" title="Link to this heading">#</a></h2>
+<section id="module-0">
+<h2>Module 0<a class="headerlink" href="#module-0" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Inclusive practice</p></li>
 <li><p>Behaviour support strategies</p></li>
@@ -1187,13 +1264,13 @@ Harrison, N. &amp; Sellwood, J. (2022). Beginning teachers in Aboriginal and Tor
 <li><p>“A major shift from intervention to prevention” is about Classroom Management, and its transition about how educators perceive and manage student behavior</p></li>
 </ul>
 </section>
-<section id="module-1-quality-learning-environments-two-posts-done">
-<h2>Module 1: Quality Learning Environments - two posts done<a class="headerlink" href="#module-1-quality-learning-environments-two-posts-done" title="Link to this heading">#</a></h2>
-<p>A. Theories of classroom management</p>
+<section id="module-1-quality-learning-environments">
+<h2>Module 1: Quality Learning Environments<a class="headerlink" href="#module-1-quality-learning-environments" title="Link to this heading">#</a></h2>
+<p>wk1. Theories of classroom management</p>
 <ul class="simple">
 <li><p>a). behaviour management, b). effective teaching practices</p></li>
 <li><p>PBL (Positive Behaviour for Learning) &amp; PBS (Positive Behaviour Support)</p></li>
-<li><p>Quality Teaching Model (QTM)</p>
+<li><p>Quality Teaching Model (QTM):</p>
 <ul>
 <li><p>Intellectual Quality</p></li>
 <li><p>Quality Learning Environment</p></li>
@@ -1201,7 +1278,7 @@ Harrison, N. &amp; Sellwood, J. (2022). Beginning teachers in Aboriginal and Tor
 </ul>
 </li>
 </ul>
-<p>B. Assessment for Learning (AFL)学习评估</p>
+<p>wk2. Assessment for Learning (AFL)学习评估</p>
 <ul class="simple">
 <li><p>Formative assessment - narrative observation &amp; focused narrative observation</p></li>
 </ul>
@@ -1217,8 +1294,42 @@ Narrative/descriptive observation</p>
 <li><p>This classroom has a sign on the wall that says to put your hand up only if you want to ask a question. That is because the teacher wants to use another strategy to allow MORE students to answer/participate in the discussion. The way she does this is to ask a student to choose a number and then she asks that student with the corresponding number to answer. However, the teacher does not do this all of the time. Watch the same 20 minutes of video again and record what you see and this time keep in mind a focus on how the teacher asks questions.</p></li>
 </ul>
 </section>
-<section id="module-2">
-<h2>Module 2<a class="headerlink" href="#module-2" title="Link to this heading">#</a></h2>
+<section id="module-2-intellectual-quality">
+<h2>Module 2: Intellectual Quality<a class="headerlink" href="#module-2-intellectual-quality" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>wk4: the QTM dimension of Intellectual Quality, and the role in classroom management.</p></li>
+<li><p>wk5: continue to investigate different observational techniques - time sampling, and some different scales and checklists</p></li>
+</ul>
+<p>wk4: <strong>Intellectual Quality</strong></p>
+<ul class="simple">
+<li><p>is pedagogy focused on deep understanding of important, substantive concepts, skills and ideas. Such pedagogy treats knowledge as requiring active construction and engages students in higher-order thinking and communicating about what they are learning. (NSW DET, 2023).</p></li>
+<li><p>6 elements: metalanguage, higher-order thinking, substantive communication, deep knowledge, deep understanding, and problematic knowledge</p></li>
+</ul>
+<p>wk5: Methods</p>
+<p>Two approaches</p>
+<ul class="simple">
+<li><p>Traditional approach: focus on the individual student and collect data on them</p>
+<ul>
+<li><p>Time sampling: to measure behaviours using qualitative methods to record data. (just look for the target behaviour itself, eg. EVENT FREQUENCY RECORDING methods - Interval Sampling or Time Sampling)</p></li>
+</ul>
+</li>
+<li><p>Classroom ecology approach: <strong>self assessment scales</strong> and an <strong>ecology checklist</strong> are informed by Classroom Ecology.</p></li>
+</ul>
+<p>Observation techniques (eg. time sampling) and ecological assessment tools are complementary (Core Relationship: Data Triangulation)</p>
+<ul class="simple">
+<li><p>Establishing the Baseline (Checklists): Classroom Ecology Checklist (CEC)</p></li>
+<li><p>Tracking the Impact: Time Sampling (TS)</p></li>
+<li><p>Action-Oriented Assessment:</p>
+<ul>
+<li><p>Self-assessment scales and CEC indicate what systems should be in place (e.g., “Are positive expectations clear?”),</p></li>
+<li><p>while TS reveals whether those systems are working (e.g., “How often is the student displaying positive engagement during the hour?”)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="module-3-significance">
+<h2>Module 3: Significance<a class="headerlink" href="#module-3-significance" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=6rv_rmJYorE">Project-Based Learning at High-Tech High</a> breaks traditional Highschool molds by integrating arts, design, and PBL. The approach fosters a respectful, adult-like atmosphere that prepares students through real-world work.</p>
 </section>
 </section>
 
@@ -1287,35 +1398,33 @@ Narrative/descriptive observation</p>
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">MTeach &amp; GTPA &amp; PREXUS(PrEx Nexus)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#edlt500-planning-for-effective-learning-21st-july-due-quiz-1">EDLT500 Planning for Effective Learning 21st,July Due quiz 1</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#edlt500-planning-for-effective-learning">EDLT500 Planning for Effective Learning</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contents">Contents</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessments">Assessments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessments-due-9-august">Assessments, Due 9 August</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#educ503-cultural-diversity-eal-d">EDUC503 Cultural Diversity – EAL/D</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#educ503-cultural-diversity-eal-d">EDUC503 Cultural Diversity – EAL/D</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Contents</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment-1a-1b-10-40-5-posts-24th-july-due-1a-1b-post-topic-5-submit-pdf">Assessment 1A+1B(10%+40%, 5 posts) 24th,July Due 1A+1B, Post topic 5 &amp; submit PDF</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment-2-lesson-plan-30th-aug-due">Assessment 2 - Lesson Plan 30th,Aug Due</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#edcx513-aboriginal-education-17th-july-due-1a">EDCX513 Aboriginal Education 17th,July Due 1A</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#edcx513-aboriginal-education">EDCX513 Aboriginal Education</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Contents</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment-1a-three-posts-reflections-3-x-150-words-summary-750-words">Assessment 1A - Three Posts/Reflections (3 x 150 words) + Summary (750 words)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment-1b-policy-analysis-800-words-last-edit-docx-16th-aug-due">Assessment 1B - Policy Analysis(800 words) Last: edit docx, 16th Aug,Due</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment-2-unit-plan-rationale-2k-words-last-edit-docx-6th-sep-due">Assessment 2 - Unit Plan &amp; Rationale(2k words) Last: edit docx, 6th Sep,Due</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#educ540-classroom-management-online-prex-10-days-18-july-two-posts">EDUC540 Classroom Management (Online PrEx 10 days) 18,July - two posts</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment-1-10-9-forum-postings-each-week-each-110-words-each-module-comprising-two-forum-postings-content-observation">Assessment 1 (10%): <strong>9 Forum Postings each week</strong>, each &gt;110 words, each module comprising TWO Forum Postings  (content + observation)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#educ540-classroom-management-online-prex-10-days">EDUC540 Classroom Management (Online PrEx 10 days)</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment-1-10-9-forum-postings-each-week-post-110-words">Assessment 1 (10%): <strong>9 Forum Postings each week</strong>, post&gt;110 words</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment-2-40-reflective-observational-analysis-30th-july-due">Assessment 2 (40%): Reflective Observational Analysis 30th,July Due</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment-3-50-formal-written-task-applied-research-use-my-unit-plan-computation-and-economics">Assessment 3 (50%) - Formal written task - Applied research, use my unit plan “computation and economics”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment-3-50-formal-written-task-applied-research-use-my-unit-plan-computation-and-economics">Assessment 3 (50%): Formal written task - Applied research, use my unit plan “computation and economics”</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-outcomes">Learning outcomes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-0-one-post-done">Module 0 - one post done</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-1-quality-learning-environments-two-posts-done">Module 1: Quality Learning Environments - two posts done</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-2">Module 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-0">Module 0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-1-quality-learning-environments">Module 1: Quality Learning Environments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-2-intellectual-quality">Module 2: Intellectual Quality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-3-significance">Module 3: Significance</a></li>
 </ul>
 </li>
 </ul>
@@ -1367,8 +1476,8 @@ By Tom Tang
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
   </footer>
