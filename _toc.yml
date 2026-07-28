@@ -8,24 +8,14 @@ parts:
   chapters:
   - file: chapter0_introduction
   - file: chapter1_arithmetic_functions
+
+- caption: UNE
+  numbered: false
+  chapters:
   - file: UNE_MTeach
   - file: UNE_Math_Econ
   - file: 1线性方程组
   - file: 8矩阵的几何解释-线性变换
-
-- caption: Try oil
-  numbered: false
-  chapters:
-  - file: oil-predict4个模型1基本面
-
-- caption: Counting
-  numbered: false
-  chapters:
-  - file: counthow_to_count_things
-  - file: countlectures
-  - file: countlectures_output
-  - file: counttutorial
-  - file: counttutorial_solution
 
 - caption: Math Map
   numbered: false
