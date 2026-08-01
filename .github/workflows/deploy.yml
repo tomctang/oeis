@@ -39,9 +39,8 @@ jobs:
       run: |
         jupyter-book build . --all
     
-    - name: Debug Sphinx config
-      run: |
-        jupyter-book config sphinx .
+    - name: Print conf.py
+      run: cat conf.py
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
