@@ -19,6 +19,9 @@ sitemap:
 execute:
   execute_notebooks: "off"  # Change to "auto" to execute notebooks during build
 
+launch_buttons:
+  thebe: false
+  
 sphinx:
   config:
     html_js_files:
