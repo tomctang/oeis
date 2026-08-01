@@ -1,9 +1,9 @@
-div.body, body, .content {
-    line-height: 1.4;             /* Adjust line spacing */
-    max-width: 1800px !important; /* Ensure the rule is applied */
-    width: 100% !important;       /* Force percentage width */
-    margin: 0 auto !important;    /* Center horizontally */
-}
+/*div.body, body, .content {
+    line-height: 1.4;              Adjust line spacing */
+/*    max-width: 1800px !important; /* Ensure the rule is applied */
+ /*   width: 100% !important;       /* Force percentage width */
+/*    margin: 0 auto !important;    /* Center horizontally */
+/*}
 
 /* Left sidebar (Index)      
     position: fixed;
