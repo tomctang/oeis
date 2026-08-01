@@ -37,12 +37,8 @@ jobs:
 
     - name: Build Jupyter Book
       run: |
-        jupyter-book build . --all
-    
-    - name: Search generated conf.py
-      run: |
-        grep -n "thebe" conf.py || true
-        grep -n "THEBE" conf.py || true
+        jupyter-book clean . --all   
+        jupyter-book build .
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
