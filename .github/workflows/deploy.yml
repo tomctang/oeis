@@ -39,6 +39,11 @@ jobs:
       run: |
         jupyter-book build . --all
     
+    - name: Debug Sphinx extensions
+      run: |
+        python -c "import sphinx; print(sphinx.__version__)"
+        pip list | grep sphinx
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
       with:
