@@ -11,22 +11,7 @@ html:
   use_issues_button: false
   use_repository_button: true
   extra_css: ["_static/custom.css"]
-#  favicon: "path/to/favicon.ico" 
-#html:
-#  theme:
-#    name: "sphinx_book_theme"
-#    options:
-#      use_repository_button: true
-#      body_max_width: "90%"  # Adjusts the width of the main content (default is "none")
-#      font_size: "16px"      # Base font size (can also be set in custom CSS)
-#      use_edit_page_button: true  # Adds "Edit this page" link
-#      logo_only: true
-#      search_bar_position: "navbar"
-#      extra_navbar: '<p>My Custom Footer</p>'
 
-launch_buttons:
-  thebe: false
-  
 # Sitemap (optional)
 sitemap:
   filename: "sitemap.xml"
