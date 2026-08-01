@@ -7,7 +7,6 @@ repository:
   path_to_docs: "https://github.com/tomctang/oeis"
   branch: "gh-pages"  # Deployment branch for GitHub Pages
 
-# HTML and theme configuration
 html:
   use_issues_button: false
   use_repository_button: true
@@ -25,33 +24,18 @@ html:
 #      search_bar_position: "navbar"
 #      extra_navbar: '<p>My Custom Footer</p>'
 
+launch_buttons:
+  thebe: false
+  
 # Sitemap (optional)
 sitemap:
   filename: "sitemap.xml"
   base_url: "https://tomctang.github.io/oeis/"
-# Execution options
 execute:
   execute_notebooks: "off"  # Change to "auto" to execute notebooks during build
-# Enable MathJax for equations
-#mathjax:
-#  enable: true
 
 sphinx:
   config:
     html_js_files:
       - https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
       - mermaid-init.js
-
-# sphinx:
-#   config:
-#     html_js_files:
-#       - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-#     mathjax3_config:
-#       tex:
-#         inlineMath: [['$', '$'], ['\\(', '\\)']]
-#         processEscapes: true
-#       options:
-#         skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-#     myst_enable_extensions:
-#       - amsmath  # Enable AMS math features
-#       - dollarmath
