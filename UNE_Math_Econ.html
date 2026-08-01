@@ -450,7 +450,36 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="econ">
+  <div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>flowchart LR
+    LA[&quot;$$\begin{matrix} R^n \Rightarrow R^m (A_{m \times n}) \end{matrix}$$&quot;]
+    
+    LA --&gt; up[m &gt; n &lt;br&gt; dim rising&lt;br&gt; 單射可能]
+    LA --&gt; sq[m = n &lt;br&gt; **square matrix** &lt;br&gt; has det]
+%% 2. 方陣的全局性質與 det (宏觀行為)
+    sq --&gt;|injection| inj[rank r=n &lt;br&gt; 零空間為零]
+    sq --&gt;|surjection| surj[r=m &lt;br&gt; 像空間為全空間]
+    sq --&gt;|bijection&lt;br&gt; **det** not 0| bij[&quot;r=m=n &lt;br&gt;A⁻¹ exists&quot; ]
+    sq --&gt;|Singular/降秩&lt;br&gt;**det = 0** &lt;br&gt; at least 1 eigen=0| sing[ r \&lt; n &lt;br&gt; kernel not 0 ]
+    sq --&gt;|Special matrices| spe[投影矩陣/冪等降維 &lt;br&gt; symm/orthog/diag/Hermitian]
+
+    LA --&gt; low[m \&lt; n &lt;br&gt; dim reduction &lt;br&gt;projection/compression]
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>冪等矩陣（Idempotent Matrix）嚴格來說只能是方陣（Square Matrix）. 如果你是用非方陣的投影算子<span class="math notranslate nohighlight">\(A_{m \times n}\)</span> 階，將低維度投影到高維度或反之, 來構造投影公式 <span class="math notranslate nohighlight">\(P = A(A^T A)^{-1} A^T\)</span>，最後算出來的結果 <span class="math notranslate nohighlight">\(P\)</span> 仍然是一個 <span class="math notranslate nohighlight">\(m \times m\)</span> 的方陣</p></li>
+</ul>
+<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>flowchart LR
+    LA[&quot;$$\begin{matrix} R^n \Rightarrow R^m (A_{m \times n}) \end{matrix}$$&quot;]
+    
+%% 4. 通用內在結構 (SVD)
+    LA --&gt;|數值計算或理解正交化| qr[QR decomposition]
+    LA --&gt;|方陣且需要理解動態系統/長期行為| eig[eigen decomposition，尋找不變方向（特徵向量）和增長率/縮放比例（特徵值]
+    LA --&gt;|極值行為&lt;br&gt;最大拉伸、最小拉伸| svd[&quot;SVD for all m×n &lt;br&gt; 旋轉→拉伸→旋轉&quot;]
+    svd -.-&gt;|&quot;對稱矩陣特化: &lt;br&gt; 奇異值U=|eigenV|&quot;| sym[sym mat:主軸拉伸]
+    svd -.-&gt;|正交矩陣特化: &lt;br&gt; 所有奇異值=1| orth[orth mat: 剛體運動]
+</pre></div>
+</div>
+<section id="econ">
 <h1>Econ<a class="headerlink" href="#econ" title="Link to this heading">#</a></h1>
 <p>經濟學和商業相關課程屬於 <strong>HSIE（人類社會及其環境）</strong> 學習領域。</p>
 <ol class="arabic simple">
