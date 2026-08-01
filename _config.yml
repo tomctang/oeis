@@ -7,10 +7,10 @@ repository:
   path_to_docs: "https://github.com/tomctang/oeis"
   branch: "gh-pages"  # Deployment branch for GitHub Pages
 
-html:
-  use_issues_button: false
-  use_repository_button: true
-  extra_css: ["_static/custom.css"]
+#html:
+#  use_issues_button: false
+#  use_repository_button: true
+#  extra_css: ["_static/custom.css"]
 
 # Sitemap (optional)
 sitemap:
@@ -22,5 +22,5 @@ execute:
 sphinx:
   config:
     html_js_files:
-#      - https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
+      - https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
       - mermaid-init.js
