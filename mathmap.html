@@ -546,285 +546,265 @@ graph LR
 </pre></div>
 </div>
 <img src="https://raw.githubusercontent.com/tomctang/NB_img/main/mapmath.jpg" alt="Map of Math" width="1000"> 
-<p>Encoding choice: a systematic expansion across essentially all major mathematical object</p>
-<p><strong>1. Algebraic Structures</strong></p>
-<p>Groups</p>
-<ul class="simple">
-<li><p><strong>Cayley table</strong> (explicit multiplication table)</p>
-<ul>
-<li><p>Size: (O(n^2))</p></li>
-<li><p>Only viable for very small groups</p></li>
-</ul>
-</li>
-<li><p><strong>Generators + relations (presentation)</strong></p>
-<ul>
-<li><p>Compact, but word problem may be hard</p></li>
-</ul>
-</li>
-<li><p><strong>Permutation representation</strong></p>
-<ul>
-<li><p>Store elements as permutations</p></li>
-<li><p>Enables fast composition</p></li>
-</ul>
-</li>
-<li><p><strong>Matrix groups</strong></p>
-<ul>
-<li><p>Represent elements as matrices over fields</p></li>
-</ul>
-</li>
-</ul>
-<p>👉 Tradeoff:</p>
-<ul class="simple">
-<li><p>Table = fast lookup, terrible scaling</p></li>
-<li><p>Generators = compact, but expensive computation</p></li>
-</ul>
-<hr class="docutils" />
-<p>Rings / Fields</p>
-<ul class="simple">
-<li><p><strong>Explicit tables</strong> (finite fields, tiny only)</p></li>
-<li><p><strong>Polynomial quotient representation</strong></p>
-<ul>
-<li><p>e.g. ( \mathbb{F}_{p^k} = \mathbb{F}_p[x]/(f(x)) )</p></li>
-</ul>
-</li>
-<li><p><strong>Matrix representation</strong> (less common, but useful)</p></li>
-</ul>
-<p>👉 Key issue:</p>
-<ul class="simple">
-<li><p>Choice of irreducible polynomial affects multiplication speed</p></li>
-</ul>
-<hr class="docutils" />
-<p>Modules / Vector Spaces</p>
-<ul class="simple">
-<li><p><strong>Basis + coordinate vectors</strong></p></li>
-<li><p><strong>Sparse vs dense vectors</strong></p></li>
-<li><p><strong>Implicit representations (linear operators only)</strong></p></li>
-</ul>
-<p>👉 Core tradeoff:</p>
-<ul class="simple">
-<li><p>Dense → fast arithmetic</p></li>
-<li><p>Sparse → memory-efficient, but irregular access</p></li>
-</ul>
-<hr class="docutils" />
-<p><strong>2. Discrete Structures</strong></p>
-<p>Graphs</p>
-<ul class="simple">
-<li><p><strong>Adjacency matrix</strong></p>
-<ul>
-<li><p>(O(n^2)) space</p></li>
-<li><p>Fast edge queries</p></li>
-</ul>
-</li>
-<li><p><strong>Adjacency list</strong></p>
-<ul>
-<li><p>(O(n + m))</p></li>
-<li><p>Better for sparse graphs</p></li>
-</ul>
-</li>
-<li><p><strong>Edge list</strong></p>
-<ul>
-<li><p>Minimal storage, slow queries</p></li>
-</ul>
-</li>
-</ul>
-<p>👉 This is the canonical example where representation = complexity class</p>
-<hr class="docutils" />
-<p>Hypergraphs / Simplicial complexes</p>
-<ul class="simple">
-<li><p><strong>List of hyperedges</strong></p></li>
-<li><p><strong>Incidence structures</strong></p></li>
-<li><p><strong>Boundary operators (matrix form)</strong></p></li>
-</ul>
-<p>👉 Boundary matrix enables linear algebra methods (homology computation)</p>
-<hr class="docutils" />
-<p>Combinatorial objects</p>
-<p>(permutations, partitions, trees)</p>
-<ul class="simple">
-<li><p>Permutations:</p>
-<ul>
-<li><p>Array form vs cycle decomposition</p></li>
-</ul>
-</li>
-<li><p>Trees:</p>
-<ul>
-<li><p>Parent array, adjacency list, Prüfer sequence</p></li>
-</ul>
-</li>
-</ul>
-<p>👉 Prüfer sequence compresses labeled trees from (O(n)) edges → (O(n)) sequence</p>
-<hr class="docutils" />
-<p><strong>3. Continuous Mathematics</strong></p>
-<p>Real numbers</p>
-<ul class="simple">
-<li><p><strong>Floating-point (IEEE)</strong></p>
-<ul>
-<li><p>Fast, approximate</p></li>
-</ul>
-</li>
-<li><p><strong>Rational numbers</strong></p>
-<ul>
-<li><p>Exact, but size grows</p></li>
-</ul>
-</li>
-<li><p><strong>Symbolic expressions</strong></p>
-<ul>
-<li><p>Exact, but expensive</p></li>
-</ul>
-</li>
-</ul>
-<p>👉 This is a <em>precision vs performance</em> frontier</p>
-<hr class="docutils" />
-<p>Functions</p>
-<ul class="simple">
-<li><p><strong>Closed-form expression</strong></p></li>
-<li><p><strong>Lookup table (sampling)</strong></p></li>
-<li><p><strong>Basis expansion</strong></p>
-<ul>
-<li><p>Fourier series</p></li>
-<li><p>Polynomial basis</p></li>
-</ul>
-</li>
-<li><p><strong>Black-box oracle</strong></p></li>
-</ul>
-<p>👉 Same function, radically different computational properties</p>
-<hr class="docutils" />
-<p>Differential equations</p>
-<ul class="simple">
-<li><p><strong>Symbolic form</strong></p></li>
-<li><p><strong>Discretized grid (finite difference)</strong></p></li>
-<li><p><strong>Basis expansion (spectral methods)</strong></p></li>
-</ul>
-<p>👉 Choice determines:</p>
-<ul class="simple">
-<li><p>Stability</p></li>
-<li><p>Convergence</p></li>
-<li><p>Complexity</p></li>
-</ul>
-<hr class="docutils" />
-<p><strong>4. Geometry &amp; Topology</strong></p>
-<p>Geometric objects</p>
-<ul class="simple">
-<li><p><strong>Point cloud</strong></p></li>
-<li><p><strong>Mesh (triangulation)</strong></p></li>
-<li><p><strong>Implicit function (level set)</strong></p></li>
-<li><p><strong>Parametric form</strong></p></li>
-</ul>
-<p>👉 Example:</p>
-<ul class="simple">
-<li><p>Sphere:</p>
-<ul>
-<li><p>implicit: (x^2+y^2+z^2=1)</p></li>
-<li><p>mesh: triangles</p></li>
-<li><p>parametric: ((\sin\theta\cos\phi, \dots))</p></li>
-</ul>
-</li>
-</ul>
-<p>Each supports different operations efficiently.</p>
-<hr class="docutils" />
-<p>Topological spaces</p>
-<ul class="simple">
-<li><p><strong>Simplicial complexes</strong></p></li>
-<li><p><strong>Cell complexes</strong></p></li>
-<li><p><strong>Boundary matrices</strong></p></li>
-</ul>
-<p>👉 Homology computation becomes linear algebra once encoded properly</p>
-<hr class="docutils" />
-<p><strong>5. Number-Theoretic Objects</strong></p>
-<p>Integers</p>
-<ul class="simple">
-<li><p><strong>Binary representation</strong></p></li>
-<li><p><strong>Residue number system (RNS)</strong></p></li>
-<li><p><strong>Prime factorization (if known)</strong></p></li>
-</ul>
-<p>👉 Same integer, different operations:</p>
-<ul class="simple">
-<li><p>Multiplication fast in binary</p></li>
-<li><p>CRT operations fast in RNS</p></li>
-</ul>
-<hr class="docutils" />
-<p>Modular objects</p>
-<ul class="simple">
-<li><p>Represent as:</p>
-<ul>
-<li><p>integers mod (n)</p></li>
-<li><p>CRT decomposition</p></li>
-</ul>
-</li>
-</ul>
-<p>👉 CRT representation enables parallel computation</p>
-<hr class="docutils" />
-<p>p-adic numbers</p>
-<ul class="simple">
-<li><p>Infinite expansions:
-[
-x = a_0 + a_1 p + a_2 p^2 + \dots
-]</p></li>
-</ul>
-<p>👉 Truncated representations → controlled precision arithmetic</p>
-<hr class="docutils" />
-<p><strong>6. Probabilistic Objects</strong></p>
-<p>Distributions</p>
-<ul class="simple">
-<li><p><strong>Explicit PMF/PDF</strong></p></li>
-<li><p><strong>Samples</strong></p></li>
-<li><p><strong>Parametric form (e.g. Gaussian)</strong></p></li>
-<li><p><strong>Moment representation</strong></p></li>
-</ul>
-<p>👉 Monte Carlo vs analytic methods depend on representation</p>
-<hr class="docutils" />
-<p>Stochastic processes</p>
-<ul class="simple">
-<li><p><strong>State transition matrix</strong></p></li>
-<li><p><strong>Sample paths</strong></p></li>
-<li><p><strong>SDE discretization</strong></p></li>
-</ul>
-<hr class="docutils" />
-<p><strong>7. Optimization Objects</strong></p>
-<p>Objective functions</p>
-<ul class="simple">
-<li><p><strong>Closed-form expression</strong></p></li>
-<li><p><strong>Gradient oracle</strong></p></li>
-<li><p><strong>Black-box evaluation</strong></p></li>
-</ul>
-<p>👉 Determines:</p>
-<ul class="simple">
-<li><p>Whether gradient methods are usable</p></li>
-<li><p>Whether complexity is polynomial or exponential</p></li>
-</ul>
-<hr class="docutils" />
-<p>Constraints</p>
-<ul class="simple">
-<li><p><strong>Explicit inequalities</strong></p></li>
-<li><p><strong>Projection operator</strong></p></li>
-<li><p><strong>Penalty formulation</strong></p></li>
-</ul>
-<hr class="docutils" />
-<p><strong>8. Logic / Symbolic Structures</strong></p>
-<p>Logical formulas</p>
-<ul class="simple">
-<li><p><strong>Syntax trees</strong></p></li>
-<li><p><strong>CNF / DNF</strong></p></li>
-<li><p><strong>Boolean circuits</strong></p></li>
-</ul>
-<p>👉 SAT solvers rely on CNF specifically</p>
-<hr class="docutils" />
-<p>Formal proofs</p>
-<ul class="simple">
-<li><p><strong>Proof trees</strong></p></li>
-<li><p><strong>Type-theoretic terms</strong></p></li>
-</ul>
-<hr class="docutils" />
 <blockquote>
-<div><p><strong>The same mathematical object admits multiple representations, and each representation induces a different computational universe.</strong></p>
+<div><p>Unifying math by LA + OEIS</p>
 </div></blockquote>
-<blockquote>
-<div><p><strong>Representation is the interface between mathematics and algorithms; choosing it correctly is equivalent to choosing the algorithm itself.</strong></p>
-</div></blockquote>
-<p>Polynomial multiplication (Same object. Different representation. Different asymptotics):</p>
+<p>PE has hidden machines that go across various math objects, eg, from “LA + Fibonnaci” to many math objects</p>
+<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>%%{init: {  &quot;flowchart&quot;: { &quot;nodeSpacing&quot;: 15,  &quot;rankSpacing&quot;: 15,   &quot;padding&quot;: 5 }, &#39;themeTuning&#39;: &#39;safe&#39;, &#39;themeVariables&#39;: { &#39;fontSize&#39;: &#39;13px&#39; }}}%%
+flowchart LR
+    A[mathematical &lt;br&gt;objects] --&gt;|Atoms| N[Numbers, Sets, vectors] --&gt; I[Integers, Real, Complex,&lt;br&gt;Quaternions, p-adic] 
+        I --&gt; fib[eg,Fibonnaci+LA] --&gt;|&quot;change [p,q]&quot;| seq[Other sequences] 
+            fib --&gt; geo[&quot;Shapes/Spaces &lt;br&gt;Lattice paths/tilings&quot;]
+    A --&gt; Analy[Analytical Objects &lt;br&gt;eg, objects of Infinity/Change] --&gt; ana1[Functions/Maps, Distributions&lt;br&gt;Differential Forms]
+    A --&gt; sp[Topo &amp; Geometric Objects &lt;br&gt;eg,Shape,Continuity] --&gt; s1[&quot;Topological/Metric Spaces, &lt;br&gt;Manifolds, Curves/Surfaces, &lt;br&gt; Fractals&quot;]
+    A --&gt; dis[Discrete &amp; Combinatorial Objects &lt;br&gt;eg,Networks] --&gt; dis1[Sequences &amp; Series, &lt;br&gt;Lattices/Tilings &amp; Posets,&lt;br&gt;Trees]
+        s1 --&gt; Graphs[Graphs, Lattice paths]   
+        dis1 --&gt; Graphs
+        
+    A --&gt; AA[&quot;Algebraic Structures&lt;br&gt;-objects with Operations&quot;] --&gt; o[groups/rings/fields, &lt;br&gt;matrices/vectors, Polynomials,&lt;br&gt;Vector Spaces &amp; Modules]
+        s1 --&gt; lie[Lie Group]
+        o --&gt; lie
+    A --&gt; meta[&quot;Meta-Structures &lt;br&gt;-Laws governing other objects&quot;] --&gt; meta1[Categories,Functors/morphism&lt;br&gt;Automata &amp; Formal Languages]
+        o --&gt; tm[transition matrix] 
+        meta1 --&gt; tm
+</pre></div>
+</div>
+<p>One mathematical object has multiple representation layers:</p>
 <ul class="simple">
-<li><p>Coefficient vector → (O(n^2))</p></li>
-<li><p>Frequency domain (FFT) → (O(n \log n))</p></li>
+<li><p>each layer &lt;–&gt; computational universe (or algorithm)</p></li>
+<li><p>e.g., Polynomial multiplication (Same object. Different representation. Different asymptotics):</p>
+<ul>
+<li><p>coefficient vector → <span class="math notranslate nohighlight">\(O(n^2)\)</span></p></li>
+<li><p>frequency domain (FFT) → <span class="math notranslate nohighlight">\(O(n \log n)\)</span></p></li>
 </ul>
+</li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Transition Matrix <br>(change only [p,q])</p></th>
+<th class="head text-left"><p>Primary Sequence <strong>Uₙ</strong> (0,1,…)</p></th>
+<th class="head text-left"><p>Companion Sequence <strong>Vₙ</strong> (2,p,…) change initial state</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">[[1,1],</span> <span class="pre">[1,0]]</span></code></p></td>
+<td class="text-left"><p><strong>Fibonacci</strong>: 0,1,1,2,3,5,8…</p></td>
+<td class="text-left"><p><strong>Lucas</strong>: 2,1,3,4,7,11,18…</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">[[2,1],</span> <span class="pre">[1,0]]</span></code></p></td>
+<td class="text-left"><p><strong>Pell</strong>: 0,1,2,5,12,29,70…</p></td>
+<td class="text-left"><p><strong>Pell-Lucas</strong>: 2,2,6,14,34,82…</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">[[k,1],</span> <span class="pre">[1,0]]</span></code></p></td>
+<td class="text-left"><p><strong>k-Fibonacci</strong>: 0,1,k,k²+1,…</p></td>
+<td class="text-left"><p>Companion k-Fibonacci</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">[[1,2],</span> <span class="pre">[1,0]]</span></code></p></td>
+<td class="text-left"><p><strong>Jacobsthal</strong>: 0,1,1,3,5,11,21…</p></td>
+<td class="text-left"><p><strong>Jacobsthal-Lucas</strong>: 2,1,5,7,17,31…</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">[[3,-2],[1,0]]</span></code></p></td>
+<td class="text-left"><p><strong>Mersenne</strong>: 0,1,3,7,15,31,63… (2ⁿ−1)</p></td>
+<td class="text-left"><p><strong>Fermat variants</strong>: 2,3,5,9,17,33… (2ⁿ+1)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">[[2,-1],[1,0]]</span></code></p></td>
+<td class="text-left"><p><strong>Natural numbers</strong>: 0,1,2,3,4,5…</p></td>
+<td class="text-left"><p><strong>Constant 2</strong>: 2,2,2,2,2…</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">[[2x,-1],[1,0]]</span></code></p></td>
+<td class="text-left"><p><strong>Chebyshev polynomials Uₙ(x)</strong> (Chebyshev 2nd kind)</p></td>
+<td class="text-left"><p><strong>2Tₙ(x)</strong> (Chebyshev 1st kind)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>connected to <a class="reference external" href="https://tomctang.github.io/oeis/mathmap.html#uni-framework-1-lattice-paths">allowed steps in lattice-path</a></p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">p</span></code></strong> = the number of distinct “colors” or “weights” for <strong>size-1 step</strong>.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">q</span></code></strong> = the number of distinct “colors” or “weights” for <strong>size-2 step</strong></p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Sequence</p></th>
+<th class="head text-left"><p>(p, q)</p></th>
+<th class="head text-left"><p>Meaning in Lattice Paths / Tilings</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>Fibonacci</strong></p></td>
+<td class="text-left"><p>(1, 1)</p></td>
+<td class="text-left"><p>1 color for size-1 steps, 1 color for size-2 steps. (Classic tiling with squares and dominoes).</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Pell</strong></p></td>
+<td class="text-left"><p>(2, 1)</p></td>
+<td class="text-left"><p>2 colors for size-1 steps (e.g., Red or Blue), 1 color for size-2 steps.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Jacobsthal</strong></p></td>
+<td class="text-left"><p>(1, 2)</p></td>
+<td class="text-left"><p>1 color for size-1 steps, 2 colors for size-2 steps (e.g., Red or Blue dominoes).</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Mersenne</strong></p></td>
+<td class="text-left"><p>(3, -2)</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">-q</span></code> means “inclusion-exclusion” or “weighted” paths (negative means cancel out some paths combinatorially)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. LA for Fibonnaci series</span>
+<span class="n">var</span><span class="p">(</span><span class="s1">&#39;x lambda_var n&#39;</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">(</span><span class="n">SR</span><span class="p">,</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="n">show</span><span class="p">(</span><span class="s2">&quot;Transition Matrix&quot;</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
+
+<span class="c1"># 2. Characteristic Polynomial</span>
+<span class="n">char_poly</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">characteristic_polynomial</span><span class="p">(</span><span class="n">lambda_var</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="s2">&quot;Characteristic Polynomial: &quot;</span><span class="p">,</span> <span class="n">char_poly</span><span class="p">,</span><span class="s2">&quot; = 0&quot;</span><span class="p">)</span>
+
+<span class="c1"># 3. Eigenvalues</span>
+<span class="n">eigenvals</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">eigenvals</span><span class="p">):</span>
+    <span class="n">show</span><span class="p">(</span><span class="s2">&quot;Eigenvalue:&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;λ_</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> =&quot;</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+
+<span class="c1"># 4. Eigenvector matrix P and diagonal matrix D</span>
+<span class="n">D</span><span class="p">,</span> <span class="n">P</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">eigenmatrix_right</span><span class="p">()</span>
+<span class="n">show</span><span class="p">(</span><span class="s2">&quot;Eigenvector matrix P:&quot;</span><span class="p">,</span> <span class="n">P</span><span class="p">)</span>
+
+<span class="c1"># 5. Compute D^n and closed-form expression </span>
+<span class="n">D_n</span> <span class="o">=</span> <span class="n">diagonal_matrix</span><span class="p">([</span><span class="n">D</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">^</span><span class="n">n</span><span class="p">,</span> <span class="n">D</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">^</span><span class="n">n</span><span class="p">])</span>
+<span class="n">A_n</span> <span class="o">=</span> <span class="n">P</span> <span class="o">*</span> <span class="n">D_n</span> <span class="o">*</span> <span class="n">P</span><span class="o">.</span><span class="n">inverse</span><span class="p">()</span>  <span class="c1"># A^n = P * D^n * P^-1</span>
+<span class="n">v0</span> <span class="o">=</span> <span class="n">vector</span><span class="p">(</span><span class="n">SR</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>      <span class="c1"># Initial state [F_1, F_0]^T = [1, 0]^T</span>
+<span class="n">F_n</span> <span class="o">=</span> <span class="p">(</span><span class="n">A_n</span> <span class="o">*</span> <span class="n">v0</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>          <span class="c1"># A^n * v0 _ Second component (index 1) yields F_n</span>
+<span class="n">show</span><span class="p">(</span><span class="s2">&quot;General term formula (Binet):&quot;</span><span class="p">,</span> <span class="n">F_n</span><span class="o">.</span><span class="n">simplify_full</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Set <span class="math notranslate nohighlight">\(~~\)</span> <span class="math notranslate nohighlight">\(v_{n+1}=A v_n\)</span> <span class="math notranslate nohighlight">\(~~\)</span> for <span class="math notranslate nohighlight">\(\begin{pmatrix} F_{n+1} \\ F_{n} \end{pmatrix} = \begin{pmatrix} 1 &amp; 1 \\ 1 &amp; 0 \end{pmatrix} \begin{pmatrix} F_{n} \\ F_{n-1} \end{pmatrix}\)</span> or Fibonnaci Seq <span class="math notranslate nohighlight">\(F_{n} = F_{n-1} + F_{n-2}\)</span></p>
+<ul class="simple">
+<li><p>matrix acts as a generating engine for the sequence</p>
+<ul>
+<li><p><strong>Recurrence Signature</strong> are values in transition matrix, for example (1,1) in Fib’s transition(companion) matrix</p></li>
+<li><p>A099269, its matrix has a characteristic polynomial leading to the recurrence <span class="math notranslate nohighlight">\(a_n=7a_{n−1}+4a_{n−2}−18a_{n−3}\)</span>, with the signature (7, 4, -18)</p></li>
+<li><p><strong>Dominant eigenvalue</strong> = the eigenvalue with largest absolute value in the matrix</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>%%{init: {  &quot;flowchart&quot;: { &quot;nodeSpacing&quot;: 15,  &quot;rankSpacing&quot;: 15,   &quot;padding&quot;: 5 }, &#39;themeTuning&#39;: &#39;safe&#39;, &#39;themeVariables&#39;: { &#39;fontSize&#39;: &#39;12px&#39; }}}%%
+flowchart LR
+    T[&quot;Variants of &lt;br&gt;Transition Matrix A &lt;br&gt;or Operator&quot;] --&gt;|&quot;$$v_{n+1}=A v_n$$&quot;| lr2[&quot;**Linear Algebra**, &lt;br&gt;n-order linear recurrences&lt;br&gt;(constant finite matrix)&quot;]
+        lr2 --&gt; fib[&quot;2nd-order linear recurrences&lt;br&gt;Fib[[1,1], [1,0]]&lt;br&gt;Pell[[2,1], [1,0]]&lt;br&gt;3rd-order linear recurrences&lt;br&gt;Tribonacci&quot;]
+    T --&gt;|&quot;$$v_{n+1}=A v_n+b$$&quot;| non[&quot;**Affine Geometry**&lt;br&gt;Nonhomogeneous, Control Theory&quot;]
+        non --&gt; ex0[Arithmetic &lt;br&gt;Triangular &lt;br&gt;Polygonal]
+    T --&gt;|&quot;$$v_{n+1}=A_n v_n$$&quot;| time[&quot;**Time-varying linear**&lt;br&gt;Enumerative Combinatorics, &lt;br&gt;Symbolic Computation &quot;] --&gt; ex[&quot;Factorials &lt;br&gt;Binomial&quot;]
+        time --&gt; holo[**Holonomic / Polynomial-recursive**] --&gt; exp[Stirling &lt;br&gt;Catalan numbers &lt;br&gt;Derangements &lt;br&gt;Eulerian numbers triangle&lt;br&gt;Motzkin]
+
+    T --&gt;|&quot;$$v_{n+1}=F(v_n)$$&quot;| nl[**Dynamical systems** &lt;br&gt;Nonlinear recurrences] --&gt;|Fermat numbers| ex1[&quot;$$v_{n+1}=(v_n-1)^2+1$$&quot;]
+        nl --&gt;|Sylvester| nlex[&quot;$$v_{n+1}=v_n^2-v_n+1$$&quot;]
+    T --&gt;|&quot;$$v_{n+1}=T v_n$$&quot;| inf[&quot;**Operator Theory**, Functional Analysis&lt;br&gt;T is an infinite-dim operator&quot;] 
+        inf --&gt; ex2[Partition &lt;br&gt;Bell &lt;br&gt;generating functions]
+
+    T --&gt;|&quot;$$p_{n+1}=Pp_n$$&quot;| prob[**Probability**, Stochastic matrix&lt;br&gt;P is column-stochastic&lt;br&gt;Pn probability vector] 
+        prob --&gt; ex3[Random walks &lt;br&gt;Markov chains&lt;br&gt;PageRank]
+</pre></div>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>State transition matrix<br>(Recurrence category)</p></th>
+<th class="head"><p>Major math area</p></th>
+<th class="head"><p>Typical integer sequences</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(v_{n+1}=Av_n\)</span> (constant finite matrix)</p></td>
+<td><p><strong>Linear Algebra &amp; Spectral Theory</strong>, Linear Difference Equations</p></td>
+<td><p><strong>Fibonacci:</strong> 0,1,1,2,3,5,8,13…<br><strong>Lucas:</strong> 2,1,3,4,7,11,18…<br><strong>Pell:</strong> 0,1,2,5,12,29,70…<br><strong>Jacobsthal:</strong> 0,1,1,3,5,11,21…<br><strong>Tribonacci:</strong> 0,0,1,1,2,4,7,13…<br><strong>Padovan:</strong> 1,1,1,2,2,3,4,5…<br><strong>Perrin:</strong> 3,0,2,3,2,5,5,7…<br><strong>Narayana’s cows:</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(v_{n+1}=Av_n+b\)</span> (affine)</p></td>
+<td><p><strong>Affine Geometry &amp; Discrete Dynamical Systems</strong>, Control Theory</p></td>
+<td><p><strong>Arithmetic:</strong> 0,1,2,3,4,5…<br><strong>Even:</strong> 0,2,4,6,8,10…<br><strong>Odd:</strong> 1,3,5,7,9…<br><strong>Triangular:</strong> 0,1,3,6,10,15…<br><strong>Squares:</strong> 0,1,4,9,16,25…</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(v_{n+1}=A_nv_n\)</span> (time-varying)<br> <span class="math notranslate nohighlight">\(\sum p_k(n)a_{n+k}=0\)</span> (holonomic / Polynomial-recursive)</p></td>
+<td><p><strong>Difference Equations</strong> <br><strong>Enumerative Combinatorics</strong>, Symbolic Computation</p></td>
+<td><p><strong>Factorial:</strong> 1,1,2,6,24,120… <br><strong>Rising/Falling factorial</strong><br><strong>Double factorial:</strong> 1,1,2,3,8,15,48…<br><strong>Binomial:</strong> 0,0,1,3,6,10…<br><strong>Both Stirling (S(n,2)):</strong> 0,0,1,3,7,15…<br><strong>Eulerian numbers triangle:</strong> 1, 1, 1, 1, 4, 1, 1 <br><strong>Catalan:</strong> 1,1,2,5,14,42,132…<br><strong>Derangements:</strong> 0, 1, 2, 9, 44, 265<br><strong>Motzkin:</strong> 1,1,2,4,9,21,51…<br><strong>Central binomial:</strong> 1,2,6,20,70,252…<br><strong>Apéry:</strong> 1,5,73,1445,33001…<br><strong>Delannoy:</strong> 1,3,13,63,321… <br><strong>Schröder</strong>: 1, 2, 6, 22, 90, 394</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(v_{n+1}=F(v_n)\)</span> (nonlinear)</p></td>
+<td><p><strong>Nonlinear Dynamical &amp; Analytic Number Theory</strong></p></td>
+<td><p><strong>Fermat:</strong> 3,5,17,257,65537…<br><strong>Sylvester:</strong> 2,3,7,43,1807…<br><strong>Somos-4:</strong> 1,1,1,1,2,3,7,23…<br><strong>Recamán:</strong> 0,1,3,6,2,7,13,20…<br><strong>Hofstadter (Q)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(v_{n+1}=Tv_n\)</span> (infinite-dimensional operator)</p></td>
+<td><p><strong>Operator Theory</strong>, Functional Analysis</p></td>
+<td><p><strong>Partitions:</strong> 1,1,2,3,5,7,11,15…<br><strong>Bell:</strong> 1,1,2,5,15,52,203…<br><strong>Riordan-array columns:</strong> <br><strong>Generating-function coefficient sequences:</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(p_{n+1}=Pp_n\)</span> (stochastic matrix)</p></td>
+<td><p><strong>Probability</strong>, Stochastic Processes</p></td>
+<td><p>Return probabilities of random walks, <strong>1D random walk returns:</strong> 1,0,2,0,6,0,20…<br><strong>Central binomial coefficients:</strong> 1,2,6,20,70,252…<br><strong>PageRank iterations</strong> <br><strong>Birth–death chains (Markov):</strong> <br><strong>Ehrenfest urn:</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>Central binomial coefficients are both a holonomic/combinatorial sequence and a return-probability count in random walks</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Various names of</p></th>
+<th class="head"><p>Fields</p></th>
+<th class="head"><p>Focus</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Transition matrix</strong>, <strong>State transition matrix</strong></p></td>
+<td><p>Control Theory</p></td>
+<td><p>System states <span class="math notranslate nohighlight">\(\Phi(t)\)</span> for Continuous time</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Companion matrix</strong></p></td>
+<td><p>LA</p></td>
+<td><p>Recurrence</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Transformation matrix</strong></p></td>
+<td><p>LA</p></td>
+<td><p>Mapping</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Recurrence matrix</strong></p></td>
+<td><p>Sequences, OEIS</p></td>
+<td><p>Recurrence</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Evolution matrix</strong></p></td>
+<td><p>Dynamical system, PDE</p></td>
+<td><p>Time-evolution</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Update matrix</strong></p></td>
+<td><p>Numerical methods</p></td>
+<td><p>Every-step</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Transfer matrix</strong></p></td>
+<td><p>Physics, Statistic Mechanism</p></td>
+<td><p>Energy, Wave, Lattice</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Propagation matrix</strong></p></td>
+<td><p>Optics, EM</p></td>
+<td><p>Waves</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Operator</strong></p></td>
+<td><p>Functional</p></td>
+<td><p>can include infinite-dim</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Action matrix</strong></p></td>
+<td><p>AA</p></td>
+<td><p>Group actions</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Monodromy matrix</strong>, <strong>Fundamental matrix</strong></p></td>
+<td><p>ODE</p></td>
+<td><p>Periodic evolution, basic solution</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Transition probability matrix,<br> Markov matrix, Stochastic matrix</strong></p></td>
+<td><p>Markov chain</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Algebraic Axioms</p></th>
