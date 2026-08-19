@@ -509,6 +509,7 @@ document.write(`
 </tbody>
 </table>
 </div>
+<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/mapmath.jpg" alt="Map of Math" width="1000"> 
 <p>Second map: 应用数学不单独列，按关联度分在“数形变构基”</p>
 <div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>flowchart LR
     A --&gt; |数| Numbers --&gt; |复数| b[复分析] --&gt; b3[模形式-对称函数]
@@ -519,66 +520,63 @@ document.write(`
                           cc &lt;--&gt; |模性定理&lt;br&gt;模和椭圆曲线的L函数全同|b3
     A --&gt; |构| Structure --&gt; cc &amp; e[代数/组合/图论/群论/范畴关系]
     A --&gt; |基| Foundation --&gt; a[集合/逻辑/计算,什么是可计算（真理）]
-    A@{img: &quot;https://raw.githubusercontent.com/tomctang/NB_img/main/mathmap2.png&quot;, h: 170, constraint: &quot;on&quot;}
+    A@{img: "https://raw.githubusercontent.com/tomctang/NB_img/main/mathmap2.png", h: 170, constraint: "on"}
 </pre></div>
 </div>
-<p>“<strong>Pure Mathematics → Computable Objects</strong>” is essentially a three-layer mapping</p>
-<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>%%{init: {&#39;themeVariables&#39;: {&#39;fontSize&#39;: &#39;12px&#39;}}}%%
+<p>“<strong>Pure Mathematics → Computable Objects</strong>” is essentially a three-layer mapping.</p>
+<ul class="simple">
+<li><p>One mathematical object can be multiple representation layers, each layer &lt;==&gt; computational layer (or algorithm)</p></li>
+<li><p>e.g., Polynomial multiplication (Same object. Different representation. Different asymptotics):</p>
+<ul>
+<li><p>coefficient vector → <span class="math notranslate nohighlight">\(O(n^2)\)</span>;   .VS.  frequency domain (FFT) → <span class="math notranslate nohighlight">\(O(n \log n)\)</span></p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>%%{init: {'themeVariables': {'fontSize': '12px'}}}%%
 graph LR
-    subgraph L1 [1. Structure/Definition Layer]
-        A[**Abstract Structures:**&lt;br&gt;Groups, Rings, Manifolds, &lt;br&gt;Graphs] --- a1(Semantic Entities)
+    subgraph L1 [1. Structure/Definition Layer &lt;br&gt;  Abstract objects:]
+        A[Groups, Rings, &lt;br&gt;Manifolds, Graphs, &lt;br&gt;Polynomials, &lt;br&gt;Sequences] --- a1(Semantic Entities)
     end
     L1 --&gt; L2
-    subgraph L2 [2. Representation Layer]
-        B[**Encoding Choice:**&lt;br&gt; Group -&gt; Permutation Set, Generators 
-                                   Graph -&gt; Adjacency Matrix / List, Edge list
-                                   Polynomials -&gt; Coeff Vectors / Point-Value Pairs 
-                                   Number Objects -&gt; Modular / p-adic Representations
-                                   Sequence -&gt; GF  ] --- b1(Encoding -&gt; different Complexity)
+    subgraph L2 [2. Representation Layer &lt;br&gt;Encoding Choice:]
+                    B[ Group -&gt; Permutation Set, Generators 
+                        Graph -&gt; Adj Matrix / List, Edge list
+                        Polyno -&gt; Coeff Vectors / Point-Value Pairs 
+                        Number -&gt; Modular / p-adic Representations
+                        Sequence -&gt; GF  ] --- b1(Syntax layer &lt;br&gt;Encoding -&gt; different Complexity)
     end
     L2 --&gt; L3
-    subgraph L3 [3. Algorithm Layer]
-        C[**Computability &amp; Efficiency** 
+    subgraph L3 [3. Algorithm Layer &lt;br&gt; Computability &amp; Efficiency:]
+        C[
         GCD -&gt; Euclidean Algorithm
         Graph Connectivity -&gt; BFS / DFS
-        Polynomial Factorization -&gt; Berlekamp’s Algorithm] --- c1(&#39;How&#39; &amp; &#39;Cost&#39;)
+        Polynomial Factorization -&gt; Berlekamp’s Algorithm] --- c1('How' &amp; 'Cost')
     end
 </pre></div>
 </div>
-<img src="https://raw.githubusercontent.com/tomctang/NB_img/main/mapmath.jpg" alt="Map of Math" width="1000"> 
 <blockquote>
 <div><p>Unifying math by LA + OEIS</p>
 </div></blockquote>
 <p>PE has hidden machines that go across various math objects, eg, from “LA + Fibonnaci” to many math objects</p>
-<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>%%{init: {  &quot;flowchart&quot;: { &quot;nodeSpacing&quot;: 15,  &quot;rankSpacing&quot;: 15,   &quot;padding&quot;: 5 }, &#39;themeTuning&#39;: &#39;safe&#39;, &#39;themeVariables&#39;: { &#39;fontSize&#39;: &#39;13px&#39; }}}%%
+<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>%%{init: {  "flowchart": { "nodeSpacing": 15,  "rankSpacing": 15,   "padding": 5 }, 'themeTuning': 'safe', 'themeVariables': { 'fontSize': '13px' }}}%%
 flowchart LR
     A[mathematical &lt;br&gt;objects] --&gt;|Atoms| N[Numbers, Sets, vectors] --&gt; I[Integers, Real, Complex,&lt;br&gt;Quaternions, p-adic] 
-        I --&gt; fib[eg,Fibonnaci+LA] --&gt;|&quot;change [p,q]&quot;| seq[Other sequences] 
-            fib --&gt; geo[&quot;Shapes/Spaces &lt;br&gt;Lattice paths/tilings&quot;]
+        I --&gt; fib[eg,Fibonnaci+LA] --&gt;|"change [p,q]"| seq[Other sequences] 
+            fib --&gt; geo["Shapes/Spaces &lt;br&gt;Lattice paths/tilings"]
     A --&gt; Analy[Analytical Objects &lt;br&gt;eg, objects of Infinity/Change] --&gt; ana1[Functions/Maps, Distributions&lt;br&gt;Differential Forms]
-    A --&gt; sp[Topo &amp; Geometric Objects &lt;br&gt;eg,Shape,Continuity] --&gt; s1[&quot;Topological/Metric Spaces, &lt;br&gt;Manifolds, Curves/Surfaces, &lt;br&gt; Fractals&quot;]
+    A --&gt; sp[Topo &amp; Geometric Objects &lt;br&gt;eg,Shape,Continuity] --&gt; s1["Topological/Metric Spaces, &lt;br&gt;Manifolds, Curves/Surfaces, &lt;br&gt; Fractals"]
     A --&gt; dis[Discrete &amp; Combinatorial Objects &lt;br&gt;eg,Networks] --&gt; dis1[Sequences &amp; Series, &lt;br&gt;Lattices/Tilings &amp; Posets,&lt;br&gt;Trees]
         s1 --&gt; Graphs[Graphs, Lattice paths]   
         dis1 --&gt; Graphs
         
-    A --&gt; AA[&quot;Algebraic Structures&lt;br&gt;-objects with Operations&quot;] --&gt; o[groups/rings/fields, &lt;br&gt;matrices/vectors, Polynomials,&lt;br&gt;Vector Spaces &amp; Modules]
+    A --&gt; AA["Algebraic Structures&lt;br&gt;-objects with Operations"] --&gt; o[groups/rings/fields, &lt;br&gt;matrices/vectors, Polynomials,&lt;br&gt;Vector Spaces &amp; Modules]
         s1 --&gt; lie[Lie Group]
         o --&gt; lie
-    A --&gt; meta[&quot;Meta-Structures &lt;br&gt;-Laws governing other objects&quot;] --&gt; meta1[Categories,Functors/morphism&lt;br&gt;Automata &amp; Formal Languages]
+    A --&gt; meta["Meta-Structures &lt;br&gt;-Laws governing other objects"] --&gt; meta1[Categories,Functors/morphism&lt;br&gt;Automata &amp; Formal Languages]
         o --&gt; tm[transition matrix] 
         meta1 --&gt; tm
 </pre></div>
 </div>
-<p>One mathematical object has multiple representation layers:</p>
-<ul class="simple">
-<li><p>each layer &lt;–&gt; computational universe (or algorithm)</p></li>
-<li><p>e.g., Polynomial multiplication (Same object. Different representation. Different asymptotics):</p>
-<ul>
-<li><p>coefficient vector → <span class="math notranslate nohighlight">\(O(n^2)\)</span></p></li>
-<li><p>frequency domain (FFT) → <span class="math notranslate nohighlight">\(O(n \log n)\)</span></p></li>
-</ul>
-</li>
-</ul>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Transition Matrix <br>(change only [p,q])</p></th>
@@ -653,29 +651,29 @@ flowchart LR
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. LA for Fibonnaci series</span>
-<span class="n">var</span><span class="p">(</span><span class="s1">&#39;x lambda_var n&#39;</span><span class="p">)</span>
+<span class="n">var</span><span class="p">(</span><span class="s1">'x lambda_var n'</span><span class="p">)</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">(</span><span class="n">SR</span><span class="p">,</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
-<span class="n">show</span><span class="p">(</span><span class="s2">&quot;Transition Matrix&quot;</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="s2">"Transition Matrix"</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
 
 <span class="c1"># 2. Characteristic Polynomial</span>
 <span class="n">char_poly</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">characteristic_polynomial</span><span class="p">(</span><span class="n">lambda_var</span><span class="p">)</span>
-<span class="n">show</span><span class="p">(</span><span class="s2">&quot;Characteristic Polynomial: &quot;</span><span class="p">,</span> <span class="n">char_poly</span><span class="p">,</span><span class="s2">&quot; = 0&quot;</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="s2">"Characteristic Polynomial: "</span><span class="p">,</span> <span class="n">char_poly</span><span class="p">,</span><span class="s2">" = 0"</span><span class="p">)</span>
 
 <span class="c1"># 3. Eigenvalues</span>
 <span class="n">eigenvals</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">eigenvals</span><span class="p">):</span>
-    <span class="n">show</span><span class="p">(</span><span class="s2">&quot;Eigenvalue:&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;λ_</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> =&quot;</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+    <span class="n">show</span><span class="p">(</span><span class="s2">"Eigenvalue:"</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"λ_</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> ="</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
 
 <span class="c1"># 4. Eigenvector matrix P and diagonal matrix D</span>
 <span class="n">D</span><span class="p">,</span> <span class="n">P</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">eigenmatrix_right</span><span class="p">()</span>
-<span class="n">show</span><span class="p">(</span><span class="s2">&quot;Eigenvector matrix P:&quot;</span><span class="p">,</span> <span class="n">P</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="s2">"Eigenvector matrix P:"</span><span class="p">,</span> <span class="n">P</span><span class="p">)</span>
 
 <span class="c1"># 5. Compute D^n and closed-form expression </span>
 <span class="n">D_n</span> <span class="o">=</span> <span class="n">diagonal_matrix</span><span class="p">([</span><span class="n">D</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">^</span><span class="n">n</span><span class="p">,</span> <span class="n">D</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">^</span><span class="n">n</span><span class="p">])</span>
 <span class="n">A_n</span> <span class="o">=</span> <span class="n">P</span> <span class="o">*</span> <span class="n">D_n</span> <span class="o">*</span> <span class="n">P</span><span class="o">.</span><span class="n">inverse</span><span class="p">()</span>  <span class="c1"># A^n = P * D^n * P^-1</span>
 <span class="n">v0</span> <span class="o">=</span> <span class="n">vector</span><span class="p">(</span><span class="n">SR</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>      <span class="c1"># Initial state [F_1, F_0]^T = [1, 0]^T</span>
 <span class="n">F_n</span> <span class="o">=</span> <span class="p">(</span><span class="n">A_n</span> <span class="o">*</span> <span class="n">v0</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>          <span class="c1"># A^n * v0 _ Second component (index 1) yields F_n</span>
-<span class="n">show</span><span class="p">(</span><span class="s2">&quot;General term formula (Binet):&quot;</span><span class="p">,</span> <span class="n">F_n</span><span class="o">.</span><span class="n">simplify_full</span><span class="p">())</span>
+<span class="n">show</span><span class="p">(</span><span class="s2">"General term formula (Binet):"</span><span class="p">,</span> <span class="n">F_n</span><span class="o">.</span><span class="n">simplify_full</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -690,21 +688,21 @@ flowchart LR
 </ul>
 </li>
 </ul>
-<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>%%{init: {  &quot;flowchart&quot;: { &quot;nodeSpacing&quot;: 15,  &quot;rankSpacing&quot;: 15,   &quot;padding&quot;: 5 }, &#39;themeTuning&#39;: &#39;safe&#39;, &#39;themeVariables&#39;: { &#39;fontSize&#39;: &#39;12px&#39; }}}%%
+<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>%%{init: {  "flowchart": { "nodeSpacing": 15,  "rankSpacing": 15,   "padding": 5 }, 'themeTuning': 'safe', 'themeVariables': { 'fontSize': '12px' }}}%%
 flowchart LR
-    T[&quot;Variants of &lt;br&gt;Transition Matrix A &lt;br&gt;or Operator&quot;] --&gt;|&quot;$$v_{n+1}=A v_n$$&quot;| lr2[&quot;**Linear Algebra**, &lt;br&gt;n-order linear recurrences&lt;br&gt;(constant finite matrix)&quot;]
-        lr2 --&gt; fib[&quot;2nd-order linear recurrences&lt;br&gt;Fib[[1,1], [1,0]]&lt;br&gt;Pell[[2,1], [1,0]]&lt;br&gt;3rd-order linear recurrences&lt;br&gt;Tribonacci&quot;]
-    T --&gt;|&quot;$$v_{n+1}=A v_n+b$$&quot;| non[&quot;**Affine Geometry**&lt;br&gt;Nonhomogeneous, Control Theory&quot;]
+    T["Variants of &lt;br&gt;Transition Matrix A &lt;br&gt;or Operator"] --&gt;|"$$v_{n+1}=A v_n$$"| lr2["**Linear Algebra**, &lt;br&gt;n-order linear recurrences&lt;br&gt;(constant finite matrix)"]
+        lr2 --&gt; fib["2nd-order linear recurrences&lt;br&gt;Fib[[1,1], [1,0]]&lt;br&gt;Pell[[2,1], [1,0]]&lt;br&gt;3rd-order linear recurrences&lt;br&gt;Tribonacci"]
+    T --&gt;|"$$v_{n+1}=A v_n+b$$"| non["**Affine Geometry**&lt;br&gt;Nonhomogeneous, Control Theory"]
         non --&gt; ex0[Arithmetic &lt;br&gt;Triangular &lt;br&gt;Polygonal]
-    T --&gt;|&quot;$$v_{n+1}=A_n v_n$$&quot;| time[&quot;**Time-varying linear**&lt;br&gt;Enumerative Combinatorics, &lt;br&gt;Symbolic Computation &quot;] --&gt; ex[&quot;Factorials &lt;br&gt;Binomial&quot;]
+    T --&gt;|"$$v_{n+1}=A_n v_n$$"| time["**Time-varying linear**&lt;br&gt;Enumerative Combinatorics, &lt;br&gt;Symbolic Computation "] --&gt; ex["Factorials &lt;br&gt;Binomial"]
         time --&gt; holo[**Holonomic / Polynomial-recursive**] --&gt; exp[Stirling &lt;br&gt;Catalan numbers &lt;br&gt;Derangements &lt;br&gt;Eulerian numbers triangle&lt;br&gt;Motzkin]
 
-    T --&gt;|&quot;$$v_{n+1}=F(v_n)$$&quot;| nl[**Dynamical systems** &lt;br&gt;Nonlinear recurrences] --&gt;|Fermat numbers| ex1[&quot;$$v_{n+1}=(v_n-1)^2+1$$&quot;]
-        nl --&gt;|Sylvester| nlex[&quot;$$v_{n+1}=v_n^2-v_n+1$$&quot;]
-    T --&gt;|&quot;$$v_{n+1}=T v_n$$&quot;| inf[&quot;**Operator Theory**, Functional Analysis&lt;br&gt;T is an infinite-dim operator&quot;] 
+    T --&gt;|"$$v_{n+1}=F(v_n)$$"| nl[**Dynamical systems** &lt;br&gt;Nonlinear recurrences] --&gt;|Fermat numbers| ex1["$$v_{n+1}=(v_n-1)^2+1$$"]
+        nl --&gt;|Sylvester| nlex["$$v_{n+1}=v_n^2-v_n+1$$"]
+    T --&gt;|"$$v_{n+1}=T v_n$$"| inf["**Operator Theory**, Functional Analysis&lt;br&gt;T is an infinite-dim operator"] 
         inf --&gt; ex2[Partition &lt;br&gt;Bell &lt;br&gt;generating functions]
 
-    T --&gt;|&quot;$$p_{n+1}=Pp_n$$&quot;| prob[**Probability**, Stochastic matrix&lt;br&gt;P is column-stochastic&lt;br&gt;Pn probability vector] 
+    T --&gt;|"$$p_{n+1}=Pp_n$$"| prob[**Probability**, Stochastic matrix&lt;br&gt;P is column-stochastic&lt;br&gt;Pn probability vector] 
         prob --&gt; ex3[Random walks &lt;br&gt;Markov chains&lt;br&gt;PageRank]
 </pre></div>
 </div>
@@ -931,7 +929,7 @@ flowchart LR
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Investigating Pi and e</span>
-<span class="n">var</span><span class="p">(</span><span class="s1">&#39;x,n&#39;</span><span class="p">)</span>
+<span class="n">var</span><span class="p">(</span><span class="s1">'x,n'</span><span class="p">)</span>
 <span class="n">ff</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="mi">6</span><span class="o">/</span><span class="n">n</span><span class="o">^</span><span class="mi">2</span> <span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">oo</span><span class="p">,</span> <span class="n">hold</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>  <span class="c1"># converged limit of pi</span>
 <span class="n">s</span><span class="p">(</span><span class="n">ff</span> <span class="o">==</span> <span class="n">ff</span><span class="o">.</span><span class="n">unhold</span><span class="p">()</span><span class="o">.</span><span class="n">n</span><span class="p">())</span>  
 
@@ -945,27 +943,27 @@ flowchart LR
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># RSA &amp; Number Theory</span>
 <span class="n">p</span><span class="o">=</span><span class="mi">37</span><span class="p">;</span> <span class="n">q</span><span class="o">=</span><span class="mi">73</span><span class="p">;</span> <span class="n">c</span><span class="o">=</span><span class="mi">5</span><span class="p">;</span> <span class="n">n</span><span class="o">=</span><span class="n">p</span><span class="o">*</span><span class="n">q</span><span class="p">;</span> <span class="n">L</span><span class="o">=</span><span class="n">lcm</span><span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">q</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span> <span class="n">d</span><span class="o">=</span><span class="n">inverse_mod</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">L</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;L: &#39;</span><span class="p">,</span> <span class="n">L</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;d: &#39;</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'L: '</span><span class="p">,</span> <span class="n">L</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'d: '</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
 <span class="n">x</span><span class="o">=</span><span class="mi">33</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Original message: &#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Original message: '</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 <span class="n">r</span> <span class="o">=</span> <span class="n">x</span><span class="o">^</span><span class="n">c</span><span class="o">%</span><span class="k">n</span>; r
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Encrypted message: &#39;</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Encrypted message: '</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
 <span class="n">dm</span><span class="o">=</span><span class="n">r</span><span class="o">^</span><span class="n">d</span><span class="o">%</span><span class="k">n</span>;
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Decrypted message: &#39;</span><span class="p">,</span> <span class="n">dm</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Decrypted message: '</span><span class="p">,</span> <span class="n">dm</span><span class="p">)</span>
 
 <span class="c1"># RSA on a string of characters</span>
-<span class="n">symbols</span><span class="o">=</span><span class="p">[</span><span class="nb">chr</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">),</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;Z&#39;</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
-<span class="n">symbols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">);</span> <span class="n">symbols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">);</span> <span class="n">symbols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;!&#39;</span><span class="p">);</span> <span class="n">symbols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">);</span>
+<span class="n">symbols</span><span class="o">=</span><span class="p">[</span><span class="nb">chr</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="s1">'A'</span><span class="p">),</span><span class="nb">ord</span><span class="p">(</span><span class="s1">'Z'</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+<span class="n">symbols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'.'</span><span class="p">);</span> <span class="n">symbols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">','</span><span class="p">);</span> <span class="n">symbols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'!'</span><span class="p">);</span> <span class="n">symbols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">' '</span><span class="p">);</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">encrypt</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
     <span class="n">ms</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="o">+</span><span class="n">symbols</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))];</span>
     <span class="n">es</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">^</span><span class="n">c</span><span class="o">%</span><span class="k">n</span>,ms)
     <span class="k">return</span> <span class="n">es</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">decrypt</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">ds</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">^</span><span class="n">d</span><span class="o">%</span><span class="k">n</span>, x)
-    <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">symbols</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ds</span><span class="p">])</span>
+    <span class="k">return</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">symbols</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ds</span><span class="p">])</span>
 
-<span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;THE TIME HAS COME.&quot;</span>
+<span class="n">message</span> <span class="o">=</span> <span class="s2">"THE TIME HAS COME."</span>
 <span class="n">emessage</span> <span class="o">=</span> <span class="n">encrypt</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">emessage</span><span class="p">)</span>
 <span class="n">dmessage</span> <span class="o">=</span> <span class="n">decrypt</span><span class="p">(</span><span class="n">emessage</span><span class="p">)</span>
@@ -995,7 +993,7 @@ flowchart LR
   <span class="p">(</span><span class="o">*</span><span class="n">now</span> <span class="n">do</span> <span class="n">it</span> <span class="n">manually</span><span class="p">,</span> 
   <span class="n">Fold</span><span class="p">[</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="p">{</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">}]</span> <span class="o">==</span> <span class="n">f</span><span class="p">{</span><span class="n">f</span><span class="p">{</span><span class="n">f</span><span class="p">{</span><span class="n">f</span><span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="n">a</span><span class="p">],</span><span class="n">b</span><span class="p">},</span><span class="n">c</span><span class="p">},</span><span class="n">d</span><span class="p">}</span>
   <span class="c1">#1 is the accumulated result; #2 is the the current element;</span>
-  <span class="s1">&#39;&amp;&#39;</span> <span class="n">at</span> <span class="n">the</span> <span class="n">end</span><span class="p">:</span> <span class="n">defining</span> <span class="n">an</span> <span class="n">anonymous</span> <span class="n">function</span> <span class="o">*</span><span class="p">)</span>
+  <span class="s1">'&amp;'</span> <span class="n">at</span> <span class="n">the</span> <span class="n">end</span><span class="p">:</span> <span class="n">defining</span> <span class="n">an</span> <span class="n">anonymous</span> <span class="n">function</span> <span class="o">*</span><span class="p">)</span>
 <span class="n">aa</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">:=</span> <span class="n">Fold</span><span class="p">[</span><span class="c1">#2 + 1/#1 &amp;, x, Reverse[x]]; </span>
 <span class="n">aa</span><span class="p">[</span><span class="n">ContinuedFraction</span><span class="p">[</span><span class="n">Sqrt</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="mi">2</span><span class="p">]]</span>
 </pre></div>
@@ -1879,7 +1877,7 @@ flowchart LR
 <p>How to learn group structure?</p>
 <div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>flowchart LR
     A --&gt; |Visualization| d[Caylay diagram/graph &lt;br&gt;Multiplication table]
-    A[Group] --&gt; b[&quot;3 Decompositions subgroup&quot;]
+    A[Group] --&gt; b["3 Decompositions subgroup"]
         b --&gt; b1[Cyclic subgroup] --&gt; b4[Invariant subgroup &lt;br&gt; quotient group]
         b --&gt; b2[Coset] --&gt; b4[Invariant subgroup &lt;br&gt; quotient group]
         b --&gt; b3[Conjugate class] --&gt; b4[Invariant subgroup &lt;br&gt; quotient group]
@@ -2160,19 +2158,19 @@ S(n,k)=kS(n-1,k)+S(n-1,k-1)</p></li>
 </div>
 <p>btw: Stirling arise from both permutation &amp; set partitions</p>
 <div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>flowchart LR
-    A[&quot;Finite set {1,2,3,4,5}&quot;] --&gt; B[Partition into k blocks]
+    A["Finite set {1,2,3,4,5}"] --&gt; B[Partition into k blocks]
     A --&gt; C[Permutation]
 
     %% Set partitions
-    B --&gt; B1[&quot;Block 1: {1,3,5}&quot;]
-    B --&gt; B2[&quot;Block 2: {2,4}&quot;]
-    B1 --&gt; D[&quot;S(n,k)&quot;]
+    B --&gt; B1["Block 1: {1,3,5}"]
+    B --&gt; B2["Block 2: {2,4}"]
+    B1 --&gt; D["S(n,k)"]
     B2 --&gt; D
 
     %% Permutation cycles
-    C --&gt; C1[&quot;Cycle: (1 3 5)&quot;]
-    C --&gt; C2[&quot;Cycle: (2 4)&quot;]
-    C1 --&gt; E[&quot;c(n,k)&quot;]
+    C --&gt; C1["Cycle: (1 3 5)"]
+    C --&gt; C2["Cycle: (2 4)"]
+    C1 --&gt; E["c(n,k)"]
     C2 --&gt; E
 
     %% Conceptual bridge
@@ -2227,12 +2225,12 @@ S(n,k)=kS(n-1,k)+S(n-1,k-1)</p></li>
     <span class="n">db_ub</span> <span class="o">=</span> <span class="n">TF_distinctBalls_unlabeledBoxes</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
     <span class="n">ib_lb</span> <span class="o">=</span> <span class="n">TF_identicalBalls_labeledBoxes</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
     <span class="n">ib_ub</span> <span class="o">=</span> <span class="n">TF_identicalBalls_unlabeledBoxes</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Twelvefold way (&quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="s2">&quot;balls, &quot;</span><span class="p">,</span><span class="n">k</span><span class="p">,</span> <span class="s2">&quot;boxes) with capacity rule:&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1) Balls labeled,   Boxes labeled:   Any:&quot;</span><span class="p">,</span> <span class="n">db_lb</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;  Inj:&quot;</span><span class="p">,</span> <span class="n">db_lb</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;  Sur:&quot;</span><span class="p">,</span> <span class="n">db_lb</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2) Balls labeled,   Boxes unlabeled: Any:&quot;</span><span class="p">,</span> <span class="n">db_ub</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;  Inj:&quot;</span><span class="p">,</span> <span class="n">db_ub</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;  Sur:&quot;</span><span class="p">,</span> <span class="n">db_ub</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3) Balls unlabeled, Boxes labeled:   Any:&quot;</span><span class="p">,</span> <span class="n">ib_lb</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;  Inj:&quot;</span><span class="p">,</span> <span class="n">ib_lb</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;  Sur:&quot;</span><span class="p">,</span> <span class="n">ib_lb</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;4) Balls unlabeled, Boxes unlabeled: Any:&quot;</span><span class="p">,</span> <span class="n">ib_ub</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;  Inj:&quot;</span><span class="p">,</span> <span class="n">ib_ub</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;  Sur:&quot;</span><span class="p">,</span> <span class="n">ib_ub</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Twelvefold way ("</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="s2">"balls, "</span><span class="p">,</span><span class="n">k</span><span class="p">,</span> <span class="s2">"boxes) with capacity rule:"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"1) Balls labeled,   Boxes labeled:   Any:"</span><span class="p">,</span> <span class="n">db_lb</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">"  Inj:"</span><span class="p">,</span> <span class="n">db_lb</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">"  Sur:"</span><span class="p">,</span> <span class="n">db_lb</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"2) Balls labeled,   Boxes unlabeled: Any:"</span><span class="p">,</span> <span class="n">db_ub</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">"  Inj:"</span><span class="p">,</span> <span class="n">db_ub</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">"  Sur:"</span><span class="p">,</span> <span class="n">db_ub</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"3) Balls unlabeled, Boxes labeled:   Any:"</span><span class="p">,</span> <span class="n">ib_lb</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">"  Inj:"</span><span class="p">,</span> <span class="n">ib_lb</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">"  Sur:"</span><span class="p">,</span> <span class="n">ib_lb</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"4) Balls unlabeled, Boxes unlabeled: Any:"</span><span class="p">,</span> <span class="n">ib_ub</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">"  Inj:"</span><span class="p">,</span> <span class="n">ib_ub</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">"  Sur:"</span><span class="p">,</span> <span class="n">ib_ub</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
 
 <span class="c1"># Optional: small brute checks (useful for sanity for small n,k)</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">brute_distinctBalls_labeledBoxes_any</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
@@ -2244,7 +2242,7 @@ S(n,k)=kS(n-1,k)+S(n-1,k-1)</p></li>
     <span class="k">return</span> <span class="n">factorial</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">stirling_number2</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="c1"># surj count via Stirling is already exact; brute is expensive</span>
 
 <span class="c1"># 3 examples </span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;           Any=unrestricted;   Injective=no multi-balls;  Surjective=no empty box&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"           Any=unrestricted;   Injective=no multi-balls;  Surjective=no empty box"</span><span class="p">)</span>
 <span class="n">twelvefold_summary</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="c1"># it is bijective </span>
 <span class="n">twelvefold_summary</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">twelvefold_summary</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
@@ -2293,7 +2291,7 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
     <span class="n">L_L_sur_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">all_functions</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">t</span><span class="p">))</span> <span class="o">==</span> <span class="n">k</span><span class="p">]</span>
     <span class="n">L_L_sur</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">L_L_sur_list</span><span class="p">)</span>       <span class="c1"># k! × {n \brace k}</span>
 <span class="c1"># 2. Labeled Balls, Unlabeled Boxes: Set Partitions of N</span>
-<span class="c1"># These represent the fibers of the functions f^-1(y), where the identity of the box (y) doesn&#39;t matter.</span>
+<span class="c1"># These represent the fibers of the functions f^-1(y), where the identity of the box (y) doesn't matter.</span>
     <span class="n">L_U_any</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">SetPartitions</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">list</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)],</span> <span class="p">[])</span>
     <span class="n">L_U_sur</span> <span class="o">=</span> <span class="n">SetPartitions</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
     <span class="n">L_U_inj</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="n">k</span> <span class="k">else</span> <span class="p">[]</span> 
@@ -2309,10 +2307,10 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
     <span class="n">U_U_sur</span> <span class="o">=</span> <span class="n">Partitions</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
     <span class="n">U_U_inj</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="n">k</span> <span class="k">else</span> <span class="p">[]</span>
     <span class="k">return</span> <span class="p">{</span>
-        <span class="s2">&quot;Labeled/Labeled&quot;</span><span class="p">:</span> <span class="p">(</span><span class="n">L_L_any</span><span class="p">,</span> <span class="n">L_L_inj</span><span class="p">,</span> <span class="n">L_L_sur</span><span class="p">),</span> 
-        <span class="s2">&quot;Labeled/Unlabeled&quot;</span><span class="p">:</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">L_U_any</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">L_U_inj</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">L_U_sur</span><span class="p">)),</span>
-        <span class="s2">&quot;Unlabeled/Labeled&quot;</span><span class="p">:</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">U_L_any</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">U_L_inj</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">U_L_sur</span><span class="p">)),</span>
-        <span class="s2">&quot;Unlabeled/Unlabeled&quot;</span><span class="p">:</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">U_U_any</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">U_U_inj</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">U_U_sur</span><span class="p">))</span>     <span class="p">}</span>
+        <span class="s2">"Labeled/Labeled"</span><span class="p">:</span> <span class="p">(</span><span class="n">L_L_any</span><span class="p">,</span> <span class="n">L_L_inj</span><span class="p">,</span> <span class="n">L_L_sur</span><span class="p">),</span> 
+        <span class="s2">"Labeled/Unlabeled"</span><span class="p">:</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">L_U_any</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">L_U_inj</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">L_U_sur</span><span class="p">)),</span>
+        <span class="s2">"Unlabeled/Labeled"</span><span class="p">:</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">U_L_any</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">U_L_inj</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">U_L_sur</span><span class="p">)),</span>
+        <span class="s2">"Unlabeled/Unlabeled"</span><span class="p">:</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">U_U_any</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">U_U_inj</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">U_U_sur</span><span class="p">))</span>     <span class="p">}</span>
 
 <span class="n">s</span><span class="p">(</span><span class="n">TF_Explicit_Structures</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 </pre></div>
@@ -2358,9 +2356,9 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
             <span class="n">seen</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">orbit</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="p">{</span>
-        <span class="s2">&quot;Unlabeled Balls Count (Orbits)&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">orbits_Sn</span><span class="p">),</span>
-        <span class="s2">&quot;Unlabeled Boxes Count (Orbits)&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">orbits_Sk</span><span class="p">),</span>
-        <span class="s2">&quot;Both Unlabeled Count (Orbits)&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_orbits_U_U</span><span class="p">)</span>     <span class="p">}</span>
+        <span class="s2">"Unlabeled Balls Count (Orbits)"</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">orbits_Sn</span><span class="p">),</span>
+        <span class="s2">"Unlabeled Boxes Count (Orbits)"</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">orbits_Sk</span><span class="p">),</span>
+        <span class="s2">"Both Unlabeled Count (Orbits)"</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_orbits_U_U</span><span class="p">)</span>     <span class="p">}</span>
 
 <span class="n">s</span><span class="p">(</span><span class="n">TF_Group_Action_Explicit</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 </pre></div>
@@ -2537,15 +2535,15 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
 <li><p>Asymptotic enumeration methods provide quantitative information about the growth rate of functions that count combinatorial objects.</p></li>
 </ul>
 <div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>flowchart TD
-  A[**Combinat Species** Joyal&lt;br/&gt;F: FinSet-&gt;FinSet] --&gt; |∘ + × SET CYC Derivative| C1[&quot;**EGF** (labeled)&quot;&lt;br/&gt;decategorification]
-  A --&gt; |∘ + × SET CYC Derivative| C2[&quot;Cycle Index (unlabeled)&quot;&lt;br/&gt;symmetry encoded&lt;br&gt; **OGF** / Pólya counting&lt;br/&gt;p_k &lt;- z^k etc]
-  C1 --&gt; D[&quot;GF eq explict/implicit&lt;br/&gt;F(z) or F=Phi(z,F)&quot;]
+  A[**Combinat Species** Joyal&lt;br/&gt;F: FinSet-&gt;FinSet] --&gt; |∘ + × SET CYC Derivative| C1["**EGF** (labeled)"&lt;br/&gt;decategorification]
+  A --&gt; |∘ + × SET CYC Derivative| C2["Cycle Index (unlabeled)"&lt;br/&gt;symmetry encoded&lt;br&gt; **OGF** / Pólya counting&lt;br/&gt;p_k &lt;- z^k etc]
+  C1 --&gt; D["GF eq explict/implicit&lt;br/&gt;F(z) or F=Phi(z,F)"]
   C2 --&gt; D
-  D --&gt; E[&quot;**Analytic Combinatorics**&lt;br/&gt;singularity / saddle point &lt;br&gt; Asymptotics of coefficients&lt;br/&gt;[z^n]F(z)&quot;]
-  A --&gt; G[&quot;Parameter marking at species level&lt;br/&gt;二元生成函数F(z,u)&quot;]
+  D --&gt; E["**Analytic Combinatorics**&lt;br/&gt;singularity / saddle point &lt;br&gt; Asymptotics of coefficients&lt;br/&gt;[z^n]F(z)"]
+  A --&gt; G["Parameter marking at species level&lt;br/&gt;二元生成函数F(z,u)"]
   G --&gt; H[概率Limit laws&lt;br/&gt;Quasi-powers, CLT, Airy...]
 %% sampling
-  A --&gt; |Link AC &amp; CS &lt;br&gt;Boltzmann samplers&lt;br/&gt;grammar-driven| J[&quot;Calibration / tuning&lt;br/&gt;choose x ≈ rho&lt;br/&gt;E|size| ≈ n&quot;]
+  A --&gt; |Link AC &amp; CS &lt;br&gt;Boltzmann samplers&lt;br/&gt;grammar-driven| J["Calibration / tuning&lt;br/&gt;choose x ≈ rho&lt;br/&gt;E|size| ≈ n"]
   J --&gt; E
 </pre></div>
 </div>
@@ -2555,12 +2553,12 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
 <p>Set</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="n">pi</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">,</span><span class="n">pi</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
 <span class="n">set1</span><span class="o">=</span><span class="n">Set</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span> 
 <span class="nb">print</span><span class="p">(</span><span class="n">set1</span><span class="p">)</span>    <span class="c1"># list[] to set{} </span>
 
-<span class="n">A</span> <span class="o">=</span> <span class="n">Set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">Set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span> <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
 <span class="n">B</span> <span class="o">=</span> <span class="n">Set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">15</span><span class="p">));</span> <span class="nb">print</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">B</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">B</span><span class="p">))</span>
@@ -2568,7 +2566,7 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
 <span class="nb">print</span><span class="p">(</span><span class="n">B</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
 
 <span class="n">sub</span> <span class="o">=</span> <span class="n">subsets</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;subsets A:&quot;</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">sub</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="s2">"subsets A:"</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">sub</span><span class="p">))</span>
 <span class="n">prod</span><span class="o">=</span> <span class="n">cartesian_product</span><span class="p">([</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">])</span> <span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">prod</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">cardinality</span><span class="p">(),</span> <span class="n">B</span><span class="o">.</span><span class="n">cardinality</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">prod</span><span class="o">.</span><span class="n">cardinality</span><span class="p">())</span>
@@ -2583,14 +2581,14 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">binomial</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 <span class="n">A</span><span class="o">=</span><span class="n">Subsets</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span><span class="mi">2</span><span class="p">);</span> <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">cardinality</span><span class="p">())</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">A</span><span class="o">.</span><span class="n">list</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="n">A</span><span class="o">.</span><span class="n">list</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">unrank</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># display item (1)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="n">A</span><span class="o">.</span><span class="n">unrank</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">A</span><span class="o">.</span><span class="n">unrank</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;osition of an object in order:&quot;</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="n">rank</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">]))</span>  <span class="c1"># calculate the p</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"osition of an object in order:"</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="n">rank</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">]))</span>  <span class="c1"># calculate the p</span>
 
 <span class="n">A</span><span class="o">=</span><span class="n">Set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]);</span> <span class="n">Nest</span><span class="o">=</span><span class="n">Subsets</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="c1"># nested</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">Nest</span><span class="o">.</span><span class="n">cardinality</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="n">Nest</span><span class="o">.</span><span class="n">cardinality</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">Nest</span><span class="o">.</span><span class="n">list</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -2644,15 +2642,15 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Construction</span>
 <span class="n">w</span> <span class="o">=</span> <span class="n">Permutation</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">]);</span>   <span class="nb">print</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="c1"># One-line notation(OLN)</span>
 <span class="n">u</span> <span class="o">=</span> <span class="n">Permutation</span><span class="p">(((</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">),(</span><span class="mi">5</span><span class="p">,)));</span> <span class="nb">print</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="c1"># cycle notation</span>
-<span class="n">v</span> <span class="o">=</span> <span class="n">Permutation</span><span class="p">(((</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">)));</span>      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;v:&quot;</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">Permutation</span><span class="p">(((</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">)));</span>      <span class="nb">print</span><span class="p">(</span><span class="s2">"v:"</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;fixed points:&quot;</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">number_of_fixed_points</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;peaks:&quot;</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">number_of_peaks</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"fixed points:"</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">number_of_fixed_points</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"peaks:"</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">number_of_peaks</span><span class="p">())</span>
 
 <span class="c1"># Perm Function VS. Construction</span>
 <span class="n">Permutations</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> 
 <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">Permutations</span><span class="p">(</span><span class="mi">3</span><span class="p">)))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;4th item:&quot;</span><span class="p">,</span> <span class="n">Permutations</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">list</span><span class="p">()[</span><span class="mi">4</span><span class="p">])</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">"4th item:"</span><span class="p">,</span> <span class="n">Permutations</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">list</span><span class="p">()[</span><span class="mi">4</span><span class="p">])</span> 
 <span class="n">Permutation</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="o">+</span><span class="mi">1</span><span class="p">)))</span>
 </pre></div>
 </div>
@@ -2699,7 +2697,7 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
 
 <span class="n">LHS</span> <span class="o">=</span> <span class="n">QS</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span> <span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">LHS</span><span class="p">)</span>
 <span class="n">RHS</span> <span class="o">=</span> <span class="n">QS</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">QS</span><span class="p">(</span><span class="mi">5</span><span class="p">)(</span><span class="n">w</span><span class="p">)</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">Permutations</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">LHS</span> <span class="o">==</span> <span class="n">RHS</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">LHS</span> <span class="o">==</span> <span class="n">RHS</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">QS</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)))</span>
 </pre></div>
 </div>
@@ -2717,7 +2715,7 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
 <span class="nb">print</span><span class="p">(</span><span class="n">P</span><span class="o">.</span><span class="n">list</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">P</span><span class="o">.</span><span class="n">cardinality</span><span class="p">())</span>
 
-<span class="n">C</span><span class="o">=</span><span class="n">SetPartitions</span><span class="p">([</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;c&quot;</span><span class="p">]);</span>    <span class="n">s</span><span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">list</span><span class="p">())</span>
+<span class="n">C</span><span class="o">=</span><span class="n">SetPartitions</span><span class="p">([</span><span class="s2">"a"</span><span class="p">,</span><span class="s2">"b"</span><span class="p">,</span><span class="s2">"c"</span><span class="p">]);</span>    <span class="n">s</span><span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">list</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -2757,15 +2755,15 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
 <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">unrank</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> <span class="c1"># ==</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">Partitions</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">list</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">Partitions</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">list</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span>  <span class="n">Partitions</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">list</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span>  <span class="n">Partitions</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">min_part</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">list</span><span class="p">())</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">OrderedPartitions</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">list</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">OrderedPartitions</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">list</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">OrderedPartitions</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">list</span><span class="p">())</span>
 
 <span class="n">p</span> <span class="o">=</span> <span class="n">Partition</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">ferrers_diagram</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -2774,12 +2772,12 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
 <p>Arrangements (No multiset)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Hand</span> <span class="o">=</span> <span class="n">Set</span><span class="p">([</span><span class="s2">&quot;Red&quot;</span><span class="p">,</span><span class="s2">&quot;Blue&quot;</span><span class="p">,</span><span class="s2">&quot;Green&quot;</span><span class="p">,</span><span class="s2">&quot;Yellow&quot;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Hand</span> <span class="o">=</span> <span class="n">Set</span><span class="p">([</span><span class="s2">"Red"</span><span class="p">,</span><span class="s2">"Blue"</span><span class="p">,</span><span class="s2">"Green"</span><span class="p">,</span><span class="s2">"Yellow"</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">Arrangements</span><span class="p">(</span><span class="n">Hand</span><span class="p">,</span> <span class="mi">1</span><span class="p">)))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">Arrangements</span><span class="p">(</span><span class="n">Hand</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">cardinality</span><span class="p">())</span> <span class="c1"># 4!/3! = n!/(n-1)!</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">Arrangements</span><span class="p">(</span><span class="n">Hand</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">cardinality</span><span class="p">())</span> <span class="c1"># 4!/2! </span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">Combinations</span><span class="p">(</span><span class="n">Hand</span><span class="p">,</span> <span class="mi">1</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">Combinations</span><span class="p">(</span><span class="n">Hand</span><span class="p">,</span> <span class="mi">1</span><span class="p">)))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">Combinations</span><span class="p">(</span><span class="n">Hand</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">cardinality</span><span class="p">())</span> <span class="c1"># 4!/3! </span>
 <span class="nb">print</span><span class="p">(</span><span class="n">Combinations</span><span class="p">(</span><span class="n">Hand</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">cardinality</span><span class="p">())</span> <span class="c1"># 4!/2! = n!/[(n-2)!*2!]</span>
 </pre></div>
@@ -2792,13 +2790,13 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">Composition</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span> <span class="c1"># Integer composition</span>
 <span class="n">l</span> <span class="o">=</span> <span class="n">Compositions</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>   <span class="c1"># Set of integer compositions.</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> 
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="s2">&quot;with its cardinality:&quot;</span><span class="p">,</span> <span class="n">l</span><span class="o">.</span><span class="n">cardinality</span><span class="p">())</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="s2">"with its cardinality:"</span><span class="p">,</span> <span class="n">l</span><span class="o">.</span><span class="n">cardinality</span><span class="p">())</span> 
 <span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="o">.</span><span class="n">list</span><span class="p">())</span>   <span class="c1"># compared to Partitions(), order matters</span>
 
 <span class="n">m</span> <span class="o">=</span> <span class="n">Compositions</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">list</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">list</span><span class="p">())</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">cardinality</span><span class="p">()</span> <span class="o">==</span> <span class="n">binomial</span><span class="p">(</span><span class="mi">5</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">cardinality</span><span class="p">()</span> <span class="o">==</span> <span class="n">binomial</span><span class="p">(</span><span class="mi">5</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">Compositions</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">cardinality</span><span class="p">()</span> <span class="o">==</span> <span class="mi">2</span><span class="o">^</span><span class="p">(</span><span class="mi">5</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -2808,7 +2806,7 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">([</span><span class="n">Compositions</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">cardinality</span><span class="p">()</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)])</span>  <span class="c1"># [] is a comprehension way</span>
 
-<span class="n">var</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span> <span class="p">;</span> <span class="n">s</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">C5</span> <span class="p">))</span>
+<span class="n">var</span><span class="p">(</span><span class="s1">'x'</span><span class="p">)</span> <span class="p">;</span> <span class="n">s</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">C5</span> <span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -2829,7 +2827,7 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
 <p>Generating Functions</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">'x'</span><span class="p">)</span>
 <span class="n">expand</span><span class="p">((</span><span class="mi">1</span><span class="o">+</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -2838,8 +2836,8 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
 <p>Example: Poker</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Hua</span><span class="o">=</span><span class="n">Set</span><span class="p">([</span><span class="s2">&quot;Hearts&quot;</span><span class="p">,</span><span class="s2">&quot;Diamonds&quot;</span><span class="p">,</span><span class="s2">&quot;Spades&quot;</span><span class="p">,</span><span class="s2">&quot;Clubs&quot;</span><span class="p">])</span>
-<span class="n">Num</span><span class="o">=</span><span class="n">Set</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="s2">&quot;J&quot;</span><span class="p">,</span><span class="s2">&quot;Q&quot;</span><span class="p">,</span><span class="s2">&quot;K&quot;</span><span class="p">,</span><span class="s2">&quot;A&quot;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Hua</span><span class="o">=</span><span class="n">Set</span><span class="p">([</span><span class="s2">"Hearts"</span><span class="p">,</span><span class="s2">"Diamonds"</span><span class="p">,</span><span class="s2">"Spades"</span><span class="p">,</span><span class="s2">"Clubs"</span><span class="p">])</span>
+<span class="n">Num</span><span class="o">=</span><span class="n">Set</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="s2">"J"</span><span class="p">,</span><span class="s2">"Q"</span><span class="p">,</span><span class="s2">"K"</span><span class="p">,</span><span class="s2">"A"</span><span class="p">])</span>
 <span class="n">Card</span><span class="o">=</span><span class="n">cartesian_product</span><span class="p">([</span><span class="n">Hua</span><span class="p">,</span> <span class="n">Num</span><span class="p">])</span> <span class="c1"># 4*13=52</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">Card</span><span class="p">)</span>
 
@@ -2879,7 +2877,7 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to verify A000108</span>
-<span class="n">var</span><span class="p">(</span><span class="s1">&#39;C, z&#39;</span><span class="p">)</span>
+<span class="n">var</span><span class="p">(</span><span class="s1">'C, z'</span><span class="p">)</span>
 <span class="c1"># method 1</span>
 <span class="n">sys</span> <span class="o">=</span> <span class="p">[</span><span class="n">C</span> <span class="o">==</span> <span class="n">z</span> <span class="o">+</span> <span class="n">C</span><span class="o">*</span><span class="n">C</span><span class="p">]</span>
 <span class="n">s</span><span class="p">(</span><span class="n">sys</span><span class="p">)</span>
@@ -2894,7 +2892,7 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
 <span class="n">C</span><span class="o">.</span><span class="n">define</span><span class="p">(</span><span class="n">z</span> <span class="o">+</span> <span class="n">C</span><span class="o">*</span><span class="n">C</span><span class="p">)</span>
 <span class="n">s</span><span class="p">([</span><span class="n">C</span><span class="o">.</span><span class="n">coefficient</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">)])</span>
 
-<span class="n">z</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">)</span> <span class="c1"># back to closure-type C(z)</span>
+<span class="n">z</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">'z'</span><span class="p">)</span> <span class="c1"># back to closure-type C(z)</span>
 <span class="n">C</span><span class="o">=</span><span class="n">s0</span><span class="p">;</span> <span class="n">s</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
 <span class="n">s</span><span class="p">(</span><span class="n">derivative</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="n">z</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
 
@@ -2908,7 +2906,7 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
 \[c_n = Catalan(n-1) = \frac{1}{n} \binom{2(n-1)}{n-1}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="s1">'n'</span><span class="p">)</span>
 <span class="n">c</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="n">n</span><span class="o">*</span><span class="n">binomial</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">s</span><span class="p">([</span><span class="n">c</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">k</span><span class="p">)</span>         <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">)])</span>
 <span class="n">s</span><span class="p">([</span><span class="n">catalan_number</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">)])</span>
@@ -2942,10 +2940,10 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
     <span class="n">Filling</span> <span class="o">-&gt;</span> <span class="n">Axis</span><span class="p">,</span>      <span class="p">(</span><span class="o">*</span> <span class="n">Adds</span> <span class="n">vertical</span> <span class="n">lines</span> <span class="n">to</span> <span class="n">the</span> <span class="n">axis</span> <span class="o">*</span><span class="p">)</span>
     <span class="n">AxesOrigin</span> <span class="o">-&gt;</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span> <span class="p">(</span><span class="o">*</span> <span class="n">Ensures</span> <span class="n">the</span> <span class="n">axes</span> <span class="n">start</span> <span class="n">at</span> <span class="n">zero</span> <span class="o">*</span><span class="p">)</span>
     <span class="n">Frame</span> <span class="o">-&gt;</span> <span class="kc">True</span><span class="p">,</span>        <span class="p">(</span><span class="o">*</span> <span class="n">Adds</span> <span class="n">frame</span> <span class="k">for</span> <span class="n">better</span> <span class="n">appearance</span> <span class="o">*</span><span class="p">)</span>
-    <span class="n">FrameLabel</span> <span class="o">-&gt;</span> <span class="p">{</span><span class="s2">&quot;Degree&quot;</span><span class="p">,</span> <span class="s2">&quot;Coefficient&quot;</span><span class="p">},</span> <span class="p">(</span><span class="o">*</span> <span class="n">Proper</span> <span class="n">labels</span> <span class="o">*</span><span class="p">)</span>
+    <span class="n">FrameLabel</span> <span class="o">-&gt;</span> <span class="p">{</span><span class="s2">"Degree"</span><span class="p">,</span> <span class="s2">"Coefficient"</span><span class="p">},</span> <span class="p">(</span><span class="o">*</span> <span class="n">Proper</span> <span class="n">labels</span> <span class="o">*</span><span class="p">)</span>
     <span class="n">PlotRange</span> <span class="o">-&gt;</span> <span class="n">All</span><span class="p">,</span>
     <span class="n">GridLines</span> <span class="o">-&gt;</span> <span class="n">Automatic</span><span class="p">,</span> <span class="p">(</span><span class="o">*</span> <span class="n">Adds</span> <span class="n">grid</span> <span class="n">lines</span> <span class="k">for</span> <span class="n">better</span> <span class="n">readability</span> <span class="o">*</span><span class="p">)</span>
-    <span class="n">PlotLabel</span> <span class="o">-&gt;</span> <span class="n">Style</span><span class="p">[</span><span class="s2">&quot;Binomial Coefficients for Degree x = &quot;</span> <span class="o">&lt;&gt;</span> <span class="n">ToString</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">Bold</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span>
+    <span class="n">PlotLabel</span> <span class="o">-&gt;</span> <span class="n">Style</span><span class="p">[</span><span class="s2">"Binomial Coefficients for Degree x = "</span> <span class="o">&lt;&gt;</span> <span class="n">ToString</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">Bold</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span>
           <span class="p">],</span>
           <span class="p">{{</span><span class="n">x</span><span class="p">,</span> <span class="mi">20</span><span class="p">},</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">1</span><span class="p">},</span> <span class="p">(</span><span class="o">*</span> <span class="n">Slider</span> <span class="k">for</span> <span class="n">degree</span> <span class="n">x</span><span class="p">,</span> <span class="n">matching</span> <span class="n">graph</span> <span class="nb">range</span> <span class="o">*</span><span class="p">)</span>
           <span class="n">SaveDefinitions</span> <span class="o">-&gt;</span> <span class="kc">True</span> <span class="p">]</span>
@@ -2976,7 +2974,7 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
 <span class="n">L</span><span class="o">=</span><span class="n">g</span><span class="o">.</span><span class="n">coefficients</span><span class="p">()</span>  <span class="c1"># extract the coefficients</span>
 <span class="n">coeffs</span><span class="o">=</span><span class="p">{</span><span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span><span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">factorial</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">L</span><span class="p">}</span> <span class="c1"># multiply by the factorial to get coeff part</span>
 
-<span class="c1"># coeffs is now a &quot;dictionary&quot; that holds pairs n:m,</span>
+<span class="c1"># coeffs is now a "dictionary" that holds pairs n:m,</span>
 <span class="c1"># n is the exponent and m is the coefficient. Note that</span>
 <span class="c1"># coefficients with value zero are not included.</span>
 <span class="n">coeffs</span>
@@ -3008,8 +3006,8 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Expanding a bivariate exponential GF</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">egfExpand2</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">polygen</span><span class="p">(</span><span class="n">QQ</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">)</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">LazyPowerSeriesRing</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">parent</span><span class="p">(),</span> <span class="s2">&quot;x&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">polygen</span><span class="p">(</span><span class="n">QQ</span><span class="p">,</span> <span class="s2">"y"</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">LazyPowerSeriesRing</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">parent</span><span class="p">(),</span> <span class="s2">"x"</span><span class="p">)</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
     <span class="k">return</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)[</span><span class="n">n</span><span class="p">]</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">)]</span>
 
 <span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">exp</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="n">sec</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -3150,23 +3148,23 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Discrete to Continuous: Sum vs. Integral</span>
-<span class="n">var</span><span class="p">(</span><span class="s1">&#39;x , n&#39;</span><span class="p">)</span>
+<span class="n">var</span><span class="p">(</span><span class="s1">'x , n'</span><span class="p">)</span>
 <span class="n">discrete_sum</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>                    <span class="c1"># Finite, discrete</span>
 <span class="n">continuous_integral</span> <span class="o">=</span> <span class="n">integral</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">infinity</span><span class="p">)</span>  <span class="c1"># Infinite, continuous</span>
-<span class="n">s</span><span class="p">(</span><span class="s2">&quot;Discrete sum (n=1-10):&quot;</span><span class="p">,</span> <span class="n">discrete_sum</span><span class="o">.</span><span class="n">n</span><span class="p">())</span>      <span class="c1"># Approx 1.549</span>
-<span class="n">s</span><span class="p">(</span><span class="s2">&quot;Continuous integral:&quot;</span><span class="p">,</span> <span class="n">continuous_integral</span><span class="p">)</span>     <span class="c1"># 1</span>
+<span class="n">s</span><span class="p">(</span><span class="s2">"Discrete sum (n=1-10):"</span><span class="p">,</span> <span class="n">discrete_sum</span><span class="o">.</span><span class="n">n</span><span class="p">())</span>      <span class="c1"># Approx 1.549</span>
+<span class="n">s</span><span class="p">(</span><span class="s2">"Continuous integral:"</span><span class="p">,</span> <span class="n">continuous_integral</span><span class="p">)</span>     <span class="c1"># 1</span>
 
 <span class="c1"># Finite to Infinite: Partial series vs. full series</span>
 <span class="n">finite_series</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># Finite</span>
 <span class="n">infinite_series</span> <span class="o">=</span> <span class="n">zeta</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>             <span class="c1"># Infinite sum = pi^2/6</span>
-<span class="n">s</span><span class="p">(</span><span class="s2">&quot;Finite series:&quot;</span><span class="p">,</span> <span class="n">finite_series</span><span class="o">.</span><span class="n">n</span><span class="p">())</span>
-<span class="n">s</span><span class="p">(</span><span class="s2">&quot;Infinite series:&quot;</span><span class="p">,</span> <span class="n">infinite_series</span><span class="o">.</span><span class="n">n</span><span class="p">())</span>
+<span class="n">s</span><span class="p">(</span><span class="s2">"Finite series:"</span><span class="p">,</span> <span class="n">finite_series</span><span class="o">.</span><span class="n">n</span><span class="p">())</span>
+<span class="n">s</span><span class="p">(</span><span class="s2">"Infinite series:"</span><span class="p">,</span> <span class="n">infinite_series</span><span class="o">.</span><span class="n">n</span><span class="p">())</span>
 
 <span class="c1"># Series to Formula: Taylor series for e^x</span>
 <span class="n">series_exp</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1"># Series</span>
 <span class="n">formula_exp</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>              <span class="c1"># Formula</span>
-<span class="n">s</span><span class="p">(</span><span class="s2">&quot;Series:&quot;</span><span class="p">,</span> <span class="n">series_exp</span><span class="p">)</span>
-<span class="n">s</span><span class="p">(</span><span class="s2">&quot;Formula:&quot;</span><span class="p">,</span> <span class="n">formula_exp</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="s2">"Series:"</span><span class="p">,</span> <span class="n">series_exp</span><span class="p">)</span>
+<span class="n">s</span><span class="p">(</span><span class="s2">"Formula:"</span><span class="p">,</span> <span class="n">formula_exp</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3415,7 +3413,7 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A Simple Category: with composition and identity morphisms</span>
 <span class="n">G</span> <span class="o">=</span> <span class="n">DiGraph</span><span class="p">(</span> <span class="p">{</span><span class="mi">1</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">2</span> <span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="mi">3</span> <span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">]})</span>
-<span class="n">G</span><span class="o">.</span><span class="n">add_edges</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;g∘f&quot;</span><span class="p">)</span>  <span class="p">])</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_edges</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"f"</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">"g"</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">"g∘f"</span><span class="p">)</span>  <span class="p">])</span>
 <span class="n">G</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">edge_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
 </pre></div>
 </div>
@@ -3425,7 +3423,7 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This graph is not a category because there is no explicit composition </span>
 <span class="n">G</span> <span class="o">=</span> <span class="n">DiGraph</span><span class="p">()</span>
-<span class="n">G</span><span class="o">.</span><span class="n">add_edges</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)])</span>  <span class="c1"># Missing (1, 3, &quot;g∘f&quot;)</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_edges</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"f"</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">"g"</span><span class="p">)])</span>  <span class="c1"># Missing (1, 3, "g∘f")</span>
 <span class="n">G</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">edge_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -3435,7 +3433,7 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This graph is not a category because it lacks identity morphisms</span>
 <span class="n">G</span> <span class="o">=</span> <span class="n">DiGraph</span><span class="p">()</span>
-<span class="n">G</span><span class="o">.</span><span class="n">add_edges</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)])</span>  <span class="c1"># No identity morphisms</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_edges</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"f"</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"g"</span><span class="p">)])</span>  <span class="c1"># No identity morphisms</span>
 <span class="n">G</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">edge_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>

@@ -448,7 +448,7 @@ def partition_numbers(n_max):
 
 # Display p(n) for n=0..20
 p_values = partition_numbers(20)
-print(&quot;n&quot;, &quot;p(n)&quot;)
+print("n", "p(n)")
 for i in range(len(p_values)):
     print(i, p_values[i])
 </pre></div>
@@ -483,7 +483,7 @@ def distinct_partitions(n_max):
     return coeffs
 
 q_values = distinct_partitions(20)
-print(&quot;n&quot;, &quot;q(n)&quot;)
+print("n", "q(n)")
 for i in range(len(q_values)):
     print(i, q_values[i])
 </pre></div>
@@ -512,7 +512,7 @@ def plane_partitions(n_max):
     # approximate product up to k where k contributes at least to n_max
     for k in range(1, n_max+1):
         # (1 - x^k)^{-k} = (1 + x^k + x^{2k} + ...)^k (k-fold convolution)
-        # We&#39;ll multiply by (1 - x^k)^{-1} k times
+        # We'll multiply by (1 - x^k)^{-1} k times
         for _ in range(k):
             # multiply coeffs by 1/(1 - x^k)
             for n in range(n_max, k-1, -1):
@@ -521,7 +521,7 @@ def plane_partitions(n_max):
     return coeffs
 
 pl_values = plane_partitions(15)
-print(&quot;n&quot;, &quot;PL(n)&quot;)
+print("n", "PL(n)")
 for i in range(len(pl_values)):
     print(i, pl_values[i])
 </pre></div>
@@ -558,7 +558,7 @@ def binary_partitions(n_max):
     return b
 
 b_values = binary_partitions(20)
-print(&quot;n&quot;, &quot;b(n)&quot;)
+print("n", "b(n)")
 for i in range(len(b_values)):
     print(i, b_values[i])
 </pre></div>
@@ -595,7 +595,7 @@ def ordered_factorizations(m_max):
 m_max = 21
 H = ordered_factorizations(m_max)
 a_values = [H[n+1] for n in range(m_max)]
-print(&quot;n&quot;, &quot;a(n)&quot;)
+print("n", "a(n)")
 for i in range(len(a_values)):
     print(i, a_values[i])
 </pre></div>

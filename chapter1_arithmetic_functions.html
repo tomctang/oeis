@@ -548,9 +548,9 @@ rac{q^k}{1-q^k}\)</span>, a <span class="math notranslate nohighlight">\(q\)</sp
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DIVISOR FUNCTION d(n)&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"="</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"DIVISOR FUNCTION d(n)"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"="</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -559,8 +559,8 @@ rac{q^k}{1-q^k}\)</span>, a <span class="math notranslate nohighlight">\(q\)</sp
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 <span class="c1"># --- 1. Direct Computation ---</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span>
-<span class="mf">1.</span> <span class="n">First</span> <span class="mi">20</span> <span class="n">values</span> <span class="n">of</span> <span class="n">d</span><span class="p">(</span><span class="n">n</span><span class="p">):</span><span class="s2">&quot;)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span>
+<span class="mf">1.</span> <span class="n">First</span> <span class="mi">20</span> <span class="n">values</span> <span class="n">of</span> <span class="n">d</span><span class="p">(</span><span class="n">n</span><span class="p">):</span><span class="s2">")</span>
 <span class="c1"># Use the divisor function sigma(n,0) which counts the number of divisors</span>
 <span class="n">vals</span> <span class="o">=</span> <span class="p">[</span><span class="n">sigma</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">21</span><span class="p">)]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span>
@@ -572,8 +572,8 @@ rac{q^k}{1-q^k}\)</span>, a <span class="math notranslate nohighlight">\(q\)</sp
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 <span class="c1"># --- 2. Multiplicativity Check ---</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span>
-<span class="mf">2.</span> <span class="n">Multiplicativity</span><span class="p">:</span> <span class="n">d</span><span class="p">(</span><span class="n">ab</span><span class="p">)</span> <span class="o">=</span> <span class="n">d</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="n">d</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="n">when</span> <span class="n">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span><span class="o">=</span><span class="mi">1</span><span class="s2">&quot;)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span>
+<span class="mf">2.</span> <span class="n">Multiplicativity</span><span class="p">:</span> <span class="n">d</span><span class="p">(</span><span class="n">ab</span><span class="p">)</span> <span class="o">=</span> <span class="n">d</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="n">d</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="n">when</span> <span class="n">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span><span class="o">=</span><span class="mi">1</span><span class="s2">")</span>
 <span class="c1"># Test random coprime pairs</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">gcd</span>
@@ -587,8 +587,8 @@ rac{q^k}{1-q^k}\)</span>, a <span class="math notranslate nohighlight">\(q\)</sp
         <span class="n">rhs</span> <span class="o">=</span> <span class="n">sigma</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="o">*</span> <span class="n">sigma</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">lhs</span> <span class="o">!=</span> <span class="n">rhs</span><span class="p">:</span>
             <span class="n">ok</span> <span class="o">=</span> <span class="kc">False</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Failure at a=</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">, b=</span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">: d(ab)=</span><span class="si">{</span><span class="n">lhs</span><span class="si">}</span><span class="s2">, d(a)d(b)=</span><span class="si">{</span><span class="n">rhs</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Multiplicativity holds? </span><span class="si">{</span><span class="n">ok</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   Failure at a=</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">, b=</span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">: d(ab)=</span><span class="si">{</span><span class="n">lhs</span><span class="si">}</span><span class="s2">, d(a)d(b)=</span><span class="si">{</span><span class="n">rhs</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   Multiplicativity holds? </span><span class="si">{</span><span class="n">ok</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -597,8 +597,8 @@ rac{q^k}{1-q^k}\)</span>, a <span class="math notranslate nohighlight">\(q\)</sp
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 <span class="c1"># --- 3. Dirichlet Series: ζ(s)^2 versus Σ d(n)/n^s ---</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span>
-<span class="mf">3.</span> <span class="n">Dirichlet</span> <span class="n">series</span> <span class="n">approximation</span> <span class="k">for</span> <span class="n">s</span><span class="o">=</span><span class="mi">2</span><span class="p">:</span><span class="s2">&quot;)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span>
+<span class="mf">3.</span> <span class="n">Dirichlet</span> <span class="n">series</span> <span class="n">approximation</span> <span class="k">for</span> <span class="n">s</span><span class="o">=</span><span class="mi">2</span><span class="p">:</span><span class="s2">")</span>
 
 <span class="c1"># Choose s and partial sum cutoff N</span>
 <span class="n">s</span> <span class="o">=</span> <span class="mi">2</span>
@@ -611,9 +611,9 @@ rac{q^k}{1-q^k}\)</span>, a <span class="math notranslate nohighlight">\(q\)</sp
 <span class="n">zeta_val</span> <span class="o">=</span> <span class="n">zeta</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 <span class="n">product_val</span> <span class="o">=</span> <span class="n">zeta_val</span><span class="o">^</span><span class="mi">2</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Partial sum Σ_</span><span class="si">{</span><span class="mi">1</span><span class="err">≤</span><span class="n">n</span><span class="err">≤</span><span class="p">{</span><span class="n">N</span><span class="p">}</span><span class="si">}</span><span class="s2"> d(n)/n^</span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s2"> ≈ </span><span class="si">{</span><span class="n">partial_sum</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="n">digits</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   ζ(</span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s2">)^2 = </span><span class="si">{</span><span class="n">product_val</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="n">digits</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Approximation error: </span><span class="si">{</span><span class="p">(</span><span class="n">product_val</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">partial_sum</span><span class="p">)</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="n">digits</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   Partial sum Σ_</span><span class="si">{</span><span class="mi">1</span><span class="err">≤</span><span class="n">n</span><span class="err">≤</span><span class="p">{</span><span class="n">N</span><span class="p">}</span><span class="si">}</span><span class="s2"> d(n)/n^</span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s2"> ≈ </span><span class="si">{</span><span class="n">partial_sum</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="n">digits</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   ζ(</span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s2">)^2 = </span><span class="si">{</span><span class="n">product_val</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="n">digits</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   Approximation error: </span><span class="si">{</span><span class="p">(</span><span class="n">product_val</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">partial_sum</span><span class="p">)</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="n">digits</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -622,8 +622,8 @@ rac{q^k}{1-q^k}\)</span>, a <span class="math notranslate nohighlight">\(q\)</sp
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 <span class="c1"># --- 4. Prime Power Property ---</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span>
-<span class="mf">4.</span> <span class="n">d</span><span class="p">(</span><span class="n">p</span><span class="o">^</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="n">k</span><span class="o">+</span><span class="mi">1</span> <span class="k">for</span> <span class="n">prime</span> <span class="n">p</span> <span class="ow">and</span> <span class="n">exponent</span> <span class="n">k</span><span class="s2">&quot;)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span>
+<span class="mf">4.</span> <span class="n">d</span><span class="p">(</span><span class="n">p</span><span class="o">^</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="n">k</span><span class="o">+</span><span class="mi">1</span> <span class="k">for</span> <span class="n">prime</span> <span class="n">p</span> <span class="ow">and</span> <span class="n">exponent</span> <span class="n">k</span><span class="s2">")</span>
 
 <span class="n">primes_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">11</span><span class="p">]</span>
 <span class="n">exponents</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
@@ -635,8 +635,8 @@ rac{q^k}{1-q^k}\)</span>, a <span class="math notranslate nohighlight">\(q\)</sp
         <span class="n">rhs</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span>
         <span class="k">if</span> <span class="n">lhs</span> <span class="o">!=</span> <span class="n">rhs</span><span class="p">:</span>
             <span class="n">all_good</span> <span class="o">=</span> <span class="kc">False</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Mismatch at p=</span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">, k=</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">: d(p^k)=</span><span class="si">{</span><span class="n">lhs</span><span class="si">}</span><span class="s2">, expected </span><span class="si">{</span><span class="n">rhs</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Property holds for tested primes/exponents? </span><span class="si">{</span><span class="n">all_good</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   Mismatch at p=</span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">, k=</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">: d(p^k)=</span><span class="si">{</span><span class="n">lhs</span><span class="si">}</span><span class="s2">, expected </span><span class="si">{</span><span class="n">rhs</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   Property holds for tested primes/exponents? </span><span class="si">{</span><span class="n">all_good</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -645,8 +645,8 @@ rac{q^k}{1-q^k}\)</span>, a <span class="math notranslate nohighlight">\(q\)</sp
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 <span class="c1"># --- 5. Dirichlet Convolution: d = 1 * 1 ---</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span>
-<span class="mf">5.</span> <span class="n">Dirichlet</span> <span class="n">convolution</span><span class="p">:</span> <span class="n">verify</span> <span class="n">d</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">*</span><span class="mi">1</span><span class="p">)(</span><span class="n">n</span><span class="p">)</span><span class="s2">&quot;)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span>
+<span class="mf">5.</span> <span class="n">Dirichlet</span> <span class="n">convolution</span><span class="p">:</span> <span class="n">verify</span> <span class="n">d</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">*</span><span class="mi">1</span><span class="p">)(</span><span class="n">n</span><span class="p">)</span><span class="s2">")</span>
 
 <span class="c1"># Define constant function 1 on positive integers</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">f_const_one</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -663,8 +663,8 @@ rac{q^k}{1-q^k}\)</span>, a <span class="math notranslate nohighlight">\(q\)</sp
     <span class="n">conv</span> <span class="o">=</span> <span class="n">dirichlet_convolution</span><span class="p">(</span><span class="n">f_const_one</span><span class="p">,</span> <span class="n">f_const_one</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">conv</span> <span class="o">!=</span> <span class="n">sigma</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="mi">0</span><span class="p">):</span>
         <span class="n">valid</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Failure at n=</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">: convolution </span><span class="si">{</span><span class="n">conv</span><span class="si">}</span><span class="s2">, d(n)=</span><span class="si">{</span><span class="n">sigma</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Dirichlet convolution identity holds for n≤20? </span><span class="si">{</span><span class="n">valid</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   Failure at n=</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">: convolution </span><span class="si">{</span><span class="n">conv</span><span class="si">}</span><span class="s2">, d(n)=</span><span class="si">{</span><span class="n">sigma</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   Dirichlet convolution identity holds for n≤20? </span><span class="si">{</span><span class="n">valid</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -673,8 +673,8 @@ rac{q^k}{1-q^k}\)</span>, a <span class="math notranslate nohighlight">\(q\)</sp
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 <span class="c1"># --- 6. q-Series Generating Function ---</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span>
-<span class="mf">6.</span> <span class="n">q</span><span class="o">-</span><span class="n">Series</span><span class="p">:</span> <span class="n">Σ</span> <span class="n">d</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="n">q</span><span class="o">^</span><span class="n">n</span> <span class="o">=</span> <span class="n">Σ_</span><span class="p">{</span><span class="n">k</span><span class="err">≥</span><span class="mi">1</span><span class="p">}</span> <span class="n">q</span><span class="o">^</span><span class="n">k</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">q</span><span class="o">^</span><span class="n">k</span><span class="p">)</span><span class="s2">&quot;)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span>
+<span class="mf">6.</span> <span class="n">q</span><span class="o">-</span><span class="n">Series</span><span class="p">:</span> <span class="n">Σ</span> <span class="n">d</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="n">q</span><span class="o">^</span><span class="n">n</span> <span class="o">=</span> <span class="n">Σ_</span><span class="p">{</span><span class="n">k</span><span class="err">≥</span><span class="mi">1</span><span class="p">}</span> <span class="n">q</span><span class="o">^</span><span class="n">k</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">q</span><span class="o">^</span><span class="n">k</span><span class="p">)</span><span class="s2">")</span>
 
 <span class="c1"># Power series ring to expand both sides</span>
 <span class="n">R</span><span class="o">.&lt;</span><span class="n">q</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">PowerSeriesRing</span><span class="p">(</span><span class="n">QQ</span><span class="p">,</span> <span class="n">default_prec</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
@@ -685,14 +685,14 @@ rac{q^k}{1-q^k}\)</span>, a <span class="math notranslate nohighlight">\(q\)</sp
 <span class="c1"># Right-hand side: sum over k of q^k/(1 - q^k)</span>
 <span class="n">rhs_series</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">q</span><span class="o">^</span><span class="n">k</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">q</span><span class="o">^</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>  <span class="c1"># finite sum approximation</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   LHS coefficients: </span><span class="si">{</span><span class="n">lhs_series</span><span class="o">.</span><span class="n">list</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   RHS coefficients (approx): </span><span class="si">{</span><span class="n">rhs_series</span><span class="o">.</span><span class="n">list</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   LHS coefficients: </span><span class="si">{</span><span class="n">lhs_series</span><span class="o">.</span><span class="n">list</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   RHS coefficients (approx): </span><span class="si">{</span><span class="n">rhs_series</span><span class="o">.</span><span class="n">list</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="c1"># Check first few coefficients match</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">lists_match</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">cut</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">all</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">cut</span><span class="p">))</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Do the first 10 coefficients agree? </span><span class="si">{</span><span class="n">lists_match</span><span class="p">(</span><span class="n">lhs_series</span><span class="o">.</span><span class="n">list</span><span class="p">(),</span><span class="w"> </span><span class="n">rhs_series</span><span class="o">.</span><span class="n">list</span><span class="p">(),</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   Do the first 10 coefficients agree? </span><span class="si">{</span><span class="n">lists_match</span><span class="p">(</span><span class="n">lhs_series</span><span class="o">.</span><span class="n">list</span><span class="p">(),</span><span class="w"> </span><span class="n">rhs_series</span><span class="o">.</span><span class="n">list</span><span class="p">(),</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -720,8 +720,8 @@ rac{q^k}{1-q^k}\)</span> by grouping divisors according to their contribution.  
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A000010 – TOTIENT FUNCTION&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"="</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"A000010 – TOTIENT FUNCTION"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -731,7 +731,7 @@ rac{q^k}{1-q^k}\)</span> by grouping divisors according to their contribution.  
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- φ(n) Direct Computation ---</span>
 <span class="n">N</span> <span class="o">=</span> <span class="mi">20</span>
 <span class="n">phi_values</span> <span class="o">=</span> <span class="p">[</span><span class="n">phi</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;φ(n) for n=1..20:&quot;</span><span class="p">,</span> <span class="n">phi_values</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"φ(n) for n=1..20:"</span><span class="p">,</span> <span class="n">phi_values</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -744,8 +744,8 @@ rac{q^k}{1-q^k}\)</span> by grouping divisors according to their contribution.  
     <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">phi</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">)</span> <span class="o">!=</span> <span class="n">phi</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">phi</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Multiplicativity failed at&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Multiplicativity holds for a,b ≤ 10&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"Multiplicativity failed at"</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Multiplicativity holds for a,b ≤ 10"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -764,8 +764,8 @@ rac{q^k}{1-q^k}\)</span> by grouping divisors according to their contribution.  
 <span class="n">mp</span><span class="o">.</span><span class="n">dps</span> <span class="o">=</span> <span class="mi">30</span>
 <span class="n">zeta</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">zeta</span>
 <span class="n">approx</span> <span class="o">=</span> <span class="n">zeta</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">zeta</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Σ φ(n)/n^s (partial, 2000 terms) ≈&quot;</span><span class="p">,</span> <span class="n">partial_sum</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ζ(s-1)/ζ(s) ≈&quot;</span><span class="p">,</span> <span class="n">approx</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Σ φ(n)/n^s (partial, 2000 terms) ≈"</span><span class="p">,</span> <span class="n">partial_sum</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"ζ(s-1)/ζ(s) ≈"</span><span class="p">,</span> <span class="n">approx</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -777,8 +777,8 @@ rac{q^k}{1-q^k}\)</span> by grouping divisors according to their contribution.  
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">):</span>
     <span class="n">conv</span> <span class="o">=</span> <span class="n">dirichlet_convolution</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">conv</span> <span class="o">!=</span> <span class="n">phi</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Möbius inversion failed at&quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Möbius inversion holds for n ≤ 50&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Möbius inversion failed at"</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Möbius inversion holds for n ≤ 50"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -797,8 +797,8 @@ rac{q^k}{1-q^k}\)</span> by grouping divisors according to their contribution.  
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A000203 – SUM OF DIVISORS&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"="</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"A000203 – SUM OF DIVISORS"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -808,7 +808,7 @@ rac{q^k}{1-q^k}\)</span> by grouping divisors according to their contribution.  
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- σ(n) Direct Computation ---</span>
 <span class="n">N</span><span class="o">=</span><span class="mi">20</span>
 <span class="n">sigma_values</span><span class="o">=</span><span class="p">[</span><span class="n">sigma</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;σ(n) for n=1..20:&quot;</span><span class="p">,</span> <span class="n">sigma_values</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"σ(n) for n=1..20:"</span><span class="p">,</span> <span class="n">sigma_values</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -820,8 +820,8 @@ rac{q^k}{1-q^k}\)</span> by grouping divisors according to their contribution.  
     <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">sigma</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">)</span> <span class="o">!=</span> <span class="n">sigma</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">sigma</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Multiplicativity failed at&quot;</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Multiplicativity holds for a,b ≤ 10&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"Multiplicativity failed at"</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Multiplicativity holds for a,b ≤ 10"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -834,8 +834,8 @@ rac{q^k}{1-q^k}\)</span> by grouping divisors according to their contribution.  
 <span class="kn">import</span><span class="w"> </span><span class="nn">mpmath</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mp</span>
 <span class="n">mp</span><span class="o">.</span><span class="n">dps</span> <span class="o">=</span> <span class="mi">30</span>
 <span class="n">approx</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">zeta</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">*</span><span class="n">mp</span><span class="o">.</span><span class="n">zeta</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Σ σ(n)/n^s (partial, 2000 terms) ≈&quot;</span><span class="p">,</span> <span class="n">partial_sum</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ζ(s)ζ(s-1) ≈&quot;</span><span class="p">,</span> <span class="n">approx</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Σ σ(n)/n^s (partial, 2000 terms) ≈"</span><span class="p">,</span> <span class="n">partial_sum</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"ζ(s)ζ(s-1) ≈"</span><span class="p">,</span> <span class="n">approx</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -847,8 +847,8 @@ rac{q^k}{1-q^k}\)</span> by grouping divisors according to their contribution.  
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">50</span><span class="p">):</span>
     <span class="n">conv</span> <span class="o">=</span> <span class="n">dirichlet_convolution</span><span class="p">(</span><span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="n">m</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">conv</span> <span class="o">!=</span> <span class="n">sigma</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Convolution failed at&quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;σ = id * 1 holds for n ≤ 50&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Convolution failed at"</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"σ = id * 1 holds for n ≤ 50"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -867,8 +867,8 @@ rac{q^k}{1-q^k}\)</span> by grouping divisors according to their contribution.  
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A001065 – SUM OF PROPER DIVISORS&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"="</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"A001065 – SUM OF PROPER DIVISORS"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -880,12 +880,12 @@ rac{q^k}{1-q^k}\)</span> by grouping divisors according to their contribution.  
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
     <span class="n">sp</span> <span class="o">=</span> <span class="n">s_proper</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">sp</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
-        <span class="n">tag</span> <span class="o">=</span> <span class="s2">&quot;deficient&quot;</span>
+        <span class="n">tag</span> <span class="o">=</span> <span class="s2">"deficient"</span>
     <span class="k">elif</span> <span class="n">sp</span> <span class="o">&gt;</span> <span class="n">n</span><span class="p">:</span>
-        <span class="n">tag</span> <span class="o">=</span> <span class="s2">&quot;abundant&quot;</span>
+        <span class="n">tag</span> <span class="o">=</span> <span class="s2">"abundant"</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">tag</span> <span class="o">=</span> <span class="s2">&quot;perfect&quot;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;n=</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">, s(n)=</span><span class="si">{</span><span class="n">sp</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">tag</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">tag</span> <span class="o">=</span> <span class="s2">"perfect"</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"n=</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">, s(n)=</span><span class="si">{</span><span class="n">sp</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">tag</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -904,8 +904,8 @@ rac{q^k}{1-q^k}\)</span> by grouping divisors according to their contribution.  
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A001221 – NUMBER OF DISTINCT PRIME FACTORS&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"="</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"A001221 – NUMBER OF DISTINCT PRIME FACTORS"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -915,7 +915,7 @@ rac{q^k}{1-q^k}\)</span> by grouping divisors according to their contribution.  
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- ω(n) Direct Computation ---</span>
 <span class="n">N</span><span class="o">=</span><span class="mi">20</span>
 <span class="n">omega_vals</span><span class="o">=</span><span class="p">[</span><span class="n">omega</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ω(n) for n=1..20:&quot;</span><span class="p">,</span> <span class="n">omega_vals</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"ω(n) for n=1..20:"</span><span class="p">,</span> <span class="n">omega_vals</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -928,8 +928,8 @@ rac{q^k}{1-q^k}\)</span> by grouping divisors according to their contribution.  
     <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">omega</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">)</span> <span class="o">!=</span> <span class="n">omega</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">omega</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Additivity failed at&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Additivity holds for a,b ≤ 10&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"Additivity failed at"</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Additivity holds for a,b ≤ 10"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -948,8 +948,8 @@ rac{q^k}{1-q^k}\)</span> by grouping divisors according to their contribution.  
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A001222 – TOTAL NUMBER OF PRIME FACTORS&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"="</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"A001222 – TOTAL NUMBER OF PRIME FACTORS"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -959,7 +959,7 @@ rac{q^k}{1-q^k}\)</span> by grouping divisors according to their contribution.  
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- Ω(n) Direct Computation ---</span>
 <span class="n">N</span><span class="o">=</span><span class="mi">20</span>
 <span class="n">Omega_vals</span><span class="o">=</span><span class="p">[</span><span class="n">Omega</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ω(n) for n=1..20:&quot;</span><span class="p">,</span> <span class="n">Omega_vals</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Ω(n) for n=1..20:"</span><span class="p">,</span> <span class="n">Omega_vals</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -970,8 +970,8 @@ rac{q^k}{1-q^k}\)</span> by grouping divisors according to their contribution.  
 <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">Omega</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">)</span> <span class="o">!=</span> <span class="n">Omega</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">Omega</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Complete additivity failed at&quot;</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Complete additivity holds for a,b ≤ 10&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Complete additivity failed at"</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Complete additivity holds for a,b ≤ 10"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -990,8 +990,8 @@ rac{q^k}{1-q^k}\)</span> by grouping divisors according to their contribution.  
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A008683 – MÖBIUS FUNCTION&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"="</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"A008683 – MÖBIUS FUNCTION"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1001,7 +1001,7 @@ rac{q^k}{1-q^k}\)</span> by grouping divisors according to their contribution.  
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- μ(n) Direct Computation ---</span>
 <span class="n">N</span><span class="o">=</span><span class="mi">20</span>
 <span class="n">mu_vals</span><span class="o">=</span><span class="p">[</span><span class="n">mu</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;μ(n) for n=1..20:&quot;</span><span class="p">,</span> <span class="n">mu_vals</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"μ(n) for n=1..20:"</span><span class="p">,</span> <span class="n">mu_vals</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1013,8 +1013,8 @@ rac{q^k}{1-q^k}\)</span> by grouping divisors according to their contribution.  
     <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">mu</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">)</span> <span class="o">!=</span> <span class="n">mu</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">mu</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Multiplicativity failed at&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Multiplicativity holds for a,b ≤ 10&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"Multiplicativity failed at"</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Multiplicativity holds for a,b ≤ 10"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1026,8 +1026,8 @@ rac{q^k}{1-q^k}\)</span> by grouping divisors according to their contribution.  
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">50</span><span class="p">):</span>
     <span class="n">s</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">mu</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">d</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">s</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Summatory μ failed at&quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Summatory μ holds for n ≤ 49&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Summatory μ failed at"</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Summatory μ holds for n ≤ 49"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1041,8 +1041,8 @@ rac{q^k}{1-q^k}\)</span> by grouping divisors according to their contribution.  
 <span class="kn">import</span><span class="w"> </span><span class="nn">mpmath</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mp</span>
 <span class="n">mp</span><span class="o">.</span><span class="n">dps</span><span class="o">=</span><span class="mi">30</span>
 <span class="n">approx</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="n">mp</span><span class="o">.</span><span class="n">zeta</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Σ μ(n)/n^s (partial,2000 terms) ≈&quot;</span><span class="p">,</span> <span class="n">partial_sum</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1/ζ(s) ≈&quot;</span><span class="p">,</span> <span class="n">approx</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Σ μ(n)/n^s (partial,2000 terms) ≈"</span><span class="p">,</span> <span class="n">partial_sum</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"1/ζ(s) ≈"</span><span class="p">,</span> <span class="n">approx</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1061,8 +1061,8 @@ rac{q^k}{1-q^k}\)</span> by grouping divisors according to their contribution.  
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A000720 – PRIME COUNTING FUNCTION&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"="</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"A000720 – PRIME COUNTING FUNCTION"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1072,7 +1072,7 @@ rac{q^k}{1-q^k}\)</span> by grouping divisors according to their contribution.  
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- π(n) Direct Computation ---</span>
 <span class="n">N</span><span class="o">=</span><span class="mi">50</span>
 <span class="n">pi_vals</span><span class="o">=</span><span class="p">[</span><span class="n">pi_fn</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;π(n) for n=1..50:&quot;</span><span class="p">,</span> <span class="n">pi_vals</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"π(n) for n=1..50:"</span><span class="p">,</span> <span class="n">pi_vals</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1084,7 +1084,7 @@ rac{q^k}{1-q^k}\)</span> by grouping divisors according to their contribution.  
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">200</span><span class="p">]:</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
         <span class="n">approx</span> <span class="o">=</span> <span class="n">n</span><span class="o">/</span><span class="n">log</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;n=</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">, π(n)=</span><span class="si">{</span><span class="n">pi_fn</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">}</span><span class="s2">, n/log(n)=</span><span class="si">{</span><span class="n">approx</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, ratio=</span><span class="si">{</span><span class="n">pi_fn</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">/</span><span class="n">approx</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"n=</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">, π(n)=</span><span class="si">{</span><span class="n">pi_fn</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">}</span><span class="s2">, n/log(n)=</span><span class="si">{</span><span class="n">approx</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, ratio=</span><span class="si">{</span><span class="n">pi_fn</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">/</span><span class="n">approx</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1103,8 +1103,8 @@ rac{q^k}{1-q^k}\)</span> by grouping divisors according to their contribution.  
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A002110 – PRIMORIALS&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"="</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"A002110 – PRIMORIALS"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1114,7 +1114,7 @@ rac{q^k}{1-q^k}\)</span> by grouping divisors according to their contribution.  
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- Primorial Direct Computation ---</span>
 <span class="c1"># Compute first 6 primorials</span>
 <span class="n">primorials</span><span class="o">=</span><span class="p">[</span><span class="n">primorial</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">)]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Primorials p_n# for n=1..6:&quot;</span><span class="p">,</span> <span class="n">primorials</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Primorials p_n# for n=1..6:"</span><span class="p">,</span> <span class="n">primorials</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1128,7 +1128,7 @@ rac{q^k}{1-q^k}\)</span> by grouping divisors according to their contribution.  
     <span class="n">candidate</span> <span class="o">=</span> <span class="n">p</span> <span class="o">+</span> <span class="mi">1</span>
     <span class="c1"># test if candidate has prime factor &gt; last prime used</span>
     <span class="n">pf</span> <span class="o">=</span> <span class="n">prime_factors</span><span class="p">(</span><span class="n">candidate</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;n=</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">, p_n#=</span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">, p_n#+1=</span><span class="si">{</span><span class="n">candidate</span><span class="si">}</span><span class="s2">, factors=</span><span class="si">{</span><span class="n">pf</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"n=</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">, p_n#=</span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">, p_n#+1=</span><span class="si">{</span><span class="n">candidate</span><span class="si">}</span><span class="s2">, factors=</span><span class="si">{</span><span class="n">pf</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

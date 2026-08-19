@@ -508,16 +508,16 @@ document.write(`
 
 <span class="c1">## approximately equal</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
-<span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">3.14159</span><span class="p">)</span> <span class="c1"># math.isclose doesn&#39;t have a third argument for tolerance, so this is false</span>
+<span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">3.14159</span><span class="p">)</span> <span class="c1"># math.isclose doesn't have a third argument for tolerance, so this is false</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">numpy.testing</span><span class="w"> </span><span class="kn">import</span> <span class="n">assert_almost_equal</span>
 <span class="n">assert_almost_equal</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">3.14159</span><span class="p">,</span> <span class="mf">1e-5</span><span class="p">)</span> <span class="c1"># we gave it a the tolerance we want, 5 decimal places. </span>
-<span class="c1"># This is actually a unit test, equivalent to &quot;assert isclose(x,y)&quot;, read on for more. </span>
+<span class="c1"># This is actually a unit test, equivalent to "assert isclose(x,y)", read on for more. </span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">almost_equal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mi">7</span><span class="p">):</span> 
-<span class="w">  </span><span class="sd">&#39;&#39;&#39; you can make your own! </span>
+<span class="w">  </span><span class="sd">''' you can make your own! </span>
 <span class="sd">  in numpy, 1e-7 is the default epsilon</span>
-<span class="sd">  &#39;&#39;&#39;</span>
+<span class="sd">  '''</span>
   <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="o">**</span> <span class="o">-</span><span class="n">epsilon</span>
 
 </pre></div>
@@ -551,7 +551,7 @@ document.write(`
 <p>In math, when I write 1 + 1 = 2 I’m making a <em>judgment</em>. It’s not that i’m asking the world (or the chalkboard) for a bool, it’s that I’m keeping track of my beliefs. This distinction is the foundation of <em>unit tests</em> or <em>assertions</em>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 <span class="c1"># assert in python takes an expression that lands in bool and a string to be printed if it turns out false. </span>
-<span class="k">assert</span> <span class="n">plus</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;DANGER: PHYSICS IS BROKEN. PLEASE STAY INSIDE. &quot;</span>
+<span class="k">assert</span> <span class="n">plus</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"DANGER: PHYSICS IS BROKEN. PLEASE STAY INSIDE. "</span>
 </pre></div>
 </div>
 </section>
@@ -579,7 +579,7 @@ document.write(`
 <span class="c1"># Out: (1+1j)s</span>
 
 <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">complex</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
-<span class="c1"># TypeError: can&#39;t convert complex to float</span>
+<span class="c1"># TypeError: can't convert complex to float</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">cmath</span>
 <span class="n">cmath</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">complex</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
@@ -604,11 +604,11 @@ complex numbers of different sizes/precisions.</p>
 convenience of numpy. Importantly, other numpy methods are better at <em>casting</em>
 to and from complex.</p>
 <p>observe the following <a class="reference external" href="https://www.math-only-math.com/the-cube-roots-of-unity.html">cube roots of unity</a></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z1</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">complex</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span> <span class="c1"># Numpy&#39;s constructor is basically the same.  </span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z1</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">complex</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span> <span class="c1"># Numpy's constructor is basically the same.  </span>
 <span class="n">z2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">z1</span><span class="p">)</span> <span class="c1"># but numpy gives us a conjugation function, while the standard module does not. </span>
 
 <span class="k">assert</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">z1</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">z2</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
-<span class="c1"># TypeError: can&#39;t convert complex to float</span>
+<span class="c1"># TypeError: can't convert complex to float</span>
 
 <span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_almost_equal</span><span class="p">(</span><span class="n">z1</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">z2</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
@@ -705,7 +705,7 @@ to and from complex.</p>
 <p>Here, we get <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">-1]</span></code>, which is perpendicular to both <strong>k</strong> and <strong>j</strong>.</p>
 <p>Our <code class="docutils literal notranslate"><span class="pre">cross</span></code> function:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">cross</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span> 
-<span class="w">  </span><span class="sd">&#39;&#39;&#39; take two 3D vectors and return their cross product. &#39;&#39;&#39;</span>
+<span class="w">  </span><span class="sd">''' take two 3D vectors and return their cross product. '''</span>
   <span class="n">rx</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
   <span class="n">ry</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
   <span class="n">rz</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -732,7 +732,7 @@ following (and try to <a class="reference external" href="http://mathcentral.ure
 proof</a>. The legend
 of how Gauss discovered I can only describe as “typical programmer antics”):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sum_to_n</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<span class="w">  </span><span class="sd">&#39;&#39;&#39; return the sum of integers from 0 to n&#39;&#39;&#39;</span>
+<span class="w">  </span><span class="sd">''' return the sum of integers from 0 to n'''</span>
   <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -773,7 +773,7 @@ dealing with finite sums, the order does not matter.</p>
 <p>This was removed from vanilla python for python 3, but it’s easy to recover with
 a generalization of the list accumulator.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">times</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> 
-<span class="w">  </span><span class="sd">&#39;&#39;&#39; first, give a name to the multiplication operator &#39;&#39;&#39;</span>
+<span class="w">  </span><span class="sd">''' first, give a name to the multiplication operator '''</span>
   <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">reduce</span>
@@ -872,7 +872,7 @@ is interpreted as hitting a <strong>coordinate system</strong> with a
 <em>squisher-stretcher-rotater</em>, the determinant of that matrix is the <strong>measure of
 how much the unit area/volume of the coordinate system got
 squished-stretched-rotated</strong>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span> <span class="c1"># the determinant of the 100 x 100 identity matrix is still one, because the identity matrix doesn&#39;t squish, stretch, or rotate at all. </span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span> <span class="c1"># the determinant of the 100 x 100 identity matrix is still one, because the identity matrix doesn't squish, stretch, or rotate at all. </span>
 <span class="c1"># Out: 1.0</span>
 
 <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]))</span> <span class="c1"># 90 degree rotation. </span>
@@ -917,7 +917,7 @@ is the operation that deletes magnitude and preserves direction.</p>
 before reading this…</p>
 <p>Go, I mean it!</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">normalize</span><span class="p">(</span><span class="n">vec</span><span class="p">):</span>
-<span class="w">  </span><span class="sd">&#39;&#39;&#39; *sigh* if you don&#39;t do it yourself you&#39;ll never learn! &#39;&#39;&#39;</span>
+<span class="w">  </span><span class="sd">''' *sigh* if you don't do it yourself you'll never learn! '''</span>
   <span class="n">vec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">vec</span><span class="p">)</span> <span class="c1"># ensure that input is casted to numpy</span>
   <span class="n">length</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">vec</span><span class="p">)</span>
   <span class="k">if</span> <span class="n">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -1168,9 +1168,9 @@ f :&\mathbb{R} \rightarrow \mathbb{R}\\
 <p>The arrow here (without a tail) is used to map one <em>set</em> to another.</p>
 <p>In Python and other dynamically typed languages, you might use documentation and/or runtime checks to explain and validate a function’s input/output. Example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">square_ints</span><span class="p">(</span><span class="n">k</span><span class="p">):</span> 
-<span class="w">  </span><span class="sd">&#39;&#39;&#39; FEED ME INTEGER &#39;&#39;&#39;</span>
+<span class="w">  </span><span class="sd">''' FEED ME INTEGER '''</span>
   <span class="k">try</span><span class="p">:</span> 
-    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nb">int</span><span class="p">),</span> <span class="s2">&quot;I HUNGER FOR AN INTEGER! &quot;</span>
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nb">int</span><span class="p">),</span> <span class="s2">"I HUNGER FOR AN INTEGER! "</span>
     <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
   <span class="k">except</span> <span class="ne">AssertionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
     <span class="k">raise</span> <span class="n">e</span>
@@ -1184,11 +1184,11 @@ code with type errors from compiling</em> for Python yet.</p>
 interpretation of domain and codomain makes way for a <em>types</em> interpretation of
 domain and codomain</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span> 
-<span class="w">  </span><span class="sd">&#39;&#39;&#39; a pep484 annotation isn&#39;t that different from if i declared in the docstring; </span>
+<span class="w">  </span><span class="sd">''' a pep484 annotation isn't that different from if i declared in the docstring; </span>
 <span class="sd">  </span>
 <span class="sd">  input/domain: a float</span>
 <span class="sd">  output/codomain: another float </span>
-<span class="sd">  &#39;&#39;&#39;</span>
+<span class="sd">  '''</span>
   <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
 </pre></div>
 </div>
@@ -1254,7 +1254,7 @@ rather than the int <code class="docutils literal notranslate"><span class="pre"
 <p>Interpreting this as code might look like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">if_A_then_B</span><span class="p">:</span>
   <span class="k">if</span> <span class="n">A</span><span class="p">:</span>
-    <span class="k">assert</span> <span class="n">B</span><span class="p">,</span> <span class="s2">&quot;alas, not A!&quot;</span>
+    <span class="k">assert</span> <span class="n">B</span><span class="p">,</span> <span class="s2">"alas, not A!"</span>
     <span class="k">return</span> <span class="n">B</span>
 </pre></div>
 </div>
@@ -1290,11 +1290,11 @@ word, the polynomial <em>beats</em> the logarithm.”</p>
 <p><img alt="and" src="http://latex.codecogs.com/svg.latex?k%20%3E%202%20%5Cland%20k%20%3C%204%20%5CLeftrightarrow%20k%20%3D%203" /></p>
 <!-- k > 2 \land k <  4 \Leftrightarrow k = 3   -->
 <p>In Python, we just say <code class="docutils literal notranslate"><span class="pre">and</span></code>. Assuming <em>k</em> is a natural number, the logic implies that <em>k</em> is 3:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="n">k</span><span class="p">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">k</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">):</span> <span class="k">assert</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Exercise: can this error ever be raised?&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="n">k</span><span class="p">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">k</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">):</span> <span class="k">assert</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">"Exercise: can this error ever be raised?"</span>
 </pre></div>
 </div>
 <p>Since both sides are equivalent <code class="docutils literal notranslate"><span class="pre">⇔</span></code>, it also implies the following:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="n">k</span><span class="p">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">k</span> <span class="o">==</span> <span class="mi">3</span><span class="p">):</span> <span class="k">assert</span> <span class="p">(</span><span class="n">k</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">),</span> <span class="s2">&quot;I mean it, think through this exercise.&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="n">k</span><span class="p">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">k</span> <span class="o">==</span> <span class="mi">3</span><span class="p">):</span> <span class="k">assert</span> <span class="p">(</span><span class="n">k</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">),</span> <span class="s2">"I mean it, think through this exercise."</span>
 </pre></div>
 </div>
 <p>The down arrow <code class="docutils literal notranslate"><span class="pre">∨</span></code> is logical disjunction, like the OR operator.</p>
@@ -1311,7 +1311,7 @@ you one bool for two bools.</p>
 <p><img alt="negation" src="http://latex.codecogs.com/svg.latex?x%20%5Cneq%20y%20%5CLeftrightarrow%20%5Clnot%28x%20%3D%20y%29" /></p>
 <!-- x \neq y \Leftrightarrow \lnot(x = y) -->
 <p>An example of how we might interpret this in code:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">!=</span> <span class="n">y</span><span class="p">):</span> <span class="k">assert</span> <span class="ow">not</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">,</span> <span class="s2">&quot;arrr, buried treasure lost forever. &quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">!=</span> <span class="n">y</span><span class="p">):</span> <span class="k">assert</span> <span class="ow">not</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">,</span> <span class="s2">"arrr, buried treasure lost forever. "</span>
 </pre></div>
 </div>
 <p><em>Note:</em> The tilde <code class="docutils literal notranslate"><span class="pre">~</span></code> has many different meanings depending on context. For example, <em>row equivalence</em> (matrix theory) or <em>same order of magnitude</em> (discussed in <a class="reference internal" href="#equality"><span class="xref myst">equality</span></a>).</p>
