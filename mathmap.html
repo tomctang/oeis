@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=6a604523" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=550f00eb" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -53,7 +53,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="_static/design-tabs.js?v=fcb327ea"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -65,7 +65,6 @@
     <script src="_static/mermaid-init.js?v=512eb59e"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Math-FP-Lang Combo" href="mathmap_old00intro_math.html" />
     <link rel="prev" title="矩阵的几何解释-线性变换" href="8%E7%9F%A9%E9%98%B5%E7%9A%84%E5%87%A0%E4%BD%95%E8%A7%A3%E9%87%8A-%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -185,7 +184,10 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">UNE</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="UNE_MTeach.html">MTeach &amp; GTPA &amp; PREXUS(PrEx Nexus)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNE_MTeach.html">MTeach &amp; PrEx/GTPA</a></li>
+
+
+
 
 
 
@@ -229,10 +231,6 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="mathmap_old00intro_math.html">Math-FP-Lang Combo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mathmap_old01number_algebra.html">Number &amp; Algebra</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mathmap_old02discrete_continuous.html">Discrete &amp; Continuous</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mathmap_old03real_world.html">Real World Math</a></li>
 </ul>
 
     </div>
@@ -553,6 +551,58 @@ graph LR
         Polynomial Factorization -&gt; Berlekamp’s Algorithm] --- c1('How' &amp; 'Cost')
     end
 </pre></div>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>概念/性質</p></th>
+<th class="head text-left"><p>線性代數 (矩陣/向量空間)</p></th>
+<th class="head text-left"><p>組合數學 (集合/結構/計數)</p></th>
+<th class="head text-left"><p>代數/多項式/算子</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>可逆性</strong></p></td>
+<td class="text-left"><p><strong>可逆矩陣 / 同構</strong> <span class="math notranslate nohighlight">\(\det(A) \neq 0\)</span>，滿秩</p></td>
+<td class="text-left"><p><strong>雙射 (Bijection)</strong> 可逆對射，結構保全</p></td>
+<td class="text-left"><p><strong>方程唯一解 / 代數單位 (Unit)</strong> 存在乘法逆元，如 <span class="math notranslate nohighlight">\(P(x) \in R^{\times}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>正交性</strong></p></td>
+<td class="text-left"><p><strong>正交矩陣 / 酉矩陣</strong> <span class="math notranslate nohighlight">\(A^T A = I\)</span>，保持內積/角度</p></td>
+<td class="text-left"><p><strong>不相交族 / 雙偶對 (Duality)</strong> 不相交集合劃分、偶圖對匹配</p></td>
+<td class="text-left"><p><strong>形式正交多項式</strong> 對代數內積正交，如 Legendre 多項式</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>投影與模</strong></p></td>
+<td class="text-left"><p><strong>投影矩陣 (Projection)</strong> <span class="math notranslate nohighlight">\(P^2 = P\)</span>，空間正交分解</p></td>
+<td class="text-left"><p><strong>等冪算子 / 選擇算子</strong> 重複選擇不變，如閉包算子 (Closure)</p></td>
+<td class="text-left"><p><strong>冪等元 (Idempotent)</strong> 環中的 <span class="math notranslate nohighlight">\(e^2 = e\)</span>，代數直和分解</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>跡 (Trace)</strong></p></td>
+<td class="text-left"><p><strong>矩陣的跡 <span class="math notranslate nohighlight">\(\\{tr}(A)\)</span></strong> 對角線元素之和、特徵值之和</p></td>
+<td class="text-left"><p><strong>不動點計數 (Fixed Points)</strong> Burnside 引理中置換的作用不動點</p></td>
+<td class="text-left"><p><strong>特徵標 (Character)</strong> 群表示論中的群元素特徵標 <span class="math notranslate nohighlight">\(\\chi(g)\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>零空間 (Kernel)</strong></p></td>
+<td class="text-left"><p><strong>核空間 \ker(A)</strong> 映射到零向量的空間，<span class="math notranslate nohighlight">\(A\bf{x} = \bf{0}\)</span></p></td>
+<td class="text-left"><p><strong>等價類坍縮 / 關係餘集</strong> 被同態映射壓縮掉的結構細節</p></td>
+<td class="text-left"><p><strong>理想 (Ideal)</strong> 環同態的核 <span class="math notranslate nohighlight">\(\ker(\phi)\)</span>，代數簇的消滅子</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>特徵值/特徵向量</strong></p></td>
+<td class="text-left"><p><strong>特徵對 (\lambda, \f{v})</strong> <span class="math notranslate nohighlight">\(A\bf{v} = \lambda \bf{v}\)</span>，主方向與縮放</p></td>
+<td class="text-left"><p><strong>圖的譜 (Spectral Graph)</strong> 圖的連通度、擴展度、隨機遊走極限</p></td>
+<td class="text-left"><p><strong>代數特徵根 / 算子特徵值</strong> 微元算子 <span class="math notranslate nohighlight">\(D e^{ax} = a e^{ax}\)</span> 的本徵態</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>冪零性 (Nilpotency)</strong></p></td>
+<td class="text-left"><p><strong>冪零矩陣</strong> 存在 k 使得 <span class="math notranslate nohighlight">\(A^k = \bf{0}\)</span></p></td>
+<td class="text-left"><p><strong>有限階遞推 / 有向無環圖 (DAG)</strong> 長度有限的路徑，遞推在有限步終止</p></td>
+<td class="text-left"><p><strong>冪零元 (Nilpotent)</strong> 如外代數（草帽代數）中的草帽積 <span class="math notranslate nohighlight">\(v \wedge v = 0\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>相似對角化</strong></p></td>
+<td class="text-left"><p><strong>相似變換 <span class="math notranslate nohighlight">\(P^{-1}AP = D\)</span></strong> 解耦耦合系統，選擇最佳基底</p></td>
+<td class="text-left"><p><strong>基底變換 / 指數母函數</strong> 將複雜卷積轉化為逐項相乘</p></td>
+<td class="text-left"><p><strong>中國剩餘定理 / 直積分解</strong> 將環分解為域的直和 <span class="math notranslate nohighlight">\(R \cong \prod R\_i\)</span></p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <blockquote>
 <div><p>Unifying math by LA + OEIS</p>
@@ -3542,15 +3592,6 @@ Twelvefold way ( 5 balls,  6 boxes) with capacity rule:
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">矩阵的几何解释-线性变换</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="mathmap_old00intro_math.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Math-FP-Lang Combo</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
